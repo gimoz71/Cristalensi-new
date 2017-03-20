@@ -8,6 +8,7 @@
  */
 /*50px !default;*/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -285,7 +286,7 @@ th {
     page-break-after: avoid;
   }
 
-  .navbar, .project-navbar {
+  .navbar {
     display: none;
   }
 
@@ -1397,7 +1398,7 @@ html {
 
 body {
   font-family: "Cabin", Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.428571429;
   color: #333333;
   background-color: #fff;
@@ -1462,8 +1463,8 @@ img {
 }
 
 hr {
-  margin-top: 28px;
-  margin-bottom: 28px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   border: 0;
   border-top: 1px solid #eeeeee;
 }
@@ -1492,7 +1493,7 @@ hr {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, .btn-square span, h5, .cat-list > li > a, h6,
+h1, h2, h3, h4, .btn-square span, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -1504,9 +1505,8 @@ h1 .small, h2 small,
 h2 .small, h3 small,
 h3 .small, h4 small, .btn-square span small,
 h4 .small,
-.btn-square span .small, h5 small, .cat-list > li > a small,
-h5 .small,
-.cat-list > li > a .small, h6 small,
+.btn-square span .small, h5 small,
+h5 .small, h6 small,
 h6 .small,
 .h1 small,
 .h1 .small, .h2 small,
@@ -1523,8 +1523,8 @@ h6 .small,
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  margin-top: 28px;
-  margin-bottom: 14px;
+  margin-top: 25px;
+  margin-bottom: 12.5px;
 }
 h1 small,
 h1 .small, .h1 small,
@@ -1539,20 +1539,17 @@ h3 .small, .h3 small,
 }
 
 h4, .btn-square span, .h4,
-h5,
-.cat-list > li > a, .h5,
+h5, .h5,
 h6, .h6 {
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
 }
 h4 small, .btn-square span small,
 h4 .small,
 .btn-square span .small, .h4 small,
 .h4 .small,
 h5 small,
-.cat-list > li > a small,
-h5 .small,
-.cat-list > li > a .small, .h5 small,
+h5 .small, .h5 small,
 .h5 .small,
 h6 small,
 h6 .small, .h6 small,
@@ -1561,48 +1558,48 @@ h6 .small, .h6 small,
 }
 
 h1, .h1 {
-  font-size: 52px;
+  font-size: 46px;
 }
 
 h2, .h2 {
-  font-size: 43px;
+  font-size: 38px;
 }
 
 h3, .h3 {
-  font-size: 34px;
+  font-size: 31px;
 }
 
 h4, .btn-square span, .h4 {
-  font-size: 25px;
+  font-size: 23px;
 }
 
-h5, .cat-list > li > a, .h5 {
-  font-size: 20px;
+h5, .h5 {
+  font-size: 18px;
 }
 
 h6, .h6 {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 p {
-  margin: 0 0 14px;
+  margin: 0 0 12.5px;
 }
 
 .lead {
-  margin-bottom: 28px;
-  font-size: 23px;
+  margin-bottom: 25px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.4;
 }
 @media (min-width: 768px) {
   .lead {
-    font-size: 30px;
+    font-size: 27px;
   }
 }
 
 small,
 .small {
-  font-size: 85%;
+  font-size: 88%;
 }
 
 mark,
@@ -1619,7 +1616,7 @@ mark,
   text-align: right;
 }
 
-.text-center, .project-navbar {
+.text-center {
   text-align: center;
 }
 
@@ -1742,15 +1739,15 @@ a.bg-danger:focus {
 }
 
 .page-header {
-  padding-bottom: 13px;
-  margin: 56px 0 28px;
+  padding-bottom: 11.5px;
+  margin: 50px 0 25px;
   border-bottom: 1px solid #eeeeee;
 }
 
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: 14px;
+  margin-bottom: 12.5px;
 }
 ul ul,
 ul ol,
@@ -1777,7 +1774,7 @@ ol ol {
 
 dl {
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 
 dt,
@@ -1826,9 +1823,9 @@ abbr[data-original-title] {
 }
 
 blockquote {
-  padding: 14px 28px;
-  margin: 0 0 28px;
-  font-size: 25px;
+  padding: 12.5px 25px;
+  margin: 0 0 25px;
+  font-size: 22.5px;
   border-left: 5px solid #eeeeee;
 }
 blockquote p:last-child,
@@ -1876,7 +1873,7 @@ blockquote.pull-right .small:after {
 }
 
 address {
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   font-style: normal;
   line-height: 1.428571429;
 }
@@ -1913,9 +1910,9 @@ kbd kbd {
 
 pre {
   display: block;
-  padding: 13.5px;
-  margin: 0 0 14px;
-  font-size: 19px;
+  padding: 12px;
+  margin: 0 0 12.5px;
+  font-size: 17px;
   line-height: 1.428571429;
   word-break: break-all;
   word-wrap: break-word;
@@ -3067,7 +3064,7 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 .table > thead > tr > th,
 .table > thead > tr > td,
@@ -3242,7 +3239,7 @@ table th[class*="col-"] {
 @media screen and (max-width: 767px) {
   .table-responsive {
     width: 100%;
-    margin-bottom: 21px;
+    margin-bottom: 18.75px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid #ddd;
@@ -3296,8 +3293,8 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 28px;
-  font-size: 30px;
+  margin-bottom: 25px;
+  font-size: 27px;
   line-height: inherit;
   color: #333333;
   border: 0;
@@ -3348,7 +3345,7 @@ input[type="checkbox"]:focus {
 output {
   display: block;
   padding-top: 7px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.428571429;
   color: #555555;
 }
@@ -3356,9 +3353,9 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 42px;
+  height: 39px;
   padding: 6px 12px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.428571429;
   color: #555555;
   background-color: #fff;
@@ -3412,7 +3409,7 @@ input[type="search"] {
   input[type="time"].form-control,
   input[type="datetime-local"].form-control,
   input[type="month"].form-control {
-    line-height: 42px;
+    line-height: 39px;
   }
   input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
   .input-group-sm > input[type="date"].input-group-addon,
@@ -3432,7 +3429,7 @@ input[type="search"] {
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn, .input-group-sm
   input[type="month"] {
-    line-height: 37px;
+    line-height: 36px;
   }
   input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
   .input-group-lg > input[type="date"].input-group-addon,
@@ -3452,7 +3449,7 @@ input[type="search"] {
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn, .input-group-lg
   input[type="month"] {
-    line-height: 56px;
+    line-height: 53px;
   }
 }
 .form-group {
@@ -3468,7 +3465,7 @@ input[type="search"] {
 }
 .radio label,
 .checkbox label {
-  min-height: 28px;
+  min-height: 25px;
   padding-left: 20px;
   margin-bottom: 0;
   font-weight: normal;
@@ -3529,7 +3526,7 @@ input[type="checkbox"] {
   padding-top: 7px;
   padding-bottom: 7px;
   margin-bottom: 0;
-  min-height: 48px;
+  min-height: 43px;
 }
 .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
 .input-group-lg > .form-control-static.input-group-addon,
@@ -3543,9 +3540,9 @@ input[type="checkbox"] {
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
-  height: 37px;
+  height: 36px;
   padding: 5px 10px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0px;
 }
@@ -3553,8 +3550,8 @@ input[type="checkbox"] {
 select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
 .input-group-sm > .input-group-btn > select.btn {
-  height: 37px;
-  line-height: 37px;
+  height: 36px;
+  line-height: 36px;
 }
 
 textarea.input-sm, .input-group-sm > textarea.form-control,
@@ -3568,34 +3565,34 @@ select[multiple].input-sm,
 }
 
 .form-group-sm .form-control {
-  height: 37px;
+  height: 36px;
   padding: 5px 10px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0px;
 }
 .form-group-sm select.form-control {
-  height: 37px;
-  line-height: 37px;
+  height: 36px;
+  line-height: 36px;
 }
 .form-group-sm textarea.form-control,
 .form-group-sm select[multiple].form-control {
   height: auto;
 }
 .form-group-sm .form-control-static {
-  height: 37px;
-  min-height: 45px;
+  height: 36px;
+  min-height: 41px;
   padding: 6px 10px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
-  height: 56px;
+  height: 53px;
   padding: 10px 16px;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 1.3333333;
   border-radius: 0px;
 }
@@ -3603,8 +3600,8 @@ select[multiple].input-sm,
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-btn > select.btn {
-  height: 56px;
-  line-height: 56px;
+  height: 53px;
+  line-height: 53px;
 }
 
 textarea.input-lg, .input-group-lg > textarea.form-control,
@@ -3618,25 +3615,25 @@ select[multiple].input-lg,
 }
 
 .form-group-lg .form-control {
-  height: 56px;
+  height: 53px;
   padding: 10px 16px;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 1.3333333;
   border-radius: 0px;
 }
 .form-group-lg select.form-control {
-  height: 56px;
-  line-height: 56px;
+  height: 53px;
+  line-height: 53px;
 }
 .form-group-lg textarea.form-control,
 .form-group-lg select[multiple].form-control {
   height: auto;
 }
 .form-group-lg .form-control-static {
-  height: 56px;
-  min-height: 53px;
+  height: 53px;
+  min-height: 48px;
   padding: 11px 16px;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 1.3333333;
 }
 
@@ -3644,7 +3641,7 @@ select[multiple].input-lg,
   position: relative;
 }
 .has-feedback .form-control {
-  padding-right: 52.5px;
+  padding-right: 48.75px;
 }
 
 .form-control-feedback {
@@ -3653,9 +3650,9 @@ select[multiple].input-lg,
   right: 0;
   z-index: 2;
   display: block;
-  width: 42px;
-  height: 42px;
-  line-height: 42px;
+  width: 39px;
+  height: 39px;
+  line-height: 39px;
   text-align: center;
   pointer-events: none;
 }
@@ -3665,9 +3662,9 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
-  width: 56px;
-  height: 56px;
-  line-height: 56px;
+  width: 53px;
+  height: 53px;
+  line-height: 53px;
 }
 
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
@@ -3675,9 +3672,9 @@ select[multiple].input-lg,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
-  width: 37px;
-  height: 37px;
-  line-height: 37px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
 }
 
 .has-success .help-block,
@@ -3762,7 +3759,7 @@ select[multiple].input-lg,
 }
 
 .has-feedback label ~ .form-control-feedback {
-  top: 33px;
+  top: 30px;
 }
 .has-feedback label.sr-only ~ .form-control-feedback {
   top: 0;
@@ -3836,7 +3833,7 @@ select[multiple].input-lg,
 }
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 35px;
+  min-height: 32px;
 }
 .form-horizontal .form-group {
   margin-left: -15px;
@@ -3862,13 +3859,13 @@ select[multiple].input-lg,
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
     padding-top: 11px;
-    font-size: 25px;
+    font-size: 23px;
   }
 }
 @media (min-width: 768px) {
   .form-horizontal .form-group-sm .control-label {
     padding-top: 6px;
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
@@ -3884,7 +3881,7 @@ select[multiple].input-lg,
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.428571429;
   border-radius: 0px;
   -webkit-user-select: none;
@@ -4165,21 +4162,21 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 10px 16px;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 1.3333333;
   border-radius: 0px;
 }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 5px 10px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0px;
 }
 
 .btn-xs, .btn-group-xs > .btn {
   padding: 1px 5px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0px;
 }
@@ -4268,7 +4265,7 @@ tbody.collapse.in {
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
-  font-size: 20px;
+  font-size: 18px;
   text-align: left;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -4284,7 +4281,7 @@ tbody.collapse.in {
 }
 .dropdown-menu .divider {
   height: 1px;
-  margin: 13px 0;
+  margin: 11.5px 0;
   overflow: hidden;
   background-color: #e5e5e5;
 }
@@ -4342,7 +4339,7 @@ tbody.collapse.in {
 .dropdown-header {
   display: block;
   padding: 3px 20px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.428571429;
   color: #777777;
   white-space: nowrap;
@@ -4633,7 +4630,7 @@ tbody.collapse.in {
 
 .input-group-addon {
   padding: 6px 12px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   line-height: 1;
   color: #555555;
@@ -4646,14 +4643,14 @@ tbody.collapse.in {
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn {
   padding: 5px 10px;
-  font-size: 17px;
+  font-size: 16px;
   border-radius: 0px;
 }
 .input-group-addon.input-lg,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn {
   padding: 10px 16px;
-  font-size: 25px;
+  font-size: 23px;
   border-radius: 0px;
 }
 .input-group-addon input[type="radio"],
@@ -4755,7 +4752,7 @@ tbody.collapse.in {
 }
 .nav .nav-divider {
   height: 1px;
-  margin: 13px 0;
+  margin: 11.5px 0;
   overflow: hidden;
   background-color: #e5e5e5;
 }
@@ -4874,22 +4871,22 @@ tbody.collapse.in {
   border-top-left-radius: 0;
 }
 
-.navbar, .project-navbar {
+.navbar {
   position: relative;
-  min-height: 73px;
-  margin-bottom: 28px;
+  min-height: 50px;
+  margin-bottom: 25px;
   border: 1px solid transparent;
 }
-.navbar:before, .project-navbar:before, .navbar:after, .project-navbar:after {
+.navbar:before, .navbar:after {
   content: " ";
   display: table;
 }
-.navbar:after, .project-navbar:after {
+.navbar:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  .navbar, .project-navbar {
-    border-radius: 0;
+  .navbar {
+    border-radius: 0px;
   }
 }
 
@@ -5010,10 +5007,10 @@ tbody.collapse.in {
 
 .navbar-brand, .header-logo, .nav > li.nav-iconitem > a.nav-iconitem__icon {
   float: left;
-  padding: 22.5px 15px;
-  font-size: 25px;
-  line-height: 28px;
-  height: 73px;
+  padding: 12.5px 15px;
+  font-size: 23px;
+  line-height: 25px;
+  height: 50px;
 }
 .navbar-brand:hover, .header-logo:hover, .nav > li.nav-iconitem > a.nav-iconitem__icon:hover, .navbar-brand:focus, .header-logo:focus, .nav > li.nav-iconitem > a.nav-iconitem__icon:focus {
   text-decoration: none;
@@ -5022,7 +5019,7 @@ tbody.collapse.in {
   display: block;
 }
 @media (min-width: 768px) {
-  .navbar > .container .navbar-brand, .project-navbar > .container .navbar-brand, .navbar > .container .header-logo, .project-navbar > .container .header-logo, .navbar > .container .nav > li.nav-iconitem > a.nav-iconitem__icon, .project-navbar > .container .nav > li.nav-iconitem > a.nav-iconitem__icon, .navbar > .container-fluid .navbar-brand, .project-navbar > .container-fluid .navbar-brand, .navbar > .container-fluid .header-logo, .project-navbar > .container-fluid .header-logo, .navbar > .container-fluid .nav > li.nav-iconitem > a.nav-iconitem__icon, .project-navbar > .container-fluid .nav > li.nav-iconitem > a.nav-iconitem__icon {
+  .navbar > .container .navbar-brand, .navbar > .container .header-logo, .navbar > .container .nav > li.nav-iconitem > a.nav-iconitem__icon, .navbar > .container-fluid .navbar-brand, .navbar > .container-fluid .header-logo, .navbar > .container-fluid .nav > li.nav-iconitem > a.nav-iconitem__icon {
     margin-left: -15px;
   }
 }
@@ -5032,8 +5029,8 @@ tbody.collapse.in {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 19.5px;
-  margin-bottom: 19.5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
@@ -5058,12 +5055,12 @@ tbody.collapse.in {
 }
 
 .navbar-nav {
-  margin: 11.25px -15px;
+  margin: 6.25px -15px;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
-  line-height: 28px;
+  line-height: 25px;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -5080,7 +5077,7 @@ tbody.collapse.in {
     padding: 5px 15px 5px 25px;
   }
   .navbar-nav .open .dropdown-menu > li > a {
-    line-height: 28px;
+    line-height: 25px;
   }
   .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
@@ -5095,8 +5092,8 @@ tbody.collapse.in {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 22.5px;
-    padding-bottom: 22.5px;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
   }
 }
 
@@ -5108,8 +5105,8 @@ tbody.collapse.in {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 15.5px;
-  margin-bottom: 15.5px;
+  margin-top: 5.5px;
+  margin-bottom: 5.5px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -5190,28 +5187,28 @@ tbody.collapse.in {
 
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
   margin-bottom: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .navbar-btn {
-  margin-top: 15.5px;
-  margin-bottom: 15.5px;
+  margin-top: 5.5px;
+  margin-bottom: 5.5px;
 }
 .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
-  margin-top: 18px;
-  margin-bottom: 18px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
-  margin-top: 25.5px;
-  margin-bottom: 25.5px;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 .navbar-text {
-  margin-top: 22.5px;
-  margin-bottom: 22.5px;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
 }
 @media (min-width: 768px) {
   .navbar-text {
@@ -5315,7 +5312,7 @@ tbody.collapse.in {
 
 .navbar-inverse {
   background-color: #FFD31C;
-  border-color: #e8bb00;
+  border-color: #b59200;
 }
 .navbar-inverse .navbar-brand, .navbar-inverse .header-logo, .navbar-inverse .nav > li.nav-iconitem > a.nav-iconitem__icon {
   color: #fff;
@@ -5361,10 +5358,10 @@ tbody.collapse.in {
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #e8bb00;
+    border-color: #b59200;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #e8bb00;
+    background-color: #b59200;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #fff;
@@ -5401,7 +5398,7 @@ tbody.collapse.in {
 .pagination {
   display: inline-block;
   padding-left: 0;
-  margin: 28px 0;
+  margin: 25px 0;
   border-radius: 0px;
 }
 .pagination > li {
@@ -5463,7 +5460,7 @@ tbody.collapse.in {
 .pagination-lg > li > a,
 .pagination-lg > li > span {
   padding: 10px 16px;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 1.3333333;
 }
 .pagination-lg > li:first-child > a,
@@ -5480,7 +5477,7 @@ tbody.collapse.in {
 .pagination-sm > li > a,
 .pagination-sm > li > span {
   padding: 5px 10px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
 }
 .pagination-sm > li:first-child > a,
@@ -5496,7 +5493,7 @@ tbody.collapse.in {
 
 .pager {
   padding-left: 0;
-  margin: 28px 0;
+  margin: 25px 0;
   list-style: none;
   text-align: center;
 }
@@ -5612,7 +5609,7 @@ a.label:hover, a.label:focus {
   display: inline-block;
   min-width: 10px;
   padding: 3px 7px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   color: #fff;
   line-height: 1;
@@ -5666,7 +5663,7 @@ a.badge:hover, a.badge:focus {
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 200;
 }
 .jumbotron > hr {
@@ -5691,14 +5688,14 @@ a.badge:hover, a.badge:focus {
   }
   .jumbotron h1,
   .jumbotron .h1 {
-    font-size: 90px;
+    font-size: 81px;
   }
 }
 
 .thumbnail {
   display: block;
   padding: 4px;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   line-height: 1.428571429;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -5728,7 +5725,7 @@ a.thumbnail.active {
 
 .alert {
   padding: 15px;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   border: 1px solid transparent;
   border-radius: 0px;
 }
@@ -5825,8 +5822,8 @@ a.thumbnail.active {
 }
 .progress {
   overflow: hidden;
-  height: 28px;
-  margin-bottom: 28px;
+  height: 25px;
+  margin-bottom: 25px;
   background-color: #f5f5f5;
   border-radius: 0px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -5837,8 +5834,8 @@ a.thumbnail.active {
   float: left;
   width: 0%;
   height: 100%;
-  font-size: 17px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 25px;
   color: #fff;
   text-align: center;
   background-color: #FFD31C;
@@ -6156,7 +6153,7 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel {
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 0px;
@@ -6188,7 +6185,7 @@ button.list-group-item-danger.active:focus {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 23px;
+  font-size: 21px;
   color: inherit;
 }
 .panel-title > a,
@@ -6384,7 +6381,7 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-group {
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 .panel-group .panel {
   margin-bottom: 0;
@@ -6577,7 +6574,7 @@ button.list-group-item-danger.active:focus {
 
 .close {
   float: right;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: bold;
   line-height: 1;
   color: #000;
@@ -6771,7 +6768,7 @@ button.close {
   word-break: normal;
   word-spacing: normal;
   word-wrap: normal;
-  font-size: 17px;
+  font-size: 16px;
   opacity: 0;
   filter: alpha(opacity=0);
 }
@@ -6893,7 +6890,7 @@ button.close {
   word-break: normal;
   word-spacing: normal;
   word-wrap: normal;
-  font-size: 20px;
+  font-size: 18px;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ccc;
@@ -6918,7 +6915,7 @@ button.close {
 .popover-title {
   margin: 0;
   padding: 8px 14px;
-  font-size: 20px;
+  font-size: 18px;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-radius: -1px -1px 0 0;
@@ -7236,11 +7233,11 @@ button.close {
     bottom: 20px;
   }
 }
-.clearfix:before, .feature:before, .clearfix:after, .feature:after {
+.clearfix:before, .clearfix:after {
   content: " ";
   display: table;
 }
-.clearfix:after, .feature:after {
+.clearfix:after {
   clear: both;
 }
 
@@ -7596,7 +7593,7 @@ button.close {
  */
 .btn-social, .btn-social-icon {
   position: relative;
-  padding-left: 52px;
+  padding-left: 49px;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -7607,40 +7604,40 @@ button.close {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 40px;
-  line-height: 42px;
+  width: 37px;
+  line-height: 39px;
   font-size: 1.6em;
   text-align: center;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 .btn-social.btn-lg, .btn-group-lg > .btn-social.btn, .btn-group-lg > .btn.btn-social-icon, .btn-lg.btn-social-icon {
-  padding-left: 71px;
+  padding-left: 68px;
 }
 .btn-social.btn-lg :first-child, .btn-group-lg > .btn-social.btn :first-child, .btn-group-lg > .btn.btn-social-icon :first-child, .btn-lg.btn-social-icon :first-child {
-  line-height: 55px;
-  width: 55px;
+  line-height: 52px;
+  width: 52px;
   font-size: 1.8em;
 }
 .btn-social.btn-sm, .btn-group-sm > .btn-social.btn, .btn-group-sm > .btn.btn-social-icon, .btn-sm.btn-social-icon {
-  padding-left: 45px;
+  padding-left: 44px;
 }
 .btn-social.btn-sm :first-child, .btn-group-sm > .btn-social.btn :first-child, .btn-group-sm > .btn.btn-social-icon :first-child, .btn-sm.btn-social-icon :first-child {
-  line-height: 35px;
-  width: 35px;
+  line-height: 34px;
+  width: 34px;
   font-size: 1.4em;
 }
 .btn-social.btn-xs, .btn-group-xs > .btn-social.btn, .btn-group-xs > .btn.btn-social-icon, .btn-xs.btn-social-icon {
-  padding-left: 36px;
+  padding-left: 35px;
 }
 .btn-social.btn-xs :first-child, .btn-group-xs > .btn-social.btn :first-child, .btn-group-xs > .btn.btn-social-icon :first-child, .btn-xs.btn-social-icon :first-child {
-  line-height: 26px;
-  width: 26px;
+  line-height: 25px;
+  width: 25px;
   font-size: 1.2em;
 }
 
 .btn-social-icon {
-  height: 42px;
-  width: 42px;
+  height: 39px;
+  width: 39px;
   padding: 0;
 }
 .btn-social-icon :first-child {
@@ -7649,20 +7646,20 @@ button.close {
   width: 100% !important;
 }
 .btn-social-icon.btn-lg, .btn-group-lg > .btn-social-icon.btn {
-  height: 55px;
-  width: 55px;
+  height: 52px;
+  width: 52px;
   padding-left: 0;
   padding-right: 0;
 }
 .btn-social-icon.btn-sm, .btn-group-sm > .btn-social-icon.btn {
-  height: 37px;
-  width: 37px;
+  height: 36px;
+  width: 36px;
   padding-left: 0;
   padding-right: 0;
 }
 .btn-social-icon.btn-xs, .btn-group-xs > .btn-social-icon.btn {
-  height: 28px;
-  width: 28px;
+  height: 27px;
+  width: 27px;
   padding-left: 0;
   padding-right: 0;
 }
@@ -11183,6 +11180,50 @@ input[type="radio"] .styled:checked + label::after {
   width: 30%;
 }
 
+/*!
+ * Yamm!3 - Yet another megamenu for Bootstrap 3
+ * http://geedmo.github.com/yamm3
+ *
+ * @geedmo - Licensed under the MIT license
+ */
+.yamm .collapse,
+.yamm .dropdown,
+.yamm .dropup,
+.yamm .nav {
+  position: static;
+}
+.yamm .container {
+  position: relative;
+}
+.yamm .dropdown-menu {
+  left: auto;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+  border: solid 1px #FFD31C;
+}
+.yamm .yamm-content {
+  font-size: 14px;
+  padding: 5px 30px 20px 30px;
+}
+.yamm .yamm-content .subcategory {
+  color: inherit;
+  font-size: 16px;
+  border-bottom: dotted 1px #ccc;
+  padding-bottom: 5px;
+  color: #333;
+}
+.yamm .yamm-content a {
+  color: #666 !important;
+  padding: 3px 15px;
+  margin: 0 !important;
+  position: relative;
+  background: url(/images/arrow-list.png) no-repeat left center;
+}
+.yamm .dropdown.yamm-fw .dropdown-menu {
+  left: 0;
+  right: 0;
+}
+
+/* Enable Bootstrap Hover Drop Downs */
 @font-face {
   font-family: 'robotobold';
   src: url("../fonts/Roboto-Bold-webfont.eot");
@@ -11218,634 +11259,6 @@ input[type="radio"] .styled:checked + label::after {
   font-weight: normal;
   font-style: normal;
 }
-/* @group icone Knauf */
-/* icone varie */
-.icon-storico {
-  background-image: url(/images/../images/icon-storico.png);
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-storico {
-    background-image: url(/images/../images/icon-storico@2x.png);
-    background-size: 31px 32px;
-  }
-}
-
-.icon-identificativi {
-  background-image: url(/images/../images/icon-identificativi.png);
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-identificativi {
-    background-image: url(/images/../images/icon-identificativi@2x.png);
-    background-size: 31px 32px;
-  }
-}
-
-.icon-riferimenti-normativi {
-  background-image: url(/images/../images/icon-riferimenti-normativi.png);
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-riferimenti-normativi {
-    background-image: url(/images/../images/icon-riferimenti-normativi@2x.png);
-    background-size: 31px 32px;
-  }
-}
-
-.icon-menu {
-  background-image: url(/images/../images/icon-menu.png);
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-menu {
-    background-image: url(/images/../images/icon-menu@2x.png);
-    background-size: 31px 32px;
-  }
-}
-
-.icon {
-  font-family: sosa-regular;
-  display: inline-block;
-  font-size: 1.2em;
-}
-.icon.icon-progetto:after {
-  content: 'a';
-  text-transform: initial;
-}
-.icon.icon-capitolato:after {
-  content: "\ ";
-  text-transform: initial;
-}
-.icon.icon-salva:after {
-  content: "å";
-  text-transform: initial;
-}
-.icon.icon-annulla:after {
-  content: "ã";
-  text-transform: initial;
-}
-.icon.icon-anteprima:after {
-  content: "]";
-  text-transform: initial;
-}
-.icon.icon-riepilogo:after {
-  content: "é";
-  text-transform: initial;
-}
-.icon.icon-impostazioni:after {
-  content: "W";
-  text-transform: initial;
-}
-.icon.icon-certificazioni:after {
-  content: "é";
-  text-transform: initial;
-}
-.icon.icon-help:after {
-  content: "?";
-  text-transform: initial;
-}
-.icon.icon-add:after {
-  content: "{";
-  text-transform: initial;
-}
-.icon.icon-up:after {
-  content: "î";
-  text-transform: initial;
-}
-.icon.icon-down:after {
-  content: "ï";
-  text-transform: initial;
-}
-.icon.icon-custom:after {
-  content: "k";
-  text-transform: initial;
-}
-
-/* @group ICONE PRINCIPALI */
-.icon-pareti {
-  background-image: url(/images/../images/icon-pareti.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pareti {
-    background-image: url(/images/../images/icon-pareti@2x.png);
-    background-size: 53px 48px;
-  }
-}
-
-.icon-contropareti {
-  background-image: url(/images/../images/icon-contropareti.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-contropareti {
-    background-image: url(/images/../images/icon-contropareti@2x.png);
-    background-size: 53px 49px;
-  }
-}
-
-.icon-controsoffitti {
-  background-image: url(/images/../images/icon-controsoffitti.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti {
-    background-image: url(/images/../images/icon-controsoffitti@2x.png);
-    background-size: 53px 48px;
-  }
-}
-
-.icon-controsoffitti-modulari-ispezionabili {
-  background-image: url(/images/../images/icon-controsoffitti-modulari-ispezionabili.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti-modulari-ispezionabili {
-    background-image: url(/images/../images/icon-controsoffitti-modulari-ispezionabili@2x.png);
-    background-size: 53px 48px;
-  }
-}
-
-.icon-sistema-cappotto-termico {
-  background-image: url(/images/../images/icon-sistema-cappotto-termico.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-sistema-cappotto-termico {
-    background-image: url(/images/../images/icon-sistema-cappotto-termico@2x.png);
-    background-size: 53px 48px;
-  }
-}
-
-.icon-involucro-esterno {
-  background-image: url(/images/../images/icon-involucro-esterno.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-involucro-esterno {
-    background-image: url(/images/../images/icon-involucro-esterno@2x.png);
-    background-size: 60px 48px;
-  }
-}
-
-.icon-sottofondi-secco {
-  background-image: url(/images/../images/icon-sottofondi-secco.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-sottofondi-secco {
-    background-image: url(/images/../images/icon-sottofondi-secco@2x.png);
-    background-size: 53px 48px;
-  }
-}
-
-.icon-pavimenti-sopraelevati {
-  background-image: url(/images/../images/icon-pavimenti-sopraelevati.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pavimenti-sopraelevati {
-    background-image: url(/images/../images/icon-pavimenti-sopraelevati@2x.png);
-    background-size: 53px 47px;
-  }
-}
-
-.icon-trattamenti-superficiali {
-  background-image: url(/images/../images/icon-trattamenti-superficiali.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-trattamenti-superficiali {
-    background-image: url(/images/../images/icon-trattamenti-superficiali@2x.png);
-    background-size: 53px 46px;
-  }
-}
-
-.icon-intonaci {
-  background-image: url(/images/../images/icon-intonaci.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-intonaci {
-    background-image: url(/images/../images/icon-intonaci@2x.png);
-    background-size: 53px 47px;
-  }
-}
-
-.icon-blank {
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-/* @fine ICONE PRINCIPALI */
-/* @group ICONE pareti */
-.icon-pareti-soluzioni-base {
-  background-image: url(/images/../images/icon-pareti-soluzioni-base.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pareti-soluzioni-base {
-    background-image: url(/images/../images/icon-pareti-soluzioni-base@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-pareti-ambienti-umidi {
-  background-image: url(/images/../images/icon-pareti-ambienti-umidi.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pareti-ambienti-umidi {
-    background-image: url(/images/../images/icon-pareti-ambienti-umidi@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-pareti-antincendio {
-  background-image: url(/images/../images/icon-pareti-antincendio.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pareti-antincendio {
-    background-image: url(/images/../images/icon-pareti-antincendio@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-pareti-isolamento-acustico {
-  background-image: url(/images/../images/icon-pareti-isolamento-acustico.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pareti-isolamento-acustico {
-    background-image: url(/images/../images/icon-pareti-isolamento-acustico@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-pareti-antintrusione {
-  background-image: url(/images/../images/icon-pareti-antintrusione.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pareti-antintrusione {
-    background-image: url(/images/../images/icon-pareti-antintrusione@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-pareti-resistenza-urti {
-  background-image: url(/images/../images/icon-pareti-resistenza-urti.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pareti-resistenza-urti {
-    background-image: url(/images/../images/icon-pareti-resistenza-urti@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-pareti-installazioni-impiantistiche {
-  background-image: url(/images/../images/icon-pareti-installazioni-impiantistiche.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pareti-installazioni-impiantistiche {
-    background-image: url(/images/../images/icon-pareti-installazioni-impiantistiche@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-/* @fine ICONE pareti */
-/* @group ICONE contropareti */
-.icon-contropareti-soluzioni-base {
-  background-image: url(/images/../images/icon-contropareti-soluzioni-base.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-contropareti-soluzioni-base {
-    background-image: url(/images/../images/icon-contropareti-soluzioni-base@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-contropareti-soluzioni-grandi-pareti {
-  background-image: url(/images/../images/icon-contropareti-soluzioni-grandi-pareti.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-contropareti-soluzioni-grandi-pareti {
-    background-image: url(/images/../images/icon-contropareti-soluzioni-grandi-pareti@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-contropareti-antincendio {
-  background-image: url(/images/../images/icon-contropareti-antincendio.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-contropareti-antincendio {
-    background-image: url(/images/../images/icon-contropareti-antincendio@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-contropareti-isolamento-acustico {
-  background-image: url(/images/../images/icon-contropareti-isolamento-acustico.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-contropareti-isolamento-acustico {
-    background-image: url(/images/../images/icon-contropareti-isolamento-acustico@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-contropareti-isolamento-termico {
-  background-image: url(/images/../images/icon-contropareti-isolamento-termico.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-contropareti-isolamento-termico {
-    background-image: url(/images/../images/icon-contropareti-isolamento-termico@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-/* @fine ICONE contropareti */
-/* @group ICONE controsoffitti */
-.icon-controsoffitti-soluzioni-base {
-  background-image: url(/images/../images/icon-controsoffitti-soluzioni-base.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti-soluzioni-base {
-    background-image: url(/images/../images/icon-controsoffitti-soluzioni-base@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-controsoffitti-ambienti-umidi {
-  background-image: url(/images/../images/icon-controsoffitti-ambienti-umidi.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti-ambienti-umidi {
-    background-image: url(/images/../images/icon-controsoffitti-ambienti-umidi@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-controsoffitti-antincendio {
-  background-image: url(/images/../images/icon-controsoffitti-antincendio.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti-antincendio {
-    background-image: url(/images/../images/icon-controsoffitti-antincendio@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-controsoffitti-isolamento-acustico {
-  background-image: url(/images/../images/icon-controsoffitti-isolamento-acustico.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti-isolamento-acustico {
-    background-image: url(/images/../images/icon-controsoffitti-isolamento-acustico@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-controsoffitti-assorbimento-acustico {
-  background-image: url(/images/../images/icon-controsoffitti-assorbimento-acustico.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti-assorbimento-acustico {
-    background-image: url(/images/../images/icon-controsoffitti-assorbimento-acustico@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-controsoffitti-isolamento-termico {
-  background-image: url(/images/../images/icon-controsoffitti-isolamento-termico.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti-isolamento-termico {
-    background-image: url(/images/../images/icon-controsoffitti-isolamento-termico@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-.icon-controsoffitti-antisfondellamento {
-  background-image: url(/images/../images/icon-controsoffitti-antisfondellamento.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-controsoffitti-antisfondellamento {
-    background-image: url(/images/../images/icon-controsoffitti-antisfondellamento@2x.png);
-    background-size: 54px 48px;
-  }
-}
-
-/* @fine ICONE controsoffitti */
-/* @group ICONE controsoffitti modulari ispezionabili */
-.icon-cmi-soluzioni-base-modulari {
-  background-image: url(/images/../images/icon-cmi-soluzioni-base-modulari.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-cmi-soluzioni-base-modulari {
-    background-image: url(/images/../images/icon-cmi-soluzioni-base-modulari@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-cmi-antincendio {
-  background-image: url(/images/../images/icon-cmi-antincendio.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-cmi-antincendio {
-    background-image: url(/images/../images/icon-cmi-antincendio@2x.png);
-    background-size: 55px 47px;
-  }
-}
-
-.icon-cmi-assorbimento-acustico {
-  background-image: url(/images/../images/icon-cmi-assorbimento-acustico.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-cmi-assorbimento-acustico {
-    background-image: url(/images/../images/icon-cmi-assorbimento-acustico@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-/* @fine ICONE controsoffitti modulari ispezionabili */
-/* @group ICONE aquapanel */
-.icon-aquapanel-rivestimento-facciata {
-  background-image: url(/images/../images/icon-aquapanel-rivestimento-facciata.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-aquapanel-rivestimento-facciata {
-    background-image: url(/images/../images/icon-aquapanel-rivestimento-facciata@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-aquapanel-controsoffitto-esterno {
-  background-image: url(/images/../images/icon-aquapanel-controsoffitto-esterno.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-aquapanel-controsoffitto-esterno {
-    background-image: url(/images/../images/icon-aquapanel-controsoffitto-esterno@2x.png);
-    background-size: 61px 50px;
-  }
-}
-
-.icon-aquapanel-tamponamento {
-  background-image: url(/images/../images/icon-aquapanel-tamponamento.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-aquapanel-tamponamento {
-    background-image: url(/images/../images/icon-aquapanel-tamponamento@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-/* @fine ICONE aquapanel */
-.icon-sistema-cappotto-termico-submenu {
-  background-image: url(/images/../images/icon-sistema-cappotto-termico-submenu.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-sistema-cappotto-termico-submenu {
-    background-image: url(/images/../images/icon-sistema-cappotto-termico-submenu@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-sottofondi-secco-submenu {
-  background-image: url(/images/../images/icon-sottofondi-secco-submenu.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-sottofondi-secco-submenu {
-    background-image: url(/images/../images/icon-sottofondi-secco-submenu@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-pavimenti-sopraelevati-submenu {
-  background-image: url(/images/../images/icon-pavimenti-sopraelevati-submenu.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-pavimenti-sopraelevati-submenu {
-    background-image: url(/images/../images/icon-pavimenti-sopraelevati-submenu@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-trattamenti-superficiali-submenu {
-  background-image: url(/images/../images/icon-trattamenti-superficiali-submenu.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-trattamenti-superficiali-submenu {
-    background-image: url(/images/../images/icon-trattamenti-superficiali-submenu@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-.icon-intonaci-submenu {
-  background-image: url(/images/../images/icon-intonaci-submenu.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .icon-intonaci-submenu {
-    background-image: url(/images/../images/icon-intonaci-submenu@2x.png);
-    background-size: 54px 47px;
-  }
-}
-
-/*!
- * Yamm!3 - Yet another megamenu for Bootstrap 3
- * http://geedmo.github.com/yamm3
- *
- * @geedmo - Licensed under the MIT license
- */
-.yamm .collapse,
-.yamm .dropdown,
-.yamm .dropup,
-.yamm .nav {
-  position: static;
-}
-.yamm .container {
-  position: relative;
-}
-.yamm .dropdown-menu {
-  left: auto;
-  padding: 0 !important;
-  border: 0 !important;
-  color: #fff;
-}
-.yamm .yamm-content {
-  padding: 0px;
-  background-color: #FFD31C;
-}
-.yamm .dropdown.yamm-fw .dropdown-menu {
-  left: 0;
-  right: 0;
-}
-
-/* @end icone Knauf */
 /*-------------------------------*/
 /* override e aggiunte a stili bootstrap      */
 /*-------------------------------*/
@@ -11882,10 +11295,6 @@ input[type="radio"] .styled:checked + label::after {
     float: left;
   }
 }
-.btn {
-  border-radius: 0;
-  width: 100%;
-}
 .btn:first {
   padding-left: 0;
   margin-left: 0;
@@ -11909,7 +11318,8 @@ input[type="radio"] .styled:checked + label::after {
   .btn.with-icon {
     font-size: 0;
   }
-  .btn.with-icon .icon, .btn.with-icon .fa {
+  .btn.with-icon .fa,
+  .btn.with-icon .icon {
     font-size: 20px;
   }
 }
@@ -11922,7 +11332,8 @@ input[type="radio"] .styled:checked + label::after {
   .btn.with-icon {
     font-size: 0;
   }
-  .btn.with-icon .icon, .btn.with-icon .fa {
+  .btn.with-icon .fa,
+  .btn.with-icon .icon {
     font-size: 20px;
   }
 }
@@ -11956,7 +11367,7 @@ input[type="radio"] .styled:checked + label::after {
     bottom: 0;
   }
 }
-.btn-square:hover, .btn-square.active {
+.btn-square.active, .btn-square:hover {
   border-color: #7EBC49;
 }
 
@@ -11972,6 +11383,9 @@ input[type="radio"] .styled:checked + label::after {
 .row.nomargin {
   margin-left: -10px !important;
   margin-right: -10px !important;
+}
+.row.top-buffer {
+  margin-top: 25px;
 }
 
 .gap > [class*=" col-"]:first-of-type, .gap > [class^="col-"]:first-of-type {
@@ -12026,7 +11440,6 @@ h3,
 h4,
 .btn-square span,
 h5,
-.cat-list > li > a,
 h6 {
   text-transform: uppercase;
   font-weight: bold;
@@ -12057,19 +11470,23 @@ img {
   color: #fff;
 }
 
-.radio.right label, .checkbox.right label {
+.checkbox.right label,
+.radio.right label {
   padding-left: 0;
   padding-right: 40px;
 }
-.radio.right label:before, .checkbox.right label:before {
+.checkbox.right label:before,
+.radio.right label:before {
   left: auto;
   right: 0;
 }
-.radio.right label:after, .checkbox.right label:after {
+.checkbox.right label:after,
+.radio.right label:after {
   left: auto;
-  right: .1em;
+  right: 0.1em;
 }
-.radio.fullwidth label, .checkbox.fullwidth label {
+.checkbox.fullwidth label,
+.radio.fullwidth label {
   width: 100%;
   position: inherit;
 }
@@ -12094,16 +11511,37 @@ img {
   vertical-align: baseline;
 }
 
+@media (max-width: 768px) {
+  .parentOverflowContainer {
+    float: none;
+  }
+}
 /*-------------------------------*/
 /*  @group Header               */
 /*-------------------------------*/
+.navbar {
+  min-height: inherit;
+}
+
+.navbar-collapse {
+  padding: 0;
+}
+
 .navbar-inverse {
   border: none;
   margin: 0;
 }
-.navbar-inverse.aux {
+.navbar-inverse.menu-aux {
   min-height: auto;
-  background-color: #666;
+  background-color: #333;
+  font-size: .85em;
+}
+.navbar-inverse.service-menu {
+  min-height: auto;
+}
+.navbar-inverse.service-menu a {
+  font-size: .85em;
+  color: #000;
 }
 
 /* header logo */
@@ -12124,14 +11562,37 @@ img {
   }
 }
 
+@media (max-width: 768px) {
+  .header-logo {
+    float: none;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /* nav */
 .nav > li.nav-iconitem > a {
   display: inline-block;
 }
 
+.nav > li.nav-iconitem > a.nav-iconitem__icon,
+.nav > li.nav-user > a {
+  color: #000 !important;
+  text-shadow: 0 0 2px white;
+}
+
+.nav > li.nav-iconitem > a.nav-iconitem__icon:hover,
+.nav > li.nav-user > a:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.nav-user .glyphicon {
+  font-size: 0.65em;
+}
+
 .nav > li.nav-iconitem > a.nav-iconitem__icon {
   margin: 0 !important;
-  width: 73px;
+  width: 50px;
   border-left: solid 2px #fff;
   background-position: center center;
   background-repeat: no-repeat;
@@ -12143,8 +11604,7 @@ img {
     font-size: 1em;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 60px;
-    line-height: 28px;
+    line-height: 25px;
     font-family: inherit;
     width: auto;
     border: none;
@@ -12153,13 +11613,11 @@ img {
     background-position: 15px center;
     text-align: left;
     height: auto;
-    border-top: solid 1px rgba(255, 255, 255, 0.2);
-    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   }
-
-  .nav > li.nav-iconitem > a.nav-iconitem__icon:hover,
-  .nav > li.nav-user > a:hover {
-    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+@media (min-width: 768px) {
+  .search-bar {
+    margin-top: 50px;
   }
 }
 /*-------------------------------*/
@@ -12188,616 +11646,172 @@ img {
 
 /* @end Stili ed elementi content */
 /*-------------------------------*/
-/*  @end contenitore generale  */
-/*-------------------------------*/
-/*--------------------------------*/
-/* @group Struttura catalogo */
-/*--------------------------------*/
-/* @group Lista principale (col sx)  */
-.cat-list-title {
-  text-transform: uppercase;
-  color: #FFD31C;
-  padding: 10px 0;
-  margin: 0;
-  background: #efefef;
+/* @group Lista prodotti tile */
+/* font Awesome http://fontawesome.io*/
+/* Animation.css*/
+.col-item {
+  background: #FFF;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  z-index: inherit;
+  /*i*/
 }
-
-/* @group Tabs categorie */
-.cat-list-icon {
-  border-bottom: none;
-  padding-top: 0;
-  background-color: #fffbe8;
+.col-item:hover {
+  box-shadow: 0 13px 16px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+  z-index: 10;
 }
-
-.tabs-left.cat-list-icon {
-  border-right: 1px solid #fff;
+.col-item .options {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 3;
 }
-
-.tabs-left > li {
-  float: none;
-  margin-bottom: 0;
-}
-
-.tabs-left > li {
-  margin-right: -1px;
-}
-
-.tabs-left.cat-list-icon > li:not(.active) > a:focus,
-.tabs-left.cat-list-icon > li:not(.active) > a:hover {
-  border-color: #fff;
-  background-color: #FFD31C;
-}
-
-.tabs-left.cat-list-icon > li.active > a,
-.tabs-left.cat-list-icon > li.active > a:focus,
-.tabs-left.cat-list-icon > li.active > a:hover {
-  border-top: none;
-  border-bottom-color: #fff;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-top-color: #fff;
-  background-color: #FFD31C;
-  color: #fff;
-}
-
-.tabs-left.cat-list-icon > li:not(.active) > a:focus,
-.tabs-left.cat-list-icon > li:not(.active) > a:hover {
-  border-color: #fff;
-  background-color: #FFD31C;
-}
-
-.tabs-left > li > a {
-  border-radius: 0;
-  margin-right: 0;
-  padding: 20px;
-  display: block;
-  border-bottom: 1px solid #fff;
-}
-
-.main > li > a,
-.secondary > li > a {
-  padding-left: 100px;
-}
-
-.tabs-right > li > a {
-  border-radius: 0 0;
-  margin-right: 0;
-}
-
-/* @end Tabs categorie */
-/* @group Lista catalogo */
-.fixed-width {
-  width: 75px;
-  float: left;
-}
-
-.row-fluid {
-  margin-left: 75px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.col-item .photo {
   overflow: hidden;
 }
-
-.action {
-  position: relative;
-}
-.action > a:not(.action-link) {
-  margin-right: 60px;
-}
-.action .action-link {
-  position: absolute;
-  top: 0;
-  right: 1px;
-  background-color: #fffbe8;
-  padding: 17px 20px;
-  border-bottom-color: #fff;
-  height: 100%;
-}
-.action span.fa {
-  position: absolute;
-  top: 50%;
-  margin-top: -.5em;
-  right: 80px;
-  font-size: 1.2em;
-  border: none;
-}
-
-.cat-list {
-  border: none;
-  text-align: left;
-  border-right: solid 1px #eeeeee;
-}
-.cat-list > li i {
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  bottom: -1px;
-  background-color: #fffbe8;
-  border-bottom: solid 1px #fff;
-  padding: 0 35px;
-  height: 102.5%;
-}
-.cat-list > li > a:not(.action-link) {
-  border-bottom: solid 1px #eeeeee;
-  padding-right: 70px;
-}
-.cat-list > li > a.action-link span {
-  position: relative;
+.col-item .photo .prod-img-replace {
+  width: 100%;
   display: block;
-  top: 50%;
-  margin-top: -.8em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #E1E1E1;
 }
-.cat-list > li > a {
-  margin: 0;
-  border-bottom: solid 1px #eeeeee;
+.col-item .photo .options {
+  display: none;
 }
-.cat-list.secondary {
-  border-right: none;
-}
-.cat-list.secondary > li {
-  background-color: #fff;
-}
-.cat-list.secondary > li:not(.feature-container) {
+.col-item .photo img {
+  margin: 0 auto;
   width: 100%;
 }
-.cat-list.secondary > li a:not(.action-link),
-.cat-list.secondary > li i {
-  color: #FFD31C;
-}
-.cat-list.secondary > li i {
-  background-color: transparent;
+.col-item .options-cart {
   position: absolute;
-  top: -1px;
-  left: -1px;
-  bottom: -1px;
-  border-bottom: solid 1px #efefef;
-  border-right: solid 1px #efefef;
-  padding: 0 35px;
-  height: 102.5%;
+  left: 6px;
+  top: 6px;
+  display: none;
+  z-index: 3;
 }
-.cat-list.secondary > li .fa {
+.col-item:hover .options, .col-item:hover .options-cart {
+  display: block;
+  -webkit-animation: fadeIn 0.5s ease;
+  -moz-animation: fadeIn 0.5s ease;
+  -ms-animation: fadeIn 0.5s ease;
+  -o-animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s ease;
+}
+.col-item .options-cart-round {
   position: absolute;
-  top: 50%;
-  margin-top: -.5em;
-  right: 20px;
-  font-size: 1.2em;
-  border: none;
+  left: 42%;
+  top: 22%;
+  display: none;
 }
-.cat-list.secondary .category-title {
-  background-color: #FFD31C;
-  font-size: 1.25em;
-  font-weight: bold;
+.col-item .options-cart-round button {
+  border-radius: 50%;
+  padding: 14px 16px;
 }
-.cat-list.secondary .category-title a:not(.action-link),
-.cat-list.secondary .category-title i {
-  color: #fff;
+.col-item .options-cart-round button .fa {
+  font-size: 22px;
 }
-.cat-list.secondary .category-title .fa {
-  right: auto;
-  left: 20px;
-  color: #fff;
+.col-item .photo:hover .options-cart-round {
+  display: block;
+  -webkit-animation: fadeInDown 0.5s ease;
+  -moz-animation: fadeInDown 0.5s ease;
+  -ms-animation: fadeInDown 0.5s ease;
+  -o-animation: fadeInDown 0.5s ease;
+  animation: fadeInDown 0.5s ease;
 }
-.cat-list.secondary .category-title a {
-  border: solid 1px #fff;
+.col-item .info {
+  padding: 5px 10px 10px;
+  border: 1px solid #E1E1E1;
+  border-top: 0;
 }
-
-.feature {
-  background-color: #fff;
-  font-size: 0.75em !important;
-}
-.feature .add-feature > *,
-.feature .description > *,
-.feature .quote > * {
-  line-height: 1.2em !important;
-  color: #666;
-  margin: 0 !important;
-  padding: 12px !important;
-}
-.feature .add-feature .title,
-.feature .description .title,
-.feature .quote .title {
-  border-bottom: solid 1px #eeeeee;
-  font-weight: 800;
-  background-color: #FFD31C;
-  color: #fff;
-}
-.feature .op,
-.feature .quote {
-  text-align: center;
-  background-color: #fff;
-}
-.feature .op *,
-.feature .quote * {
-  color: #FFD31C;
-}
-.feature .op input,
-.feature .quote input {
+.col-item .price-details {
   width: 100%;
-  border: none;
-  background-color: #eeeeee;
-  padding: 5px 10px;
-  font-size: 1.5em;
-  text-align: right;
-}
-.feature .op div,
-.feature .quote div {
-  font-weight: bold;
-  background-color: #fff;
-}
-.feature .op > a,
-.feature .quote > a {
-  border: none;
-  padding: 0 !important;
-}
-.feature .op > a span.fa,
-.feature .quote > a span.fa {
-  font-weight: normal;
-  position: relative;
-  top: inherit;
-  right: inherit;
-  margin: inherit;
-  width: 100%;
-  padding: 30px 0 !important;
-  font-size: 25px;
-  color: #fff;
-}
-.feature .op {
-  background-color: #FFD31C;
-}
-.feature .row {
-  border-bottom: solid 10px #fffbe8;
-}
-.feature .row > div {
-  border-right: solid 1px #eeeeee;
-}
-.feature .row > div:last-of-type {
-  border-right: none;
-}
-.feature .row:last-of-type {
-  border-bottom: none;
-}
-
-.feature-container {
-  border: solid 5px #fffbe8;
-  margin-left: 35px !important;
-  margin-right: 0 !important;
-  width: auto;
-}
-.feature-container .title {
-  font-weight: 800;
-  background-color: #fff !important;
-  color: inherit !important;
-}
-.feature-container .feature a {
-  border: none;
-}
-.feature-container .feature a span.fa {
-  color: #FFD31C !important;
-}
-.feature-container .op {
-  background-color: #fff !important;
-}
-
-/* @end Lista catalogo */
-/* @group Stilizzazioni colonna sx */
-.sub-content-container {
-  background: #FFD31C;
-}
-
-.sub-content {
-  margin: 10px;
-}
-
-.pagina-scheda .sub-content-container {
-  background: #efefef;
-}
-
-/* @end Stilizzazioni colonna sx */
-/* @end  Lista principale (col sx)   */
-/* @group Cat content (col dx) */
-.project-navbar {
-  margin: 0;
-  min-height: auto;
-  border: none;
-}
-.colonnaSX .project-navbar {
-  background: #fff;
-}
-.colonnaSX .project-navbar .active {
-  background-color: #efefef;
-}
-.colonnaSX .project-navbar .active > a {
-  opacity: 1;
-}
-.colonnaDX .project-navbar {
-  background: #fffbe8;
-}
-.colonnaDX .project-navbar > div {
-  background: #FFD31C;
-}
-.colonnaDX .project-navbar .active > a {
-  opacity: 1;
-}
-.voce-dettaglio .project-navbar {
-  background: #efefef;
-}
-.voce-dettaglio .project-navbar a {
-  font-size: 1em !important;
-  text-transform: inherit;
-}
-.voce-dettaglio .project-navbar .active {
-  background-color: #fff;
-}
-.voce-dettaglio .project-navbar .active > a {
-  opacity: 1;
-}
-.project-navbar.verifiche {
-  background-color: #7EBC49;
-}
-.project-navbar > div {
-  border-left: solid 4px #fff;
-}
-.project-navbar > div:first-of-type {
-  border: none;
-}
-@media (max-width: 768px) {
-  .project-navbar > div {
-    border: none;
-    border-top: solid 4px #fff;
-  }
-}
-
-.project-navbar-voice {
-  display: inline-block;
-  width: 100%;
-  padding: 10px 0;
-  opacity: 0.5;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 25px;
-}
-.colonnaSX .project-navbar-voice {
-  color: #FFD31C;
-}
-.colonnaDX .project-navbar-voice {
-  color: #fff;
-}
-.project-navbar-voice:hover {
-  text-decoration: none;
-  opacity: 1;
-}
-.colonnaSX .project-navbar-voice.active {
-  opacity: 1;
-  background: #efefef;
-}
-
-.cat-content {
-  margin: 3px 0;
-  overflow: auto;
-}
-.cat-content .editor,
-.cat-content .feature-editor,
-.cat-content .project {
-  padding: 10px;
-  margin-bottom: 10px;
-}
-.cat-content .editor:last-of-type,
-.cat-content .feature-editor:last-of-type,
-.cat-content .project:last-of-type {
-  margin-bottom: 0;
-}
-.cat-content .project {
-  background-color: rgba(255, 211, 28, 0.2);
-  text-align: left;
-}
-.cat-content .feature-editor {
-  background-color: #efefef;
-}
-.cat-content .feature-editor * {
-  color: #333 !important;
-}
-
-.semafori-verifiche {
-  margin: 3px 0;
-}
-.semafori-verifiche .semaforo {
-  display: inline-block;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  width: 100%;
-  background-image: none;
-  white-space: nowrap;
-  color: #999;
-  border-right: solid 1px #efefef;
-  padding: 6px 12px;
-  font-size: 20px;
-  line-height: 1.428571429;
-  border-radius: 0px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.semafori-verifiche .semaforo.active {
-  color: #7EBC49;
-}
-.semafori-verifiche .semaforo.active:before {
-  font-family: 'Glyphicons Halflings';
-  content: "\e013";
-  font-size: 18px;
-  margin-right: 5px;
-}
-.semafori-verifiche .semaforo.last {
-  border: none;
-}
-
-/* @end Cat content (col dx) */
-/*--------------------------------*/
-/* @end Struttura catalogo */
-/*--------------------------------*/
-/*--------------------------------*/
-/* @group Tabelle e Modali  */
-/*--------------------------------*/
-.body-tabella {
-  padding: 0;
-}
-.body-tabella.prezzi .header {
-  margin: 5px 0 !important;
-}
-.body-tabella.prezzi .header .title {
-  text-align: left;
-}
-@media (max-width: 768px) {
-  .body-tabella.prezzi .header .title {
-    text-align: center;
-  }
-}
-.body-tabella.prezzi .header .btn-group {
-  float: right;
   margin-top: 5px;
 }
-@media (max-width: 768px) {
-  .body-tabella.prezzi .header .btn-group {
-    float: none;
-    text-align: center;
-  }
-}
-.body-tabella .content {
-  background: #efefef;
-  padding: 20px;
-}
-
-.content-modal {
-  background: #efefef;
-  padding: 0 !important;
-  margin: 0;
-}
-
-.corpo-tabella {
-  margin: 0 !important;
-  background: #fff;
-  padding: 1px;
-}
-
-.voce-dettaglio .title {
+.col-item .price-details h1 {
   display: block;
-  width: 100%;
-  background: #FFD31C;
-  margin: 2px 0;
-  padding: 10px;
-  color: #fff;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: 44.8px;
+  /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
-.tabella {
-  padding: 10px;
+.col-item .price-details .details {
+  font-size: 14px;
+  color: #999;
 }
-.tabella .checkbox, .tabella .radio {
-  margin: 0;
+.col-item .price-details .details b {
+  color: #666;
 }
-.tabella table {
-  color: #FFD31C;
-  border-collapse: separate;
-  border-spacing: 2px;
+.col-item .price-details .price-box {
+  display: inline-block;
+  padding: 5px 0;
 }
-.tabella table label {
-  padding-left: 26px;
+.col-item .price-details .price {
+  font-size: 18px;
 }
-.tabella table td {
-  padding: 5px;
+.col-item .price-details .price-new {
+  font-size: 22px;
+  font-weight: 800;
+  color: #900;
 }
-.tabella table td:not(.selector) {
-  font-size: .75em;
+.col-item .price-details .price-old {
+  color: #999;
+  font-size: 18px;
+  bottom: 1em;
 }
-.tabella table tr:nth-child(even) {
-  background-color: #fff;
+.col-item .price-details .price-old b {
+  text-decoration: line-through;
 }
-.tabella table tr:nth-child(even) .tot {
-  font-weight: bold;
-  background-color: white;
+.col-item .separator {
+  border-top: 1px solid #E1E1E1;
 }
-.tabella table tr:nth-child(odd) {
-  background-color: #efefef;
+.col-item .clear-left {
+  clear: left;
 }
-.tabella table tr:nth-child(odd) .tot {
-  font-weight: bold;
-  background-color: #fff9de;
+.col-item .separator a {
+  text-decoration: none;
 }
-.tabella table tr:first-of-type td {
-  font-weight: bold;
-  background-color: #e2e2e2;
-}
-.tabella table .others {
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #fff !important;
-}
-.tabella table .others .tot-label {
-  background-color: #f7f7f7;
-}
-.tabella table .others .tot {
-  background-color: #FFD31C !important;
-  color: #fff;
-}
-
-.modal {
+.col-item .separator p {
+  margin-bottom: 0;
+  padding-top: 6px;
   text-align: center;
+  font-size: 1.2em;
+}
+.col-item .separator p {
+  margin-right: 0;
+}
+.col-item .btn-add {
+  width: 33.333%;
+  float: left;
+}
+.col-item .btn-add a {
+  display: inline-block !important;
+}
+.col-item .btn-add {
+  border-right: 1px solid #E1E1E1;
+}
+.col-item .btn-details {
+  width: 33.333%;
+  float: left;
+  padding-left: 10px;
+}
+.col-item .btn-details a {
+  display: inline-block !important;
 }
 
-@media screen and (min-width: 768px) {
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
-}
-.modal-dialog {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.overflow-modal-container {
-  overflow: auto;
-  margin: 4px;
-  max-height: 400px;
-}
-
-.modal-content {
-  border: solid 15px #efefef;
-  box-shadow: none;
-}
-
-.modal-backdrop {
-  background-color: #ffd31c;
-}
-
-.graphic-button {
-  margin: 0 !important;
-}
-.graphic-button .button {
-  display: inline-block;
-  border: solid 1px #fff;
-  border-radius: 50%;
-  padding: .25em;
-  font-size: 4em;
-  line-height: 0;
-  margin: 20px 10px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.025);
-}
-.graphic-button .button i {
-  width: 1em;
-  height: 1em;
-}
-.graphic-button .button:hover {
-  background-color: rgba(0, 0, 0, 0.075);
-}
-
-/*--------------------------------*/
-/* @end Tabelle e Modali  */
-/*--------------------------------*/
+/* @end Lista prodotti tile */
+/*  @end contenitore generale  */
+/*-------------------------------*/
 
 /*# sourceMappingURL=styles.css.map */

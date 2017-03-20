@@ -23,14 +23,27 @@
     // by default aligns menu to left
     .dropdown-menu {
         left: auto;
-        padding: 0 !important;
-        border: 0 !important;
-        color: $content-color;
+        box-shadow: 0px 2px 3px rgba(0,0,0,.15);
+        border: solid 1px $body-color;
     }
     // Content with padding
     .yamm-content {
-        padding: 0px;
-        background-color: $body-color;
+        font-size: 14px;
+        padding  : 5px 30px 20px 30px;
+        .subcategory {
+            color    : inherit;
+            font-size: 16px;
+            border-bottom: dotted 1px #ccc;
+            padding-bottom: 5px;
+            color: #333;
+        }
+        a {
+            color: #666 !important;
+            padding: 3px 15px;
+            margin: 0 !important;
+            position: relative;
+            background: url(/images/arrow-list.png) no-repeat left center;
+        }
     }
     // Fullwidth menu
     .dropdown.yamm-fw .dropdown-menu {
@@ -38,3 +51,12 @@
         right: 0;
     }
 }
+
+/* Enable Bootstrap Hover Drop Downs */
+// .dropdown-menu li:hover .sub-menu {
+//     visibility: visible;
+// }
+//
+// .dropdown:hover .dropdown-menu {
+//     display: block;
+// }

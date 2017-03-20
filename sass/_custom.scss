@@ -33,10 +33,6 @@
     font-weight: normal;
     font-style : normal;
 }
-/* @group icone Knauf */
-@import "icon-custom";
-@import "yamm";
-/* @end icone Knauf */
 /*-------------------------------*/
 /* override e aggiunte a stili bootstrap      */
 /*-------------------------------*/
@@ -74,10 +70,9 @@
 }
 
 .btn {
-    border-radius: 0;
+    // border-radius: 0;
     // border-color: $content-color;
-    width        : 100%;
-
+    // width        : 100%;
     &:first {
         padding-left: 0;
         margin-left : 0;
@@ -102,7 +97,8 @@
         @media (max-width: $screen-lg ) {
             font-size: 0;
 
-            .icon, .fa {
+            .fa,
+            .icon {
                 font-size: 20px;
             }
         }
@@ -113,7 +109,8 @@
             // padding  : 5px 0;
             font-size: 0;
 
-            .icon, .fa {
+            .fa,
+            .icon {
                 font-size: 20px;
             }
         }
@@ -148,8 +145,8 @@
         }
     }
 
-    &:hover,
-    &.active {
+    &.active,
+    &:hover {
         border-color: $verifiche-color;
     }
 }
@@ -173,9 +170,14 @@
             padding-left : 0;
         }
     }
+
     &.nomargin {
-        margin-left: -10px !important;
+        margin-left : -10px !important;
         margin-right: -10px !important;
+    }
+
+    &.top-buffer {
+        margin-top: 25px;
     }
 }
 
@@ -194,13 +196,13 @@
         & > [class*=" col-"],
         & > [class^="col-"] {
             &:first-of-type {
-                padding-right: 0;
+                padding-right : 0;
                 padding-bottom: 5px;
             }
 
             &:last-of-type {
                 padding-left: 0;
-                padding-top: 5px;
+                padding-top : 5px;
             }
         }
     }
@@ -217,8 +219,6 @@
 table {
     width: 100%;
 }
-
-
 /*--------------------------------------------------*/
 /* inizio customizzazioni layout e stili di default */
 /*--------------------------------------------------*/
@@ -257,29 +257,32 @@ img {
 @include radio-variant( '.radio-verifiche', $verifiche-color);
 @include checkbox-variant( '.checkbox-verifiche', $verifiche-color);
 
-.radio, .checkbox {
+.checkbox,
+.radio {
     &.right {
         label {
-            padding-left: 0;
+            padding-left : 0;
             padding-right: 40px;
+
             &:before {
-                left: auto;
+                left : auto;
                 right: 0;
             }
+
             &:after {
-                left: auto;
-                right: .1em;
+                left : auto;
+                right: 0.1em;
             }
         }
     }
+
     &.fullwidth {
         label {
-            width: 100%;
+            width   : 100%;
             position: inherit;
         }
     }
 }
-
 
 .radio-image {
     margin: 0;
@@ -306,22 +309,39 @@ img {
         vertical-align: baseline;
     }
 }
-
+@media (max-width: $screen-sm) {
+    .parentOverflowContainer {
+        float: none;
+    }
+}
 /*-------------------------------*/
 /*  @group Header               */
 /*-------------------------------*/
+.navbar {
+    min-height: inherit;
+}
+.navbar-collapse {
+    padding: 0;
+}
 .navbar-inverse {
     border: none;
     margin: 0;
     // @media (min-width: $screen-sm) {
     //     margin: 0px;
     // }
-    &.aux {
+    &.menu-aux {
+        min-height      : auto;
+        background-color: #333;
+        font-size: .85em;
+    }
+    &.service-menu {
         min-height: auto;
-        background-color: #666;
+        a {
+            font-size: .85em;
+            color: #000;
+        }
     }
 }
-
 /* header logo */
 .header-logo {
     @extend .navbar-brand;
@@ -331,16 +351,37 @@ img {
     background-position: center center;
     width              : 200px;
     margin             : 0 !important;
-    height: 100px;
-    margin-top: 15px !important;
-    margin-bottom: 15px!important;
-    @media (max-width: $screen-sm ) {
+    height             : 100px;
+    margin-top         : 15px !important;
+    margin-bottom      : 15px !important;
+}
+@media (max-width: $screen-sm ) {
+    .header-logo {
+        float: none;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
         // margin-left: 15px !important;
     }
 }
 /* nav */
 .nav > li.nav-iconitem > a {
     display: inline-block;
+}
+
+.nav > li.nav-iconitem > a.nav-iconitem__icon,
+.nav > li.nav-user > a {
+    color      : #000 !important;
+    text-shadow: 0 0 2px rgba(255,255,255,1);
+}
+
+.nav > li.nav-iconitem > a.nav-iconitem__icon:hover,
+.nav > li.nav-user > a:hover {
+    background-color: rgba(255,255,255,.2) !important;
+}
+
+.nav-user .glyphicon {
+    font-size: 0.65em;
 }
 
 .nav > li.nav-iconitem > a.nav-iconitem__icon {
@@ -358,7 +399,7 @@ img {
         font-size          : 1em;
         padding-top        : 10px;
         padding-bottom     : 10px;
-        padding-left       : 60px;
+        // padding-left       : 60px;
         line-height        : $line-height-computed;
         font-family        : inherit;
         width              : auto;
@@ -368,13 +409,13 @@ img {
         background-position: 15px center;
         text-align         : left;
         height             : auto;
-        border-top         : solid 1px rgba(255,255,255,.2);
-        border-bottom      : solid 1px rgba(0,0,0,.2);
+        // border-top         : solid 1px rgba(255,255,255,.2);
+        // border-bottom      : solid 1px rgba(0,0,0,.05);
     }
-
-    .nav > li.nav-iconitem > a.nav-iconitem__icon:hover,
-    .nav > li.nav-user > a:hover {
-        background-color: rgba(255,255,255,.2) !important;
+}
+@media (min-width: $screen-sm) {
+    .search-bar {
+        margin-top: 50px;
     }
 }
 /*-------------------------------*/
@@ -385,10 +426,9 @@ img {
 /*-------------------------------*/
 /* @group Stili ed elementi content */
 .content {
-    background   : $content-color;
-    padding      : 15px 0;
+    background: $content-color;
+    padding   : 15px 0;
     // margin-bottom: 20px;
-
     > div {
         // margin-bottom: 20px;
     }
@@ -408,726 +448,236 @@ img {
 }
 /* @end Stili ed elementi content */
 /*-------------------------------*/
-/*  @end contenitore generale  */
-/*-------------------------------*/
-/*--------------------------------*/
-/* @group Struttura catalogo */
-/*--------------------------------*/
-/* @group Lista principale (col sx)  */
-.cat-list-title {
-    text-transform: uppercase;
-    color         : $body-color;
-    padding       : 10px 0;
-    margin        : 0;
-    background    : #efefef;
-}
-/* @group Tabs categorie */
-.cat-list-icon {
-    border-bottom   : none;
-    padding-top     : 0;
-    background-color: $sub-content-color;
-}
-
-.tabs-left.cat-list-icon {
-    border-right: 1px solid $content-color;
-}
-// .tabs-right.cat-list-icon {
-//     border-left: 1px solid $content-color;
-// }
-
-.tabs-left > li {
-    float        : none;
-    margin-bottom: 0;
-}
-
-.tabs-left > li {
-    margin-right: -1px;
-}
-// .tabs-right > li {
-//     margin-left: -1px;
-// }
-
-.tabs-left.cat-list-icon > li:not(.active) > a:focus,
-.tabs-left.cat-list-icon > li:not(.active) > a:hover {
-    border-color    : $content-color;
-    background-color: $body-color;
-}
-
-.tabs-left.cat-list-icon > li.active > a,
-.tabs-left.cat-list-icon > li.active > a:focus,
-.tabs-left.cat-list-icon > li.active > a:hover {
-    border-top         : none;
-    border-bottom-color: $content-color;
-    border-right-color : transparent;
-    border-left-color  : transparent;
-    border-top-color   : $content-color;
-    background-color   : $body-color;
-    color              : $content-color;
-}
-
-.tabs-left.cat-list-icon > li:not(.active) > a:focus,
-.tabs-left.cat-list-icon > li:not(.active) > a:hover {
-    border-color    : $content-color;
-    background-color: $body-color;
-}
-// .tabs-right.cat-list-icon > li.active > a,
-// .tabs-right.cat-list-icon > li.active > a:focus,
-// .tabs-right.cat-list-icon > li.active > a:hover {
-//     border-bottom    : 1px solid $content-color;
-//     border-left-color: transparent;
-// }
-
-.tabs-left {
-    > li {
-        > a {
-            border-radius: 0;
-            margin-right : 0;
-            padding      : 20px;
-            display      : block;
-            border-bottom: 1px solid $content-color;
-        }
-    }
-}
-
-.main,
-.secondary {
-    > li {
-        > a {
-            padding-left: 100px;
-        }
-    }
-}
-
-.tabs-right > li > a {
-    border-radius: 0 0;
-    margin-right : 0;
-}
-/* @end Tabs categorie */
-/* @group Lista catalogo */
-// setto la struttura  del tab  verticale a dimensine fissa
-
-.fixed-width {
-    width: 75px;
-    float: left;
-}
-
-.row-fluid {
-    margin-left       : 75px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing   : border-box;
-    box-sizing        : border-box;
-    overflow          : hidden;
-}
-// stilizzo i tab e i contenuti del catalogo
-
-.action {
-    position: relative;
-
-    > a:not(.action-link) {
-        margin-right: 60px;
-    }
-
-    .action-link {
-        position           : absolute;
-        top                : 0;
-        right              : 1px;
-        background-color   : $sub-content-color;
-        padding            : 17px 20px;
-        border-bottom-color: $content-color;
-        height             : 100%;
-    }
-
-    span.fa {
-        position  : absolute;
-        top       : 50%;
-        margin-top: -.5em;
-        right     : 80px;
-        font-size : 1.2em;
-        border    : none;
-    }
-}
-
-.cat-list {
-    border      : none;
-    text-align  : left;
-    border-right: solid 1px $gray-lighter;
-
-    > li {
-        i {
-            position        : absolute;
-            top             : -1px;
-            left            : -1px;
-            bottom          : -1px;
-            background-color: $sub-content-color;
-            border-bottom   : solid 1px $content-color;
-            padding         : 0 35px;
-            height          : 102.5%;
-        }
-
-        > a:not(.action-link) {
-            border-bottom: solid 1px $gray-lighter;
-            padding-right: 70px;
-        }
-
-        > a.action-link span {
-            position  : relative;
-            display   : block;
-            top       : 50%;
-            margin-top: -.8em;
-        }
-
-        > a {
-            @extend h5;
-            margin       : 0;
-            border-bottom: solid 1px $gray-lighter;
-        }
-    }
-    // differenzio le voci delle categorie secondarie da quelle primarie
-    &.secondary {
-        border-right: none;
-
-        > li {
-            background-color: $content-color;
-            // float           : left;
-            &:not(.feature-container) {
-                width: 100%;
-            }
-
-            a:not(.action-link),
-            i {
-                color: $body-color;
-            }
-
-            i {
-                background-color: transparent;
-                position        : absolute;
-                top             : -1px;
-                left            : -1px;
-                bottom          : -1px;
-                border-bottom   : solid 1px $tab-default-color;
-                border-right    : solid 1px $tab-default-color;
-                padding         : 0 35px;
-                height          : 102.5%;
-            }
-
-            .fa {
-                position  : absolute;
-                top       : 50%;
-                margin-top: -.5em;
-                right     : 20px;
-                font-size : 1.2em;
-                border    : none;
-            }
-        }
-
-        .category-title {
-            background-color: $body-color;
-            font-size       : 1.25em;
-            font-weight     : bold;
-
-            a:not(.action-link),
-            i {
-                color: $content-color;
-            }
-
-            .fa {
-                right: auto;
-                left : 20px;
-                color: $content-color;
-            }
-
-            a {
-                border: solid 1px $content-color;
-                // border-bottom: none;
-            }
-        }
-    }
-}
-// strutturo e stilizzo i moduli da aggiungere al progetto
-
-.feature {
-    @extend .clearfix;
-    background-color: $content-color;
-    font-size       : 0.75em !important;
-
-    .add-feature,
-    .description,
-    .quote {
-        > * {
-            line-height: 1.2em !important;
-            color      : #666;
-            margin     : 0 !important;
-            padding    : 12px !important;
-        }
-
-        .title {
-            border-bottom   : solid 1px $gray-lighter;
-            font-weight     : 800;
-            background-color: $body-color;
-            color           : $content-color;
-        }
-
-        .info {}
-    }
-
-    .op,
-    .quote {
-        // padding: 14px !important;
-        text-align      : center;
-        background-color: $content-color;
-
-        * {
-            color: $body-color;
-        }
-
-        input {
-            width           : 100%;
-            border          : none;
-            background-color: $gray-lighter;
-            padding         : 5px 10px;
-            font-size       : 1.5em;
-            text-align      : right;
-        }
-
-        div {
-            font-weight     : bold;
-            background-color: $content-color;
-        }
-
-        > a {
-            border : none;
-            padding: 0 !important;
-
-            span.fa {
-                font-weight: normal;
-                position   : relative;
-                top        : inherit;
-                right      : inherit;
-                margin     : inherit;
-                // margin-top: 10px;
-                width      : 100%;
-                padding    : 30px 0 !important;
-                font-size  : 25px;
-                color      : $content-color;
-            }
-        }
-    }
-
-    .op {
-        background-color: $body-color;
-    }
-
-    .row {
-        border-bottom: solid 10px $sub-content-color;
-        // float: left;
-        > div {
-            border-right: solid 1px $gray-lighter;
-
-            &:last-of-type {
-                border-right: none;
-            }
-        }
-
-        &:last-of-type {
-            border-bottom: none;
-        }
-    }
-}
-// override stili quando nella lista category-title
-
-.feature-container {
-    border      : solid 5px $sub-content-color;
-    margin-left : 35px !important;
-    margin-right: 0 !important;
-    width       : auto;
-
-    .title {
-        font-weight     : 800;
-        background-color: $content-color !important;
-        color           : inherit !important;
-    }
-
-    .feature {
-        a {
-            border: none;
-
-            span.fa {
-                color: $body-color !important;
-                // background-color: $content-color !important;
-            }
-        }
-    }
-
-    .op {
-        background-color: $content-color !important;
-    }
-}
-/* @end Lista catalogo */
-/* @group Stilizzazioni colonna sx */
-.sub-content-container {
-    background: $body-color;
-}
-
-.sub-content {
-    margin: 10px;
-}
-
-.pagina-scheda .sub-content-container {
-    background: $tab-default-color;
-}
-/* @end Stilizzazioni colonna sx */
-/* @end  Lista principale (col sx)   */
-/* @group Cat content (col dx) */
-.project-navbar {
-    @extend .navbar;
-    @extend .text-center;
-    margin    : 0;
-    min-height: auto;
-
-    .colonnaSX & {
-        background: $content-color;
-
-        .active {
-            background-color: $tab-default-color;
-
-            > a {
-                opacity: 1;
-            }
-        }
-    }
-
-    .colonnaDX & {
-        background: $sub-content-color;
-
-        > div {
-            background: $body-color;
-        }
-
-        .active {
-            > a {
-                opacity: 1;
-            }
-        }
-
-        .impostazioni {
-            // @include img-retina("../images/icon-impostazioni.png", "../images/icon-impostazioni@2x.png", 100px, 100px);
-            // background-position: -15px -15px;
-            // background-repeat  : no-repeat;
-        }
-    }
-
-    .voce-dettaglio & {
-        background: $tab-default-color;
-        a {
-            font-size: 1em !important;
-            text-transform: inherit;
-        }
-        .active {
-            background-color: $content-color;
-
-            > a {
-                opacity: 1;
-            }
-        }
-    }
-
-    &.verifiche {
-        background-color: $verifiche-color;
-    }
-
-    > div {
-        border-left: solid 4px $content-color;
-
-        &:first-of-type {
-            border: none;
-        }
-        @media (max-width: $screen-sm ) {
-            border    : none;
-            border-top: solid 4px $content-color;
-        }
-    }
-    border    : none;
-}
-
-.project-navbar-voice {
-    display       : inline-block;
-    width         : 100%;
-    padding       : 10px 0;
-    opacity       : 0.5;
-    cursor        : pointer;
-    text-transform: uppercase;
-    font-size     : 25px;
-
-    .colonnaSX & {
-        color: $body-color;
-    }
-
-    .colonnaDX & {
-        color: $content-color;
-    }
+/* @group Lista prodotti tile */
+/* font Awesome http://fontawesome.io*/
+// @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+/* Animation.css*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
+
+.col-item {
+    background    : #FFF;
+    margin-bottom : 30px;
+    box-shadow    : 0 4px 6px rgba(0,0,0,.1);
+    position      : relative;
+    transition    : all 0.2s ease-in-out;
+    z-index       : inherit;
 
     &:hover {
-        text-decoration: none;
-        opacity        : 1;
+        box-shadow: 0 13px 16px rgba(0,0,0,.25);
+        transform : scale(1.05);
+        z-index   : 10;
     }
-    // @media (max-width: $screen-sm ) {
-    //     padding  : 5px 0;
-    //     font-size: 0;
-    //
-    //     .icon {
-    //         font-size: 30px;
-    //     }
-    // }
-    &.active {
-        .colonnaSX & {
-            opacity   : 1;
-            background: $tab-default-color;
-        }
+
+    .options {
+        position: absolute;
+        top     : 6px;
+        right   : 6px;
+        z-index : 3;
     }
-}
 
-.cat-content {
-    margin  : 3px 0;
-    overflow: auto;
+    .photo {
+        overflow: hidden;
 
-    .editor,
-    .feature-editor,
-    .project {
-        // min-height    : 600px;
-        padding      : 10px;
-        margin-bottom: 10px;
-
-        &:last-of-type {
-            margin-bottom: 0;
+        .prod-img-replace {
+            width              : 100%;
+            display            : block;
+            background-size    : contain;
+            background-repeat  : no-repeat;
+            background-position: center center;
+            background-color   : #E1E1E1;
         }
     }
 
-    .project {
-        background-color: rgba($body-color, .2);
-        text-align      : left;
+    .photo .options {
+        display: none;
     }
 
-    .feature-editor {
-        background-color: $tab-default-color;
-
-        * {
-            color: #333 !important;
-        }
-    }
-}
-
-.semafori-verifiche {
-    margin: 3px 0; // For input.btn
-
-    .semaforo {
-        display         : inline-block;
-        font-weight     : $btn-font-weight;
-        text-align      : center;
-        vertical-align  : middle;
-        touch-action    : manipulation;
-        width           : 100%;
-        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-        white-space     : nowrap;
-        color           : #999;
-        border-right    : solid 1px $tab-default-color;
-        @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
-        @include user-select(none);
-
-        &.active {
-            // background: $verifiche-color;
-            // color     : $content-color;
-            color: $verifiche-color;
-
-            &:before {
-                font-family : 'Glyphicons Halflings';
-                content     : "\e013";
-                font-size   : 18px;
-                margin-right: 5px;
-            }
-        }
-
-        &.last {
-            border: none;
-        }
-    }
-}
-/* @end Cat content (col dx) */
-/*--------------------------------*/
-/* @end Struttura catalogo */
-/*--------------------------------*/
-
-/*--------------------------------*/
-/* @group Tabelle e Modali  */
-/*--------------------------------*/
-
-// elementi comuni tabelle
-
-.body-tabella {
-    padding: 0;
-    &.prezzi {
-        .header {
-            margin: 5px 0 !important;
-            .title {
-                text-align: left;
-                @media (max-width: $screen-sm) {
-                    text-align: center;
-                }
-            }
-            .btn-group {
-                float: right;
-                margin-top: 5px;
-                @media (max-width: $screen-sm) {
-                    float: none;
-                    text-align: center;
-                }
-            }
-        }
+    .photo img {
+        margin: 0 auto;
+        width : 100%;
     }
 
-    .content {
-        background: $tab-default-color;
-        padding   : 20px;
+    .options-cart {
+        position: absolute;
+        left    : 6px;
+        top     : 6px;
+        display : none;
+        z-index : 3;
     }
-}
-.content-modal {
-    background: $tab-default-color;
-    padding   : 0 !important;
-    margin: 0;
-}
 
-// Tabella prezzi
-
-.corpo-tabella {
-    margin: 0 !important;
-    background: $content-color;
-    padding: 1px;
-}
-
-.voce-dettaglio{
-    .title {
-        display   : block;
-        width     : 100%;
-        background: $body-color;
-        margin    : 2px 0;
-        padding   : 10px;
-        color     : $content-color;
+    &:hover .options,
+    &:hover .options-cart {
+        display          : block;
+        -webkit-animation: fadeIn 0.5s ease;
+        -moz-animation   : fadeIn 0.5s ease;
+        -ms-animation    : fadeIn 0.5s ease;
+        -o-animation     : fadeIn 0.5s ease;
+        animation        : fadeIn 0.5s ease;
     }
-}
-.tabella {
-    .checkbox, .radio {
-        margin: 0;
+
+    .options-cart-round {
+        position: absolute;
+        left    : 42%;
+        top     : 22%;
+        display : none;
     }
-    padding: 10px;
-    table {
-        color: $text-default-color;
-        border-collapse: separate;
-        border-spacing: 2px;
-        label {
-            padding-left: 26px;
-        }
-        td {
-            padding: 5px;
-            &:not(.selector) {
-                font-size: .75em;
-            }
-        }
-        tr:nth-child(even) {
-            background-color: $content-color;
-            & .tot {
-                font-weight: bold;
-                background-color: lighten($sub-content-color, 5);
-            }
-        }
-        tr:nth-child(odd) {
-            background-color: $tab-default-color;
-            & .tot {
-                font-weight: bold;
-                background-color: darken($sub-content-color, 2);
-            }
-        }
-        tr:first-of-type {
-            td {
-                font-weight: bold;
-                background-color: darken($tab-default-color, 5);
-            }
-        }
-        .others {
-            font-weight: bold;
-            text-transform: uppercase;
-            td {
-                // border-top: solid 10px white;
-            }
-            background-color: $content-color !important;
-            .tot-label {
-                background-color: lighten($tab-default-color, 3);
-            }
-            .tot {
-                background-color: $text-default-color !important;
-                color: $content-color;
-            }
-        }
-    }
-}
 
-// customizzazione finestra modal-content
-.modal {
-  text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
-}
-
-.modal-dialog {
-  display: inline-block;
-  // text-align: left;
-  vertical-align: middle;
-}
-
-// pulsanti modali
-
-.overflow-modal-container {
-    overflow: auto;
-    margin: 4px;
-    max-height: 400px;
-}
-
-.modal-content {
-    border: solid 15px $tab-default-color;
-    box-shadow: none;
-}
-.modal-backdrop {
-    background-color: rgba($body-color, 1);
-}
-
-.graphic-button {
-    margin: 0 !important;
-    .button {
-        display: inline-block;
-        border: solid 1px $content-color;
+    .options-cart-round button {
         border-radius: 50%;
-        padding: .25em;
-        font-size: 4em;
-        line-height: 0;
-        margin: 20px 10px;
-        color: #fff;
-        background-color: rgba(0,0,0,.025);
-        // text-shadow: 0 0 4px rgba(0,0,0,.1);
-        i {
-            width: 1em;
-            height: 1em;
-        }
-        &:hover {
-            background-color: rgba(0,0,0,.075);
+        padding      : 14px 16px;
+    }
+
+    .options-cart-round button .fa {
+        font-size: 22px;
+    }
+
+    .photo:hover .options-cart-round {
+        display          : block;
+        -webkit-animation: fadeInDown 0.5s ease;
+        -moz-animation   : fadeInDown 0.5s ease;
+        -ms-animation    : fadeInDown 0.5s ease;
+        -o-animation     : fadeInDown 0.5s ease;
+        animation        : fadeInDown 0.5s ease;
+    }
+
+    .info {
+        padding   : 5px 10px 10px;
+        // margin-top: 1px;
+        border    : 1px solid #E1E1E1;
+        border-top: 0;
+    }
+
+    .price-details {
+        width     : 100%;
+        margin-top: 5px;
+    }
+    $font-size    : 16px;
+    $line-height  : 1.4;
+    $lines-to-show: 2;
+
+    .price-details h1 {
+        // font-size  : 14px;
+        // line-height: 20px;
+        // margin     : 0;
+        // float      : left;
+        display           : block;
+        /* Fallback for non-webkit */
+        display           : -webkit-box;
+        // max-width: 300px;
+        height            : $font-size*$line-height*$lines-to-show;
+        /* Fallback for non-webkit */
+        margin            : 0 auto;
+        font-size         : $font-size;
+        line-height       : $line-height;
+        -webkit-line-clamp: $lines-to-show;
+        -webkit-box-orient: vertical;
+        overflow          : hidden;
+        text-overflow     : ellipsis;
+    }
+    // .price-details .details {
+    //     display: block; /* Fallback for non-webkit */
+    //     display: -webkit-box;
+    //     // max-width: 300px;
+    //     height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+    //     margin: 0 auto;
+    //     font-size: $font-size;
+    //     line-height: $line-height;
+    //     -webkit-line-clamp: $lines-to-show;
+    //     -webkit-box-orient: vertical;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    // }
+    .price-details .details {
+        font-size: 14px;
+        color    : #999;
+
+        b {
+            color: #666;
         }
     }
-}
+    // .price-details .details {
+    //     margin-bottom: 0;
+    //     height       : 100px;
+    //     overflow     : auto;
+    //     font-size    : 12px;
+    // }
+    .price-details .price-box {
+        // float: right;
+        // position: absolute;
+        // right: 15px;
+        display: inline-block;
+        padding: 5px 0;
+    }
 
-/*--------------------------------*/
-/* @end Tabelle e Modali  */
-/*--------------------------------*/
+    .price-details .price {
+        font-size: 18px;
+    }
+
+    .price-details .price-new {
+        font-size  : 22px;
+        font-weight: 800;
+        color      : #900;
+    }
+
+    .price-details .price-old {
+        color    : #999;
+        font-size: 18px;
+        bottom   : 1em;
+
+        b {
+            text-decoration: line-through;
+        }
+    }
+
+    .separator {
+        border-top: 1px solid #E1E1E1;
+    }
+
+    .clear-left {
+        clear: left;
+    }
+
+    .separator a {
+        text-decoration: none;
+    }
+
+    .separator p {
+        margin-bottom: 0;
+        padding-top  : 6px;
+        text-align   : center;
+        font-size    : 1.2em;
+    }
+    /*i*/
+    .separator p {
+        margin-right: 0;
+    }
+
+    .btn-add {
+        width: 33.333%;
+        float: left;
+    }
+
+    .btn-add a {
+        display: inline-block !important;
+    }
+
+    .btn-add {
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .btn-details {
+        width       : 33.333%;
+        float       : left;
+        padding-left: 10px;
+    }
+
+    .btn-details a {
+        display: inline-block !important;
+    }
+    // .btn-details a:first-child {
+    //     margin-right: 12px;
+    // }
+}
+/* @end Lista prodotti tile */
+/*  @end contenitore generale  */
+/*-------------------------------*/

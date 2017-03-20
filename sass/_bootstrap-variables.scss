@@ -60,7 +60,7 @@ $brand-primary:         $body-color/*#428bca*/;
 // $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace
 // $font-family-base:        $font-family-sans-serif
 
-$font-size-base:          20px;
+$font-size-base:          18px;
 // $font-size-large:         ceil(($font-size-base * 1.25)) // ~18px
 // $font-size-small:         ceil(($font-size-base * 0.85)) // ~12px
 
@@ -342,9 +342,9 @@ $btn-primary-border:             $content-color/*darken($btn-primary-bg, 5%)*/;
 //##
 
 // Basics of a navbar
-$navbar-height:                    73px;
+$navbar-height:                    50px;
 // $navbar-margin-bottom:             $line-height-computed
-$navbar-border-radius:             0;
+// $navbar-border-radius:             0;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2)
 // $navbar-collapse-max-height:       340px
@@ -376,7 +376,7 @@ $navbar-border-radius:             0;
 // Reset inverted navbar basics
 $navbar-inverse-color:                      #fff/*$gray-light*/;
 $navbar-inverse-bg:                         $body-color;/*#222*/
-// $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%)
+$navbar-inverse-border:                     darken($body-color, 20%);
 
 // Inverted navbar links
 $navbar-inverse-link-color:                 #fff;
