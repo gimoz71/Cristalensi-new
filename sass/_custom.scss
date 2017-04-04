@@ -285,7 +285,9 @@ h5,
 h6 {
     text-transform: uppercase;
     font-weight   : bold;
-    color: darken($body-color, 10);
+    // color: darken($body-color, 10);
+    color: #e70;
+    text-shadow: 0
 }
 
 img {
@@ -554,10 +556,16 @@ img {
         font-size: .9em;
     }
 }
-
+.slogan {
+    margin: 0;
+    font-size: 2em;
+}
 .subtitle {
     padding-left: 10px;
-    border-left: solid 4px $body-color;
+    padding-bottom: 7px;
+    // border-left: solid 4px $body-color;
+    border-bottom: solid 2px $body-color;
+    // background-color: lighten($body-color, 35);
 }
 
 /* @end Stili ed elementi content */
