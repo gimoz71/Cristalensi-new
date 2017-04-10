@@ -9444,7 +9444,7 @@ img {
 }
 @media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 768px) and (min--moz-device-pixel-ratio: 2), only screen and (min-width: 768px) and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-width: 768px) and (min-device-pixel-ratio: 2), only screen and (min-width: 768px) and (min-resolution: 192dpi), only screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .affix .header-logo {
-    background-image: url(../images/../images/logo@2x.png);
+    background-image: url(../images/../images/logo@2x.png?1490698500);
     background-size: 120px 60px;
   }
 }
@@ -9489,7 +9489,7 @@ img {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .header-logo {
-    background-image: url(../images/../images/logo@2x.png);
+    background-image: url(../images/../images/logo@2x.png?1490698500);
     background-size: 200px 100px;
   }
 }
@@ -9789,7 +9789,63 @@ img {
   /* padding from the left side of the window */
 }
 
+/*-------------------------------*/
 /*  @end contenitore generale  */
+/*-------------------------------*/
+/*-------------------------------*/
+/*  @group  footer  */
+/*-------------------------------*/
+footer {
+  padding: 20px 0;
+  background-color: #f6f6f6;
+}
+footer h4, footer .btn-square span, .btn-square footer span {
+  color: inherit;
+  font-size: .75em;
+  border-bottom: dotted 1px #ddd;
+}
+footer .address-col p {
+  font-size: .75em;
+  margin-bottom: 2em;
+}
+footer .address-col .social .fa {
+  font-size: 2em;
+}
+footer .address-col .other .fa {
+  font-size: 1.5em;
+  color: #999;
+}
+footer .address-col .fa-facebook-square {
+  color: #3b5998;
+}
+footer .menu-col a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  color: #999;
+  border-bottom: dotted 1px #ddd;
+  font-size: .75em;
+  cursor: pointer;
+}
+footer .menu-col a:after {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f054";
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: .5;
+}
+footer .menu-col a:hover {
+  color: #666;
+  text-decoration: none;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*-------------------------------*/
+/*  @end  footer  */
 /*-------------------------------*/
 
 /*# sourceMappingURL=styles.css.map */

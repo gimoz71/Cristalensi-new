@@ -816,5 +816,71 @@ img {
     bottom: 10px; /* negative of the offset - height of link element */
     left: 10px; /* padding from the left side of the window */
 }
+/*-------------------------------*/
 /*  @end contenitore generale  */
+/*-------------------------------*/
+
+/*-------------------------------*/
+/*  @group  footer  */
+/*-------------------------------*/
+
+footer {
+    padding: 20px 0;
+    background-color: #f6f6f6;
+    h4 {
+        color: inherit;
+        font-size: .75em;
+        border-bottom: dotted 1px #ddd;
+    }
+    .address-col {
+        p {
+            font-size: .75em;
+            margin-bottom: 2em;
+        }
+
+        .social .fa {
+            font-size: 2em;
+        }
+        .other .fa {
+            font-size: 1.5em;
+            color: #999;
+        }
+        .fa-facebook-square {
+            color: #3b5998;
+        }
+    }
+    .menu-col {
+        a {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            color: #999;
+            border-bottom: dotted 1px #ddd;
+            font-size: .75em;
+            cursor:pointer;
+            &:after {
+                font: normal normal normal 14px/1 FontAwesome;
+                content: "\f054";
+                position: absolute;
+                top: 0;
+                right: 0;
+                opacity: .5;
+            }
+            &:hover {
+                color: #666;
+                text-decoration: none;
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+
+        }
+    }
+}
+
+/*-------------------------------*/
+/*  @end  footer  */
 /*-------------------------------*/
