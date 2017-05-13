@@ -182,9 +182,9 @@
         margin-right: -10px !important;
     }
 
-    &.top-buffer {
-        margin-top: 25px;
-    }
+}
+.top-buffer {
+    margin-top: 25px;
 }
 
 .gap {
@@ -225,9 +225,10 @@
     @media (min-width: $screen-sm ) {
         height: 270px;
         .subcategory ul {
-            padding-left: 100px !important;
+            padding-left: 50px !important;
             background-position: left top;
             background-repeat: no-repeat;
+            background-size: 45px;
             &.plafoniere {
                 background-image: url('../images/icon_plafoniere.png');
             }
@@ -360,7 +361,7 @@ img {
 .navbar {
     min-height: inherit;
 }
-.navbar-collapse {
+.yamm .navbar-collapse {
     padding: 0;
 }
 .navbar-inverse {
@@ -561,11 +562,35 @@ img {
     font-size: 2em;
 }
 .subtitle {
+    * {
+        margin: 0;
+    }
+    .details {
+        color: #999;
+        font-size: .85em;
+        b {
+            color:#666;
+        }
+    }
     padding-left: 10px;
     padding-bottom: 7px;
     // border-left: solid 4px $body-color;
     border-bottom: solid 2px $body-color;
     // background-color: lighten($body-color, 35);
+}
+
+.side-list a{
+    padding: 10px 10px 10px 20px;
+    display: block;
+    // color: darken($body-color, 20);
+    color: #999;
+    font-size: .85em;
+    border-bottom: dotted 1px $body-color;
+    &:hover, &:active, &.active {
+        text-decoration: none;
+        background: url(../images/arrow-list.png) no-repeat 10px center;
+        color: #333;
+    }
 }
 
 /* @end Stili ed elementi content */
@@ -816,6 +841,28 @@ img {
     bottom: 10px; /* negative of the offset - height of link element */
     left: 10px; /* padding from the left side of the window */
 }
+
+.price-new {
+    font-size  : 32px;
+    font-weight: 800;
+    color      : #900;
+    i {
+        opacity: .35;
+    }
+}
+
+.price-old {
+    color    : #999;
+    font-size: 18px;
+    bottom   : 1em;
+}
+
+
+/* @group Sidebar nav */
+
+
+/* @end Sidebar nav */
+
 /*-------------------------------*/
 /*  @end contenitore generale  */
 /*-------------------------------*/
