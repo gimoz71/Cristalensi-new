@@ -393,7 +393,7 @@
         <div class="">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="subtitle">
+                    <div class="title">
                         <h4>Modello Plafoniera Moderna</h4>
                         <p class="details">codice: <b>1025/S02</b> - produttore: <b>Cristalensi</b></p>
                     </div>
@@ -462,21 +462,25 @@
                         <li class="list-group-item" style="padding-top: 20px">
                             <p>prezzo Cristalensi:<br />
                                 <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span><br />
-
                                 <span class="price-old">invece di  <b>130.00 &euro;</b></span>
                             </p>
-                            <!-- <p><small>Prezzo di listino: 360&euro;</small></p>
-                            <h4 class="price"><small>Prezzo Cristalensi: 200&euro;</h4> -->
                         </li>
                         <li class="list-group-item">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" placeholder="quantit&agrave;" aria-label="Pezzi">
-                                <span class="input-group-addon">pezzi</span>
-                            </div>
+                            <select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Seleziona una variante">
+                                <option title="Applique classiche e lampade a parete" value="9c-applique-classiche-e-lampade-classiche-a-parete.asp">Applique classiche e lampade a parete</option>
+                                <option title="Lampadari classici e lampade a sospensione" value="7c-lampadari-classici-e-lampade-classiche-a-sospensione.asp">Lampadari classici e lampade a sospensione</option>
+                                <option title="Lampade classiche da tavolo" value="10c-lampade-classiche-da-tavolo-lumini-e-abat-jour-classiche.asp">Lampade classiche da tavolo</option>
+                                <option title="Piantane classiche e lampade da terra" value="11c-piantane-classiche-e-lampade-classiche-da-terra.asp">Piantane classiche e lampade da terra</option>
+                                <option title="Plafoniere classiche e lampade a soffitto" value="8c-plafoniere-classiche-e-lampade-classiche-a-soffitto.asp" >Plafoniere classiche e lampade a soffitto</option>
+                            </select>
+
+                        </li>
+                        <li class="list-group-item">
+                            <input type="text" data-width="auto" class="form-control" name="pezzi" placeholder="quantit&agrave;" aria-label="Pezzi">
                         </li>
                     </ul>
                     <div class="panel-footer">
-                        <a href="#" class="btn btn-danger  btn-block">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
+                        <a href="#" class="btn btn-danger btn-block">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="alert alert-success" role="alert">
@@ -589,5 +593,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="javascripts/bootstrap.js"></script>
     <script src="javascripts/holder.js"></script>
+    <script src="javascripts/jquery.bootstrap-touchspin.js"></script>
+    <script src="javascripts/bootstrap-select.js"></script>
     <script src="javascripts/custom.js"></script>
+    <script>
+        $("input[name='pezzi']").TouchSpin({
+            // verticalbuttons: true,
+            // verticalupclass: 'glyphicon glyphicon-plus',
+            // verticaldownclass: 'glyphicon glyphicon-minus'
+        });
+        $('.selectpicker').selectpicker({
+            style: 'btn-default'
+        });
+
+    </script>
 </body>
