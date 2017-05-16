@@ -10014,6 +10014,57 @@ img {
   color: #333;
 }
 
+/* @group carrello */
+.table-cart .cart-product {
+  font-size: .85em !important;
+}
+
+.table > tbody > tr > td, .table > tfoot > tr > td {
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 480px) {
+  .table-cart * {
+    text-align: center;
+  }
+
+  table#cart tbody td .form-control {
+    width: 20%;
+    display: inline !important;
+  }
+
+  .actions .btn {
+    width: 36%;
+    margin: 1.5em 0;
+  }
+
+  .actions .btn-info {
+    float: left;
+  }
+
+  .actions .btn-danger {
+    float: right;
+  }
+
+  table#cart thead {
+    display: none;
+  }
+
+  table#cart tbody td {
+    display: block;
+    padding: .6rem;
+    min-width: 320px;
+  }
+
+  table#cart tfoot td {
+    display: block;
+  }
+
+  table#cart tfoot td .btn {
+    display: block;
+  }
+}
+/* @end carrello */
 /* @end Stili ed elementi content */
 /*-------------------------------*/
 /* @group Lista prodotti tile */

@@ -386,72 +386,82 @@
         </div>
         <ol class="breadcrumb">
             <li><a href="index.html">Home</a></li>
-            <li><a href="categoria.html">Plafoniere</a></li>
-            <li><a href="sottocategoria.html">Plafoniere Moderne</a></li>
-            <li class="active">Modello Plafoniera Moderna</li>
+            <li class="active">Carrello</li>
         </ol>
         <div class="">
             <div class="col-md-8">
                 <div class="row">
                     <div class="title">
-                        <h4>Modello Plafoniera Moderna</h4>
-                        <p class="details">codice: <b>1025/S02</b> - produttore: <b>Cristalensi</b></p>
+                        <h4>Carrello</h4>
+                        <!-- <p class="details">codice: <b>1025/S02</b> - produttore: <b>Cristalensi</b></p> -->
                     </div>
                     <div class="col-md-12">
                         <div class="top-buffer">
-                            <p class="descrizione"><small>
-                                Sospensione con diffusori ovali in Policrystal infrangibile.<br />
-                                Portalampade 2 x E27 max 60w  cad.
-                                Lampadine non incluse.
-                                Dimensioni diffusori 28x19 - altezza 19 cm - cavetti acciaio cm 150 regolabili.
-                                </small>
-                            </p>
-                            <hr />
-                            <div class="row">
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-warning btn-block">Contatta lo staff per info sulla disponibilit&agrave; <i class="glyphicon glyphicon-chevron-right"></i></a>
+                            <table id="cart" class="table table-hover table-condensed table-cart">
+                                <thead>
+                                    <tr>
+                                        <th style="width:45%">Prodotto</th>
+                                        <th style="width:10%">Prezzo</th>
+                                        <th style="width:8%">Quantit&agrave;</th>
+                                        <th style="width:22%" class="text-center">Subtotale</th>
+                                        <th style="width:15%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-th="Product" class="cart-product">
+                                            <div class="row">
+                                                <!-- <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div> -->
+                                                <div class="col-sm-12">
+                                                    <h5 class="nomargin"><a href="scheda.html">Modello Plafoniera Moderna</a></h5>
+                                                    <p>Col.: Avorio antico - Lamp.: Bianco satinato</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-th="Price" class="hidden-xs">55&euro;</td>
+                                        <td data-th="Quantity">
+                                            <input type="number" class="form-control text-center" value="1">
+                                        </td>
+                                        <td data-th="Subtotal" class="text-center">55&euro;</td>
+                                        <td class="actions" data-th="">
+                                            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-th="Product" class="cart-product">
+                                            <div class="row">
+                                                <!-- <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div> -->
+                                                <div class="col-sm-12">
+                                                    <h5 class="nomargin"><a href="scheda.html">Modello Plafoniera Moderna</a></h5>
+                                                    <p>Col.: Avorio antico - Lamp.: Bianco satinato</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-th="Price" class="hidden-xs">55&euro;</td>
+                                        <td data-th="Quantity">
+                                            <input type="number" class="form-control text-center" value="1">
+                                        </td>
+                                        <td data-th="Subtotal" class="text-center">55&euro;</td>
+                                        <td class="actions" data-th="">
+                                            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="visible-xs">
+                                        <td class="text-center"><strong>Totale 110&euro;</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
+                                        <td colspan="2" class="hidden-xs"></td>
+                                        <td class="hidden-xs text-center"><strong>Totale 110&euro;</strong></td>
+                                        <td><!--<a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>--></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
                         </div>
                     </div>
                 </div>
@@ -460,33 +470,28 @@
                 <div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;">
                     <ul class="list-group text-center">
                         <li class="list-group-item" style="padding-top: 20px">
-                            <p>prezzo Cristalensi:<br />
-                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span><br />
-                                <span class="price-old">invece di  <b>130.00 &euro;</b></span>
+                            <p>Totale carrello:<br />
+                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span>
                             </p>
                         </li>
-                        <li class="list-group-item">
-                            <select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Seleziona una variante">
-                                <option title="Applique classiche e lampade a parete" value="9c-applique-classiche-e-lampade-classiche-a-parete.asp">Applique classiche e lampade a parete</option>
-                                <option title="Lampadari classici e lampade a sospensione" value="7c-lampadari-classici-e-lampade-classiche-a-sospensione.asp">Lampadari classici e lampade a sospensione</option>
-                                <option title="Lampade classiche da tavolo" value="10c-lampade-classiche-da-tavolo-lumini-e-abat-jour-classiche.asp">Lampade classiche da tavolo</option>
-                                <option title="Piantane classiche e lampade da terra" value="11c-piantane-classiche-e-lampade-classiche-da-terra.asp">Piantane classiche e lampade da terra</option>
-                                <option title="Plafoniere classiche e lampade a soffitto" value="8c-plafoniere-classiche-e-lampade-classiche-a-soffitto.asp" >Plafoniere classiche e lampade a soffitto</option>
-                            </select>
 
-                        </li>
-                        <li class="list-group-item">
-                            <input type="number" data-width="auto" class="form-control" name="pezzi" placeholder="quantit&agrave;" aria-label="Pezzi">
-                        </li>
                     </ul>
                     <div class="panel-footer">
-                        <a href="#" class="btn btn-danger btn-block">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
+                        <a href="#" class="btn btn-danger btn-block">Completa l'acquisto <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="alert alert-success" role="alert">
-                  Hai bisogno di aiuto? Chiama al<br /><a href="tel: +39 0571 911163" class="alert-link">+39 0571 911163</a>
+                    Hai bisogno di aiuto? Chiama al<br /><a href="tel: +39 0571 911163" class="alert-link">+39 0571 911163</a>
                 </div>
             </div>
+        </div>
+        <div class="col-md-12">
+            <h5>INFORMAZIONI IMPORTANTI SULLA DISPONIBILITA' DEI PRODOTTI</h5>
+            <p>
+                Come potete aver notato il nostro catalogo &egrave; composto da numerosi prodotti e numerose ditte, a tal ragione alcuni prodotti, al momento della richiesta, potrebbero non essere dispobili immediatamente e potrebbero essere in fase di ordinazione.
+            Nel caso in cui ci fosse urgenza del prodotto desiderato, informarsi direttamente dal nostro staff per l'effettiva disponibilità o tempo di consegna nel caso in cui fosse in ordinazione: da un minimo 2 giorni a un massimo 30 giorni.
+            </p>
+            <a href="#" class="btn btn-warning btn-block">Contatta lo staff per info sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a>
         </div>
         <div class="col-md-6">
             <div class=" top-buffer">
@@ -596,15 +601,4 @@
     <script src="javascripts/jquery.bootstrap-touchspin.js"></script>
     <script src="javascripts/bootstrap-select.js"></script>
     <script src="javascripts/custom.js"></script>
-    <script>
-        // $("input[name='pezzi']").TouchSpin({
-        //     // verticalbuttons: true,
-        //     // verticalupclass: 'glyphicon glyphicon-plus',
-        //     // verticaldownclass: 'glyphicon glyphicon-minus'
-        // });
-        $('.selectpicker').selectpicker({
-            style: 'btn-default'
-        });
-
-    </script>
 </body>
