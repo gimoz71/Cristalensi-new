@@ -162,6 +162,11 @@
 //
 // }
 
+.glyphicon {
+    position: inherit;
+    vertical-align: -.15em;
+}
+
 .row {
     &.no-gutters {
         margin-right: 0;
@@ -661,6 +666,7 @@ img {
 .main-description {
     font-size: 1.2em;
 }
+
 
 .side-list a {
     padding      : 10px 10px 10px 20px;

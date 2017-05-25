@@ -11,8 +11,8 @@ $(function() {
 var overflowContainer = function(overflowSelector, parentOverflowSelector) {
     return $(overflowSelector).css("height", ($(parentOverflowSelector).height() / 3));
 }
-
-$(document).ready(function() {
+window.addEventListener('HTMLImportsLoaded', function(e) {
+// $(document).ready(function() {
     if ($(".parentOverflowContainer").css("float") == "left") {
         overflowContainer('.overflowContainer', '.parentOverflowContainer');
 

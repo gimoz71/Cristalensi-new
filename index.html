@@ -26,8 +26,11 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/customization.css" shim-shadowdom>
     <link href="javascripts/html5shiv.js" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
+    <link rel="import" href="awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";
@@ -383,7 +386,7 @@
         <div class="col-md-12">
             <div class="row hidden-xs">
                 <div class="col-md-8 parentOverflowContainer">
-                    <div class="carousel slide" id="carousel-example-captions" data-ride="carousel">
+                    <div class="carousel slide hidden" id="carousel-example-captions" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>
                             <li data-target="#carousel-example-captions" data-slide-to="1" class=""></li>
@@ -415,6 +418,18 @@
                         <a href="#carousel-example-captions" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
                         <a href="#carousel-example-captions" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
                     </div>
+                    <awesome-slider pre-image="images/logo.svg" autostart="true" bullets="false" height="x60%" color="grey" arrows="true">
+                        <item source="images/slider1.jpg">
+                            <a class="lettering" href="#">
+                                <h3>Titolo 1</h3>
+                                <p>link</p>
+                            </a>
+                        </item>
+                        <item source="images/slider2.jpg"></item>
+                        <item source="images/slider3.jpg"></item>
+                        <item source="images/slider4.jpg"></item>
+                        <item source="images/slider5.jpg"></item>
+                    </awesome-slider>
                 </div>
                 <div class="col-md-4 ">
                     <div class=" overflowContainer" style="background: #d66; border: solid 1px #a33; color: #fff; padding: 10px;">
@@ -435,7 +450,7 @@
                         A portata di click una vasta e raffinata gamma di prodotti per illuminazione da interno ed esterno per arredare la casa, il giardino, un locale... Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: dai lampadari
                         <b>moderni</b> e <b>classici</b>, alle applique, alle plafoniere e piantane ma anche faretti e ventilatori <b>con luce</b>. Tanti prodotti per illuminazione <b>a LED</b>, <b>in cristallo</b> e vetro <b>Murano</b>, in stile
                         <b>Tiffany</b> o <b>rustici</b>. Abbiamo un'ampia esposizione di lampade da esterno sia <b>moderne</b> che <b>classiche</b> e articoli specifici <b>per bambini</b> e camerette ma anche lampade per il bagno e per l'ufficio.
-                        Uno staff cordiale e professionale è sempre pronto a consigliarti.
+                        Uno staff cordiale e professionale &egrave; sempre pronto a consigliarti.
                     </p>
                 </div>
                 <div class="col-md-4 ">
@@ -1168,6 +1183,5 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="javascripts/bootstrap.js"></script>
-    <script src="javascripts/holder.js"></script>
     <script src="javascripts/custom.js"></script>
-</body>
+    <script src="javascripts/holder.js"></script>

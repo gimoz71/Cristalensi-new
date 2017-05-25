@@ -9246,6 +9246,11 @@ select.selectpicker {
   border-color: #7EBC49;
 }
 
+.glyphicon {
+  position: inherit;
+  vertical-align: -.15em;
+}
+
 .row.no-gutters {
   margin-right: 0;
   margin-left: 0;
