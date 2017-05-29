@@ -854,7 +854,8 @@ img {
 
         &.disabled {
             > .bs-wizard-dot:after {
-                opacity: 0;
+                // opacity: 0;
+                background: #dfdfdf;
             }
         }
 

@@ -9802,7 +9802,7 @@ img {
   background-color: #f5f5f5;
 }
 .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {
-  opacity: 0;
+  background: #dfdfdf;
 }
 .bs-wizard > .bs-wizard-step:first-child > .progress {
   left: 50%;
