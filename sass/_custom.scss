@@ -163,7 +163,7 @@
 // }
 
 .glyphicon {
-    position: inherit;
+    position      : inherit;
     vertical-align: -.15em;
 }
 
@@ -184,30 +184,32 @@
         margin-left : -10px !important;
         margin-right: -10px !important;
     }
+
     &.vdivide > [class*='col-']:not(:last-child):after {
         //   background: #e0e0e0;
         border-left: dashed 1px #e0e0e0;
-        width: 1px;
-        content: "";
-        display:block;
-        position: absolute;
-        top:0;
-        bottom: 0;
-        right: 0;
-        min-height: 70px;
+        width      : 1px;
+        content    : "";
+        display    : block;
+        position   : absolute;
+        top        : 0;
+        bottom     : 0;
+        right      : 0;
+        min-height : 70px;
     }
 }
-
 @media only screen and (min-width : $screen-sm) {
     .is-table-row {
         display: table;
     }
+
     .is-table-row > [class*="col-"] {
-        float: none;
-        display: table-cell;
+        float         : none;
+        display       : table-cell;
         vertical-align: top;
     }
 }
+
 .top-buffer {
     margin-top: 25px;
 }
@@ -321,13 +323,19 @@ h6 {
     text-transform: uppercase;
     font-weight   : bold;
     // color: darken($body-color, 10);
-    color         : #e70;
+    color         : $header-color;
     text-shadow   : 0;
 }
 
 img {
     max-width: 100%;
     height   : auto;
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 // @include radio-variant( '.radio-verifiche', $verifiche-color);
 // @include checkbox-variant( '.checkbox-verifiche', $verifiche-color);
@@ -560,6 +568,80 @@ img {
         margin-top: 50px;
     }
 }
+/* simple nav */
+.marginBottom-0 {
+    margin-bottom: 0;
+}
+
+.dropdown-submenu {
+    position: relative !important;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top                  : 0 !important;
+    left                 : 100% !important;
+    // margin-top           : -6px;
+    margin-left          : -1px;
+    border-top: solid 1px $body-color;
+}
+
+.dropdown-submenu > a:after {
+    display          : block;
+    content          : " ";
+    float            : right;
+    width            : 0;
+    height           : 0;
+    border-color     : transparent;
+    border-style     : solid;
+    border-width     : 5px 0 5px 5px;
+    border-left-color: #cccccc;
+    margin-top       : 5px;
+    margin-right     : -10px;
+}
+
+.dropdown-submenu:hover > a:after {
+    border-left-color: #555;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+    left                 : -100%;
+    margin-left          : 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius   : 6px 0 6px 6px;
+    border-radius        : 6px 0 6px 6px;
+}
+
+@media (max-width: $screen-sm) {
+    .dropdown-submenu > .dropdown-menu {
+        top                  : auto !important;
+        left                 : auto !important;
+        // margin-top           : -6px;
+        margin-left          : 0;
+        border: none;
+    }
+    .dropdown-submenu > a:after {
+        display          : block;
+        content          : " ";
+        float            : right;
+        width            : 0;
+        height           : 0;
+        border-color     : transparent;
+        border-style     : solid;
+        border-width     : 5px 5px 0 5px;
+        border-top-color: #cccccc;
+        margin-top       : 5px;
+        margin-right     : -10px;
+    }
+    .dropdown-submenu:hover > a:after {
+        border-left-color: transparent;
+        border-top-color: #555;
+    }
+}
+
 /*-------------------------------*/
 /*  @end Header               */
 /*-------------------------------*/
@@ -625,13 +707,62 @@ img {
     // background-color: lighten($body-color, 35);
 }
 
+.subtitle {
+    position: relative;
+    width: 50%;
+    span {
+        display: inline-block;
+        background-color: #fff;
+        padding-right: 10px;
+        padding-left: 30px;
+    }
+    > .dot {
+        position     : absolute;
+        width        : 1em;
+        height       : 1em;
+        display      : block;
+        background   : lighten($body-color, 20);
+        top          : 0;
+        left         : 0;
+        margin-top   : 0;
+        margin-left  : 0;
+        border-radius: 50%;
+    }
+
+    > .dot:after {
+        content      : ' ';
+        width        : .6em;
+        height       : .6em;
+        background   : darken($body-color, 10);
+        border-radius: 50px;
+        position     : absolute;
+        top          : .22em;
+        left         : .22em;
+    }
+
+    &::before {
+
+    }
+    &::after {
+        content: '';
+            position: absolute;
+            top: .3em;
+            // left: 0;
+            border: 0;
+            height: .5em;
+            background-image: linear-gradient(to right, rgba($body-color, 0.25), rgba($header-color, 0));
+            // border-bottom: solid 2px #ccc;
+            width :100%;
+        }
+}
+
 .description,
 .main-description {
     padding   : 15px;
     margin    : 10px 0;
     color     : #666;
     font-style: italic;
-    font-size : 0.85em;
+    font-size : 0.75em;
     position  : relative;
     display   : inline-block;
     text-align: justify;
@@ -664,9 +795,8 @@ img {
 }
 
 .main-description {
-    font-size: 1.2em;
+    font-size: 1em;
 }
-
 
 .side-list a {
     padding      : 10px 10px 10px 20px;
@@ -740,10 +870,9 @@ img {
 }
 /* @end carrello */
 /* @group step carrello */
-
 /*Form Wizard*/
 .bs-wizard {
-    margin-top: 40px;
+    margin-top   : 40px;
     margin-bottom: 20px;
     padding      : 0 0 10px;
 
@@ -803,17 +932,17 @@ img {
                 background: lighten($body-color, 20);
             }
         }
-
         // stati degli step
-
         &.complete {
             > .progress {
                 > .progress-bar {
                     width: 100%;
                 }
             }
-            .bs-wizard-stepnum, .bs-wizard-info {
-                color        : #9e9e9e;
+
+            .bs-wizard-info,
+            .bs-wizard-stepnum {
+                color: #9e9e9e;
                 // font-weight: bold;
             }
         }
@@ -824,8 +953,10 @@ img {
                     width: 50%;
                 }
             }
-            .bs-wizard-stepnum, .bs-wizard-info {
-                color        : #333;
+
+            .bs-wizard-info,
+            .bs-wizard-stepnum {
+                color      : #333;
                 font-weight: bold;
             }
         }
