@@ -139,202 +139,109 @@
                 <div class="col-xl-12">
                     <h4 class="subtitle">Offerte e prodotti in promozione</h4>
                 </div>
+                <%
+                'random prodotti in offerta
+                Set prod_rs = Server.CreateObject("ADODB.Recordset")
+                sql = "SELECT pkid,codicearticolo,titolo,prezzoprodotto,prezzolistino,nomepagina,offerta,fkproduttore FROM Prodotti WHERE Offerta=1 OR Offerta=2 ORDER BY Titolo ASC"
+                prod_rs.open sql,conn, 1, 1
+
+                Randomize()
+                constnum = 8
+
+                if prod_rs.recordcount>0 then
+                  IF NOT prod_rs.EOF THEN
+                  rndArray = prod_rs.GetRows()
+                  prod_rs.Close
+                %>
+                <%
+  								Lenarray =  UBOUND( rndArray, 2 ) + 1
+  								skip =  Lenarray  / constnum
+  								IF Lenarray <= constnum THEN skip = 1
+  								FOR i = 0 TO Lenarray - 1 STEP skip
+  									numero = RND * ( skip - 1 )
+  									id = rndArray( 0, i + numero )
+  									codicearticolo = rndArray( 1, i + numero )
+  									titolo_prodotto = rndArray( 2, i + numero )
+  									prezzoarticolo = rndArray( 3, i + numero )
+                    if prezzoarticolo="" or isNull(prezzoarticolo) then prezzoarticolo=0
+  									prezzolistino = rndArray( 4, i+ numero )
+                    if prezzolistino="" or isNull(prezzolistino) then prezzolistino=0
+
+  									NomePagina = rndArray( 5, i+ numero )
+  									if Len(NomePagina)>0 then
+  										NomePagina="https://www.cristalensi.it/public/pagine/"&NomePagina
+  										'NomePagina="/public/pagine/inc_scheda_prodotto.asp?id="&id
+  									else
+  										NomePagina="#"
+  									end if
+
+                    fkproduttore_pr = rndArray( 7, i + numero )
+                    if fkproduttore_pr="" then fkproduttore_pr=0
+                    'response.write("fkproduttore:"&fkproduttore)
+
+                      if fkproduttore_pr>0 then
+                        Set pr_rs = Server.CreateObject("ADODB.Recordset")
+                        sql = "SELECT * FROM Produttori WHERE PkId="&fkproduttore_pr&""
+                        pr_rs.open sql,conn, 1, 1
+                        if pr_rs.recordcount>0 then
+                          produttore=pr_rs("titolo")
+                          url_produttore="/produttori-illuminazione/"&ConvertiTitoloInUrlProduttore(produttore, fkproduttore_pr)
+                        end if
+                        pr_rs.close
+                      end if
+
+
+  									'recupero l'immagine
+  									Set img_rs = Server.CreateObject("ADODB.Recordset")
+  									sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti'"
+  									img_rs.open sql,conn, 1, 1
+  									if img_rs.recordcount>0 then
+  										tot_img=img_rs.recordcount
+  										titolo_img=img_rs("titolo")
+  										file_img=img_rs("file")
+                    end if
+                    img_rs.close
+
+  							%>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <!-- <div class="options">
-                                <button class="btn btn-sm btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti">
-                                    <i class="fa fa-heart"></i>
-                                </button>
-                                <button class="btn btn-sm btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Compara con altri prodotti">
-                                    <i class="fa fa-exchange"></i>
-                                </button>
-                            </div>
-                            <div class="options-cart">
-                                <button class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top"  title="Aggiungi al carrello">
-                                    <span class="fa fa-shopping-cart"></span>
-                                </button>
-                            </div> -->
-                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)"><img alt="900x550" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="price-details col-md-6">
-                                    <a href="scheda.html"><h1>Sospensione con diffusori</h1></a>
-                                    <p class="details">codice: <b>1025/S02</b><br /> produttore: <b>Cristalensi</b></p>
+                                    <a href="scheda.html" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                    <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><%=produttore%></b></p>
                                     <div class="price-box separator">
-                                        <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span><br />
-                                        <span class="price-old">invece di  <b>130.00 &euro;</b></span>
+                                        <%if prezzoarticolo<>0 then%><span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br /><%end if%>
+                                        <%if prezzolistino<>0 then%><span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span><%else%>&nbsp;<%end if%>
                                     </div>
-                                    <!-- <p class="details">
-                                        Lorem ipsum dolor sit amet, consectetur..
-                                    </p> -->
                                 </div>
                             </div>
                             <div class="separator clear-left">
-                                <!-- <p class="btn-add">
-                                    <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Aggiungi al carrello"><i class="fa fa-shopping-cart"></i></a>
-                                </p> -->
                                 <p class="btn-add">
                                     <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
                                 </p>
                                 <p class="btn-details">
-                                    <a href="scheda.html" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
+                                    <a href="<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
                                 </p>
                             </div>
                             <div class="clearfix"></div>
-
                         </div>
                     </article>
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <article class="col-item">
-                        <div class="photo">
-                            <!-- <div class="options">
-                                <button class="btn btn-sm btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti">
-                                    <i class="fa fa-heart"></i>
-                                </button>
-                                <button class="btn btn-sm btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Compara con altri prodotti">
-                                    <i class="fa fa-exchange"></i>
-                                </button>
-                            </div>
-                            <div class="options-cart">
-                                <button class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top"  title="Aggiungi al carrello">
-                                    <span class="fa fa-shopping-cart"></span>
-                                </button>
-                            </div> -->
-                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price-details col-md-6">
-                                    <a href="scheda.html"><h1>Sospensione con diffusori</h1></a>
-                                    <p class="details">codice: <b>1025/S02</b><br /> produttore: <b>Cristalensi</b></p>
-                                    <div class="price-box separator">
-                                        <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span><br />
-                                        <span class="price-old">invece di  <b>130.00 &euro;</b></span>
-                                    </div>
-                                    <!-- <p class="details">
-                                        Lorem ipsum dolor sit amet, consectetur..
-                                    </p> -->
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <!-- <p class="btn-add">
-                                    <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Aggiungi al carrello"><i class="fa fa-shopping-cart"></i></a>
-                                </p> -->
-                                <p class="btn-add">
-                                    <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
-                                </p>
-                                <p class="btn-details">
-                                    <a href="scheda.html" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <article class="col-item">
-                        <div class="photo">
-                            <!-- <div class="options">
-                                <button class="btn btn-sm btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti">
-                                    <i class="fa fa-heart"></i>
-                                </button>
-                                <button class="btn btn-sm btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Compara con altri prodotti">
-                                    <i class="fa fa-exchange"></i>
-                                </button>
-                            </div>
-                            <div class="options-cart">
-                                <button class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top"  title="Aggiungi al carrello">
-                                    <span class="fa fa-shopping-cart"></span>
-                                </button>
-                            </div> -->
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price-details col-md-6">
-                                    <a href="#"><h1>Sospensione con diffusori</h1></a>
-                                    <p class="details">codice: <b>1025/S02</b><br /> produttore: <b>Cristalensi</b></p>
-                                    <div class="price-box separator">
-                                        <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span><br />
-                                        <span class="price-old">invece di  <b>130.00 &euro;</b></span>
-                                    </div>
-                                    <!-- <p class="details">
-                                        Lorem ipsum dolor sit amet, consectetur..
-                                    </p> -->
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <!-- <p class="btn-add">
-                                    <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Aggiungi al carrello"><i class="fa fa-shopping-cart"></i></a>
-                                </p> -->
-                                <p class="btn-add">
-                                    <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
-                                </p>
-                                <p class="btn-details">
-                                    <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <article class="col-item">
-                        <div class="photo">
-                            <!-- <div class="options">
-                                <button class="btn btn-sm btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti">
-                                    <i class="fa fa-heart"></i>
-                                </button>
-                                <button class="btn btn-sm btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Compara con altri prodotti">
-                                    <i class="fa fa-exchange"></i>
-                                </button>
-                            </div>
-                            <div class="options-cart">
-                                <button class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top"  title="Aggiungi al carrello">
-                                    <span class="fa fa-shopping-cart"></span>
-                                </button>
-                            </div> -->
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price-details col-md-6">
-                                    <a href="#"><h1>Sospensione con diffusori</h1></a>
-                                    <p class="details">codice: <b>1025/S02</b><br /> produttore: <b>Cristalensi</b></p>
-                                    <div class="price-box separator">
-                                        <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span><br />
-                                        <span class="price-old">invece di  <b>130.00 &euro;</b></span>
-                                    </div>
-                                    <!-- <p class="details">
-                                        Lorem ipsum dolor sit amet, consectetur..
-                                    </p> -->
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <!-- <p class="btn-add">
-                                    <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Aggiungi al carrello"><i class="fa fa-shopping-cart"></i></a>
-                                </p> -->
-                                <p class="btn-add">
-                                    <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
-                                </p>
-                                <p class="btn-details">
-                                    <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
-                    </article>
-                </div>
+                <%
+                  NEXT
+                  end if
+                  else
+                  prod_rs.close
+                  end if
+                %>
             </div>
             <div class="row top-buffer">
                 <div class="col-xl-12">
-                    <h4 class="subtitle">Novità e ultimi arrivi</h4>
+                    <h4 class="subtitle">Novit&Agrave; e ultimi arrivi</h4>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <article class="col-item">
