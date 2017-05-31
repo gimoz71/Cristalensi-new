@@ -206,7 +206,7 @@
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)"><img alt="900x550" src="images/blank.png"></a>
+                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)"><img alt="900x550" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
