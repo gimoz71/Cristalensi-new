@@ -75,3 +75,7 @@ $(affixElement).affix({
 		});
 	});
 })(jQuery);
+
+$("[data-fancybox]").fancybox({
+	thumbs     : false
+});
