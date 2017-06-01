@@ -86,7 +86,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="categoria.html"><h1>Lampade da interno</h1></a>
+                                    <a href="/cristalensi/illuminazione-per-interni/1g-lampade-da-interno.asp"><h1>Lampade da interno</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
   									if img_rs.recordcount>0 then
   										tot_img=img_rs.recordcount
   										titolo_img=img_rs("titolo")
-  										file_img=img_rs("file")
+  										file_img=NoLettAcc(img_rs("file"))
                     end if
                     img_rs.close
 

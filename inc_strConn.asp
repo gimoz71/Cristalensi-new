@@ -62,12 +62,12 @@ Function NoHTML(strInput)
  'strInput = Replace(strInput, "'", "")
  strInput = Replace(strInput, """", "")
 
- strInput = Replace(strInput, "�", "&eacute;")
- strInput = Replace(strInput, "�", "&egrave;")
- strInput = Replace(strInput, "�", "&agrave;")
- strInput = Replace(strInput, "�", "&ugrave;")
- strInput = Replace(strInput, "�", "&igrave;")
- strInput = Replace(strInput, "�", "&ograve;")
+ strInput = Replace(strInput, "é", "&eacute;")
+ strInput = Replace(strInput, "è", "&egrave;")
+ strInput = Replace(strInput, "à", "&agrave;")
+ strInput = Replace(strInput, "ù", "&ugrave;")
+ strInput = Replace(strInput, "ì", "&igrave;")
+ strInput = Replace(strInput, "ò", "&ograve;")
 
  NoHTML = RegEx.Replace(strInput, "")
 
@@ -76,15 +76,15 @@ End Function
 
 Function NoLettAcc(strInput)
 
- strInput = Replace(strInput, "�", "&eacute;")
- strInput = Replace(strInput, "�", "&egrave;")
- strInput = Replace(strInput, "�", "&agrave;")
- strInput = Replace(strInput, "�", "&ugrave;")
- strInput = Replace(strInput, "�", "&igrave;")
- strInput = Replace(strInput, "�", "&ograve;")
- strInput = Replace(strInput, "�", "&#8364;")
- strInput = Replace(strInput, "'", "&#8217;")
-
+	strInput = Replace(strInput, "é", "&eacute;")
+	strInput = Replace(strInput, "è", "&egrave;")
+	strInput = Replace(strInput, "à", "&agrave;")
+	strInput = Replace(strInput, "ù", "&ugrave;")
+	strInput = Replace(strInput, "ì", "&igrave;")
+	strInput = Replace(strInput, "ò", "&ograve;")
+ 	strInput = Replace(strInput, "€", "&#8364;")
+ 	strInput = Replace(strInput, "'", "&#8217;")
+	strInput = Replace(strInput, " ", "%20")
 
  NoLettAcc = strInput
 
