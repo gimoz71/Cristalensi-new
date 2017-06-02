@@ -81,12 +81,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="categoria.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="descrizione lampadario" src="images/blank.png"></a>
+                            <a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/slider1.png)" title="Lampade da interno"><img alt="Lampade da interno" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/cristalensi/illuminazione-per-interni/1g-lampade-da-interno.asp"><h1>Lampade da interno</h1></a>
+                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" title="Lampade da interno"><h1>Lampade da interno</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -95,12 +95,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/LED.jpg)"><img alt="900x550" src="images/blank.png"></a>
+                            <a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/LED.jpg)" title="Lampade da esterno"><img alt="Lampade da esterno" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="#"><h1>Lampade da esterno</h1></a>
+                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno"><h1>Lampade da esterno</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +284,7 @@
                     if img_rs.recordcount>0 then
                       tot_img=img_rs.recordcount
                       titolo_img=img_rs("titolo")
-                      file_img=img_rs("file")
+                      file_img=NoLettAcc(img_rs("file"))
                     end if
                     img_rs.close
                 %>

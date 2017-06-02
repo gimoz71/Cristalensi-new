@@ -1,4 +1,4 @@
-<!--#include file="../inc_strConn.asp"-->
+<!--#include virtual="/cristalensi/inc_strConn.asp"-->
 <%
 Set gr_rs = Server.CreateObject("ADODB.Recordset")
 sql = "SELECT * FROM NewGruppi WHERE PkId="&pkid_gruppo
@@ -58,8 +58,8 @@ gr_rs.close
 </head>
 
 <body>
-    <!--#include file="../inc_header_1.asp"-->
-    <!--#include file="../inc_header_2.asp"-->
+    <!--#include virtual="/cristalensi/inc_header_1.asp"-->
+    <!--#include virtual="/cristalensi/inc_header_2.asp"-->
     <div class="container content">
         <div class="row hidden">
             <div class="col-md-12 parentOverflowContainer">
@@ -95,7 +95,7 @@ gr_rs.close
                           'Description=tip_rs("Description")
                           'Descrizione=tip_rs("Descrizione")
                         %>
-                        <li><a href="/cristalensi/illuminazione-per-interni/<%=Url%>" title="<%=Titolo_2%>"><%=Titolo_1%></a></li>
+                        <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url%>" title="<%=Titolo_2%>"><%=Titolo_1%></a></li>
                         <%
                         tip_rs.movenext
                         loop
@@ -138,37 +138,109 @@ gr_rs.close
                         </div>
                     </nav>
                 </div>
+                <%
+                  p=request("p")
+                  if p="" then p=1
+
+                  order=request("order")
+                  if order="" then order=1
+
+                  if order=1 then ordine="Titolo ASC"
+									if order=2 then ordine="Titolo DESC"
+									if order=3 then ordine="PrezzoProdotto ASC, PrezzoListino ASC"
+									if order=4 then ordine="PrezzoProdotto DESC, PrezzoListino DESC"
+									if order=5 then ordine="CodiceArticolo ASC"
+									if order=6 then ordine="CodiceArticolo DESC"
+
+                Set prod_rs = Server.CreateObject("ADODB.Recordset")
+                sql = "SELECT * FROM Prodotti WHERE (FkNewGruppo="&pkid_gruppo&" and (Offerta=0 or Offerta=2)) ORDER BY "&ordine&""
+                prod_rs.open sql,conn, 1, 1
+                if prod_rs.recordcount>0 then
+
+                prod_rs.PageSize = 30
+                if prod_rs.recordcount > 0 then
+                  prod_rs.AbSolutePage = p
+                  maxPage = prod_rs.PageCount
+                End if
+
+                Do while not prod_rs.EOF and rowCount < prod_rs.PageSize
+                RowCount = RowCount + 1
+
+                  id=prod_rs("pkid")
+                  titolo_prodotto=prod_rs("titolo")
+                  NomePagina=prod_rs("NomePagina")
+                  if Len(NomePagina)>0 then
+                    NomePagina="/public/pagine/"&NomePagina
+                    'NomePagina="/public/pagine/scheda_prodotto.asp?id="&id
+                  else
+                    NomePagina="#"
+                  end if
+                  codicearticolo=prod_rs("codicearticolo")
+                  prezzoarticolo=prod_rs("PrezzoProdotto")
+                  prezzolistino=prod_rs("PrezzoListino")
+
+                    fkproduttore_pr=prod_rs("fkproduttore")
+                    if fkproduttore_pr="" then fkproduttore_pr=0
+
+                    if fkproduttore_pr>0 then
+                      Set pr_rs = Server.CreateObject("ADODB.Recordset")
+                      sql = "SELECT * FROM Produttori WHERE PkId="&fkproduttore_pr&""
+                      pr_rs.open sql,conn, 1, 1
+                      if pr_rs.recordcount>0 then
+                        produttore=pr_rs("titolo")
+                      end if
+                      pr_rs.close
+                    end if
+
+                    Set img_rs = Server.CreateObject("ADODB.Recordset")
+                    sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti' Order by PkId ASC"
+                    img_rs.open sql,conn, 1, 1
+                    if img_rs.recordcount>0 then
+                      tot_img=img_rs.recordcount
+                      titolo_img=img_rs("titolo")
+                      file_img=NoLettAcc(img_rs("file"))
+                    end if
+                    img_rs.close
+                %>
                 <div class="col-xs-6 col-sm-4 col-md-4">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price-details col-md-6">
-                                    <a href="scheda.html"><h1>Sospensione con diffusori</h1></a>
-                                    <p class="details">codice: <b>1025/S02</b><br /> produttore: <b>Cristalensi</b></p>
-                                    <div class="price-box separator">
-                                        <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span><br />
-                                        <span class="price-old">invece di  <b>130.00 &euro;</b></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <p class="btn-add">
-                                    <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
-                                </p>
-                                <p class="btn-details">
-                                    <a href="scheda.html" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
-                                </p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </article>
+                  <article class="col-item">
+                      <div class="photo">
+                          <a href="scheda.html" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
+                      </div>
+                      <div class="info">
+                          <div class="row">
+                              <div class="price-details col-md-6">
+                                  <a href="scheda.html" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><%=produttore%></b></p>
+                                  <div class="price-box separator">
+                                      <%if prezzoarticolo<>0 then%><span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br /><%end if%>
+                                      <%if prezzolistino<>0 then%><span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span><%else%>&nbsp;<%end if%>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="separator clear-left">
+                              <p class="btn-add">
+                                  <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
+                              </p>
+                              <p class="btn-details">
+                                  <a href="<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
+                              </p>
+                          </div>
+                          <div class="clearfix"></div>
+                      </div>
+                  </article>
                 </div>
+                <%
+                prod_rs.movenext
+                loop
+                %>
+                <%
+                end if
+                prod_rs.close
+                %>
             </div>
         </div>
     </div>
-    <!--#include file="../inc_footer.asp"-->
+    <!--#include virtual="/cristalensi/inc_footer.asp"-->
 </body>
-<!--#include file="../inc_strClose.asp"-->
+<!--#include virtual="/cristalensi/inc_strClose.asp"-->
