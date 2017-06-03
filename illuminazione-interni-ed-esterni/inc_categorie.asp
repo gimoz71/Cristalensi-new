@@ -1,17 +1,28 @@
 <!--#include virtual="/cristalensi/inc_strConn.asp"-->
 <%
+Set cr_rs = Server.CreateObject("ADODB.Recordset")
+sql = "SELECT * FROM NewCategorie WHERE PkId="&pkid_categoria
+cr_rs.open sql,conn, 1, 1
+if cr_rs.recordcount>0 then
+  Titolo_1=cr_rs("Titolo_1")
+  Titolo_2=cr_rs("Titolo_2")
+  Url=cr_rs("Url")
+  Title=cr_rs("Title")
+  Description=cr_rs("Description")
+  Descrizione=cr_rs("Descrizione")
+  Img=cr_rs("Img")
+  FkNewGruppo=cr_rs("FkNewGruppo")
+  FkNewTipologia=cr_rs("FkNewTipologia")
+end if
+tr_rs.close
+
 Set tr_rs = Server.CreateObject("ADODB.Recordset")
-sql = "SELECT * FROM NewTipologie WHERE PkId="&pkid_tipologia
+sql = "SELECT * FROM NewTipologie WHERE PkId="&FkNewTipologia
 tr_rs.open sql,conn, 1, 1
 if tr_rs.recordcount>0 then
-  Titolo_1=tr_rs("Titolo_1")
-  Titolo_2=tr_rs("Titolo_2")
-  Url=tr_rs("Url")
-  Title=tr_rs("Title")
-  Description=tr_rs("Description")
-  Descrizione=tr_rs("Descrizione")
-  Img=tr_rs("Img")
-  FkNewGruppo=tr_rs("FkNewGruppo")
+  Titolo_1_tip=tr_rs("Titolo_1")
+  Titolo_2_tip=tr_rs("Titolo_2")
+  Url_tip=tr_rs("Url")
 end if
 tr_rs.close
 
@@ -94,7 +105,7 @@ gr_rs.close
                     <!-- menu - normal collapsible navbar markup -->
                     <%
                     Set tip_rs = Server.CreateObject("ADODB.Recordset")
-                    sql = "SELECT * FROM NewCategorie WHERE FkNewTipologia="&pkid_tipologia&" ORDER BY Posizione ASC"
+                    sql = "SELECT * FROM NewCategorie WHERE FkNewTipologia="&FkNewTipologia&" ORDER BY Posizione ASC"
                     tip_rs.open sql,conn, 1, 1
                     if tip_rs.recordcount>0 then
                     %>
@@ -166,7 +177,7 @@ gr_rs.close
 									if order=6 then ordine="CodiceArticolo DESC"
 
                 Set prod_rs = Server.CreateObject("ADODB.Recordset")
-                sql = "SELECT * FROM Prodotti WHERE (FkNewTipologia="&pkid_tipologia&" and (Offerta=0 or Offerta=2)) ORDER BY "&ordine&""
+                sql = "SELECT * FROM Prodotti WHERE (FkNewCategoria="&pkid_categoria&" and (Offerta=0 or Offerta=2)) ORDER BY "&ordine&""
                 prod_rs.open sql,conn, 1, 1
                 if prod_rs.recordcount>0 then
 

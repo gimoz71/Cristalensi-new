@@ -170,7 +170,7 @@ gr_rs.close
                   titolo_prodotto=prod_rs("titolo")
                   NomePagina=prod_rs("NomePagina")
                   if Len(NomePagina)>0 then
-                    NomePagina="/public/pagine/"&NomePagina
+                    NomePagina="public/pagine/"&NomePagina
                     'NomePagina="/public/pagine/scheda_prodotto.asp?id="&id
                   else
                     NomePagina="#"
@@ -193,8 +193,9 @@ gr_rs.close
                     end if
 
                     Set img_rs = Server.CreateObject("ADODB.Recordset")
-                    sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti' Order by PkId ASC"
+                    sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti' Order by PkId_Contatore ASC"
                     img_rs.open sql,conn, 1, 1
+
                     if img_rs.recordcount>0 then
                       tot_img=img_rs.recordcount
                       titolo_img=img_rs("titolo")
@@ -205,16 +206,21 @@ gr_rs.close
                 <div class="col-xs-6 col-sm-4 col-md-4">
                   <article class="col-item">
                       <div class="photo">
-                          <a href="scheda.html" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
+                          <a href="/cristalensi/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/cristalensi/images/blank.png"></a>
                       </div>
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="scheda.html" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/cristalensi/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><%=produttore%></b></p>
                                   <div class="price-box separator">
-                                      <%if prezzoarticolo<>0 then%><span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br /><%end if%>
-                                      <%if prezzolistino<>0 then%><span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span><%else%>&nbsp;<%end if%>
+                                      <%if prezzoarticolo<>0 then%>
+                                        <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />
+                                        <%if prezzolistino<>0 then%><span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span><%else%>&nbsp;<%end if%>
+                                      <%else%>
+                                        <span class="price-new">&nbsp;<br /></span>
+                                        <span class="price-old">Prezzo di listino: <b><%=prezzolistino%> &euro;</b></span>
+                                      <%end if%>
                                   </div>
                               </div>
                           </div>
@@ -223,7 +229,7 @@ gr_rs.close
                                   <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
                               </p>
                               <p class="btn-details">
-                                  <a href="<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
+                                  <a href="/cristalensi/<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
                               </p>
                           </div>
                           <div class="clearfix"></div>
