@@ -123,7 +123,29 @@ gr_rs.close
         </div>
         <div class="col-md-9">
             <div class="row top-buffer">
+                <%
+                p=request("p")
+                if p="" then p=1
 
+                order=request("order")
+                if order="" then order=1
+
+                if order=1 then ordine="Titolo ASC"
+                if order=2 then ordine="Titolo DESC"
+                if order=3 then ordine="PrezzoProdotto ASC, PrezzoListino ASC"
+                if order=4 then ordine="PrezzoProdotto DESC, PrezzoListino DESC"
+
+                Set prod_rs = Server.CreateObject("ADODB.Recordset")
+                sql = "SELECT * FROM Prodotti WHERE (FkNewTipologia="&pkid_tipologia&" and (Offerta=0 or Offerta=2)) ORDER BY "&ordine&""
+                prod_rs.open sql,conn, 1, 1
+                if prod_rs.recordcount>0 then
+
+                  prod_rs.PageSize = 30
+                  if prod_rs.recordcount > 0 then
+                    prod_rs.AbSolutePage = p
+                    maxPage = prod_rs.PageCount
+                  End if
+                %>
                 <div class="col-xs-12">
                     <nav class="navbar navbar-default">
                         <div class="container-fluid">
@@ -139,43 +161,19 @@ gr_rs.close
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <p class="navbar-text">prezzo</p>
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="#"><i class="glyphicon glyphicon-eur"></i> + </a></li>
-                                    <li ><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="#"><i class="glyphicon glyphicon-eur"></i> - </a></li>
+                                    <li <%if order=3 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?order=3"><i class="glyphicon glyphicon-eur"></i> - </a></li>
+                                    <li <%if order=4 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?order=4"><i class="glyphicon glyphicon-eur"></i> + </a></li>
                                 </ul>
                                 <p class="navbar-text">ordine alfabetico</p>
                                 <ul class="nav navbar-nav">
-                                    <li><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="#">A/Z</a></li>
-                                    <li><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="#">Z/A</a></li>
+                                    <li <%if order=1 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?order=1">A/Z</a></li>
+                                    <li <%if order=2 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?order=2">Z/A</a></li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
                 </div>
                 <%
-                  p=request("p")
-                  if p="" then p=1
-
-                  order=request("order")
-                  if order="" then order=1
-
-                  if order=1 then ordine="Titolo ASC"
-									if order=2 then ordine="Titolo DESC"
-									if order=3 then ordine="PrezzoProdotto ASC, PrezzoListino ASC"
-									if order=4 then ordine="PrezzoProdotto DESC, PrezzoListino DESC"
-									if order=5 then ordine="CodiceArticolo ASC"
-									if order=6 then ordine="CodiceArticolo DESC"
-
-                Set prod_rs = Server.CreateObject("ADODB.Recordset")
-                sql = "SELECT * FROM Prodotti WHERE (FkNewTipologia="&pkid_tipologia&" and (Offerta=0 or Offerta=2)) ORDER BY "&ordine&""
-                prod_rs.open sql,conn, 1, 1
-                if prod_rs.recordcount>0 then
-
-                prod_rs.PageSize = 30
-                if prod_rs.recordcount > 0 then
-                  prod_rs.AbSolutePage = p
-                  maxPage = prod_rs.PageCount
-                End if
-
                 Do while not prod_rs.EOF and rowCount < prod_rs.PageSize
                 RowCount = RowCount + 1
 
@@ -253,11 +251,53 @@ gr_rs.close
                 prod_rs.movenext
                 loop
                 %>
-                <%
-                end if
-                prod_rs.close
-                %>
+
             </div>
+            <%if prod_rs.recordcount>30 then%>
+            <div class="row top-buffer">
+                <div class="col-lg-12">
+                    <nav aria-label="Page navigation center-block">
+                        <ul class="pagination">
+                            <li class="active"><a href="#" aria-label="Previous">Pagina <%=p%> di <%=prod_rs.PageCount%></a></li>
+
+                            <%if p > 2 then%>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=1&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Prima pagina</a></li>
+                            <%end if%>
+                            <% if p > 1 then %>
+                            <li>
+                                <a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p-1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <%end if%>
+                            <% for page = p+1 to p+4 %>
+                            <%if not page>maxPage then%>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=Page%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>"><%=page%></a></li>
+                            <%end if%>
+                            <% if page >= prod_rs.PageCount then
+                               page = p+4
+                              end if
+                              next
+                            %>
+                            <% if cInt(p) < maxPage then %>
+                            <li>
+                                <a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p+1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <%end if%>
+                            <%if maxPage>5 and cInt(p)<>prod_rs.PageCount then%>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=prod_rs.PageCount%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Ultima pagina</a></li>
+                            <%end if%>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <%end if%>
+            <%
+            end if
+            prod_rs.close
+            %>
         </div>
     </div>
     <!--#include virtual="/cristalensi/inc_footer.asp"-->
