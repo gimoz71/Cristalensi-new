@@ -89,4 +89,33 @@ Function NoLettAcc(strInput)
  NoLettAcc = strInput
 
 End Function
+
+'rewrite url per i produttori
+	Function ConvertiTitoloInUrlProduttore(Titolo, IDArticolo)
+		Risultato = Titolo
+
+		Set RegEx = New RegExp
+		RegEx.Pattern = "<[^>]*>"
+		RegEx.Global = True
+		RegEx.IgnoreCase = True
+		Risultato = RegEx.Replace(Risultato, "")
+
+		Risultato = LCase(Risultato)
+		Risultato = Replace(Risultato, " - ", "-")
+		Risultato = Replace(Risultato, " ", "-")
+		Risultato = Replace(Risultato, ",", "")
+		Risultato = Replace(Risultato, "\", "-")
+		Risultato = Replace(Risultato, "/", "-")
+		Risultato = Replace(Risultato, ":", "")
+		Risultato = Replace(Risultato, "*", "-")
+		Risultato = Replace(Risultato, "?", "-")
+		Risultato = Replace(Risultato, "<", "-")
+		Risultato = Replace(Risultato, ">", "-")
+		Risultato = Replace(Risultato, "|", "-")
+		Risultato = Replace(Risultato, """", "")
+		Risultato = Replace(Risultato, "'", "")
+		Risultato = Replace(Risultato, "�", "a")
+		Risultato = IDArticolo & "f-" & Risultato & ".asp"
+		ConvertiTitoloInUrlProduttore = Risultato
+	End Function
 %>
