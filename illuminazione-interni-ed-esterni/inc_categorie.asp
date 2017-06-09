@@ -14,7 +14,7 @@ if cr_rs.recordcount>0 then
   FkNewGruppo=cr_rs("FkNewGruppo")
   FkNewTipologia=cr_rs("FkNewTipologia")
 end if
-tr_rs.close
+cr_rs.close
 
 Set tr_rs = Server.CreateObject("ADODB.Recordset")
 sql = "SELECT * FROM NewTipologie WHERE PkId="&FkNewTipologia

@@ -10,7 +10,6 @@ if id>0 then
 	prod_rs.open sql,conn, 3, 3
 	if prod_rs.recordcount>0 then
 		CodiceArticolo=prod_rs("CodiceArticolo")
-		'FkCat_Prod=prod_rs("FkCat_Prod")
 		Titolo_prodotto=prod_rs("Titolo")
 		Descrizione_prodotto=prod_rs("Descrizione")
 		allegato_prodotto=prod_rs("Allegato")
@@ -36,26 +35,45 @@ if id>0 then
 			pr_rs.close
 		end if
 
-		FkCategoria2 = prod_rs("FkCategoria2")
-		if FkCategoria2="" then FkCategoria2=0
+		FkNewGruppo = prod_rs("FkNewGruppo")
+		if FkNewGruppo="" then FkNewGruppo=0
 
-		if FkCategoria2>0 then
-			Set cat_rs = Server.CreateObject("ADODB.Recordset")
-			sql = "SELECT Categorie1.PkId as Cat_Principale, Categorie1.Titolo as Titolo1, Categorie1.NomePagina as NomePagina, Categorie2.PkId, Categorie2.Titolo as Titolo2, Categorie2.Descrizione as Descrizione2, Categorie2.Testo2_en as UrlCategoria2 "
-			sql = sql + "FROM Categorie1 INNER JOIN Categorie2 ON Categorie1.PkId = Categorie2.FkCategoria1 "
-			sql = sql + "WHERE Categorie2.PkId="&FkCategoria2
-			cat_rs.open sql,conn, 1, 1
-			if cat_rs.recordcount>0 then
-				titolo_cat_principale=cat_rs("Titolo1")
-				url_cat_principale=cat_rs("NomePagina")
-				'titolo_cat=cat_rs("titolo1")&" "&cat_rs("titolo2")
-				titolo_cat=cat_rs("titolo2")
-				descrizione_cat=cat_rs("Descrizione2")
+		FkNewTipologia = prod_rs("FkNewTipologia")
+		if FkNewTipologia="" then FkNewTipologia=0
 
-				UrlCategoria2=cat_rs("UrlCategoria2")
-			end if
-			cat_rs.close
+		FkNewCategoria = prod_rs("FkNewCategoria")
+		if FkNewCategoria="" then FkNewCategoria=0
+
+		Set gr_rs = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT * FROM NewGruppi WHERE PkId="&FkNewGruppo
+		gr_rs.open sql,conn, 1, 1
+		if gr_rs.recordcount>0 then
+		  Titolo_1_gr=gr_rs("Titolo_1")
+		  Titolo_2_gr=gr_rs("Titolo_2")
+		  Url_gr=gr_rs("Url")
 		end if
+		gr_rs.close
+
+		Set tr_rs = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT * FROM NewTipologie WHERE PkId="&FkNewTipologia
+		tr_rs.open sql,conn, 1, 1
+		if tr_rs.recordcount>0 then
+		  Titolo_1_tip=tr_rs("Titolo_1")
+		  Titolo_2_tip=tr_rs("Titolo_2")
+		  Url_tip=tr_rs("Url")
+		end if
+		tr_rs.close
+
+		Set cr_rs = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT * FROM NewCategorie WHERE PkId="&FkNewCategoria
+		cr_rs.open sql,conn, 1, 1
+		if cr_rs.recordcount>0 then
+		  Titolo_1_cat=cr_rs("Titolo_1")
+		  Titolo_2_cat=cr_rs("Titolo_2")
+		  Url_cat=cr_rs("Url")
+		  Title_cat=cr_rs("Title")
+		end if
+		cr_rs.close
 
 		'aggiorno il contatore
 		visualizzazioni=prod_rs("visualizzazioni")
@@ -66,16 +84,15 @@ if id>0 then
 	prod_rs.close
 
 
-	'Call Visualizzazione("Prodotti",id,"scheda_prodotto.asp")
 end if
 %>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title><%=Title%></title>
+    <title><%=Titolo_prodotto%> <%=" "& produttore%> - <%=Titolo_2_cat%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="<%=Description%>">
+    <meta name="description" content="Scheda del prodotto <%=Titolo_prodotto%>, <%=produttore%>, <%=codicearticolo%>, Cristalensi vende <%=Titolo_2_cat%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -120,25 +137,23 @@ end if
             </div>
         </div>
         <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="categoria.html">Plafoniere</a></li>
-            <li><a href="sottocategoria.html">Plafoniere Moderne</a></li>
-            <li class="active">Modello Plafoniera Moderna</li>
+				<li><a href="/cristalensi/index.asp">Home</a></li>
+				<li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
+				<li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_2_tip%></a></li>
+				<li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_cat%>"><%=Titolo_2_cat%></a></li>
+				<li class="active"><%=Titolo_prodotto%></li>
         </ol>
         <div class="">
             <div class="col-md-8">
                 <div class="row">
                     <div class="title">
-                        <h4>Modello Plafoniera Moderna</h4>
-                        <p class="details">codice: <b>1025/S02</b> - produttore: <b>Cristalensi</b></p>
+                        <h4><%=Titolo_2_cat%></h4>
+                        <p class="details">codice: <b><%=codicearticolo%></b> - produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></p>
                     </div>
                     <div class="col-md-12">
                         <div class="top-buffer">
                             <p class="descrizione"><small>
-                                Sospensione con diffusori ovali in Policrystal infrangibile.<br />
-                                Portalampade 2 x E27 max 60w  cad.
-                                Lampadine non incluse.
-                                Dimensioni diffusori 28x19 - altezza 19 cm - cavetti acciaio cm 150 regolabili.
+                                <%=Descrizione_prodotto%>
                                 </small>
                             </p>
                             <hr />
@@ -188,14 +203,17 @@ end if
                                 <div class="clearfix">
 
                                 </div>
-                                <div class="panel panel-default user-comment">
+																<div class="panel panel-default user-comment">
                                     <!-- Default panel contents -->
                                     <div class="panel-heading">
                                         <h5><i class="glyphicon glyphicon-warning-sign"></i> INFORMAZIONI IMPORTANTI SULLA DISPONIBILITA' DEI PRODOTTI</h5>
                                     </div>
                                     <ul class="list-group">
-                                        <li class="list-group-item">Come potete aver notato il nostro catalogo &egrave; composto da numerosi prodotti e numerose ditte, a tal ragione alcuni prodotti, al momento della richiesta, potrebbero non essere dispobili immediatamente e potrebbero essere in fase di ordinazione.
-                                    Nel caso in cui ci fosse urgenza del prodotto desiderato, informarsi direttamente dal nostro staff per l'effettiva disponibilità o tempo di consegna nel caso in cui fosse in ordinazione: da un minimo 2 giorni a un massimo 30 giorni.</li>
+                                        <li class="list-group-item">
+                                          Il nostro catalogo &egrave; composto da numerosi prodotti e non tutti sono disponibili immediatamente al momento della richiesta: potrebbero essere disponibili nel giro di qualche giorno.<br />
+<!--Nel caso in cui ci fosse urgenza del prodotto desiderato, informarsi direttamente dal nostro staff.<br />-->
+<em>Noi garantiamo una consegna da un minimo di 2 giorni a un massimo di 30 giorni.</em><br />
+                                        </li>
                                     </ul>
                                     <div class="panel-footer"><a href="#" class="btn btn-warning btn-block">Contatta lo staff per info sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
                                 </div>
@@ -231,8 +249,9 @@ end if
                         <a href="carrello.html" class="btn btn-danger btn-block">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
                     </div>
                 </div>
-                <div class="alert alert-success" role="alert">
-                  Hai bisogno di aiuto? Chiama al<br /><a href="tel: +39 0571 911163" class="alert-link">+39 0571 911163</a>
+								<div class="alert alert-success" role="alert" style="text-align: center;">
+                  <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
+                  <br /><br />Lun. - Ven.: 9.00 - 12.30 | 14.30 - 19.30<br />Sab.: 9.00 - 12.30 | 15.30 - 19.30<br />Domenica CHIUSI<br />Giugno/Luglio CHIUSI Sabato Pomeriggio<br />
                 </div>
             </div>
         </div>
