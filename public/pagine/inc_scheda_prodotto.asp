@@ -107,17 +107,18 @@ end if
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/cristalensi/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2790cf">
     <meta name="msapplication-TileColor" content="#2790cf">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="/cristalensi/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/cristalensi/stylesheets/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/cristalensi/stylesheets/customization.css" shim-shadowdom>
-    <link href="javascripts/html5shiv.js" rel="stylesheet">
+    <link href="/cristalensi/javascripts/html5shiv.js" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
-    <link rel="import" href="awesome-slider.html">
+    <link rel="import" href="/cristalensi/awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";
@@ -131,6 +132,7 @@ end if
 
 <body>
   <!--#include virtual="/cristalensi/inc_header_1.asp"-->
+	<!--#include virtual="/cristalensi/inc_header_2.asp"-->
     <div class="container content">
         <div class="row hidden">
             <div class="col-md-12 parentOverflowContainer">
@@ -147,56 +149,51 @@ end if
             <div class="col-md-8">
                 <div class="row">
                     <div class="title">
-                        <h4><%=Titolo_2_cat%></h4>
+                        <h4><%=Titolo_prodotto%></h4>
                         <p class="details">codice: <b><%=codicearticolo%></b> - produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></p>
                     </div>
                     <div class="col-md-12">
                         <div class="top-buffer">
-                            <p class="descrizione"><small>
-                                <%=Descrizione_prodotto%>
-                                </small>
+                            <p class="descrizione">
+															<small><%=Descrizione_prodotto%></small>
+															<%if allegato_prodotto<>"" then%>
+															<br /><br />E' presente un allegato: <a href="https://www.cristalensi.it/public/<%=allegato_prodotto%>" target="_blank" title="E' presente un allegato per il prodotto: <%=titolo_prodotto%>">Scarica l'allegato</a>
+															<%end if%>
                             </p>
                             <hr />
                             <div class="row">
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -210,12 +207,15 @@ end if
                                     </div>
                                     <ul class="list-group">
                                         <li class="list-group-item">
-                                          Il nostro catalogo &egrave; composto da numerosi prodotti e non tutti sono disponibili immediatamente al momento della richiesta: potrebbero essere disponibili nel giro di qualche giorno.<br />
-<!--Nel caso in cui ci fosse urgenza del prodotto desiderato, informarsi direttamente dal nostro staff.<br />-->
-<em>Noi garantiamo una consegna da un minimo di 2 giorni a un massimo di 30 giorni.</em><br />
+																					<%if offerta=10 then%>
+																					IL PRODOTTO NON E' DISPONIBILE
+																					<%else%>
+																					Il nostro catalogo &egrave; composto da numerosi prodotti e non tutti sono disponibili immediatamente al momento della richiesta: potrebbero essere disponibili nel giro di qualche giorno.<br />
+																					<em>Noi garantiamo una consegna da un minimo di 2 giorni a un massimo di 30 giorni.</em><br />
+																					<%end if%>
                                         </li>
                                     </ul>
-                                    <div class="panel-footer"><a href="#" class="btn btn-warning btn-block">Contatta lo staff per info sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
+																		<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-warning btn-block">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -224,30 +224,113 @@ end if
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;">
-                    <ul class="list-group text-center">
-                        <li class="list-group-item" style="padding-top: 20px">
-                            <p>prezzo Cristalensi:<br />
-                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span><br />
-                                <span class="price-old">invece di  <b>130.00 &euro;</b></span>
-                            </p>
-                        </li>
-                        <li class="list-group-item">
-                            <select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Seleziona una variante">
-                                <option title="Applique classiche e lampade a parete" value="9c-applique-classiche-e-lampade-classiche-a-parete.asp">Applique classiche e lampade a parete</option>
-                                <option title="Lampadari classici e lampade a sospensione" value="7c-lampadari-classici-e-lampade-classiche-a-sospensione.asp">Lampadari classici e lampade a sospensione</option>
-                                <option title="Lampade classiche da tavolo" value="10c-lampade-classiche-da-tavolo-lumini-e-abat-jour-classiche.asp">Lampade classiche da tavolo</option>
-                                <option title="Piantane classiche e lampade da terra" value="11c-piantane-classiche-e-lampade-classiche-da-terra.asp">Piantane classiche e lampade da terra</option>
-                                <option title="Plafoniere classiche e lampade a soffitto" value="8c-plafoniere-classiche-e-lampade-classiche-a-soffitto.asp" >Plafoniere classiche e lampade a soffitto</option>
-                            </select>
+										<%if prezzoarticolo=0 then%>
+											<ul class="list-group text-center">
 
-                        </li>
-                        <li class="list-group-item">
-                            <input type="number" data-width="auto" class="form-control" name="pezzi" placeholder="quantit&agrave;" aria-label="Pezzi">
-                        </li>
-                    </ul>
-                    <div class="panel-footer">
-                        <a href="carrello.html" class="btn btn-danger btn-block">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
-                    </div>
+													<li class="list-group-item" style="padding-top: 20px">
+	                            <p>
+															<span class="price-old">Prezzo di Listino  <b><%=prezzolistino%> &euro;</b></span><br /><br />
+															Vuoi sapere il Prezzo Cristalensi?
+	                            </p>
+	                        </li>
+											</ul>
+	                    <div class="panel-footer">
+	                        <a href="#" rel="nofollow" class="btn btn-danger btn-block" title="Richiedi un preventivo al nostro staff">Richiedi un preventivo al nostro staff <i class="glyphicon glyphicon-shopping-cart"></i></a>
+	                    </div>
+										<%else%>
+											<%if offerta=10 then%>
+												<ul class="list-group text-center">
+												<li class="list-group-item" style="padding-top: 20px">
+														<p>
+																<span class="price-new">Prodotto non disponibile</span><br />
+														</p>
+												</li>
+												</ul>
+											<%else%>
+												<ul class="list-group text-center">
+
+														<li class="list-group-item" style="padding-top: 20px">
+		                            <p>
+																		<%if prezzoarticolo<>"" then%>
+																		Prezzo Cristalensi:<br />
+		                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />
+																		<%end if%>
+		                                <%if prezzolistino<>0 then%><span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span><%end if%>
+		                            </p>
+		                        </li>
+
+														<form name="newsform2" id="newsform2" onSubmit="return verifica_2();">
+														<input type="hidden" name="id" id="id" value="<%=id%>">
+														<%
+														Set col_rs = Server.CreateObject("ADODB.Recordset")
+														sql = "SELECT [Prodotto-Colore].FkProdotto, Colori.Titolo FROM [Prodotto-Colore] INNER JOIN Colori ON [Prodotto-Colore].FkColore = Colori.PkId WHERE ((([Prodotto-Colore].FkProdotto)="&id&")) ORDER BY Colori.Titolo ASC"
+														col_rs.open sql,conn, 1, 1
+														if col_rs.recordcount>0 then
+														%>
+																<input type="hidden" name="num_colori" id="num_colori" value="<%=col_rs.recordcount%>">
+														<%else%>
+																<input type="hidden" name="num_colori" id="num_colori" value="0">
+																<input type="hidden" name="colore" id="colore" value="*****">
+														<%end if%>
+
+														<%
+														Set lam_rs = Server.CreateObject("ADODB.Recordset")
+														sql = "SELECT [Prodotto-Lampadina].FkProdotto, Lampadine.Titolo FROM [Prodotto-Lampadina] INNER JOIN Lampadine ON [Prodotto-Lampadina].FkLampadina = Lampadine.PkId WHERE ((([Prodotto-Lampadina].FkProdotto)="&id&")) ORDER BY Lampadine.Titolo ASC"
+														lam_rs.open sql,conn, 1, 1
+														if lam_rs.recordcount>0 then
+														%>
+																<input type="hidden" name="num_lampadine" id="num_lampadine" value="<%=lam_rs.recordcount%>">
+														<%else%>
+																<input type="hidden" name="num_lampadine" id="num_lampadine" value="0">
+																<input type="hidden" name="lampadina" id="lampadina" value="*****">
+														<%end if%>
+
+														<%if col_rs.recordcount>0 then%>
+														<li class="list-group-item">
+																<select name="colore" id="colore" class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Scegli il colore e/o la finitura">
+																<%
+																Do While Not col_rs.EOF
+																%>
+																		<option title="<%=col_rs("Titolo")%>" value="<%=col_rs("Titolo")%>"><%=col_rs("Titolo")%></option>
+																<%
+																col_rs.movenext
+																loop
+																%>
+																</select>
+		                        </li>
+														<%
+														end if
+														col_rs.close
+														%>
+														<%if lam_rs.recordcount>0 then%>
+														<li class="list-group-item">
+																<select name="lampadina" id="lampadina" class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Scegli la lampadina e/o il vetro">
+																<%
+																Do While Not lam_rs.EOF
+																%>
+																		<option title="<%=lam_rs("Titolo")%>" value="<%=lam_rs("Titolo")%>"><%=lam_rs("Titolo")%></option>
+																<%
+																lam_rs.movenext
+																loop
+																%>
+																</select>
+		                        </li>
+														<%
+														end if
+														lam_rs.close
+														%>
+		                        <li class="list-group-item">
+		                            <input type="number" data-width="auto" class="form-control" name="quantita" id="quantita" placeholder="quantit&agrave;" aria-label="Pezzi">
+		                        </li>
+														</form>
+
+		                    </ul>
+		                    <div class="panel-footer">
+		                        <a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
+		                    </div>
+											<%end if%>
+										<%end if%>
+
                 </div>
 								<div class="alert alert-success" role="alert" style="text-align: center;">
                   <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
@@ -288,6 +371,8 @@ end if
             </div>
         </div>
     </div>
+
     <!--#include virtual="/cristalensi/inc_footer.asp"-->
+
 </body>
 <!--#include virtual="/cristalensi/inc_strClose.asp"-->

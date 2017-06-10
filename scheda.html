@@ -26,6 +26,7 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="stylesheets/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
     <link href="javascripts/html5shiv.js" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <style type="text/css">
@@ -411,47 +412,47 @@
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="images/slider1.png" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="images/slider1.png" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="images/slider1.png" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="images/slider1.png" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="images/slider1.png" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="scheda.html" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
+                                            <a href="images/slider1.png" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="900x550" src="images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="clearfix">
-                                    
+
                                 </div>
                                 <div class="panel panel-default user-comment">
                                     <!-- Default panel contents -->
@@ -459,10 +460,13 @@
                                         <h5><i class="glyphicon glyphicon-warning-sign"></i> INFORMAZIONI IMPORTANTI SULLA DISPONIBILITA' DEI PRODOTTI</h5>
                                     </div>
                                     <ul class="list-group">
-                                        <li class="list-group-item">Come potete aver notato il nostro catalogo &egrave; composto da numerosi prodotti e numerose ditte, a tal ragione alcuni prodotti, al momento della richiesta, potrebbero non essere dispobili immediatamente e potrebbero essere in fase di ordinazione.
-                                    Nel caso in cui ci fosse urgenza del prodotto desiderato, informarsi direttamente dal nostro staff per l'effettiva disponibilità o tempo di consegna nel caso in cui fosse in ordinazione: da un minimo 2 giorni a un massimo 30 giorni.</li>
+                                        <li class="list-group-item">
+                                            Il nostro catalogo &egrave; composto da numerosi prodotti e non tutti sono disponibili immediatamente al momento della richiesta: potrebbero essere disponibili nel giro di qualche giorno.<br />
+                                          <!--Nel caso in cui ci fosse urgenza del prodotto desiderato, informarsi direttamente dal nostro staff.<br />-->
+                                          <em>Noi garantiamo una consegna da un minimo di 2 giorni a un massimo di 30 giorni.</em>
+                                        </li>
                                     </ul>
-                                    <div class="panel-footer"><a href="#" class="btn btn-warning btn-block">Contatta lo staff per info sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
+                                    <div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-warning btn-block">Contatta lo staff per info sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
                                 </div>
                             </div>
                         </div>
@@ -496,8 +500,9 @@
                         <a href="carrello.html" class="btn btn-danger btn-block">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
                     </div>
                 </div>
-                <div class="alert alert-success" role="alert">
-                  Hai bisogno di aiuto? Chiama al<br /><a href="tel: +39 0571 911163" class="alert-link">+39 0571 911163</a>
+                <div class="alert alert-success text-center" role="alert">
+                    <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
+                    <br /><br />Lun. - Ven.: 9.00 - 12.30 | 14.30 - 19.30<br />Sab.: 9.00 - 12.30 | 15.30 - 19.30<br />Domenica CHIUSI<br />Giugno/Luglio CHIUSI Sabato Pomeriggio<br />
                 </div>
             </div>
         </div>
@@ -599,6 +604,42 @@
         </a>
     </span>
     <!-- /top-link-block -->
+    <div style="display: none; max-width: 800px;" id="hidden-content">
+        <h4>Invia richiesta disponibilit&agrave; per <b>MODELLO PLAFONIERA MODERNA</b></h4>
+        <p class="description">Per coloro che hanno la necessit&agrave; della fattura inserire i dati correttamente, altrimenti verr&agrave; emesso regolare scontrino fiscale. La fattura &egrave; emessa su richiesta sia per le aziende che per privati.</p>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">Nome</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="inputEmail3">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">Indirizzo Email</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="inputEmail3">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">Telefono</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="inputEmail3">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">Dettagli richiesta</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-danger">invia richiesta</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- inizio finestra modale -->
     <!-- fine finestra modale -->
     <!-- Bootstrap core JavaScript
         ================================================== -->
@@ -608,6 +649,7 @@
     <script src="javascripts/holder.js"></script>
     <script src="javascripts/jquery.bootstrap-touchspin.js"></script>
     <script src="javascripts/bootstrap-select.js"></script>
+    <script src="javascripts/jquery.fancybox.js"></script>
     <script src="javascripts/custom.js"></script>
     <script>
         // $("input[name='pezzi']").TouchSpin({
