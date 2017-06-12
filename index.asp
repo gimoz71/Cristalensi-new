@@ -212,7 +212,7 @@
                           <div class="row">
                               <div class="price-details col-md-6">
                                   <a href="/cristalensi/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
-                                  <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><%=produttore%></b></p>
+                                  <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />
@@ -279,6 +279,7 @@
                       pr_rs.open sql,conn, 1, 1
                       if pr_rs.recordcount>0 then
                         produttore=pr_rs("titolo")
+                        url_produttore="/produttori-illuminazione/"&ConvertiTitoloInUrlProduttore(produttore, fkproduttore_pr)
                       end if
                       pr_rs.close
                     end if
@@ -302,7 +303,7 @@
                           <div class="row">
                               <div class="price-details col-md-6">
                                   <a href="/cristalensi/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
-                                  <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><%=produttore%></b></p>
+                                  <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />

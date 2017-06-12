@@ -14,7 +14,7 @@ if cr_rs.recordcount>0 then
   FkNewGruppo=cr_rs("FkNewGruppo")
   FkNewTipologia=cr_rs("FkNewTipologia")
 end if
-tr_rs.close
+cr_rs.close
 
 Set tr_rs = Server.CreateObject("ADODB.Recordset")
 sql = "SELECT * FROM NewTipologie WHERE PkId="&FkNewTipologia
@@ -92,6 +92,7 @@ gr_rs.close
             <ol class="breadcrumb">
                 <li><a href="/cristalensi/index.asp">Home</a></li>
                 <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
+                <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_2_tip%></a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>
             <h4 class="title"><%=Titolo_2%></h4>

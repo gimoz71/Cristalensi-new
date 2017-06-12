@@ -81,12 +81,64 @@
     <a href="#top" class="well well-sm"  onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
         <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
     </a>
-</span><!-- /top-link-block -->
+</span>
+<!-- /top-link-block -->
+<%if id>0 and Len(Titolo_prodotto)>0 then%>
+<div style="display: none; max-width: 800px;" id="hidden-content">
+    <h4>Invia richiesta disponibilit&agrave; per<br /><b><%=Titolo_prodotto%></b><br />Codice prodotto: <%=CodiceArticolo%></h4>
+    <p class="description">Per coloro che hanno la necessit&agrave; della fattura inserire i dati correttamente, altrimenti verr&agrave; emesso regolare scontrino fiscale. La fattura &egrave; emessa su richiesta sia per le aziende che per privati.</p>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Nome</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Indirizzo Email</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" id="inputEmail3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Telefono</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" id="inputEmail3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Dettagli richiesta</label>
+            <div class="col-sm-8">
+                <textarea class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" class="btn btn-danger">invia richiesta</button>
+            </div>
+        </div>
+    </form>
+</div>
+<%end if%>
 <!-- fine finestra modale -->
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="javascripts/bootstrap.js"></script>
-<script src="javascripts/holder.js"></script>
-<script src="javascripts/custom.js"></script>
+<script src="/cristalensi/javascripts/bootstrap.js"></script>
+<script src="/cristalensi/javascripts/holder.js"></script>
+<script src="/cristalensi/javascripts/jquery.bootstrap-touchspin.js"></script>
+<script src="/cristalensi/javascripts/bootstrap-select.js"></script>
+<script src="/cristalensi/javascripts/jquery.fancybox.js"></script>
+<script src="/cristalensi/javascripts/custom.js"></script>
+<script>
+    // $("input[name='pezzi']").TouchSpin({
+    //     // verticalbuttons: true,
+    //     // verticalupclass: 'glyphicon glyphicon-plus',
+    //     // verticaldownclass: 'glyphicon glyphicon-minus'
+    // });
+    $('.selectpicker').selectpicker({
+        style: 'btn-default'
+    });
+
+</script>
