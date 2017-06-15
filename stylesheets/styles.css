@@ -9656,6 +9656,56 @@ hr.style-two {
   padding: 15px 0;
 }
 
+.banner {
+  padding: 10px;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+}
+@media (max-width: 992px) {
+  .banner {
+    margin-top: 10px;
+  }
+}
+.banner .title {
+  font-size: 1.1em;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #fff;
+}
+.banner .text {
+  font-size: .75em;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  margin-top: .5em;
+  text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #fff;
+}
+@media (min-width: 1200px) {
+  .banner .text {
+    padding-right: 40%;
+    padding-left: 10px;
+    font-size: 0.9em;
+  }
+}
+.banner.preventivi {
+  background-color: #c30;
+  background-image: url("../images/preventivi.jpg");
+}
+.banner.pagamenti {
+  background-color: #3c0;
+  background-image: url("../images/pagamenti.jpg");
+}
+.banner.consegne {
+  background-color: #03c;
+  background-image: url("../images/consegne.jpg");
+}
+
 .overlay {
   position: fixed;
   z-index: 1031;
