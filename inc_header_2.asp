@@ -165,10 +165,7 @@
                                                 </ul>
                                             </li>
                                             <li class="subcategory">
-                                                <a href="#"><h4><strong>Offerte</strong></h4></a>
-                                                <ul class="list-unstyled">
-                                                    <li>Offerte e prodotti in promozione</li>
-                                                </ul>
+                                                <a href="#" class="offerte">Offerte</a>
                                             </li>
                                         </ul>
                                     </div>

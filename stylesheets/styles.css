@@ -9347,6 +9347,31 @@ select.selectpicker {
   .col-same-height .subcategory ul.lampade-specchio {
     background-image: url("../images/icon_applique.png");
   }
+  .col-same-height .subcategory .offerte {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 20px;
+    background: url("../images/offerte.jpg") no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    border: solid 1px #999;
+    display: block;
+    width: 100%;
+    height: 100px;
+    opacity: 0.9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+    transition: all 0.2s ease-in-out;
+  }
+  .col-same-height .subcategory .offerte:hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+    z-index: 5;
+  }
 }
 
 table {
@@ -9400,7 +9425,7 @@ hr.style-two {
   }
 }
 .breadcrumb {
-  font-size: .8em;
+  font-size: 0.8em;
   white-space: nowrap;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
@@ -9413,6 +9438,7 @@ hr.style-two {
 }
 .breadcrumb .active {
   color: #333;
+  font-weight: bold;
 }
 
 /*-------------------------------*/
@@ -9695,11 +9721,11 @@ hr.style-two {
   text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #fff;
 }
 .banner .text {
-  font-size: .75em;
+  font-size: 0.75em;
   color: #000;
   margin: 0;
   padding: 0;
-  margin-top: .5em;
+  margin-top: 0.5em;
   text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #fff;
 }
 @media (min-width: 1200px) {
@@ -9787,20 +9813,20 @@ hr.style-two {
 }
 .subtitle > .dot:after {
   content: ' ';
-  width: .6em;
-  height: .6em;
+  width: 0.6em;
+  height: 0.6em;
   background: #e8bb00;
   border-radius: 50px;
   position: absolute;
-  top: .22em;
-  left: .22em;
+  top: 0.22em;
+  left: 0.22em;
 }
 .subtitle::after {
   content: '';
   position: absolute;
-  top: .3em;
+  top: 0.3em;
   border: 0;
-  height: .5em;
+  height: 0.5em;
   background-image: linear-gradient(to right, rgba(255, 211, 28, 0.25), rgba(238, 119, 0, 0));
   width: 100%;
 }

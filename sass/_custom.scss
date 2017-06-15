@@ -253,38 +253,63 @@
     @media (min-width: $screen-sm ) {
         height: 270px;
 
-        .subcategory ul {
-            padding-left       : 50px !important;
-            background-position: left top;
-            background-repeat  : no-repeat;
-            background-size    : 45px;
+        .subcategory {
+            ul {
+                padding-left       : 50px !important;
+                background-position: left top;
+                background-repeat  : no-repeat;
+                background-size    : 45px;
 
-            &.plafoniere {
-                background-image: url('../images/icon_plafoniere.png');
+                &.plafoniere {
+                    background-image: url('../images/icon_plafoniere.png');
+                }
+
+                &.lampadari {
+                    background-image: url('../images/icon_lampadari.png');
+                }
+
+                &.applique {
+                    background-image: url('../images/icon_applique.png');
+                }
+
+                &.piantane {
+                    background-image: url('../images/icon_piantane.png');
+                }
+
+                &.lampade-tavolo {
+                    background-image: url('../images/icon_lampade-tavolo.png');
+                }
+
+                &.faretti {
+                    background-image: url('../images/icon_faretti.png');
+                }
+
+                &.lampade-specchio {
+                    background-image: url('../images/icon_applique.png');
+                }
             }
 
-            &.lampadari {
-                background-image: url('../images/icon_lampadari.png');
-            }
+            .offerte {
+                @include text-hide;
+                margin-top         : 20px;
+                padding            : 15px;
+                font-size          : 20px;
+                background         : url('../images/offerte.jpg') no-repeat;
+                background-size    : contain;
+                background-position: left bottom;
+                border             : solid 1px #999;
+                display            : block;
+                width              : 100%;
+                height             : 100px;
+                opacity            : 0.9;
+                box-shadow         : 0 4px 6px rgba(0,0,0,.01);
+                transition         : all 0.2s ease-in-out;
 
-            &.applique {
-                background-image: url('../images/icon_applique.png');
-            }
-
-            &.piantane {
-                background-image: url('../images/icon_piantane.png');
-            }
-
-            &.lampade-tavolo {
-                background-image: url('../images/icon_lampade-tavolo.png');
-            }
-
-            &.faretti {
-                background-image: url('../images/icon_faretti.png');
-            }
-
-            &.lampade-specchio {
-                background-image: url('../images/icon_applique.png');
+                &:hover {
+                    box-shadow: 0 5px 8px rgba(0,0,0,.25);
+                    transform : scale(1.05);
+                    z-index   : 5;
+                }
             }
         }
     }
@@ -333,8 +358,8 @@ img {
 }
 
 hr.style-two {
-    border: 0;
-    height: 1px;
+    border          : 0;
+    height          : 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 // @include radio-variant( '.radio-verifiche', $verifiche-color);
@@ -399,19 +424,20 @@ hr.style-two {
 }
 
 .breadcrumb {
-    font-size: .8em;
-
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    font-size         : 0.8em;
+    white-space       : nowrap;
+    text-overflow     : ellipsis;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow          : hidden;
+    text-overflow     : ellipsis;
+
     a {
         color: rgba(0,0,0,.4);
     }
+
     .active {
-        color: #333;
+        color      : #333;
         font-weight: bold;
     }
 }
@@ -596,11 +622,11 @@ hr.style-two {
 }
 
 .dropdown-submenu > .dropdown-menu {
-    top                  : 0 !important;
-    left                 : 100% !important;
+    top        : 0 !important;
+    left       : 100% !important;
     // margin-top           : -6px;
-    margin-left          : -1px;
-    border-top: solid 1px $body-color;
+    margin-left: -1px;
+    border-top : solid 1px $body-color;
 }
 
 .dropdown-submenu > a:after {
@@ -632,34 +658,34 @@ hr.style-two {
     -moz-border-radius   : 6px 0 6px 6px;
     border-radius        : 6px 0 6px 6px;
 }
-
 @media (max-width: $screen-sm) {
     .dropdown-submenu > .dropdown-menu {
-        top                  : auto !important;
-        left                 : auto !important;
+        top        : auto !important;
+        left       : auto !important;
         // margin-top           : -6px;
-        margin-left          : 0;
-        border: none;
+        margin-left: 0;
+        border     : none;
     }
+
     .dropdown-submenu > a:after {
-        display          : block;
-        content          : " ";
-        float            : right;
-        width            : 0;
-        height           : 0;
-        border-color     : transparent;
-        border-style     : solid;
-        border-width     : 5px 5px 0 5px;
+        display         : block;
+        content         : " ";
+        float           : right;
+        width           : 0;
+        height          : 0;
+        border-color    : transparent;
+        border-style    : solid;
+        border-width    : 5px 5px 0 5px;
         border-top-color: #cccccc;
-        margin-top       : 5px;
-        margin-right     : -10px;
+        margin-top      : 5px;
+        margin-right    : -10px;
     }
+
     .dropdown-submenu:hover > a:after {
         border-left-color: transparent;
-        border-top-color: #555;
+        border-top-color : #555;
     }
 }
-
 /*-------------------------------*/
 /*  @end Header               */
 /*-------------------------------*/
@@ -677,48 +703,53 @@ hr.style-two {
 }
 
 .banner {
-    padding: 10px;
-    box-shadow: inset 0 0 2px rgba(0,0,0,.5);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    padding              : 10px;
+    box-shadow           : inset 0 0 2px rgba(0,0,0,.5);
+    background-size      : cover;
+    background-position  : center center;
+    background-repeat    : no-repeat;
     background-blend-mode: luminosity;
     @media (max-width: $screen-md) {
         margin-top: 10px;
     }
+
     .title {
-        font-size: 1.1em;
-        color: #000;
-        border: none;
+        font-size  : 1.1em;
+        color      : #000;
+        border     : none;
         font-weight: bold;
-        margin: 0;
-        padding: 0;
+        margin     : 0;
+        padding    : 0;
         text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #fff;
     }
+
     .text {
-        font-size: .75em;
-        color: #000;
-        margin: 0;
-        padding: 0;
-        margin-top: .5em;
+        font-size  : 0.75em;
+        color      : #000;
+        margin     : 0;
+        padding    : 0;
+        margin-top : 0.5em;
         text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #fff;
         @media (min-width: $screen-lg) {
             padding-right: 40%;
-            padding-left: 10px;
-            font-size: .9em
+            padding-left : 10px;
+            font-size    : 0.9em;
         }
     }
+
     &.preventivi {
         background-color: #c30;
         background-image: url("../images/preventivi.jpg");
     }
+
     &.pagamenti {
         background-color: #3c0;
-        background-image: url("../images/pagamenti.jpg")
+        background-image: url("../images/pagamenti.jpg");
     }
+
     &.consegne {
         background-color: #03c;
-        background-image: url("../images/consegne.jpg")
+        background-image: url("../images/consegne.jpg");
     }
 }
 
@@ -773,13 +804,15 @@ hr.style-two {
 
 .subtitle {
     position: relative;
-    width: 50%;
+    width   : 50%;
+
     span {
-        display: inline-block;
+        display         : inline-block;
         background-color: #fff;
-        padding-right: 10px;
-        padding-left: 30px;
+        padding-right   : 10px;
+        padding-left    : 30px;
     }
+
     > .dot {
         position     : absolute;
         width        : 1em;
@@ -795,29 +828,28 @@ hr.style-two {
 
     > .dot:after {
         content      : ' ';
-        width        : .6em;
-        height       : .6em;
+        width        : 0.6em;
+        height       : 0.6em;
         background   : darken($body-color, 10);
         border-radius: 50px;
         position     : absolute;
-        top          : .22em;
-        left         : .22em;
+        top          : 0.22em;
+        left         : 0.22em;
     }
 
-    &::before {
+    &::before {}
 
-    }
     &::after {
-        content: '';
-            position: absolute;
-            top: .3em;
-            // left: 0;
-            border: 0;
-            height: .5em;
-            background-image: linear-gradient(to right, rgba($body-color, 0.25), rgba($header-color, 0));
-            // border-bottom: solid 2px #ccc;
-            width :100%;
-        }
+        content         : '';
+        position        : absolute;
+        top             : 0.3em;
+        // left: 0;
+        border          : 0;
+        height          : 0.5em;
+        background-image: linear-gradient(to right, rgba($body-color, 0.25), rgba($header-color, 0));
+        // border-bottom: solid 2px #ccc;
+        width           : 100%;
+    }
 }
 
 .description,
