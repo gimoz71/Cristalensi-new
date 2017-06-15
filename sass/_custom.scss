@@ -397,6 +397,24 @@ hr.style-two {
         float: none;
     }
 }
+
+.breadcrumb {
+    font-size: .8em;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    a {
+        color: rgba(0,0,0,.4);
+    }
+    .active {
+        color: #333;
+        font-weight: bold;
+    }
+}
 /*-------------------------------*/
 /*  @group Header               */
 /*-------------------------------*/

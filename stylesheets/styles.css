@@ -9399,6 +9399,22 @@ hr.style-two {
     float: none;
   }
 }
+.breadcrumb {
+  font-size: .8em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.breadcrumb a {
+  color: rgba(0, 0, 0, 0.4);
+}
+.breadcrumb .active {
+  color: #333;
+}
+
 /*-------------------------------*/
 /*  @group Header               */
 /*-------------------------------*/
