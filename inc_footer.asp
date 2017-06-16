@@ -23,52 +23,52 @@
 
             </div>
             <div class="col-md-3 menu-col">
+                <h4>Cosa cerchi?</h4>
+                <ul>
+                    <li><a href="#">Lampade da interno</a></li>
+                    <li><a href="#">Lampade da esterno</a></li>
+                    <li><a href="#">Ventiltori</a></li>
+                    <li><a href="#">Lampadine e componenti</a></li>
+                    <li>&nbsp;</li>
+                </ul>
+                <h4>Oppure cerca per</h4>
+                <ul>
+                    <li><a href="#">Stile</a></li>
+                    <li><a href="#">Ambiente</a></li>
+                    <li><a href="#">Produttore</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 menu-col">
                 <h4>Riferimenti</h4>
                 <ul>
-                    <li><a>Contatti e mappa</a></li>
-                    <li><a>Chi siamo: lo showroom</a></li>
-                    <li><a>Video</a></li>
-                    <li><a>Dicono noi</a></li>
+                    <li><a href="#">Contatti e mappa</a></li>
+                    <li><a href="#">Chi siamo: lo showroom</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Dicono noi</a></li>
                 </ul>
                 <h4>Area Clienti</h4>
                 <ul>
-                    <li><a>Iscriviti/Accedi</a></li>
-                    <li><a>Lista dei desideri</a></li>
-                    <li><a>Carrello</a></li>
-                    <li><a>Elenco ordini</a></li>
+                    <li><a href="#">Iscriviti/Accedi</a></li>
+                    <li><a href="#">Lista dei desideri</a></li>
+                    <li><a href="#">Carrello</a></li>
+                    <li><a href="#">Elenco ordini</a></li>
                 </ul>
             </div>
             <div class="col-md-3 menu-col">
                 <h4>Note legali</h4>
                 <ul>
-                    <li><a>Condizioni di vendita</a></li>
-                    <li><a>Privacy e note legali</a></li>
+                    <li><a href="#">Condizioni di vendita</a></li>
+                    <li><a href="#">Privacy e note legali</a></li>
                 </ul>
                 <h4>Spedizioni</h4>
-                <ul>
-                    <li><a>Spedizioni assicurate GRATUITE in tutta Italia per ordini superiori a 250&euro;</a></li>
+                <ul class="checklist">
+                    <li>Spedizioni assicurate GRATUITE in tutta Italia per ordini superiori a 250&euro;</li>
                 </ul>
                 <h4>Pagamenti accettati</h4>
-                <ul>
-                    <li><a>Bonifico Bancario</a></li>
-                    <li><a>Contrassegno</a></li>
-                    <li><a>Carte di credito - Prepagate - PostePay</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 menu-col">
-                <h4>Cosa cerchi?</h4>
-                <ul>
-                    <li><a>Lampade da interno</a></li>
-                    <li><a>Lampade da esterno</a></li>
-                    <li><a>Ventiltori</a></li>
-                    <li><a>Lampadine e componenti</a></li>
-                    <li>&nbsp;</li>
-                </ul>
-                <h4>Oppure cerca per</h4>
-                <ul>
-                    <li><a>Stile</a></li>
-                    <li><a>Ambiente</a></li>
-                    <li><a>Produttore</a></li>
+                <ul class="checklist">
+                    <li>Bonifico Bancario</li>
+                    <li>Contrassegno</li>
+                    <li>Carte di credito - Prepagate - PostePay</li>
                 </ul>
             </div>
         </div>
