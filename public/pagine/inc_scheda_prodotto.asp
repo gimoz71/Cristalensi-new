@@ -356,7 +356,7 @@ end if
 												<h5><i class="fa fa-users"></i> Condizioni di vendita</h5>
 										</div>
 										<ul class="list-group">
-												<li class="list-group-item"><i class="fa fa-user"></i> <strong>PAGAMENTI</strong><br /></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <strong>PAGAMENTI SICURI</strong><br /></li>
 												<li class="list-group-item"><i class="fa fa-user"></i> <em>Bonifico e PostePay: 0&euro;</em></li>
 												<li class="list-group-item"><i class="fa fa-user"></i> <em>Carte di credito e prepagate: 0&euro;</em></li>
 												<li class="list-group-item"><i class="fa fa-user"></i> <em>Contrassegno in contanti: 4&euro;</em></li>
@@ -364,6 +364,7 @@ end if
 												<li class="list-group-item"><i class="fa fa-user"></i> <strong>SPEDIZIONE IN TUTTA ITALIA ASSICURATA</strong><br /></li>
 												<li class="list-group-item"><i class="fa fa-user"></i> <em>Per ordini superiori a 250&euro;: 0&euro;</em></li>
 												<li class="list-group-item"><i class="fa fa-user"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <em>Ritiro in sede: 0&euro;</em></li>
 										</ul>
 										<div class="panel-footer"><a href="#" class="btn btn-success">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>
