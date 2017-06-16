@@ -10262,6 +10262,12 @@ footer .address-col .other .fa {
 footer .address-col .fa-facebook-square {
   color: #3b5998;
 }
+footer .address-col .fa-youtube-square {
+  color: #E62117;
+}
+footer .address-col .fa-linkedin-square {
+  color: #0077b5;
+}
 footer .menu-col a {
   position: relative;
   display: inline-block;
@@ -10286,12 +10292,13 @@ footer .menu-col a:hover {
 footer ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 20px;
 }
 footer ul.checklist {
   background: #fff;
   padding: 8px;
   border: solid 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.02);
 }
 footer ul.checklist li {
   position: relative;

@@ -1413,6 +1413,12 @@ footer {
         .fa-facebook-square {
             color: #3b5998;
         }
+        .fa-youtube-square {
+            color: #E62117;
+        }
+        .fa-linkedin-square {
+            color: #0077b5;
+        }
     }
 
     .menu-col {
@@ -1444,11 +1450,12 @@ footer {
     ul {
         list-style: none;
         padding   : 0;
+        margin-bottom: 20px;
         &.checklist {
             background:#fff;
             padding: 8px;
             border: solid 1px rgba(0,0,0,.1);
-            box-shadow: 2px 2px rgba(0,0,0,.05);
+            box-shadow: 2px 2px rgba(0,0,0,.02);
             li {
                 position: relative;
                 padding-left: 15px;
