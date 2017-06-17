@@ -206,6 +206,16 @@ Call Visualizzazione("",0,"carrello1.asp")
 <body>
   <!--#include file="inc_header_1.asp"-->
   <!--#include file="inc_header_2.asp"-->
+	<%
+		Set rs = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT PkId, FkOrdine, FkProdotto, PrezzoProdotto, Quantita, TotaleRiga, Titolo, CodiceArticolo, Colore, Lampadina FROM RigheOrdine WHERE FkOrdine="&idOrdine&""
+		rs.Open sql, conn, 1, 1
+		num_prodotti_carrello=rs.recordcount
+
+		Set ss = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT * FROM Ordini where pkid="&idOrdine
+		ss.Open sql, conn, 1, 1
+	%>
     <div class="container content">
         <div class="row hidden">
             <div class="col-md-12 parentOverflowContainer">
@@ -273,57 +283,87 @@ Call Visualizzazione("",0,"carrello1.asp")
                                         <th style="width:15%"></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+
+																<%if rs.recordcount>0 then%>
+																<tbody>
+																		<%
+																		Do while not rs.EOF
+
+																		Set url_prodotto_rs = Server.CreateObject("ADODB.Recordset")
+																		sql = "SELECT PkId, NomePagina FROM Prodotti where PkId="&rs("FkProdotto")&""
+																		url_prodotto_rs.Open sql, conn, 1, 1
+
+																		NomePagina=url_prodotto_rs("NomePagina")
+																		if Len(NomePagina)>0 then
+																			NomePagina="/public/pagine/"&NomePagina
+																		else
+																			NomePagina="#"
+																		end if
+
+																		url_prodotto_rs.close
+																		%>
+																		<form method="post" action="/carrello1.asp?mode=1&riga=<%=rs("pkid")%>">
+																		<%
+																		quantita=rs("quantita")
+																		if quantita="" then quantita=1
+																		%>
+																		<tr>
                                         <td data-th="Product" class="cart-product">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <h5 class="nomargin"><a href="scheda.html">Modello Plafoniera Moderna</a></h5>
-                                                    <p>Col.: Avorio antico - Lamp.: Bianco satinato</p>
+                                                    <h5 class="nomargin"><a href="<%=NomePagina%>" title="Scheda del prodotto: <%=NomePagina%>"><%=rs("titolo")%>"></a></h5>
+																										<p><strong><%=rs("codicearticolo")%></strong></p>
+                                                    <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p>><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: Bianco satinato<%=rs("lampadina")%><%end if%></p><%end if%>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td data-th="Price" class="hidden-xs">55&euro;</td>
+                                        <td data-th="Price" class="hidden-xs"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&euro;</td>
                                         <td data-th="Quantity">
-                                            <input type="number" class="form-control text-center" value="1">
+                                            <input type="number" class="form-control text-center" name="quantita" value="<%=quantita%>">
                                         </td>
-                                        <td data-th="Subtotal" class="text-center">55&euro;</td>
+                                        <td data-th="Subtotal" class="text-center"><%=FormatNumber(rs("TotaleRiga"),2)%>&euro;</td>
                                         <td class="actions" data-th="">
-                                            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                                            <button class="btn btn-info btn-sm" type="submit"><i class="fa fa-refresh"></i></button>
                                             <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td data-th="Product" class="cart-product">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <h5 class="nomargin"><a href="scheda.html">Modello Plafoniera Moderna</a></h5>
-                                                    <p>Col.: Avorio antico - Lamp.: Bianco satinato</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td data-th="Price" class="hidden-xs">55&euro;</td>
-                                        <td data-th="Quantity">
-                                            <input type="number" class="form-control text-center" value="1">
-                                        </td>
-                                        <td data-th="Subtotal" class="text-center">55&euro;</td>
-                                        <td class="actions" data-th="">
-                                            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr class="visible-xs">
-                                        <td class="text-center"><strong>Totale 110&euro;</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
-                                        <td colspan="2" class="hidden-xs"></td>
-                                        <td class="hidden-xs text-center"><strong>Totale 110&euro;</strong></td>
-                                        <td></td>
-                                    </tr>
-                                </tfoot>
+																		<%
+																		rs.movenext
+																		loop
+																		%>
+																		</form>
+																	</tbody>
+																	<%if ss.recordcount>0 then%>
+	                                <tfoot>
+	                                    <tr class="visible-xs">
+	                                        <td class="text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
+												  <%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
+	                                        <td colspan="2" class="hidden-xs"></td>
+	                                        <td class="hidden-xs text-center"><strong>Totale 110&euro;</strong></td>
+	                                        <td></td>
+	                                    </tr>
+	                                </tfoot>
+																	<%end if%>
+																<%else%>
+																	<tbody>
+																	<tr>
+																			<td data-th="Product" class="cart-product">
+																					<div class="row">
+																							<div class="col-sm-12">
+																									<h5 class="nomargin">Nessun prodotto nel carrello</h5>
+																							</div>
+																			</td>
+																	</tr>
+																	</tbody>
+																<%end if%>
+																<%
+                                ss.close
+                                rs.close
+                                %>
+
                             </table>
 
                         </div>
