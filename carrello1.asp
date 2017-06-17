@@ -340,9 +340,10 @@ Call Visualizzazione("",0,"carrello1.asp")
 												  <%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
 	                                    </tr>
 	                                    <tr>
-	                                        <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
+	                                        <td><a href="/index.asp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td colspan="2" class="hidden-xs"></td>
-	                                        <td class="hidden-xs text-center"><strong>Totale 110&euro;</strong></td>
+	                                        <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
+												  <%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
 	                                        <td></td>
 	                                    </tr>
 	                                </tfoot>
@@ -359,10 +360,7 @@ Call Visualizzazione("",0,"carrello1.asp")
 																	</tr>
 																	</tbody>
 																<%end if%>
-																<%
-                                ss.close
-                                rs.close
-                                %>
+
 
                             </table>
 
@@ -375,7 +373,8 @@ Call Visualizzazione("",0,"carrello1.asp")
                     <ul class="list-group text-center">
                         <li class="list-group-item" style="padding-top: 20px">
                             <p>Totale carrello:<br />
-                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;110.00 &euro;</span>
+                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%if ss("TotaleGenerale")<>0 then%>
+								<%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%> &euro;</span>
                             </p>
                         </li>
                     </ul>
@@ -383,8 +382,9 @@ Call Visualizzazione("",0,"carrello1.asp")
                         <a href="accedi.html" class="btn btn-danger btn-block">Completa l'acquisto <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
-                <div class="alert alert-success" role="alert">
-                    Hai bisogno di aiuto? Chiama al<br /><a href="tel: +39 0571 911163" class="alert-link">+39 0571 911163</a>
+								<div class="alert alert-success" role="alert" style="text-align: center;">
+                  <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
+                  <br /><br />Lun. - Ven.: 9.00 - 12.30 | 14.30 - 19.30<br />Sab.: 9.00 - 12.30 | 15.30 - 19.30<br />Domenica CHIUSI<br />Giugno/Luglio CHIUSI Sabato Pomeriggio<br />
                 </div>
             </div>
         </div>
@@ -441,7 +441,12 @@ Call Visualizzazione("",0,"carrello1.asp")
             <a href="#" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
             <a href="#" class="btn btn-danger pull-right">Passo successivo <i class="glyphicon glyphicon-chevron-right"></i></a>
         </div>
-    </div>
+
+		</div>
+		<%
+		ss.close
+		rs.close
+		%>
     <!--#include file="inc_footer.asp"-->
 </body>
 <!--#include file="inc_strClose.asp"-->

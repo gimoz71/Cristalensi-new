@@ -128,6 +128,70 @@ end if
             visibility: hidden;
         }
     </style>
+		<SCRIPT language="JavaScript">
+			function verifica_1() {
+
+				quantita=document.newsform2.quantita.value;
+				num_colori=document.newsform2.num_colori.value;
+				colore=document.newsform2.colore.value;
+				num_lampadine=document.newsform2.num_lampadine.value;
+				lampadina=document.newsform2.lampadina.value;
+
+				if (quantita=="0" || quantita==""){
+					alert("La quantita\' deve essere maggiore di 0");
+					return false;
+				}
+
+				if (num_colori>0 && colore==""){
+					alert("Deve essere scelto un colore");
+					return false;
+				}
+
+				if (num_lampadine>0 && lampadina==""){
+					alert("Deve essere scelta una lampadina");
+					return false;
+				}
+
+				else
+
+					document.newsform2.method = "post";
+					//document.newsform2.action = "../../carrello1.asp";
+					document.newsform2.action = "/cristalensi/carrello1.asp";
+					document.newsform2.submit();
+			}
+	</SCRIPT>
+	<SCRIPT language="JavaScript">
+	function verifica_2() {
+
+		quantita=document.newsform2.quantita.value;
+		num_colori=document.newsform2.num_colori.value;
+		colore=document.newsform2.colore.value;
+		num_lampadine=document.newsform2.num_lampadine.value;
+		lampadina=document.newsform2.lampadina.value;
+
+		if (quantita=="0" || quantita==""){
+			alert("La quantita\' deve essere maggiore di 0");
+			return false;
+		}
+
+		if (num_colori>0 && colore==""){
+			alert("Deve essere scelto un colore");
+			return false;
+		}
+
+		if (num_lampadine>0 && lampadina==""){
+			alert("Deve essere scelta una lampadina");
+			return false;
+		}
+
+		else
+
+			document.newsform2.method = "post";
+			//document.newsform2.action = "../../carrello1.asp";
+			document.newsform2.action = "/cristalensi/carrello1.asp";
+			//document.newsform2.submit();
+	}
+	</SCRIPT>
 </head>
 
 <body>
@@ -260,6 +324,8 @@ end if
 												</li>
 												</ul>
 											<%else%>
+												<form name="newsform2" id="newsform2" onSubmit="return verifica_2();">
+												<input type="hidden" name="id" id="id" value="<%=id%>">
 												<ul class="list-group text-center">
 
 														<li class="list-group-item" style="padding-top: 20px">
@@ -272,8 +338,8 @@ end if
 		                            </p>
 		                        </li>
 
-														<form name="newsform2" id="newsform2" onSubmit="return verifica_2();">
-														<input type="hidden" name="id" id="id" value="<%=id%>">
+
+
 														<%
 														Set col_rs = Server.CreateObject("ADODB.Recordset")
 														sql = "SELECT [Prodotto-Colore].FkProdotto, Colori.Titolo FROM [Prodotto-Colore] INNER JOIN Colori ON [Prodotto-Colore].FkColore = Colori.PkId WHERE ((([Prodotto-Colore].FkProdotto)="&id&")) ORDER BY Colori.Titolo ASC"
@@ -333,14 +399,15 @@ end if
 														lam_rs.close
 														%>
 		                        <li class="list-group-item">
-		                            <input type="number" data-width="auto" class="form-control" name="quantita" id="quantita" placeholder="quantit&agrave;" aria-label="Pezzi">
+		                            <input type="number" data-width="auto" class="form-control" name="quantita" id="quantita" placeholder="Quanti Pezzi?" aria-label="Pezzi">
 		                        </li>
-														</form>
+
 
 		                    </ul>
 		                    <div class="panel-footer">
 		                        <a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
 		                    </div>
+												</form>
 											<%end if%>
 										<%end if%>
 
