@@ -1,23 +1,33 @@
 <!--#include file="inc_strConn.asp"-->
 <%
-Call Visualizzazione("",0,"carrello1.asp")
-
+'Call Visualizzazione("",0,"carrello1.asp")
+	Session.Abandon
 	mode=request("mode")
 	if mode="" then mode=0
 
 	'se la session è già aperta sfrutto il pkid dell'ordine, altrimenti ne apro una
 	IdOrdine=session("ordine_shop")
 	if IdOrdine="" then IdOrdine=0
-
+response.write("IdOrdine1:"&IdOrdine)
 	id=request("id")
 	if id="" then id=0
-
+response.write("Id1:"&Id)
 		if IdOrdine=0 and id<>0 then
+			Set os1 = Server.CreateObject("ADODB.Recordset")
+			sql = "SELECT Top 1 PkId, PkId_Contatore FROM Ordini Order by PkId_Contatore Desc"
+			os1.Open sql, conn, 1, 1
+			IdOrdine_ultimo=os1("PkId")
+			IdOrdine_ultimo=cInt(IdOrdine_ultimo)
+			IdOrdine=IdOrdine_ultimo+1
+			os1.close
+response.write("IdOrdine_ultimo1:"&IdOrdine_ultimo)
+response.write("IdOrdine2:"&IdOrdine)
 			Set os1 = Server.CreateObject("ADODB.Recordset")
 			sql = "SELECT * FROM Ordini"
 			os1.Open sql, conn, 3, 3
 
 			os1.addnew
+			os1("PkId")=IdOrdine
 			os1("FkCliente")=idsession
 			os1("stato")=0
 			os1("TotaleCarrello")=0
@@ -28,14 +38,6 @@ Call Visualizzazione("",0,"carrello1.asp")
 			os1.update
 
 			os1.close
-
-			'Prendo l'id dell'ordine
-			Set os2 = Server.CreateObject("ADODB.Recordset")
-			sql = "Select @@Identity As pkid"
-			os2.Open sql, conn, 1, 1
-			IdOrdine=os2("pkid")
-
-			os2.close
 
 			'Creo una sessione con l'id dell'ordine
 			Session("ordine_shop")=IdOrdine
@@ -111,10 +113,19 @@ Call Visualizzazione("",0,"carrello1.asp")
 
 
 				Set riga_rs = Server.CreateObject("ADODB.Recordset")
+				sql = "SELECT Top 1 PkId, PkId_Contatore FROM RigheOrdine Order by Pkid_Contatore Desc"
+				riga_rs.Open sql, conn, 1, 1
+				PkId_riga_ultimo=riga_rs("PkId")
+				PkId_riga_ultimo=cInt(PkId_riga_ultimo)
+				PkId_riga=PkId_riga_ultimo+1
+				riga_rs.close
+
+				Set riga_rs = Server.CreateObject("ADODB.Recordset")
 				sql = "SELECT * FROM RigheOrdine"
 				riga_rs.Open sql, conn, 3, 3
 
 				riga_rs.addnew
+				riga_rs("PkId_riga")=PkId_riga
 				riga_rs("FkOrdine")=IdOrdine
 				riga_rs("FkCliente")=idsession
 				riga_rs("FkProdotto")=id

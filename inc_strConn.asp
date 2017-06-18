@@ -118,4 +118,7 @@ End Function
 		Risultato = IDArticolo & "f-" & Risultato & ".asp"
 		ConvertiTitoloInUrlProduttore = Risultato
 	End Function
+
+	idsession=Session("idCliente")
+	if idsession="" then idsession=0
 %>
