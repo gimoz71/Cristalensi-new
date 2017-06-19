@@ -1,17 +1,17 @@
 <!--#include file="inc_strConn.asp"-->
 <%
 'Call Visualizzazione("",0,"carrello1.asp")
-	Session.Abandon
+
 	mode=request("mode")
 	if mode="" then mode=0
 
 	'se la session è già aperta sfrutto il pkid dell'ordine, altrimenti ne apro una
 	IdOrdine=session("ordine_shop")
 	if IdOrdine="" then IdOrdine=0
-response.write("IdOrdine1:"&IdOrdine)
+
 	id=request("id")
 	if id="" then id=0
-response.write("Id1:"&Id)
+
 		if IdOrdine=0 and id<>0 then
 			Set os1 = Server.CreateObject("ADODB.Recordset")
 			sql = "SELECT Top 1 PkId, PkId_Contatore FROM Ordini Order by PkId_Contatore Desc"
@@ -20,8 +20,7 @@ response.write("Id1:"&Id)
 			IdOrdine_ultimo=cInt(IdOrdine_ultimo)
 			IdOrdine=IdOrdine_ultimo+1
 			os1.close
-response.write("IdOrdine_ultimo1:"&IdOrdine_ultimo)
-response.write("IdOrdine2:"&IdOrdine)
+
 			Set os1 = Server.CreateObject("ADODB.Recordset")
 			sql = "SELECT * FROM Ordini"
 			os1.Open sql, conn, 3, 3
@@ -47,47 +46,66 @@ response.write("IdOrdine2:"&IdOrdine)
 		IdOrdine=cInt(IdOrdine)
 
 	'modifica del carrello: eliminazione o modifica di un articolo nel carrello
-		if mode=2 then
-			cs = conn.Execute("Delete * FROM RigheOrdine Where FkOrdine="&IdOrdine)
-			mode=0
-		end if
+		'if mode=2 then
+			'cs = conn.Execute("Delete * FROM RigheOrdine Where FkOrdine="&IdOrdine)
+			'mode=0
+		'end if
 
-		if mode=1 then
-
-			eliminare=request("eliminare")
-		'parte per eliminare il prodotto dal carrello
-			if eliminare<>"" then
-				arrProd = Split(eliminare, ", ")
-				For iLoop = LBound(arrProd) to UBound(arrProd)
-					cs = conn.Execute("Delete * FROM RigheOrdine Where PkId="&arrProd(iLoop))
-	   			next
-		'fine parte per eliminazione
-			else
-		'parte per la modifica delle quantita di un articolo nel carrello
-
-			'modifica delle quantità
-				Set ts = Server.CreateObject("ADODB.Recordset")
-				sql = "SELECT * FROM RigheOrdine where FkOrdine="&idordine
-				ts.Open sql, conn, 3, 3
-				num=0
-				Do while not ts.EOF
-					'aggiornamento
-					PrezzoProdotto=ts("PrezzoProdotto")
-					Quantita=request("quantita"&num)
-					ts("Quantita")=Quantita
-					ts("TotaleRiga")=(Quantita*PrezzoProdotto)
-					ts.update
-					num=num+1
-					ts.movenext
-				loop
-				ts.close
+		if mode>0 then
+			'eliminazione prodotto/riga dal carrello
+			if mode=2 then
+				riga=request("riga")
+				if riga="" or isnull(riga) then riga=0
+				if riga>0 then
+					Set ts = Server.CreateObject("ADODB.Recordset")
+					sql = "SELECT * FROM RigheOrdine where PkId="&riga
+					ts.Open sql, conn, 3, 3
+						ts.delete
+						ts.update
+					ts.close
+				end if
 			end if
-		'fine della parte di modifica
+
+			if mode=1 then
+				'parte per la modifica delle quantita di un articolo nel carrello
+
+				riga=request("riga")
+				if riga="" or isnull(riga) then riga=0
+				quantita=request("quantita")
+				if quantita="" or isnull(quantita) then quantita=0
+
+				if riga>0 then
+					Set ts = Server.CreateObject("ADODB.Recordset")
+					sql = "SELECT * FROM RigheOrdine where PkId="&riga
+					ts.Open sql, conn, 3, 3
+						PrezzoProdotto=ts("PrezzoProdotto")
+						ts("Quantita")=Quantita
+						ts("TotaleRiga")=(Quantita*PrezzoProdotto)
+						ts.update
+					ts.close
+				end if
+
+
+				'Set ts = Server.CreateObject("ADODB.Recordset")
+				'sql = "SELECT * FROM RigheOrdine where FkOrdine="&idordine
+				'ts.Open sql, conn, 3, 3
+				'num=0
+				'Do while not ts.EOF
+					'aggiornamento
+					'PrezzoProdotto=ts("PrezzoProdotto")
+					'Quantita=request("quantita"&num)
+					'ts("Quantita")=Quantita
+					'ts("TotaleRiga")=(Quantita*PrezzoProdotto)
+					'ts.update
+					'num=num+1
+					'ts.movenext
+				'loop
+				'ts.close
+			end if
 
 		else
 	'inserimento di un prodotto per la prima volta scelto con il carrello già aperto
 			'Prendo il prezzo del prodotto
-
 
 			if id<>0 then
 				quantita=request("quantita")
@@ -125,7 +143,7 @@ response.write("IdOrdine2:"&IdOrdine)
 				riga_rs.Open sql, conn, 3, 3
 
 				riga_rs.addnew
-				riga_rs("PkId_riga")=PkId_riga
+				riga_rs("PkId")=PkId_riga
 				riga_rs("FkOrdine")=IdOrdine
 				riga_rs("FkCliente")=idsession
 				riga_rs("FkProdotto")=id
@@ -146,20 +164,17 @@ response.write("IdOrdine2:"&IdOrdine)
 
 				'Calcolo la somma per l'ordine
 				Set rs2 = Server.CreateObject("ADODB.Recordset")
-				sql = "SELECT sum(TotaleRiga) as TotaleCarrello FROM RigheOrdine where FkOrdine="&IdOrdine
+				sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" GROUP BY FkOrdine"
 				rs2.Open sql, conn, 3, 3
-				if rs2.recordcount>0 then
 					TotaleCarrello=rs2("TotaleCarrello")
-					if TotaleCarrello="" then TotaleCarrello=0
-				else
-					TotaleCarrello=0
-				end if
+					if TotaleCarrello="" or isnull(TotaleCarrello) then TotaleCarrello=0
 				rs2.close
 
 
 				'Aggiorno la tabella dell'ordine con la somma calcolata prima
 				Set ss = Server.CreateObject("ADODB.Recordset")
 				sql = "SELECT * FROM Ordini where PkId="&IdOrdine
+				response.write("sql2:"&sql)
 				ss.Open sql, conn, 3, 3
 				if ss.recordcount>0 then
 					ss("TotaleCarrello")=TotaleCarrello
@@ -313,7 +328,7 @@ response.write("IdOrdine2:"&IdOrdine)
 
 																		url_prodotto_rs.close
 																		%>
-																		<form method="post" action="/carrello1.asp?mode=1&riga=<%=rs("pkid")%>">
+																		<form method="post" action="/cristalensi/carrello1.asp?mode=1&riga=<%=rs("pkid")%>">
 																		<%
 																		quantita=rs("quantita")
 																		if quantita="" then quantita=1
@@ -322,7 +337,7 @@ response.write("IdOrdine2:"&IdOrdine)
                                         <td data-th="Product" class="cart-product">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <h5 class="nomargin"><a href="<%=NomePagina%>" title="Scheda del prodotto: <%=NomePagina%>"><%=rs("titolo")%>"></a></h5>
+                                                    <h5 class="nomargin"><a href="<%=NomePagina%>" title="Scheda del prodotto: <%=NomePagina%>"><%=rs("titolo")%></a></h5>
 																										<p><strong><%=rs("codicearticolo")%></strong></p>
                                                     <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p>><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: Bianco satinato<%=rs("lampadina")%><%end if%></p><%end if%>
                                                 </div>
@@ -335,7 +350,7 @@ response.write("IdOrdine2:"&IdOrdine)
                                         <td data-th="Subtotal" class="text-center"><%=FormatNumber(rs("TotaleRiga"),2)%>&euro;</td>
                                         <td class="actions" data-th="">
                                             <button class="btn btn-info btn-sm" type="submit"><i class="fa fa-refresh"></i></button>
-                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                                            <button class="btn btn-danger btn-sm" type="button" onClick="location.href='/cristalensi/carrello1.asp?mode=2&riga=<%=rs("pkid")%>'"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
 																		<%
@@ -354,7 +369,7 @@ response.write("IdOrdine2:"&IdOrdine)
 	                                        <td><a href="/index.asp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td colspan="2" class="hidden-xs"></td>
 	                                        <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
-												  <%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+												  <%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%> &euro;</strong></td>
 	                                        <td></td>
 	                                    </tr>
 	                                </tfoot>
@@ -385,7 +400,7 @@ response.write("IdOrdine2:"&IdOrdine)
                         <li class="list-group-item" style="padding-top: 20px">
                             <p>Totale carrello:<br />
                                 <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%if ss("TotaleGenerale")<>0 then%>
-								<%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%> &euro;</span>
+								<%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%> &euro;</span>
                             </p>
                         </li>
                     </ul>

@@ -50,7 +50,7 @@
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Area clienti</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-bullhorn"></span> Dicono di noi</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-heart"></span> Lista dei desideri</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrello</a></li>
+            <li><a href="/cristalensi/carrello1.asp"><span class="glyphicon glyphicon-shopping-cart"></span> Carrello</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-th-list"></span> Condizioni di vendita</a></li>
         </ul>
     </div>

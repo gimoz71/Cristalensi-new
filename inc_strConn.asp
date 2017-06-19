@@ -121,4 +121,5 @@ End Function
 
 	idsession=Session("idCliente")
 	if idsession="" then idsession=0
+	response.write("idsession:"&idsession)
 %>
