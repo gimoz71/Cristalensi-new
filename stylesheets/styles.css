@@ -10064,7 +10064,8 @@ hr.style-two {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #E1E1E1;
+  background-color: #f6f6f6;
+  box-shadow: inset 0 0 2px #E1E1E1;
 }
 .col-item .photo .options {
   display: none;
