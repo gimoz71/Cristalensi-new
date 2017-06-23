@@ -174,7 +174,7 @@
 				'Aggiorno la tabella dell'ordine con la somma calcolata prima
 				Set ss = Server.CreateObject("ADODB.Recordset")
 				sql = "SELECT * FROM Ordini where PkId="&IdOrdine
-				response.write("sql2:"&sql)
+				'response.write("sql2:"&sql)
 				ss.Open sql, conn, 3, 3
 				if ss.recordcount>0 then
 					ss("TotaleCarrello")=TotaleCarrello
@@ -392,7 +392,37 @@
 
                         </div>
                     </div>
+
                 </div>
+								<div class="panel panel-default user-comment">
+										<!-- Default panel contents -->
+										<div class="panel-heading">
+												<h5><i class="glyphicon glyphicon-warning-sign"></i> Eventuali annotazioni</h5>
+										</div>
+										<ul class="list-group">
+												<li class="list-group-item">
+												<p>Potete usare questo spazio per inserire eventuali comunicazioni in relazione ai prodotti acquistati.</p>
+												<textarea name="NoteCliente" cols="82" rows="2" id="NoteCliente"></textarea>
+												</li>
+										</ul>
+								</div>
+								<div class="panel panel-default user-comment">
+										<!-- Default panel contents -->
+										<div class="panel-heading">
+												<h5><i class="glyphicon glyphicon-warning-sign"></i> INFORMAZIONI IMPORTANTI SULLA DISPONIBILITA' DEI PRODOTTI</h5>
+										</div>
+										<ul class="list-group">
+												<li class="list-group-item">
+													<%if offerta=10 then%>
+													IL PRODOTTO NON E' DISPONIBILE
+													<%else%>
+													Il nostro catalogo &egrave; composto da numerosi prodotti e non tutti sono disponibili immediatamente al momento della richiesta: potrebbero essere disponibili nel giro di qualche giorno.<br />
+													<em>Noi garantiamo una consegna da un minimo di 2 giorni a un massimo di 30 giorni.</em><br />
+													<%end if%>
+												</li>
+										</ul>
+										<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-warning btn-block">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
+								</div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;">
@@ -408,58 +438,34 @@
                         <a href="accedi.html" class="btn btn-danger btn-block">Completa l'acquisto <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
+
+								<!--condizioni di vendita-->
+								<div class="panel panel-default user-comment">
+										<!-- Default panel contents -->
+										<div class="panel-heading">
+												<h5><i class="fa fa-users"></i> Condizioni di vendita</h5>
+										</div>
+										<ul class="list-group">
+												<li class="list-group-item"><i class="fa fa-user"></i> <strong>PAGAMENTI SICURI</strong><br /></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <em>Bonifico e PostePay: 0&euro;</em></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <em>Carte di credito e prepagate: 0&euro;</em></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <em>Contrassegno in contanti: 4&euro;</em></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> </li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <strong>SPEDIZIONE IN TUTTA ITALIA ASSICURATA</strong><br /></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <em>Per ordini superiori a 250&euro;: 0&euro;</em></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
+												<li class="list-group-item"><i class="fa fa-user"></i> <em>Ritiro in sede: 0&euro;</em></li>
+										</ul>
+										<div class="panel-footer"><a href="#" class="btn btn-success">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
+								</div>
 								<div class="alert alert-success" role="alert" style="text-align: center;">
                   <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
                   <br /><br />Lun. - Ven.: 9.00 - 12.30 | 14.30 - 19.30<br />Sab.: 9.00 - 12.30 | 15.30 - 19.30<br />Domenica CHIUSI<br />Giugno/Luglio CHIUSI Sabato Pomeriggio<br />
                 </div>
             </div>
         </div>
-        <div class="col-sm-12">
-            <div class="panel panel-default user-comment">
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    <h5><i class="glyphicon glyphicon-warning-sign"></i> INFORMAZIONI IMPORTANTI SULLA DISPONIBILITA' DEI PRODOTTI</h5>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Come potete aver notato il nostro catalogo &egrave; composto da numerosi prodotti e numerose ditte, a tal ragione alcuni prodotti, al momento della richiesta, potrebbero non essere dispobili immediatamente e potrebbero essere in fase
-                        di ordinazione. Nel caso in cui ci fosse urgenza del prodotto desiderato, informarsi direttamente dal nostro staff per l'effettiva disponibilità o tempo di consegna nel caso in cui fosse in ordinazione: da un minimo 2 giorni a
-                        un massimo 30 giorni.</li>
-                </ul>
-                <div class="panel-footer"><a href="#" class="btn btn-warning btn-block">Contatta lo staff per info sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class=" top-buffer">
-                <div class="panel panel-default user-comment">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">
-                        <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Ho acquistato una lampada d<b>a parete</b> per esterno Newport verde. Per la consegna c'&egrave; voluto qua...</em></li>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Pochi giorni fa ho acquistato un lampadario per bagno di <b>Murano</b> bombato <b>a soffitto</b> ho telefonato i...</em></li>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Il mio ordine: ORINA PLAFONIERA IN METALLO CROMATO. &Egrave; arrivato prima il pacco che le mail di spedizi...</em></li>
-                    </ul>
-                    <div class="panel-footer"><a href="#" class="btn btn-success">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class=" top-buffer">
-                <div class="panel panel-default user-comment">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">
-                        <h5><i class="fa fa-users"></i> Facebook</h5>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Ho acquistato una lampada d<b>a parete</b> per esterno Newport verde. Per la consegna c'&egrave; voluto qua...</em></li>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Pochi giorni fa ho acquistato un lampadario per bagno di <b>Murano</b> bombato <b>a soffitto</b> ho telefonato i...</em></li>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Il mio ordine: ORINA PLAFONIERA IN METALLO CROMATO. &Egrave; arrivato prima il pacco che le mail di spedizi...</em></li>
-                    </ul>
-                    <div class="panel-footer"><a href="#" class="btn btn-success">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
-                </div>
-            </div>
-        </div>
+
+
         <div class="col-md-12">
             <div class="bg-primary">
                 <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b>349,00&euro;</b></p>

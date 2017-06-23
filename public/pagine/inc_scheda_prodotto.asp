@@ -437,38 +437,8 @@ end if
 								</div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class=" top-buffer">
-                <div class="panel panel-default user-comment">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">
-                        <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Ho acquistato una lampada d<b>a parete</b> per esterno Newport verde. Per la consegna c'&egrave; voluto qua...</em></li>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Pochi giorni fa ho acquistato un lampadario per bagno di <b>Murano</b> bombato <b>a soffitto</b> ho telefonato i...</em></li>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Il mio ordine: ORINA PLAFONIERA IN METALLO CROMATO. &Egrave; arrivato prima il pacco che le mail di spedizi...</em></li>
-                    </ul>
-                    <div class="panel-footer"><a href="#" class="btn btn-success">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class=" top-buffer">
-                <div class="panel panel-default user-comment">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">
-                        <h5><i class="fa fa-users"></i> Facebook</h5>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Ho acquistato una lampada d<b>a parete</b> per esterno Newport verde. Per la consegna c'&egrave; voluto qua...</em></li>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Pochi giorni fa ho acquistato un lampadario per bagno di <b>Murano</b> bombato <b>a soffitto</b> ho telefonato i...</em></li>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em>Il mio ordine: ORINA PLAFONIERA IN METALLO CROMATO. &Egrave; arrivato prima il pacco che le mail di spedizi...</em></li>
-                    </ul>
-                    <div class="panel-footer"><a href="#" class="btn btn-success">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
-                </div>
-            </div>
-        </div>
+
+        
     </div>
 
     <!--#include virtual="/cristalensi/inc_footer.asp"-->
