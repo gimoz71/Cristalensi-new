@@ -402,7 +402,7 @@
 										<ul class="list-group">
 												<li class="list-group-item">
 												<p>Potete usare questo spazio per inserire eventuali comunicazioni in relazione ai prodotti acquistati.</p>
-												<textarea name="NoteCliente" cols="82" rows="2" id="NoteCliente"></textarea>
+												<textarea name="NoteCliente" style="width: 100%" rows="2" id="NoteCliente"></textarea>
 												</li>
 										</ul>
 								</div>

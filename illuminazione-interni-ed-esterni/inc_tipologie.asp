@@ -79,7 +79,7 @@ gr_rs.close
         </div>
         <div class="col-xl-12">
             <ol class="breadcrumb">
-                <li><a href="/cristalensi/index.asp">Home</a></li>
+                <li><a href="/cristalensi/index.asp"><i class="fa fa-home"></i></a></li>
                 <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>
@@ -214,7 +214,7 @@ gr_rs.close
                     end if
                     img_rs.close
                 %>
-                <div class="col-xs-6 col-sm-4 col-md-4">
+                <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
                       <div class="photo">
                           <a href="/cristalensi/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/cristalensi/images/blank.png"></a>
@@ -223,7 +223,7 @@ gr_rs.close
                           <div class="row">
                               <div class="price-details col-md-6">
                                   <a href="/cristalensi/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
-                                  <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><%=produttore%></b></p>
+                                  <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />

@@ -75,8 +75,8 @@
                 </div>
             </div>
             <div class="row top-buffer">
-                <div class="col-xl-12">
-                    <h4 class="subtitle">Cosa stai cercando?</h4>
+                <div class="col-xl-12 clearfix">
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Cosa stai cercando?</span></h4> <a href="#" class="btn btn-default pull-right">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
@@ -136,8 +136,8 @@
                 </div>
             </div>
             <div class="row top-buffer">
-                <div class="col-xl-12">
-                    <h4 class="subtitle">Offerte e prodotti in promozione</h4>
+                <div class="col-xl-12 clearfix">
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="#" class="btn btn-default pull-right">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 'random prodotti in offerta
@@ -212,7 +212,7 @@
                           <div class="row">
                               <div class="price-details col-md-6">
                                   <a href="/cristalensi/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
-                                  <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></p>
+                                  <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />
@@ -251,8 +251,8 @@
             if prod_rs.recordcount>0 then
             %>
             <div class="row top-buffer">
-                <div class="col-xl-12">
-                    <h4 class="subtitle">Novit&Agrave; e ultimi arrivi</h4>
+                <div class="col-xl-12 clearfix">
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Novit&Agrave; e ultimi arrivi</span></h4> <a href="#" class="btn btn-default pull-right">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 Do while not prod_rs.EOF
@@ -303,7 +303,7 @@
                           <div class="row">
                               <div class="price-details col-md-6">
                                   <a href="/cristalensi/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
-                                  <p class="details">codice: <b><%=codicearticolo%></b><br /> produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></p>
+                                  <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />

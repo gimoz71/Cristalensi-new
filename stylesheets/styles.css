@@ -9432,6 +9432,9 @@ hr.style-two {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  position: relative;
+  background-color: #f5f5f5;
+  border-right: solid 5px #f5f5f5;
 }
 .breadcrumb a {
   color: rgba(0, 0, 0, 0.4);
@@ -9439,6 +9442,15 @@ hr.style-two {
 .breadcrumb .active {
   color: #333;
   font-weight: bold;
+}
+.breadcrumb:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;
+  background-image: linear-gradient(to right, rgba(245, 245, 245, 0), whitesmoke);
 }
 
 /*-------------------------------*/
@@ -9760,12 +9772,16 @@ hr.style-two {
   bottom: 0;
 }
 
-.user-comment .panel-heading {
+.user-comment .panel-heading, .payment-list .panel-heading {
   text-shadow: -1px 1px 1px white;
   text-shadow: 1px -1px 1px white;
 }
-.user-comment li {
+.user-comment li, .payment-list li {
   font-size: 0.9em;
+}
+
+.payment-list li {
+  font-size: 0.7em;
 }
 
 .slogan {
@@ -10039,6 +10055,7 @@ hr.style-two {
   background: #FFF;
   margin-bottom: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+  border: 1px solid #E1E1E1;
   position: relative;
   transition: all 0.2s ease-in-out;
   z-index: inherit;
@@ -10065,7 +10082,6 @@ hr.style-two {
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #f6f6f6;
-  box-shadow: inset 0 0 2px #E1E1E1;
 }
 .col-item .photo .options {
   display: none;
@@ -10112,7 +10128,6 @@ hr.style-two {
 }
 .col-item .info {
   padding: 5px 10px 10px;
-  border: 1px solid #E1E1E1;
   border-top: 0;
 }
 .col-item .price-details {
@@ -10142,6 +10157,20 @@ hr.style-two {
 .col-item .price-details .details {
   font-size: 14px;
   color: #999;
+}
+.col-item .price-details .details span {
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: 1em;
+  /* Fallback for non-webkit */
+  /* margin: 0 auto; */
+  /* font-size: 16px; */
+  line-height: 1em;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .col-item .price-details .details b {
   color: #666;
