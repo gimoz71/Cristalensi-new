@@ -9,14 +9,12 @@ $(function() {
 
 
 var overflowContainer = function(overflowSelector, parentOverflowSelector) {
-    return $(overflowSelector).css("height", ($(parentOverflowSelector).height() / 3));
+    return $(overflowSelector).css("height", ($(parentOverflowSelector).height() / 3)-7);
 }
 window.addEventListener('HTMLImportsLoaded', function(e) {
 // $(document).ready(function() {
     if ($(".parentOverflowContainer").css("float") == "left") {
         overflowContainer('.overflowContainer', '.parentOverflowContainer');
-
-
     } else if ($(".parentOverflowContainer").css("float") == "none") {
         $(".overflowContainer").height("auto");
     };
@@ -25,7 +23,6 @@ window.addEventListener('HTMLImportsLoaded', function(e) {
 $(window).on('resize', function() {
     if ($(".parentOverflowContainer").css("float") == "left") {
         overflowContainer('.overflowContainer', '.parentOverflowContainer');
-
     } else if ($(".parentOverflowContainer").css("float") == "none") {
         $(".overflowContainer").height("auto");
     };

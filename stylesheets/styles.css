@@ -9712,11 +9712,14 @@ hr.style-two {
 
 .banner {
   padding: 10px;
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
-  background-size: cover;
-  background-position: center center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+  background-position: top right;
   background-repeat: no-repeat;
   background-blend-mode: luminosity;
+  margin-bottom: 10px;
+}
+.banner::last-child {
+  margin: 0;
 }
 @media (max-width: 992px) {
   .banner {
@@ -9724,7 +9727,7 @@ hr.style-two {
   }
 }
 .banner .title {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #000;
   border: none;
   font-weight: bold;
@@ -9743,20 +9746,19 @@ hr.style-two {
 @media (min-width: 1200px) {
   .banner .text {
     padding-right: 40%;
-    padding-left: 10px;
     font-size: 0.9em;
   }
 }
 .banner.preventivi {
-  background-color: #c30;
+  background-color: #c67053;
   background-image: url("../images/preventivi.jpg");
 }
 .banner.pagamenti {
-  background-color: #3c0;
+  background-color: #70c653;
   background-image: url("../images/pagamenti.jpg");
 }
 .banner.consegne {
-  background-color: #03c;
+  background-color: #5370c6;
   background-image: url("../images/consegne.jpg");
 }
 
