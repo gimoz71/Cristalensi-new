@@ -227,6 +227,14 @@
             visibility: hidden;
         }
     </style>
+		<script language="javascript">
+		function NoteCliente()
+		{
+				document.modulocarrello.method = "post";
+				document.modulocarrello.action = "<%if italia_log="Si" or italia_log="" then%>/cristalensi/carrello2.asp<%end if%><%if italia_log="No" then%>/cristalensi/carrello2extra.asp<%end if%>";
+				document.modulocarrello.submit();
+		}
+		</script>
 </head>
 
 <body>
@@ -394,6 +402,7 @@
                     </div>
 
                 </div>
+								<form method="post" name="modulocarrello" action="<%if italia_log="Si" or italia_log="" then%>https://www.cristalensi.it/carrello2.asp<%end if%><%if italia_log="No" then%>https://www.cristalensi.it/carrello2extra.asp<%end if%>">
 								<div class="panel panel-default user-comment">
 										<!-- Default panel contents -->
 										<div class="panel-heading">
@@ -402,10 +411,11 @@
 										<ul class="list-group">
 												<li class="list-group-item">
 												<p>Potete usare questo spazio per inserire eventuali comunicazioni in relazione ai prodotti acquistati.</p>
-												<textarea name="NoteCliente" style="width: 100%" rows="2" id="NoteCliente"></textarea>
+												<textarea name="NoteCliente" style="width: 100%" rows="2" id="NoteCliente"><%=ss("NoteCliente")%></textarea>
 												</li>
 										</ul>
 								</div>
+								</form>
 								<div class="panel panel-default user-comment">
 										<!-- Default panel contents -->
 										<div class="panel-heading">
@@ -435,26 +445,26 @@
                         </li>
                     </ul>
                     <div class="panel-footer">
-                        <a href="accedi.html" class="btn btn-danger btn-block">Completa l'acquisto <i class="fa fa-angle-right"></i></a>
+                        <a href="#" class="btn btn-danger btn-block" onClick="NoteCliente();">Completa l'acquisto <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
 
 								<!--condizioni di vendita-->
-								<div class="panel panel-default user-comment">
+								<div class="panel panel-default payment-list">
 										<!-- Default panel contents -->
 										<div class="panel-heading">
-												<h5><i class="fa fa-users"></i> Condizioni di vendita</h5>
+											<h5>Condizioni di vendita</h5>
 										</div>
 										<ul class="list-group">
-												<li class="list-group-item"><i class="fa fa-user"></i> <strong>PAGAMENTI SICURI</strong><br /></li>
-												<li class="list-group-item"><i class="fa fa-user"></i> <em>Bonifico e PostePay: 0&euro;</em></li>
-												<li class="list-group-item"><i class="fa fa-user"></i> <em>Carte di credito e prepagate: 0&euro;</em></li>
-												<li class="list-group-item"><i class="fa fa-user"></i> <em>Contrassegno in contanti: 4&euro;</em></li>
-												<li class="list-group-item"><i class="fa fa-user"></i> </li>
-												<li class="list-group-item"><i class="fa fa-user"></i> <strong>SPEDIZIONE IN TUTTA ITALIA ASSICURATA</strong><br /></li>
-												<li class="list-group-item"><i class="fa fa-user"></i> <em>Per ordini superiori a 250&euro;: 0&euro;</em></li>
-												<li class="list-group-item"><i class="fa fa-user"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
-												<li class="list-group-item"><i class="fa fa-user"></i> <em>Ritiro in sede: 0&euro;</em></li>
+											<li class="list-group-item"><strong>PAGAMENTI SICURI</strong></li>
+											<li class="list-group-item"><i class="fa fa-check"></i> <em>Bonifico e PostePay: 0&euro;</em></li>
+											<li class="list-group-item"><i class="fa fa-check"></i> <em>Carte di credito e prepagate: 0&euro;</em></li>
+											<li class="list-group-item"><i class="fa fa-check"></i> <em>Contrassegno in contanti: 4&euro;</em></li>
+											<li class="list-group-item">&nbsp;</li>
+											<li class="list-group-item"><strong>SPEDIZIONE IN TUTTA ITALIA ASSICURATA</strong></li>
+											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini superiori a 250&euro;: 0&euro;</em></li>
+											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
+											<li class="list-group-item"><i class="fa fa-check"></i> <em>Ritiro in sede: 0&euro;</em></li>
 										</ul>
 										<div class="panel-footer"><a href="#" class="btn btn-success">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>

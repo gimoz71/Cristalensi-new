@@ -29,7 +29,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav nav-justified main-menu">
-                    <li class="nav-user visible-xs"><a href="#">Home</a></li>
+                    <li class="nav-user visible-xs"><a href="/cristalensi/index.asp">Home</a></li>
                     <li class="nav-user dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Interno <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
                             <li>
@@ -315,11 +315,11 @@
                     </li>
                     <li class="nav-user"><a href="#">Produttori</a></li>
 
-                    <li class="nav-user visible-xs"><a href="#">Accedi/iscriviti</a></li>
+                    <li class="nav-user visible-xs"><a href="/cristalensi/iscrizione.asp">Accedi/iscriviti</a></li>
                     <li class="nav-user visible-xs"><a href="#">Area Clienti</a></li>
                     <li class="nav-user visible-xs"><a href="#">Dicono di noi</a></li>
                     <li class="nav-user visible-xs"><a href="#">Lista dei desideri</a></li>
-                    <li class="nav-user visible-xs"><a href="#">Carrello</a></li>
+                    <li class="nav-user visible-xs"><a href="/cristalensi/carrello1.asp">Carrello</a></li>
                     <li class="nav-user visible-xs"><a href="#">Condizioni di vendita</a></li>
                 </ul>
             </div>
