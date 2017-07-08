@@ -11,6 +11,7 @@ if prov="" then prov=0
 	mode = request("mode")
 	if mode = "" then mode = 0
 
+	'iscrizione prima volta
 	if mode=1 then
 		nome=request("nome")
 		nominativo=request("nominativo")
@@ -129,13 +130,13 @@ if mode=1 then
 			End With
 			Set eMail_cdo.Configuration = myConfig
 
-			eMail_cdo.From = Mittente
-			eMail_cdo.To = Destinatario
-			eMail_cdo.Subject = Oggetto
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
 
-			eMail_cdo.HTMLBody = Testo
+			'eMail_cdo.HTMLBody = Testo
 
-			eMail_cdo.Send()
+			'eMail_cdo.Send()
 
 			Set myConfig = Nothing
 			Set eMail_cdo = Nothing
@@ -190,13 +191,13 @@ if mode=1 then
 			End With
 			Set eMail_cdo.Configuration = myConfig
 
-			eMail_cdo.From = Mittente
-			eMail_cdo.To = Destinatario
-			eMail_cdo.Subject = Oggetto
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
 
-			eMail_cdo.HTMLBody = Testo
+			'eMail_cdo.HTMLBody = Testo
 
-			eMail_cdo.Send()
+			'eMail_cdo.Send()
 
 			Set myConfig = Nothing
 			Set eMail_cdo = Nothing
@@ -235,13 +236,13 @@ if mode=1 then
 			End With
 			Set eMail_cdo.Configuration = myConfig
 
-			eMail_cdo.From = Mittente
-			eMail_cdo.To = Destinatario
-			eMail_cdo.Subject = Oggetto
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
 
-			eMail_cdo.HTMLBody = Testo
+			'eMail_cdo.HTMLBody = Testo
 
-			eMail_cdo.Send()
+			'eMail_cdo.Send()
 
 			Set myConfig = Nothing
 			Set eMail_cdo = Nothing
@@ -260,11 +261,14 @@ if mode=1 then
 
 		end if
 
-	end if
+		if prov=0 and errore=0 then response.redirect("/cristalensi/areaprivata.asp")
+		if prov=1 and errore=0 then response.redirect("/cristalensi/carrello2.asp")
+end if
 
 	'if mode=2 and pkid=0 then response.Redirect("iscrizione.asp")
 
 
+'login
   if mode=2 then
   	login = Request.form("login")
   	lg1=InStr(login, "'")
@@ -504,11 +508,14 @@ if mode=1 then
                     <div class="col-md-12">
                         <p class="description">Se sei gi&agrave; iscritto, e quindi hai gi&agrave; Login (Email) e Password, non &egrave; necessario che ti iscriva nuovamente, &egrave; sufficiente inserire i dati di accesso qu&iacute; sotto e sarai riconosciuto immediatamente.
                         </p>
-                        <form class="form-horizontal" method="post" action="/cristalensi/iscrizione.asp?mode=2&contr=1" name="newsform2">
+												<%if errore=2 then%><p><strong>ATTENZIONE! LOGIN O PASSWORD ERRATE. RIPROVATE, GRAZIE.</strong></p><%end if%>
+                        <form class="form-horizontal" method="post" action="/cristalensi/iscrizione.asp?mode=2" name="newsform2">
+												<input type="hidden" name="prov" value="<%=prov%>">
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Login</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3" name="login">
+
+																		<input type="email" class="form-control" id="inputEmail3" name="login">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -538,43 +545,44 @@ if mode=1 then
                         <p class="description">In questa pagina puoi inserire i tuoi dati per registrarti a Cristalensi.<br> Informazione importante: &egrave; necessario che l'indirizzo Email sia un'indirizzo funzionante e che usi normalmente, in quanto ti verranno spedite
                             comunicazioni relativamente agli ordini e ai prodotti.<br>Ti ricordiamo inoltre che l'indirizzo Email lo dovrai utilizzare come Login per accedere ai tuoi futuri ordini.
                         </p>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" method="post" action="/cristalensi/iscrizione.asp?mode=1&amp;pkid=<%=pkid%>" name="newsform" onSubmit="return verifica();">
+												<input type="hidden" name="prov" value="<%=prov%>">
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Nome</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3">
+                                    <input type="text" class="form-control" id="inputEmail3" name="nome" value="<% if pkid > 0 then %><%=rs("nome")%><%else%><%if mode=3 then%><%=nome%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Cognome</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3">
+                                    <input type="text" class="form-control" id="inputEmail3" name="nominativo" value="<% if pkid > 0 then %><%=rs("nominativo")%><%else%><%if mode=3 then%><%=nominativo%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3">
+                                    <input type="email" class="form-control" id="inputEmail3" name="email" value="<% if pkid > 0 then %><%=rs("email")%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Conferma email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3">
+                                    <input type="email" class="form-control" id="inputEmail3" name="conferma" value="<% if pkid > 0 then %><%=rs("email")%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="inputPassword3">
+                                    <input type="password" class="form-control" id="inputPassword3" name="password" value="<% if pkid > 0 then %><%=rs("password")%><%else%><%if mode=3 then%><%=password%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
                                     <span>Autorizzazione a ricevere email</span>
                                     <div class="radio">
-                                        <label><input type="radio" name="auth" checked> si</label>
-                                        <label><input type="radio" name="auth"> no</label>
+                                        <label><input type="radio" name="aut_email" value=True <% if pkid > 0 then %><%if rs("aut_email")=True then%> checked<%end if %><%else%> checked<%end if%>> si</label>
+                                        <label><input type="radio" name="aut_email" value=False <% if pkid > 0 then %><%if rs("aut_email")=False then%> checked<%end if %><%end if%>> no</label>
                                     </div>
                                 </div>
                             </div>
@@ -598,13 +606,13 @@ Ottenere l'aggiornamento, la rettifica o l'integrazione dei dati;
 Ottenere l'attestazione che la cancellazione, l'aggiornamento, la rettifica o l'integrazione siano portate a conoscenza di coloro che abbiano avuto comunicazione dei dati;
 Opporsi gratuitamente al trattamento dei dati che lo riguardano.</textarea>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" name="auth" checked> Accetto le condizioni</label>
+                                        <label><input name="chekka" type="checkbox" onClick="accetta(this)" /> Accetto le condizioni</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <button type="submit" class="btn btn-danger">Registrati</button>
+                                    <button type="submit" class="btn btn-danger" name="Submit" disabled>Iscriviti</button> (*) campo obbligatorio
                                 </div>
                             </div>
                         </form>

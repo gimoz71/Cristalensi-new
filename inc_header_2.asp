@@ -314,8 +314,11 @@
                         </ul>
                     </li>
                     <li class="nav-user"><a href="#">Produttori</a></li>
-
-                    <li class="nav-user visible-xs"><a href="/cristalensi/iscrizione.asp">Accedi/iscriviti</a></li>
+                    <%if idsession>0 then%>
+                      <li class="nav-user visible-xs"><a href="/cristalensi/admin/logout.asp">LOG OUT</a></li>
+                    <%else%>
+                      <li class="nav-user visible-xs"><a href="/cristalensi/iscrizione.asp">Accedi/iscriviti</a></li>
+                    <%end if%>
                     <li class="nav-user visible-xs"><a href="#">Area Clienti</a></li>
                     <li class="nav-user visible-xs"><a href="#">Dicono di noi</a></li>
                     <li class="nav-user visible-xs"><a href="#">Lista dei desideri</a></li>

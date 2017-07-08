@@ -46,7 +46,12 @@
     <div class="container">
         <ul class="nav nav-justified">
             <li><a href="/cristalensi/index.asp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-            <li><a href="/cristalensi/iscrizione.asp"><span class="glyphicon glyphicon-log-in"></span> Accedi/iscriviti</a></li>
+            <%if idsession>0 then%>
+              <li><a href="/cristalensi/admin/logout.asp"><span class="glyphicon glyphicon-log-in"></span> LOG OUT</a></li>
+            <%else%>
+              <li><a href="/cristalensi/iscrizione.asp"><span class="glyphicon glyphicon-log-in"></span> Accedi/iscriviti</a></li>
+            <%end if%>
+
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Area clienti</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-bullhorn"></span> Dicono di noi</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-heart"></span> Lista dei desideri</a></li>
