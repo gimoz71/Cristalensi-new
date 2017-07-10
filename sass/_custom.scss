@@ -753,17 +753,17 @@ hr.style-two {
     }
 
     &.preventivi {
-        background-color: desaturate(lighten(#c30, 15), 50%);
+        background-color: mix(#FFD31C, #ee7700, 0%);
         background-image: url("../images/preventivi.jpg");
     }
 
     &.pagamenti {
-        background-color: desaturate(lighten(#3c0, 15), 50%);
+        background-color: mix(#FFD31C, #ee7700, 50%);
         background-image: url("../images/pagamenti.jpg");
     }
 
     &.consegne {
-        background-color: desaturate(lighten(#03c, 15), 50%);
+        background-color: mix(#FFD31C, #ee7700, 100%);
         background-image: url("../images/consegne.jpg");
     }
 }
