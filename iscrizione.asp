@@ -11,6 +11,8 @@ if prov="" then prov=0
 	mode = request("mode")
 	if mode = "" then mode = 0
 
+	errore=0
+
 	'iscrizione prima volta
 	if mode=1 then
 		nome=request("nome")
@@ -47,20 +49,34 @@ if prov="" then prov=0
 	if mode=1 then
 		Set rs=Server.CreateObject("ADODB.Recordset")
 		sql = "Select email From Clienti where email='"&email&"'"
-		if pkid>0 then sql = "Select email,pkid From Clienti where email='"&email&"' and pkid<>"&pkid&""
 		rs.Open sql, conn, 1, 1
-		if rs.recordcount>0 then errore=1
+		if rs.recordcount>0 then
+			errore=1
+			mode=3
+		end if
 		rs.close
 	end if
 
 if mode=1 then
+	if pkid=0 then
+		Set rs=Server.CreateObject("ADODB.Recordset")
+		sql = "Select Top 1 PkId From Clienti Order by PkId DESC"
+		rs.Open sql, conn, 1, 1
+		PkId_Prec=rs("PkId")
+		rs.close
+		pkid_iscritto=PkId_Prec+1
+		response.write("pkid_iscritto:"&pkid_iscritto)
+	end if
+
 	Set rs=Server.CreateObject("ADODB.Recordset")
 	sql = "Select * From Clienti"
 	if pkid > 0 then sql = "Select * From Clienti where pkid="&pkid
 	rs.Open sql, conn, 3, 3
 
-	'if mode = 1 then
-		if pkid = 0 then rs.addnew
+		if pkid = 0 then
+			rs.addnew
+			rs("pkid")=pkid_iscritto
+		end if
 
 		rs("nome")=nome
 		rs("nominativo")=nominativo
@@ -75,12 +91,6 @@ if mode=1 then
 		rs.close
 
 		if pkid=0 then
-			Set rs=Server.CreateObject("ADODB.Recordset")
-			sql = "Select @@Identity As pkid"
-			rs.Open sql, conn, 1, 1
-				pkid_iscritto=rs("pkid")
-			rs.close
-
 
 			'invio l'email di benvenuto al cliente
 			HTML1 = ""
@@ -354,6 +364,9 @@ end if
   	if idsession="" then idsession=0
   	'if italia_log="" then italia_log="Si"
   end if
+
+	response.write("mode:"&mode)
+	response.write("errore:"&errore)
 %>
 <!DOCTYPE html>
 <html>
@@ -455,6 +468,7 @@ end if
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
+				<%if prov=1 then%>
         <div class="col-sm-12">
             <div class="row bs-wizard">
                 <div class="col-sm-5 bs-wizard-step complete">
@@ -471,7 +485,7 @@ end if
                         <div class="progress-bar"></div>
                     </div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center">Accedi / Registrati.</div>
+                    <div class="bs-wizard-info text-center">Accedi / Iscriviti</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step disabled">
                     <div class="text-center bs-wizard-stepnum">3</div>
@@ -499,6 +513,14 @@ end if
                 </div>
             </div>
         </div>
+				<%else%>
+				<div class="col-xl-12">
+            <ol class="breadcrumb">
+                <li><a href="/cristalensi/index.asp"><i class="fa fa-home"></i></a></li>
+                <li class="active">Accesso e Iscrizione</li>
+            </ol>
+        </div>
+				<%end if%>
         <div class="col-sm-12">
             <div class="row vdivide is-table-row">
                 <div class="col-lg-6">
@@ -539,7 +561,7 @@ end if
                 </div>
                 <div class="col-lg-6">
                     <div class="title">
-                        <h4>Registrati</h4>
+                        <h4>Iscriviti</h4>
                     </div>
                     <div class="col-md-12">
                         <p class="description">In questa pagina puoi inserire i tuoi dati per registrarti a Cristalensi.<br> Informazione importante: &egrave; necessario che l'indirizzo Email sia un'indirizzo funzionante e che usi normalmente, in quanto ti verranno spedite
@@ -559,6 +581,7 @@ end if
                                     <input type="text" class="form-control" id="inputEmail3" name="nominativo" value="<% if pkid > 0 then %><%=rs("nominativo")%><%else%><%if mode=3 then%><%=nominativo%><%end if%><%end if%>">
                                 </div>
                             </div>
+														<%if errore=1 then%><p><strong>ATTENZIONE! L'EMAIL INSERITA NON PUO' ESSRE ACCETTATA. RIPROVATE, GRAZIE.</strong></p><%end if%>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
