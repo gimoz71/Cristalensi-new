@@ -263,7 +263,7 @@
                         <div class="progress-bar"></div>
                     </div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center">Carrello.</div>
+                    <div class="bs-wizard-info text-center">Carrello</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step disabled">
                     <div class="text-center bs-wizard-stepnum">2</div>
@@ -271,7 +271,7 @@
                         <div class="progress-bar"></div>
                     </div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center">Accedi / Registrati.</div>
+                    <div class="bs-wizard-info text-center">Accedi / Iscriviti</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step disabled">
                     <div class="text-center bs-wizard-stepnum">3</div>
@@ -346,7 +346,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <h5 class="nomargin"><a href="<%=NomePagina%>" title="Scheda del prodotto: <%=NomePagina%>"><%=rs("titolo")%></a></h5>
-																										<p><strong><%=rs("codicearticolo")%></strong></p>
+																										<p><strong>Codice: <%=rs("codicearticolo")%></strong></p>
                                                     <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p>><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: Bianco satinato<%=rs("lampadina")%><%end if%></p><%end if%>
                                                 </div>
                                             </div>
@@ -388,7 +388,7 @@
 																			<td data-th="Product" class="cart-product">
 																					<div class="row">
 																							<div class="col-sm-12">
-																									<h5 class="nomargin">Nessun prodotto nel carrello</h5>
+																									<h5 class="nomargin"><br>Nessun prodotto nel carrello</h5>
 																							</div>
 																			</td>
 																	</tr>
@@ -402,6 +402,7 @@
                     </div>
 
                 </div>
+								<%if ss.recordcount>0 then%>
 								<form method="post" name="modulocarrello" action="<%if italia_log="Si" or italia_log="" then%>https://www.cristalensi.it/carrello2.asp<%end if%><%if italia_log="No" then%>https://www.cristalensi.it/carrello2extra.asp<%end if%>">
 								<div class="panel panel-default user-comment">
 										<!-- Default panel contents -->
@@ -416,6 +417,7 @@
 										</ul>
 								</div>
 								</form>
+								<%end if%>
 								<div class="panel panel-default user-comment">
 										<!-- Default panel contents -->
 										<div class="panel-heading">
@@ -435,7 +437,8 @@
 								</div>
             </div>
             <div class="col-md-4">
-                <div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;">
+								<%if ss.recordcount>0 then%>
+								<div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;">
                     <ul class="list-group text-center">
                         <li class="list-group-item" style="padding-top: 20px">
                             <p>Totale carrello:<br />
@@ -448,6 +451,7 @@
                         <a href="#" class="btn btn-danger btn-block" onClick="NoteCliente();">Completa l'acquisto <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
+								<%end if%>
 
 								<!--condizioni di vendita-->
 								<div class="panel panel-default payment-list">
@@ -475,7 +479,7 @@
             </div>
         </div>
 
-
+				<!--
         <div class="col-md-12">
             <div class="bg-primary">
                 <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b>349,00&euro;</b></p>
@@ -483,6 +487,7 @@
             <a href="#" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
             <a href="#" class="btn btn-danger pull-right">Passo successivo <i class="glyphicon glyphicon-chevron-right"></i></a>
         </div>
+				-->
 
 		</div>
 		<%

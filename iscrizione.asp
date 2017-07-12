@@ -570,34 +570,34 @@ end if
                         <form class="form-horizontal" method="post" action="/cristalensi/iscrizione.asp?mode=1&amp;pkid=<%=pkid%>" name="newsform" onSubmit="return verifica();">
 												<input type="hidden" name="prov" value="<%=prov%>">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Nome</label>
+                                <label for="nome" class="col-sm-4 control-label">Nome</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" name="nome" value="<% if pkid > 0 then %><%=rs("nome")%><%else%><%if mode=3 then%><%=nome%><%end if%><%end if%>">
+                                    <input type="text" class="form-control" id="nome" name="nome" value="<% if pkid > 0 then %><%=rs("nome")%><%else%><%if mode=3 then%><%=nome%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Cognome</label>
+                                <label for="nominativo" class="col-sm-4 control-label">Cognome</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3" name="nominativo" value="<% if pkid > 0 then %><%=rs("nominativo")%><%else%><%if mode=3 then%><%=nominativo%><%end if%><%end if%>">
+                                    <input type="text" class="form-control" id="nominativo" name="nominativo" value="<% if pkid > 0 then %><%=rs("nominativo")%><%else%><%if mode=3 then%><%=nominativo%><%end if%><%end if%>">
                                 </div>
                             </div>
 														<%if errore=1 then%><p><strong>ATTENZIONE! L'EMAIL INSERITA NON PUO' ESSRE ACCETTATA. RIPROVATE, GRAZIE.</strong></p><%end if%>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+                                <label for="email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3" name="email" value="<% if pkid > 0 then %><%=rs("email")%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
+                                    <input type="email" class="form-control" id="email" name="email" value="<% if pkid > 0 then %><%=rs("email")%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Conferma email</label>
+                                <label for="conferma" class="col-sm-4 control-label">Conferma email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3" name="conferma" value="<% if pkid > 0 then %><%=rs("email")%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
+                                    <input type="email" class="form-control" id="conferma" name="conferma" value="<% if pkid > 0 then %><%=rs("email")%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+                                <label for="password" class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="inputPassword3" name="password" value="<% if pkid > 0 then %><%=rs("password")%><%else%><%if mode=3 then%><%=password%><%end if%><%end if%>">
+                                    <input type="password" class="form-control" id="password" name="password" value="<% if pkid > 0 then %><%=rs("password")%><%else%><%if mode=3 then%><%=password%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -611,7 +611,7 @@ end if
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <textarea class="form-control" rows="3" readonly style="font-size: 11px;">INFORMAZIONI RELATIVE AL TRATTAMENTO DI DATI PERSONALI
+                                    <textarea class="form-control" rows="3" readonly style="font-size: 11px;" readonly>INFORMAZIONI RELATIVE AL TRATTAMENTO DI DATI PERSONALI
 Ai sensi del D.L. 196/2003, l'Azienda informa l'interessato che i dati che lo riguardano, forniti dall'interessato medesimo, formeranno oggetto di trattamento nel rispetto della normativa sopra richiamata. Tali dati verranno trattati per finalita' gestionali, commerciali, promozionali. Il conferimento dei dati alla nostra Azienda e' assolutamente facoltativo.
 I dati acquisiti potranno essere comunicati e diffusi in osservanza di quanto disposto dal D.L. 196/2003 allo scopo di perseguire le finalita' sopra indicate.
 
