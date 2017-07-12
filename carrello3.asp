@@ -32,32 +32,6 @@
 	end if
 	trasp_rs.close
 
-'	Nominativo=request("Nominativo")
-'	Rag_Soc=request("Rag_Soc")
-
-'	if Nominativo="" and Rag_Soc="" then
-'		Set cli_rs=Server.CreateObject("ADODB.Recordset")
-'		sql = "Select * From Clienti where pkid="&idsession
-'		cli_rs.Open sql, conn, 1, 1
-'		if cli_rs.recordcount>0 then
-'			Nominativo=cli_rs("Nome")&" "&cli_rs("Nominativo")
-'			Rag_Soc=cli_rs("Rag_Soc")
-'			Cod_Fisc=cli_rs("Cod_Fisc")
-'			PartitaIVA=cli_rs("PartitaIVA")
-'			Indirizzo=cli_rs("Indirizzo")
-'			CAP=cli_rs("CAP")
-'			Citta=cli_rs("Citta")
-'			Provincia=cli_rs("Provincia")
-'		end if
-'		cli_rs.close
-'	else
-'		Cod_Fisc=request("Cod_Fisc")
-'		PartitaIVA=request("PartitaIVA")
-'		Indirizzo=request("Indirizzo")
-'		CAP=request("CAP")
-'		Citta=request("Citta")
-'		Provincia=request("Provincia")
-'	end if
 
 	Set os1 = Server.CreateObject("ADODB.Recordset")
 	sql = "SELECT * FROM Ordini where PkId="&idOrdine
@@ -179,7 +153,7 @@
     function Cambia()
     {
         document.modulocarrello.method = "post";
-        document.modulocarrello.action = "https://www.cristalensi.it/carrello3.asp";
+        document.modulocarrello.action = "/cristalensi/carrello3.asp";
         document.modulocarrello.submit();
     }
     </script>
@@ -187,7 +161,7 @@
     function Continua()
     {
         document.modulocarrello.method = "post";
-        document.modulocarrello.action = "https://www.cristalensi.it/carrello3.asp?mode=1";
+        document.modulocarrello.action = "/cristalensi/carrello3.asp?mode=1";
         document.modulocarrello.submit();
     }
     </script>
@@ -385,12 +359,12 @@
                                     <td data-th="Product" class="cart-product">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <p>Spedizione in Italia</p>
+                                                <p><%=TipoTrasporto%></p>
                                             </div>
                                         </div>
                                     </td>
                                     <td data-th="Quantity" class="text-center">
-                                        10,00&euro;
+                                        <%=FormatNumber(CostoSpedizioneTotale,2)%>&euro;
                                     </td>
                                 </tr>
                             </tbody>
@@ -399,19 +373,31 @@
                 </div>
                 <div class="col-md-6">
                     <div class="title">
-                        <h4>indirizzo di spedizione</h4>
+                        <h4>Indirizzo di spedizione</h4>
                     </div>
                     <div class="col-md-12 top-buffer">
-                        <p>Nominativo: <b>Amintore Fanfani</b> - Indirizzo: <b>Via delle Acciughe 34 -57122 Livorno</b></p>
+                        <p><%=Nominativo_sp%>&nbsp;-&nbsp;Telefono:&nbsp;<%=Telefono_sp%><br /><%=Indirizzo_sp%>&nbsp;-&nbsp;<%=CAP_sp%>&nbsp;-&nbsp;<%=Citta_sp%><%if Provincia_sp<>"" then%>&nbsp;(<%=Provincia_sp%>)<%end if%>&nbsp;-&nbsp;<%=Nazione_sp%></p>
                     </div>
                 </div>
             </div>
         </div>
+				<form name="modulocarrello" id="modulocarrello">
         <div class="col-md-12">
             <div class="row top-buffer">
                 <div class="col-md-6">
-                    <div class="title">
-                        <h4>modalit&agrave; di pagamento</h4>
+										<%
+										Set trasp_rs = Server.CreateObject("ADODB.Recordset")
+										if Nazione_sp="IT" then
+											sql = "SELECT * FROM CostiPagamento"
+										else
+											sql = "SELECT Top 2 * FROM CostiPagamento"
+										end if
+
+										trasp_rs.Open sql, conn, 1, 1
+										if trasp_rs.recordcount>0 then
+										%>
+										<div class="title">
+                        <h4>Modalit&agrave; di pagamento</h4>
                     </div>
                     <div class="col-md-12 top-buffer">
                         <table id="cart" class="table table-hover table-condensed table-cart">
@@ -423,43 +409,44 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+																<%
+																Do while not trasp_rs.EOF
+																PkIdPagamento=trasp_rs("pkid")
+																NomePagamento=trasp_rs("nome")
+																DescrizionePagamento=trasp_rs("descrizione")
+																CostoPagamento=trasp_rs("costo")
+
+																TipoCosto=trasp_rs("TipoCosto")
+																if TipoCosto="" then TipoCosto=3
+																%>
+																<tr>
                                     <td data-th="Product" class="cart-product">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="radio">
-                                                    <label><input type="radio" name="auth" checked> <b>Bonifico bancario</b></label>
+                                                    <label><input type="radio" name="TipoPagamentoScelto" id="TipoPagamentoScelto" value="<%=PkIdPagamento%>" <%if PkIdPagamento=PkIdPagamentoScelto then%> checked="checked"<%end if%> onClick="Cambia();"> <b><%=NomePagamento%></b></label>
                                                 </div>
-                                                <p style="color: #666; font-size: .85em;">E' possibile pagare con bonifico bancario senza nessun costo aggiuntivo. La merce verr6agrave; spedita al momento che verr6agrave; notificato il pagamento sul nostro conto corrente. I dati per il bonifico
-                                                    verranno resi noti al termine della procedura.</p>
+                                                <p style="color: #666; font-size: .85em;"><%=DescrizionePagamento%></p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td data-th="Price" style="">0,00&euro;</td>
-                                    <td data-th="Subtotal" class="hidden-xs">0,00&euro;</td>
+                                    <td data-th="Price" style=""><%=FormatNumber(CostoPagamento,2)%><%if TipoCosto=1 then%>&#8364;<%end if%><%if TipoCosto=2 then%>%<%end if%></td>
+                                    <td data-th="Subtotal" class="hidden-xs"><%if PkIdPagamento=PkIdPagamentoScelto then%><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;<%else%>-<%end if%></td>
                                 </tr>
-                                <tr>
-                                    <td data-th="Product" class="cart-product">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="radio">
-                                                    <label><input type="radio" name="auth" > <b>Carta di Credito/Circuito Paypal</b></label>
-                                                </div>
-                                                <p style="color: #666; font-size: .85em;">E' possibile pagare con qualsiasi carta di credito attraverso il sistema di pagamento fornito da Paypal.</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price">0,00&euro;</td>
-                                    <td data-th="Subtotal" class="hidden-xs"></td>
-                                </tr>
+																<%
+																trasp_rs.movenext
+																loop
+																%>
                                 <tr>
                                     <td data-th="Product" class="hidden-xs"></td>
-                                    <td data-th="Price"><b class="visible-xs">Costo operazione: 0&euro;</b></td>
+                                    <td data-th="Price"><b class="visible-xs">Costo operazione: <%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;<%else%>-<%end if%></b></td>
                                     <td data-th="Subtotal" class="hidden-xs"></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+										<%end if%>
+										<%trasp_rs.close%>
                 </div>
                 <div class="col-md-6">
                     <div class="title">
@@ -467,79 +454,83 @@
                     </div>
                     <div class="col-md-12">
                         <p class="description">Per coloro che hanno la necessit&agrave; della fattura inserire i dati correttamente, altrimenti verr&agrave; emesso regolare scontrino fiscale.<br>La fattura &egrave; emessa su richiesta sia per le aziende che per privati.</p>
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Nominativo</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Partita IVA</label>
-                                <div class="col-sm-8">
-                                    <input type="number" class="form-control" id="inputEmail3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Indirizzo</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Citt&agrave;</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputEmail3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Telefono</label>
-                                <div class="col-sm-8">
-                                    <input type="number" class="form-control" id="inputEmail3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">CAP</label>
-                                <div class="col-sm-8">
-                                    <input type="number" class="form-control" id="inputPassword3">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-4 col-sm-8">
-                                    <span>Provincia</span>
-                                    <select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Seleziona una provincia">
-                                        <option title="Applique classiche e lampade a parete" value="9c-applique-classiche-e-lampade-classiche-a-parete.asp">Applique classiche e lampade a parete</option>
-                                        <option title="Lampadari classici e lampade a sospensione" value="7c-lampadari-classici-e-lampade-classiche-a-sospensione.asp">Lampadari classici e lampade a sospensione</option>
-                                        <option title="Lampade classiche da tavolo" value="10c-lampade-classiche-da-tavolo-lumini-e-abat-jour-classiche.asp">Lampade classiche da tavolo</option>
-                                        <option title="Piantane classiche e lampade da terra" value="11c-piantane-classiche-e-lampade-classiche-da-terra.asp">Piantane classiche e lampade da terra</option>
-                                        <option title="Plafoniere classiche e lampade a soffitto" value="8c-plafoniere-classiche-e-lampade-classiche-a-soffitto.asp" >Plafoniere classiche e lampade a soffitto</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-4 col-sm-8">
-                                    <span>Nazione</span>
-                                    <select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Italy">
-                                        <option title="Applique classiche e lampade a parete" value="9c-applique-classiche-e-lampade-classiche-a-parete.asp">Applique classiche e lampade a parete</option>
-                                        <option title="Lampadari classici e lampade a sospensione" value="7c-lampadari-classici-e-lampade-classiche-a-sospensione.asp">Lampadari classici e lampade a sospensione</option>
-                                        <option title="Lampade classiche da tavolo" value="10c-lampade-classiche-da-tavolo-lumini-e-abat-jour-classiche.asp">Lampade classiche da tavolo</option>
-                                        <option title="Piantane classiche e lampade da terra" value="11c-piantane-classiche-e-lampade-classiche-da-terra.asp">Piantane classiche e lampade da terra</option>
-                                        <option title="Plafoniere classiche e lampade a soffitto" value="8c-plafoniere-classiche-e-lampade-classiche-a-soffitto.asp" >Plafoniere classiche e lampade a soffitto</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </form>
+												<div class="form-group">
+														<label for="nominativo" class="col-sm-4 control-label">Nome e Cognome</label>
+														<div class="col-sm-8">
+																<input type="text" class="form-control" name="nominativo" id="nominativo" value="<%=NominativoOrdine%>" maxlength="50">
+														</div>
+												</div>
+												<div class="form-group">
+														<label for="rag_soc" class="col-sm-4 control-label">Ragione Sociale (nel caso in cui si tratti di un'Azienda)</label>
+														<div class="col-sm-8">
+																<input type="text" class="form-control" name="rag_soc" id="rag_soc" value="<%=Rag_SocOrdine%>" maxlength="50">
+														</div>
+												</div>
+												<div class="form-group">
+														<label for="cod_fisc" class="col-sm-4 control-label">Codice Fiscale</label>
+														<div class="col-sm-8">
+																<input type="text" class="form-control" name="cod_fisc" id="cod_fisc" value="<%=Cod_fiscOrdine%>" maxlength="20">
+														</div>
+												</div>
+												<div class="form-group">
+														<label for="PartitaIVA" class="col-sm-4 control-label">Partita IVA (nel caso in cui si tratti di un'Azienda)</label>
+														<div class="col-sm-8">
+																<input type="number" class="form-control" name="PartitaIVA" id="PartitaIVA" value="<%=PartitaIVAOrdine%>" maxlength="20">
+														</div>
+												</div>
+												<div class="form-group">
+														<label for="indirizzo" class="col-sm-4 control-label">Indirizzo</label>
+														<div class="col-sm-8">
+																<input type="text" class="form-control" name="indirizzo" id="indirizzo" value="<%=IndirizzoOrdine%>" maxlength="100">
+														</div>
+												</div>
+												<div class="form-group">
+														<label for="citta" class="col-sm-4 control-label">Citt&agrave;</label>
+														<div class="col-sm-8">
+																<input type="text" class="form-control" name="citta" id="citta" value="<%=CittaOrdine%>" maxlength="50">
+														</div>
+												</div>
+
+												<div class="form-group">
+														<label for="cap" class="col-sm-4 control-label">CAP</label>
+														<div class="col-sm-8">
+																<input type="text" class="form-control" name="cap" id="cap" value="<%=CAPOrdine%>" maxlength="5">
+														</div>
+												</div>
+												<div class="form-group">
+														<label for="provincia" class="col-sm-4 control-label">Provincia</label>
+														<div class="col-sm-8">
+																<input type="text" class="form-control" name="provincia" id="provincia" value="<%=ProvinciaOrdine%>" maxlength="2">
+														</div>
+												</div>
+
                     </div>
                 </div>
             </div>
+						<%if ss.recordcount>0 then%>
             <div class="col-md-12">
                 <div class="bg-primary">
-                    <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b>349,00&euro;</b></p>
+                    <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b>
+										<%if ss("TotaleGenerale")<>0 then%>
+											<%=FormatNumber(ss("TotaleGenerale"),2)%>
+										<%else%>
+											0,00
+										<%end if%>
+										&#8364;&nbsp;
+										</b></p>
                 </div>
-                <a href="spedizione.html" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
-                <a href="riepilogo.html" class="btn btn-danger pull-right">Passo successivo <i class="glyphicon glyphicon-chevron-right"></i></a>
+								<%if rs.recordcount>0 then%>
+                <a href="/cristalensi/carrello2.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
+                <a href="#" class="btn btn-danger pull-right" onClick="Continua();">Concludi l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a><%end if%>
+								<%end if%>
             </div>
+						<%end if%>
         </div>
+				</form>
     </div>
+		<%
+		ss.close
+		rs.close
+		%>
     <!--#include file="inc_footer.asp"-->
 </body>
