@@ -439,7 +439,7 @@
 																%>
                                 <tr>
                                     <td data-th="Product" class="hidden-xs"></td>
-                                    <td data-th="Price"><b class="visible-xs">Costo operazione: <%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;<%else%>-<%end if%></b></td>
+                                    <td data-th="Price"><b class="visible-xs">Costo operazione: <%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;</b></td>
                                     <td data-th="Subtotal" class="hidden-xs"></td>
                                 </tr>
                             </tbody>
@@ -519,10 +519,8 @@
 										&#8364;&nbsp;
 										</b></p>
                 </div>
-								<%if rs.recordcount>0 then%>
                 <a href="/cristalensi/carrello2.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
-                <a href="#" class="btn btn-danger pull-right" onClick="Continua();">Concludi l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a><%end if%>
-								<%end if%>
+                <a href="#" class="btn btn-danger pull-right" onClick="Continua();">Concludi l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a>
             </div>
 						<%end if%>
         </div>
