@@ -318,7 +318,7 @@
                 </div>
             </div>
         </div>
-				<form name="modulocarrello" id="modulocarrello">
+				<form name="modulocarrello" id="modulocarrello" class="form-horizontal">
         <div class="col-md-12">
             <div class="title">
                 <h4>Modalit&agrave; di spedizione/ritiro prodotti</h4>
@@ -409,12 +409,12 @@
                     </div>
                     <div class="col-md-12 top-buffer">
                         <table id="cart" class="table table-hover table-condensed table-cart">
-														<%
-														Set trasp_rs = Server.CreateObject("ADODB.Recordset")
-														sql = "SELECT * FROM CostiTrasporto"
-														trasp_rs.Open sql, conn, 1, 1
-														%>
-														<thead>
+							<%
+							Set trasp_rs = Server.CreateObject("ADODB.Recordset")
+							sql = "SELECT * FROM CostiTrasporto"
+							trasp_rs.Open sql, conn, 1, 1
+							%>
+							<thead>
                                 <tr>
                                     <th style="width:70%">Modalit&agrave; di spedizione</th>
                                     <th style="width:15%">Tariffa</th>
@@ -422,18 +422,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-																<%
-																if trasp_rs.recordcount>0 then
-																	Do while not trasp_rs.EOF
-																	PkIdSpedizione=trasp_rs("pkid")
-																	NomeSpedizione=trasp_rs("nome")
-																	DescrizioneSpedizione=trasp_rs("descrizione")
-																	CostoSpedizione=trasp_rs("costo")
+								<%
+								if trasp_rs.recordcount>0 then
+									Do while not trasp_rs.EOF
+									PkIdSpedizione=trasp_rs("pkid")
+									NomeSpedizione=trasp_rs("nome")
+									DescrizioneSpedizione=trasp_rs("descrizione")
+									CostoSpedizione=trasp_rs("costo")
 
-																	TipoCosto=trasp_rs("TipoCosto")
-																	if TipoCosto="" then TipoCosto=3
-																%>
-																<tr>
+									TipoCosto=trasp_rs("TipoCosto")
+									if TipoCosto="" then TipoCosto=3
+								%>
+								<tr>
                                     <td data-th="Product" class="cart-product">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -445,20 +445,20 @@
                                         </div>
                                     </td>
                                     <td data-th="Price">
-																		<%if TipoCosto=10 then%>
+										<%if TipoCosto=10 then%>
                                       	DA DEFINIRE
                                     <%else%>
-																				<%=FormatNumber(CostoSpedizione,2)%><%if TipoCosto=1 then%>&#8364;<%end if%><%if TipoCosto=2 then%>%<%end if%>
+										<%=FormatNumber(CostoSpedizione,2)%><%if TipoCosto=1 then%>&#8364;<%end if%><%if TipoCosto=2 then%>%<%end if%>
                                     <%end if%>
-																		</td>
+										</td>
                                     <td data-th="Subtotal" class="hidden-xs"><%if PkIdSpedizione=TipoTrasportoScelto then%><%=FormatNumber(CostoSpedizioneTotale,2)%>&#8364;<%else%>-<%end if%></td>
                                 </tr>
 
-																<%
-																	trasp_rs.movenext
-																	loop
-																%>
-																<tr>
+								<%
+									trasp_rs.movenext
+									loop
+								%>
+								<tr>
                                     <td data-th="Product"><h5>costo spedizione:</h5></td>
                                     <td data-th="Price" class="hidden-xs"></td>
                                     <td data-th="Subtotal"><h5><%if TipoTrasportoScelto=4 and CostoSpedizioneTotale=0 then%>DA DEFINIRE<%else%><%=FormatNumber(CostoSpedizioneTotale,2)%>&#8364;<%end if%></h5></td>
@@ -474,105 +474,103 @@
                         <h4>Recapito</h4>
                     </div>
                     <div class="col-md-12">
-												<%if TipoTrasportoScelto<>2 then%>
-												<p class="description">E' necessario indicare esattamente un indirizzo dove recapitare i prodotti ordinati oltre ad un numero di telefono per essere eventualmente contattati dal corriere.</p>
-
-														<div class="form-group">
+						<%if TipoTrasportoScelto<>2 then%>
+							<p class="description">E' necessario indicare esattamente un indirizzo dove recapitare i prodotti ordinati oltre ad un numero di telefono per essere eventualmente contattati dal corriere.</p>
+							<div class="form-group clearfix">
                                 <label for="nominativo_sp" class="col-sm-4 control-label">Nome e Cognome oppure Azienda</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="nominativo_sp" id="nominativo_sp" value="<%=nominativo_sp%>" maxlength="100">
                                 </div>
                             </div>
-														<div class="form-group">
+							<div class="form-group clearfix">
                                 <label for="telefono_sp" class="col-sm-4 control-label">Telefono</label>
                                 <div class="col-sm-8">
                                     <input type="number" class="form-control" name="telefono_sp" id="telefono_sp" value="<%=telefono_sp%>" maxlength="50">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group clearfix">
                                 <label for="indirizzo_sp" class="col-sm-4 control-label">Indirizzo</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="indirizzo_sp" id="indirizzo_sp" value="<%=indirizzo_sp%>" maxlength="100">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group clearfix">
                                 <label for="citta_sp" class="col-sm-4 control-label">Citt&agrave;</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="citta_sp" id="citta_sp" value="<%=citta_sp%>" maxlength="50">
                                 </div>
                             </div>
-
-                            <div class="form-group">
+                            <div class="form-group clearfix">
                                 <label for="cap_sp" class="col-sm-4 control-label">CAP</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="cap_sp" id="cap_sp" value="<%=cap_sp%>" maxlength="5">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group clearfix">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <span>Provincia</span>
-																		<%
-																		Set prov_rs = Server.CreateObject("ADODB.Recordset")
-																		sql = "SELECT * FROM Province order by Provincia ASC"
-																		prov_rs.Open sql, conn, 1, 1
-																		if prov_rs.recordcount>0 then
-																		%>
-																		<select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Provincia" name="provincia_sp" id="provincia_sp">
-																				<option title="" value="">Selezionare una provincia (solo per l'ITALIA)</option>
-																				<%
-																				Do While Not prov_rs.EOF
-																				%>
-																				<option title="<%=prov_rs("codice")%>" value=<%=prov_rs("codice")%> <%if provincia_sp=prov_rs("codice") then%> selected<%end if%>><%=prov_rs("Provincia")%></option>
-																				<%
-																				prov_rs.movenext
-																				loop
-																				%>
-																		</select>
-																		<%
-																		end if
-																		prov_rs.close
-																		%>
+                                    <label>Provincia</label>
+									<%
+									Set prov_rs = Server.CreateObject("ADODB.Recordset")
+									sql = "SELECT * FROM Province order by Provincia ASC"
+									prov_rs.Open sql, conn, 1, 1
+									if prov_rs.recordcount>0 then
+									%>
+									<select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Provincia" name="provincia_sp" id="provincia_sp">
+										<option title="" value="">Selezionare una provincia (solo per l'ITALIA)</option>
+										<%
+										Do While Not prov_rs.EOF
+										%>
+										<option title="<%=prov_rs("codice")%>" value=<%=prov_rs("codice")%> <%if provincia_sp=prov_rs("codice") then%> selected<%end if%>><%=prov_rs("Provincia")%></option>
+										<%
+										prov_rs.movenext
+										loop
+										%>
+									</select>
+									<%
+									end if
+									prov_rs.close
+									%>
                                 </div>
                             </div>
-														<div class="form-group">
+							<div class="form-group clearfix">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <span>Nazione</span>
-																		<%
-																		Set naz_rs = Server.CreateObject("ADODB.Recordset")
-																		sql = "SELECT * FROM Nazioni order by Nazione ASC"
-																		naz_rs.Open sql, conn, 1, 1
-																		if naz_rs.recordcount>0 then
-																		%>
-																		<select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Nazione" name="nazione_sp" id="nazione_sp">
-																				<option title="" value="">Selezionare una Nazione</option>
-																				<%
-																				Do While Not naz_rs.EOF
+                                    <label class="control-label">Nazione</label>
+									<%
+									Set naz_rs = Server.CreateObject("ADODB.Recordset")
+									sql = "SELECT * FROM Nazioni order by Nazione ASC"
+									naz_rs.Open sql, conn, 1, 1
+									if naz_rs.recordcount>0 then
+									%>
+									<select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Nazione" name="nazione_sp" id="nazione_sp">
+										<option title="" value="">Selezionare una Nazione</option>
+										<%
+										Do While Not naz_rs.EOF
 
-																					if TipoTrasportoScelto<4 and naz_rs("codice")="IT" then
-																						selected="OK"
-																					end if
-																					if nazione_sp=naz_rs("codice") then
-																						selected="OK"
-																					end if
-																				%>
-																				<option title="<%=naz_rs("codice")%>" value=<%=naz_rs("codice")%> <%if selected="OK" then%> selected<%end if%>><%=naz_rs("Nazione")%></option>
-																				<%
-																					selected=""
-																				naz_rs.movenext
-																				loop
-																				%>
-																		</select>
-																		<%
-																		end if
-																		naz_rs.close
-																		%>
+											if TipoTrasportoScelto<4 and naz_rs("codice")="IT" then
+												selected="OK"
+											end if
+											if nazione_sp=naz_rs("codice") then
+												selected="OK"
+											end if
+										%>
+										<option title="<%=naz_rs("codice")%>" value=<%=naz_rs("codice")%> <%if selected="OK" then%> selected<%end if%>><%=naz_rs("Nazione")%></option>
+										<%
+											selected=""
+										naz_rs.movenext
+										loop
+										%>
+									</select>
+									<%
+									end if
+									naz_rs.close
+									%>
                                 </div>
                             </div>
-												<%end if%>
-										</div>
+						<%end if%>
+					</div>
                 </div>
             </div>
-						<%if ss.recordcount>0 then%>
+			<%if ss.recordcount>0 then%>
             <div class="col-md-12">
                 <div class="bg-primary">
 
