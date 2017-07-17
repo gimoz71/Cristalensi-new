@@ -382,7 +382,7 @@
                 </div>
             </div>
         </div>
-				<form name="modulocarrello" id="modulocarrello">
+				<form name="modulocarrello" id="modulocarrello" class="form-horizontal">
         <div class="col-md-12">
             <div class="row top-buffer">
                 <div class="col-md-6">
@@ -455,55 +455,55 @@
                     </div>
                     <div class="col-md-12">
                         <p class="description">Per coloro che hanno la necessit&agrave; della fattura inserire i dati correttamente, altrimenti verr&agrave; emesso regolare scontrino fiscale.<br>La fattura &egrave; emessa su richiesta sia per le aziende che per privati.</p>
-												<div class="form-group">
-														<label for="nominativo" class="col-sm-4 control-label">Nome e Cognome</label>
-														<div class="col-sm-8">
-																<input type="text" class="form-control" name="nominativo" id="nominativo" value="<%=NominativoOrdine%>" maxlength="50">
-														</div>
-												</div>
-												<div class="form-group">
-														<label for="rag_soc" class="col-sm-4 control-label">Ragione Sociale (nel caso in cui si tratti di un'Azienda)</label>
-														<div class="col-sm-8">
-																<input type="text" class="form-control" name="rag_soc" id="rag_soc" value="<%=Rag_SocOrdine%>" maxlength="50">
-														</div>
-												</div>
-												<div class="form-group">
-														<label for="cod_fisc" class="col-sm-4 control-label">Codice Fiscale</label>
-														<div class="col-sm-8">
-																<input type="text" class="form-control" name="cod_fisc" id="cod_fisc" value="<%=Cod_fiscOrdine%>" maxlength="20">
-														</div>
-												</div>
-												<div class="form-group">
-														<label for="PartitaIVA" class="col-sm-4 control-label">Partita IVA (nel caso in cui si tratti di un'Azienda)</label>
-														<div class="col-sm-8">
-																<input type="number" class="form-control" name="PartitaIVA" id="PartitaIVA" value="<%=PartitaIVAOrdine%>" maxlength="20">
-														</div>
-												</div>
-												<div class="form-group">
-														<label for="indirizzo" class="col-sm-4 control-label">Indirizzo</label>
-														<div class="col-sm-8">
-																<input type="text" class="form-control" name="indirizzo" id="indirizzo" value="<%=IndirizzoOrdine%>" maxlength="100">
-														</div>
-												</div>
-												<div class="form-group">
-														<label for="citta" class="col-sm-4 control-label">Citt&agrave;</label>
-														<div class="col-sm-8">
-																<input type="text" class="form-control" name="citta" id="citta" value="<%=CittaOrdine%>" maxlength="50">
-														</div>
-												</div>
+						<div class="form-group clearfix">
+								<label for="nominativo" class="col-sm-4 control-label">Nome e Cognome</label>
+								<div class="col-sm-8">
+										<input type="text" class="form-control" name="nominativo" id="nominativo" value="<%=NominativoOrdine%>" maxlength="50">
+								</div>
+						</div>
+						<div class="form-group clearfix">
+								<label for="rag_soc" class="col-sm-4 control-label">Ragione Sociale (nel caso in cui si tratti di un'Azienda)</label>
+								<div class="col-sm-8">
+										<input type="text" class="form-control" name="rag_soc" id="rag_soc" value="<%=Rag_SocOrdine%>" maxlength="50">
+								</div>
+						</div>
+						<div class="form-group clearfix">
+								<label for="cod_fisc" class="col-sm-4 control-label">Codice Fiscale</label>
+								<div class="col-sm-8">
+										<input type="text" class="form-control" name="cod_fisc" id="cod_fisc" value="<%=Cod_fiscOrdine%>" maxlength="20">
+								</div>
+						</div>
+						<div class="form-group clearfix">
+								<label for="PartitaIVA" class="col-sm-4 control-label">Partita IVA (nel caso in cui si tratti di un'Azienda)</label>
+								<div class="col-sm-8">
+										<input type="number" class="form-control" name="PartitaIVA" id="PartitaIVA" value="<%=PartitaIVAOrdine%>" maxlength="20">
+								</div>
+						</div>
+						<div class="form-group clearfix">
+								<label for="indirizzo" class="col-sm-4 control-label">Indirizzo</label>
+								<div class="col-sm-8">
+										<input type="text" class="form-control" name="indirizzo" id="indirizzo" value="<%=IndirizzoOrdine%>" maxlength="100">
+								</div>
+						</div>
+						<div class="form-group clearfix">
+								<label for="citta" class="col-sm-4 control-label">Citt&agrave;</label>
+								<div class="col-sm-8">
+										<input type="text" class="form-control" name="citta" id="citta" value="<%=CittaOrdine%>" maxlength="50">
+								</div>
+						</div>
 
-												<div class="form-group">
-														<label for="cap" class="col-sm-4 control-label">CAP</label>
-														<div class="col-sm-8">
-																<input type="text" class="form-control" name="cap" id="cap" value="<%=CAPOrdine%>" maxlength="5">
-														</div>
-												</div>
-												<div class="form-group">
-														<label for="provincia" class="col-sm-4 control-label">Provincia</label>
-														<div class="col-sm-8">
-																<input type="text" class="form-control" name="provincia" id="provincia" value="<%=ProvinciaOrdine%>" maxlength="2">
-														</div>
-												</div>
+						<div class="form-group">
+								<label for="cap" class="col-sm-4 control-label">CAP</label>
+								<div class="col-sm-8">
+										<input type="text" class="form-control" name="cap" id="cap" value="<%=CAPOrdine%>" maxlength="5">
+								</div>
+						</div>
+						<div class="form-group">
+								<label for="provincia" class="col-sm-4 control-label">Provincia</label>
+								<div class="col-sm-8">
+										<input type="text" class="form-control" name="provincia" id="provincia" value="<%=ProvinciaOrdine%>" maxlength="2">
+								</div>
+						</div>
 
                     </div>
                 </div>
