@@ -225,42 +225,44 @@ end if
 															<%end if%>
                             </p>
                             <hr />
+
                             <div class="row">
-                                <div class="col-md-2 col-xs-4">
+																<%
+																Set img_rs = Server.CreateObject("ADODB.Recordset")
+																sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti' Order by PkId_Contatore ASC"
+																img_rs.open sql,conn, 1, 1
+																if img_rs.recordcount>0 then
+
+																	Do while not img_rs.EOF
+																	titolo_img=img_rs("titolo")
+																	file_img=NoLettAcc(img_rs("file"))
+																	percorso_img="/public/"&file_img
+																	zoom=img_rs("zoom")
+																%>
+																<div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
+                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-xs-4">
+																<%
+																	img_rs.movenext
+																	loop
+																end if
+																img_rs.close
+																%>
+																<%
+																if LEN(ClasseEnergetica)>0 then
+																%>
+																<div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
+                                            <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=codicearticolo%> - <%=produttore%>"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
-                                        <div class="photo">
-                                            <a href="/cristalensi/public/slider1.png" class="prod-img-replace" style="background-image: url(/cristalensi/public/slider1.png)"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
-                                        </div>
-                                    </div>
-                                </div>
+																<%end if%>
                                 <div class="clearfix"></div>
 								<div class="panel panel-default user-comment">
                                     <!-- Default panel contents -->
@@ -279,19 +281,31 @@ end if
                                     </ul>
 									<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-warning btn-block" style="white-space: normal">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
                                 </div>
-
-								<div class="panel panel-default user-comment">
+																<%
+								                Set com_rs = Server.CreateObject("ADODB.Recordset")
+								                sql = "SELECT TOP 5 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+								                com_rs.open sql,conn, 1, 1
+								                if com_rs.recordcount>0 then
+								                %>
+																<div class="panel panel-default user-comment">
                                     <!-- Default panel contents -->
                                     <div class="panel-heading">
                                         <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
                                     </div>
                                     <ul class="list-group">
-										<li class="list-group-item"><i class="fa fa-user"></i> <em>Ho acquistato una lampada d<b>a parete</b> per esterno Newport verde. Per la consegna c'&egrave; voluto qua...</em></li>
-										<li class="list-group-item"><i class="fa fa-user"></i> <em>Pochi giorni fa ho acquistato un lampadario per bagno di <b>Murano</b> bombato <b>a soffitto</b> ho telefonato i...</em></li>
-										<li class="list-group-item"><i class="fa fa-user"></i> <em>Il mio ordine: ORINA PLAFONIERA IN METALLO CROMATO. &Egrave; arrivato prima il pacco che le mail di spedizi...</em></li>
+																		<%Do While not com_rs.EOF%>
+																		<li class="list-group-item"><i class="fa fa-user"></i> <em><%=Left(NoHTML(com_rs("Testo")), 90)%>... Voto: <%=com_rs("Valutazione")%>/5</em></li>
+																		<%
+				                            com_rs.movenext
+				            								loop
+				                            %>
                                     </ul>
 									<div class="panel-footer"><a href="#" class="btn btn-success">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
                                 </div>
+																<%
+								                end if
+								                com_rs.close
+								                %>
                             </div>
                         </div>
                     </div>

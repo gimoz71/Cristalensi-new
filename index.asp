@@ -59,6 +59,12 @@
                         Uno staff cordiale e professionale &egrave; sempre pronto a consigliarti l'acquisto pi&ugrave; adatto alle tue richieste.
                     </p>
                 </div>
+                <%
+                Set com_rs = Server.CreateObject("ADODB.Recordset")
+                sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+                com_rs.open sql,conn, 1, 1
+                if com_rs.recordcount>0 then
+                %>
                 <div class="col-md-4 ">
                     <div class="panel panel-default user-comment">
                         <!-- Default panel contents -->
@@ -66,17 +72,24 @@
                             <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
                         </div>
                         <ul class="list-group">
-                            <li class="list-group-item"><i class="fa fa-user"></i> <em>Ho acquistato una lampada d<b>a parete</b> per esterno Newport verde. Per la consegna c'&egrave; voluto qua...</em></li>
-                            <li class="list-group-item"><i class="fa fa-user"></i> <em>Pochi giorni fa ho acquistato un lampadario per bagno di <b>Murano</b> bombato <b>a soffitto</b> ho telefonato i...</em></li>
-                            <li class="list-group-item"><i class="fa fa-user"></i> <em>Il mio ordine: ORINA PLAFONIERA IN METALLO CROMATO. &Egrave; arrivato prima il pacco che le mail di spedizi...</em></li>
+                            <%Do While not com_rs.EOF%>
+                            <li class="list-group-item"><i class="fa fa-user"></i> <em><%=Left(NoHTML(com_rs("Testo")), 90)%>... Voto: <%=com_rs("Valutazione")%>/5</em></li>
+                            <%
+                            com_rs.movenext
+            								loop
+                            %>
                         </ul>
-                        <div class="panel-footer"><a href="#" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+                        <div class="panel-footer"><a href="commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
                     </div>
                 </div>
+                <%
+                end if
+                com_rs.close
+                %>
             </div>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Cosa stai cercando?</span></h4> <a href="#" class="btn btn-default pull-right">vedi tutto <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Cosa stai cercando?</span></h4>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">

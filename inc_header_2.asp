@@ -319,8 +319,8 @@
                     <%else%>
                       <li class="nav-user visible-xs"><a href="/cristalensi/iscrizione.asp">Accedi/iscriviti</a></li>
                     <%end if%>
-                    <li class="nav-user visible-xs"><a href="#">Area Clienti</a></li>
-                    <li class="nav-user visible-xs"><a href="#">Dicono di noi</a></li>
+                    <li class="nav-user visible-xs"><a href="areaprivata.asp">Area Clienti</a></li>
+                    <li class="nav-user visible-xs"><a href="commenti_elenco.asp">Dicono di noi</a></li>
                     <li class="nav-user visible-xs"><a href="#">Lista dei desideri</a></li>
                     <li class="nav-user visible-xs"><a href="/cristalensi/carrello1.asp">Carrello</a></li>
                     <li class="nav-user visible-xs"><a href="#">Condizioni di vendita</a></li>
