@@ -357,16 +357,182 @@ end if
 
     if prov=0 and errore=0 then response.redirect("/cristalensi/areaprivata.asp")
     if prov=1 and errore=0 then response.redirect("/cristalensi/carrello2.asp")
-  else
-  	nome_log=Session("nome_log")
-  	'italia_log=Session("italia_log")
-  	idsession=Session("idCliente")
-  	if idsession="" then idsession=0
-  	'if italia_log="" then italia_log="Si"
+  'else
+  	'nome_log=Session("nome_log")
+  	'idsession=Session("idCliente")
+  	'if idsession="" then idsession=0
   end if
 
-	response.write("mode:"&mode)
-	response.write("errore:"&errore)
+
+'recupero password
+	if mode=4 then
+		email=request("email")
+
+		lg1=InStr(email, "'")
+		if lg1>0 then
+			email=Replace(email, "'", " ")
+			'response.End()
+		end if
+		lg2=InStr(email, "&")
+		if lg2>0 then
+			email=Replace(email, "&", " ")
+			'response.End()
+		end if
+		lg3=InStr(email, "=")
+		if lg3>0 then
+			email=Replace(email, "=", " ")
+			'response.End()
+		end if
+		lg4=InStr(email, " or ")
+		if lg4>0 then
+			email=Replace(email, " or ", " ")
+			'response.End()
+		end if
+		email=Trim(email)
+	end if
+
+	if mode=4 then
+		Set rs=Server.CreateObject("ADODB.Recordset")
+		sql = "Select email,password,nominativo,nome From Clienti where email='"&email&"'"
+		rs.Open sql, conn, 1, 1
+		if rs.recordcount=0 then
+			mode=5
+			errore=5
+		else
+			nominativo=rs("nominativo")
+			nome=rs("nome")
+			password=rs("password")
+		end if
+		rs.close
+	end if
+
+	if mode = 4 then
+
+
+			'invio l'email di recupero pw al cliente
+			HTML1 = ""
+			HTML1 = HTML1 & "<html>"
+			HTML1 = HTML1 & "<head>"
+			HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+			HTML1 = HTML1 & "<title>Cristalensi</title>"
+			HTML1 = HTML1 & "</head>"
+			HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+			HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
+			HTML1 = HTML1 & "<tr>"
+			HTML1 = HTML1 & "<td>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Spett.le "&nome&" "&nominativo&", la password inserita al momento dell'iscrizione a Cristalensi.it &egrave; la seguente:<br><br></font>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Password: <b>"&password&"</b><br>Login: <b>"&email&"</b></font><br>"
+			HTML1 = HTML1 & "</td>"
+			HTML1 = HTML1 & "</tr>"
+			HTML1 = HTML1 & "</table>"
+			HTML1 = HTML1 & "</body>"
+			HTML1 = HTML1 & "</html>"
+
+			Mittente = "info@cristalensi.it"
+			Destinatario = email
+			Oggetto = "Recupero password dal sito Cristalensi.it"
+			Testo = HTML1
+
+			Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
+
+			'eMail_cdo.HTMLBody = Testo
+
+			'eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+			'fine invio email
+
+			'invio l'email all'amministratore
+			HTML1 = ""
+			HTML1 = HTML1 & "<html>"
+			HTML1 = HTML1 & "<head>"
+			HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+			HTML1 = HTML1 & "<title>Cristalensi</title>"
+			HTML1 = HTML1 & "</head>"
+			HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+			HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
+			HTML1 = HTML1 & "<tr>"
+			HTML1 = HTML1 & "<td>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>E' stata fatta una richiesta di recupero password dal seguente cliente: "&nome&" "&nominativo&"<br> La password inserita al momento dell'iscrizione a Cristalensi.it &egrave; la seguente:<br></font>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Password: <b>"&password&"</b><br>Login: <b>"&email&"</b></font><br>"
+			HTML1 = HTML1 & "</td>"
+			HTML1 = HTML1 & "</tr>"
+			HTML1 = HTML1 & "</table>"
+			HTML1 = HTML1 & "</body>"
+			HTML1 = HTML1 & "</html>"
+
+			Mittente = "info@cristalensi.it"
+			Destinatario = "info@cristalensi.it"
+			Oggetto = "Richiesta recupero password dal sito Cristalensi.it"
+			Testo = HTML1
+
+			Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
+
+			'eMail_cdo.HTMLBody = Testo
+
+			'eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+			'fine invio email
+
+	end if
+
 %>
 <!DOCTYPE html>
 <html>
@@ -548,17 +714,43 @@ end if
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <a href="/cristalensi/recupero_pw.asp"><small>Clicca qu&igrave; per recuperare la password</small></a>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-4 col-sm-8">
                                     <button type="submit" class="btn btn-danger">Accedi</button>
                                 </div>
                             </div>
                         </form>
                     </div>
+										<p>&nbsp;<br>&nbsp;</p>
+										<div class="title">
+                        <h4>Recupero Password</h4>
+                    </div>
+                    <div class="col-md-12">
+											<%if mode=4 then%>
+												<p class="description"><strong>La password di accesso a Cristalensi.it &egrave; stata inviata regolarmente al tuo indirizzo e-mail:<br><%=email%><br>Controllandolo puoi recuperare i dati di accesso al sito internet.</strong>
+												</p>
+											<%else%>
+												<p class="description">Se sei gi&agrave; iscritto, puoi richiedere la password inserita al momento della registrazione a Cristalensi.<br>
+				Informazione importante: &egrave; necessario che l'indirizzo <strong>Email</strong> inserito sia lo stesso usato per l'iscrizione. La password ti sar&aacute; inviata automaticamente.
+                        </p>
+												<%if errore=5 then%><p><strong>ATTENZIONE! EMAIL ERRATA. RIPROVATE, GRAZIE.</strong></p><%end if%>
+                        <form class="form-horizontal" method="post" action="/cristalensi/iscrizione.asp?mode=4" name="newsform3">
+												<input type="hidden" name="prov" value="<%=prov%>">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+                                <div class="col-sm-8">
+
+																		<input type="email" class="form-control" id="inputEmail3" name="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-8">
+                                    <button type="submit" class="btn btn-danger">Richiedi</button>
+                                </div>
+                            </div>
+                        </form>
+											<%end if%>
+                    </div>
                 </div>
+
                 <div class="col-lg-6">
                     <div class="title">
                         <h4>Iscriviti</h4>
