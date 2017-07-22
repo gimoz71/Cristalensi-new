@@ -41,17 +41,17 @@
             <div class="col-md-3 menu-col">
                 <h4>Riferimenti</h4>
                 <ul>
-                    <li><a href="#">Contatti e mappa</a></li>
-                    <li><a href="#">Chi siamo: lo showroom</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Dicono noi</a></li>
+                    <li><a href="/contatti.asp">Contatti e mappa</a></li>
+                    <li><a href="/chi_siamo.asp">Chi siamo: lo showroom</a></li>
+                    <li><a href="/video_elenco.asp">Video</a></li>
+                    <li><a href="/commenti_elenco">Dicono noi</a></li>
                 </ul>
                 <h4>Area Clienti</h4>
                 <ul>
-                    <li><a href="#">Iscriviti/Accedi</a></li>
+                    <li><a href="/iscrizione.asp">Iscriviti/Accedi</a></li>
                     <li><a href="#">Lista dei desideri</a></li>
-                    <li><a href="#">Carrello</a></li>
-                    <li><a href="#">Elenco ordini</a></li>
+                    <li><a href="/carrello1.asp">Carrello</a></li>
+                    <li><a href="/areaprivata.asp">Elenco ordini</a></li>
                 </ul>
             </div>
             <div class="col-md-3 menu-col">

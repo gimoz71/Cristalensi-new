@@ -6,7 +6,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#"><span class="glyphicon glyphicon-earphone"></span> +39.0571.911163</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
+                        <li><a href="/cristalensi/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
                         <li><a href="/cristalensi/chi_siamo.asp"><span class="glyphicon glyphicon-star"></span> Chi siamo</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
                     </ul>
@@ -30,7 +30,7 @@
         <ul class="nav nav-justified">
             <li><a href="#"><span class="glyphicon glyphicon-earphone"></span> +39.0571.911163</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
+            <li><a href="/cristalensi/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
             <li><a href="/cristalensi/chi_siamo.asp"><span class="glyphicon glyphicon-star"></span> Chi siamo</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> Lingua <span class="caret"></span></a>
