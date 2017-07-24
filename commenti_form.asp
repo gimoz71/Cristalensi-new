@@ -1,4 +1,205 @@
 <!--#include file="inc_strConn.asp"-->
+<%
+	mode=request("mode")
+	if mode="" then mode=0
+
+	if idsession=0 then response.Redirect("/cristalensi/iscrizione.asp")
+
+	Destinazione=request("Destinazione")
+
+	if mode=1 then
+		testo=request("testo")
+		if Len(testo)=0 then mode=2
+		if Instr(1, testo, "www", 1)>0 then mode=2
+		if Instr(1, testo, "@", 1)>0 then mode=2
+	end if
+	if mode=1 then
+		Set cli_rs=Server.CreateObject("ADODB.Recordset")
+		sql = "Select * From Commenti_Clienti"
+		cli_rs.Open sql, conn, 3, 3
+		cli_rs.addnew
+			cli_rs("Testo")=request("Testo")
+			cli_rs("FkIscritto")=idsession
+			cli_rs("Data")=now()
+			cli_rs("Pubblicato")=False
+			cli_rs("Risposta")=False
+		cli_rs.update
+		cli_rs.close
+
+		Set rs=Server.CreateObject("ADODB.Recordset")
+		sql = "Select * From Clienti where pkid="&idsession
+		rs.Open sql, conn, 1, 1
+
+		nominativo_email=rs("nome")&" "&rs("nominativo")
+		email=rs("email")
+
+		rs.close
+
+			HTML1 = ""
+			HTML1 = HTML1 & "<html>"
+			HTML1 = HTML1 & "<head>"
+			HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+			HTML1 = HTML1 & "<title>Cristalensi</title>"
+			HTML1 = HTML1 & "</head>"
+			HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+			HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
+			HTML1 = HTML1 & "<tr>"
+			HTML1 = HTML1 & "<td>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Grazie "&nominativo_email&" per aver inserito un commento!<br>Se sar&agrave; accettato dal nostro staff riceverai una notifica via email della pubblicazione.</font><br>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000><br><br>Cordiali Saluti, lo staff di Cristalensi</font>"
+			HTML1 = HTML1 & "</td>"
+			HTML1 = HTML1 & "</tr>"
+			HTML1 = HTML1 & "</table>"
+			HTML1 = HTML1 & "</body>"
+			HTML1 = HTML1 & "</html>"
+
+			Mittente = "info@cristalensi.it"
+			Destinatario = email
+			Oggetto = "Conferma invio commento a Cristalensi.it"
+			Testo = HTML1
+
+			Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
+
+			'eMail_cdo.HTMLBody = Testo
+
+			'eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+			'fine invio email
+
+			'invio l'email all'amministratore
+			HTML1 = ""
+			HTML1 = HTML1 & "<html>"
+			HTML1 = HTML1 & "<head>"
+			HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+			HTML1 = HTML1 & "<title>Cristalensi</title>"
+			HTML1 = HTML1 & "</head>"
+			HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+			HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
+			HTML1 = HTML1 & "<tr>"
+			HTML1 = HTML1 & "<td>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Nuovo commento sul sito internet.</font><br>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Dati sensibili e determinanti del nuovo commento:<br>Nominativo: <b>"&nominativo_email&"</b><br>Email: <b>"&email&"</b><br>Codice cliente: <b>"&idsession&"</b></font><br>"
+			HTML1 = HTML1 & "</td>"
+			HTML1 = HTML1 & "</tr>"
+			HTML1 = HTML1 & "</table>"
+			HTML1 = HTML1 & "</body>"
+			HTML1 = HTML1 & "</html>"
+
+			Mittente = "info@cristalensi.it"
+			Destinatario = "info@cristalensi.it"
+			Oggetto = "Conferma invio commento a Cristalensi.it"
+			Testo = HTML1
+
+			Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
+
+			'eMail_cdo.HTMLBody = Testo
+
+			'eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+			'invio al webmaster
+
+			Mittente = "info@cristalensi.it"
+			Destinatario = "viadeimedici@gmail.com"
+			Oggetto = "Conferma invio commento a Cristalensi.it"
+			Testo = HTML1
+
+			Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
+
+			'eMail_cdo.HTMLBody = Testo
+
+			'eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+			'fine invio email
+	end if
+
+%>
 <!DOCTYPE html>
 <html>
 
@@ -50,36 +251,37 @@
         <div class="col-md-12">
             <div class="row top-buffer">
                 <div class="col-md-8">
-                    <h1 class="slogan">Commenti su i prodotti di illuminazione acquistati</h1>
-                    <p class="main-description">
-                        In un ottica di trasparenza, di avvicinamento alla clientela e di miglioramento dei nostri servizi abbiamo aperto quest'area dove i clienti possono lasciare un messaggio, un commento, un complimento o una critica al funzionamento del sito internet, una recensione sui prodotti di illuminazione acquistati ma anche ai servizi dello staff stesso.<br />Per inviare un commento si dovr&agrave; essere registrati sul sito internet e i messaggi inviati saranno approvati dallo staff per evitare che siano pubblicati testi offensivi o inserire link pubblicitari verso altri siti internet.
-                    </p>
-                    <%
-                    Set com_rs = Server.CreateObject("ADODB.Recordset")
-                    sql = "SELECT * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
-                    com_rs.open sql,conn, 1, 1
-                    if com_rs.recordcount>0 then
-                    %>
-                    <div class="panel panel-default user-comment">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">
-                            <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
-                        </div>
-                        <ul class="list-group">
-                        <%Do While not com_rs.EOF%>
-                        <li class="list-group-item"><i class="fa fa-user"></i> <em><%=NoHTML(com_rs("Testo"))%><br />Voto: <%=com_rs("Valutazione")%>/5</em></li>
-                        <%
-                        com_rs.movenext
-                        loop
-                        %>
-                        <div class="panel-footer"><a href="/cristalensi/commenti_form.asp" class="btn btn-success">Inserisci anche te un commento! <i class="fa fa-chevron-right"></i></a></div>
-                        </ul>
 
-                    </div>
-                    <%
-                    end if
-                    com_rs.close
-                    %>
+
+                  <div class="title">
+                      <h4>Inserisci il tuo commento!</h4>
+                  </div>
+                  <div class="col-md-12">
+                    <%if mode=1 then%>
+                      <p class="description">Il tuo commento &egrave; stato inserito correttamente, adesso il nostro staff lo valuter&agrave; e se sar&agrave; approvato, ti verr&agrave; recapitata una notifica via email.<br />Grazie della tua collaborazione dallo staff di Cristalensi.<br /><br /><a href="https://www.cristalensi.it/commenti_elenco.asp" class="button_link_red" style="float:right">Elenco commenti</a>
+                      </p>
+                    <%else%>
+                      <p class="description">Inserisci un commento su i prodotti acquistati, se ti sono piaciuti o no, oppure un commento sul sito internet o sull'azienda e lo staff.<br />Il commento non sar&agrave; pubblicato immediatamente ma sar&agrave; soggetto a un controllo da parte del nostro staff per evitare che vengano inseriti contenuti non leciti, offese e termini non pubblicabili.<br />Si prega di non inserire codice html, email, link e collegamenti ad altri siti internet: il commento non sar&agrave; pubblicato.<br />Per ogni commento saranno pubblicati anche il <strong>Nome</strong> e la <strong>Citt&agrave;</strong> inseriti al momento dell'iscrizione.
+                      </p>
+                      <%if mode=2 then%><p><strong>Attenzione! Controllare il testo inserito rispettando le regole, grazie.</strong></p><%end if%>
+                      <form class="form-horizontal" method="post" action="/cristalensi/commenti_form.asp?mode=1" name="newsform2">
+                          <div class="form-group">
+                              <label for="testo" class="col-sm-2 control-label">Commento</label>
+                              <div class="col-sm-10">
+                                  <textarea name="testo" style="width: 100%" rows="4" id="testo"></textarea>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="col-sm-offset-4 col-sm-8">
+                                  <a href="/commenti_elenco.asp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Elenco commenti</a>
+                                  <button type="submit" class="btn btn-danger">Invia</button>
+                              </div>
+                          </div>
+                      </form>
+                    <%end if%>
+                  </div>
+
+                  <p>&nbsp;<br>&nbsp;</p>
                 </div>
                 <div class="col-md-4">
                     <div class="banner preventivi overflowContainer">

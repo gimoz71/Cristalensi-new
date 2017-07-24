@@ -4,13 +4,30 @@
             <div class="col-xs-12 col-sm-4" style="text-align: center">
                 <a class="header-logo" href="/">Cristalensi</a>
             </div>
+            <SCRIPT language="JavaScript">
+
+        		function verifica_ricerca() {
+
+        			testo_ricerca=document.ricerca_modulo.testo_ricerca.value;
+
+        			if (testo_ricerca==""){
+        				alert("Inserire un testo oppure un codice per effettuare la ricerca.");
+        				return false;
+        			}
+
+        			else
+        		return true
+
+        		}
+
+        		</SCRIPT>
             <div class="col-md-8">
-                <form class="navbar-form pull-right search-bar" role="search">
+                <form action="/cristalensi/ricerca_avanzata_elenco.asp" class="navbar-form pull-right search-bar" role="search" name="ricerca_modulo" onSubmit="return verifica_ricerca();">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Nome o codice prodotto" name="srch-term" id="srch-term">
+                        <input type="text" class="form-control" placeholder="Nome o codice prodotto" name="testo_ricerca" id="testo_ricerca">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit" style="margin-right: 5px;"><i class="glyphicon glyphicon-search"></i></button>
-                            <button class="btn btn-danger" type="submit"><i class="glyphicon glyphicon-cog visible-xs-inline-block"></i><span class="hidden-xs"> Ricerca avanzata</span></button>
+                            <button class="btn btn-danger" type="button" onClick="location.href='/cristalensi/ricerca_avanzata_elenco.asp'"><i class="glyphicon glyphicon-cog visible-xs-inline-block"></i><span class="hidden-xs"> Ricerca avanzata</span></button>
                         </div>
                     </div>
                 </form>
@@ -165,7 +182,7 @@
                                                 </ul>
                                             </li>
                                             <li class="subcategory">
-                                                <a href="#" class="offerte">Offerte</a>
+                                                <a href="/cristalensi/offerte.asp" class="offerte">Offerte e Promozioni</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -313,7 +330,30 @@
                             <li><a href="#">Loggiato</a></li>
                         </ul>
                     </li>
-                    <li class="nav-user"><a href="#">Produttori</a></li>
+                    <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Produttori <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+                        <ul class="dropdown-menu">
+                        <%
+                        Set prod_rs = Server.CreateObject("ADODB.Recordset")
+                        sql = "SELECT * FROM Produttori ORDER BY Titolo ASC"
+                        prod_rs.open sql,conn, 1, 1
+                        if prod_rs.recordcount>0 then
+                        Do while not prod_rs.EOF
+
+        								idpr=prod_rs("PkId")
+        								titolopr=prod_rs("titolo")
+
+        								urlpr="/cristalensi/produttori-illuminazione/"&ConvertiTitoloInUrlProduttore(Titolopr, Idpr)
+                        %>
+                            <li><a href="<%=urlpr%>" style="font-size: 11px;"><%=titolopr%></a></li>
+                        <%
+                        prod_rs.movenext
+        								loop
+                        end if
+                        prod_rs.close
+                        %>
+                        </ul>
+                    </li>
+
                     <%if idsession>0 then%>
                       <li class="nav-user visible-xs"><a href="/cristalensi/admin/logout.asp">LOG OUT</a></li>
                     <%else%>

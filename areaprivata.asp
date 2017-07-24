@@ -97,7 +97,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="#"><h1>Inserisci un commento</h1></a>
+                                    <a href="/cristalensi/commenti_form.asp"><h1>Inserisci un commento</h1></a>
                                 </div>
                             </div>
                         </div>
