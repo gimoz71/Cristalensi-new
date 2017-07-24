@@ -120,6 +120,43 @@
     </form>
 </div>
 <%end if%>
+<%if FkProduttore>0 then%>
+<div style="display: none; max-width: 800px;" id="hidden-content">
+    <h4>Invia richiesta disponibilit&agrave; per<br /><b><%=titolo_produttore%></b></h4>
+    <p class="description">Inserisci quanti pi&uacute; dati possibili cos&iacute; da facilitare la ricerca al nostro staff, grazie.</p>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Nome</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputEmail3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Indirizzo Email</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" id="inputEmail3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Telefono</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" id="inputEmail3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">Dettagli richiesta</label>
+            <div class="col-sm-8">
+                <textarea class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" class="btn btn-danger">invia richiesta</button>
+            </div>
+        </div>
+    </form>
+</div>
+<%end if%>
 <!-- fine finestra modale -->
 <!-- Bootstrap core JavaScript
     ================================================== -->
