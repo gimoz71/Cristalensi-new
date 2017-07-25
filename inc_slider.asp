@@ -1,16 +1,16 @@
 <div class="row hidden-xs">
     <div class="col-md-8 parentOverflowContainer">
         <awesome-slider pre-image="images/logo.svg" autostart="true" bullets="false" height="x60%" color="grey" arrows="true">
-            <item source="images/slider1.jpg">
-                <a class="lettering" href="#">
-                    <h3>Titolo 1</h3>
-                    <p>link</p>
-                </a>
-            </item>
-            <item source="images/slider2.jpg"></item>
-            <item source="images/slider3.jpg"></item>
-            <item source="images/slider4.jpg"></item>
-            <item source="images/slider5.jpg"></item>
+            <item source="images/slider/1.jpg"></item>
+            <item source="images/slider/2.jpg"></item>
+            <item source="images/slider/3.jpg"></item>
+            <item source="images/slider/4.jpg"></item>
+            <item source="images/slider/5.jpg"></item>
+            <item source="images/slider/6.jpg"></item>
+            <item source="images/slider/7.jpg"></item>
+            <item source="images/slider/8.jpg"></item>
+            <item source="images/slider/9.jpg"></item>
+            <item source="images/slider/10.jpg"></item>
         </awesome-slider>
     </div>
     <div class="col-md-4">

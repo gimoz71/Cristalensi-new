@@ -363,7 +363,7 @@
                     <li class="nav-user visible-xs"><a href="commenti_elenco.asp">Dicono di noi</a></li>
                     <li class="nav-user visible-xs"><a href="#">Lista dei desideri</a></li>
                     <li class="nav-user visible-xs"><a href="/cristalensi/carrello1.asp">Carrello</a></li>
-                    <li class="nav-user visible-xs"><a href="#">Condizioni di vendita</a></li>
+                    <li class="nav-user visible-xs"><a href="/cristalensi/condizioni_di_vendita.asp">Condizioni di vendita</a></li>
                 </ul>
             </div>
         </div>
