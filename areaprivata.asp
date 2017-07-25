@@ -64,12 +64,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/slider1.png)" title="Lampade da interno"><img alt="Lampade da interno" src="images/blank.png"></a>
+                            <a href="ordini_elenco.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi.png)"><img alt="Elenco ordini" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="#" title="Lampade da interno"><h1>Elenco ordini</h1></a>
+                                    <a href="ordini_elenco.asp"><h1>Elenco ordini</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -78,12 +78,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/LED.jpg)" title="Lampade da esterno"><img alt="Lampade da esterno" src="images/blank.png"></a>
+                            <a href="#" class="prod-img-replace" style="background-image: url(images/logo-cristalensi.jpg)"><img alt="Lista dei desideri" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno"><h1>Lista dei desideri</h1></a>
+                                    <a href="#"><h1>Lista dei desideri</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -92,12 +92,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/est.jpg)"><img alt="900x550" src="images/blank.png"></a>
+                            <a href="commenti_form.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi.jpg)"><img alt="Inserisci un commento" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/cristalensi/commenti_form.asp"><h1>Inserisci un commento</h1></a>
+                                    <a href="commenti_form.asp"><h1>Inserisci un commento</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -106,12 +106,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="descrizione lampadario" src="images/blank.png"></a>
+                            <a href="iscrizione.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi.png)"><img alt="Modifica dati iscrizione" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="#"><h1>Modifica dati iscrizione</h1></a>
+                                    <a href="iscrizione.asp"><h1>Modifica dati iscrizione</h1></a>
                                 </div>
                             </div>
                         </div>
