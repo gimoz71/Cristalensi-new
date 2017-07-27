@@ -14,11 +14,20 @@
 		if Instr(1, testo, "@", 1)>0 then mode=2
 	end if
 	if mode=1 then
+		Set rs=Server.CreateObject("ADODB.Recordset")
+		sql = "Select Top 1 PkId From Commenti_Clienti Order by PkId DESC"
+		rs.Open sql, conn, 1, 1
+		PkId_Prec=rs("PkId")
+		rs.close
+		pkid_commento=PkId_Prec+1
+
 		Set cli_rs=Server.CreateObject("ADODB.Recordset")
 		sql = "Select * From Commenti_Clienti"
 		cli_rs.Open sql, conn, 3, 3
 		cli_rs.addnew
+			cli_rs("PkId")=pkid_commento
 			cli_rs("Testo")=request("Testo")
+			cli_rs("Valutazione")=request("Valutazione")
 			cli_rs("FkIscritto")=idsession
 			cli_rs("Data")=now()
 			cli_rs("Pubblicato")=False
@@ -269,6 +278,18 @@
                               <label for="testo" class="col-sm-2 control-label">Commento</label>
                               <div class="col-sm-10">
                                   <textarea name="testo" style="width: 100%" rows="4" id="testo"></textarea>
+                              </div>
+                          </div>
+													<div class="form-group">
+                              <label for="valutazione" class="col-sm-2 control-label">Valutazione</label>
+                              <div class="col-sm-10">
+                                  <select class="selectpicker show-menu-arrow  show-tick" data-size="5" title="valutazione" name="valutazione" id="valutazione">
+																	<option value="5" selected>5 - Ottimo</option>
+																	<option value="4">4 - Buono</option>
+																	<option value="3">3 - Sufficiente</option>
+																	<option value="2">2 - Insufficiente</option>
+																	<option value="1">1 - Scarso</option>
+																	</select>
                               </div>
                           </div>
                           <div class="form-group">

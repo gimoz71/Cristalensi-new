@@ -49,7 +49,7 @@
                 <h4>Area Clienti</h4>
                 <ul>
                     <li><a href="/iscrizione.asp">Iscriviti/Accedi</a></li>
-                    <li><a href="#">Lista dei desideri</a></li>
+                    <li><a href="/areaprivata.asp">Lista dei desideri</a></li>
                     <li><a href="/carrello1.asp">Carrello</a></li>
                     <li><a href="/areaprivata.asp">Elenco ordini</a></li>
                 </ul>
@@ -57,8 +57,8 @@
             <div class="col-md-3 menu-col">
                 <h4>Note legali</h4>
                 <ul>
-                    <li><a href="#">Condizioni di vendita</a></li>
-                    <li><a href="#">Privacy e note legali</a></li>
+                    <li><a href="/cristalensi/condizioni_di_vendita.asp">Condizioni di vendita</a></li>
+                    <li><a href="/cristalensi/privacy.asp">Privacy e note legali</a></li>
                 </ul>
                 <h4>Spedizioni</h4>
                 <ul class="checklist">

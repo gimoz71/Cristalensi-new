@@ -64,7 +64,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="ordini_elenco.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi.png)"><img alt="Elenco ordini" src="images/blank.png"></a>
+                            <a href="ordini_elenco.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi-piccolo.png)"><img alt="Elenco ordini" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -78,7 +78,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/logo-cristalensi.jpg)"><img alt="Lista dei desideri" src="images/blank.png"></a>
+                            <a href="#" class="prod-img-replace" style="background-image: url(images/logo-cristalensi-piccolo.png)"><img alt="Lista dei desideri" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -92,7 +92,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="commenti_form.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi.jpg)"><img alt="Inserisci un commento" src="images/blank.png"></a>
+                            <a href="commenti_form.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi-piccolo.png)"><img alt="Inserisci un commento" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -106,7 +106,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="iscrizione.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi.png)"><img alt="Modifica dati iscrizione" src="images/blank.png"></a>
+                            <a href="iscrizione.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi-piccolo.png)"><img alt="Modifica dati iscrizione" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
