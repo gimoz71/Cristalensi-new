@@ -1,7 +1,7 @@
 <!--#include virtual="/cristalensi/inc_strConn.asp"-->
 <%
 Set gr_rs = Server.CreateObject("ADODB.Recordset")
-sql = "SELECT * FROM NewGruppi WHERE PkId="&pkid_gruppo
+sql = "SELECT * FROM NewAmbienti WHERE PkId="&pkid_ambiente
 gr_rs.open sql,conn, 1, 1
 if gr_rs.recordcount>0 then
   Titolo_1=gr_rs("Titolo_1")
@@ -11,8 +11,10 @@ if gr_rs.recordcount>0 then
   Description=gr_rs("Description")
   Descrizione=gr_rs("Descrizione")
   Img=gr_rs("Img")
+  PosizioneAmbiente=gr_rs("Posizione")
 end if
 gr_rs.close
+
 %>
 <!DOCTYPE html>
 <html>
@@ -83,13 +85,14 @@ gr_rs.close
                     <!-- menu - normal collapsible navbar markup -->
                     <%
                     Set tip_rs = Server.CreateObject("ADODB.Recordset")
-                    sql = "SELECT * FROM NewTipologie WHERE FkNewGruppo="&pkid_gruppo&" ORDER BY Posizione ASC"
+                    sql = "SELECT * FROM NewAmbienti ORDER BY Posizione ASC"
                     tip_rs.open sql,conn, 1, 1
                     if tip_rs.recordcount>0 then
                     %>
                     <ul class="list-unstyled side-list">
                         <%
                         Do While not tip_rs.EOF
+                          PkId=tip_rs("PkId")
                           Titolo_1=tip_rs("Titolo_1")
                           Titolo_2=tip_rs("Titolo_2")
                           Url=tip_rs("Url")
@@ -97,7 +100,7 @@ gr_rs.close
                           'Description=tip_rs("Description")
                           'Descrizione=tip_rs("Descrizione")
                         %>
-                        <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url%>" title="<%=Titolo_2%>"><%=Titolo_1%></a></li>
+                        <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url%>" title="<%=Titolo_2%>" <%if pkid=pkid_ambiente then%>class="active"<%end if%>><%=Titolo_1%></a></li>
                         <%
                         tip_rs.movenext
                         loop
@@ -105,7 +108,7 @@ gr_rs.close
                     </ul>
                     <%
                     end if
-                    gr_rs.close
+                    tip_rs.close
                     %>
                 </nav>
             </div>
@@ -125,7 +128,7 @@ gr_rs.close
                 if order=4 then ordine="PrezzoProdotto DESC, PrezzoListino DESC"
 
                 Set prod_rs = Server.CreateObject("ADODB.Recordset")
-                sql = "SELECT * FROM Prodotti WHERE (FkNewGruppo="&pkid_gruppo&" and (Offerta=0 or Offerta=2)) ORDER BY "&ordine&""
+                sql = "SELECT * FROM Prodotti WHERE ((FkNewAmbiente LIKE '%"&PosizioneAmbiente&"%') and (Offerta=0 or Offerta=2)) ORDER BY "&ordine&""
                 prod_rs.open sql,conn, 1, 1
                 if prod_rs.recordcount>0 then
 

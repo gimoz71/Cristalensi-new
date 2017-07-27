@@ -299,35 +299,35 @@
                     </li>
                     <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Stili <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Lampade moderne per interni</a></li>
-                            <li><a href="#">Lampade LED da interni</a></li>
-                            <li><a href="#">Lampade classiche da interni</a></li>
-                            <li><a href="#">Lampade rustiche</a></li>
-                            <li><a href="#">Lampade vintage</a></li>
-                            <li><a href="#">Lampade Tiffany</a></li>
-                            <li><a href="#">Lampade Murano</a></li>
-                            <li><a href="#">Lampade in cristallo</a></li>
-                            <li><a href="#">Lampade in gesso</a></li>
-                            <li><a href="#">Lampade per bambini</a></li>
-                            <li><a href="#">Lampadine moderne per esterni</a></li>
-                            <li><a href="#">Lampadine LED per esterni</a></li>
-                            <li><a href="#">Lampadine classiche per esterni</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/1ns-lampade-moderne-per-interni.asp">Lampade moderne per interni</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/2ns-lampade-led-da-interni.asp">Lampade LED da interni</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/3ns-lampade-classiche-da-interni.asp">Lampade classiche da interni</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/4ns-lampade-rustiche.asp">Lampade rustiche</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/5ns-lampade-vintage.asp">Lampade vintage</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/6ns-lampade-tiffany.asp">Lampade Tiffany</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/7ns-lampade-murano.asp">Lampade Murano</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/8ns-lampade-in-cristallo.asp">Lampade in cristallo</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/9ns-lampade-in-gesso.asp">Lampade in gesso</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/10ns-lampade-per-bambini.asp">Lampade per bambini</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/11ns-lampade-moderne-per-esterni.asp">Lampade moderne per esterni</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/12ns-lampade-led-per-esterni.asp">Lampade LED per esterni</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/13ns-lampade-classiche-per-esterni.asp">Lampade classiche per esterni</a></li>
                         </ul>
                     </li>
                     <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Ambienti <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Soggiorno</a></li>
-                            <li><a href="#">Cucina</a></li>
-                            <li><a href="#">Camera da letto</a></li>
-                            <li><a href="#">Cameretta</a></li>
-                            <li><a href="#">Bagno</a></li>
-                            <li><a href="#">Ingresso</a></li>
-                            <li><a href="#">Corridoio e scale</a></li>
-                            <li><a href="#">Ufficio e studio</a></li>
-                            <li><a href="#">Taverna</a></li>
-                            <li><a href="#">Giardino</a></li>
-                            <li><a href="#">Terrazzo e balcone</a></li>
-                            <li><a href="#">Loggiato</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/1na-lampade-soggirno.asp">Soggiorno</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/2na-lampade-cucina.asp">Cucina</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/3na-lampade-camera-da-letto.asp">Camera da letto</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/4na-lampade-cameretta.asp">Cameretta</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/5na-lampade-bagno.asp">Bagno</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/6na-lampade-ingresso.asp">Ingresso</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/7na-lampade-corridoio-scale.asp">Corridoio e scale</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/8na-lampade-ufficio-studio.asp">Ufficio e studio</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/9na-lampade-taverna.asp">Taverna</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/10na-lampade-giardino.asp">Giardino</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/11na-lampade-terrazzo.asp">Terrazzo e balcone</a></li>
+                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/12na-lampade-loggiato.asp">Loggiato</a></li>
                         </ul>
                     </li>
                     <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Produttori <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>

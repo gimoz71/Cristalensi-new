@@ -84,9 +84,11 @@ gr_rs.close
                 <li class="active"><%=Titolo_2%></li>
             </ol>
             <h4 class="title"><%=Titolo_2%></h4>
+            <%if Len(Descrizione)>0 then%>
             <p class="description">
                 <%=Descrizione%>
             </p>
+            <%end if%>
         </div>
         <div class="col-md-3">
             <div class=" top-buffer">
@@ -116,7 +118,7 @@ gr_rs.close
                     </ul>
                     <%
                     end if
-                    gr_rs.close
+                    tip_rs.close
                     %>
                 </nav>
             </div>
