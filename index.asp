@@ -3,12 +3,12 @@
 <html>
 
 <head>
-    <title>Cristalensi</title>
+    <title>Vendita lampadari online illuminazione da interni illuminazione da esterni</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Cristalensi.">
+    <meta name="description" content="Cristalensi, showroom di lampade vicino Firenze, specialzzato in vendita di lampari online, prodotti per illuminazione da interno, illuminazione da esterno, piantane, plafoniere, ventilatori.">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="Cristalensi.">
+    <meta property="og:description" content="Cristalensi, showroom di lampade vicino Firenze, specialzzato in vendita di lampari online, prodotti per illuminazione da interno, illuminazione da esterno, piantane, plafoniere, ventilatori.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -94,7 +94,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/slider1.png)" title="Lampade da interno"><img alt="Lampade da interno" src="images/blank.png"></a>
+                            <a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/home-lampade-da-interno.jpg)" title="Lampade da interno"><img alt="Lampade da interno" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -108,7 +108,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/LED.jpg)" title="Lampade da esterno"><img alt="Lampade da esterno" src="images/blank.png"></a>
+                            <a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/home-lampade-da-esterno.jpg)" title="Lampade da esterno"><img alt="Lampade da esterno" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -122,12 +122,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/est.jpg)"><img alt="900x550" src="images/blank.png"></a>
+                            <a href="/cristalensi/illuminazione-interni-ed-esterni/3ng-ventilatori.asp" class="prod-img-replace" style="background-image: url(images/home-ventilatori.jpg)" title="Ventilatori"><img alt="Ventilatori" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="#"><h1>Ventilatori</h1></a>
+                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/3ng-ventilatori.asp" title="Ventilatori"><h1>Ventilatori</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -136,12 +136,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="descrizione lampadario" src="images/blank.png"></a>
+                            <a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine.asp" class="prod-img-replace" style="background-image: url(images/home-lampadine.jpg)" title="Lampadine"><img alt="Lampadine" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="#"><h1>Lampadine, driver e strisce</h1></a>
+                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine.asp" title="Lampadine"><h1>Lampadine, driver e strisce</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="/cristalensi/offerte.asp" class="btn btn-default pull-right">vedi tutto <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="/cristalensi/offerte.asp" class="btn btn-default pull-right" title="Offerte e prodotti in promozione">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 'random prodotti in offerta
@@ -265,7 +265,7 @@
             %>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Novit&Agrave; e ultimi arrivi</span></h4> <a href="#" class="btn btn-default pull-right">vedi tutto <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Novit&Agrave; e ultimi arrivi</span></h4> <a href="#" class="btn btn-default pull-right" title="Novit&Agrave; e ultimi arrivi">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 Do while not prod_rs.EOF

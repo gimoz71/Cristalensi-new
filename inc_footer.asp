@@ -25,10 +25,10 @@
             <div class="col-md-3 menu-col">
                 <h4>Cosa cerchi?</h4>
                 <ul>
-                    <li><a href="#">Lampade da interno</a></li>
-                    <li><a href="#">Lampade da esterno</a></li>
-                    <li><a href="#">Ventiltori</a></li>
-                    <li><a href="#">Lampadine e componenti</a></li>
+                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp">Lampade da interno</a></li>
+                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp">Lampade da esterno</a></li>
+                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/3ng-ventilatori.asp">Ventiltori</a></li>
+                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine.asp">Lampadine e componenti</a></li>
                     <li>&nbsp;</li>
                 </ul>
                 <h4>Oppure cerca per</h4>
@@ -44,7 +44,7 @@
                     <li><a href="/contatti.asp">Contatti e mappa</a></li>
                     <li><a href="/chi_siamo.asp">Chi siamo: lo showroom</a></li>
                     <li><a href="/video_elenco.asp">Video</a></li>
-                    <li><a href="/commenti_elenco">Dicono noi</a></li>
+                    <li><a href="/commenti_elenco.asp">Dicono noi</a></li>
                 </ul>
                 <h4>Area Clienti</h4>
                 <ul>

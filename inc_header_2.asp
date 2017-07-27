@@ -330,29 +330,7 @@
                             <li><a href="/cristalensi/illuminazione-interni-ed-esterni/12na-lampade-loggiato.asp">Loggiato</a></li>
                         </ul>
                     </li>
-                    <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Produttori <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
-                        <ul class="dropdown-menu">
-                        <%
-                        Set prod_rs = Server.CreateObject("ADODB.Recordset")
-                        sql = "SELECT * FROM Produttori ORDER BY Titolo ASC"
-                        prod_rs.open sql,conn, 1, 1
-                        if prod_rs.recordcount>0 then
-                        Do while not prod_rs.EOF
-
-        								idpr=prod_rs("PkId")
-        								titolopr=prod_rs("titolo")
-
-        								urlpr="/cristalensi/produttori-illuminazione/"&ConvertiTitoloInUrlProduttore(Titolopr, Idpr)
-                        %>
-                            <li><a href="<%=urlpr%>" style="font-size: 11px;"><%=titolopr%></a></li>
-                        <%
-                        prod_rs.movenext
-        								loop
-                        end if
-                        prod_rs.close
-                        %>
-                        </ul>
-                    </li>
+                    <li class="nav-user"><a href="/cristalensi/produttori.asp">Produttori</a></li>
 
                     <%if idsession>0 then%>
                       <li class="nav-user visible-xs"><a href="/cristalensi/admin/logout.asp">LOG OUT</a></li>
