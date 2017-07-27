@@ -951,15 +951,15 @@ End If
 												<%rs.close%>
 												<tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong>Totale <%if TotaleGenerale<>0 then%>
-								<%=FormatNumber(TotaleGenerale,2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+                                <td class="text-center"><strong>Totale Carrello <%if TotaleCarrello<>0 then%>
+								<%=FormatNumber(TotaleCarrello,2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
                             </tr>
                             <tr>
                                 <td class="hidden-xs"></td>
                                 <td class="hidden-xs"></td>
                                 <td class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Totale <%if TotaleGenerale<>0 then%>
-								<%=FormatNumber(TotaleGenerale,2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+                                <td class="hidden-xs text-center"><strong>Totale Carrello <%if TotaleCarrello<>0 then%>
+								<%=FormatNumber(TotaleCarrello,2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
                             </tr>
                             <tr>
                                 <td colspan="4">
@@ -1060,7 +1060,7 @@ End If
         <div class="col-md-12">
 						<div class="col-md-12">
 								<div class="bg-primary">
-		                <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b>
+		                <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale Ordine: <b>
 										<%if TotaleGenerale<>0 then%>
 											<%=FormatNumber(TotaleGenerale,2)%>
 										<%else%>

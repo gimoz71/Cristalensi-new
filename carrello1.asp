@@ -370,14 +370,14 @@
 																	<%if ss.recordcount>0 then%>
 	                                <tfoot>
 	                                    <tr class="visible-xs">
-	                                        <td class="text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
-												  <%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+	                                        <td class="text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
+												  <%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
 	                                    </tr>
 	                                    <tr>
-	                                        <td><a href="/index.asp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
+	                                        <td><a href="/cristalensi/index.asp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td colspan="2" class="hidden-xs"></td>
-	                                        <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
-												  <%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%> &euro;</strong></td>
+	                                        <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
+												  <%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%> &euro;</strong></td>
 	                                        <td></td>
 	                                    </tr>
 	                                </tfoot>
@@ -442,8 +442,8 @@
                     <ul class="list-group text-center">
                         <li class="list-group-item" style="padding-top: 20px">
                             <p>Totale carrello:<br />
-                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%if ss("TotaleGenerale")<>0 then%>
-								<%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%> &euro;</span>
+                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%if ss("TotaleCarrello")<>0 then%>
+								<%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%> &euro;</span>
                             </p>
                         </li>
                     </ul>
@@ -470,7 +470,7 @@
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Ritiro in sede: 0&euro;</em></li>
 										</ul>
-										<div class="panel-footer"><a href="#" class="btn btn-success">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
+										<div class="panel-footer"><a href="/cristalensi/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>
 								<div class="alert alert-success" role="alert" style="text-align: center;">
                   <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>

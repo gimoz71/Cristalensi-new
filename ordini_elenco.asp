@@ -116,7 +116,7 @@ end if
             </div>
         </div>
         <div class="col-sm-12">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="row">
                     <div class="title">
                         <h4>Elenco ordini</h4>
@@ -134,7 +134,7 @@ end if
                                 </thead>
 																<%
 																	Set rs = Server.CreateObject("ADODB.Recordset")
-																	sql = "SELECT * FROM Ordini WHERE FkCliente="&idsession&""
+																	sql = "SELECT * FROM Ordini WHERE FkCliente="&idsession&" ORDER BY PkId DESC"
 																	rs.Open sql, conn, 1, 1
 																%>
 																<%if rs.recordcount>0 then%>
@@ -167,7 +167,7 @@ end if
                                         <td data-th="Product" class="cart-product">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <h5 class="nomargin">[<%=rs("PkId")%>]<br /><%=rs("DataAggiornamento")%></h5>
+                                                    <h5 class="nomargin">[<%=rs("PkId")%>] - <%=rs("DataAggiornamento")%></h5>
                                                 </div>
                                             </div>
                                         </td>
@@ -181,7 +181,7 @@ end if
                                         <td data-th="Quantity">
                                             <em><%=etichetta_stato%></em>
                                         </td>
-                                        <td class="actions" data-th="">
+                                        <td class="actions text-center" data-th="">
 																				<button type="button" name="visualizza" class="btn btn-default" onClick="MM_openBrWindow('stampa_ordine.asp?idordine=<%=rs("PkId")%>&mode=0','','width=760,height=400,scrollbars=yes')">visualizza</button>
 																				&nbsp;<button type="button" name="stampa" class="btn btn-default" onClick="MM_openBrWindow('stampa_ordine.asp?idordine=<%=rs("PkId")%>&mode=1','','width=760,height=900,scrollbars=yes')">stampa</button>
 																				<%if stato=0 or stato=1 or stato=2 or stato=3 or stato=6 then%>
@@ -189,7 +189,7 @@ end if
 																				<%else%>
 																					<%if stato=12 or stato=22 then%>
 																					<br><a href="ordini_elenco.asp?IdOrdine=<%=rs("PkId")%>&mode=2"><b>[<%=rs("PkId")%>]&nbsp;-&nbsp;<%=rs("DataAggiornamento")%></b></a>
-																					&nbsp;<button type="button" name="modifica" class="btn btn-default" onClick="document.location.href='ordini_elenco.asp?IdOrdine=<%=rs("PkId")%>&mode=2';" style="margin:5px 0px;">continua l'ordine</button><br>
+																					&nbsp;<button type="button" name="modifica" class="btn btn-default" onClick="document.location.href='ordini_elenco.asp?IdOrdine=<%=rs("PkId")%>&mode=2';" style="margin:5px 0px;">continua l'ordine</button>
 																					<%end if%>
 																				<%end if%>
 
@@ -220,12 +220,7 @@ end if
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-								<div class="alert alert-success" role="alert" style="text-align: center;">
-                  <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
-                  <br /><br />Lun. - Ven.: 9.00 - 12.30 | 14.30 - 19.30<br />Sab.: 9.00 - 12.30 | 15.30 - 19.30<br />Domenica CHIUSI<br />Giugno/Luglio CHIUSI Sabato Pomeriggio<br />
-                </div>
-            </div>
+
         </div>
 		</div>
     <!--#include file="inc_footer.asp"-->

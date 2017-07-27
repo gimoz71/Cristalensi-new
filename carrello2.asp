@@ -381,15 +381,15 @@
 												<%if ss.recordcount>0 then%>
 												<tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
-								<%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+                                <td class="text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
+								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
                             </tr>
                             <tr>
                                 <td class="hidden-xs"></td>
                                 <td class="hidden-xs"></td>
                                 <td class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
-								<%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+                                <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
+								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
                             </tr>
                         </tfoot>
 												<%end if%>

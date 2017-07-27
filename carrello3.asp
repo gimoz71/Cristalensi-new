@@ -320,15 +320,15 @@
 												<%if ss.recordcount>0 then%>
 												<tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
-								<%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+                                <td class="text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
+								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
                             </tr>
                             <tr>
                                 <td class="hidden-xs"></td>
                                 <td class="hidden-xs"></td>
                                 <td class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleGenerale")<>0 then%>
-								<%=FormatNumber(ss("TotaleGenerale"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+                                <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
+								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
                             </tr>
                             <tr>
                                 <td colspan="4">
@@ -462,7 +462,7 @@
 								</div>
 						</div>
 						<div class="form-group clearfix">
-								<label for="rag_soc" class="col-sm-4 control-label">Ragione Sociale (nel caso in cui si tratti di un'Azienda)</label>
+								<label for="rag_soc" class="col-sm-4 control-label">Ragione Sociale<br />(solo per Aziende)</label>
 								<div class="col-sm-8">
 										<input type="text" class="form-control" name="rag_soc" id="rag_soc" value="<%=Rag_SocOrdine%>" maxlength="50">
 								</div>
@@ -474,7 +474,7 @@
 								</div>
 						</div>
 						<div class="form-group clearfix">
-								<label for="PartitaIVA" class="col-sm-4 control-label">Partita IVA (nel caso in cui si tratti di un'Azienda)</label>
+								<label for="PartitaIVA" class="col-sm-4 control-label">Partita IVA<br />(solo per Aziende)</label>
 								<div class="col-sm-8">
 										<input type="number" class="form-control" name="PartitaIVA" id="PartitaIVA" value="<%=PartitaIVAOrdine%>" maxlength="20">
 								</div>

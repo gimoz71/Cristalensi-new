@@ -52,6 +52,8 @@
 		Provincia_sp=os1("Provincia_sp")
 		Nazione_sp=os1("Nazione_sp")
 
+		if stato_ordine<3 then os1("stato")=12
+
 	else
 		if mode=1 then os1("stato")=22
 
@@ -161,7 +163,7 @@
 			else
 
 				document.modulocarrello.method = "post";
-				document.modulocarrello.action = "https://www.cristalensi.it/carrello2extra.asp?mode=1";
+				document.modulocarrello.action = "/cristalensi/carrello2extra.asp?mode=1";
 				document.modulocarrello.submit();
 		}
 		</script>
@@ -203,7 +205,7 @@
 			else
 
 				document.modulocarrello.method = "post";
-				document.modulocarrello.action = "https://www.cristalensi.it/carrello2extra.asp?mode=2";
+				document.modulocarrello.action = "/cristalensi/carrello2extra.asp?mode=2";
 				document.modulocarrello.submit();
 		}
 		</script>
@@ -556,7 +558,7 @@
 								</div>
 								<%if rs.recordcount>0 then%>
                 <a href="/cristalensi/carrello1.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
-                <a href="#" class="btn btn-danger pull-right" onClick="<%if stato_ordine=22 then%>Continua();<%else%>CalcoloSpedizione();<%end if%>">clicca qui per completare l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a>
+                <a href="#" class="btn btn-danger pull-right" onClick="<%if stato_ordine=22 then%>Continua();<%else%>CalcoloSpedizione();<%end if%>"><%if stato_ordine=22 then%>clicca qui per continuare l'acquisto<%else%>clicca qui per il calcolo del costo di spedizione<%end if%> <i class="glyphicon glyphicon-chevron-right"></i></a>
 								<%end if%>
             </div>
 						<%end if%>
