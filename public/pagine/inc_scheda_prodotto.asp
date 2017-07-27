@@ -300,7 +300,7 @@ end if
 				            								loop
 				                            %>
                                     </ul>
-									<div class="panel-footer"><a href="#" class="btn btn-success">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+									<div class="panel-footer"><a href="/cristalensi/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
                                 </div>
 																<%
 								                end if
@@ -324,7 +324,7 @@ end if
 	                        </li>
 											</ul>
 	                    <div class="panel-footer">
-	                        <a href="#" rel="nofollow" class="btn btn-danger btn-block" title="Richiedi un preventivo al nostro staff">Richiedi un preventivo al nostro staff <i class="glyphicon glyphicon-shopping-cart"></i></a>
+	                        <a data-fancybox data-src="#hidden-content" href="javascript:;" rel="nofollow" class="btn btn-danger btn-block" title="Richiedi un preventivo al nostro staff">Richiedi un preventivo al nostro staff <i class="glyphicon glyphicon-shopping-cart"></i></a>
 	                    </div>
 										<%else%>
 											<%if offerta=10 then%>
@@ -445,7 +445,7 @@ end if
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Ritiro in sede: 0&euro;</em></li>
 										</ul>
-										<div class="panel-footer"><a href="#" class="btn btn-success">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
+										<div class="panel-footer"><a href="/cristalensi/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>
             </div>
         </div>

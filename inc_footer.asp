@@ -84,32 +84,61 @@
 </span>
 <!-- /top-link-block -->
 <%if id>0 and Len(Titolo_prodotto)>0 then%>
+<%
+ric=request("ric")
+if ric="" then ric=0
+%>
+<SCRIPT language="JavaScript">
+  function verifica_request() {
+
+  email=document.requestform.email.value;
+
+  if (email==""){
+    alert("Non  e\' stato compilato il campo \"Email\".");
+    return false;
+  }
+  if (email.indexOf("@")==-1 || email.indexOf(".")==-1){
+  alert("ATTENZIONE! \"e-mail\" non valida.");
+  return false;
+  }
+
+    else
+
+      document.requestform.method = "post";
+      document.newsform2.action = "<%=toUrl_completo%>";
+      document.newsform2.submit();
+  }
+</SCRIPT>
 <div style="display: none; max-width: 800px;" id="hidden-content">
-    <h4>Invia richiesta disponibilit&agrave; per<br /><b><%=Titolo_prodotto%></b><br />Codice prodotto: <%=CodiceArticolo%></h4>
-    <p class="description">Per coloro che hanno la necessit&agrave; della fattura inserire i dati correttamente, altrimenti verr&agrave; emesso regolare scontrino fiscale. La fattura &egrave; emessa su richiesta sia per le aziende che per privati.</p>
-    <form class="form-horizontal">
+    <h4>Richiesta informazioni e disponibilit&agrave; per<br /><b><%=Titolo_prodotto%></b><br />Codice prodotto: <%=CodiceArticolo%></h4>
+    <%if ric=1 then%>
+    <p><strong>La richiesta &egrave; stata inoltrata correttamente, il nostro staff ti contatter&agrave; il prima possibile.<br />Saluti da CRISTALENSI</strong></p>
+    <%else%>
+    <p class="description">Per richiedere informazioni, disponibilit&agrave; o un preventivo di prezzo del prodotto riempi il seguente modulo, oppure contattaci direttamente.</p>
+    <form class="form-horizontal" name="requestform" id="requestform" onSubmit="return verifica_request();">
+    <input type="hidden" name="ric" value="1" />
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">Nome</label>
+            <label for="nome" class="col-sm-4 control-label">Nome</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="inputEmail3">
+                <input type="text" class="form-control" id="nome" name="nome">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">Indirizzo Email</label>
+            <label for="email" class="col-sm-4 control-label">Indirizzo Email</label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" id="inputEmail3">
+                <input type="email" class="form-control" id="email" name="email">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">Telefono</label>
+            <label for="telefono" class="col-sm-4 control-label">Telefono</label>
             <div class="col-sm-8">
-                <input type="number" class="form-control" id="inputEmail3">
+                <input type="number" class="form-control" id="telefono" name="telefono">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">Dettagli richiesta</label>
+            <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
             <div class="col-sm-8">
-                <textarea class="form-control"></textarea>
+                <textarea class="form-control" name="richesta"></textarea>
             </div>
         </div>
         <div class="form-group">
@@ -118,11 +147,12 @@
             </div>
         </div>
     </form>
+    <%end if%>
 </div>
 <%end if%>
 <%if FkProduttore>0 then%>
 <div style="display: none; max-width: 800px;" id="hidden-content">
-    <h4>Invia richiesta disponibilit&agrave; per<br /><b><%=titolo_produttore%></b></h4>
+    <h4>Invia richiesta disponibilit&agrave; prodotti per<br /><b><%=titolo_produttore%></b></h4>
     <p class="description">Inserisci quanti pi&uacute; dati possibili cos&iacute; da facilitare la ricerca al nostro staff, grazie.</p>
     <form class="form-horizontal">
         <div class="form-group">

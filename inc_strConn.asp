@@ -18,17 +18,17 @@ On Error Resume Next
 	'path_img="d:\dati\web\cristalensi_2013\new\public\"
 
 	fromURL = Request.ServerVariables("HTTP_REFERER")
-	toUrl = Request.ServerVariables("SCRIPT_NAME")
-
+	toUrl_completo = Request.ServerVariables("SCRIPT_NAME")
+	'Response.Write "La pagina dove sono: " &toUrl_completo& "<br>"
 
 	'strDaDoveVengo = Request.Servervariables("HTTP_REFERER")
 	UltimoSlash1 = InStrRev(fromURL,"/")
 	fromURL = Mid((fromURL),(UltimoSlash1 + 1), len(fromURL)- UltimoSlash1)
-	'Response.Write "La pagina di provenienza �: " &fromURL& ".<br>"
+	'Response.Write "La pagina di provenienza: " &fromURL& ".<br>"
 
-	UltimoSlash2 = InStrRev(toUrl,"/")
-	toUrl = Mid((toUrl),(UltimoSlash2 + 1), len(toUrl)- UltimoSlash2)
-	'Response.Write "La pagina dove sono �: " &toURL& "."
+	UltimoSlash2 = InStrRev(toUrl_completo,"/")
+	toUrl = Mid((toUrl_completo),(UltimoSlash2 + 1), len(toUrl_completo)- UltimoSlash2)
+	'Response.Write "La pagina dove sono: " &toURL& "."
 
 If Err.Number <> 0 Then
 	Response.Redirect("/aggiornamento.html")
