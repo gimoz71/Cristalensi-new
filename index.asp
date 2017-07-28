@@ -265,7 +265,7 @@
             %>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Novit&Agrave; e ultimi arrivi</span></h4> <a href="#" class="btn btn-default pull-right" title="Novit&Agrave; e ultimi arrivi">vedi tutto <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Novit&Agrave; illuminazione e ultimi arrivi</span></h4> <a href="/cristalensi/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-default pull-right" title="Novit&Agrave; illuminazione e ultimi arrivi">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 Do while not prod_rs.EOF
