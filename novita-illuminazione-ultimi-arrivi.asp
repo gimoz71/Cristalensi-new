@@ -63,7 +63,7 @@
                 <li><a href="/cristalensi/index.asp"><i class="fa fa-home"></i></a></li>
                 <li class="active">Novit&agrave; illuminazione e ultimi arrivi</li>
             </ol>
-            <h4 class="title">Prodotti per illuminazione in offerta</h4>
+            <h4 class="title">Novit&agrave; illuminazione e ultimi arrivi</h4>
             <p class="description">
             Qui ti esponiamo i nostri prodotti in base all'inserimento nel nostro catalogo, quindi troverai sia articoli nuovi che aziende che ultimamente sono entrate a far parte del nostro catalogo online. Puoi scegliere tra lampade a sospensione, lampade a soffitto, lampade a parete, lampade da terra e abat-jour, lumini e lumetti. Tutti prodotti per interni adatti sia a soggiorni e salotti, cucine, camere da letto, ingressi, studi ma anche giardini, terrazzi, balconi, loggiatti e ed altre tipologie di locali interni ed esterni. Articoli con raffinato design dalle pi&ugrave; importanti marche e produttori ma anche prodotti a prezzi per tutte le esigenze, tutti con importanti sconti.
             </p>
@@ -78,6 +78,7 @@
 												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/3-novita-lampade-a-parete.asp" title="Lampade a parete - Novit&agrave; e ultimi arrivi">Lampade a parete</a></li>
 												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/4-novita-lampade-da-terra.asp" title="Lampade da terra - Novit&agrave; e ultimi arrivi">Lampade da terra</a></li>
 												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/5-novita-abatjour-lumini-lumetti.asp" title="Abat-jour, lumini e lumetti - Novit&agrave; e ultimi arrivi">Abat-jour, lumini e lumetti</a></li>
+												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/10-novita-lampade-da-giardino-ed-esterni.asp" title="Lampade da giardino ed esterni - Novit&agrave; e ultimi arrivi">Lampade da giardino ed esterni</a></li>
                     </ul>
                 </nav>
             </div>
@@ -91,7 +92,7 @@
                 if prod_rs.recordcount>0 then
 
                 %>
-                
+
                 <%
                 Do while not prod_rs.EOF
 

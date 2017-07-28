@@ -31,11 +31,10 @@
                     <li><a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine.asp">Lampadine e componenti</a></li>
                     <li>&nbsp;</li>
                 </ul>
-                <h4>Oppure cerca per</h4>
+                <h4>Oppure cerca in</h4>
                 <ul>
-                    <li><a href="#">Stile</a></li>
-                    <li><a href="#">Ambiente</a></li>
-                    <li><a href="#">Produttore</a></li>
+                    <li><a href="/cristalensi/offerte.asp">Offerte</a></li>
+                    <li><a href="/cristalensi/novita-illuminazione-ultimi-arrivi.asp">Novit&agrave; e ultimi arrivi</a></li>
                 </ul>
             </div>
             <div class="col-md-3 menu-col">

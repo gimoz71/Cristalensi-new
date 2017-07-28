@@ -7,12 +7,47 @@ if pkid_novita=1 then
   Description=""
   Descrizione=""
 end if
+if pkid_novita=3 then
+  Title="Lampade a soffitto"
+  Titolo_1="Lampade a soffitto"
+  Titolo_2="Lampade a soffitto"
+  Description=""
+  Descrizione=""
+end if
+if pkid_novita=4 then
+  Title="Lampade a parete"
+  Titolo_1="Lampade a parete"
+  Titolo_2="Lampade a parete"
+  Description=""
+  Descrizione=""
+end if
+if pkid_novita=5 then
+  Title="Lampade da terra"
+  Titolo_1="Lampade da terra"
+  Titolo_2="Lampade da terra"
+  Description=""
+  Descrizione=""
+end if
+if pkid_novita=6 then
+  Title="Abat-jour, lumini e lumetti"
+  Titolo_1="Abat-jour, lumini e lumetti"
+  Titolo_2="Abat-jour, lumini e lumetti"
+  Description=""
+  Descrizione=""
+end if
+if pkid_novita=10 then
+  Title="Lampade da giardino ed esterni"
+  Titolo_1="Lampade da giardino ed esterni"
+  Titolo_2="Lampade da giardino ed esterni"
+  Description=""
+  Descrizione=""
+end if
 %>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title><%=Title%></title>
+    <title><%=Title%> Novit&agrave; ultimi arrivi illuminazione</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%=Description%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,7 +100,7 @@ end if
                 <li><a href="/cristalensi/novita-illuminazione-ultimi-arrivi.asp">Novit&agrave; e ultimi arrivi</a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>
-            <h4 class="title"><%=Titolo_2%></h4>
+            <h4 class="title"><%=Titolo_2%> - Novit&agrave; e ultimi arrivi</h4>
             <%if Len(Descrizione)>0 then%>
             <p class="description">
                 <%=Descrizione%>
@@ -82,6 +117,7 @@ end if
 												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/3-novita-lampade-a-parete.asp" title="Lampade a parete - Novit&agrave; e ultimi arrivi">Lampade a parete</a></li>
 												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/4-novita-lampade-da-terra.asp" title="Lampade da terra - Novit&agrave; e ultimi arrivi">Lampade da terra</a></li>
 												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/5-novita-abatjour-lumini-lumetti.asp" title="Abat-jour, lumini e lumetti - Novit&agrave; e ultimi arrivi">Abat-jour, lumini e lumetti</a></li>
+                        <li><a href="/cristalensi/illuminazione-interni-ed-esterni/10-novita-lampade-da-giardino-ed-esterni.asp" title="Lampade da giardino ed esterni - Novit&agrave; e ultimi arrivi">Lampade da giardino ed esterni</a></li>
                     </ul>
                 </nav>
             </div>
@@ -90,7 +126,9 @@ end if
             <div class="row top-buffer">
                 <%
                 Set prod_rs = Server.CreateObject("ADODB.Recordset")
-                sql = "SELECT TOP 60 * FROM Prodotti WHERE (FkNewTipologia="&pkid_novita&" and (Offerta=0 or Offerta=2)) ORDER BY PkId DESC"
+                if pkid_novita=1 then sql = "SELECT TOP 60 * FROM Prodotti WHERE ((FkNewTipologia=1 or FkNewTipologia=2) and (Offerta=0 or Offerta=2)) ORDER BY PkId DESC"
+                if pkid_novita=3 or pkid_novita=4 or pkid_novita=5 or pkid_novita=6 then sql = "SELECT TOP 60 * FROM Prodotti WHERE (FkNewTipologia="&pkid_novita&" and (Offerta=0 or Offerta=2)) ORDER BY PkId DESC"
+                if pkid_novita=10 then sql = "SELECT TOP 60 * FROM Prodotti WHERE ((FkNewGruppo=2) and (Offerta=0 or Offerta=2)) ORDER BY PkId DESC"
                 prod_rs.open sql,conn, 1, 1
                 if prod_rs.recordcount>0 then
                 %>
