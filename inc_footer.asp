@@ -107,6 +107,7 @@ if ric="" then ric=0
       document.newsform2.action = "<%=toUrl_completo%>";
       document.newsform2.submit();
   }
+
 </SCRIPT>
 <div style="display: none; max-width: 800px;" id="hidden-content">
     <h4>Richiesta informazioni e disponibilit&agrave; per<br /><b><%=Titolo_prodotto%></b><br />Codice prodotto: <%=CodiceArticolo%></h4>
@@ -142,7 +143,7 @@ if ric="" then ric=0
         </div>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
-                <button type="submit" class="btn btn-danger">invia richiesta</button>
+                <button type="submit" id="diocane" class="btn btn-danger">invia richiesta</button>
             </div>
         </div>
     </form>
@@ -150,7 +151,7 @@ if ric="" then ric=0
 </div>
 <%end if%>
 <%if FkProduttore>0 then%>
-<div style="display: none; max-width: 800px;" id="hidden-content">
+<div style="display: none; max-width: 800px;" id="hidden-content-produttori">
     <h4>Invia richiesta disponibilit&agrave; prodotti per<br /><b><%=titolo_produttore%></b></h4>
     <p class="description">Inserisci quanti pi&uacute; dati possibili cos&iacute; da facilitare la ricerca al nostro staff, grazie.</p>
     <form class="form-horizontal">
@@ -206,5 +207,9 @@ if ric="" then ric=0
     $('.selectpicker').selectpicker({
         style: 'btn-default'
     });
-
+    <% if ric=1 then %>
+    $(document).ready(function() {
+        $(".launch").fancybox().trigger('click');
+    });
+    <% end if %>
 </script>

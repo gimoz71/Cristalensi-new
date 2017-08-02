@@ -112,10 +112,10 @@ end if
     <meta name="msapplication-TileColor" content="#2790cf">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link href="/cristalensi/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
-		<link href="/cristalensi/stylesheets/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/cristalensi/stylesheets/customization.css" shim-shadowdom>
-    <link href="/cristalensi/javascripts/html5shiv.js" rel="stylesheet">
+    <link href="../../stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="../../stylesheets/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/customization.css" shim-shadowdom>
+    <link href="../../javascripts/html5shiv.js" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
     <link rel="import" href="/cristalensi/awesome-slider.html">
@@ -279,7 +279,7 @@ end if
 																					<%end if%>
                                         </li>
                                     </ul>
-									<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-warning btn-block" style="white-space: normal">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
+									<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
                                 </div>
 																<%
 								                Set com_rs = Server.CreateObject("ADODB.Recordset")
