@@ -77,7 +77,7 @@ Scegliendo un produttore vedrete l'elenco dei suoi prodotti, da l&igrave; potete
                 'url="https://www.cristalensi.it/prodotti.asp?FkProduttore="&id
                 url="/produttori-illuminazione/"&ConvertiTitoloInUrlProduttore(Titolo, Id)
   							%>
-                <div class="col-xs-12 col-sm-6 col-md-5">
+                <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
                   <article class="col-item">
                       <div class="photo">
                           <a href="/cristalensi/<%=url%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo%>"><img alt="<%=titolo%>" src="/cristalensi/images/blank.png"></a>
