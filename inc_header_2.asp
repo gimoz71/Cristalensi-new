@@ -50,10 +50,9 @@
                     <li class="nav-user dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Interno <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <!-- Content container to add padding -->
                                 <div class="yamm-content">
                                     <div class="row">
-                                      <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
+                                        <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                           <li class="subcategory">
                                               <a href="/cristalensi/illuminazione-interni-ed-esterni/1nt-lampadari.asp"><h4><strong>Lampadari</strong></h4></a>
                                               <ul class="list-unstyled lampadari">
@@ -68,7 +67,7 @@
                                                   <li><a href="#">Lampadari <b>per bambini</b></a></li>
                                               </ul>
                                           </li>
-                                      </ul>
+                                        </ul>
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
                                                 <a href="/cristalensi/illuminazione-interni-ed-esterni/3nt-plafoniere.asp"><h4><strong>Plafoniere</strong></h4></a>
@@ -86,7 +85,6 @@
                                                 </ul>
                                             </li>
                                         </ul>
-
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
                                                 <a href="/cristalensi/illuminazione-interni-ed-esterni/6nt-lampade-da-tavolo.asp"><h4><strong>Lampade da tavolo</strong></h4></a>
@@ -103,7 +101,6 @@
                                                 </ul>
                                             </li>
                                         </ul>
-
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
                                                 <a href="/cristalensi/illuminazione-interni-ed-esterni/5nt-piantane.asp"><h4><strong>Piantane</strong></h4></a>
@@ -139,7 +136,6 @@
                                                 </ul>
                                             </li>
                                         </ul>
-
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
                                                 <a href="/cristalensi/illuminazione-interni-ed-esterni/4nt-applique.asp"><h4><strong>Applique</strong></h4></a>
@@ -157,8 +153,6 @@
                                                 </ul>
                                             </li>
                                         </ul>
-
-
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
                                                 <a href="/cristalensi/illuminazione-interni-ed-esterni/7nt-faretti-incassi.asp"><h4><strong>Faretti, incassi e binari</strong></h4></a>
@@ -214,14 +208,7 @@
                                                     <li>&nbsp;</li>
                                                 </ul>
                                             </li>
-                                            <li class="subcategory">
-                                                <a href="/cristalensi/illuminazione-interni-ed-esterni/15nt-lampade-con-pannello-solare.asp"><h4><strong>Lampade con pannello solare</strong></h4></a>
-                                                <ul class="list-unstyled piantane">
-                                                    <li><a href="#">Lampade <b>LED</b> con pannello solare</a></li>
-                                                    <li>&nbsp;</li>
-                                                    <li>&nbsp;</li>
-                                                </ul>
-                                            </li>
+
                                         </ul>
                                         <ul class="col-sm-6 col-lg-4 col-same-height list-unstyled">
                                           <li class="subcategory">
@@ -243,7 +230,6 @@
                                                 </ul>
                                             </li>
                                         </ul>
-
                                         <ul class="col-sm-6 col-lg-4 col-same-height list-unstyled">
                                             <li class="subcategory">
                                                 <a href="/cristalensi/illuminazione-interni-ed-esterni/12nt-plafoniere-sospensioni-per-esterni.asp"><h4><strong>Plafoniere e sospensioni per esterni</strong></h4></a>
@@ -262,12 +248,26 @@
                                                     <li>&nbsp;</li>
                                                 </ul>
                                             </li>
+                                        </ul>
+                                        <ul class="col-sm-6 col-lg-4 list-unstyled">
+                                            <li class="subcategory">
+                                                <a href="/cristalensi/illuminazione-interni-ed-esterni/15nt-lampade-con-pannello-solare.asp"><h4><strong>Lampade con pannello solare</strong></h4></a>
+                                                <ul class="list-unstyled piantane">
+                                                    <li><a href="#">Lampade <b>LED</b> con pannello solare</a></li>
+                                                    <li>&nbsp;</li>
+                                                    <li>&nbsp;</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul class="col-sm-6 col-lg-4 list-unstyled">
+                                            <li>&nbsp;</li>
+                                        </ul>
+                                        <ul class="col-sm-6 col-lg-4 list-unstyled">
                                             <li class="subcategory">
                                                 <a href="/cristalensi/offerte.asp" class="offerte">Offerte e Promozioni</a>
                                                 <li>&nbsp;</li>
                                             </li>
                                         </ul>
-
                                     </div>
                                 </div>
                             </li>
