@@ -951,14 +951,14 @@ End If
 												<%rs.close%>
 												<tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong>Totale Carrello <%if TotaleCarrello<>0 then%>
+                                <td colspan="4" class="text-center"><strong>Totale Carrello <%if TotaleCarrello<>0 then%>
 								<%=FormatNumber(TotaleCarrello,2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
                             </tr>
-                            <tr>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Totale Carrello <%if TotaleCarrello<>0 then%>
+                            <tr class="hidden-xs">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center"><strong>Totale Carrello <%if TotaleCarrello<>0 then%>
 								<%=FormatNumber(TotaleCarrello,2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
                             </tr>
                             <tr>
