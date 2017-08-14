@@ -1,8 +1,68 @@
+<!--#include file="inc_strConn.asp"-->
+<%
+	IdOrdine=request("IdOrdine")
+	if IdOrdine="" then IdOrdine=0
+
+	mode=request("mode")
+	if mode="" then mode=0
+
+		Set ss = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT * FROM Ordini where pkid="&idOrdine
+		ss.Open sql, conn, 3, 3
+
+	if ss.recordcount>0 then
+		TotaleCarrello=ss("TotaleCarrello")
+		CostoSpedizioneTotale=ss("CostoSpedizione")
+		if CostoSpedizioneTotale="" or isnull(CostoSpedizioneTotale)  then CostoSpedizioneTotale=0
+		TipoTrasporto=ss("TipoTrasporto")
+		DatiSpedizione=ss("DatiSpedizione")
+		Nominativo_sp=ss("Nominativo_sp")
+		Telefono_sp=ss("Telefono_sp")
+		Indirizzo_sp=ss("Indirizzo_sp")
+		CAP_sp=ss("CAP_sp")
+		Citta_sp=ss("Citta_sp")
+		Provincia_sp=ss("Provincia_sp")
+		Nazione_sp=ss("Nazione_sp")
+
+		NoteCliente=ss("NoteCliente")
+
+		FkPagamento=ss("FkPagamento")
+		TipoPagamento=ss("TipoPagamento")
+		CostoPagamento=ss("CostoPagamento")
+
+		Nominativo=ss("Nominativo")
+		Rag_Soc=ss("Rag_Soc")
+		Cod_Fisc=ss("Cod_Fisc")
+		PartitaIVA=ss("PartitaIVA")
+		Indirizzo=ss("Indirizzo")
+		Citta=ss("Citta")
+		Provincia=ss("Provincia")
+		CAP=ss("CAP")
+
+		TotaleGenerale=ss("TotaleGenerale")
+
+		DataAggiornamento=ss("DataAggiornamento")
+
+		FkCliente=ss("FkCliente")
+
+		Set cs = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT PkId, Email, Telefono FROM Clienti where pkid="&FkCliente
+		cs.Open sql, conn, 1, 1
+		if cs.recordcount>0 then
+			email_cliente=cs("Email")
+			telefono_cliente=cs("Telefono")
+		end if
+		cs.close
+	end if
+
+	ss.close
+
+%>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Cristalensi - Ordine n. 30661 - Data 25/05/2017</title>
+    <title>Cristalensi - Ordine n. <%=idordine%> - Data <%=Left(DataAggiornamento, 10)%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Cristalensi.">
     <meta name="keywords" content="">
@@ -34,7 +94,7 @@
     </style>
 </head>
 
-<body>
+<body <%if mode=1 then%>onLoad="print();"<%end if%>>
     <div class="container-fluid content">
         <div class="row">
             <div class="col-xs-6"><img src="images/logo-cristalensi.png" style="height: 85px; margin: 15px;" /></div>
@@ -51,65 +111,75 @@
         <div class="row top-buffer">
             <div class="col-md-12">
                 <div class="title">
-                    <h4>Ordine n. 30661 - Data 25/05/2017</h4>
+                    <h4>Ordine n. <%=idordine%> - Data <%=Left(DataAggiornamento, 10)%></h4>
                 </div>
                 <div class="col-md-12">
                     <div class="top-buffer">
                         <table id="cart" class="table table-hover table-condensed table-cart">
                             <thead>
                                 <tr>
-                                    <th style="width:45%">Prodotto</th>
+                                    <th style="width:50%">Prodotto</th>
                                     <th style="width:10%" class="text-center">Quantit&agrave;</th>
-                                    <th style="width:10%" class="text-center">Prezzo unitario</th>
+                                    <th style="width:20%" class="text-center">Prezzo unitario</th>
                                     <th style="width:20%" class="text-center">Subtotale</th>
                                 </tr>
                             </thead>
                             <tbody>
+                              <%
+                              	Set rs = Server.CreateObject("ADODB.Recordset")
+                              	if pkid<12210 then
+                              		sql = "SELECT RigheOrdine.PkId, RigheOrdine.FkOrdine, RigheOrdine.PrezzoProdotto as PrezzoProdotto, RigheOrdine.FkProdotto, RigheOrdine.Quantita, RigheOrdine.TotaleRiga, Prodotti.Titolo, Prodotti.CodiceArticolo, RigheOrdine.Colore, RigheOrdine.Lampadina FROM Prodotti INNER JOIN RigheOrdine ON Prodotti.PkId = RigheOrdine.FkProdotto WHERE (((RigheOrdine.FkOrdine)="&idOrdine&"))"
+                              	else
+                              		sql = "SELECT PkId, FkOrdine, FkProdotto, PrezzoProdotto, Quantita, TotaleRiga, Titolo, CodiceArticolo, Colore, Lampadina FROM RigheOrdine WHERE FkOrdine="&idOrdine&""
+                              	end if
+                              		rs.Open sql, conn, 1, 1
+                              	num_prodotti_carrello=rs.recordcount
+                              if rs.recordcount>0 then
+                              %>
+                              <%
+                              Do while not rs.EOF
+                              %>
                                 <tr>
                                     <td data-th="Product" class="cart-product">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h5 class="nomargin"><a href="scheda.html">Modello Plafoniera Moderna</a></h5>
-                                                <p>Col.: Avorio antico - Lamp.: Bianco satinato</p>
+                                                <h5 class="nomargin">[<%=rs("codicearticolo")%>]&nbsp;<%=rs("titolo")%></h5>
+                                                <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>&nbsp;Col.:&nbsp;<%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%>&nbsp;-&nbsp;Lamp.:&nbsp;<%=rs("lampadina")%><%end if%></p><%end if%>
                                             </div>
                                         </div>
                                     </td>
                                     <td data-th="Quantity" class="text-center">
-                                        1
+                                      <%
+                                      quantita=rs("quantita")
+                                      if quantita="" then quantita=1
+                                      %>
+                                      <%=quantita%> pezzi
                                     </td>
-                                    <td data-th="Price" class="hidden-xs text-center">55&euro;</td>
-                                    <td data-th="Subtotal" class="text-center">55&euro;</td>
+                                    <td data-th="Price" class="text-center"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&euro;</td>
+                                    <td data-th="Subtotal" class="text-center"><%=FormatNumber(rs("TotaleRiga"),2)%>&euro;</td>
                                 </tr>
-                                <tr>
-                                    <td data-th="Product" class="cart-product">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h5 class="nomargin"><a href="scheda.html">Modello Plafoniera Moderna</a></h5>
-                                                <p>Col.: Avorio antico - Lamp.: Bianco satinato</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Quantity" class="text-center">
-                                        1
-                                    </td>
-                                    <td data-th="Price" class="hidden-xs text-center">55&euro;</td>
-                                    <td data-th="Subtotal" class="text-center">55&euro;</td>
-                                </tr>
+                              <%
+                              rs.movenext
+                              loop
+                              %>
+                              <%end if%>
+                              <%rs.close%>
                             </tbody>
                             <tfoot>
                                 <tr class="visible-xs">
-                                    <td colspan="4" class="text-center"><strong>Totale 110&euro;</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td colspan="2" class="text-center"><strong>Totale <%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
                                 </tr>
                                 <tr class="hidden-xs">
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td class="text-center"><strong>Totale 110&euro;</strong></td>
+                                    <td colspan="2" class="text-center"><strong>Totale <%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
                                         <h5>Eventuali annotazioni</h5>
-                                        <textarea class="form-control" rows="3" readonly style="font-size: 12px;">sdfwf adf fwf ewqfewq qwefewqf qwef ewqf qwefqwef qwef ewqfqwefqw qewf qwefewqfwqfsdfvf dv</textarea>
+                                        <textarea class="form-control" rows="3" readonly style="font-size: 12px;"><%=NoteCliente%></textarea>
                                     </td>
                                 </tr>
                             </tfoot>
@@ -134,12 +204,12 @@
                                         <td data-th="Product" class="cart-product">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <p>Spedizione in Italia</p>
+                                                    <p><%=TipoTrasporto%></p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td data-th="Quantity" class="text-center">
-                                            10,00&euro;
+                                            <%=FormatNumber(CostoSpedizioneTotale,2)%>&euro;
                                         </td>
                                     </tr>
                                 </tbody>
@@ -151,7 +221,13 @@
                             <h4>indirizzo di spedizione</h4>
                         </div>
                         <div class="col-md-12 top-buffer">
-                            <p>Nominativo: <b>Amintore Fanfani</b> - Indirizzo: <b>Via delle Acciughe 34 -57122 Livorno</b></p>
+                            <p>
+                              <%if Len(DatiSpedizione)>0 then%>
+                      					<%=DatiSpedizione%><br>Email: <%=Email_cliente%> - Telefono: <%=Telefono_cliente%>
+                              <%else%>
+                              	<%=Nominativo_sp%>&nbsp;-&nbsp;Telefono:&nbsp;<%=Telefono_sp%><br /><%=Indirizzo_sp%>&nbsp;-&nbsp;<%=CAP_sp%>&nbsp;-&nbsp;<%=Citta_sp%><%if Provincia_sp<>"" then%>&nbsp;(<%=Provincia_sp%>)<%end if%>&nbsp;-&nbsp;<%=Nazione_sp%><br>Email iscrizione: <%=Email_cliente%>
+                              <%end if%>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -173,12 +249,12 @@
                                         <td data-th="Product" class="cart-product">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <p>Bonifico bancario</p>
+                                                    <p><%=TipoPagamento%></p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td data-th="Quantity" class="text-center">
-                                            0,00&euro;
+                                            <%=FormatNumber(CostoPagamento,2)%>&euro;
                                         </td>
                                     </tr>
                                 </tbody>
@@ -190,7 +266,11 @@
                             <h4>Dati di fatturazione</h4>
                         </div>
                         <div class="col-md-12 top-buffer">
-                            <p>Nominativo: <b>Amintore Fanfani</b> - Indirizzo: <b>Via delle Acciughe 34 -57122 Livorno</b></p>
+                            <p>
+                              <%if Rag_Soc<>"" then%><%=Rag_Soc%>&nbsp;&nbsp;<%end if%><%if nominativo<>"" then%><%=nominativo%><%end if%><br />
+                              <%if Cod_Fisc<>"" then%>Codice fiscale: <%=Cod_Fisc%>&nbsp;&nbsp;<%end if%><%if PartitaIVA<>"" then%>Partita IVA: <%=PartitaIVA%><%end if%><br />
+                              <%=indirizzo%>&nbsp;-&nbsp;<%=CAP%>&nbsp;-&nbsp;<%=Citta%><%if provincia<>"" then%>(<%=provincia%>)<%end if%>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -198,7 +278,11 @@
             <div class="col-md-12">
                 <div class="col-md-12">
                     <div class="bg-primary">
-                        <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b>349,00&euro;</b></p>
+                        <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b><%if TotaleGenerale<>0 then%>
+                        <%=FormatNumber(TotaleGenerale,2)%>
+                        <%else%>
+                        0,00
+                        <%end if%>&euro;</b></p>
                     </div>
                 </div>
             </div>
