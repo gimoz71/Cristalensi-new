@@ -281,6 +281,7 @@ az_rs.close
             </div>
             <%end if%>
             <%else%>
+            <%richiesta_produttore=1%>
               <div class="row top-buffer">
                 <div class="col-lg-12">
                   <div class="panel panel-default user-comment">
@@ -295,7 +296,7 @@ verrai contattato il prima possibile: il nostro staff sar&agrave; a Tua disposiz
                             <br />
                           </li>
                       </ul>
-                      <div class="panel-footer"><a data-fancybox data-src="#hidden-content-produttori" href="javascript:;" class="btn btn-warning btn-block">Contatta lo staff <i class="fa fa-angle-right"></i></a></div>
+                      <div class="panel-footer"><a data-fancybox data-src="#hidden-content-produttori" href="javascript:;" class="btn launch btn-warning btn-block">Contatta lo staff <i class="fa fa-angle-right"></i></a></div>
                   </div>
                 </div>
               </div>

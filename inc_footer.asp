@@ -86,6 +86,170 @@
 <%
 ric=request("ric")
 if ric="" then ric=0
+
+if ric=1 then
+  email=request("email")
+  nome=request("nome")
+  telefono=request("telefono")
+  richiesta=request("richiesta")
+
+  if email<>"" then
+		ip=Request.ServerVariables("REMOTE_ADDR")
+		data=date()
+
+		HTML1 = ""
+		HTML1 = HTML1 & "<html>"
+		HTML1 = HTML1 & "<head>"
+		HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+		HTML1 = HTML1 & "<title>Cristalensi</title>"
+		HTML1 = HTML1 & "</head>"
+		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+		HTML1 = HTML1 & "<table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td>"
+		HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di preventivo dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br>IP connessione: <b>"&ip&"</b><br><br>Codice articolo: <b>"&CodiceArticolo&"</b><br>Nome prodotto: <b>"&Titolo_prodotto&"</b><br>Produttore: <b>"&produttore&"</b><br>Codice progressivo prodotto: <b>"&id&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b></font>"
+		HTML1 = HTML1 & "</td></tr></table>"
+		HTML1 = HTML1 & "</body>"
+		HTML1 = HTML1 & "</html>"
+
+		Destinatario = "info@cristalensi.it"
+		Mittente = "info@cristalensi.it"
+		Oggetto = "Richiesta preventivo per l'articolo codice: "&CodiceArticolo
+		Testo = HTML1
+
+		Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
+
+			'eMail_cdo.HTMLBody = Testo
+
+			'eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+		Destinatario = "viadeimedici@gmail.com"
+		Mittente = "info@cristalensi.it"
+		Oggetto = "Richiesta preventivo per l'articolo codice: "&CodiceArticolo
+		Testo = HTML1
+
+		Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			eMail_cdo.From = Mittente
+			eMail_cdo.To = Destinatario
+			eMail_cdo.Subject = Oggetto
+
+			eMail_cdo.HTMLBody = Testo
+
+			eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+
+		'email di conferma per il cliente
+		HTML1 = ""
+		HTML1 = HTML1 & "<html>"
+		HTML1 = HTML1 & "<head>"
+		HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+		HTML1 = HTML1 & "<title>Cristalensi</title>"
+		HTML1 = HTML1 & "</head>"
+		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+		HTML1 = HTML1 & "<table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td>"
+		HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata inviata la seguente richiesta di preventivo dal sito Cristalensi.it il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br><br>Codice articolo: <b>"&CodiceArticolo&"</b><br>Nome prodotto: <b>"&Titolo_prodotto&"</b><br>Produttore: <b>"&produttore&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa è un'email di conferma dell'invio della richiesta di preventivo.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
+		HTML1 = HTML1 & "</td></tr></table>"
+		HTML1 = HTML1 & "</body>"
+		HTML1 = HTML1 & "</html>"
+
+		Destinatario = email
+		Mittente = "info@cristalensi.it"
+		Oggetto = "Richiesta preventivo per l'articolo codice: "&CodiceArticolo
+		Testo = HTML1
+
+		Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			eMail_cdo.From = Mittente
+			eMail_cdo.To = Destinatario
+			eMail_cdo.Subject = Oggetto
+
+			eMail_cdo.HTMLBody = Testo
+
+			eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+	else
+		ric=0
+	end if
+
+end if
 %>
 <SCRIPT language="JavaScript">
   function verifica_request() {
@@ -104,13 +268,13 @@ if ric="" then ric=0
     else
 
       document.requestform.method = "post";
-      document.newsform2.action = "<%=toUrl_completo%>";
-      document.newsform2.submit();
+      document.requestform.action = "<%=toUrl_completo%>";
+      document.requestform.submit();
   }
 
 </SCRIPT>
 <div style="display: none; max-width: 800px;" id="hidden-content">
-    <h4>Richiesta informazioni e disponibilit&agrave; per<br /><b><%=Titolo_prodotto%></b><br />Codice prodotto: <%=CodiceArticolo%></h4>
+    <h4>Richiesta informazioni e disponibilit&agrave; per<br /><em><%=Titolo_prodotto%></em><br />Codice prodotto: <%=CodiceArticolo%></h4>
     <%if ric=1 then%>
     <p><strong>La richiesta &egrave; stata inoltrata correttamente, il nostro staff ti contatter&agrave; il prima possibile.<br />Saluti da CRISTALENSI</strong></p>
     <%else%>
@@ -118,7 +282,7 @@ if ric="" then ric=0
     <form class="form-horizontal" name="requestform" id="requestform" onSubmit="return verifica_request();">
     <input type="hidden" name="ric" value="1" />
         <div class="form-group">
-            <label for="nome" class="col-sm-4 control-label">Nome</label>
+            <label for="nome" class="col-sm-4 control-label">Nome e Cognome</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="nome" name="nome">
             </div>
@@ -138,53 +302,248 @@ if ric="" then ric=0
         <div class="form-group">
             <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
             <div class="col-sm-8">
-                <textarea class="form-control" name="richesta"></textarea>
+                <textarea class="form-control" name="richiesta"></textarea>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
-                <button type="submit" id="diocane" class="btn btn-danger">invia richiesta</button>
+                <button type="submit" id="inviarichiesta" class="btn btn-danger">invia richiesta</button>
             </div>
         </div>
     </form>
     <%end if%>
 </div>
 <%end if%>
-<%if FkProduttore>0 then%>
+<%if FkProduttore>0 and richiesta_produttore=1 then%>
+<%
+ric=request("ric")
+if ric="" then ric=0
+
+if ric=1 then
+  email=request("email")
+  nome=request("nome")
+  telefono=request("telefono")
+  richiesta=request("richiesta")
+
+  if email<>"" then
+		ip=Request.ServerVariables("REMOTE_ADDR")
+		data=date()
+
+		HTML1 = ""
+		HTML1 = HTML1 & "<html>"
+		HTML1 = HTML1 & "<head>"
+		HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+		HTML1 = HTML1 & "<title>Cristalensi</title>"
+		HTML1 = HTML1 & "</head>"
+		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+		HTML1 = HTML1 & "<table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td>"
+		HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di informazioni su i prodotti di un produttore dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br>IP connessione: <b>"&ip&"</b><br><br>Produttore: <b>"&produttore&"</b><br>Codice progressivo produttore: <b>"&id&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b></font>"
+		HTML1 = HTML1 & "</td></tr></table>"
+		HTML1 = HTML1 & "</body>"
+		HTML1 = HTML1 & "</html>"
+
+		Destinatario = "info@cristalensi.it"
+		Mittente = "info@cristalensi.it"
+		Oggetto = "Richiesta informazioni sul produttore: "&produttore
+		Testo = HTML1
+
+		Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			'eMail_cdo.From = Mittente
+			'eMail_cdo.To = Destinatario
+			'eMail_cdo.Subject = Oggetto
+
+			'eMail_cdo.HTMLBody = Testo
+
+			'eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+		Destinatario = "viadeimedici@gmail.com"
+		Mittente = "info@cristalensi.it"
+		Oggetto = "Richiesta informazioni sul produttore: "&produttore
+		Testo = HTML1
+
+		Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			eMail_cdo.From = Mittente
+			eMail_cdo.To = Destinatario
+			eMail_cdo.Subject = Oggetto
+
+			eMail_cdo.HTMLBody = Testo
+
+			eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+
+		'email di conferma per il cliente
+		HTML1 = ""
+		HTML1 = HTML1 & "<html>"
+		HTML1 = HTML1 & "<head>"
+		HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+		HTML1 = HTML1 & "<title>Cristalensi</title>"
+		HTML1 = HTML1 & "</head>"
+		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+		HTML1 = HTML1 & "<table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td>"
+		HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata inviata la seguente richiesta di informazioni dal sito Cristalensi.it il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br><br>Produttore: <b>"&produttore&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa è un'email di conferma dell'invio della richiesta.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
+		HTML1 = HTML1 & "</td></tr></table>"
+		HTML1 = HTML1 & "</body>"
+		HTML1 = HTML1 & "</html>"
+
+		Destinatario = email
+		Mittente = "info@cristalensi.it"
+		Oggetto = "Richiesta informazioni sul produttore: "&produttore
+		Testo = HTML1
+
+		Set eMail_cdo = CreateObject("CDO.Message")
+
+			' Imposta le configurazioni
+			Set myConfig = Server.createObject("CDO.Configuration")
+			With myConfig
+				'autentication
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+				' Porta CDO
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+				' Timeout
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+				' Server SMTP di uscita
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				' Porta SMTP
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+				'Username
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				'Password
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+
+				.Fields.update
+			End With
+			Set eMail_cdo.Configuration = myConfig
+
+			eMail_cdo.From = Mittente
+			eMail_cdo.To = Destinatario
+			eMail_cdo.Subject = Oggetto
+
+			eMail_cdo.HTMLBody = Testo
+
+			eMail_cdo.Send()
+
+			Set myConfig = Nothing
+			Set eMail_cdo = Nothing
+
+	else
+		ric=0
+	end if
+
+end if
+%>
+<SCRIPT language="JavaScript">
+  function verifica_request() {
+
+  email=document.requestform.email.value;
+
+  if (email==""){
+    alert("Non  e\' stato compilato il campo \"Email\".");
+    return false;
+  }
+  if (email.indexOf("@")==-1 || email.indexOf(".")==-1){
+  alert("ATTENZIONE! \"e-mail\" non valida.");
+  return false;
+  }
+
+    else
+
+      document.requestform.method = "post";
+      document.requestform.action = "<%=toUrl_completo%>";
+      document.requestform.submit();
+  }
+
+</SCRIPT>
 <div style="display: none; max-width: 800px;" id="hidden-content-produttori">
     <h4>Invia richiesta disponibilit&agrave; prodotti per<br /><b><%=titolo_produttore%></b></h4>
+    <%if ric=1 then%>
+    <p><strong>La richiesta &egrave; stata inoltrata correttamente, il nostro staff ti contatter&agrave; il prima possibile.<br />Saluti da CRISTALENSI</strong></p>
+    <%else%>
     <p class="description">Inserisci quanti pi&uacute; dati possibili cos&iacute; da facilitare la ricerca al nostro staff, grazie.</p>
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="requestform" id="requestform" onSubmit="return verifica_request();">
+    <input type="hidden" name="ric" value="1" />
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">Nome</label>
+            <label for="nome" class="col-sm-4 control-label">Nome e Cognome</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="inputEmail3">
+                <input type="text" class="form-control" id="nome" name="nome">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">Indirizzo Email</label>
+            <label for="email" class="col-sm-4 control-label">Indirizzo Email</label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" id="inputEmail3">
+                <input type="email" class="form-control" id="email" name="email">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">Telefono</label>
+            <label for="telefono" class="col-sm-4 control-label">Telefono</label>
             <div class="col-sm-8">
-                <input type="number" class="form-control" id="inputEmail3">
+                <input type="number" class="form-control" id="telefono" name="telefono">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-4 control-label">Dettagli richiesta</label>
+            <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
             <div class="col-sm-8">
-                <textarea class="form-control"></textarea>
+                <textarea class="form-control" name="richiesta"></textarea>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
-                <button type="submit" class="btn btn-danger">invia richiesta</button>
+                <button type="submit" id="inviarichiesta" class="btn btn-danger">invia richiesta</button>
             </div>
         </div>
     </form>
+    <%end if%>
 </div>
 <%end if%>
 <!-- fine finestra modale -->
