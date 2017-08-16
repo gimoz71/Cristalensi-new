@@ -314,6 +314,7 @@ end if
             <div class="col-md-4">
                 <div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;">
 										<%if prezzoarticolo=0 then%>
+										<%richiesta_prev=1%>
 											<ul class="list-group text-center">
 
 													<li class="list-group-item" style="padding-top: 20px">
@@ -324,7 +325,7 @@ end if
 	                        </li>
 											</ul>
 	                    <div class="panel-footer">
-	                        <a data-fancybox data-src="#hidden-content" href="javascript:;" rel="nofollow" class="btn btn-danger btn-block" title="Richiedi un preventivo al nostro staff">Richiedi un preventivo al nostro staff <i class="glyphicon glyphicon-shopping-cart"></i></a>
+	                        <a data-fancybox data-src="#hidden-content-prev" href="javascript:;" rel="nofollow" class="btn launch-prev btn-danger btn-block" title="Richiedi un preventivo al nostro staff">Richiedi un preventivo al nostro staff <i class="glyphicon glyphicon-shopping-cart"></i></a>
 	                    </div>
 										<%else%>
 											<%if offerta=10 then%>

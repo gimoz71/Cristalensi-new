@@ -281,7 +281,7 @@ az_rs.close
             </div>
             <%end if%>
             <%else%>
-            <%richiesta_produttore=1%>
+              <%richiesta_produttore=1%>
               <div class="row top-buffer">
                 <div class="col-lg-12">
                   <div class="panel panel-default user-comment">
@@ -305,6 +305,7 @@ verrai contattato il prima possibile: il nostro staff sar&agrave; a Tua disposiz
             prod_rs.close
             %>
         </div>
+    </div>
     </div>
     <!--#include virtual="/cristalensi/inc_footer.asp"-->
 </body>
