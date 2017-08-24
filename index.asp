@@ -141,7 +141,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine.asp" title="Lampadine"><h1>Lampadine, driver e strisce</h1></a>
+                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp" title="Lampadine"><h1>Lampadine, driver e strisce</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="/cristalensi/offerte.asp" class="btn btn-default pull-right" title="Offerte e prodotti in promozione">vedi tutto <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="/cristalensi/offerte.asp" class="btn btn-default pull-right" title="Offerte e prodotti in promozione">Vedi tutte le Offerte <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 'random prodotti in offerta
@@ -265,7 +265,7 @@
             %>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Novit&Agrave; illuminazione e ultimi arrivi</span></h4> <a href="/cristalensi/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-default pull-right" title="Novit&Agrave; illuminazione e ultimi arrivi">vedi tutto <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Novit&Agrave; illuminazione e ultimi arrivi</span></h4> <a href="/cristalensi/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-default pull-right" title="Novit&Agrave; illuminazione e ultimi arrivi">Vedi tutte le Novit&agrave; <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 Do while not prod_rs.EOF

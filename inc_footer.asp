@@ -28,7 +28,7 @@
                     <li><a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp">Lampade da interno</a></li>
                     <li><a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp">Lampade da esterno</a></li>
                     <li><a href="/cristalensi/illuminazione-interni-ed-esterni/3ng-ventilatori.asp">Ventiltori</a></li>
-                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine.asp">Lampadine e componenti</a></li>
+                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp">Lampadine e componenti</a></li>
                     <li>&nbsp;</li>
                 </ul>
                 <h4>Oppure cerca in</h4>
