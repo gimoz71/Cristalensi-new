@@ -192,6 +192,7 @@ end if
 			//document.newsform2.submit();
 	}
 	</SCRIPT>
+	<!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
 </head>
 
 <body>

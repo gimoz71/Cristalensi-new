@@ -41,6 +41,7 @@
             visibility: hidden;
         }
     </style>
+    <!--#include file="/cristalensi/inc_funzioni_head.asp"-->
 </head>
 
 <body>
@@ -109,7 +110,7 @@
                     <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
                     <br /><br />Lun. - Ven.: 9.00 - 12.30 | 14.30 - 19.30<br />Sab.: 9.00 - 12.30 | 15.30 - 19.30<br />Domenica CHIUSI<br />Giugno/Luglio CHIUSI Sabato Pomeriggio<br />
                   </div>
-                  
+
                 </div>
             </div>
 

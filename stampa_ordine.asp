@@ -92,6 +92,7 @@
             }
         }
     </style>
+		<!--#include file="/cristalensi/inc_funzioni_head.asp"-->
 </head>
 
 <body <%if mode=1 then%>onLoad="print();"<%end if%>>

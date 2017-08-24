@@ -624,6 +624,7 @@ end if
                 }
               }
     </SCRIPT>
+		<!--#include file="/cristalensi/inc_funzioni_head.asp"-->
 </head>
 
 <body>

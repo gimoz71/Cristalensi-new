@@ -57,6 +57,7 @@ gr_rs.close
             visibility: hidden;
         }
     </style>
+    <!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
 </head>
 
 <body>

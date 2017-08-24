@@ -105,6 +105,7 @@ end if
 		<%if p>0 then%>
 		<link rel="canonical" href="https://www.cristalensi.it/ricerca_avanzata_elenco.asp?cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&titolo=<%=titolo%>&prezzo_da=<%=prezzo_da%>&prezzo_a=<%=prezzo_a%>&order=<%=order%>"/>
 		<%end if%>
+		<!--#include file="/cristalensi/inc_funzioni_head.asp"-->
 </head>
 
 <body>

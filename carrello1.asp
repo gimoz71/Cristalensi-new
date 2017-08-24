@@ -238,6 +238,7 @@
 				document.modulocarrello.submit();
 		}
 		</script>
+		<!--#include file="/cristalensi/inc_funzioni_head.asp"-->
 </head>
 
 <body>

@@ -84,6 +84,7 @@ end if
             visibility: hidden;
         }
     </style>
+    <!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
 </head>
 
 <body>
