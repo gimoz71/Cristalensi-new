@@ -1,17 +1,17 @@
 <div class="row hidden-xs">
-    <div class="col-md-8 parentOverflowContainer">
-        <awesome-slider pre-image="images/logo.svg" autostart="true" bullets="false" height="x60%" color="grey" arrows="true">
-            <item source="images/slider/1.jpg"></item>
-            <item source="images/slider/2.jpg"></item>
-            <item source="images/slider/3.jpg"></item>
-            <item source="images/slider/4.jpg"></item>
-            <item source="images/slider/5.jpg"></item>
-            <item source="images/slider/6.jpg"></item>
-            <item source="images/slider/7.jpg"></item>
-            <item source="images/slider/8.jpg"></item>
-            <item source="images/slider/9.jpg"></item>
-            <item source="images/slider/10.jpg"></item>
-        </awesome-slider>
+    <div class="col-md-8 clearfix parentOverflowContainer">
+        <div id="slider">
+            <div data-src="images/slider/1.jpg"></div>
+            <div data-src="images/slider/2.jpg"></div>
+            <div data-src="images/slider/3.jpg"></div>
+            <div data-src="images/slider/4.jpg"></div>
+            <div data-src="images/slider/5.jpg"></div>
+            <div data-src="images/slider/6.jpg"></div>
+            <div data-src="images/slider/7.jpg"></div>
+            <div data-src="images/slider/8.jpg"></div>
+            <div data-src="images/slider/9.jpg"></div>
+            <div data-src="images/slider/10.jpg"></div>
+        </div>
     </div>
     <div class="col-md-4">
         <div class="banner preventivi overflowContainer">
