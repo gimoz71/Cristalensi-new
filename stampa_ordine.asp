@@ -46,9 +46,11 @@
 		FkCliente=ss("FkCliente")
 
 		Set cs = Server.CreateObject("ADODB.Recordset")
-		sql = "SELECT PkId, Email, Telefono FROM Clienti where pkid="&FkCliente
+		sql = "SELECT PkId, Nome, Nominativo, Email, Telefono FROM Clienti where pkid="&FkCliente
 		cs.Open sql, conn, 1, 1
 		if cs.recordcount>0 then
+			Nome_cliente=cs("Nome")
+			Nominativo_cliente=cs("Nominativo")
 			email_cliente=cs("Email")
 			telefono_cliente=cs("Telefono")
 		end if
@@ -98,13 +100,12 @@
 <body <%if mode=1 then%>onLoad="print();"<%end if%>>
     <div class="container-fluid content">
         <div class="row">
-            <div class="col-xs-6"><img src="images/logo-cristalensi.png" style="height: 85px; margin: 15px;" /></div>
+            <div class="col-xs-6"><img src="images/logo-cristalensi.png" style="height: 70px; margin: 15px;" /></div>
             <div class="col-xs-6">
                 <p style="font-size: 60%; margin: 15px; color: #999">
                   Cristalensi Snc di Lensi Massimiliano & C.<br />
                   C.F. e Iscr. Reg. Impr. di Firenze 05305820481<br />Via arti e mestieri, 1 - 50056 Montelupo Fiorentino (FI)<br />
-                  Tel.: 0571.911163<br />
-                  Fax: 0571.073327<br />
+                  Tel.: 0571.911163 - Fax: 0571.073327<br />
                   E-mail: info@cristalensi.it
                 </p>
             </div>
@@ -122,7 +123,7 @@
                                     <th style="width:50%">Prodotto</th>
                                     <th style="width:10%" class="text-center">Quantit&agrave;</th>
                                     <th style="width:20%" class="text-center">Prezzo unitario</th>
-                                    <th style="width:20%" class="text-center">Subtotale</th>
+                                    <th style="width:20%" class="text-center">Totale prodotto</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -170,17 +171,17 @@
                                 <tr class="visible-xs">
                                     <td></td>
                                     <td></td>
-                                    <td colspan="2" class="text-center"><strong>Totale <%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
+                                    <td colspan="2" class="text-center"><strong>Totale Carrello <%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
                                 </tr>
                                 <tr class="hidden-xs">
                                     <td></td>
                                     <td></td>
-                                    <td colspan="2" class="text-center"><strong>Totale <%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
+                                    <td colspan="2" class="text-center"><strong>Totale Carrello <%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
                                         <h5>Eventuali annotazioni</h5>
-                                        <textarea class="form-control" rows="3" readonly style="font-size: 12px;"><%=NoteCliente%></textarea>
+                                        <textarea class="form-control" rows="2" readonly style="font-size: 10px;"><%=NoteCliente%></textarea>
                                     </td>
                                 </tr>
                             </tfoot>
@@ -189,9 +190,6 @@
                 </div>
                 <div class="row top-buffer">
                     <div class="col-md-6">
-                        <div class="title">
-                            <h4>Modalit&agrave; di spedizione</h4>
-                        </div>
                         <div class="col-md-12 top-buffer">
                             <table id="cart" class="table table-hover table-condensed table-cart">
                                 <thead>
@@ -216,26 +214,31 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="title">
-                            <h4>indirizzo di spedizione</h4>
-                        </div>
                         <div class="col-md-12 top-buffer">
-                            <p>
-                              <%if Len(DatiSpedizione)>0 then%>
-                      					<%=DatiSpedizione%><br>Email: <%=Email_cliente%> - Telefono: <%=Telefono_cliente%>
-                              <%else%>
-                              	<%=Nominativo_sp%>&nbsp;-&nbsp;Telefono:&nbsp;<%=Telefono_sp%><br /><%=Indirizzo_sp%>&nbsp;-&nbsp;<%=CAP_sp%>&nbsp;-&nbsp;<%=Citta_sp%><%if Provincia_sp<>"" then%>&nbsp;(<%=Provincia_sp%>)<%end if%>&nbsp;-&nbsp;<%=Nazione_sp%><br>Email iscrizione: <%=Email_cliente%>
-                              <%end if%>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row top-buffer">
-                    <div class="col-md-6">
-                        <div class="title">
-                            <h4>Modalit&agrave; di Pagamento</h4>
+														<table id="cart" class="table table-hover table-condensed table-cart">
+																<thead>
+																		<tr>
+																				<th style="width:100%">Indirizzo di spedizione</th>
+																		</tr>
+																</thead>
+																<tbody>
+																		<tr>
+																				<td data-th="Product" class="cart-product">
+																						<div class="row">
+																								<div class="col-sm-12">
+																								<p>
+																									<%if Len(DatiSpedizione)>0 then%>
+																										<%=DatiSpedizione%><br>Email: <%=Email_cliente%> - Telefono: <%=Telefono_cliente%>
+																									<%else%>
+																										<%=Nominativo_sp%>&nbsp;-&nbsp;Telefono:&nbsp;<%=Telefono_sp%>&nbsp;-&nbsp;<%=Indirizzo_sp%>&nbsp;-&nbsp;<%=CAP_sp%>&nbsp;-&nbsp;<%=Citta_sp%><%if Provincia_sp<>"" then%>&nbsp;(<%=Provincia_sp%>)<%end if%>&nbsp;-&nbsp;<%=Nazione_sp%><br><em>Riferimenti iscritto:</em>&nbsp;<%=Nome_cliente%>&nbsp;<%=Nominativo_cliente%>&nbsp;-&nbsp;<%=Email_cliente%>
+																									<%end if%>
+																								</p>
+																								</div>
+																						</div>
+																				</td>
+																		</tr>
+																</tbody>
+														</table>
                         </div>
                         <div class="col-md-12 top-buffer">
                             <table id="cart" class="table table-hover table-condensed table-cart">
@@ -261,25 +264,37 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="title">
-                            <h4>Dati di fatturazione</h4>
-                        </div>
-                        <div class="col-md-12 top-buffer">
-                            <p>
-                              <%if Rag_Soc<>"" then%><%=Rag_Soc%>&nbsp;&nbsp;<%end if%><%if nominativo<>"" then%><%=nominativo%><%end if%><br />
-                              <%if Cod_Fisc<>"" then%>Codice fiscale: <%=Cod_Fisc%>&nbsp;&nbsp;<%end if%><%if PartitaIVA<>"" then%>Partita IVA: <%=PartitaIVA%><%end if%><br />
-                              <%=indirizzo%>&nbsp;-&nbsp;<%=CAP%>&nbsp;-&nbsp;<%=Citta%><%if provincia<>"" then%>(<%=provincia%>)<%end if%>
-                            </p>
-                        </div>
+												<div class="col-md-12 top-buffer">
+														<table id="cart" class="table table-hover table-condensed table-cart">
+																<thead>
+																		<tr>
+																				<th style="width:100%">Dati di fatturazione</th>
+																		</tr>
+																</thead>
+																<tbody>
+																		<tr>
+																				<td data-th="Product" class="cart-product">
+																						<div class="row">
+																								<div class="col-sm-12">
+																								<p>
+										                              <%if Rag_Soc<>"" then%><%=Rag_Soc%>&nbsp;&nbsp;<%end if%><%if nominativo<>"" then%><%=nominativo%><%end if%>&nbsp;-&nbsp;
+										                              <%if Cod_Fisc<>"" then%>Codice fiscale: <%=Cod_Fisc%>&nbsp;&nbsp;<%end if%><%if PartitaIVA<>"" then%>Partita IVA: <%=PartitaIVA%><%end if%><br />
+										                              <%=indirizzo%>&nbsp;-&nbsp;<%=CAP%>&nbsp;-&nbsp;<%=Citta%><%if provincia<>"" then%>(<%=provincia%>)<%end if%>
+										                            </p>
+																								</div>
+																						</div>
+																				</td>
+																		</tr>
+																</tbody>
+														</table>
+												</div>
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="col-md-12">
                     <div class="bg-primary">
-                        <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b><%if TotaleGenerale<>0 then%>
+                        <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale ordine: <b><%if TotaleGenerale<>0 then%>
                         <%=FormatNumber(TotaleGenerale,2)%>
                         <%else%>
                         0,00
