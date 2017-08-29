@@ -271,8 +271,8 @@ if mode=1 then
 
 		end if
 
-		if prov=0 and errore=0 then response.redirect("/cristalensi/areaprivata.asp")
-		if prov=1 and errore=0 then response.redirect("/cristalensi/carrello2.asp")
+		if prov=0 and errore=0 then response.redirect("/areaprivata.asp")
+		if prov=1 and errore=0 then response.redirect("/carrello2.asp")
 end if
 
 	'if mode=2 and pkid=0 then response.Redirect("iscrizione.asp")
@@ -355,8 +355,8 @@ end if
   	log_rs.close
   	set log_rs = nothing
 
-    if prov=0 and errore=0 then response.redirect("/cristalensi/areaprivata.asp")
-    if prov=1 and errore=0 then response.redirect("/cristalensi/carrello2.asp")
+    if prov=0 and errore=0 then response.redirect("/areaprivata.asp")
+    if prov=1 and errore=0 then response.redirect("/carrello2.asp")
   'else
   	'nome_log=Session("nome_log")
   	'idsession=Session("idCliente")
@@ -624,7 +624,7 @@ end if
                 }
               }
     </SCRIPT>
-		<!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+		<!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
@@ -643,7 +643,7 @@ end if
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
-                    <a href="/cristalensi/carrello1.asp" class="bs-wizard-dot"></a>
+                    <a href="/carrello1.asp" class="bs-wizard-dot"></a>
                     <div class="bs-wizard-info text-center">Carrello.</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step active">
@@ -683,7 +683,7 @@ end if
 				<%else%>
 				<div class="col-xl-12">
             <ol class="breadcrumb">
-                <li><a href="/cristalensi/index.asp"><i class="fa fa-home"></i></a></li>
+                <li><a href="/index.asp"><i class="fa fa-home"></i></a></li>
                 <li class="active">Accesso e Iscrizione</li>
             </ol>
         </div>
@@ -698,7 +698,7 @@ end if
                         <p class="description">Se sei gi&agrave; iscritto, e quindi hai gi&agrave; Login (Email) e Password, non &egrave; necessario che ti iscriva nuovamente, &egrave; sufficiente inserire i dati di accesso qu&iacute; sotto e sarai riconosciuto immediatamente.
                         </p>
 												<%if errore=2 then%><p><strong>ATTENZIONE! LOGIN O PASSWORD ERRATE. RIPROVATE, GRAZIE.</strong></p><%end if%>
-                        <form class="form-horizontal" method="post" action="/cristalensi/iscrizione.asp?mode=2" name="newsform2">
+                        <form class="form-horizontal" method="post" action="/iscrizione.asp?mode=2" name="newsform2">
 												<input type="hidden" name="prov" value="<%=prov%>">
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Login</label>
@@ -733,7 +733,7 @@ end if
 				Informazione importante: &egrave; necessario che l'indirizzo <strong>Email</strong> inserito sia lo stesso usato per l'iscrizione. La password ti sar&aacute; inviata automaticamente.
                         </p>
 												<%if errore=5 then%><p><strong>ATTENZIONE! EMAIL ERRATA. RIPROVATE, GRAZIE.</strong></p><%end if%>
-                        <form class="form-horizontal" method="post" action="/cristalensi/iscrizione.asp?mode=4" name="newsform3">
+                        <form class="form-horizontal" method="post" action="/iscrizione.asp?mode=4" name="newsform3">
 												<input type="hidden" name="prov" value="<%=prov%>">
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
@@ -760,7 +760,7 @@ end if
                         <p class="description">In questa pagina puoi inserire i tuoi dati per registrarti a Cristalensi.<br> Informazione importante: &egrave; necessario che l'indirizzo Email sia un'indirizzo funzionante e che usi normalmente, in quanto ti verranno spedite
                             comunicazioni relativamente agli ordini e ai prodotti.<br>Ti ricordiamo inoltre che l'indirizzo Email lo dovrai utilizzare come Login per accedere ai tuoi futuri ordini.
                         </p>
-                        <form class="form-horizontal" method="post" action="/cristalensi/iscrizione.asp?mode=1&amp;pkid=<%=pkid%>" name="newsform" onSubmit="return verifica();">
+                        <form class="form-horizontal" method="post" action="/iscrizione.asp?mode=1&amp;pkid=<%=pkid%>" name="newsform" onSubmit="return verifica();">
 												<input type="hidden" name="prov" value="<%=prov%>">
                             <div class="form-group">
                                 <label for="nome" class="col-sm-4 control-label">Nome</label>

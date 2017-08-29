@@ -7,15 +7,12 @@ On Error Resume Next
 
 	Set conn = Server.CreateObject("ADODB.Connection")
 	'conn.open = "DRIVER={Microsoft Access Driver (*.mdb)};dbq=d:\inetpub\webs\cristalensiit\mdb-database\db_cristalensi_2013.mdb"
-	'conn.open = "DRIVER={Microsoft Access Driver (*.mdb)};dbq=d:\inetpub\webs\viadeimediciit\mdb-database\db_cristalensi_2013.mdb"
-	'conn.open = "DRIVER={Microsoft Access Driver (*.mdb)};dbq="& Server.MapPath("/mdb-database/db_cristalensi_2015.mdb")
 	'conn.open = "DRIVER={Microsoft Access Driver (*.mdb)};dbq="& Server.MapPath("/mdb-database/db_cristalensi_2016.mdb")
 	'conn.open = "DSN=cristalensiit"
-  conn.open = "Provider = SQLOLEDB; Data Source = 62.149.153.43; Database = MSSql142868; User ID = MSSql142868; Password=7lq95l1f76"
+  conn.open = "Provider = SQLOLEDB; Data Source = 62.149.153.60; Database = MSSql147541; User ID = MSSql147541; Password=gaa52jp052"
 
 	path_img="d:\inetpub\webs\cristalensiit\public\"
 	path_thumb="d:\inetpub\webs\cristalensiit\public\thumb\"
-	'path_img="d:\dati\web\cristalensi_2013\new\public\"
 
 	fromURL = Request.ServerVariables("HTTP_REFERER")
 	toUrl_completo = Request.ServerVariables("SCRIPT_NAME")

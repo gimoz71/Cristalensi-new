@@ -234,11 +234,11 @@
 		function NoteCliente()
 		{
 				document.modulocarrello.method = "post";
-				document.modulocarrello.action = "<%if italia_log="Si" or italia_log="" then%>/cristalensi/carrello2.asp<%end if%><%if italia_log="No" then%>/cristalensi/carrello2extra.asp<%end if%>";
+				document.modulocarrello.action = "<%if italia_log="Si" or italia_log="" then%>/carrello2.asp<%end if%><%if italia_log="No" then%>/carrello2extra.asp<%end if%>";
 				document.modulocarrello.submit();
 		}
 		</script>
-		<!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+		<!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
@@ -340,7 +340,7 @@
 
 																		url_prodotto_rs.close
 																		%>
-																		<form method="post" action="/cristalensi/carrello1.asp?mode=1&riga=<%=rs("pkid")%>">
+																		<form method="post" action="/carrello1.asp?mode=1&riga=<%=rs("pkid")%>">
 																		<%
 																		quantita=rs("quantita")
 																		if quantita="" then quantita=1
@@ -362,7 +362,7 @@
                                         <td data-th="Subtotal" class="text-center"><%=FormatNumber(rs("TotaleRiga"),2)%>&euro;</td>
                                         <td class="actions" data-th="">
                                             <button class="btn btn-info btn-sm" type="submit"><i class="fa fa-refresh"></i></button>
-                                            <button class="btn btn-danger btn-sm" type="button" onClick="location.href='/cristalensi/carrello1.asp?mode=2&riga=<%=rs("pkid")%>'"><i class="fa fa-trash-o"></i></button>
+                                            <button class="btn btn-danger btn-sm" type="button" onClick="location.href='/carrello1.asp?mode=2&riga=<%=rs("pkid")%>'"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
 																		<%
@@ -378,7 +378,7 @@
 												  <%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
 	                                    </tr>
 	                                    <tr>
-	                                        <td><a href="/cristalensi/index.asp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
+	                                        <td><a href="/index.asp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td colspan="2" class="hidden-xs"></td>
 	                                        <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
 												  <%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%> &euro;</strong></td>
@@ -475,7 +475,7 @@
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Ritiro in sede: 0&euro;</em></li>
 										</ul>
-										<div class="panel-footer"><a href="/cristalensi/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
+										<div class="panel-footer"><a href="/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>
 								<div class="alert alert-success" role="alert" style="text-align: center;">
                   <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>

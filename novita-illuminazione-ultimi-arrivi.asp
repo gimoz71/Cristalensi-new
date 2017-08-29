@@ -1,4 +1,4 @@
-<!--#include virtual="/cristalensi/inc_strConn.asp"-->
+<!--#include virtual="/inc_strConn.asp"-->
 <%
 	order=request("order")
 	if order="" then order=3
@@ -33,8 +33,8 @@
     <meta name="msapplication-TileColor" content="#2790cf">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link href="/cristalensi/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/cristalensi/stylesheets/customization.css" shim-shadowdom>
+    <link href="/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/customization.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
@@ -48,12 +48,12 @@
             visibility: hidden;
         }
     </style>
-		<!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+		<!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
-    <!--#include virtual="/cristalensi/inc_header_1.asp"-->
-    <!--#include virtual="/cristalensi/inc_header_2.asp"-->
+    <!--#include virtual="/inc_header_1.asp"-->
+    <!--#include virtual="/inc_header_2.asp"-->
     <div class="container content">
         <div class="row hidden">
             <div class="col-md-12 parentOverflowContainer">
@@ -61,7 +61,7 @@
         </div>
         <div class="col-xl-12">
             <ol class="breadcrumb">
-                <li><a href="/cristalensi/index.asp"><i class="fa fa-home"></i></a></li>
+                <li><a href="/index.asp"><i class="fa fa-home"></i></a></li>
                 <li class="active">Novit&agrave; illuminazione e ultimi arrivi</li>
             </ol>
             <h4 class="title">Novit&agrave; illuminazione e ultimi arrivi</h4>
@@ -74,12 +74,12 @@
                 <nav class="navbar">
                     <!-- menu - normal collapsible navbar markup -->
                     <ul class="list-unstyled side-list">
-                        <li><a href="/cristalensi/illuminazione-interni-ed-esterni/1-novita-lampade-a-sospensione.asp" title="Lampade a sospensione - Novit&agrave; e ultimi arrivi">Lampade a sospensione</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/2-novita-lampade-a-soffitto.asp" title="Lampade a soffitto - Novit&agrave; e ultimi arrivi">Lampade a soffitto</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/3-novita-lampade-a-parete.asp" title="Lampade a parete - Novit&agrave; e ultimi arrivi">Lampade a parete</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/4-novita-lampade-da-terra.asp" title="Lampade da terra - Novit&agrave; e ultimi arrivi">Lampade da terra</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/5-novita-abatjour-lumini-lumetti.asp" title="Abat-jour, lumini e lumetti - Novit&agrave; e ultimi arrivi">Abat-jour, lumini e lumetti</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/10-novita-lampade-da-giardino-ed-esterni.asp" title="Lampade da giardino ed esterni - Novit&agrave; e ultimi arrivi">Lampade da giardino ed esterni</a></li>
+                        <li><a href="/illuminazione-interni-ed-esterni/1-novita-lampade-a-sospensione.asp" title="Lampade a sospensione - Novit&agrave; e ultimi arrivi">Lampade a sospensione</a></li>
+												<li><a href="/illuminazione-interni-ed-esterni/2-novita-lampade-a-soffitto.asp" title="Lampade a soffitto - Novit&agrave; e ultimi arrivi">Lampade a soffitto</a></li>
+												<li><a href="/illuminazione-interni-ed-esterni/3-novita-lampade-a-parete.asp" title="Lampade a parete - Novit&agrave; e ultimi arrivi">Lampade a parete</a></li>
+												<li><a href="/illuminazione-interni-ed-esterni/4-novita-lampade-da-terra.asp" title="Lampade da terra - Novit&agrave; e ultimi arrivi">Lampade da terra</a></li>
+												<li><a href="/illuminazione-interni-ed-esterni/5-novita-abatjour-lumini-lumetti.asp" title="Abat-jour, lumini e lumetti - Novit&agrave; e ultimi arrivi">Abat-jour, lumini e lumetti</a></li>
+												<li><a href="/illuminazione-interni-ed-esterni/10-novita-lampade-da-giardino-ed-esterni.asp" title="Lampade da giardino ed esterni - Novit&agrave; e ultimi arrivi">Lampade da giardino ed esterni</a></li>
                     </ul>
                 </nav>
             </div>
@@ -138,12 +138,12 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
                       <div class="photo">
-                          <a href="/cristalensi/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/cristalensi/images/blank.png"></a>
+                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/cristalensi/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
@@ -161,7 +161,7 @@
                                   <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
                               </p>
                               <p class="btn-details">
-                                  <a href="/cristalensi/<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
+                                  <a href="/<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
                               </p>
                           </div>
                           <div class="clearfix"></div>
@@ -181,6 +181,6 @@
             %>
         </div>
     </div>
-    <!--#include virtual="/cristalensi/inc_footer.asp"-->
+    <!--#include virtual="/inc_footer.asp"-->
 </body>
-<!--#include virtual="/cristalensi/inc_strClose.asp"-->
+<!--#include virtual="/inc_strClose.asp"-->

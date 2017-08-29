@@ -41,7 +41,7 @@
             visibility: hidden;
         }
     </style>
-    <!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+    <!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                         com_rs.movenext
                         loop
                         %>
-                        <div class="panel-footer"><a href="/cristalensi/commenti_form.asp" class="btn btn-success">Inserisci anche te un commento! <i class="fa fa-chevron-right"></i></a></div>
+                        <div class="panel-footer"><a href="/commenti_form.asp" class="btn btn-success">Inserisci anche te un commento! <i class="fa fa-chevron-right"></i></a></div>
                         </ul>
 
                     </div>
@@ -129,12 +129,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/slider1.png)" title="Lampade da interno"><img alt="Lampade da interno" src="images/blank.png"></a>
+                            <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/slider1.png)" title="Lampade da interno"><img alt="Lampade da interno" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" title="Lampade da interno"><h1>Lampade da interno</h1></a>
+                                    <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" title="Lampade da interno"><h1>Lampade da interno</h1></a>
                                 </div>
                             </div>
                         </div>
@@ -143,12 +143,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/LED.jpg)" title="Lampade da esterno"><img alt="Lampade da esterno" src="images/blank.png"></a>
+                            <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/LED.jpg)" title="Lampade da esterno"><img alt="Lampade da esterno" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno"><h1>Lampade da esterno</h1></a>
+                                    <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno"><h1>Lampade da esterno</h1></a>
                                 </div>
                             </div>
                         </div>

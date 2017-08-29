@@ -61,7 +61,7 @@ end if
 		}
 		//-->
 		</script>
-		<!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+		<!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>

@@ -25,16 +25,16 @@
             <div class="col-md-3 menu-col">
                 <h4>Cosa cerchi?</h4>
                 <ul>
-                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp">Lampade da interno</a></li>
-                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp">Lampade da esterno</a></li>
-                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/3ng-ventilatori.asp">Ventiltori</a></li>
-                    <li><a href="/cristalensi/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp">Lampadine e componenti</a></li>
+                    <li><a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp">Lampade da interno</a></li>
+                    <li><a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp">Lampade da esterno</a></li>
+                    <li><a href="/illuminazione-interni-ed-esterni/3ng-ventilatori.asp">Ventiltori</a></li>
+                    <li><a href="/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp">Lampadine e componenti</a></li>
                     <li>&nbsp;</li>
                 </ul>
                 <h4>Oppure cerca in</h4>
                 <ul>
-                    <li><a href="/cristalensi/offerte.asp">Offerte</a></li>
-                    <li><a href="/cristalensi/novita-illuminazione-ultimi-arrivi.asp">Novit&agrave; e ultimi arrivi</a></li>
+                    <li><a href="/offerte.asp">Offerte</a></li>
+                    <li><a href="/novita-illuminazione-ultimi-arrivi.asp">Novit&agrave; e ultimi arrivi</a></li>
                 </ul>
             </div>
             <div class="col-md-3 menu-col">
@@ -56,8 +56,8 @@
             <div class="col-md-3 menu-col">
                 <h4>Note legali</h4>
                 <ul>
-                    <li><a href="/cristalensi/condizioni_di_vendita.asp">Condizioni di vendita</a></li>
-                    <li><a href="/cristalensi/privacy.asp">Privacy e note legali</a></li>
+                    <li><a href="/condizioni_di_vendita.asp">Condizioni di vendita</a></li>
+                    <li><a href="/privacy.asp">Privacy e note legali</a></li>
                 </ul>
                 <h4>Spedizioni</h4>
                 <ul class="checklist">
@@ -807,12 +807,12 @@ end if
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="/cristalensi/javascripts/bootstrap.js"></script>
-<script src="/cristalensi/javascripts/holder.js"></script>
-<script src="/cristalensi/javascripts/jquery.bootstrap-touchspin.js"></script>
-<script src="/cristalensi/javascripts/bootstrap-select.js"></script>
-<script src="/cristalensi/javascripts/jquery.fancybox.js"></script>
-<script src="/cristalensi/javascripts/custom.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
+<script src="/javascripts/holder.js"></script>
+<script src="/javascripts/jquery.bootstrap-touchspin.js"></script>
+<script src="/javascripts/bootstrap-select.js"></script>
+<script src="/javascripts/jquery.fancybox.js"></script>
+<script src="/javascripts/custom.js"></script>
 <script>
     // $("input[name='pezzi']").TouchSpin({
     //     // verticalbuttons: true,

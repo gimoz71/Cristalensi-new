@@ -16,7 +16,7 @@
 		os1.update
 		os1.close
 	end if
-	if idsession=0 then response.Redirect("/cristalensi/iscrizione.asp?prov=1")
+	if idsession=0 then response.Redirect("/iscrizione.asp?prov=1")
 
 	'italia_log=session("italia_log")
 	'if italia_log="No" then response.Redirect("carrello2extra.asp")
@@ -98,8 +98,8 @@
 
 	os1.close
 
-	if mode=1 and TipoCostoTrasportoScelto<10 then response.Redirect("/cristalensi/carrello3.asp")
-	if mode=1 and TipoCostoTrasportoScelto=10 then response.Redirect("/cristalensi/carrello2extra.asp")
+	if mode=1 and TipoCostoTrasportoScelto<10 then response.Redirect("/carrello3.asp")
+	if mode=1 and TipoCostoTrasportoScelto=10 then response.Redirect("/carrello2extra.asp")
 
 %>
 <!DOCTYPE html>
@@ -188,7 +188,7 @@
 		function Cambia()
 		{
 			 document.modulocarrello.method = "post";
-			 document.modulocarrello.action = "/cristalensi/carrello2.asp";
+			 document.modulocarrello.action = "/carrello2.asp";
 			 document.modulocarrello.submit();
 		}
 		</script>
@@ -232,11 +232,11 @@
 		 <%end if%>
 
 			 document.modulocarrello.method = "post";
-			 document.modulocarrello.action = "/cristalensi/carrello2.asp?mode=1";
+			 document.modulocarrello.action = "/carrello2.asp?mode=1";
 			 document.modulocarrello.submit();
 		}
 		</script>
-		<!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+		<!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
@@ -282,7 +282,7 @@
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
-                    <a href="/cristalensi/carrello1.asp" class="bs-wizard-dot"></a>
+                    <a href="/carrello1.asp" class="bs-wizard-dot"></a>
                     <div class="bs-wizard-info text-center">Carrello</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step complete">
@@ -290,7 +290,7 @@
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
-                    <a href="/cristalensi/iscrizione.asp" class="bs-wizard-dot"></a>
+                    <a href="/iscrizione.asp" class="bs-wizard-dot"></a>
                     <div class="bs-wizard-info text-center">Accedi / Iscriviti</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step active">
@@ -585,7 +585,7 @@
 
 								</div>
 								<%if rs.recordcount>0 then%>
-                <a href="/cristalensi/carrello1.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
+                <a href="/carrello1.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
                 <%if TipoTrasportoScelto>0 then%><a href="#" class="btn btn-danger pull-right" onClick="Continua();">clicca qui per completare l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a><%end if%>
 								<%end if%>
             </div>

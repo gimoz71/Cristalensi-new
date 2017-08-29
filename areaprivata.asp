@@ -1,5 +1,5 @@
 <!--#include file="inc_strConn.asp"-->
-<%if idsession=0 then response.Redirect("/cristalensi/iscrizione.asp")%>
+<%if idsession=0 then response.Redirect("/iscrizione.asp")%>
 <!DOCTYPE html>
 <html>
 
@@ -42,7 +42,7 @@
             visibility: hidden;
         }
     </style>
-    <!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+    <!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
@@ -60,7 +60,7 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>I servizi riservati</span></h4> <a href="/cristalensi/admin/logout.asp" class="btn btn-default pull-right">Esci dall'Area Clienti <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle pull-left"><div class="dot"></div><span>I servizi riservati</span></h4> <a href="/admin/logout.asp" class="btn btn-default pull-right">Esci dall'Area Clienti <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">

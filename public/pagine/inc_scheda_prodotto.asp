@@ -1,4 +1,4 @@
-<!--#include virtual="/cristalensi/inc_strConn.asp"-->
+<!--#include virtual="/inc_strConn.asp"-->
 <%
 'id=request("id")
 if id="" then id=0
@@ -107,7 +107,7 @@ end if
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/cristalensi/manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2790cf">
     <meta name="msapplication-TileColor" content="#2790cf">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
@@ -118,7 +118,7 @@ end if
     <link href="../../javascripts/html5shiv.js" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
-    <link rel="import" href="/cristalensi/awesome-slider.html">
+    <link rel="import" href="/awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";
@@ -156,7 +156,7 @@ end if
 
 					document.newsform2.method = "post";
 					//document.newsform2.action = "../../carrello1.asp";
-					document.newsform2.action = "/cristalensi/carrello1.asp";
+					document.newsform2.action = "/carrello1.asp";
 					document.newsform2.submit();
 			}
 	</SCRIPT>
@@ -188,26 +188,26 @@ end if
 
 			document.newsform2.method = "post";
 			//document.newsform2.action = "../../carrello1.asp";
-			document.newsform2.action = "/cristalensi/carrello1.asp";
+			document.newsform2.action = "/carrello1.asp";
 			//document.newsform2.submit();
 	}
 	</SCRIPT>
-	<!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+	<!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
-  <!--#include virtual="/cristalensi/inc_header_1.asp"-->
-	<!--#include virtual="/cristalensi/inc_header_2.asp"-->
+  <!--#include virtual="/inc_header_1.asp"-->
+	<!--#include virtual="/inc_header_2.asp"-->
     <div class="container content">
         <div class="row hidden">
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
         <ol class="breadcrumb">
-				<li><a href="/cristalensi/index.asp"><i class="fa fa-home"></i></a></li>
-				<li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
-				<li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_2_tip%></a></li>
-				<li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url_cat%>"><%=Titolo_2_cat%></a></li>
+				<li><a href="/index.asp"><i class="fa fa-home"></i></a></li>
+				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
+				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_2_tip%></a></li>
+				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_cat%>"><%=Titolo_2_cat%></a></li>
 				<li class="active"><%=Titolo_prodotto%></li>
         </ol>
         <div class="">
@@ -243,7 +243,7 @@ end if
 																<div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
+                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img alt="900x550" src="/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -259,7 +259,7 @@ end if
 																<div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=codicearticolo%> - <%=produttore%>"><img alt="900x550" src="/cristalensi/images/blank.png"></a>
+                                            <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=codicearticolo%> - <%=produttore%>"><img alt="900x550" src="/images/blank.png"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -301,7 +301,7 @@ end if
 				            								loop
 				                            %>
                                     </ul>
-									<div class="panel-footer"><a href="/cristalensi/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+									<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
                                 </div>
 																<%
 								                end if
@@ -447,7 +447,7 @@ end if
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Ritiro in sede: 0&euro;</em></li>
 										</ul>
-										<div class="panel-footer"><a href="/cristalensi/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
+										<div class="panel-footer"><a href="/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>
             </div>
         </div>
@@ -455,7 +455,7 @@ end if
 
     </div>
 
-    <!--#include virtual="/cristalensi/inc_footer.asp"-->
+    <!--#include virtual="/inc_footer.asp"-->
 
 </body>
-<!--#include virtual="/cristalensi/inc_strClose.asp"-->
+<!--#include virtual="/inc_strClose.asp"-->

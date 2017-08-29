@@ -15,9 +15,9 @@
 	end if
 
 	if IdOrdine="" then IdOrdine=0
-	if idOrdine=0 then response.redirect("/cristalensi/carrello1.asp")
+	if idOrdine=0 then response.redirect("/carrello1.asp")
 
-	if idsession=0 then response.redirect("/cristalensi/iscrizione.asp?prov=1")
+	if idsession=0 then response.redirect("/iscrizione.asp?prov=1")
 
 	session("ordine_shop")=""
 
@@ -721,7 +721,7 @@ End If
             visibility: hidden;
         }
     </style>
-		<!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+		<!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
@@ -740,7 +740,7 @@ End If
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
-                    <a href="/cristalensi/carrello1.asp" class="bs-wizard-dot"></a>
+                    <a href="/carrello1.asp" class="bs-wizard-dot"></a>
                     <div class="bs-wizard-info text-center">Carrello</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step complete">
@@ -748,7 +748,7 @@ End If
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
-                    <a href="/cristalensi/iscrizione.asp" class="bs-wizard-dot"></a>
+                    <a href="/iscrizione.asp" class="bs-wizard-dot"></a>
                     <div class="bs-wizard-info text-center">Accedi / Iscriviti</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step complete">
@@ -756,7 +756,7 @@ End If
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
-                    <a href="/cristalensi/carrello2.asp" class="bs-wizard-dot"></a>
+                    <a href="/carrello2.asp" class="bs-wizard-dot"></a>
                     <div class="bs-wizard-info text-center">Indirizzo di spedizione</div>
                 </div>
 								<div class="col-sm-5 bs-wizard-step complete">
@@ -764,7 +764,7 @@ End If
 										<div class="progress">
 												<div class="progress-bar"></div>
 										</div>
-										<a href="/cristalensi/carrello3.asp" class="bs-wizard-dot"></a>
+										<a href="/carrello3.asp" class="bs-wizard-dot"></a>
 										<div class="bs-wizard-info text-center">Pagamento &amp; fatturazione</div>
 								</div>
 								<div class="col-sm-5 bs-wizard-step active">

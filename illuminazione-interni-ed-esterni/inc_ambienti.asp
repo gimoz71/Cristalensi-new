@@ -1,4 +1,4 @@
-<!--#include virtual="/cristalensi/inc_strConn.asp"-->
+<!--#include virtual="/inc_strConn.asp"-->
 <%
 Set gr_rs = Server.CreateObject("ADODB.Recordset")
 sql = "SELECT * FROM NewAmbienti WHERE PkId="&pkid_ambiente
@@ -42,8 +42,8 @@ gr_rs.close
     <meta name="msapplication-TileColor" content="#2790cf">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link href="/cristalensi/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/cristalensi/stylesheets/customization.css" shim-shadowdom>
+    <link href="/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/customization.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
@@ -57,12 +57,12 @@ gr_rs.close
             visibility: hidden;
         }
     </style>
-    <!--#include virtual="/cristalensi/inc_funzioni_head.asp"-->
+    <!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
 <body>
-    <!--#include virtual="/cristalensi/inc_header_1.asp"-->
-    <!--#include virtual="/cristalensi/inc_header_2.asp"-->
+    <!--#include virtual="/inc_header_1.asp"-->
+    <!--#include virtual="/inc_header_2.asp"-->
     <div class="container content">
         <div class="row hidden">
             <div class="col-md-12 parentOverflowContainer">
@@ -70,7 +70,7 @@ gr_rs.close
         </div>
         <div class="col-xl-12">
             <ol class="breadcrumb">
-                <li><a href="/cristalensi/index.asp"><i class="fa fa-home"></i></a></li>
+                <li><a href="/index.asp"><i class="fa fa-home"></i></a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>
             <h4 class="title"><%=Titolo_2%></h4>
@@ -101,7 +101,7 @@ gr_rs.close
                           'Description=tip_rs("Description")
                           'Descrizione=tip_rs("Descrizione")
                         %>
-                        <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=Url%>" title="<%=Titolo_2%>" <%if pkid=pkid_ambiente then%>class="active"<%end if%>><%=Titolo_1%></a></li>
+                        <li><a href="/illuminazione-interni-ed-esterni/<%=Url%>" title="<%=Titolo_2%>" <%if pkid=pkid_ambiente then%>class="active"<%end if%>><%=Titolo_1%></a></li>
                         <%
                         tip_rs.movenext
                         loop
@@ -154,13 +154,13 @@ gr_rs.close
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <p class="navbar-text">prezzo</p>
                                 <ul class="nav navbar-nav">
-                                    <li <%if order=3 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?order=3"><i class="glyphicon glyphicon-eur"></i> - </a></li>
-                                    <li <%if order=4 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?order=4"><i class="glyphicon glyphicon-eur"></i> + </a></li>
+                                    <li <%if order=3 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/illuminazione-interni-ed-esterni/<%=toUrl%>?order=3"><i class="glyphicon glyphicon-eur"></i> - </a></li>
+                                    <li <%if order=4 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/illuminazione-interni-ed-esterni/<%=toUrl%>?order=4"><i class="glyphicon glyphicon-eur"></i> + </a></li>
                                 </ul>
                                 <p class="navbar-text">ordine alfabetico</p>
                                 <ul class="nav navbar-nav">
-                                    <li <%if order=1 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?order=1">A/Z</a></li>
-                                    <li <%if order=2 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?order=2">Z/A</a></li>
+                                    <li <%if order=1 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/illuminazione-interni-ed-esterni/<%=toUrl%>?order=1">A/Z</a></li>
+                                    <li <%if order=2 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/illuminazione-interni-ed-esterni/<%=toUrl%>?order=2">Z/A</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -210,12 +210,12 @@ gr_rs.close
                 <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
                       <div class="photo">
-                          <a href="/cristalensi/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/cristalensi/images/blank.png"></a>
+                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/cristalensi/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
@@ -233,7 +233,7 @@ gr_rs.close
                                   <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
                               </p>
                               <p class="btn-details">
-                                  <a href="/cristalensi/<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
+                                  <a href="/<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
                               </p>
                           </div>
                           <div class="clearfix"></div>
@@ -254,18 +254,18 @@ gr_rs.close
                             <li class="active"><a href="#" aria-label="Previous">Pagina <%=p%> di <%=prod_rs.PageCount%></a></li>
 
                             <%if p > 2 then%>
-                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=1&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Prima pagina</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=1&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Prima pagina</a></li>
                             <%end if%>
                             <% if p > 1 then %>
                             <li>
-                                <a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p-1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>" aria-label="Previous">
+                                <a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p-1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
                             <%end if%>
                             <% for page = p+1 to p+4 %>
                             <%if not page>maxPage then%>
-                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=Page%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>"><%=page%></a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=Page%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>"><%=page%></a></li>
                             <%end if%>
                             <% if page >= prod_rs.PageCount then
                                page = p+4
@@ -274,13 +274,13 @@ gr_rs.close
                             %>
                             <% if cInt(p) < maxPage then %>
                             <li>
-                                <a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p+1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>" aria-label="Next">
+                                <a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p+1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
                             <%end if%>
                             <%if maxPage>5 and cInt(p)<>prod_rs.PageCount then%>
-                            <li><a href="/cristalensi/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=prod_rs.PageCount%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Ultima pagina</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=prod_rs.PageCount%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Ultima pagina</a></li>
                             <%end if%>
                         </ul>
                     </nav>
@@ -293,6 +293,6 @@ gr_rs.close
             %>
         </div>
     </div>
-    <!--#include virtual="/cristalensi/inc_footer.asp"-->
+    <!--#include virtual="/inc_footer.asp"-->
 </body>
-<!--#include virtual="/cristalensi/inc_strClose.asp"-->
+<!--#include virtual="/inc_strClose.asp"-->
