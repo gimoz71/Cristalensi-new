@@ -365,7 +365,8 @@
                 height: '55%',
 	            pagination: false,
 				thumbnails: false,
-                autoadvance: true
+                autoadvance: true,
+                time: 5
 			});
 		});
 	</script>
