@@ -807,12 +807,20 @@ end if
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<<<<<<< HEAD
 <script src="/javascripts/bootstrap.js"></script>
 <script src="/javascripts/holder.js"></script>
 <script src="/javascripts/jquery.bootstrap-touchspin.js"></script>
 <script src="/javascripts/bootstrap-select.js"></script>
 <script src="/javascripts/jquery.fancybox.js"></script>
 <script src="/javascripts/custom.js"></script>
+=======
+<script src="/cristalensi/javascripts/bootstrap.js"></script>
+<script src="/cristalensi/javascripts/jquery.bootstrap-touchspin.js"></script>
+<script src="/cristalensi/javascripts/bootstrap-select.js"></script>
+<script src="/cristalensi/javascripts/jquery.fancybox.js"></script>
+<script src="/cristalensi/javascripts/custom.js"></script>
+>>>>>>> ba34653bd3f6241b821219909d8be40c516c34cc
 <script>
     // $("input[name='pezzi']").TouchSpin({
     //     // verticalbuttons: true,

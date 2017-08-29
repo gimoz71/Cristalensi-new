@@ -91,8 +91,6 @@ end if
     <link rel="stylesheet" type="text/css" href="/stylesheets/customization.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
-    <link rel="import" href="awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";

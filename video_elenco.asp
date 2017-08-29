@@ -28,10 +28,9 @@
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
     <link href="/stylesheets/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="stylesheets/customization.css" shim-shadowdom>
+    <link rel="stylesheet" type="text/css" href="stylesheets/camera.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
-    <link rel="import" href="awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";
@@ -118,5 +117,19 @@
         </div>
     </div>
     <!--#include file="inc_footer.asp"-->
+    <script type='text/javascript' src='javascripts/camera.js'></script>
+    <script type='text/javascript' src='javascripts/jquery.easing.1.3.js'></script>
+    <script>
+		jQuery(function(){
+
+			jQuery('#slider').camera({
+                height: '55%',
+	            pagination: false,
+				thumbnails: false,
+                autoadvance: true,
+                time: 5
+			});
+		});
+	</script>
 </body>
 <!--#include file="inc_strClose.asp"-->

@@ -6,7 +6,6 @@
     <title>Vendita lampadari online illuminazione da interni illuminazione da esterni</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Cristalensi, showroom di lampade vicino Firenze, specialzzato in vendita di lampari online, prodotti per illuminazione da interno, illuminazione da esterno, piantane, plafoniere, ventilatori.">
-    <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi, showroom di lampade vicino Firenze, specialzzato in vendita di lampari online, prodotti per illuminazione da interno, illuminazione da esterno, piantane, plafoniere, ventilatori.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -29,9 +28,7 @@
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="stylesheets/customization.css" shim-shadowdom>
     <link rel="stylesheet" type="text/css" href="stylesheets/camera.css" shim-shadowdom>
-    <!--[if lt IE 9]>
-    	<script src="javascripts/html5shiv.js"></script>
-    <![endif]-->
+    <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <style type="text/css">
         .clearfix:after {
@@ -354,9 +351,7 @@
         </div>
     </div>
     <!--#include file="inc_footer.asp"-->
-
     <script type='text/javascript' src='javascripts/camera.js'></script>
-
     <script type='text/javascript' src='javascripts/jquery.easing.1.3.js'></script>
     <script>
 		jQuery(function(){
