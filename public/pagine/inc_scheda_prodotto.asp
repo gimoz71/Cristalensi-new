@@ -202,7 +202,7 @@ end if
             </div>
         </div>
         <ol class="breadcrumb">
-				<li><a href="/index.asp"><i class="fa fa-home"></i></a></li>
+				<li><a href="/"><i class="fa fa-home"></i></a></li>
 				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
 				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_2_tip%></a></li>
 				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_cat%>"><%=Titolo_2_cat%></a></li>
@@ -234,7 +234,8 @@ end if
 
 																	Do while not img_rs.EOF
 																	titolo_img=img_rs("titolo")
-																	file_img=NoLettAcc(img_rs("file"))
+																	'file_img=NoLettAcc(img_rs("file"))
+																	file_img=img_rs("file")
 																	percorso_img="/public/"&file_img
 																	zoom=img_rs("zoom")
 																%>

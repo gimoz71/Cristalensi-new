@@ -91,13 +91,13 @@
 			End With
 			Set eMail_cdo.Configuration = myConfig
 
-			'eMail_cdo.From = Mittente
-			'eMail_cdo.To = Destinatario
-			'eMail_cdo.Subject = Oggetto
+			eMail_cdo.From = Mittente
+			eMail_cdo.To = Destinatario
+			eMail_cdo.Subject = Oggetto
 
-			'eMail_cdo.HTMLBody = Testo
+			eMail_cdo.HTMLBody = Testo
 
-			'eMail_cdo.Send()
+			eMail_cdo.Send()
 
 			Set myConfig = Nothing
 			Set eMail_cdo = Nothing
@@ -152,13 +152,13 @@
 			End With
 			Set eMail_cdo.Configuration = myConfig
 
-			'eMail_cdo.From = Mittente
-			'eMail_cdo.To = Destinatario
-			'eMail_cdo.Subject = Oggetto
+			eMail_cdo.From = Mittente
+			eMail_cdo.To = Destinatario
+			eMail_cdo.Subject = Oggetto
 
-			'eMail_cdo.HTMLBody = Testo
+			eMail_cdo.HTMLBody = Testo
 
-			'eMail_cdo.Send()
+			eMail_cdo.Send()
 
 			Set myConfig = Nothing
 			Set eMail_cdo = Nothing
@@ -194,13 +194,13 @@
 			End With
 			Set eMail_cdo.Configuration = myConfig
 
-			'eMail_cdo.From = Mittente
-			'eMail_cdo.To = Destinatario
-			'eMail_cdo.Subject = Oggetto
+			eMail_cdo.From = Mittente
+			eMail_cdo.To = Destinatario
+			eMail_cdo.Subject = Oggetto
 
-			'eMail_cdo.HTMLBody = Testo
+			eMail_cdo.HTMLBody = Testo
 
-			'eMail_cdo.Send()
+			eMail_cdo.Send()
 
 			Set myConfig = Nothing
 			Set eMail_cdo = Nothing
@@ -306,107 +306,12 @@
                   <p>&nbsp;<br>&nbsp;</p>
                 </div>
                 <div class="col-md-4">
-                    <div class="banner preventivi overflowContainer">
-                        <h3 class="title">Preventivi personalizzati</h3>
-                        <p class="text">Per ordini superiori a 500&euro; contatta il nostro personale... <strong>sconti speciali!</strong></p>
-                    </div>
-                    <div class="banner pagamenti overflowContainer">
-                        <h3 class="title">Sito internet e pagamenti sicuri</h3>
-                        <p class="text">Contrassegno, Bonifico Bancario, PostePay e Carte di Credito con Sistema Garantito di PayPal
-                        </p>
-                    </div>
-                    <div class="banner consegne overflowContainer">
-                        <h3 class="title">Consegne</h3>
-                        <p class="text">confezionamento accurato e spedizione assicurata GRATUITA in tutta Italia per ordini superiori a 250&euro;</p>
-                    </div>
-
-    								<!--condizioni di vendita-->
-    								<div class="panel panel-default payment-list">
-    										<!-- Default panel contents -->
-    										<div class="panel-heading">
-    											<h5>Condizioni di vendita</h5>
-    										</div>
-    										<ul class="list-group">
-    											<li class="list-group-item"><strong>PAGAMENTI SICURI</strong></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Bonifico e PostePay: 0&euro;</em></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Carte di credito e prepagate: 0&euro;</em></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Contrassegno in contanti: 4&euro;</em></li>
-    											<li class="list-group-item">&nbsp;</li>
-    											<li class="list-group-item"><strong>SPEDIZIONE IN TUTTA ITALIA ASSICURATA</strong></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini superiori a 250&euro;: 0&euro;</em></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini fino a  250&euro;: 10&euro;</em></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Ritiro in sede: 0&euro;</em></li>
-    										</ul>
-    										<div class="panel-footer"><a href="#" class="btn btn-success">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
-    								</div>
                     <div class="alert alert-success" role="alert" style="text-align: center;">
                       <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
                       <br /><br />Lun. - Ven.: 9.00 - 12.30 | 14.30 - 19.30<br />Sab.: 9.00 - 12.30 | 15.30 - 19.30<br />Domenica CHIUSI<br />Giugno/Luglio CHIUSI Sabato Pomeriggio<br />
                     </div>
                 </div>
             </div>
-            <div class="row top-buffer">
-                <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Cosa stai cercando?</span></h4>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 ">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/slider1.png)" title="Lampade da interno"><img alt="Lampade da interno" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="category col-md-6">
-                                    <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" title="Lampade da interno"><h1>Lampade da interno</h1></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/LED.jpg)" title="Lampade da esterno"><img alt="Lampade da esterno" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="category col-md-6">
-                                    <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno"><h1>Lampade da esterno</h1></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/est.jpg)"><img alt="900x550" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="category col-md-6">
-                                    <a href="#"><h1>Ventilatori</h1></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 ">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="descrizione lampadario" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="category col-md-6">
-                                    <a href="#"><h1>Lampadine, driver e strisce</h1></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
         </div>
     </div>
     <!--#include file="inc_footer.asp"-->

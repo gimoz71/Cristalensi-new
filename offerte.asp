@@ -59,7 +59,7 @@
         </div>
         <div class="col-xl-12">
             <ol class="breadcrumb">
-                <li><a href="/index.asp"><i class="fa fa-home"></i></a></li>
+                <li><a href="/"><i class="fa fa-home"></i></a></li>
                 <li class="active">Offerte</li>
             </ol>
             <h4 class="title">Prodotti per illuminazione in offerta</h4>

@@ -80,12 +80,12 @@ Scegliendo un produttore vedrete l'elenco dei suoi prodotti, da l&igrave; potete
                 <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
                   <article class="col-item">
                       <div class="photo">
-                          <a href="/<%=url%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo%>"><img alt="<%=titolo%>" src="/images/blank.png"></a>
+                          <a href="<%=url%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo%>"><img alt="<%=titolo%>" src="/images/blank.png"></a>
                       </div>
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=url%>" title="<%=titolo%>"><h1><%=titolo%></h1></a>
+                                  <a href="<%=url%>" title="<%=titolo%>"><h1><%=titolo%></h1></a>
                               </div>
                           </div>
 

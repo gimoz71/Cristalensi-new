@@ -364,11 +364,12 @@
                                             <button class="btn btn-danger btn-sm" type="button" onClick="location.href='/carrello1.asp?mode=2&riga=<%=rs("pkid")%>'"><i class="fa fa-trash-o"></i></button>
                                         </td>
                                     </tr>
+																		</form>
 																		<%
 																		rs.movenext
 																		loop
 																		%>
-																		</form>
+																		
 																	</tbody>
 																	<%if ss.recordcount>0 then%>
 	                                <tfoot>
@@ -377,7 +378,7 @@
 												  <%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
 	                                    </tr>
 	                                    <tr>
-	                                        <td><a href="/index.asp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
+	                                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td colspan="2" class="hidden-xs"></td>
 	                                        <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
 												  <%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%> &euro;</strong></td>

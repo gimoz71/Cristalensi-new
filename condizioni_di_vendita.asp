@@ -49,7 +49,6 @@
     <!--#include file="inc_header_2.asp"-->
     <div class="container content">
         <div class="col-md-12">
-            <!--#include file="inc_slider.asp"-->
             <div class="row top-buffer">
                 <div class="col-md-8">
                     <h1 class="slogan">Condizioni di vendita Cristalensi<br />e-commerce di illuminazione</h1>

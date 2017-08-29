@@ -46,7 +46,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav nav-justified main-menu">
-                    <li class="nav-user visible-xs"><a href="/index.asp">Home</a></li>
+                    <li class="nav-user visible-xs"><a href="/">Home</a></li>
                     <li class="nav-user dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Interno <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
                             <li>

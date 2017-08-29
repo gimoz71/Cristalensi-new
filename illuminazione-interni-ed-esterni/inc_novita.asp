@@ -95,7 +95,7 @@ end if
         </div>
         <div class="col-xl-12">
             <ol class="breadcrumb">
-                <li><a href="/index.asp"><i class="fa fa-home"></i></a></li>
+                <li><a href="/"><i class="fa fa-home"></i></a></li>
                 <li><a href="/novita-illuminazione-ultimi-arrivi.asp">Novit&agrave; e ultimi arrivi</a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>

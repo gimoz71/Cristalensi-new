@@ -1,6 +1,6 @@
 <!--<meta name="google-site-verification" content="4Pno_x3W_sfOLqaTpUk-z2OMJg8LPzzt-JiBFoMYZcQ" />-->
         <!--Codice Statistiche Google Analytics Iury Mazzoni ## NON CANCELLARE!! ## -->
-		<script type="text/plain" class="ce-script">
+		<script>
 
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-320952-2']);
@@ -14,7 +14,7 @@
 
         </script>
         <!--Codice Statistiche Google Analytics Cristalensi ## NON CANCELLARE!! ## -->
-        <script type="text/plain" class="ce-script">
+        <script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||
 
 		function(){

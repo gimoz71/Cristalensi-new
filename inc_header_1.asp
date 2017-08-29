@@ -45,7 +45,7 @@
 <nav class="navbar navbar-inverse service-menu hidden-xs last-top-menu">
     <div class="container">
         <ul class="nav nav-justified">
-            <li><a href="/index.asp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
             <%if idsession>0 then%>
               <li><a href="/admin/logout.asp"><span class="glyphicon glyphicon-log-in"></span> LOG OUT</a></li>
             <%else%>

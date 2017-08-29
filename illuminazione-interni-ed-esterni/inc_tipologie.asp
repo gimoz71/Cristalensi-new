@@ -78,7 +78,7 @@ gr_rs.close
         </div>
         <div class="col-xl-12">
             <ol class="breadcrumb">
-                <li><a href="/index.asp"><i class="fa fa-home"></i></a></li>
+                <li><a href="/"><i class="fa fa-home"></i></a></li>
                 <li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>

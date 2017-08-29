@@ -16,9 +16,8 @@
                 </p>
                 <h4>Contatti Social</h4>
                 <p class="social">
-                    <a href="#"><i class="fa fa-facebook-square"></i></a>
-                    <a href="#"><i class="fa fa-youtube-square"></i></a>
-                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://www.facebook.com/CristalensiLampadari/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://www.youtube.com/channel/UCsP3WTO0PryxgRq6OymSfpA/videos" target="_blank"><i class="fa fa-youtube-square"></i></a>
                 </p>
 
             </div>
@@ -147,13 +146,13 @@
   			End With
   			Set eMail_cdo.Configuration = myConfig
 
-  			'eMail_cdo.From = Mittente
-  			'eMail_cdo.To = Destinatario
-  			'eMail_cdo.Subject = Oggetto
+  			eMail_cdo.From = Mittente
+  			eMail_cdo.To = Destinatario
+  			eMail_cdo.Subject = Oggetto
 
-  			'eMail_cdo.HTMLBody = Testo
+  			eMail_cdo.HTMLBody = Testo
 
-  			'eMail_cdo.Send()
+  			eMail_cdo.Send()
 
   			Set myConfig = Nothing
   			Set eMail_cdo = Nothing
@@ -394,13 +393,13 @@
   			End With
   			Set eMail_cdo.Configuration = myConfig
 
-  			'eMail_cdo.From = Mittente
-  			'eMail_cdo.To = Destinatario
-  			'eMail_cdo.Subject = Oggetto
+  			eMail_cdo.From = Mittente
+  			eMail_cdo.To = Destinatario
+  			eMail_cdo.Subject = Oggetto
 
-  			'eMail_cdo.HTMLBody = Testo
+  			eMail_cdo.HTMLBody = Testo
 
-  			'eMail_cdo.Send()
+  			eMail_cdo.Send()
 
   			Set myConfig = Nothing
   			Set eMail_cdo = Nothing
@@ -627,13 +626,13 @@ if ric=1 then
 			End With
 			Set eMail_cdo.Configuration = myConfig
 
-			'eMail_cdo.From = Mittente
-			'eMail_cdo.To = Destinatario
-			'eMail_cdo.Subject = Oggetto
+			eMail_cdo.From = Mittente
+			eMail_cdo.To = Destinatario
+			eMail_cdo.Subject = Oggetto
 
-			'eMail_cdo.HTMLBody = Testo
+			eMail_cdo.HTMLBody = Testo
 
-			'eMail_cdo.Send()
+			eMail_cdo.Send()
 
 			Set myConfig = Nothing
 			Set eMail_cdo = Nothing

@@ -48,7 +48,6 @@
     <!--#include file="inc_header_2.asp"-->
     <div class="container content">
         <div class="col-md-12">
-            <!--#include file="inc_slider.asp"-->
             <div class="row top-buffer">
                 <div class="col-md-8">
                     <h1 class="slogan">Privacy policy e note legali per www.cristalensi.it</h1>
@@ -165,19 +164,5 @@ Se preferisci che il nostro sito, Google Analytics o che altre parti non utilizz
         </div>
     </div>
     <!--#include file="inc_footer.asp"-->
-    <script type='text/javascript' src='javascripts/camera.js'></script>
-    <script type='text/javascript' src='javascripts/jquery.easing.1.3.js'></script>
-    <script>
-		jQuery(function(){
-
-			jQuery('#slider').camera({
-                height: '55%',
-	            pagination: false,
-				thumbnails: false,
-                autoadvance: true,
-                time: 5
-			});
-		});
-	</script>
 </body>
 <!--#include file="inc_strClose.asp"-->
