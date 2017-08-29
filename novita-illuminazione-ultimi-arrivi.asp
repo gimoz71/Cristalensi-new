@@ -37,8 +37,6 @@
     <link rel="stylesheet" type="text/css" href="/cristalensi/stylesheets/customization.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
-    <link rel="import" href="awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";
@@ -75,11 +73,11 @@
                     <!-- menu - normal collapsible navbar markup -->
                     <ul class="list-unstyled side-list">
                         <li><a href="/cristalensi/illuminazione-interni-ed-esterni/1-novita-lampade-a-sospensione.asp" title="Lampade a sospensione - Novit&agrave; e ultimi arrivi">Lampade a sospensione</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/2-novita-lampade-a-soffitto.asp" title="Lampade a soffitto - Novit&agrave; e ultimi arrivi">Lampade a soffitto</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/3-novita-lampade-a-parete.asp" title="Lampade a parete - Novit&agrave; e ultimi arrivi">Lampade a parete</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/4-novita-lampade-da-terra.asp" title="Lampade da terra - Novit&agrave; e ultimi arrivi">Lampade da terra</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/5-novita-abatjour-lumini-lumetti.asp" title="Abat-jour, lumini e lumetti - Novit&agrave; e ultimi arrivi">Abat-jour, lumini e lumetti</a></li>
-												<li><a href="/cristalensi/illuminazione-interni-ed-esterni/10-novita-lampade-da-giardino-ed-esterni.asp" title="Lampade da giardino ed esterni - Novit&agrave; e ultimi arrivi">Lampade da giardino ed esterni</a></li>
+						<li><a href="/cristalensi/illuminazione-interni-ed-esterni/2-novita-lampade-a-soffitto.asp" title="Lampade a soffitto - Novit&agrave; e ultimi arrivi">Lampade a soffitto</a></li>
+						<li><a href="/cristalensi/illuminazione-interni-ed-esterni/3-novita-lampade-a-parete.asp" title="Lampade a parete - Novit&agrave; e ultimi arrivi">Lampade a parete</a></li>
+						<li><a href="/cristalensi/illuminazione-interni-ed-esterni/4-novita-lampade-da-terra.asp" title="Lampade da terra - Novit&agrave; e ultimi arrivi">Lampade da terra</a></li>
+						<li><a href="/cristalensi/illuminazione-interni-ed-esterni/5-novita-abatjour-lumini-lumetti.asp" title="Abat-jour, lumini e lumetti - Novit&agrave; e ultimi arrivi">Abat-jour, lumini e lumetti</a></li>
+						<li><a href="/cristalensi/illuminazione-interni-ed-esterni/10-novita-lampade-da-giardino-ed-esterni.asp" title="Lampade da giardino ed esterni - Novit&agrave; e ultimi arrivi">Lampade da giardino ed esterni</a></li>
                     </ul>
                 </nav>
             </div>

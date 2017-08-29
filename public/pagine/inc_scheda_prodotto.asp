@@ -117,8 +117,6 @@ end if
     <link rel="stylesheet" type="text/css" href="../../stylesheets/customization.css" shim-shadowdom>
     <link href="../../javascripts/html5shiv.js" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
-    <link rel="import" href="/cristalensi/awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";
