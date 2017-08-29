@@ -115,7 +115,7 @@ end if
     <link href="../../stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
 	<link href="../../stylesheets/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../../stylesheets/customization.css" shim-shadowdom>
-    <link href="../../javascripts/html5shiv.js" rel="stylesheet">
+    <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <style type="text/css">
         .clearfix:after {
