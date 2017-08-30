@@ -234,10 +234,10 @@ end if
 
 																	Do while not img_rs.EOF
 																	titolo_img=img_rs("titolo")
-																	'file_img=NoLettAcc(img_rs("file"))
-																	file_img=img_rs("file")
-																	percorso_img="/public/"&file_img
-																	zoom=img_rs("zoom")
+																	file_img=NoLettAcc(img_rs("file"))
+																	'file_img=img_rs("file")
+																	'percorso_img="/public/"&file_img
+																	'zoom=img_rs("zoom")
 																%>
 																<div class="col-md-2 col-xs-4">
                                     <div class="col-item">
