@@ -820,6 +820,9 @@ end if
     $('.selectpicker').selectpicker({
         style: 'btn-default'
     });
+    $(document).ready(function() {
+        $.fancybox.defaults.hash = false;
+    });
     <% if ric=1 then %>
     $(document).ready(function() {
         $(".launch").fancybox().trigger('click');

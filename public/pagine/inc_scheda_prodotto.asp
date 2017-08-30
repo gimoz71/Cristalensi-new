@@ -201,13 +201,21 @@ end if
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
-        <ol class="breadcrumb">
-				<li><a href="/"><i class="fa fa-home"></i></a></li>
-				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
-				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_2_tip%></a></li>
-				<li><a href="/illuminazione-interni-ed-esterni/<%=Url_cat%>"><%=Titolo_2_cat%></a></li>
-				<li class="active"><%=Titolo_prodotto%></li>
-        </ol>
+		<div class="row clearfix">
+			<div class="col-md-10 col-md-push-2">
+		        <ol class="breadcrumb">
+						<li><a href="/"><i class="fa fa-home"></i></a></li>
+						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
+						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_2_tip%></a></li>
+						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_cat%>"><%=Titolo_2_cat%></a></li>
+						<li class="active"><%=Titolo_prodotto%></li>
+		        </ol>
+			</div>
+			<div class="col-md-2 col-md-pull-10">
+				<a class="btn btn-warning btn-sm btn-block" href="javascript:history.back()"><i class="fa fa-chevron-left"></i> torna indietro</a>
+			</div>
+		</div>
+        <div class="top-buffer hidden-md hidden-lg"></div>
         <div class="">
             <div class="col-md-8">
                 <div class="row">
