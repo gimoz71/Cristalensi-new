@@ -116,9 +116,9 @@
   		Destinatario = "info@cristalensi.it"
   		Mittente = "info@cristalensi.it"
       if richiesta_carrello=1 then
-        Oggetto = "Richiesta disponibilità prodotti"
+        Oggetto = "Richiesta disponibilit&agrave; prodotti"
       else
-        Oggetto = "Richiesta disponibilità per l'articolo codice: "&CodiceArticolo
+        Oggetto = "Richiesta disponibilit&agrave; per l'articolo codice: "&CodiceArticolo
       end if
   		Testo = HTML1
 
@@ -160,9 +160,9 @@
   		Destinatario = "viadeimedici@gmail.com"
   		Mittente = "info@cristalensi.it"
       if richiesta_carrello=1 then
-        Oggetto = "Richiesta disponibilità prodotti"
+        Oggetto = "Richiesta disponibilit&agrave; prodotti"
       else
-        Oggetto = "Richiesta disponibilità per l'articolo codice: "&CodiceArticolo
+        Oggetto = "Richiesta disponibilit&agrave; per l'articolo codice: "&CodiceArticolo
       end if
   		Testo = HTML1
 
@@ -212,9 +212,9 @@
   		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
   		HTML1 = HTML1 & "<table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td>"
       if richiesta_carrello=1 then
-        HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di disponibilit&agrave; dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br>IP connessione: <b>"&ip&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa è un'email di conferma dell'invio della richiesta di disponibilit&agrave;.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
+        HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di disponibilit&agrave; dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br>IP connessione: <b>"&ip&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa &egrave; un'email di conferma dell'invio della richiesta di disponibilit&agrave;.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
       else
-  		  HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di disponibilit&agrave; dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br>IP connessione: <b>"&ip&"</b><br><br>Codice articolo: <b>"&CodiceArticolo&"</b><br>Nome prodotto: <b>"&Titolo_prodotto&"</b><br>Produttore: <b>"&produttore&"</b><br>Codice progressivo prodotto: <b>"&id&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa è un'email di conferma dell'invio della richiesta di disponibilit&agrave;.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
+  		  HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di disponibilit&agrave; dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br>IP connessione: <b>"&ip&"</b><br><br>Codice articolo: <b>"&CodiceArticolo&"</b><br>Nome prodotto: <b>"&Titolo_prodotto&"</b><br>Produttore: <b>"&produttore&"</b><br>Codice progressivo prodotto: <b>"&id&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa &egrave; un'email di conferma dell'invio della richiesta di disponibilit&agrave;.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
       end if
   		HTML1 = HTML1 & "</td></tr></table>"
   		HTML1 = HTML1 & "</body>"
@@ -223,9 +223,9 @@
   		Destinatario = email
   		Mittente = "info@cristalensi.it"
       if richiesta_carrello=1 then
-        Oggetto = "Richiesta disponibilità prodotti"
+        Oggetto = "Richiesta disponibilit&agrave; prodotti"
       else
-        Oggetto = "Richiesta disponibilità per l'articolo codice: "&CodiceArticolo
+        Oggetto = "Richiesta disponibilit&agrave; per l'articolo codice: "&CodiceArticolo
       end if
   		Testo = HTML1
 
@@ -454,7 +454,7 @@
   		HTML1 = HTML1 & "</head>"
   		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
   		HTML1 = HTML1 & "<table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td>"
-  		HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata inviata la seguente richiesta di preventivo dal sito Cristalensi.it il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br><br>Codice articolo: <b>"&CodiceArticolo&"</b><br>Nome prodotto: <b>"&Titolo_prodotto&"</b><br>Produttore: <b>"&produttore&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa è un'email di conferma dell'invio della richiesta di preventivo.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
+  		HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata inviata la seguente richiesta di preventivo dal sito Cristalensi.it il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br><br>Codice articolo: <b>"&CodiceArticolo&"</b><br>Nome prodotto: <b>"&Titolo_prodotto&"</b><br>Produttore: <b>"&produttore&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa &egrave; un'email di conferma dell'invio della richiesta di preventivo.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
   		HTML1 = HTML1 & "</td></tr></table>"
   		HTML1 = HTML1 & "</body>"
   		HTML1 = HTML1 & "</html>"
@@ -687,7 +687,7 @@ if ric=1 then
 		HTML1 = HTML1 & "</head>"
 		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
 		HTML1 = HTML1 & "<table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td>"
-		HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata inviata la seguente richiesta di informazioni dal sito Cristalensi.it il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br><br>Produttore: <b>"&titolo_produttore&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa è un'email di conferma dell'invio della richiesta.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
+		HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata inviata la seguente richiesta di informazioni dal sito Cristalensi.it il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br><br>Produttore: <b>"&titolo_produttore&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa &egrave; un'email di conferma dell'invio della richiesta.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
 		HTML1 = HTML1 & "</td></tr></table>"
 		HTML1 = HTML1 & "</body>"
 		HTML1 = HTML1 & "</html>"
