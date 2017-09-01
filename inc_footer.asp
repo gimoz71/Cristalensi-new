@@ -116,9 +116,9 @@
   		Destinatario = "info@cristalensi.it"
   		Mittente = "info@cristalensi.it"
       if richiesta_carrello=1 then
-        Oggetto = "Richiesta disponibilit&agrave; prodotti"
+        Oggetto = "Richiesta informazioni prodotti"
       else
-        Oggetto = "Richiesta disponibilit&agrave; per l'articolo codice: "&CodiceArticolo
+        Oggetto = "Richiesta informazioni per l'articolo codice: "&CodiceArticolo
       end if
   		Testo = HTML1
 
@@ -160,9 +160,9 @@
   		Destinatario = "viadeimedici@gmail.com"
   		Mittente = "info@cristalensi.it"
       if richiesta_carrello=1 then
-        Oggetto = "Richiesta disponibilit&agrave; prodotti"
+        Oggetto = "Richiesta informazioni prodotti"
       else
-        Oggetto = "Richiesta disponibilit&agrave; per l'articolo codice: "&CodiceArticolo
+        Oggetto = "Richiesta informazioni per l'articolo codice: "&CodiceArticolo
       end if
   		Testo = HTML1
 
@@ -223,9 +223,9 @@
   		Destinatario = email
   		Mittente = "info@cristalensi.it"
       if richiesta_carrello=1 then
-        Oggetto = "Richiesta disponibilit&agrave; prodotti"
+        Oggetto = "Richiesta informazioni prodotti"
       else
-        Oggetto = "Richiesta disponibilit&agrave; per l'articolo codice: "&CodiceArticolo
+        Oggetto = "Richiesta informazioni per l'articolo codice: "&CodiceArticolo
       end if
   		Testo = HTML1
 

@@ -44,6 +44,8 @@ if id>0 then
 		FkNewCategoria = prod_rs("FkNewCategoria")
 		if FkNewCategoria="" then FkNewCategoria=0
 
+		FkNewAmbienti = prod_rs("FkNewAmbiente")
+
 		Set gr_rs = Server.CreateObject("ADODB.Recordset")
 		sql = "SELECT * FROM NewGruppi WHERE PkId="&FkNewGruppo
 		gr_rs.open sql,conn, 1, 1
@@ -227,9 +229,39 @@ end if
                         <div class="top-buffer">
                             <p class="descrizione">
 															<small><%=Descrizione_prodotto%></small>
+
 															<%if allegato_prodotto<>"" then%>
-															<br /><br />E' presente un allegato: <a href="https://www.cristalensi.it/public/<%=allegato_prodotto%>" target="_blank" title="E' presente un allegato per il prodotto: <%=titolo_prodotto%>">Scarica l'allegato</a>
+															<br /><br />E' presente un allegato: >> <a href="https://www.cristalensi.it/public/<%=allegato_prodotto%>" target="_blank" title="E' presente un allegato per il prodotto: <%=titolo_prodotto%>">Scarica l'allegato</a>
 															<%end if%>
+
+															<%
+															if Len(FkNewAmbienti)>0 then
+															arrFkNewAmbienti=split(FkNewAmbienti,", ")
+															%>
+															<br /><em>
+															L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_2_cat%>, &egrave; adatto ai seguenti ambienti:<br>
+															<%
+															For iLoop = LBound(arrFkNewAmbienti) to UBound(arrFkNewAmbienti)
+																fknewambiente=arrFkNewAmbienti(iLoop)
+																Set ams=Server.CreateObject("ADODB.Recordset")
+																sql = "Select * From NewAmbienti WHERE Posizione='"&fknewambiente&"'"
+																ams.Open sql, conn, 1, 1
+																if ams.recordcount>0 then
+																titolo_1_amb=ams("Titolo_1")
+																titolo_2_amb=ams("Titolo_2")
+																url_amb=ams("Url")
+																%>
+																<a href="/illuminazione-interni-ed-esterni/<%=url_amb%>" title="<%=titolo_2_amb%>"><%=titolo_1_amb%></a>,&nbsp;
+															<%
+																end if
+																ams.close
+															Next
+															%>
+															ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.
+															</em>
+															<%
+															end if
+															%>
                             </p>
                             <hr />
 
