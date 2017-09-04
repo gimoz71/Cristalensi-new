@@ -74,7 +74,7 @@
 				quantita=request("quantita")
 				if quantita="" or isnull(quantita) then quantita=0
 
-				if riga>0 then
+				if riga>0 and quantita>0 then
 					Set ts = Server.CreateObject("ADODB.Recordset")
 					sql = "SELECT * FROM RigheOrdine where PkId="&riga
 					ts.Open sql, conn, 3, 3
@@ -369,7 +369,7 @@
 																		rs.movenext
 																		loop
 																		%>
-																		
+
 																	</tbody>
 																	<%if ss.recordcount>0 then%>
 	                                <tfoot>

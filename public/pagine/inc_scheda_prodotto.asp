@@ -137,7 +137,7 @@ end if
 				num_lampadine=document.newsform2.num_lampadine.value;
 				lampadina=document.newsform2.lampadina.value;
 
-				if (quantita=="0" || quantita==""){
+				if (quantita=="0" || quantita=="" || quantita<0){
 					alert("La quantita\' deve essere maggiore di 0");
 					return false;
 				}
