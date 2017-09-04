@@ -80,7 +80,7 @@ Function NoLettAcc(strInput)
 	strInput = Replace(strInput, "ì", "&igrave;")
 	strInput = Replace(strInput, "ò", "&ograve;")
  	strInput = Replace(strInput, "€", "&euro;")
- 'strInput = Replace(strInput, "'", "&rsquo;")
+ 	strInput = Replace(strInput, "'", "%27")
 	strInput = Replace(strInput, " ", "%20")
 
  NoLettAcc = strInput
