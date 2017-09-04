@@ -25,6 +25,7 @@
 		Nazione_sp=ss("Nazione_sp")
 
 		NoteCliente=ss("NoteCliente")
+		if Len(NoteCliente)>0 then NoteCliente=Replace(NoteCliente, vbCrLf, " ")
 
 		FkPagamento=ss("FkPagamento")
 		TipoPagamento=ss("TipoPagamento")
@@ -180,8 +181,8 @@
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <h5>Eventuali annotazioni</h5>
-                                        <textarea class="form-control" rows="2" readonly style="font-size: 10px;"><%=NoteCliente%></textarea>
+                                        <br /><strong>EVENTUALI ANNOTAZIONI</strong>
+                                        <textarea class="form-control" rows="3" readonly style="font-size: 10px;"><%=NoteCliente%></textarea>
                                     </td>
                                 </tr>
                             </tfoot>
