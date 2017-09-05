@@ -76,6 +76,7 @@ gr_rs.close
             visibility: hidden;
         }
     </style>
+    <link rel="canonical" href="https://www.cristalensi.it/illuminazione-interni-ed-esterni/<%=toUrl%>"/>
     <!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
