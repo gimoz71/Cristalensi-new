@@ -516,7 +516,7 @@
 									prov_rs.Open sql, conn, 1, 1
 									if prov_rs.recordcount>0 then
 									%>
-									<select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Provincia" name="provincia_sp" id="provincia_sp">
+									<select class="selectpicker show-menu-arrow  show-tick" data-size="7" title="Provincia" name="provincia_sp" id="provincia_sp">
 										<option title="" value="">Selezionare una provincia (solo per l'ITALIA)</option>
 										<%
 										Do While Not prov_rs.EOF
@@ -542,7 +542,7 @@
 									naz_rs.Open sql, conn, 1, 1
 									if naz_rs.recordcount>0 then
 									%>
-									<select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Nazione" name="nazione_sp" id="nazione_sp">
+									<select class="selectpicker show-menu-arrow  show-tick" data-size="7" title="Nazione" name="nazione_sp" id="nazione_sp">
 										<option title="" value="">Selezionare una Nazione</option>
 										<%
 										Do While Not naz_rs.EOF
