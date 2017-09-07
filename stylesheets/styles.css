@@ -1494,7 +1494,7 @@ hr {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, .btn-square span, h5, h6,
+h1, h2, h3, h4, .btn-square span, .title .product-name, .breadcrumb + .title, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -1504,9 +1504,11 @@ h1, h2, h3, h4, .btn-square span, h5, h6,
 h1 small,
 h1 .small, h2 small,
 h2 .small, h3 small,
-h3 .small, h4 small, .btn-square span small,
+h3 .small, h4 small, .btn-square span small, .title .product-name small, .breadcrumb + .title small,
 h4 .small,
-.btn-square span .small, h5 small,
+.btn-square span .small,
+.title .product-name .small,
+.breadcrumb + .title .small, h5 small,
 h5 .small, h6 small,
 h6 .small,
 .h1 small,
@@ -1539,15 +1541,17 @@ h3 .small, .h3 small,
   font-size: 65%;
 }
 
-h4, .btn-square span, .h4,
+h4, .btn-square span, .title .product-name, .breadcrumb + .title, .h4,
 h5, .h5,
 h6, .h6 {
   margin-top: 12.5px;
   margin-bottom: 12.5px;
 }
-h4 small, .btn-square span small,
+h4 small, .btn-square span small, .title .product-name small, .breadcrumb + .title small,
 h4 .small,
-.btn-square span .small, .h4 small,
+.btn-square span .small,
+.title .product-name .small,
+.breadcrumb + .title .small, .h4 small,
 .h4 .small,
 h5 small,
 h5 .small, .h5 small,
@@ -1570,7 +1574,7 @@ h3, .h3 {
   font-size: 31px;
 }
 
-h4, .btn-square span, .h4 {
+h4, .btn-square span, .title .product-name, .breadcrumb + .title, .h4 {
   font-size: 23px;
 }
 
@@ -5744,7 +5748,7 @@ a.thumbnail.active {
   border: 1px solid transparent;
   border-radius: 0px;
 }
-.alert h4, .alert .btn-square span, .btn-square .alert span {
+.alert h4, .alert .btn-square span, .btn-square .alert span, .alert .title .product-name, .title .alert .product-name, .alert .breadcrumb + .title {
   margin-top: 0;
   color: inherit;
 }
@@ -9059,7 +9063,7 @@ select.selectpicker {
   font-size: 14px;
   padding: 0 15px 15px 15px;
 }
-.yamm .yamm-content .subcategory h4, .yamm .yamm-content .subcategory .btn-square span, .btn-square .yamm .yamm-content .subcategory span {
+.yamm .yamm-content .subcategory h4, .yamm .yamm-content .subcategory .btn-square span, .btn-square .yamm .yamm-content .subcategory span, .yamm .yamm-content .subcategory .title .product-name, .title .yamm .yamm-content .subcategory .product-name, .yamm .yamm-content .subcategory .breadcrumb + .title {
   color: inherit;
   font-size: 16px;
   border-bottom: solid 1px #ccc;
@@ -9401,6 +9405,8 @@ h2,
 h3,
 h4,
 .btn-square span,
+.title .product-name,
+.breadcrumb + .title,
 h5,
 h6 {
   text-transform: uppercase;
@@ -10142,8 +10148,8 @@ hr.style-two {
   margin-top: 5px;
   text-align: center;
 }
-.col-item .category h1,
-.col-item .price-details h1 {
+.col-item .category h3,
+.col-item .price-details h3 {
   display: block;
   /* Fallback for non-webkit */
   display: -webkit-box;
@@ -10330,7 +10336,7 @@ footer {
   padding: 20px 0;
   background-color: #f6f6f6;
 }
-footer h4, footer .btn-square span, .btn-square footer span {
+footer h4, footer .btn-square span, .btn-square footer span, footer .title .product-name, .title footer .product-name, footer .breadcrumb + .title {
   color: inherit;
   font-size: 0.75em;
   border-bottom: dotted 1px #ddd;

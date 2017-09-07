@@ -100,7 +100,7 @@ end if
                 <li><a href="/novita-illuminazione-ultimi-arrivi.asp">Novit&agrave; e ultimi arrivi</a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>
-            <h4 class="title"><%=Titolo_2%> - Novit&agrave; e ultimi arrivi</h4>
+            <h1 class="title"><%=Titolo_2%> - Novit&agrave; e ultimi arrivi</h1>
             <%if Len(Descrizione)>0 then%>
             <p class="description">
                 <%=Descrizione%>
@@ -180,7 +180,7 @@ end if
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>

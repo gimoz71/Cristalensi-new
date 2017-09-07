@@ -222,7 +222,7 @@ end if
             <div class="col-md-8">
                 <div class="row">
                     <div class="title">
-                        <h4><%=Titolo_prodotto%></h4>
+                        <h1 class="product-name"><%=Titolo_prodotto%></h1>
                         <p class="details">codice: <b><%=codicearticolo%></b> - produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></p>
                     </div>
                     <div class="col-md-12">

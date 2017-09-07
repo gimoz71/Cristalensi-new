@@ -275,14 +275,14 @@
                     <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Ventilatori <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
                             <li class="dropdown dropdown-submenu">
-                                <a href="/illuminazione-interni-ed-esterni/16nt-ventilatori-a-soffitto-con-luce.asp" class="dropdown-toggle" data-toggle="dropdown">Ventilatori a soffitto con luce</a>
+                                <a href="/illuminazione-interni-ed-esterni/16nt-ventilatori-a-soffitto-con-luce.asp" class="dropdown-toggle">Ventilatori a soffitto con luce</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/illuminazione-interni-ed-esterni/57nc-ventilatori-a-soffitto-moderni-con-luce.asp">Ventilatori a soffitto <b>moderni</b> con luce</a></li>
                                     <li><a href="/illuminazione-interni-ed-esterni/58nc-ventilatori-a-soffitto-classici-con-luce.asp">Ventilatori a soffitto <b>classici</b> con luce</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown dropdown-submenu">
-                                <a href="/illuminazione-interni-ed-esterni/17nt-ventilatori-senza-luce.asp" class="dropdown-toggle" data-toggle="dropdown">Ventilatori senza luce</a>
+                                <a href="/illuminazione-interni-ed-esterni/17nt-ventilatori-senza-luce.asp" class="dropdown-toggle">Ventilatori senza luce</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/illuminazione-interni-ed-esterni/59nc-ventilatori-a-soffitto-senza-luce.asp">Ventilatori a soffitto senza luce</a></li>
                                     <li><a href="/illuminazione-interni-ed-esterni/60nc-ventilatori-da-terra-e-da-tavolo.asp">Ventilatori da terra e da tavolo</a></li>
@@ -293,14 +293,14 @@
                     <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Lampadine <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
                             <li class="dropdown dropdown-submenu">
-                                <a href="/illuminazione-interni-ed-esterni/18nt-lampadine-led-alogene.asp" class="dropdown-toggle" data-toggle="dropdown">Lampadine LED e alogene</a>
+                                <a href="/illuminazione-interni-ed-esterni/18nt-lampadine-led-alogene.asp" class="dropdown-toggle">Lampadine LED e alogene</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/illuminazione-interni-ed-esterni/61nc-lampadine-led.asp">Lampadine <b>LED</b></a></li>
                                     <li><a href="/illuminazione-interni-ed-esterni/62nc-lampadine-alogene.asp">Lampadine <b>alogene</b></a></li>
                                 </ul>
                             </li>
                             <li class="dropdown dropdown-submenu">
-                                <a href="/illuminazione-interni-ed-esterni/19nt-componenti-illuminazione.asp" class="dropdown-toggle" data-toggle="dropdown">Componenti illuminazione</a>
+                                <a href="/illuminazione-interni-ed-esterni/19nt-componenti-illuminazione.asp" class="dropdown-toggle">Componenti illuminazione</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/illuminazione-interni-ed-esterni/64nc-strisce-led.asp">Strisce <b>LED</b></a></li>
                                     <li><a href="/illuminazione-interni-ed-esterni/63nc-driver-per-led.asp">Driver per <b>LED</b></a></li>

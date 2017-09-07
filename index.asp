@@ -50,7 +50,8 @@
             <!--#include file="inc_slider.asp"-->
             <div class="row top-buffer">
                 <div class="col-md-8">
-                    <h1 class="slogan">Cristalensi, vendita lampadari.<br />Showroom aperto da oltre 50 anni!</h1>
+                    <h1 class="slogan">Cristalensi, vendita lampadari.</h1>
+                    <h2 class="slogan">Showroom aperto da oltre 50 anni!</h2>
                     <p class="main-description">
                         A portata di click una vasta e raffinata gamma di prodotti per illuminazione da interno ed esterno per arredare la casa, il giardino, un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: dai <b>lampadari</b>
                         moderni e classici, alle <b>applique</b>, alle <b>plafoniere</b> e <b>piantane</b> ma anche <b>faretti</b> e <b>ventilatori con luce</b>. Tanti prodotti per <b>illuminazione a LED</b>, <b>in cristallo</b> e <b>vetro Murano</b>, in stile
@@ -98,7 +99,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" title="Lampade da interno"><h1>Lampade da interno</h1></a>
+                                    <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" title="Lampade da interno"><h3>Lampade da interno</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +113,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno"><h1>Lampade da esterno</h1></a>
+                                    <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno"><h3>Lampade da esterno</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +127,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/illuminazione-interni-ed-esterni/3ng-ventilatori.asp" title="Ventilatori"><h1>Ventilatori</h1></a>
+                                    <a href="/illuminazione-interni-ed-esterni/3ng-ventilatori.asp" title="Ventilatori"><h3>Ventilatori</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +141,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp" title="Lampadine"><h1>Lampadine, driver e strisce</h1></a>
+                                    <a href="/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp" title="Lampadine"><h3>Lampadine, driver e strisce</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +224,7 @@
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
@@ -314,7 +315,7 @@
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>

@@ -803,6 +803,13 @@ hr.style-two {
 }
 
 .title {
+    .product-name {
+        @extend h4;
+    }
+    .breadcrumb + & {
+        @extend h4;
+    }
+
     * {
         margin: 0;
     }
@@ -1239,8 +1246,8 @@ hr.style-two {
     $line-height  : 1.4;
     $lines-to-show: 2;
 
-    .category h1,
-    .price-details h1 {
+    .category h3,
+    .price-details h3 {
         // font-size  : 14px;
         // line-height: 20px;
         // margin     : 0;
