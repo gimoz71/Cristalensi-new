@@ -30,7 +30,7 @@
 		TotaleCarrello=ss("TotaleCarrello")
 		CostoSpedizioneTotale=ss("CostoSpedizione")
 		TipoTrasporto=ss("TipoTrasporto")
-		'DatiSpedizione=ss("DatiSpedizione")
+		FkSpedizione=ss("FkSpedizione")
 		Nominativo_sp=ss("Nominativo_sp")
 		Telefono_sp=ss("Telefono_sp")
 		Indirizzo_sp=ss("Indirizzo_sp")
@@ -641,16 +641,29 @@ if PaymentOption = "PayPal" then
 	' entered by the user on the
 	' Shipping page.
 	'------------------------------------
-	shipToName = Nominativo_sp
-	shipToStreet = Indirizzo_sp
-	shipToStreet2 = "" 'Leave it blank if there is no value
-	shipToCity = Citta_sp
-	shipToState = Provincia_sp
-	'shipToCountryCode = "<<ShipToCountryCode>>" ' Please refer to the PayPal country codes in the API documentation
-	shipToCountryCode = Nazione_sp
-	shipToZip = CAP_sp
-	phoneNum = Telefono_sp
-	INVNUM = IdOrdine 'valore aggiunto alla funzione
+	if FkSpedizione=2 then
+		shipToName = nominativo_email
+		shipToStreet = "Via arti e mestieri, 1"
+		shipToStreet2 = "" 'Leave it blank if there is no value
+		shipToCity = "Montelupo Fiorentino"
+		shipToState = "FI"
+		'shipToCountryCode = "<<ShipToCountryCode>>" ' Please refer to the PayPal country codes in the API documentation
+		shipToCountryCode = "IT"
+		shipToZip = "50056"
+		phoneNum = "0571.911163"
+		INVNUM = IdOrdine 'valore aggiunto alla funzione
+	else
+		shipToName = Nominativo_sp
+		shipToStreet = Indirizzo_sp
+		shipToStreet2 = "" 'Leave it blank if there is no value
+		shipToCity = Citta_sp
+		shipToState = Provincia_sp
+		'shipToCountryCode = "<<ShipToCountryCode>>" ' Please refer to the PayPal country codes in the API documentation
+		shipToCountryCode = Nazione_sp
+		shipToZip = CAP_sp
+		phoneNum = Telefono_sp
+		INVNUM = IdOrdine 'valore aggiunto alla funzione
+	end if
 
 	'------------------------------------
 	' Calls the SetExpressCheckout API call

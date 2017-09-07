@@ -65,6 +65,14 @@ gr_rs.close
         }
     </style>
     <link rel="canonical" href="https://www.cristalensi.it/illuminazione-interni-ed-esterni/<%=toUrl%>"/>
+    <script language="javascript">
+    function CambiaPagina()
+    {
+       document.modulopaginazione.method = "post";
+       document.modulopaginazione.action = "/illuminazione-interni-ed-esterni/<%=toUrl%>?cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>";
+       document.modulopaginazione.submit();
+    }
+    </script>
     <!--#include virtual="/inc_funzioni_head.asp"-->
 </head>
 
@@ -256,6 +264,7 @@ gr_rs.close
 
             </div>
             <%if prod_rs.recordcount>30 then%>
+            <form name="modulopaginazione" id="modulopaginazione">
             <div class="row top-buffer">
                 <div class="col-lg-12">
                     <nav aria-label="Page navigation center-block">
@@ -291,10 +300,22 @@ gr_rs.close
                             <%if maxPage>5 and cInt(p)<>prod_rs.PageCount then%>
                             <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=prod_rs.PageCount%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Ultima pagina</a></li>
                             <%end if%>
+                            <li class="active"><a href="#"> Vai alla pagina</a>
+                            <select class="selectpicker show-menu-arrow show-tick" data-size="7" data-width="63px" data-dropAuto="true" name="p" id="p" data-size="5" onChange="CambiaPagina();">
+          									<%
+          									For i=1 To prod_rs.PageCount
+          									%>
+          									<option value="<%=i%>" <%if cInt(i)=cInt(p) then%> selected<%end if%>><%=i%></option>
+          									<%
+          									Next
+          									%>
+          									</select>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </div>
+            </form>
             <%end if%>
             <%
             end if
