@@ -62,8 +62,8 @@
                                                   <li><a href="/illuminazione-interni-ed-esterni/4nc-lampadari-rustici.asp">Lampadari <b>rustici</b></a></li>
                                                   <li><a href="/illuminazione-interni-ed-esterni/5nc-lampadari-vintage.asp">Lampadari <b>vintage</b></a></li>
                                                   <li><a href="/illuminazione-interni-ed-esterni/6nc-lampadari-tiffany.asp">Lampadari <b>Tiffany</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/8nc-lampadari-in-cristallo.asp.asp">Lampadari <b>in cristallo</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/7nc-lampadari-murano">Lampadari <b>Murano</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/8nc-lampadari-in-cristallo.asp">Lampadari <b>in cristallo</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/7nc-lampadari-murano.asp">Lampadari <b>Murano</b></a></li>
                                                   <li><a href="/illuminazione-interni-ed-esterni/9nc-lampadari-per-bambini.asp">Lampadari <b>per bambini</b></a></li>
                                               </ul>
                                           </li>
