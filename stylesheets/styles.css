@@ -1494,7 +1494,8 @@ hr {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, .btn-square span, .title .product-name, .breadcrumb + .title, h5, h6,
+h1, h2, h3, h4, .btn-square span, .title .product-name, .breadcrumb + .title, h5, .description h2,
+.main-description h2, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -1508,8 +1509,11 @@ h3 .small, h4 small, .btn-square span small, .title .product-name small, .breadc
 h4 .small,
 .btn-square span .small,
 .title .product-name .small,
-.breadcrumb + .title .small, h5 small,
-h5 .small, h6 small,
+.breadcrumb + .title .small, h5 small, .description h2 small,
+.main-description h2 small,
+h5 .small,
+.description h2 .small,
+.main-description h2 .small, h6 small,
 h6 .small,
 .h1 small,
 .h1 .small, .h2 small,
@@ -1542,7 +1546,9 @@ h3 .small, .h3 small,
 }
 
 h4, .btn-square span, .title .product-name, .breadcrumb + .title, .h4,
-h5, .h5,
+h5,
+.description h2,
+.main-description h2, .h5,
 h6, .h6 {
   margin-top: 12.5px;
   margin-bottom: 12.5px;
@@ -1554,7 +1560,11 @@ h4 .small,
 .breadcrumb + .title .small, .h4 small,
 .h4 .small,
 h5 small,
-h5 .small, .h5 small,
+.description h2 small,
+.main-description h2 small,
+h5 .small,
+.description h2 .small,
+.main-description h2 .small, .h5 small,
 .h5 .small,
 h6 small,
 h6 .small, .h6 small,
@@ -1578,7 +1588,8 @@ h4, .btn-square span, .title .product-name, .breadcrumb + .title, .h4 {
   font-size: 23px;
 }
 
-h5, .h5 {
+h5, .description h2,
+.main-description h2, .h5 {
   font-size: 18px;
 }
 
@@ -9408,6 +9419,8 @@ h4,
 .title .product-name,
 .breadcrumb + .title,
 h5,
+.description h2,
+.main-description h2,
 h6 {
   text-transform: uppercase;
   font-weight: bold;
@@ -9892,6 +9905,11 @@ hr.style-two {
   border: solid 2px #FFD31C;
   border-top: none;
   border-left: none;
+}
+.description h2,
+.main-description h2 {
+  margin-top: 0;
+  font-style: normal;
 }
 
 .main-description {

@@ -80,9 +80,11 @@ gr_rs.close
             </ol>
             <h1 class="title"><%=Titolo_2%></h1>
             <%if Len(Descrizione)>0 then%>
-            <p class="description">
-                <%=Descrizione%>
-            </p>
+            <div class="description">
+                <%if pippo<>"" then%><img src="#" style="float: left; width: 200px; height: 160px; background: #ccc; margin-right: 10px;" />
+                <h2>Titolo per veder come ci sta</h2><%end if%>
+                <p><%=Descrizione%></p>
+            </div>
             <%end if%>
         </div>
         <div class="col-md-3">
