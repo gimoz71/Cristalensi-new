@@ -287,9 +287,8 @@ gr_rs.close
                             <%if maxPage>5 and cInt(p)<>prod_rs.PageCount then%>
                             <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=prod_rs.PageCount%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Ultima pagina</a></li>
                             <%end if%>
-                            <li style="padding-left: 5px;">
-                            <select class="selectpicker show-menu-arrow show-tick" data-size="4" data-width="100px" data-dropAuto="true" name="p" id="p" data-size="5" onChange="CambiaPagina();">
-          									<option value="0">Scegli la Pagina</option>
+                            <li class="active"><a href="#"> Vai alla pagina</a>
+                            <select class="selectpicker show-menu-arrow show-tick" data-size="7" data-width="63px" data-dropAuto="true" name="p" id="p" data-size="5" onChange="CambiaPagina();">
           									<%
           									For i=1 To prod_rs.PageCount
           									%>

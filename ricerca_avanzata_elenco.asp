@@ -278,14 +278,7 @@ end if
                     </nav>
                 </div>
                 <%
-								prod_rs.PageSize = 50
-								if prod_rs.recordcount > 0 then
-									prod_rs.AbSolutePage = p
-									maxPage = prod_rs.PageCount
-								End if
-
-								Do while not prod_rs.EOF and rowCount < prod_rs.PageSize
-								RowCount = RowCount + 1
+								Do while not prod_rs.EOF
 
                   id=prod_rs("pkid")
                   titolo_prodotto=prod_rs("titolo")
@@ -362,47 +355,6 @@ end if
                 loop
                 %>
 
-								<%if prod_rs.recordcount>60 then%>
-		            <div class="row top-buffer">
-		                <div class="col-lg-9">
-		                    <nav aria-label="Page navigation center-block">
-		                        <ul class="pagination">
-		                            <li class="active"><a href="#" aria-label="Previous">Pagina <%=p%> di <%=prod_rs.PageCount%></a></li>
-
-		                            <%if p > 2 then%>
-		                            <li><a href="/ricerca_avanzata_elenco.asp?p=1&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&titolo=<%=titolo%>&prezzo_da=<%=prezzo_da%>&prezzo_a=<%=prezzo_a%>&order=<%=order%>">Prima pagina</a></li>
-		                            <%end if%>
-		                            <% if p > 1 then %>
-		                            <li>
-		                                <a href="/ricerca_avanzata_elenco.asp?p=<%=p-1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&titolo=<%=titolo%>&prezzo_da=<%=prezzo_da%>&prezzo_a=<%=prezzo_a%>&order=<%=order%>" aria-label="Previous">
-		                                    <span aria-hidden="true">&laquo;</span>
-		                                </a>
-		                            </li>
-		                            <%end if%>
-		                            <% for page = p+1 to p+4 %>
-		                            <%if not page>maxPage then%>
-		                            <li><a href="/https://www.cristalensi.it/ricerca_avanzata_elenco.asp?p=<%=Page%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&titolo=<%=titolo%>&prezzo_da=<%=prezzo_da%>&prezzo_a=<%=prezzo_a%>&order=<%=order%>"><%=page%></a></li>
-		                            <%end if%>
-		                            <% if page >= prod_rs.PageCount then
-		                               page = p+4
-		                              end if
-		                              next
-		                            %>
-		                            <% if cInt(p) < maxPage then %>
-		                            <li>
-		                                <a href="/ricerca_avanzata_elenco.asp?p=<%=p+1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&titolo=<%=titolo%>&prezzo_da=<%=prezzo_da%>&prezzo_a=<%=prezzo_a%>&order=<%=order%>" aria-label="Next">
-		                                    <span aria-hidden="true">&raquo;</span>
-		                                </a>
-		                            </li>
-		                            <%end if%>
-		                            <%if maxPage>5 and cInt(p)<>prod_rs.PageCount then%>
-		                            <li><a href="/ricerca_avanzata_elenco.asp?p=<%=prod_rs.PageCount%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&titolo=<%=titolo%>&prezzo_da=<%=prezzo_da%>&prezzo_a=<%=prezzo_a%>&order=<%=order%>">Ultima pagina</a></li>
-		                            <%end if%>
-		                        </ul>
-		                    </nav>
-		                </div>
-		            </div>
-		            <%end if%>
 
 							</div>
             </div>
