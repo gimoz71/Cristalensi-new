@@ -63,7 +63,7 @@
                 <li><a href="/"><i class="fa fa-home"></i></a></li>
                 <li class="active">Novit&agrave; illuminazione e ultimi arrivi</li>
             </ol>
-            <h4 class="title">Novit&agrave; illuminazione e ultimi arrivi</h4>
+            <h1 class="title">Novit&agrave; illuminazione e ultimi arrivi</h1>
             <p class="description">
             Qui ti esponiamo i nostri prodotti in base all'inserimento nel nostro catalogo, quindi troverai sia articoli nuovi che aziende che ultimamente sono entrate a far parte del nostro catalogo online. Puoi scegliere tra lampade a sospensione, lampade a soffitto, lampade a parete, lampade da terra e abat-jour, lumini e lumetti. Tutti prodotti per interni adatti sia a soggiorni e salotti, cucine, camere da letto, ingressi, studi ma anche giardini, terrazzi, balconi, loggiatti e ed altre tipologie di locali interni ed esterni. Articoli con raffinato design dalle pi&ugrave; importanti marche e produttori ma anche prodotti a prezzi per tutte le esigenze, tutti con importanti sconti.
             </p>
@@ -142,7 +142,7 @@
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>

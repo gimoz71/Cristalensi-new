@@ -63,7 +63,7 @@
                 <li><a href="/"><i class="fa fa-home"></i></a></li>
                 <li class="active">Offerte</li>
             </ol>
-            <h4 class="title">Prodotti per illuminazione in offerta</h4>
+            <h1 class="title">Prodotti per illuminazione in offerta</h1>
             <p class="description">
             In questa pagina trovate tutte le offerte di prodotti per illuminazione: sono gli articoli del catalogo con prezzi fantastici. Ogni prodotto ha una propria scheda dettagliata, per accederci &egrave; sufficiente cliccare sul nome o sulla foto dell'articolo.
             </p>
@@ -185,7 +185,7 @@
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
