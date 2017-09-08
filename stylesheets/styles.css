@@ -9731,11 +9731,11 @@ hr.style-two {
 }
 
 .banner {
+  position: relative;
   padding: 10px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
   background-position: top right;
   background-repeat: no-repeat;
-  background-blend-mode: luminosity;
   margin-bottom: 10px;
 }
 .banner::last-child {

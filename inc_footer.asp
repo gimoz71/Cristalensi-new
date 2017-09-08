@@ -806,10 +806,10 @@ end if
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="/javascripts/bootstrap.js"></script>
-<script src="/javascripts/jquery.bootstrap-touchspin.js"></script>
-<script src="/javascripts/bootstrap-select.js"></script>
-<script src="/javascripts/jquery.fancybox.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/jquery.bootstrap-touchspin.min.js"></script>
+<script src="/javascripts/bootstrap-select.min.js"></script>
+<script src="/javascripts/jquery.fancybox.min.js"></script>
 <script src="/javascripts/custom.js"></script>
 <script>
     // $("input[name='pezzi']").TouchSpin({
