@@ -119,13 +119,13 @@ end if
                 <li><a href="/"><i class="fa fa-home"></i></a></li>
                 <li class="active">Ricerca avanzata</li>
             </ol>
-            <h4 class="title">
+            <h1 class="title">
 						Ricerca avanzata
 						<%if titolo<>"" or prezzo_da<>0 or prezzo_a<>0 or title<>"" or produttore<>"" then%>
 						 - Hai cercato: <%if titolo<>"" then%> <%=titolo%><%end if%><%if prezzo_da<>0 or prezzo_a<>0 then%> - Prezzo da <%=prezzo_da%> a <%=prezzo_a%><%end if%>
 						<%if title<>"" then%><br />Categoria: <%=title%><%end if%><%if produttore<>"" then%><br />Produttore: <%=produttore%><%end if%>
 						<%end if%>
-						</h4>
+						</h1>
 						<form class="form-horizontal" method="post" action="/ricerca_avanzata_elenco.asp" name="newsform">
 						<div class="col-lg-6">
 								<div class="form-group">
@@ -325,7 +325,7 @@ end if
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
