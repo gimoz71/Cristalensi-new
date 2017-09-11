@@ -125,6 +125,7 @@ az_rs.close
 
                 order=request("order")
                 if order="" then order=1
+                if order>4 then order=1
 
                 if order=1 then ordine="Titolo ASC"
                 if order=2 then ordine="Titolo DESC"
