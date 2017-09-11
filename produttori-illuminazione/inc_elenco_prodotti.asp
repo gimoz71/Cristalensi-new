@@ -80,7 +80,7 @@ az_rs.close
                 <li><a href="/produttori.asp">Elenco produttori</a></li>
                 <li class="active"><%=titolo_produttore%></li>
             </ol>
-            <h4 class="title"><%=titolo_produttore%></h4>
+            <h1 class="title"><%=titolo_produttore%></h1>
             <%if Len(descrizione_produttore)>0 then%>
             <p class="description">
                 <%=descrizione_produttore%>
@@ -218,7 +218,7 @@ az_rs.close
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h1><%=titolo_prodotto%></h1></a>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
                                   <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
