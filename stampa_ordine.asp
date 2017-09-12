@@ -182,7 +182,7 @@
                                 <tr>
                                     <td colspan="4">
                                         <br /><strong>EVENTUALI ANNOTAZIONI</strong>
-                                        <textarea class="form-control" rows="3" readonly style="font-size: 10px;"><%=NoteCliente%></textarea>
+                                        <textarea class="form-control" rows="3" readonly style="font-size: 13px; font-weight:bold;"><%=NoteCliente%></textarea>
                                     </td>
                                 </tr>
                             </tfoot>
@@ -228,11 +228,12 @@
 																						<div class="row">
 																								<div class="col-sm-12">
 																								<p>
-																									<%if Len(DatiSpedizione)>0 then%>
+																									<span style="font-size: 14px;"><%if Len(DatiSpedizione)>0 then%>
 																										<%=DatiSpedizione%><br>Email: <%=Email_cliente%> - Telefono: <%=Telefono_cliente%>
 																									<%else%>
 																										<%=Nominativo_sp%>&nbsp;-&nbsp;Telefono:&nbsp;<%=Telefono_sp%>&nbsp;-&nbsp;<%=Indirizzo_sp%>&nbsp;-&nbsp;<%=CAP_sp%>&nbsp;-&nbsp;<%=Citta_sp%><%if Provincia_sp<>"" then%>&nbsp;(<%=Provincia_sp%>)<%end if%>&nbsp;-&nbsp;<%=Nazione_sp%><br><em>Riferimenti iscritto:</em>&nbsp;<%=Nome_cliente%>&nbsp;<%=Nominativo_cliente%>&nbsp;-&nbsp;<%=Email_cliente%>
 																									<%end if%>
+                                                                                                    </span>
 																								</p>
 																								</div>
 																						</div>
