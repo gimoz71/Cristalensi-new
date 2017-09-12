@@ -76,13 +76,13 @@ gr_rs.close
         <div class="col-xl-12">
             <ol class="breadcrumb">
                 <li><a href="/"><i class="fa fa-home"></i></a></li>
-                <li class="active"><%=Titolo_2%></li>
+                <li class="active"><%=Titolo_1%></li>
             </ol>
-            <h1 class="title"><%=Titolo_2%></h1>
+            <h1 class="title"><%=Titolo_1%></h1>
             <%if Len(Descrizione)>0 then%>
             <div class="description">
-                <%if pippo<>"" then%><img src="#" style="float: left; width: 200px; height: 160px; background: #ccc; margin-right: 10px;" />
-                <h2>Titolo per veder come ci sta</h2><%end if%>
+                <%if Len(Img)>0 then%><img src="/public/<%=img%>" style="float: left; width: 200px; height: 150px; background: #ccc; margin-right: 10px;" alt="<%=Titolo_1%><%if Len(Titolo_2)>0 then%><%=" - "&Titolo_2%><%end if%>" /><%end if%>
+                <%if Len(Titolo_2)>0 then%><h2><%=Titolo_2%></h2><%end if%>
                 <p><%=Descrizione%></p>
             </div>
             <%end if%>
