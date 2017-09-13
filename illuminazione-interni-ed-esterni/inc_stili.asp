@@ -31,7 +31,7 @@ gr_rs.close
 <head>
     <title><%=Title%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="<%=Description%>">
+    <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Da Cristalensi trovi un'ampia offeta di <%=Titolo_2%>: sconti online su tutta la vendita di prodotti per l'illuminazione<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
