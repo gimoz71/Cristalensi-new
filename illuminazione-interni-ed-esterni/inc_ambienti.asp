@@ -22,7 +22,6 @@ gr_rs.close
 <head>
     <title><%=Title%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="<%=Description%>">
     <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Cerca nel catalogo online di <%=Titolo_2%>: da Cristalensi sconti su tutti i prodotti per l'illuminazione in vendita.<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi.">
