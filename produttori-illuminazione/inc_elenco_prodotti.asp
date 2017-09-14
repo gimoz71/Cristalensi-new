@@ -8,6 +8,7 @@ az_rs.open sql,conn, 1, 1
 if az_rs.recordcount>0 then
   titolo_produttore=az_rs("titolo")
   descrizione_produttore=az_rs("descrizione")
+  file_img=NoLettAcc(az_rs("logo"))
 end if
 az_rs.close
 
@@ -81,11 +82,17 @@ az_rs.close
                 <li class="active"><%=titolo_produttore%></li>
             </ol>
             <h1 class="title"><%=titolo_produttore%></h1>
-            <%if Len(descrizione_produttore)>0 then%>
-            <p class="description">
-                <%=descrizione_produttore%>
-            </p>
-            <%end if%>
+            <div class="description">
+                <img src="/public/<%=file_img%>" style="float: left; background: #ccc; margin-right: 10px;" alt="Catalogo prodotti illuminazione <%=titolo_produttore%>" />
+                <h2>Selezione di prodotti illuminazione dal catalogo di <%=titolo_produttore%></h2>
+                <p>
+                <%if Len(descrizione_produttore)>0 then%>
+                  <%=descrizione_produttore%>
+                <%else%>
+                Dal catalogo di <%=titolo_produttore%> abbiamo selezionato i seguenti prodotti da illuminazione. I produttori hanno spesso molte varianti dello stesso articolo che magari non abbiamo inserito, quindi, se conoscete un prodotto di <%=titolo_produttore%> e non &egrave; qui presente, potete contattare il nostro staff. Noi abbiamo preferito dar spazio a tante marche, dalle pi&ugrave; famose e pi&ugrave; grandi alle realt&agrave; pi&ugrave; piccole dove potete trovare prodotti pi&ugrave; artigianali in modo tale da fornirvi un'ampia variet&agrave; di modelli, design e non ultimo, prezzi.
+                <%end if%>
+                </p>
+            </div>
         </div>
         <div class="col-md-3">
             <div class=" top-buffer">
