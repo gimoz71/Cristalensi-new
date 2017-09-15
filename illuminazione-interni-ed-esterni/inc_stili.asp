@@ -29,7 +29,7 @@ gr_rs.close
 <html>
 
 <head>
-    <title><%=Title%></title>
+    <title><%=Title%> Vendita online <%=Titolo_1_gr%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Da Cristalensi trovi un'ampia offeta di <%=Titolo_2%>: sconti online su tutta la vendita di prodotti per l'illuminazione<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,7 +87,7 @@ gr_rs.close
         <div class="col-xl-12">
             <ol class="breadcrumb">
                 <li><a href="/"><i class="fa fa-home"></i></a></li>
-                <li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
+                <li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>" title="<%=Titolo_1_gr%> - <%=Titolo_2_gr%>"><%=Titolo_2_gr%></a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>
             <h1 class="title"><%=Titolo_2%></h1>

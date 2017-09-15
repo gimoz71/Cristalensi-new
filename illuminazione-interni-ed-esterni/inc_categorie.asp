@@ -100,7 +100,7 @@ gr_rs.close
             <ol class="breadcrumb">
                 <li><a href="/"><i class="fa fa-home"></i></a></li>
                 <li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>" title="<%=Titolo_1_gr%> - <%=Titolo_2_gr%>"><%=Titolo_1_gr%></a></li>
-                <li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_1_tip%></a></li>
+                <li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>" title="<%=Titolo_1_tip%> - <%=Titolo_2_tip%>"><%=Titolo_1_tip%></a></li>
                 <li class="active"><%=Titolo_2%></li>
             </ol>
             <h1 class="title"><%=Titolo_1%></h1>
