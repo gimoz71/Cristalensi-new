@@ -5,7 +5,7 @@
                 <a class="header-logo" href="/">Cristalensi</a>
             </div>
             <SCRIPT language="JavaScript">
-
+            /*
         		function verifica_ricerca() {
 
         			testo_ricerca=document.ricerca_modulo.testo_ricerca.value;
@@ -19,15 +19,23 @@
         		return true
 
         		}
-
+            */
         		</SCRIPT>
             <div class="col-md-8">
-                <form action="/ricerca_avanzata_elenco.asp" class="navbar-form pull-right search-bar" role="search" name="ricerca_modulo" onSubmit="return verifica_ricerca();">
+                <!--<form action="/ricerca_avanzata_elenco.asp" class="navbar-form pull-right search-bar" role="search" name="ricerca_modulo" onSubmit="return verifica_ricerca();">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Nome o codice prodotto" name="testo_ricerca" id="testo_ricerca">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit" style="margin-right: 5px;"><i class="glyphicon glyphicon-search"></i></button>
                             <button class="btn btn-danger" type="button" onClick="location.href='/ricerca_avanzata_elenco.asp'"><i class="glyphicon glyphicon-cog visible-xs-inline-block"></i><span class="hidden-xs"> Ricerca avanzata</span></button>
+                        </div>
+                    </div>
+                </form>-->
+                <form action="/ricerca_avanzata_elenco.asp" class="navbar-form pull-right search-bar" role="search" name="ricerca_modulo">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Nome o codice prodotto" name="testo_ricerca" id="testo_ricerca">
+                        <div class="input-group-btn">
+                            <button class="btn btn-danger" type="submit"><i class="glyphicon glyphicon-search"></i><span class="hidden-xs"> Ricerca avanzata</span></button>
                         </div>
                     </div>
                 </form>
@@ -54,112 +62,112 @@
                                     <div class="row">
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                           <li class="subcategory">
-                                              <a href="/illuminazione-interni-ed-esterni/1nt-lampadari.asp"><h4><strong>Lampadari</strong></h4></a>
+                                              <a href="/illuminazione-interni-ed-esterni/1nt-lampadari.asp" title="Lampadari, Sospensioni e Lampade a sospensione"><h4><strong>Lampadari</strong></h4></a>
                                               <ul class="list-unstyled lampadari">
-                                                  <li><a href="/illuminazione-interni-ed-esterni/1nc-lampadari-moderni.asp">Lampadari <b>moderni</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/2nc-lampadari-a-led.asp">Lampadari <b>a LED</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/3nc-lampadari-classici.asp">Lampadari <b>classici</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/4nc-lampadari-rustici.asp">Lampadari <b>rustici</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/5nc-lampadari-vintage.asp">Lampadari <b>vintage</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/6nc-lampadari-tiffany.asp">Lampadari <b>Tiffany</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/8nc-lampadari-in-cristallo.asp">Lampadari <b>in cristallo</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/7nc-lampadari-murano.asp">Lampadari <b>Murano</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/9nc-lampadari-per-bambini.asp">Lampadari <b>per bambini</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/1nc-lampadari-moderni.asp" title="Lampadari moderni">Lampadari <b>moderni</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/2nc-lampadari-a-led.asp" title="Lampadari a LED">Lampadari <b>a LED</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/3nc-lampadari-classici.asp" title="Lampadari classici">Lampadari <b>classici</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/4nc-lampadari-rustici.asp" title="Lampadari rustici">Lampadari <b>rustici</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/5nc-lampadari-vintage.asp" title="Lampadari vintage">Lampadari <b>vintage</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/6nc-lampadari-tiffany.asp" title="Lampadari Tiffany">Lampadari <b>Tiffany</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/8nc-lampadari-in-cristallo.asp" title="Lampadari in cristallo">Lampadari <b>in cristallo</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/7nc-lampadari-murano.asp" title="Lampadari Murano">Lampadari <b>Murano</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/9nc-lampadari-per-bambini.asp" title="Lampadari per bambini">Lampadari <b>per bambini</b></a></li>
                                               </ul>
                                           </li>
                                         </ul>
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/3nt-plafoniere.asp"><h4><strong>Plafoniere</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/3nt-plafoniere.asp" title="Plafoniere e lampade a soffitto"><h4><strong>Plafoniere</strong></h4></a>
                                                 <ul class="list-unstyled plafoniere">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/13nc-plafoniere-moderne.asp">Plafoniere <b>moderne</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/14nc-plafoniere-a-led.asp">Plafoniere <b>a LED</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/15nc-plafoniere-classiche.asp">Plafoniere <b>classiche</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/16nc-plafoniere-rustiche.asp">Plafoniere <b>rustiche</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/17nc-plafoniere-vintage.asp">Plafoniere <b>vintage</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/19nc-plafoniere-in-cristallo.asp">Plafoniere <b>in cristallo</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/18nc-plafoniere-murano.asp">Plafoniere <b>Murano</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/20nc-plafoniere-in-gesso.asp">Plafoniere <b>in gesso</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/21nc-plafoniere-per-bambini.asp">Plafoniere <b>per bambini</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/13nc-plafoniere-moderne.asp" title="Plafoniere moderne">Plafoniere <b>moderne</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/14nc-plafoniere-a-led.asp" title="Plafoniere a LED">Plafoniere <b>a LED</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/15nc-plafoniere-classiche.asp" title="Plafoniere classiche">Plafoniere <b>classiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/16nc-plafoniere-rustiche.asp" title="Plafoniere rustiche">Plafoniere <b>rustiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/17nc-plafoniere-vintage.asp" title="Plafoniere vintage">Plafoniere <b>vintage</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/19nc-plafoniere-in-cristallo.asp" title="Plafoniere in cristallo">Plafoniere <b>in cristallo</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/18nc-plafoniere-murano.asp" title="Plafoniere Murano">Plafoniere <b>Murano</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/20nc-plafoniere-in-gesso.asp" title="Plafoniere in gesso">Plafoniere <b>in gesso</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/21nc-plafoniere-per-bambini.asp" title="Plafoniere per bambini">Plafoniere <b>per bambini</b></a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/6nt-lampade-da-tavolo.asp"><h4><strong>Lampade da tavolo</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/6nt-lampade-da-tavolo.asp" title="Illuminazione e lampade da tavolo"><h4><strong>Lampade da tavolo</strong></h4></a>
                                                 <ul class="list-unstyled lampade-tavolo">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/41nc-lampade-da-tavolo-moderne.asp">Lampade da tavolo <b>moderne</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/42nc-lampade-da-tavolo-a-led.asp">Lampade da tavolo <b>a LED</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/43nc-lampade-da-tavolo-classiche.asp">Lampade da tavolo <b>classiche</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/44nc-lampade-da-tavolo-rustiche.asp">Lampade da tavolo <b>rustiche</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/45nc-lampade-da-tavolo-vintage.asp">Lampade da tavolo <b>vintage</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/46nc-lampade-da-tavolo-tiffany.asp">Lampade da tavolo <b>Tiffany</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/48nc-lampade-da-tavolo-in-cristallo.asp">Lampade da tavolo <b>in cristallo</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/47nc-lampade-da-tavolo-murano.asp">Lampade da tavolo <b>Murano</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/49nc-lampade-da-tavolo-per-bambini.asp">Lampade da tavolo <b>per bambini</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/41nc-lampade-da-tavolo-moderne.asp" title="Lampade da tavolo moderne">Lampade da tavolo <b>moderne</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/42nc-lampade-da-tavolo-a-led.asp" title="Lampade da tavolo a LED">Lampade da tavolo <b>a LED</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/43nc-lampade-da-tavolo-classiche.asp" title="Lampade da tavolo classiche">Lampade da tavolo <b>classiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/44nc-lampade-da-tavolo-rustiche.asp" title="Lampade da tavolo rustiche">Lampade da tavolo <b>rustiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/45nc-lampade-da-tavolo-vintage.asp" title="Lampade da tavolo vintage">Lampade da tavolo <b>vintage</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/46nc-lampade-da-tavolo-tiffany.asp" title="Lampade da tavolo Tiffany">Lampade da tavolo <b>Tiffany</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/48nc-lampade-da-tavolo-in-cristallo.asp" title="Lampade da tavolo in cristallo">Lampade da tavolo <b>in cristallo</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/47nc-lampade-da-tavolo-murano.asp" title="Lampade da tavolo Murano">Lampade da tavolo <b>Murano</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/49nc-lampade-da-tavolo-per-bambini.asp" title="Lampade da tavolo per bambini">Lampade da tavolo <b>per bambini</b></a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/5nt-piantane.asp"><h4><strong>Piantane</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/5nt-piantane.asp" title="Piantane, luci, illuminazione e lampade da terra"><h4><strong>Piantane</strong></h4></a>
                                                 <ul class="list-unstyled piantane">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/32nc-piantane-moderne.asp">Piantane <b>moderne</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/33nc-piantane-a-led.asp">Piantane <b>a LED</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/34nc-piantane-classiche.asp">Piantane <b>classiche</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/35nc-piantane-rustiche.asp">Piantane <b>rustiche</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/36nc-piantane-vintage.asp">Piantane <b>vintage</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/37nc-piantane-tiffany.asp">Piantane <b>Tiffany</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/39nc-piantane-in-cristallo.asp">Piantane <b>in cristallo</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/38nc-piantane-murano.asp">Piantane <b>Murano</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/40nc-piantane-per-bambini.asp">Piantane <b>per bambini</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/32nc-piantane-moderne.asp" title="Piantane moderne">Piantane <b>moderne</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/33nc-piantane-a-led.asp" title="Piantane a LED">Piantane <b>a LED</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/34nc-piantane-classiche.asp" title="Piantane classiche">Piantane <b>classiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/35nc-piantane-rustiche.asp" title="Piantane rustiche">Piantane <b>rustiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/36nc-piantane-vintage.asp" title="Piantane vintage">Piantane <b>vintage</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/37nc-piantane-tiffany.asp" title="Piantane Tiffany">Piantane <b>Tiffany</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/39nc-piantane-in-cristallo.asp" title="Piantane in cristallo">Piantane <b>in cristallo</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/38nc-piantane-murano.asp" title="Piantane Murano">Piantane <b>Murano</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/40nc-piantane-per-bambini.asp" title="Piantane per bambini">Piantane <b>per bambini</b></a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/2nt-lampadari-a-bracci.asp"><h4><strong>Lampadari a bracci</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/2nt-lampadari-a-bracci.asp" title="Lampadari a bracci e sospensioni con bracci"><h4><strong>Lampadari a bracci</strong></h4></a>
                                                 <ul class="list-unstyled lampadari">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/10nc-lampadari-a-bracci-moderni.asp">Lampadari a bracci <b>moderni</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/11nc-lampadari-a-bracci-classici.asp">Lampadari a bracci <b>classici</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/12nc-lampadari-a-bracci-in-cristallo.asp">Lampadari a bracci <b>in cristallo</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/10nc-lampadari-a-bracci-moderni.asp" title="Lampadari a bracci moderni">Lampadari a bracci <b>moderni</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/11nc-lampadari-a-bracci-classici.asp" title="Lampadari a bracci classici">Lampadari a bracci <b>classici</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/12nc-lampadari-a-bracci-in-cristallo.asp" title="Lampadari a bracci in cristallo">Lampadari a bracci <b>in cristallo</b></a></li>
                                                     <li>&nbsp;</li>
                                                 </ul>
                                             </li>
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/8nt-lampade-allo-specchio.asp"><h4><strong>Lampade allo specchio</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/8nt-lampade-allo-specchio.asp" title="Applique, Luci, Lampade allo specchio"><h4><strong>Lampade allo specchio</strong></h4></a>
                                                 <ul class="list-unstyled lampade-specchio">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/54nc-lampade-allo-specchio-moderne.asp">Lampade allo specchio <b>moderne</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/55nc-lampade-led-allo-specchio.asp">Lampade <b>LED</b> allo specchio</a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/56nc-specchi-con-luce.asp">Specchi <b>con luce</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/54nc-lampade-allo-specchio-moderne.asp" title="Lampade allo specchio moderne">Lampade allo specchio <b>moderne</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/55nc-lampade-led-allo-specchio.asp" title="Lampade LED allo specchio">Lampade <b>LED</b> allo specchio</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/56nc-specchi-con-luce.asp" title="Specchi con luce">Specchi <b>con luce</b></a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/4nt-applique.asp"><h4><strong>Applique</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/4nt-applique.asp" title="Applique e lampade a parete"><h4><strong>Applique</strong></h4></a>
                                                 <ul class="list-unstyled applique">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/22nc-applique-moderne.asp">Applique <b>moderne</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/23nc-applique-a-led.asp">Applique <b>a LED</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/24nc-applique-classiche.asp">Applique <b>classiche</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/25nc-applique-rustiche.asp">Applique <b>rustiche</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/26nc-applique-vintage.asp">Applique <b>vintage</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/27nc-applique-tiffany.asp">Applique <b>Tiffany</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/29nc-applique-in-cristallo.asp">Applique <b>in cristallo</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/28nc-applique-murano.asp">Applique <b>Murano</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/30nc-applique-in-gesso.asp">Applique <b>gesso</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/31nc-applique-per-bambini.asp">Applique <b>per bambini</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/22nc-applique-moderne.asp" title="Applique moderne">Applique <b>moderne</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/23nc-applique-a-led.asp" title="Applique a LED">Applique <b>a LED</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/24nc-applique-classiche.asp" title="Applique classiche">Applique <b>classiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/25nc-applique-rustiche.asp" title="Applique rustiche">Applique <b>rustiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/27nc-applique-tiffany.asp" title="Applique Tiffany">Applique <b>Tiffany</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/26nc-applique-vintage.asp" title="Applique vintage">Applique <b>vintage</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/29nc-applique-in-cristallo.asp" title="Applique in cristallo">Applique <b>in cristallo</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/28nc-applique-murano.asp" title="Applique Murano">Applique <b>Murano</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/30nc-applique-in-gesso.asp" title="Applique gesso">Applique <b>gesso</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/31nc-applique-per-bambini.asp" title="Applique per bambini">Applique <b>per bambini</b></a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="col-sm-6 col-lg-3 col-same-height list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/7nt-faretti-incassi.asp"><h4><strong>Faretti, incassi e binari</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/7nt-faretti-incassi.asp" title="Faretti, incassi e binari, illuminazione a muro"><h4><strong>Faretti, incassi e binari</strong></h4></a>
                                                 <ul class="list-unstyled faretti">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/50nc-faretti-da-incasso.asp">Faretti <b>da incasso</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/53nc-faretti-led-da-incasso.asp">Faretti <b>LED da incasso</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/51nc-faretti-e-binari-a-parete.asp">Faretti a parete e binari</a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/52nc-faretti-e-binari-a-soffitto.asp">Faretti a soffitto e binari</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/50nc-faretti-da-incasso.asp" title="Faretti da incasso">Faretti <b>da incasso</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/53nc-faretti-led-da-incasso.asp" title="Faretti LED da incasso">Faretti <b>LED da incasso</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/51nc-faretti-e-binari-a-parete.asp" title="Faretti a parete e binari">Faretti a parete e binari</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/52nc-faretti-e-binari-a-soffitto.asp" title="Faretti a soffitto e binari">Faretti a soffitto e binari</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -175,7 +183,7 @@
                                                 </ul>
                                             </li>
                                             <li class="subcategory">
-                                                <a href="/offerte.asp" class="offerte">Offerte e Promozioni</a>
+                                                <a href="/offerte.asp" class="offerte" title="Offerte e Promozioni: prodotti illuminazione in offerta">Offerte e Promozioni</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -191,18 +199,18 @@
                                     <div class="row">
                                         <ul class="col-sm-6 col-lg-4 col-same-height list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/10nt-lampade-da-terra-per-esterni.asp"><h4><strong>Lampade da terra per esterni</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/10nt-lampade-da-terra-per-esterni.asp" title="Illuminazione e Lampade da terra per esterni"><h4><strong>Lampade da terra per esterni</strong></h4></a>
                                                 <ul class="list-unstyled piantane">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/68nc-pali-e-lampioni-da-giardino-moderni.asp">Pali e lampioni da giardino <b>moderni</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/67nc-lampade-led-da-terra-per-esterni.asp">Lampade <b>LED</b> da terra per esterni</a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/73nc-lampade-esterne-classiche-da-terra.asp">Lampade esterne <b>classiche</b> da terra</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/68nc-pali-e-lampioni-da-giardino-moderni.asp" title="Pali e lampioni da giardino moderni">Pali e lampioni da giardino <b>moderni</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/67nc-lampade-led-da-terra-per-esterni.asp" title="Lampade LED da terra per esterni">Lampade <b>LED</b> da terra per esterni</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/73nc-lampade-esterne-classiche-da-terra.asp" title="Lampade esterne classiche da terra">Lampade esterne <b>classiche</b> da terra</a></li>
                                                     <li>&nbsp;</li>
                                                 </ul>
                                             </li>
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/14nt-luci-per-arredo-giardino.asp"><h4><strong>Luci per arredo giardino</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/14nt-luci-per-arredo-giardino.asp" title="Illuminazione e Luci per arredo giardino"><h4><strong>Luci per arredo giardino</strong></h4></a>
                                                 <ul class="list-unstyled piantane">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/72nc-lampade-da-arredo-giardino-e-vasi-luminosi.asp">Lampade da arredo giardino e vasi luminosi</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/72nc-lampade-da-arredo-giardino-e-vasi-luminosi.asp" title="Lampade da arredo giardino e vasi luminosi">Lampade da arredo giardino e vasi luminosi</a></li>
                                                     <li>&nbsp;</li>
                                                     <li>&nbsp;</li>
                                                 </ul>
@@ -211,19 +219,19 @@
                                         </ul>
                                         <ul class="col-sm-6 col-lg-4 col-same-height list-unstyled">
                                           <li class="subcategory">
-                                              <a href="/illuminazione-interni-ed-esterni/11nt-applique-da-esterno.asp"><h4><strong>Applique da esterno</strong></h4></a>
+                                              <a href="/illuminazione-interni-ed-esterni/11nt-applique-da-esterno.asp" title="Applique da esterno e Lampade a parete da esterno"><h4><strong>Applique da esterno</strong></h4></a>
                                               <ul class="list-unstyled applique">
-                                                  <li><a href="/illuminazione-interni-ed-esterni/70nc-luci-esterne-a-parete-moderne.asp">Luci esterne a parete <b>moderne</b></a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/65nc-applique-led-per-esterni.asp">Applique <b>LED</b> per esterni</a></li>
-                                                  <li><a href="/illuminazione-interni-ed-esterni/75nc-lampade-esterne-classiche-a-parete.asp">Lampade esterne <b>classiche</b> a parete</a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/70nc-luci-esterne-a-parete-moderne.asp" title="Luci esterne a parete moderne">Luci esterne a parete <b>moderne</b></a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/65nc-applique-led-per-esterni.asp" title="Applique LED per esterni">Applique <b>LED</b> per esterni</a></li>
+                                                  <li><a href="/illuminazione-interni-ed-esterni/75nc-lampade-esterne-classiche-a-parete.asp" title="Lampade esterne classiche a parete">Lampade esterne <b>classiche</b> a parete</a></li>
                                                   <li>&nbsp;</li>
                                               </ul>
                                           </li>
 
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/13nt-faretti-incassi-da-esterno.asp"><h4><strong>Faretti e incassi da esterno</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/13nt-faretti-incassi-da-esterno.asp" title="Faretti e incassi da esterno"><h4><strong>Faretti e incassi da esterno</strong></h4></a>
                                                 <ul class="list-unstyled faretti">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/71nc-lampade-da-incasso-e-faretti-da-esterno.asp">Lampade da incasso e faretti da esterno</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/71nc-lampade-da-incasso-e-faretti-da-esterno.asp" title="Lampade da incasso e faretti da esterno">Lampade da incasso e faretti da esterno</a></li>
                                                     <li>&nbsp;</li>
                                                     <li>&nbsp;</li>
                                                 </ul>
@@ -231,16 +239,16 @@
                                         </ul>
                                         <ul class="col-sm-6 col-lg-4 col-same-height list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/12nt-plafoniere-sospensioni-per-esterni.asp"><h4><strong>Plafoniere e sospensioni per esterni</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/12nt-plafoniere-sospensioni-per-esterni.asp" title="Plafoniere e sospensioni per esterni"><h4><strong>Plafoniere e sospensioni per esterni</strong></h4></a>
                                                 <ul class="list-unstyled plafoniere">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/69nc-plafoniere-esterne-moderne.asp">Plafoniere esterne <b>moderne</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/74nc-lampade-esterne-classiche-a-soffitto.asp">Lampade esterne <b>classiche</b> a soffitto</a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/76nc-lampade-esterne-classiche-a-sospensione.asp">Lampade esterne <b>classiche</b> a sospensione</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/69nc-plafoniere-esterne-moderne.asp" title="Plafoniere esterne moderne">Plafoniere esterne <b>moderne</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/74nc-lampade-esterne-classiche-a-soffitto.asp" title="Lampade esterne classiche a soffitto">Lampade esterne <b>classiche</b> a soffitto</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/76nc-lampade-esterne-classiche-a-sospensione.asp" title="Lampade esterne classiche a sospensione">Lampade esterne <b>classiche</b> a sospensione</a></li>
                                                     <li>&nbsp;</li>
                                                 </ul>
                                             </li>
                                             <li class="subcategory">
-                                                <a href="/novita-illuminazione-ultimi-arrivi.asp"><h4><strong>Novit&agrave; e ultimi arrivi</strong></h4></a>
+                                                <a href="/novita-illuminazione-ultimi-arrivi.asp" title="Novit&agrave; e ultimi arrivi illuminazione"><h4><strong>Novit&agrave; e ultimi arrivi</strong></h4></a>
                                                 <ul class="list-unstyled">
                                                     <li><a href="/illuminazione-interni-ed-esterni/10-novita-lampade-da-giardino-ed-esterni.asp" title="Lampade da giardino ed esterni - Novit&agrave; e ultimi arrivi">Lampade da giardino ed esterni</a></li>
                                                     <li>&nbsp;</li>
@@ -250,9 +258,9 @@
                                         </ul>
                                         <ul class="col-sm-6 col-lg-4 list-unstyled">
                                             <li class="subcategory">
-                                                <a href="/illuminazione-interni-ed-esterni/15nt-lampade-con-pannello-solare.asp"><h4><strong>Lampade con pannello solare</strong></h4></a>
+                                                <a href="/illuminazione-interni-ed-esterni/15nt-lampade-con-pannello-solare.asp" title="Lampade con pannello solare"><h4><strong>Lampade con pannello solare</strong></h4></a>
                                                 <ul class="list-unstyled piantane">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/66nc-lampade-led-con-pannello-solare.asp">Lampade <b>LED</b> con pannello solare</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/66nc-lampade-led-con-pannello-solare.asp" title="Lampade LED con pannello solare">Lampade <b>LED</b> con pannello solare</a></li>
                                                     <li>&nbsp;</li>
                                                     <li>&nbsp;</li>
                                                 </ul>
@@ -275,17 +283,17 @@
                     <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Ventilatori <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
                             <li class="dropdown dropdown-submenu">
-                                <a href="/illuminazione-interni-ed-esterni/16nt-ventilatori-a-soffitto-con-luce.asp" class="dropdown-toggle">Ventilatori a soffitto con luce</a>
+                                <a href="/illuminazione-interni-ed-esterni/16nt-ventilatori-a-soffitto-con-luce.asp" class="dropdown-toggle" title="Ventilatori a soffitto con luce">Ventilatori a soffitto con luce</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/illuminazione-interni-ed-esterni/57nc-ventilatori-a-soffitto-moderni-con-luce.asp">Ventilatori a soffitto <b>moderni</b> con luce</a></li>
-                                    <li><a href="/illuminazione-interni-ed-esterni/58nc-ventilatori-a-soffitto-classici-con-luce.asp">Ventilatori a soffitto <b>classici</b> con luce</a></li>
+                                    <li><a href="/illuminazione-interni-ed-esterni/57nc-ventilatori-a-soffitto-moderni-con-luce.asp" title="Ventilatori a soffitto moderni con luce">Ventilatori a soffitto <b>moderni</b> con luce</a></li>
+                                    <li><a href="/illuminazione-interni-ed-esterni/58nc-ventilatori-a-soffitto-classici-con-luce.asp" title="Ventilatori a soffitto classici con luce">Ventilatori a soffitto <b>classici</b> con luce</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown dropdown-submenu">
-                                <a href="/illuminazione-interni-ed-esterni/17nt-ventilatori-senza-luce.asp" class="dropdown-toggle">Ventilatori senza luce</a>
+                                <a href="/illuminazione-interni-ed-esterni/17nt-ventilatori-senza-luce.asp" class="dropdown-toggle" title="Ventilatori senza luce">Ventilatori senza luce</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/illuminazione-interni-ed-esterni/59nc-ventilatori-a-soffitto-senza-luce.asp">Ventilatori a soffitto senza luce</a></li>
-                                    <li><a href="/illuminazione-interni-ed-esterni/60nc-ventilatori-da-terra-e-da-tavolo.asp">Ventilatori da terra e da tavolo</a></li>
+                                    <li><a href="/illuminazione-interni-ed-esterni/59nc-ventilatori-a-soffitto-senza-luce.asp" title="Ventilatori a soffitto senza luce">Ventilatori a soffitto senza luce</a></li>
+                                    <li><a href="/illuminazione-interni-ed-esterni/60nc-ventilatori-da-terra-e-da-tavolo.asp" title="Ventilatori da terra e da tavolo">Ventilatori da terra e da tavolo</a></li>
                                 </ul>
                             </li>
                         </ul>
