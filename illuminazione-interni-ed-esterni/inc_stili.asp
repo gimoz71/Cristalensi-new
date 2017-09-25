@@ -29,9 +29,9 @@ gr_rs.close
 <html>
 
 <head>
-    <title><%=Title%></title>
+    <title><%=Title%> <%if Len(Titolo_2)>0 and Titolo_2<>Title then%> Vendita online<%else%> Vendita online <%=Titolo_1_gr%><%end if%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="<%=Description%>">
+    <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Da Cristalensi trovi un'ampia offeta di <%=Titolo_1%> <%if Len(Titolo_2)>0 and Titolo_2<>Titolo_1 then%> e <%=Titolo_2%><%end if%>: sconti online su tutta la vendita di prodotti per l'illuminazione<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -87,14 +87,16 @@ gr_rs.close
         <div class="col-xl-12">
             <ol class="breadcrumb">
                 <li><a href="/"><i class="fa fa-home"></i></a></li>
-                <li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
-                <li class="active"><%=Titolo_2%></li>
+                <li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>" title="<%=Titolo_1_gr%> - <%=Titolo_2_gr%>"><%=Titolo_1_gr%></a></li>
+                <li class="active"><%=Titolo_1%></li>
             </ol>
-            <h1 class="title"><%=Titolo_2%></h1>
+            <h1 class="title"><%=Titolo_1%></h1>
             <%if Len(Descrizione)>0 then%>
-            <p class="description">
-                <%=Descrizione%>
-            </p>
+            <div class="description">
+                <%if Len(Img)>0 then%><img src="/public/<%=img%>" style="float: left; width: 200px; height: 150px; background: #ccc; margin-right: 10px;" alt="<%=Titolo_1%><%if Len(Titolo_2)>0 then%><%=" - "&Titolo_2%><%end if%>" /><%end if%>
+                <%if Len(Titolo_2)>0 then%><h2><%=Titolo_2%></h2><%end if%>
+                <p><%=Descrizione%></p>
+            </div>
             <%end if%>
         </div>
         <div class="col-md-3">

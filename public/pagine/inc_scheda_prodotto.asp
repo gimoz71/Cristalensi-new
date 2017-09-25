@@ -207,9 +207,9 @@ end if
 			<div class="col-md-10 col-md-push-2">
 		        <ol class="breadcrumb">
 						<li><a href="/"><i class="fa fa-home"></i></a></li>
-						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>"><%=Titolo_2_gr%></a></li>
-						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>"><%=Titolo_2_tip%></a></li>
-						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_cat%>"><%=Titolo_2_cat%></a></li>
+						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>" title="<%=Titolo_1_gr%> - <%=Titolo_2_gr%>"><%=Titolo_1_gr%></a></li>
+						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>" title="<%=Titolo_1_tip%> - <%=Titolo_2_tip%>"><%=Titolo_1_tip%></a></li>
+						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_cat%>" title="<%=Titolo_1_cat%>"><%=Titolo_1_cat%></a></li>
 						<li class="active"><%=Titolo_prodotto%></li>
 		        </ol>
 			</div>
@@ -282,7 +282,7 @@ end if
 																<div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img alt="900x550" src="/images/blank.png"></a>
+                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img alt="900x550" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -298,7 +298,7 @@ end if
 																<div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=codicearticolo%> - <%=produttore%>"><img alt="900x550" src="/images/blank.png"></a>
+                                            <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=Titolo_prodotto%> - <%=produttore%>"><img alt="900x550" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
                                         </div>
                                     </div>
                                 </div>

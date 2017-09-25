@@ -85,7 +85,7 @@ Scegliendo un produttore vedrete l'elenco dei suoi prodotti, da l&igrave; potete
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="<%=url%>" title="<%=titolo%>"><h1><%=titolo%></h1></a>
+                                  <a href="<%=url%>" title="<%=titolo%>"><h3><%=titolo%></h3></a>
                               </div>
                           </div>
 

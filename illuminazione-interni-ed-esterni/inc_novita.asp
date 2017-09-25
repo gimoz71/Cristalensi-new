@@ -49,7 +49,7 @@ end if
 <head>
     <title><%=Title%> Novit&agrave; ultimi arrivi illuminazione</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="<%=Description%>">
+    <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Shop online di <%=Titolo_2%>: da Cristalensi sconti su tutte le novit&agrave; e gli ultimi arrivi per l'illuminazione. Vendita online di <%=Titolo_2%>.<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
