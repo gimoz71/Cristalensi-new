@@ -326,7 +326,7 @@ end if
                           <div class="row">
                               <div class="price-details col-md-6">
                                   <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
-                                  <p class="details">codice: <b><%=codicearticolo%></b><br /><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
+                                  <p class="details"><span>codice: <b><%=codicearticolo%></b></span><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />

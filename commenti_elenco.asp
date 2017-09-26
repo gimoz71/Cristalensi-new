@@ -28,10 +28,9 @@
     <meta name="theme-color" content="#ffffff">
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="stylesheets/customization.css" shim-shadowdom>
+    <link rel="stylesheet" type="text/css" href="stylesheets/camera.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
-    <link rel="import" href="awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";
@@ -122,68 +121,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row top-buffer">
-                <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Cosa stai cercando?</span></h4>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 ">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/slider1.png)" title="Lampade da interno"><img alt="Lampade da interno" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="category col-md-6">
-                                    <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" title="Lampade da interno"><h1>Lampade da interno</h1></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/LED.jpg)" title="Lampade da esterno"><img alt="Lampade da esterno" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="category col-md-6">
-                                    <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno"><h1>Lampade da esterno</h1></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/est.jpg)"><img alt="900x550" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="category col-md-6">
-                                    <a href="#"><h1>Ventilatori</h1></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 ">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/slider1.png)"><img alt="descrizione lampadario" src="images/blank.png"></a>
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="category col-md-6">
-                                    <a href="#"><h1>Lampadine, driver e strisce</h1></a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
         </div>
     </div>
     <!--#include file="inc_footer.asp"-->

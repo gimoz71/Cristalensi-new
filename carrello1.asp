@@ -216,7 +216,7 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
-	<link href="stylesheets/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="stylesheets/jquery.fancybox.min.css" media="screen" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/customization.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
