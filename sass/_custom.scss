@@ -213,7 +213,9 @@
 .top-buffer {
     margin-top: 25px;
 }
-
+.bottom-buffer {
+    margin-bottom: 25px;
+}
 .gap {
     & > [class*=" col-"],
     & > [class^="col-"] {
@@ -839,6 +841,10 @@ hr.style-two {
 .subtitle {
     position: relative;
     width   : 50%;
+    float: left;
+    @media (max-width: $screen-sm) {
+        float: none;
+    }
 
     span {
         display         : inline-block;
@@ -1450,12 +1456,10 @@ hr.style-two {
 }
 
 #top-link-block {
-    position: fixed;
-    /* allows it to "slide" up into view */
-    bottom  : 10px;
-    /* negative of the offset - height of link element */
-    left    : 10px;
-    /* padding from the left side of the window */
+    position: fixed;/* allows it to "slide" up into view */
+    bottom  : 10px;/* negative of the offset - height of link element */
+    left    : 10px;/* padding from the left side of the window */
+    z-index: 1000;
 }
 
 .price-new {

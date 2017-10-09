@@ -83,7 +83,7 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Cosa stai cercando?</span></h4>
+                    <h4 class="subtitle"><div class="dot"></div><span>Cosa stai cercando?</span></h4>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
@@ -144,7 +144,8 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="/offerte.asp" class="btn btn-default pull-right" title="Offerte e prodotti in promozione">Vedi tutte le Offerte <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="/offerte.asp" class="btn btn-default pull-right hidden-xs" title="Offerte e prodotti in promozione">Vedi tutte le Offerte <i class="fa fa-chevron-right"></i></a>
+                    <a href="offerte.asp" class="btn btn-default btn-block hidden visible-xs bottom-buffer" style="">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 'random prodotti in offerta
@@ -259,7 +260,8 @@
             %>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle pull-left"><div class="dot"></div><span>Novit&Agrave; illuminazione e ultimi arrivi</span></h4> <a href="/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-default pull-right" title="Novit&Agrave; illuminazione e ultimi arrivi">Vedi tutte le Novit&agrave; <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle"><div class="dot"></div><span>Novit&Agrave; illuminazione e ultimi arrivi</span></h4> <a href="/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-default pull-right hidden-xs" title="Novit&Agrave; illuminazione e ultimi arrivi">Vedi tutte le Novit&agrave; <i class="fa fa-chevron-right"></i></a>
+                    <a href="/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-default btn-block hidden visible-xs bottom-buffer" style="">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 Do while not prod_rs.EOF

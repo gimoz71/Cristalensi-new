@@ -37,10 +37,10 @@ $(window).scroll(function (event) {
     if ($(".parentOverflowContainer").css("float") == "left") {
         var scroll = $(window).scrollTop();
         if (scroll >= upperMenuTot){
-            $(".content").css("margin-top", "175px");
+            // $(".content").css("margin-top", "175px");
             $('#top-link-block').removeClass('hidden');
         } else {
-            $(".content").css("margin-top", "0px");
+            // $(".content").css("margin-top", "0px");
             $('#top-link-block').addClass('hidden');
 
         };
