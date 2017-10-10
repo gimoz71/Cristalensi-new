@@ -302,6 +302,7 @@ end if
                       pr_rs.open sql,conn, 1, 1
                       if pr_rs.recordcount>0 then
                         produttore=pr_rs("titolo")
+												url_produttore="/produttori-illuminazione/"&ConvertiTitoloInUrlProduttore(produttore, fkproduttore_pr)
                       end if
                       pr_rs.close
                     end if
