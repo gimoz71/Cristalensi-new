@@ -809,7 +809,7 @@ End If
 										<br>
 										<strong>BANCA DI CREDITO COOPERATIVO DI CAMBIANO AG. MONTELUPO FIORENTINO<br>IBAN: IT33E0842537960000030277941<br>
 										Codice BIC/SWIFT: CRACIT33</strong>
-										<br><br>Nella causale indicare: "<strong>Ordine da sito internet n° 30661</strong>"<br><br>
+										<br><br>Nella causale indicare: "<strong>Ordine da sito internet n° <%=idordine%></strong>"<br><br>
 										Beneficiario:<br><strong>Cristalensi Snc di Lensi Massimiliano &amp; C. (P.Iva e C.Fiscale 05305820481)<br>
 										Via arti e mestieri, 1 - 50056 Montelupo F.no (FI)</strong>
 										<br><br>
