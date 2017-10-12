@@ -5,9 +5,9 @@
 <head>
     <title>Vendita lampadari online illuminazione da interni illuminazione da esterni</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Cristalensi, showroom di lampade vicino Firenze, specialzzato in vendita di lampari online, prodotti per illuminazione da interno, illuminazione da esterno, piantane, plafoniere, ventilatori.">
+    <meta name="description" content="Cristalensi, showroom di lampade vicino Firenze, specializzato in vendita di lampari online, prodotti per illuminazione da interno, illuminazione da esterno, piantane, plafoniere, ventilatori.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="Cristalensi, showroom di lampade vicino Firenze, specialzzato in vendita di lampari online, prodotti per illuminazione da interno, illuminazione da esterno, piantane, plafoniere, ventilatori.">
+    <meta property="og:description" content="Cristalensi, showroom di lampade vicino Firenze, specializzato in vendita di lampari online, prodotti per illuminazione da interno, illuminazione da esterno, piantane, plafoniere, ventilatori.">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />

@@ -11,7 +11,7 @@
 <html>
 
 <head>
-    <title>Novit&agrave; illuminazione ultimi arrivi lampadari lampade novità CRISTALENSI vendita online</title>
+    <title>Novit&agrave; illuminazione ultimi arrivi lampadari lampade novit&agrave; CRISTALENSI vendita online</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Vuoi sapere quali sono gli ultimi arrivi di lampadari e lampade, le novit&agrave; per l'illuminazione? Cristalensi ha un catalogo molto ampio: tra le lampade moderne, lampadari e lampade a sospensione led, plafoniere, lampade a parete e applique, piantane, lumini e abat-jour.">
     <meta name="viewport" content="width=device-width, initial-scale=1">

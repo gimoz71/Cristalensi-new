@@ -318,38 +318,38 @@
                     </li>
                     <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Stili <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/illuminazione-interni-ed-esterni/1ns-lampade-moderne-per-interni.asp">Lampade moderne per interni</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/2ns-lampade-led-da-interni.asp">Lampade LED da interni</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/3ns-lampade-classiche-da-interni.asp">Lampade classiche da interni</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/4ns-lampade-rustiche.asp">Lampade rustiche</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/5ns-lampade-vintage.asp">Lampade vintage</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/6ns-lampade-tiffany.asp">Lampade Tiffany</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/7ns-lampade-murano.asp">Lampade Murano</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/8ns-lampade-in-cristallo.asp">Lampade in cristallo</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/9ns-lampade-in-gesso.asp">Lampade in gesso</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/10ns-lampade-per-bambini.asp">Lampade per bambini</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/11ns-lampade-moderne-per-esterni.asp">Lampade moderne per esterni</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/12ns-lampade-led-per-esterni.asp">Lampade LED per esterni</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/13ns-lampade-classiche-per-esterni.asp">Lampade classiche per esterni</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/1ns-lampade-moderne-per-interni.asp" title="Lampade moderne per interni">Lampade moderne per interni</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/2ns-lampade-led-da-interni.asp" title="Lampade LED da interni">Lampade LED da interni</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/3ns-lampade-classiche-da-interni.asp" title="Lampade classiche da interni">Lampade classiche da interni</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/4ns-lampade-rustiche.asp" title="Lampade rustiche">Lampade rustiche</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/5ns-lampade-vintage.asp" title="Lampade vintage">Lampade vintage</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/6ns-lampade-tiffany.asp" title="Lampade Tiffany">Lampade Tiffany</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/7ns-lampade-murano.asp" title="Lampade Murano">Lampade Murano</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/8ns-lampade-in-cristallo.asp" title="Lampade in cristallo">Lampade in cristallo</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/9ns-lampade-in-gesso.asp" title="Lampade in gesso">Lampade in gesso</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/10ns-lampade-per-bambini.asp" title="Lampade per bambini">Lampade per bambini</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/11ns-lampade-moderne-per-esterni.asp" title="Lampade moderne per esterni">Lampade moderne per esterni</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/12ns-lampade-led-per-esterni.asp" title="Lampade LED per esterni">Lampade LED per esterni</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/13ns-lampade-classiche-per-esterni.asp" title="Lampade classiche per esterni">Lampade classiche per esterni</a></li>
                         </ul>
                     </li>
                     <li class="nav-user dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Ambienti <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/illuminazione-interni-ed-esterni/1na-lampade-soggiorno.asp">Soggiorno</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/2na-lampade-cucina.asp">Cucina</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/3na-lampade-camera-da-letto.asp">Camera da letto</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/4na-lampade-cameretta.asp">Cameretta</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/5na-lampade-bagno.asp">Bagno</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/6na-lampade-ingresso.asp">Ingresso</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/7na-lampade-corridoio-scale.asp">Corridoio e scale</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/8na-lampade-ufficio-studio.asp">Ufficio e studio</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/9na-lampade-taverna.asp">Taverna</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/10na-lampade-giardino.asp">Giardino</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/11na-lampade-terrazzo.asp">Terrazzo e balcone</a></li>
-                            <li><a href="/illuminazione-interni-ed-esterni/12na-lampade-loggiato.asp">Loggiato</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/1na-lampade-soggiorno.asp" title="Lampade per soggiorno e salotto">Soggiorno</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/2na-lampade-cucina.asp" title="Lampade per cucina">Cucina</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/3na-lampade-camera-da-letto.asp" title="Lampade per camera da letto">Camera da letto</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/4na-lampade-cameretta.asp" title="Lampade per cameretta">Cameretta</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/5na-lampade-bagno.asp" title="Lampade per il bagno">Bagno</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/6na-lampade-ingresso.asp" title="Lampade per ingresso">Ingresso</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/7na-lampade-corridoio-scale.asp" title="Lampade per corridoio e scale">Corridoio e scale</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/8na-lampade-ufficio-studio.asp" title="Lampade da ufficio e studio">Ufficio e studio</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/9na-lampade-taverna.asp" title="Lampade per taverna">Taverna</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/10na-lampade-giardino.asp" title="Lampade da giardino">Giardino</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/11na-lampade-terrazzo.asp" title="Lampade per terrazzo e balcone">Terrazzo e balcone</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/12na-lampade-loggiato.asp" title="Lampade per loggiato">Loggiato</a></li>
                         </ul>
                     </li>
-                    <li class="nav-user"><a href="/produttori.asp">Produttori</a></li>
+                    <li class="nav-user"><a href="/produttori.asp" title="Produttori articoli illuminazione">Produttori</a></li>
 
                     <%if idsession>0 then%>
                       <li class="nav-user visible-xs"><a href="/admin/logout.asp">LOG OUT</a></li>

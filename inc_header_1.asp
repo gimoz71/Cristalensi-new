@@ -4,8 +4,8 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Contattaci <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-earphone"></span> +39.0571.911163</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a></li>
+                        <li><a href="tel:+390571911163"><span class="glyphicon glyphicon-earphone"></span> +39.0571.911163</a></li>
+                        <li><a href="mailto:info@cristalensi.it"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a></li>
                         <li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
                         <li><a href="/chi_siamo.asp"><span class="glyphicon glyphicon-star"></span> Chi siamo</a></li>
                         <li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
@@ -28,8 +28,8 @@
 <nav class="navbar navbar-inverse menu-aux hidden-xs first-top-menu">
     <div class="container">
         <ul class="nav nav-justified">
-            <li><a href="#"><span class="glyphicon glyphicon-earphone"></span> +39.0571.911163</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a></li>
+            <li><a href="tel:+390571911163"><span class="glyphicon glyphicon-earphone"></span> +39.0571.911163</a></li>
+            <li><a href="mailto:info@cristalensi.it"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a></li>
             <li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
             <li><a href="/chi_siamo.asp"><span class="glyphicon glyphicon-star"></span> Chi siamo</a></li>
             <li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
@@ -45,7 +45,7 @@
 <nav class="navbar navbar-inverse service-menu hidden-xs last-top-menu">
     <div class="container">
         <ul class="nav nav-justified">
-            <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li><a href="/" title="Cristalensi, vendita lampadari online"><span class="glyphicon glyphicon-home"></span> Home</a></li>
             <%if idsession>0 then%>
               <li><a href="/admin/logout.asp"><span class="glyphicon glyphicon-log-in"></span> LOG OUT</a></li>
             <%else%>

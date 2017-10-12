@@ -24,16 +24,16 @@
             <div class="col-md-3 menu-col">
                 <h4>Cosa cerchi?</h4>
                 <ul>
-                    <li><a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp">Lampade da interno</a></li>
-                    <li><a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp">Lampade da esterno</a></li>
-                    <li><a href="/illuminazione-interni-ed-esterni/3ng-ventilatori.asp">Ventiltori</a></li>
-                    <li><a href="/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp">Lampadine e componenti</a></li>
+                    <li><a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" title="Lampade da interno e illuminazione interni">Lampade da interno</a></li>
+                    <li><a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" title="Lampade da esterno e illuminazione esterni">Lampade da esterno</a></li>
+                    <li><a href="/illuminazione-interni-ed-esterni/3ng-ventilatori.asp" title="Ventiltori">Ventiltori</a></li>
+                    <li><a href="/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp" title="Lampadine e componenti">Lampadine e componenti</a></li>
                     <li>&nbsp;</li>
                 </ul>
                 <h4>Oppure cerca in</h4>
                 <ul>
-                    <li><a href="/offerte.asp">Offerte</a></li>
-                    <li><a href="/novita-illuminazione-ultimi-arrivi.asp">Novit&agrave; e ultimi arrivi</a></li>
+                    <li><a href="/offerte.asp" title="Offerte prodotti illuminazione">Offerte</a></li>
+                    <li><a href="/novita-illuminazione-ultimi-arrivi.asp" title="Novit&agrave; illuminazione e ultimi arrivi lampadari">Novit&agrave; e ultimi arrivi</a></li>
                 </ul>
             </div>
             <div class="col-md-3 menu-col">
