@@ -482,8 +482,8 @@
                                 </div>
                             </div>
                             <div class="form-group clearfix">
-                                <div class="col-sm-offset-4 col-sm-8">
-                                    <label>Provincia</label>
+																<label for="provincia_sp" class="col-sm-4 control-label">Provincia</label>
+																<div class="col-sm-8">
 									<%
 									Set prov_rs = Server.CreateObject("ADODB.Recordset")
 									sql = "SELECT * FROM Province order by Provincia ASC"
@@ -507,38 +507,38 @@
 									%>
                                 </div>
                             </div>
-							<div class="form-group clearfix">
-                                <div class="col-sm-offset-4 col-sm-8">
-                                    <label class="control-label">Nazione</label>
-									<%
-									Set naz_rs = Server.CreateObject("ADODB.Recordset")
-									sql = "SELECT * FROM Nazioni order by Nazione ASC"
-									naz_rs.Open sql, conn, 1, 1
-									if naz_rs.recordcount>0 then
-									%>
-									<select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Nazione" name="nazione_sp" id="nazione_sp">
-										<option title="" value="">Selezionare una Nazione</option>
-										<%
-										Do While Not naz_rs.EOF
+														<div class="form-group clearfix">
+																<label for="nazione_sp" class="col-sm-4 control-label">Nazione</label>
+																<div class="col-sm-8">
+																<%
+																Set naz_rs = Server.CreateObject("ADODB.Recordset")
+																sql = "SELECT * FROM Nazioni order by Nazione ASC"
+																naz_rs.Open sql, conn, 1, 1
+																if naz_rs.recordcount>0 then
+																%>
+																<select class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Nazione" name="nazione_sp" id="nazione_sp">
+																	<option title="" value="">Selezionare una Nazione</option>
+																	<%
+																	Do While Not naz_rs.EOF
 
-											if TipoTrasportoScelto<4 and naz_rs("codice")="IT" then
-												selected="OK"
-											end if
-											if nazione_sp=naz_rs("codice") then
-												selected="OK"
-											end if
-										%>
-										<option title="<%=naz_rs("codice")%>" value=<%=naz_rs("codice")%> <%if selected="OK" then%> selected<%end if%>><%=naz_rs("Nazione")%></option>
-										<%
-											selected=""
-										naz_rs.movenext
-										loop
-										%>
-									</select>
-									<%
-									end if
-									naz_rs.close
-									%>
+																		if TipoTrasportoScelto<4 and naz_rs("codice")="IT" then
+																			selected="OK"
+																		end if
+																		if nazione_sp=naz_rs("codice") then
+																			selected="OK"
+																		end if
+																	%>
+																	<option title="<%=naz_rs("codice")%>" value=<%=naz_rs("codice")%> <%if selected="OK" then%> selected<%end if%>><%=naz_rs("Nazione")%></option>
+																	<%
+																		selected=""
+																	naz_rs.movenext
+																	loop
+																	%>
+																</select>
+																<%
+																end if
+																naz_rs.close
+																%>
                                 </div>
                             </div>
 					</div>
@@ -558,7 +558,7 @@
 
 								</div>
 								<%if rs.recordcount>0 then%>
-                <a href="/carrello1.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
+                <a href="/carrello2.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
                 <a href="#" class="btn btn-danger pull-right" onClick="<%if stato_ordine=22 then%>Continua();<%else%>CalcoloSpedizione();<%end if%>"><%if stato_ordine=22 then%>clicca qui per continuare l'acquisto<%else%>clicca qui per il calcolo del costo di spedizione<%end if%> <i class="glyphicon glyphicon-chevron-right"></i></a>
 								<%end if%>
             </div>

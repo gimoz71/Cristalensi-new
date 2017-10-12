@@ -68,7 +68,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="ordini_elenco.asp"><h1>Elenco ordini</h1></a>
+                                    <a href="ordini_elenco.asp"><h3>Elenco ordini</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="#"><h1>Lista dei desideri</h1></a>
+                                    <a href="#"><h3>Lista dei desideri</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="commenti_form.asp"><h1>Inserisci un commento</h1></a>
+                                    <a href="commenti_form.asp"><h3>Inserisci un commento</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="iscrizione.asp"><h1>Modifica dati iscrizione</h1></a>
+                                    <a href="iscrizione.asp"><h3>Modifica dati iscrizione</h3></a>
                                 </div>
                             </div>
                         </div>

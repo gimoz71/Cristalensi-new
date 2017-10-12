@@ -508,8 +508,9 @@
                                 </div>
                             </div>
                             <div class="form-group clearfix">
-                                <div class="col-sm-offset-4 col-sm-8">
-                                    <label>Provincia</label>
+																<label for="provincia_sp" class="col-sm-4 control-label">Provincia</label>
+																<div class="col-sm-8">
+
 									<%
 									Set prov_rs = Server.CreateObject("ADODB.Recordset")
 									sql = "SELECT * FROM Province order by Provincia ASC"
@@ -533,38 +534,45 @@
 									%>
                                 </div>
                             </div>
-							<div class="form-group clearfix">
-                                <div class="col-sm-offset-4 col-sm-8">
-                                    <label class="control-label">Nazione</label>
-									<%
-									Set naz_rs = Server.CreateObject("ADODB.Recordset")
-									sql = "SELECT * FROM Nazioni order by Nazione ASC"
-									naz_rs.Open sql, conn, 1, 1
-									if naz_rs.recordcount>0 then
-									%>
-									<select class="selectpicker show-menu-arrow  show-tick" data-size="7" title="Nazione" name="nazione_sp" id="nazione_sp">
-										<option title="" value="">Selezionare una Nazione</option>
-										<%
-										Do While Not naz_rs.EOF
+														<div class="form-group clearfix">
+																<label for="nazione_sp" class="col-sm-4 control-label">Nazione</label>
+																<div class="col-sm-8">
 
-											if TipoTrasportoScelto<4 and naz_rs("codice")="IT" then
-												selected="OK"
-											end if
-											if nazione_sp=naz_rs("codice") then
-												selected="OK"
-											end if
-										%>
-										<option title="<%=naz_rs("codice")%>" value=<%=naz_rs("codice")%> <%if selected="OK" then%> selected<%end if%>><%=naz_rs("Nazione")%></option>
-										<%
-											selected=""
-										naz_rs.movenext
-										loop
-										%>
-									</select>
-									<%
-									end if
-									naz_rs.close
-									%>
+																		<%if TipoTrasportoScelto<4 then%>
+																				<input type="text" class="form-control" name="nazione_sp" id="nazione_sp" value="ITALIA" readonly>
+																		<%else%>
+
+																				<%
+																				Set naz_rs = Server.CreateObject("ADODB.Recordset")
+																				sql = "SELECT * FROM Nazioni order by Nazione ASC"
+																				naz_rs.Open sql, conn, 1, 1
+																				if naz_rs.recordcount>0 then
+																				%>
+																				<select class="selectpicker show-menu-arrow  show-tick" data-size="7" title="Nazione" name="nazione_sp" id="nazione_sp">
+																					<option title="" value="">Selezionare una Nazione</option>
+																					<%
+																					Do While Not naz_rs.EOF
+
+																						'if TipoTrasportoScelto<4 and naz_rs("codice")="IT" then
+																							'selected="OK"
+																						'end if
+																						if nazione_sp=naz_rs("codice") then
+																							selected="OK"
+																						end if
+																					%>
+																					<option title="<%=naz_rs("codice")%>" value=<%=naz_rs("codice")%> <%if selected="OK" then%> selected<%end if%>><%=naz_rs("Nazione")%></option>
+																					<%
+																						selected=""
+																					naz_rs.movenext
+																					loop
+																					%>
+																				</select>
+																				<%
+																				end if
+																				naz_rs.close
+																				%>
+
+																		<%end if%>
                                 </div>
                             </div>
 						<%end if%>
