@@ -539,7 +539,7 @@
 																<div class="col-sm-8">
 
 																		<%if TipoTrasportoScelto<4 then%>
-																				<input type="text" class="form-control" name="nazione_sp" id="nazione_sp" value="ITALIA" readonly>
+																				<input type="text" class="form-control" name="nazione_sp" id="nazione_sp" value="IT" readonly>
 																		<%else%>
 
 																				<%
