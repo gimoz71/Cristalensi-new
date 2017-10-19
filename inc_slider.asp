@@ -24,8 +24,9 @@
             </p>
         </div>
         <div class="banner consegne overflowContainer">
-            <h3 class="title">Consegne</h3>
-            <p class="text">confezionamento accurato e spedizione assicurata GRATUITA in tutta Italia per ordini superiori a 250&euro;</p>
+            <h3 class="title">SPEDIZIONI</h3>
+            <!--<p class="text">confezionamento accurato e spedizione assicurata GRATUITA in tutta Italia per ordini superiori a 250&euro;</p>-->
+            <p class="text">spedizione assicurata in tutta Italia per ordini superiori a 250&euro;: <u>ZERO COSTI</u><br />Per ordini fino a 250&euro;: 10&euro;</p>
         </div>
     </div>
 </div>

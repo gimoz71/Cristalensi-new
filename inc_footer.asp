@@ -60,7 +60,8 @@
                 </ul>
                 <h4>Spedizioni</h4>
                 <ul class="checklist">
-                    <li>Spedizioni assicurate GRATUITE in tutta Italia per ordini superiori a 250&euro;</li>
+                    <li>Spedizioni assicurate <strong>GRATUITE</strong> in tutta Italia per ordini superiori a 250&euro;</li>
+                    <li>Spedizioni assicurate in tutta Italia per ordini fino a 250&euro;: <strong>10&euro;</strong></li>
                 </ul>
                 <h4>Pagamenti accettati</h4>
                 <ul class="checklist">
