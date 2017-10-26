@@ -273,6 +273,7 @@ if mode=1 then
 
 		if prov=0 and errore=0 then response.redirect("/areaprivata.asp")
 		if prov=1 and errore=0 then response.redirect("/carrello2.asp")
+		if prov=2 and errore=0 then response.redirect("/preferiti.asp")
 end if
 
 	'if mode=2 and pkid=0 then response.Redirect("iscrizione.asp")
@@ -357,6 +358,7 @@ end if
 
     if prov=0 and errore=0 then response.redirect("/areaprivata.asp")
     if prov=1 and errore=0 then response.redirect("/carrello2.asp")
+		if prov=2 and errore=0 then response.redirect("/preferiti.asp")
   'else
   	'nome_log=Session("nome_log")
   	'idsession=Session("idCliente")
