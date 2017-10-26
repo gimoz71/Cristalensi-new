@@ -116,15 +116,15 @@
                 <div class="title">
                     <h4>Ordine n. <%=idordine%> - Data <%=Left(DataAggiornamento, 10)%></h4>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12" style="padding: 0px 10px 0px 45px;">
                     <div class="top-buffer">
                         <table id="cart" class="table table-hover table-condensed table-cart">
                             <thead>
                                 <tr>
-                                    <th style="width:50%">Prodotto</th>
+                                    <th style="width:60%">Prodotto</th>
                                     <th style="width:10%" class="text-center">Quantit&agrave;</th>
-                                    <th style="width:20%" class="text-center">Prezzo unitario</th>
-                                    <th style="width:20%" class="text-center">Totale prodotto</th>
+                                    <th style="width:15%" class="text-center">Prezzo unitario</th>
+                                    <th style="width:15%" class="text-center">Totale prodotto</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -146,7 +146,7 @@
                                     <td data-th="Product" class="cart-product">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h5 class="nomargin">[<%=rs("codicearticolo")%>]&nbsp;<%=rs("titolo")%></h5>
+                                                <h5 class="nomargin" style="font-size: 13px;">[<%=rs("codicearticolo")%>]&nbsp;<%=rs("titolo")%></h5>
                                                 <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>&nbsp;Col.:&nbsp;<%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%>&nbsp;-&nbsp;Lamp.:&nbsp;<%=rs("lampadina")%><%end if%></p><%end if%>
                                             </div>
                                         </div>
@@ -172,12 +172,14 @@
                                 <tr class="visible-xs">
                                     <td></td>
                                     <td></td>
-                                    <td colspan="2" class="text-center"><strong>Totale Carrello <%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
+                                    <td class="text-center"><strong>Totale Carrello</strong></td>
+																		<td class="text-center"><strong><%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
                                 </tr>
                                 <tr class="hidden-xs">
                                     <td></td>
                                     <td></td>
-                                    <td colspan="2" class="text-center"><strong>Totale Carrello <%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
+																		<td class="text-center"><strong>Totale Carrello</strong></td>
+																		<td class="text-center"><strong><%=FormatNumber(TotaleCarrello,2)%>&euro;</strong></td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
@@ -189,7 +191,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="row top-buffer">
+                <div class="row top-buffer" style="padding: 0px 10px 0px 45px;">
                     <div class="col-md-6">
                         <div class="col-md-12 top-buffer">
                             <table id="cart" class="table table-hover table-condensed table-cart">
