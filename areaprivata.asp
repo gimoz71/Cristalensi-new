@@ -77,12 +77,12 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="#" class="prod-img-replace" style="background-image: url(images/logo-cristalensi-piccolo.png)"><img alt="Lista dei desideri" src="images/blank.png"></a>
+                            <a href="/preferiti.asp" class="prod-img-replace" style="background-image: url(images/logo-cristalensi-piccolo.png)"><img alt="Lista dei desideri" src="images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
                                 <div class="category col-md-6">
-                                    <a href="#"><h3>Lista dei desideri</h3></a>
+                                    <a href="/preferiti.asp"><h3>Lista dei desideri</h3></a>
                                 </div>
                             </div>
                         </div>

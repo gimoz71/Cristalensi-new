@@ -20,6 +20,10 @@
 			sql = "SELECT * FROM Prodotti where PkId="&id
 			ts.Open sql, conn, 1, 1
 				PrezzoProdotto=ts("PrezzoProdotto")
+				PrezzoListino=ts("PrezzoListino")
+				if PrezzoProdotto=0 or isNull(PrezzoProdotto) then
+					PrezzoProdotto=PrezzoListino
+				end if
 				Titolo=ts("Titolo")
 				CodiceArticolo=ts("CodiceArticolo")
 				NomePagina=ts("NomePagina")
@@ -164,7 +168,7 @@
                                         <td data-th="Price" class="hidden-xs"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&euro;</td>
                                         <td class="actions" data-th="">
                                             <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>
-                                            <button class="btn btn-info btn-sm" type="button" onClick="location.href='<%=NomePagina%>'"><i class="fa fa-refresh"></i></button>
+                                            <button class="btn btn-info btn-sm" type="button" onClick="location.href='<%=NomePagina%>'"><i class="fa fa-shopping-cart"></i></button>
                                         </td>
                                     </tr>
 																		</form>
@@ -174,6 +178,12 @@
 																		%>
 
 																	</tbody>
+																	<tfoot>
+	                                    <tr>
+	                                        <td><a href="/<%=fromURL%>" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
+	                                        <td colspan="2" class="hidden-xs"></td>
+	                                    </tr>
+	                                </tfoot>
 
 																<%else%>
 																	<tbody>

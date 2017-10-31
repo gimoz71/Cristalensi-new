@@ -354,12 +354,12 @@
                     <%if idsession>0 then%>
                       <li class="nav-user visible-xs"><a href="/admin/logout.asp">LOG OUT</a></li>
                     <%else%>
-                      <li class="nav-user visible-xs"><a href="/iscrizione.asp">Accedi/iscriviti</a></li>
+                      <li class="nav-user visible-xs"><a href="/iscrizione.asp" rel="nofollow">Accedi/iscriviti</a></li>
                     <%end if%>
-                    <li class="nav-user visible-xs"><a href="/areaprivata.asp">Area Clienti</a></li>
+                    <li class="nav-user visible-xs"><a href="/areaprivata.asp" rel="nofollow">Area Clienti</a></li>
                     <li class="nav-user visible-xs"><a href="/commenti_elenco.asp">Dicono di noi</a></li>
-                    <li class="nav-user visible-xs"><a href="#">Lista dei desideri</a></li>
-                    <li class="nav-user visible-xs"><a href="/carrello1.asp">Carrello</a></li>
+                    <li class="nav-user visible-xs"><a href="/preferiti.asp" rel="nofollow">Lista dei desideri</a></li>
+                    <li class="nav-user visible-xs"><a href="/carrello1.asp" rel="nofollow">Carrello</a></li>
                     <li class="nav-user visible-xs"><a href="/condizioni_di_vendita.asp">Condizioni di vendita</a></li>
                 </ul>
             </div>

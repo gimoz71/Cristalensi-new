@@ -9,7 +9,7 @@ if cr_rs.recordcount>0 then
   Url=cr_rs("Url")
   Title=cr_rs("Title")
   Description=cr_rs("Description")
-  Descrizione=cr_rs("Descrizione")
+  'Descrizione=cr_rs("Descrizione")
   Img=cr_rs("Img")
   FkNewGruppo=cr_rs("FkNewGruppo")
   FkNewTipologia=cr_rs("FkNewTipologia")
@@ -263,7 +263,7 @@ gr_rs.close
                           </div>
                           <div class="separator clear-left">
                               <p class="btn-add">
-                                  <a href="#" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
+                                  <a href="/preferiti.asp?id=<%=id%>" rel="nofollow" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
                               </p>
                               <p class="btn-details">
                                   <a href="/<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>

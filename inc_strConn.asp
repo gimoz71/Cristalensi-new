@@ -89,6 +89,24 @@ Function NoLettAcc(strInput)
 
 End Function
 
+Function NoLettAccDescrizioni(strInput)
+
+	strInput = Replace(strInput, "é", "&eacute;")
+	strInput = Replace(strInput, "è", "&egrave;")
+	strInput = Replace(strInput, "à", "&agrave;")
+	strInput = Replace(strInput, "ù", "&ugrave;")
+	strInput = Replace(strInput, "ì", "&igrave;")
+	strInput = Replace(strInput, "ò", "&ograve;")
+ 	'strInput = Replace(strInput, "€", "&euro;")
+ 	'strInput = Replace(strInput, "'", "%27")
+	'strInput = Replace(strInput, " ", "%20")
+	'strInput = Replace(strInput, "(", "%28")
+	'strInput = Replace(strInput, ")", "%29")
+
+ NoLettAccDescrizioni = strInput
+
+End Function
+
 'rewrite url per i produttori
 	Function ConvertiTitoloInUrlProduttore(Titolo, IDArticolo)
 		Risultato = Titolo
