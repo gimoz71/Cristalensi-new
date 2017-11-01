@@ -9,7 +9,7 @@ if tr_rs.recordcount>0 then
   Url=tr_rs("Url")
   Title=tr_rs("Title")
   Description=tr_rs("Description")
-  'Descrizione=NoLettAccDescrizioni(tr_rs("Descrizione"))
+  Descrizione=tr_rs("Descrizione")
   Img=tr_rs("Img")
   FkNewGruppo=tr_rs("FkNewGruppo")
 end if
@@ -96,7 +96,7 @@ gr_rs.close
             <div class="description">
                 <%if Len(Img)>0 then%><img src="/public/<%=img%>" style="float: left; width: 200px; height: 150px; background: #ccc; margin-right: 10px;" alt="<%=Titolo_1%><%if Len(Titolo_2)>0 then%><%=" - "&Titolo_2%><%end if%>" /><%end if%>
                 <%if Len(Titolo_2)>0 then%><h2><%=Titolo_2%></h2><%end if%>
-                <p><%=NoLettAccDescrizioni(Descrizione)%></p>
+                <p><%=Descrizione%></p>
             </div>
             <%end if%>
         </div>

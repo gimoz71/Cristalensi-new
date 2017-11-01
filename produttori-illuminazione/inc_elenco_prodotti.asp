@@ -87,7 +87,7 @@ az_rs.close
                 <h2>Selezione di prodotti illuminazione dal catalogo di <%=titolo_produttore%></h2>
                 <p>
                 <%if Len(descrizione_produttore)>0 then%>
-                  <%=NoLettAcc(descrizione_produttore)%>
+                  <%=descrizione_produttore%>
                 <%else%>
                 Dal catalogo di <%=titolo_produttore%> abbiamo selezionato i seguenti prodotti da illuminazione. I produttori hanno spesso molte varianti dello stesso articolo che magari non abbiamo inserito, quindi, se conoscete un prodotto di <%=titolo_produttore%> e non &egrave; qui presente, potete contattare il nostro staff. Noi abbiamo preferito dar spazio a tante marche, dalle pi&ugrave; famose e pi&ugrave; grandi alle realt&agrave; pi&ugrave; piccole dove potete trovare prodotti pi&ugrave; artigianali in modo tale da fornirvi un'ampia variet&agrave; di modelli, design e non ultimo, prezzi.
                 <%end if%>

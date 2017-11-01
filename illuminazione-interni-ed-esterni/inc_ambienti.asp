@@ -9,7 +9,7 @@ if gr_rs.recordcount>0 then
   Url=gr_rs("Url")
   Title=gr_rs("Title")
   Description=gr_rs("Description")
-  'Descrizione=gr_rs("Descrizione")
+  Descrizione=gr_rs("Descrizione")
   Img=gr_rs("Img")
   PosizioneAmbiente=gr_rs("Posizione")
 end if

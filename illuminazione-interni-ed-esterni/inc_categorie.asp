@@ -9,7 +9,7 @@ if cr_rs.recordcount>0 then
   Url=cr_rs("Url")
   Title=cr_rs("Title")
   Description=cr_rs("Description")
-  'Descrizione=cr_rs("Descrizione")
+  Descrizione=cr_rs("Descrizione")
   Img=cr_rs("Img")
   FkNewGruppo=cr_rs("FkNewGruppo")
   FkNewTipologia=cr_rs("FkNewTipologia")
