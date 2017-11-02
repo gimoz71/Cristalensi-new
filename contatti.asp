@@ -57,10 +57,13 @@
                       C.F. e Iscr. Reg. Impr. di Firenze 05305820481 - R.E.A. Firenze 536760<br /><br />
                       <strong>Sede e Showroom</strong>: 50056 Montelupo F.no (FI) - Via arti e mestieri, 1<br /><br />
                       <strong>Telefono</strong>: <a href="tel:0571911163">0571.911163</a><br />
-                      <strong>Fax</strong>: 0571.073327<br /><br />
+                      <strong>Fax</strong>: 0571.073327<br />
+                      <strong>WhatsApp</strong>: <a href="https://api.whatsapp.com/send?phone=393388064487" target="_blank">3388064487</a>&nbsp;
+                      <strong><font color="#CC0000">(SOLO per invio di messaggi o fotografie)</font></strong>
+                      <br /><br />
                       <strong>Email</strong>: <a href="mailto:info@cristalensi.it">info@cristalensi.it</a><br />
-                      <strong>Email certificata</strong>: <a href="mailto:info@pec.cristalensi.it">info@pec.cristalensi.it</a> <strong>
-                      <font color="#CC0000">(SOLO per coloro che hanno un'email PEC)</font></strong>
+                      <strong>Email certificata</strong>: <a href="mailto:info@pec.cristalensi.it">info@pec.cristalensi.it</a>&nbsp;
+                      <strong><font color="#CC0000">(SOLO per coloro che hanno un'email PEC)</font></strong>
                     </p>
                 </div>
                 <div class="col-md-4 ">

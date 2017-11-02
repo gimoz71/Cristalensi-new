@@ -6,6 +6,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="tel:+390571911163"><span class="glyphicon glyphicon-earphone"></span> +39.0571.911163</a></li>
                         <li><a href="mailto:info@cristalensi.it"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=393388064487" target="_blank"><span class="glyphicon glyphicon-camera"></span> WhatsApp</a></li>
                         <li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
                         <li><a href="/chi_siamo.asp"><span class="glyphicon glyphicon-star"></span> Chi siamo</a></li>
                         <li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
@@ -30,9 +31,17 @@
         <ul class="nav nav-justified">
             <li><a href="tel:+390571911163"><span class="glyphicon glyphicon-earphone"></span> +39.0571.911163</a></li>
             <li><a href="mailto:info@cristalensi.it"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a></li>
-            <li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=393388064487" target="_blank"><span class="glyphicon glyphicon-camera"></span> WhatsApp</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> Chi siamo <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
+            		<li><a href="https://api.whatsapp.com/send?phone=393388064487"><span class="glyphicon glyphicon-picture"></span> Il negozio</a></li>
+            		<li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
+                </ul>
+            </li>
+            <!--<li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
             <li><a href="/chi_siamo.asp"><span class="glyphicon glyphicon-star"></span> Chi siamo</a></li>
-            <li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
+            <li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>-->
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> Lingua <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="https://wwww.cristalensi.com">Inglese</a></li>
