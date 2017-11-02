@@ -48,7 +48,7 @@
                 <h4>Area Clienti</h4>
                 <ul>
                     <li><a href="/iscrizione.asp">Iscriviti/Accedi</a></li>
-                    <li><a href="/areaprivata.asp">Lista dei desideri</a></li>
+                    <li><a href="/preferiti.asp">Lista dei desideri</a></li>
                     <li><a href="/carrello1.asp">Carrello</a></li>
                     <li><a href="/areaprivata.asp">Elenco ordini</a></li>
                 </ul>

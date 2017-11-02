@@ -128,11 +128,11 @@
         <div class="col-sm-12">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="title">
+                    <div class="title" style="padding-top:40px;">
                         <h4>Elenco prodotti preferiti</h4>
                     </div>
                     <div class="col-md-12">
-                        <div class="top-buffer">
+                        <div class="top-buffer" style="padding-top:20px;">
                             <table id="cart" class="table table-hover table-condensed table-cart">
                                 <thead>
                                     <tr>
@@ -180,7 +180,7 @@
 																	</tbody>
 																	<tfoot>
 	                                    <tr>
-	                                        <td><a href="/<%=fromURL%>" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
+	                                        <td><a href="<%=fromURL_preferiti%>" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td colspan="2" class="hidden-xs"></td>
 	                                    </tr>
 	                                </tfoot>

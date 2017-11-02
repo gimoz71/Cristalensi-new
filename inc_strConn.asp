@@ -16,6 +16,7 @@ On Error Resume Next
 
 	fromURL = Request.ServerVariables("HTTP_REFERER")
 	toUrl_completo = Request.ServerVariables("SCRIPT_NAME")
+	fromURL_preferiti=fromURL
 	'Response.Write "La pagina dove sono: " &toUrl_completo& "<br>"
 
 	'strDaDoveVengo = Request.Servervariables("HTTP_REFERER")
