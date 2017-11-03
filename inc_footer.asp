@@ -12,7 +12,6 @@
                   Via arti e mestieri, 1<br />
                   Tel.: 0571.911163<br />
                   Fax: 0571.073327<br />
-                  WhatsApp: 3388064487<br />
                   E-mail: info@cristalensi.it
                 </p>
                 <h4>Contatti Social</h4>

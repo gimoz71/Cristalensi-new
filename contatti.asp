@@ -58,7 +58,7 @@
                       <strong>Sede e Showroom</strong>: 50056 Montelupo F.no (FI) - Via arti e mestieri, 1<br /><br />
                       <strong>Telefono</strong>: <a href="tel:0571911163">0571.911163</a><br />
                       <strong>Fax</strong>: 0571.073327<br />
-                      <strong>WhatsApp</strong>: <a href="https://api.whatsapp.com/send?phone=393388064487" target="_blank">3388064487</a>&nbsp;
+                      <a href="https://api.whatsapp.com/send?phone=393388064487" target="_blank"><strong>WhatsApp</strong></a>&nbsp;
                       <strong><font color="#CC0000">(SOLO per invio di messaggi o fotografie)</font></strong>
                       <br /><br />
                       <strong>Email</strong>: <a href="mailto:info@cristalensi.it">info@cristalensi.it</a><br />
