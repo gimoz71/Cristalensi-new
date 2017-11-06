@@ -18,8 +18,8 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> Lingua <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="https://wwww.cristalensi.com">Inglese</a></li>
-                        <li><a href="https://wwww.cristalensi.com/de/">Tedesco</a></li>
+                        <li><a href="https://www.cristalensi.com">Inglese</a></li>
+                        <li><a href="https://www.cristalensi.com/de/">Tedesco</a></li>
                     </ul>
                 </li>
             </ul>
@@ -39,13 +39,10 @@
             		<li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
                 </ul>
             </li>
-            <!--<li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
-            <li><a href="/chi_siamo.asp"><span class="glyphicon glyphicon-star"></span> Chi siamo</a></li>
-            <li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>-->
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> Lingua <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="https://wwww.cristalensi.com">Inglese</a></li>
-                    <li><a href="https://wwww.cristalensi.com/de/">Tedesco</a></li>
+                    <li><a href="https://www.cristalensi.com">Inglese</a></li>
+                    <li><a href="https://www.cristalensi.com/de/">Tedesco</a></li>
                 </ul>
             </li>
         </ul>
