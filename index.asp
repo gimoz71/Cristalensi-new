@@ -42,8 +42,20 @@
     <div class="container content">
         <div class="col-md-12">
             <!--#include file="inc_slider.asp"-->
+			<!--<div class="row top-buffer clearfix">
+                <div class="col-md-12">
+                    <h4 class="subtitle"><div class="dot"></div><span>Comunicazione per i clienti</span></h4>
+                </div>
+                <div class="col-md-12">
+                    <div class="description" style="background-color: #FF9;">
+                        <p>Ci scusiamo ma per problemi alle linee telefoniche, per contattarci &egrave; necessario usare solo le email oppure i moduli di "richiesta informazioni".<br />Grazie da lo staff di Cristalensi</p>
+                    </div>
+                </div>
+          	</div>-->
             <div class="row top-buffer">
                 <div class="col-md-8">
+                    <h4 class="subtitle"><div class="dot"></div><span>Comunicazione per i clienti</span></h4>
+                    <p class="main-description" style="background-color: #FF9;">Ci scusiamo ma per problemi alle linee telefoniche, per contattarci &egrave; necessario usare solo le email oppure i moduli di "richiesta informazioni".<br />Grazie da lo staff di Cristalensi</p>
                     <h1 class="slogan">Cristalensi, vendita lampadari.</h1>
                     <h2 class="slogan">Showroom aperto da oltre 50 anni!</h2>
                     <p class="main-description">
