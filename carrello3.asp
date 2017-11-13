@@ -271,7 +271,7 @@
                                 <th style="width:45%">Prodotto</th>
                                 <th style="width:10%" class="text-center">Quantit&agrave;</th>
                                 <th style="width:10%" class="text-center">Prezzo unitario</th>
-                                <th style="width:20%" class="text-center">Subtotale</th>
+                                <th style="width:20%" class="text-center">Totale Prodotto</th>
                             </tr>
                         </thead>
                         <%if rs.recordcount>0 then%>

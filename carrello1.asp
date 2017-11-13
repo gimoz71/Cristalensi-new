@@ -316,7 +316,7 @@
                                         <th style="width:45%">Prodotto</th>
                                         <th style="width:10%">Prezzo</th>
                                         <th style="width:8%">Quantit&agrave;</th>
-                                        <th style="width:22%" class="text-center">Subtotale</th>
+                                        <th style="width:22%" class="text-center">Totale Prodotto</th>
                                         <th style="width:15%"></th>
                                     </tr>
                                 </thead>
@@ -350,7 +350,7 @@
                                                 <div class="col-sm-12">
                                                     <h5 class="nomargin"><a href="<%=NomePagina%>" title="Scheda del prodotto: <%=NomePagina%>"><%=rs("titolo")%></a></h5>
 																										<p><strong>Codice: <%=rs("codicearticolo")%></strong></p>
-                                                    <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: Bianco satinato<%=rs("lampadina")%><%end if%></p><%end if%>
+                                                    <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: <%=rs("lampadina")%><%end if%></p><%end if%>
                                                 </div>
                                             </div>
                                         </td>
