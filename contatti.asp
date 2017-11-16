@@ -56,7 +56,7 @@
                       <b>Cristalensi Snc</b> Di Lensi Massimiliano & C.<br />
                       C.F. e Iscr. Reg. Impr. di Firenze 05305820481 - R.E.A. Firenze 536760<br /><br />
                       <strong>Sede e Showroom</strong>: 50056 Montelupo F.no (FI) - Via arti e mestieri, 1<br /><br />
-                      <strong>Telefono</strong>: <a href="tel:0571911163">0571.911163</a><br />
+                      <!--<strong>Telefono</strong>: <a href="tel:0571911163">0571.911163</a><br />-->
                       <strong>Fax</strong>: 0571.073327<br />
                       <a href="https://api.whatsapp.com/send?phone=393388064487" target="_blank"><strong>WhatsApp</strong></a>&nbsp;
                       <strong><font color="#CC0000">(SOLO per invio di messaggi o fotografie)</font></strong>
@@ -67,12 +67,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 ">
-                  <div class="alert alert-success" role="alert" style="text-align: center;">
-                    <em>Hai bisogno di aiuto? Contattaci!</em><br /><br /><a href="tel: 0571.911163" class="alert-link"><span class="glyphicon glyphicon-earphone"></span> 0571.911163</a> - <a href="mailto:info@cristalensi.it" class="alert-link"><span class="glyphicon glyphicon-envelope"></span> info@cristalensi.it</a>
-                    <br /><br />Lun. - Ven.: 9.00 - 12.30 | 14.30 - 19.30<br />Sab.: 9.00 - 12.30 | 15.30 - 19.30<br />Domenica CHIUSI<br />Giugno/Luglio CHIUSI Sabato Pomeriggio<br />
-                  </div>
-                  <p style="padding-top:10px;"><a href="https://www.facebook.com/CristalensiLampadari/" target="_blank" title="Pagina ufficiale Cristalensi"><img class="fb" src="https://www.cristalensi.it/images/facebook.png" align="left" border="0" alt="Collegati alla nostra pagina su Facebook" style="width:150px; height:73px; padding-right:10px; padding-bottom:10px;" /></a>
-                  Per tutti gli aggiornamenti seguici anche su Facebook.</p>
+                <!--#include file="inc_box_contatti.asp"-->
                 </div>
             </div>
             <div class="row top-buffer">

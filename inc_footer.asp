@@ -10,7 +10,7 @@
                   R.E.A. Firenze 536760<br />
                   50056 Montelupo Fiorentino (FI)<br />
                   Via arti e mestieri, 1<br />
-                  Tel.: 0571.911163<br />
+                  <!--Tel.: 0571.911163<br />-->
                   Fax: 0571.073327<br />
                   E-mail: info@cristalensi.it
                 </p>
