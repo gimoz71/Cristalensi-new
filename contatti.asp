@@ -56,7 +56,7 @@
                       <b>Cristalensi Snc</b> Di Lensi Massimiliano & C.<br />
                       C.F. e Iscr. Reg. Impr. di Firenze 05305820481 - R.E.A. Firenze 536760<br /><br />
                       <strong>Sede e Showroom</strong>: 50056 Montelupo F.no (FI) - Via arti e mestieri, 1<br /><br />
-                      <strong>Telefono</strong>: <a href="tel:3385626253">338.5626253</a><br />
+                      <strong>Telefono</strong>: <a href="tel:3885626253">388.5626253</a><br />
                       <strong>Fax</strong>: 0571.073327<br />
                       <a href="https://api.whatsapp.com/send?phone=393388064487" target="_blank"><strong>WhatsApp</strong></a>&nbsp;
                       <strong><font color="#CC0000">(SOLO per invio di messaggi o fotografie)</font></strong>
