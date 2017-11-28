@@ -324,6 +324,8 @@
 																<%if rs.recordcount>0 then%>
 																<tbody>
 																		<%
+																		ProdottiCarrello=""
+
 																		Do while not rs.EOF
 
 																		Set url_prodotto_rs = Server.CreateObject("ADODB.Recordset")
@@ -366,10 +368,11 @@
                                     </tr>
 																		</form>
 																		<%
+																		ProdottiCarrello=ProdottiCarrello & "<br>" & rs("titolo") & " - " & rs("codicearticolo") & " - Pezzi: " & quantita
+
 																		rs.movenext
 																		loop
 																		%>
-
 																	</tbody>
 																	<%if ss.recordcount>0 then%>
 	                                <tfoot>
