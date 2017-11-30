@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row no-gutters">
             <div class="col-xs-12 col-sm-4" style="text-align: center">
-                <a class="header-logo" href="/">Cristalensi</a>
+                <a class="header-logo" href="/" title="Cristalensi, vendita lampadari online">Cristalensi</a>
             </div>
             <SCRIPT language="JavaScript">
             /*
@@ -54,7 +54,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav nav-justified main-menu">
-                    <li class="nav-user visible-xs"><a href="/">Home</a></li>
+                    <li class="nav-user visible-xs"><a href="/" title="Cristalensi, vendita lampadari online">Home</a></li>
                     <li class="nav-user dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Interno <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
                             <li>

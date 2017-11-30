@@ -85,10 +85,10 @@ gr_rs.close
             </div>
         </div>
         <div class="col-xl-12">
-            <ol class="breadcrumb">
-                <li><a href="/"><i class="fa fa-home"></i></a></li>
-                <li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>" title="<%=Titolo_1_gr%> - <%=Titolo_2_gr%>"><%=Titolo_1_gr%></a></li>
-                <li class="active"><%=Titolo_1%></li>
+            <ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Cristalensi Vendita lampadari online"><span itemprop="name"><i class="fa fa-home"></i></span></a><meta itemprop="position" content="1" /></li>
+                <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>" itemprop="item" title="<%=Titolo_1_gr%> - <%=Titolo_2_gr%>"><span itemprop="name"><%=Titolo_1_gr%></span></a><meta itemprop="position" content="2" /></li>
+                <li class="active" itemprop="itemListElement" itemtype="http://schema.org/ListItem"><span itemprop="name"><%=Titolo_1%></span><meta itemprop="position" content="3" /></li>
             </ol>
             <h1 class="title"><%=Titolo_1%></h1>
             <%if Len(Descrizione)>0 then%>

@@ -52,16 +52,18 @@
             <div class="row top-buffer">
                 <div class="col-md-8">
                     <h1 class="slogan">Contatti</h1>
-                    <p class="main-description">
-                      <b>Cristalensi Snc</b> Di Lensi Massimiliano & C.<br />
+                    <p class="main-description" itemtype="http://schema.org/Organization">
+                      <span itemprop="name"><b>Cristalensi Snc</b> Di Lensi Massimiliano & C.</span><br />
                       C.F. e Iscr. Reg. Impr. di Firenze 05305820481 - R.E.A. Firenze 536760<br /><br />
-                      <strong>Sede e Showroom</strong>: 50056 Montelupo F.no (FI) - Via arti e mestieri, 1<br /><br />
-                      <strong>Telefono</strong>: <a href="tel:3885626253">388.5626253</a><br />
-                      <strong>Fax</strong>: 0571.073327<br />
+                      <span itemprop="address" itemtype="http://schema.org/PostalAddress">
+                      <strong>Sede e Showroom</strong>: <span itemprop="postalCode">50056</span> <span itemprop="addressLocality">Montelupo F.no (FI)</span> - <span itemprop="streetAddress">Via arti e mestieri, 1</span><br /><br />
+                      </span>
+                      <strong>Telefono</strong>: <a href="tel:3885626253"><span itemprop="telephone">388.5626253</span></a><br />
+                      <strong>Fax</strong>: <span itemprop="faxNumber">0571.073327</span><br />
                       <a href="https://api.whatsapp.com/send?phone=393388064487" target="_blank"><strong>WhatsApp</strong></a>&nbsp;
                       <strong><font color="#CC0000">(SOLO per invio di messaggi o fotografie)</font></strong>
                       <br /><br />
-                      <strong>Email</strong>: <a href="mailto:info@cristalensi.it">info@cristalensi.it</a><br />
+                      <strong>Email</strong>: <a href="mailto:info@cristalensi.it"><span itemprop="email">info@cristalensi.it</span></a><br />
                       <strong>Email certificata</strong>: <a href="mailto:info@pec.cristalensi.it">info@pec.cristalensi.it</a>&nbsp;
                       <strong><font color="#CC0000">(SOLO per coloro che hanno un'email PEC)</font></strong>
                     </p>

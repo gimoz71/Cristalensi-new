@@ -205,29 +205,29 @@ end if
         </div>
 		<div class="row clearfix">
 			<div class="col-md-10 col-md-push-2">
-		        <ol class="breadcrumb">
-						<li><a href="/"><i class="fa fa-home"></i></a></li>
-						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>" title="<%=Titolo_1_gr%> - <%=Titolo_2_gr%>"><%=Titolo_1_gr%></a></li>
-						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>" title="<%=Titolo_1_tip%> - <%=Titolo_2_tip%>"><%=Titolo_1_tip%></a></li>
-						<li><a href="/illuminazione-interni-ed-esterni/<%=Url_cat%>" title="<%=Titolo_1_cat%>"><%=Titolo_1_cat%></a></li>
-						<li class="active"><%=Titolo_prodotto%></li>
-		        </ol>
+						<ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Cristalensi Vendita lampadari online"><span itemprop="name"><i class="fa fa-home"></i></span></a><meta itemprop="position" content="1" /></li>
+                <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/illuminazione-interni-ed-esterni/<%=Url_gr%>" itemprop="item" title="<%=Titolo_1_gr%> - <%=Titolo_2_gr%>"><span itemprop="name"><%=Titolo_1_gr%></span></a><meta itemprop="position" content="2" /></li>
+                <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/illuminazione-interni-ed-esterni/<%=Url_tip%>" itemprop="item" title="<%=Titolo_1_tip%> - <%=Titolo_2_tip%>"><span itemprop="name"><%=Titolo_1_tip%></span></a><meta itemprop="position" content="3" /></li>
+								<li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/illuminazione-interni-ed-esterni/<%=Url_cat%>" itemprop="item" title="<%=Titolo_1_cat%>"><span itemprop="name"><%=Titolo_1_cat%></span></a><meta itemprop="position" content="4" /></li>
+								<li class="active" itemprop="itemListElement" itemtype="http://schema.org/ListItem"><span itemprop="name"><%=Titolo_prodotto%></span><meta itemprop="position" content="5" /></li>
+            </ol>
 			</div>
 			<div class="col-md-2 col-md-pull-10">
 				<a class="btn btn-warning btn-sm btn-block" href="javascript:history.back()"><i class="fa fa-chevron-left"></i> torna indietro</a>
 			</div>
 		</div>
         <div class="top-buffer hidden-md hidden-lg"></div>
-        <div class="">
+        <div class="" itemscope itemtype="http://schema.org/Product">
             <div class="col-md-8">
                 <div class="row">
                     <div class="title">
-                        <h1 class="product-name"><%=Titolo_prodotto%></h1>
-                        <p class="details">codice: <b><%=codicearticolo%></b> - produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></p>
+                        <h1 class="product-name"><span itemprop="name"><%=Titolo_prodotto%></span></h1>
+                        <p class="details">codice: <b><span itemprop="mpn"><%=codicearticolo%></span></b> - produttore: <b><a href="<%=url_produttore%>" title="Catalogo <%=produttore%> vendita online prodotti illuminazione"><span itemprop="brand"><%=produttore%></a></span></b></p>
                     </div>
                     <div class="col-md-12">
                         <div class="top-buffer">
-                            <p class="descrizione">
+                            <p class="descrizione"><span itemprop="description">
 															<small><%=Descrizione_prodotto%></small>
 
 															<%if allegato_prodotto<>"" then%>
@@ -262,6 +262,7 @@ end if
 															<%
 															end if
 															%>
+															</span>
                             </p>
                             <hr />
 
@@ -282,7 +283,7 @@ end if
 																<div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img alt="900x550" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
+                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img itemprop="image" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -319,7 +320,7 @@ end if
 																					<%end if%>
                                         </li>
                                     </ul>
-									<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
+																		<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
                                 </div>
 																<%
 								                Set com_rs = Server.CreateObject("ADODB.Recordset")
@@ -327,20 +328,20 @@ end if
 								                com_rs.open sql,conn, 1, 1
 								                if com_rs.recordcount>0 then
 								                %>
-																<div class="panel panel-default user-comment">
+																<div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
                                     <!-- Default panel contents -->
                                     <div class="panel-heading">
                                         <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
                                     </div>
                                     <ul class="list-group">
 																		<%Do While not com_rs.EOF%>
-																		<li class="list-group-item"><i class="fa fa-user"></i> <em><%=Left(NoHTML(com_rs("Testo")), 90)%>... Voto: <%=com_rs("Valutazione")%>/5</em></li>
+																		<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span> Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></em></li>
 																		<%
 				                            com_rs.movenext
 				            								loop
 				                            %>
                                     </ul>
-									<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+																		<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
                                 </div>
 																<%
 								                end if
@@ -352,14 +353,14 @@ end if
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;">
+                <div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 										<%if prezzoarticolo=0 then%>
 										<%richiesta_prev=1%>
 											<ul class="list-group text-center">
 
 													<li class="list-group-item" style="padding-top: 20px">
 	                            <p>
-															<span class="price-old">Prezzo di Listino  <b><%=prezzolistino%> &euro;</b></span><br /><br />
+															<span class="price-old">Prezzo di Listino  <b><%=prezzolistino%> &euro;</b><meta itemprop="priceCurrency" content="EUR" /></span><br /><br />
 															Vuoi sapere il Prezzo Cristalensi?
 	                            </p>
 	                        </li>
@@ -385,7 +386,7 @@ end if
 		                            <p>
 																		<%if prezzoarticolo<>"" then%>
 																		Prezzo Cristalensi:<br />
-		                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />
+		                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<span itemprop="price"><%=prezzoarticolo%></span> &euro;<meta itemprop="priceCurrency" content="EUR" /></span><br />
 																		<%end if%>
 		                                <%if prezzolistino<>0 then%><span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span><%end if%>
 		                            </p>

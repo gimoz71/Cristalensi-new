@@ -1,18 +1,20 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 address-col">
+            <div class="col-md-3 address-col" itemtype="http://schema.org/Organization">
                 <h4>Cristalensi Vendita Lampadari</h4>
                 <p>
-                  Cristalensi Snc di Lensi Massimiliano & C.<br />
+                  <span itemprop="name">Cristalensi Snc di Lensi Massimiliano & C.</span><br />
 
                   C.F. e Iscr. Reg. Impr. di Firenze 05305820481<br />
                   R.E.A. Firenze 536760<br />
-                  50056 Montelupo Fiorentino (FI)<br />
-                  Via arti e mestieri, 1<br />
-                  Tel.: 388.5626253<br />
-                  Fax: 0571.073327<br />
-                  E-mail: info@cristalensi.it
+                  <span itemprop="address" itemtype="http://schema.org/PostalAddress">
+                  <span itemprop="postalCode">50056</span> <span itemprop="addressLocality">Montelupo Fiorentino (FI)</span><br />
+                  <span itemprop="streetAddress">Via arti e mestieri, 1<br /></span>
+                  </span>
+                  Tel.: <span itemprop="telephone">388.5626253</span><br />
+                  Fax: <span itemprop="faxNumber">0571.073327</span><br />
+                  E-mail: <span itemprop="email">info@cristalensi.it</span>
                 </p>
                 <h4>Contatti Social</h4>
                 <p class="social">

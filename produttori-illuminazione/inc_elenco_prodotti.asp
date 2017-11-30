@@ -76,10 +76,10 @@ az_rs.close
             </div>
         </div>
         <div class="col-xl-12">
-            <ol class="breadcrumb">
-                <li><a href="/"><i class="fa fa-home"></i></a></li>
-                <li><a href="/produttori.asp">Elenco produttori</a></li>
-                <li class="active"><%=titolo_produttore%></li>
+            <ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Cristalensi Vendita lampadari online"><span itemprop="name"><i class="fa fa-home"></i></span></a><meta itemprop="position" content="1" /></li>
+                <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/produttori.asp" itemprop="item" title="Produttori articoli illuminazione"><span itemprop="name">Elenco produttori</span></a><meta itemprop="position" content="2" /></li>
+                <li class="active" itemprop="itemListElement" itemtype="http://schema.org/ListItem"><span itemprop="name"><%=titolo_produttore%></span><meta itemprop="position" content="3" /></li>
             </ol>
             <h1 class="title"><%=titolo_produttore%></h1>
             <div class="description">

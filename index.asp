@@ -60,14 +60,14 @@
                 if com_rs.recordcount>0 then
                 %>
                 <div class="col-md-4 ">
-                    <div class="panel panel-default user-comment">
+                    <div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
                         <!-- Default panel contents -->
                         <div class="panel-heading">
                             <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
                         </div>
                         <ul class="list-group">
                             <%Do While not com_rs.EOF%>
-                            <li class="list-group-item"><i class="fa fa-user"></i> <em><%=Left(NoHTML(com_rs("Testo")), 90)%>... Voto: <%=com_rs("Valutazione")%>/5</em></li>
+                            <li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span> Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></em></li>
                             <%
                             com_rs.movenext
             								loop
