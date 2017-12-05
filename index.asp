@@ -42,7 +42,8 @@
     <div class="container content">
         <div class="col-md-12">
             <!--#include file="inc_slider.asp"-->
-            <div class="row top-buffer">
+            <div class="row top-buffer" itemscope itemtype="http://schema.org/WebSite">
+              <link itemprop="url" href="https://www.cristalensi.it/"/>
                 <div class="col-md-8">
                     <h1 class="slogan">Cristalensi, vendita lampadari.</h1>
                     <h2 class="slogan">Showroom aperto da oltre 50 anni!</h2>
@@ -67,7 +68,16 @@
                         </div>
                         <ul class="list-group">
                             <%Do While not com_rs.EOF%>
-                            <li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span> Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></em></li>
+                            <%
+                            Set cr_rs = Server.CreateObject("ADODB.Recordset")
+                            sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
+                            cr_rs.open sql,conn, 1, 1
+                            if cr_rs.recordcount>0 then
+                              NomeIscritto=cr_rs("Nome")
+                            end if
+                            cr_rs.close
+                            %>
+                            <li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span> <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
                             <%
                             com_rs.movenext
             								loop

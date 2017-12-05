@@ -94,7 +94,7 @@ end if
 <head>
     <title><%=Titolo_prodotto%> <%=" "& produttore%> - <%=Titolo_2_cat%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Scheda del prodotto <%=Titolo_prodotto%>, <%=produttore%>, <%=codicearticolo%>, Cristalensi vende <%=Titolo_2_cat%>">
+    <meta name="description" content="Scheda del prodotto <%=Titolo_prodotto%>, <%=produttore%>, <%=codicearticolo%>. Cristalensi vende online <%=Titolo_1_cat%>, <%=Titolo_2_cat%>, a prezzi scontati. Per qualsiasi dubbio il nostro competente e disponibile staff &egrave; a disposizione.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -335,7 +335,16 @@ end if
                                     </div>
                                     <ul class="list-group">
 																		<%Do While not com_rs.EOF%>
-																		<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span> Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></em></li>
+																		<%
+																		Set cr_rs = Server.CreateObject("ADODB.Recordset")
+																		sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
+																		cr_rs.open sql,conn, 1, 1
+																		if cr_rs.recordcount>0 then
+																		  NomeIscritto=cr_rs("Nome")
+																		end if
+																		cr_rs.close
+																		%>
+																		<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span> <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
 																		<%
 				                            com_rs.movenext
 				            								loop
