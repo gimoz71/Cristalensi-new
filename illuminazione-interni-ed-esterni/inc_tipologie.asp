@@ -70,7 +70,7 @@ gr_rs.close
     function CambiaPagina()
     {
        document.modulopaginazione.method = "post";
-       document.modulopaginazione.action = "/illuminazione-interni-ed-esterni/<%=toUrl%>?cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>";
+       document.modulopaginazione.action = "/illuminazione-interni-ed-esterni/<%=toUrl%>?cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>#inizioelenco";
        document.modulopaginazione.submit();
     }
     </script>
@@ -99,6 +99,7 @@ gr_rs.close
                 <p><%=Descrizione%></p>
             </div>
             <%end if%>
+            <a name="inizioelenco"></a>
         </div>
         <div class="col-md-3">
             <div class=" top-buffer">
@@ -275,18 +276,18 @@ gr_rs.close
                             <li class="active"><a href="#" aria-label="Previous">Pagina <%=p%> di <%=prod_rs.PageCount%></a></li>
 
                             <%if p > 2 then%>
-                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=1&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Prima pagina</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=1&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>#inizioelenco">Prima pagina</a></li>
                             <%end if%>
                             <% if p > 1 then %>
                             <li>
-                                <a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p-1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>" aria-label="Previous">
+                                <a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p-1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>#inizioelenco" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
                             <%end if%>
                             <% for page = p+1 to p+4 %>
                             <%if not page>maxPage then%>
-                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=Page%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>"><%=page%></a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=Page%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>#inizioelenco"><%=page%></a></li>
                             <%end if%>
                             <% if page >= prod_rs.PageCount then
                                page = p+4
@@ -295,13 +296,13 @@ gr_rs.close
                             %>
                             <% if cInt(p) < maxPage then %>
                             <li>
-                                <a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p+1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>" aria-label="Next">
+                                <a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=p+1%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>#inizioelenco" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
                             <%end if%>
                             <%if maxPage>5 and cInt(p)<>prod_rs.PageCount then%>
-                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=prod_rs.PageCount%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>">Ultima pagina</a></li>
+                            <li><a href="/illuminazione-interni-ed-esterni/<%=toUrl%>?p=<%=prod_rs.PageCount%>&cat=<%=cat%>&FkProduttore=<%=FkProduttore%>&order=<%=order%>#inizioelenco">Ultima pagina</a></li>
                             <%end if%>
                             <li class="active"><a href="#"> Vai alla pagina</a>
                             <select class="selectpicker show-menu-arrow show-tick" data-size="7" data-width="63px" data-dropAuto="true" name="p" id="p" data-size="5" onChange="CambiaPagina();">
