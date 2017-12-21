@@ -102,14 +102,14 @@ gr_rs.close
                     <ul class="list-unstyled side-list">
                         <%
                         Do While not tip_rs.EOF
-                          Titolo_1=tip_rs("Titolo_1")
-                          Titolo_2=tip_rs("Titolo_2")
-                          Url=tip_rs("Url")
-                          Title=tip_rs("Title")
+                          Titolo_1_menu=tip_rs("Titolo_1")
+                          Titolo_2_menu=tip_rs("Titolo_2")
+                          Url_menu=tip_rs("Url")
+                          Title_menu=tip_rs("Title")
                           'Description=tip_rs("Description")
                           'Descrizione=tip_rs("Descrizione")
                         %>
-                        <li><a href="/illuminazione-interni-ed-esterni/<%=Url%>" title="<%=Titolo_2%>"><%=Titolo_1%></a></li>
+                        <li><a href="/illuminazione-interni-ed-esterni/<%=Url_menu%>" title="<%=Titolo_1_menu%> - <%=Titolo_2_menu%>"><%=Titolo_1_menu%></a></li>
                         <%
                         tip_rs.movenext
                         loop
@@ -221,13 +221,13 @@ gr_rs.close
                 <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
                       <div class="photo">
-                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
+                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%> - <%=Titolo_1%>"><img alt="<%=titolo_prodotto%> - <%=Titolo_1%>" src="/images/blank.png"></a>
                       </div>
                       <div class="info">
                           <div class="row">
                               <div class="price-details col-md-6">
-                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
-                                  <p class="details"><span>codice: <b><%=codicearticolo%></b></span><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
+                                  <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%> - <%=Titolo_1%>"><h3><%=titolo_prodotto%></h3></a>
+                                  <p class="details"><span>codice: <b><%=codicearticolo%></b></span><span>produttore: <b><a href="<%=url_produttore%>" title="Catalogo prodotti <%=produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
                                       <%if prezzoarticolo<>0 then%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />

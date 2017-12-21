@@ -1,6 +1,7 @@
 <div class="row hidden-xs">
     <div class="col-md-8 clearfix parentOverflowContainer">
         <div id="slider">
+            <div data-src="images/slider/0.jpg"></div>
             <div data-src="images/slider/1.jpg"></div>
             <div data-src="images/slider/2.jpg"></div>
             <div data-src="images/slider/3.jpg"></div>
