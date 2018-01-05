@@ -12,7 +12,7 @@
                   <span itemprop="postalCode">50056</span> <span itemprop="addressLocality">Montelupo Fiorentino (FI)</span><br />
                   <span itemprop="streetAddress">Via arti e mestieri, 1<br /></span>
                   </span>
-                  Tel.: <span itemprop="telephone">388.5626253</span><br />
+                  Tel.: <span itemprop="telephone">0571.911163</span><br />
                   Fax: <span itemprop="faxNumber">0571.073327</span><br />
                   E-mail: <span itemprop="email">info@cristalensi.it</span>
                 </p>
