@@ -8,6 +8,9 @@
     <meta name="description" content="Cristalensi, showroom di lampade vicino Firenze, specializzato in vendita di lampari online, prodotti per illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi, showroom di lampade vicino Firenze, specializzato in vendita di lampari online, prodotti per illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori.">
+    <link rel="alternate" href="https://www.cristalensi.it/" hreflang="it-it" />
+		<link rel="alternate" href="https://www.cristalensi.com/de/" hreflang="de-de" />
+		<link rel="alternate" href="https://www.cristalensi.com/" hreflang="en-GB" />
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
@@ -28,6 +31,7 @@
     <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="stylesheets/customization.css" shim-shadowdom>
     <link rel="stylesheet" type="text/css" href="stylesheets/camera.css" shim-shadowdom>
