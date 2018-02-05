@@ -7,6 +7,7 @@ if prov="" then prov=0
 
 	pkid = Session("idCliente")
 	if pkid = "" then pkid = 0
+	'response.write("pkid:"&pkid)
 
 	mode = request("mode")
 	if mode = "" then mode = 0
@@ -46,13 +47,28 @@ if prov="" then prov=0
 		email=Trim(email)
 	end if
 
-	if mode=1 then
+	if mode=1 and pkid=0 then
 		Set rs=Server.CreateObject("ADODB.Recordset")
 		sql = "Select email From Clienti where email='"&email&"'"
 		rs.Open sql, conn, 1, 1
 		if rs.recordcount>0 then
 			errore=1
 			mode=3
+		end if
+		rs.close
+	end if
+
+	if mode=1 and pkid>0 then
+		Set rs=Server.CreateObject("ADODB.Recordset")
+		sql = "Select email, pkid From Clienti where email='"&email&"'"
+		rs.Open sql, conn, 1, 1
+		if rs.recordcount>0 then
+			if rs("pkid")=pkid then
+				errore=0
+			else
+				errore=1
+				mode=3
+			end if
 		end if
 		rs.close
 	end if
@@ -65,7 +81,7 @@ if mode=1 then
 		PkId_Prec=rs("PkId")
 		rs.close
 		pkid_iscritto=PkId_Prec+1
-		response.write("pkid_iscritto:"&pkid_iscritto)
+		'response.write("pkid_iscritto:"&pkid_iscritto)
 	end if
 
 	Set rs=Server.CreateObject("ADODB.Recordset")
@@ -753,54 +769,68 @@ end if
 											<%end if%>
                     </div>
                 </div>
-
+								<%
+								if pkid>0 then
+									Set rs=Server.CreateObject("ADODB.Recordset")
+									sql = "Select * From Clienti where pkid="&pkid
+									rs.Open sql, conn, 1, 1
+									if rs.recordcount>0 then
+									nome=rs("nome")
+									nominativo=rs("nominativo")
+									email=rs("email")
+									password=rs("password")
+									aut_email=rs("aut_email")
+									end if
+									rs.close
+								end if
+								%>
                 <div class="col-lg-6">
                     <div class="title">
-                        <h4>Iscriviti</h4>
+                        <h4><%if pkid>0 then%>Modifica<%else%>Iscriviti<%end if%></h4>
                     </div>
                     <div class="col-md-12">
                         <p class="description">In questa pagina puoi inserire i tuoi dati per registrarti a Cristalensi.<br> Informazione importante: &egrave; necessario che l'indirizzo Email sia un'indirizzo funzionante e che usi normalmente, in quanto ti verranno spedite
                             comunicazioni relativamente agli ordini e ai prodotti.<br>Ti ricordiamo inoltre che l'indirizzo Email lo dovrai utilizzare come Login per accedere ai tuoi futuri ordini.
                         </p>
-                        <form class="form-horizontal" method="post" action="/iscrizione.asp?mode=1&amp;pkid=<%=pkid%>" name="newsform" onSubmit="return verifica();">
+                        <form class="form-horizontal" method="post" action="/iscrizione.asp?mode=1&amp;pkid=<%=pkid%>" name="newsform" id="newsform" onSubmit="return verifica();">
 												<input type="hidden" name="prov" value="<%=prov%>">
                             <div class="form-group">
                                 <label for="nome" class="col-sm-4 control-label">Nome</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="nome" name="nome" value="<% if pkid > 0 then %><%=rs("nome")%><%else%><%if mode=3 then%><%=nome%><%end if%><%end if%>">
+                                    <input type="text" class="form-control" id="nome" name="nome" value="<% if pkid > 0 then %><%=nome%><%else%><%if mode=3 then%><%=nome%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="nominativo" class="col-sm-4 control-label">Cognome</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="nominativo" name="nominativo" value="<% if pkid > 0 then %><%=rs("nominativo")%><%else%><%if mode=3 then%><%=nominativo%><%end if%><%end if%>">
+                                    <input type="text" class="form-control" id="nominativo" name="nominativo" value="<% if pkid > 0 then %><%=nominativo%><%else%><%if mode=3 then%><%=nominativo%><%end if%><%end if%>">
                                 </div>
                             </div>
 														<%if errore=1 then%><p><strong>ATTENZIONE! L'EMAIL INSERITA NON PUO' ESSRE ACCETTATA. RIPROVATE, GRAZIE.</strong></p><%end if%>
                             <div class="form-group">
                                 <label for="email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="email" name="email" value="<% if pkid > 0 then %><%=rs("email")%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
+                                    <input type="email" class="form-control" id="email" name="email" value="<% if pkid > 0 then %><%=email%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="conferma" class="col-sm-4 control-label">Conferma email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="conferma" name="conferma" value="<% if pkid > 0 then %><%=rs("email")%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
+                                    <input type="email" class="form-control" id="conferma" name="conferma" value="<% if pkid > 0 then %><%=email%><%else%><%if mode=3 then%><%=email%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="password" name="password" value="<% if pkid > 0 then %><%=rs("password")%><%else%><%if mode=3 then%><%=password%><%end if%><%end if%>">
+                                    <input type="password" class="form-control" id="password" name="password" value="<% if pkid > 0 then %><%=password%><%else%><%if mode=3 then%><%=password%><%end if%><%end if%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
                                     <span>Autorizzazione a ricevere email</span>
                                     <div class="radio">
-                                        <label><input type="radio" name="aut_email" value=True <% if pkid > 0 then %><%if rs("aut_email")=True then%> checked<%end if %><%else%> checked<%end if%>> si</label>
-                                        <label><input type="radio" name="aut_email" value=False <% if pkid > 0 then %><%if rs("aut_email")=False then%> checked<%end if %><%end if%>> no</label>
+                                        <label><input type="radio" name="aut_email" value=True <% if pkid > 0 then %><%if aut_email=True then%> checked<%end if %><%else%> checked<%end if%>> si</label>
+                                        <label><input type="radio" name="aut_email" value=False <% if pkid > 0 then %><%if aut_email=False then%> checked<%end if %><%end if%>> no</label>
                                     </div>
                                 </div>
                             </div>
