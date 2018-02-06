@@ -26,7 +26,7 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="/stylesheets/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/jquery.fancybox.min.css" media="screen" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="stylesheets/customization.css" shim-shadowdom>
     <link rel="stylesheet" type="text/css" href="stylesheets/camera.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
@@ -54,8 +54,8 @@
                     <h1 class="slogan">Cristalensi vuol dire illuminazione:<br />negozio di lampadari vicino Firenze</h1>
                     <p class="main-description">
                       <strong>Da pi&ugrave; 50 anni</strong>, la prerogativa di questo affermato negozio di lampadari &eacute; fornire alla clientela una <strong>vasta e raffinata gamma di prodotti di illuminazione da interno ed esterno</strong> volti a soddisfare esigenze <strong>classiche e moderne</strong>.
-                          Alogene, plafoniere, appliques, lumi da tavolo, fari, faretti e lampade a risparmio energetico fanno bella mostra di s&eacute; nella <strong>sala espositiva</strong> dell'azienda stessa.<br><br>
-                          Grazie ad una privilegiata posizione stradale, (tra Firenze, Pisa e Siena: <a href="https://www.cristalensi.it/contatti.asp" title="Negozio illuminazione Firenze">vedi la mappa</a>) e favorita da un <strong>ampio parcheggio</strong>, il negozio di lampadari offre la possibilit&agrave; di una visita in tutta tranquillit&agrave; al nostro <strong>showroom</strong>.<br><br>
+                          Lampadari, plafoniere, appliques, lumi da tavolo, fari, faretti e lampade LED fanno bella mostra di s&eacute; nella <strong>sala espositiva</strong> dell'azienda stessa.<br><br>
+                          Grazie ad una privilegiata posizione stradale, (tra Firenze, Pisa e Siena: <a href="https://www.cristalensi.it/contatti.asp" title="Negozio illuminazione Firenze">vedi la mappa</a>) e favoriti da un <strong>ampio parcheggio</strong>, il negozio di lampadari offre la possibilit&agrave; di una visita in tutta tranquillit&agrave; al nostro <strong>showroom</strong>.<br><br>
                           Piscine, parchi e giardini assumono un aspetto caratteristico grazie al gioco di luci ed ombre creato da <strong>tecnici esperti</strong> per il montaggio in esterni:
                           l'azienda Cristalensi offre un <strong>servizio completo</strong> alla sua clientela, offrendo <strong>preventivi gratuiti</strong> con <strong>sopralluoghi</strong> all'ambiente da illuminare.
                     </p>
@@ -188,19 +188,19 @@
         </div>
     </div>
     <!--#include file="inc_footer.asp"-->
-    <script type='text/javascript' src='javascripts/camera.js'></script>
-    <script type='text/javascript' src='javascripts/jquery.easing.1.3.js'></script>
-    <script>
-		jQuery(function(){
+  <script type='text/javascript' src='javascripts/camera.min.js'></script>
+  <script type='text/javascript' src='javascripts/jquery.easing.1.3.min.js'></script>
+  <script>
+  jQuery(function(){
 
-			jQuery('#slider').camera({
-                height: '55%',
-	            pagination: false,
-				thumbnails: false,
-                autoadvance: true,
-                time: 5
-			});
-		});
-	</script>
+    jQuery('#slider').camera({
+              height: '55%',
+            pagination: false,
+      thumbnails: false,
+              autoadvance: true,
+              time: 5
+    });
+  });
+</script>
 </body>
 <!--#include file="inc_strClose.asp"-->
