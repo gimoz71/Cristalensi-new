@@ -45,20 +45,36 @@
 		DataAggiornamento=ss("DataAggiornamento")
 
 		FkCliente=ss("FkCliente")
+		if FkCliente="" then FkCliente=0
 
-		Set cs = Server.CreateObject("ADODB.Recordset")
-		sql = "SELECT PkId, Nome, Nominativo, Email, Telefono FROM Clienti where pkid="&FkCliente
-		cs.Open sql, conn, 1, 1
-		if cs.recordcount>0 then
-			Nome_cliente=cs("Nome")
-			Nominativo_cliente=cs("Nominativo")
-			email_cliente=cs("Email")
-			telefono_cliente=cs("Telefono")
+		if FkCliente>0 then
+			Set cs = Server.CreateObject("ADODB.Recordset")
+			sql = "SELECT PkId, Nome, Nominativo, Email, Telefono FROM Clienti where pkid="&FkCliente
+			cs.Open sql, conn, 1, 1
+			if cs.recordcount>0 then
+				Nome_cliente=cs("Nome")
+				Nominativo_cliente=cs("Nominativo")
+				email_cliente=cs("Email")
+				telefono_cliente=cs("Telefono")
+			end if
+			cs.close
 		end if
-		cs.close
 	end if
 
 	ss.close
+
+	idsession=Session("idCliente")
+	if idsession="" then idsession=0
+
+	idadmin = Session("idAmministratore")
+	if idadmin="" then idadmin=0
+
+
+	if (idsession>0 and idsession=FkCliente) or idadmin>0 Then
+	'ok
+	Else
+		response.redirect("/areaprivata.asp")
+	end if
 
 %>
 <!DOCTYPE html>
