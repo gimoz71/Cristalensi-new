@@ -228,7 +228,12 @@ end if
                     <div class="col-md-12">
                         <div class="top-buffer">
                             <p class="descrizione"><span itemprop="description">
-															<small><%=Descrizione_prodotto%></small>
+															<%
+															if LEN(ClasseEnergetica)>0 then
+															%>
+															<a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group2" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img src="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" align="right" valign="middle" height="150px" width="75px"></a>
+															<%end if%>
+															<small style="font-size: 12px;"><%=Descrizione_prodotto%></small>
 
 															<%if allegato_prodotto<>"" then%>
 															<br /><br />E' presente un allegato: >> <a href="https://www.cristalensi.it/public/<%=allegato_prodotto%>" target="_blank" title="E' presente un allegato per il prodotto: <%=titolo_prodotto%>">Scarica l'allegato</a>
@@ -238,8 +243,10 @@ end if
 															if Len(FkNewAmbienti)>0 then
 															arrFkNewAmbienti=split(FkNewAmbienti,", ")
 															%>
-															<br /><em>
-															L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_2_cat%>, &egrave; adatto ai seguenti ambienti:<br>
+															<br />
+
+															<span style="font-size: 12px;"><em>
+															L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_2_cat%>, &egrave; adatto ai seguenti ambienti:&nbsp;
 															<%
 															For iLoop = LBound(arrFkNewAmbienti) to UBound(arrFkNewAmbienti)
 																fknewambiente=arrFkNewAmbienti(iLoop)
@@ -258,7 +265,7 @@ end if
 															Next
 															%>
 															ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.
-															</em>
+														</span></em>
 															<%
 															end if
 															%>
@@ -280,10 +287,10 @@ end if
 																	'percorso_img="/public/"&file_img
 																	'zoom=img_rs("zoom")
 																%>
-																<div class="col-md-2 col-xs-4">
+																<div class="col-md-4 col-xs-6">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>); height: 200px;" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img itemprop="image" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
+                                            <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>);" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img itemprop="image" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -294,16 +301,16 @@ end if
 																img_rs.close
 																%>
 																<%
-																if LEN(ClasseEnergetica)>0 then
+																'if LEN(ClasseEnergetica)>0 then
 																%>
-																<div class="col-md-2 col-xs-4">
+																<!-- <div class="col-md-2 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
-                                            <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=Titolo_prodotto%> - <%=produttore%>"><img alt="900x550" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
+                                            <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=Titolo_prodotto%> - <%=produttore%>"><img src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
                                         </div>
                                     </div>
-                                </div>
-																<%end if%>
+                                </div> -->
+																<%'end if%>
                                 <div class="clearfix"></div>
 								<div class="panel panel-default user-comment">
                                     <!-- Default panel contents -->
