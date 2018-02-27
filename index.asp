@@ -5,9 +5,9 @@
 <head>
     <title>Vendita lampadari online illuminazione interni illuminazione da esterno</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Cristalensi, showroom di lampade vicino Firenze, specializzato in vendita di lampari online, prodotti per illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori.">
+    <meta name="description" content="Cristalensi, specializzato in vendita di lampari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Trovi ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso, vetro Murano e lampade a LED.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="Cristalensi, showroom di lampade vicino Firenze, specializzato in vendita di lampari online, prodotti per illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori.">
+    <meta property="og:description" content="Cristalensi, specializzato in vendita di lampari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Trovi ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso, vetro Murano e lampade a LED.">
     <link rel="alternate" href="https://www.cristalensi.it/" hreflang="it-it" />
 		<link rel="alternate" href="https://www.cristalensi.com/de/" hreflang="de-de" />
 		<link rel="alternate" href="https://www.cristalensi.com/" hreflang="en-GB" />
@@ -49,13 +49,14 @@
             <div class="row top-buffer" itemscope itemtype="http://schema.org/WebSite">
               <link itemprop="url" href="https://www.cristalensi.it/"/>
                 <div class="col-md-8">
-                    <h1 class="slogan">Cristalensi, vendita lampadari.</h1>
+                    <h1 class="slogan">Cristalensi, vendita lampadari online.</h1>
                     <h2 class="slogan">Showroom aperto da oltre 50 anni!</h2>
                     <p class="main-description">
-                        A portata di click una vasta e raffinata gamma di prodotti per illuminazione interni ed illuminazione da esterno per arredare la casa, il giardino, un ufficio oppure un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: dai <b>lampadari</b>
-                        moderni e classici, alle <b>applique</b>, alle <b>plafoniere</b> e <b>piantane</b> ma anche <b>faretti</b> e <b>ventilatori con luce</b>. Tanti prodotti per <b>illuminazione a LED</b>, <b>in cristallo</b> e <b>vetro Murano</b>, in stile
+                        A portata di click una vasta e raffinata gamma di prodotti per illuminazione interni ed illuminazione da esterno per arredare la casa, il giardino, un ufficio oppure un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: trovi in vendita <b>lampadari</b>
+                        moderni e classici, <b>applique</b>, <b>plafoniere</b> e <b>piantane</b> ma anche <b>faretti</b> e <b>ventilatori con luce</b>. Tanti prodotti per <b>illuminazione a LED</b>, <b>in cristallo</b> e <b>vetro Murano</b>, in stile
                         <b>Tiffany</b>, <b>rustici</b> o <b>vintage</b>. Abbiamo anche un'ampia esposizione di lampade da esterno sia <b>moderne</b> che <b>classiche</b> e articoli specifici <b>per bambini</b>, camerette e tutti gli altri ambienti della casa.<br />Sono presenti anche lampade per uffici, negozi, locali, aziende e ambienti professionali.<br />
-                        Inoltre, uno staff cordiale e professionale &egrave; pronto a consigliarti l'acquisto pi&ugrave; adatto alle tue richieste.
+                        Nello shop online trovi l'area delle <b>lampade in offerta</b> oppure puoi fare una ricerca sia per <b>marche</b>, per <b>stile</b> o per <b>ambiente</b>: vendita di lampadari online per privati e per aziende.<br />
+                        Uno staff cordiale e professionale &egrave; pronto a consigliarti l'acquisto pi&ugrave; adatto alle tue richieste.
                     </p>
                 </div>
                 <%
