@@ -16,11 +16,11 @@ if prov="" then prov=0
 
 	'iscrizione prima volta
 	if mode=1 then
-		nome=request("nome")
-		nominativo=request("nominativo")
-		email=request("email")
+		nome=LTrim(request("nome"))
+		nominativo=LTrim(request("nominativo"))
+		email=LTrim(request("email"))
 		aut_email=request("aut_email")
-		password=request("password")
+		password=LTrim(request("password"))
 		data=now()
 		ip=Request.ServerVariables("REMOTE_ADDR")
 
@@ -45,6 +45,11 @@ if prov="" then prov=0
 			'response.End()
 		end if
 		email=Trim(email)
+
+		if email="" or password="" or nome="" or nominativo="" then
+			errore=1
+			mode=3
+		end if
 	end if
 
 	if mode=1 and pkid=0 then
@@ -792,6 +797,7 @@ end if
                         <p class="description">In questa pagina puoi inserire i tuoi dati per registrarti a Cristalensi.<br> Informazione importante: &egrave; necessario che l'indirizzo Email sia un'indirizzo funzionante e che usi normalmente, in quanto ti verranno spedite
                             comunicazioni relativamente agli ordini e ai prodotti.<br>Ti ricordiamo inoltre che l'indirizzo Email lo dovrai utilizzare come Login per accedere ai tuoi futuri ordini.
                         </p>
+												<%if errore=1 then%><p><strong>ATTENZIONE! I DATI INSERITI NON POSSONO ESSERE ACCETTATI. RIPROVATE, GRAZIE.</strong></p><%end if%>
                         <form class="form-horizontal" method="post" action="/iscrizione.asp?mode=1&amp;pkid=<%=pkid%>" name="newsform" id="newsform" onSubmit="return verifica();">
 												<input type="hidden" name="prov" value="<%=prov%>">
                             <div class="form-group">
@@ -806,7 +812,7 @@ end if
                                     <input type="text" class="form-control" id="nominativo" name="nominativo" value="<% if pkid > 0 then %><%=nominativo%><%else%><%if mode=3 then%><%=nominativo%><%end if%><%end if%>">
                                 </div>
                             </div>
-														<%if errore=1 then%><p><strong>ATTENZIONE! L'EMAIL INSERITA NON PUO' ESSRE ACCETTATA. RIPROVATE, GRAZIE.</strong></p><%end if%>
+
                             <div class="form-group">
                                 <label for="email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
