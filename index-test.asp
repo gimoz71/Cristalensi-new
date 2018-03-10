@@ -222,7 +222,6 @@
   										file_img=NoLettAcc(img_rs("file"))
                     end if
                     img_rs.close
-
   							%>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                   <article class="col-item">
