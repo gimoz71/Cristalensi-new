@@ -212,7 +212,6 @@
                         pr_rs.close
                       end if
 
-
   									'recupero l'immagine
   									Set img_rs = Server.CreateObject("ADODB.Recordset")
   									sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti' Order by PkId_Contatore ASC"
