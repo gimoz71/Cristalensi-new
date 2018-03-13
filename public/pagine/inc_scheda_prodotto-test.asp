@@ -92,10 +92,10 @@ end if
 <html>
 
 <head>
-    <title><%=Titolo_prodotto%> <%=" "& produttore%> - <%=Titolo_2_cat%></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Scheda del prodotto <%=Titolo_prodotto%>, <%=produttore%>, <%=codicearticolo%>. Cristalensi vende online <%=Titolo_1_cat%>, <%=Titolo_2_cat%>, a prezzi scontati. Per qualsiasi dubbio il nostro competente e disponibile staff &egrave; a disposizione.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title><%=Titolo_prodotto%> <%=" "& produttore%> <%=" "& CodiceArticolo%> - <%=Titolo_2_cat%></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Scheda del prodotto <%=Titolo_prodotto%>, <%=produttore%>, <%=codicearticolo%>. Vendita online con interessanti sconti. Cristalensi vende online <%=Titolo_1_cat%>, <%=Titolo_2_cat%>, a prezzi scontati. Per qualsiasi dubbio il nostro competente e disponibile staff &egrave; a disposizione.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
