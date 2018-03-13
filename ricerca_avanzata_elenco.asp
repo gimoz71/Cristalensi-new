@@ -117,71 +117,20 @@ end if
         <div class="col-xl-12">
             <ol class="breadcrumb">
                 <li><a href="/"><i class="fa fa-home"></i></a></li>
-                <li class="active">Ricerca avanzata</li>
+                <li class="active">Ricerca prodotti</li>
             </ol>
-            <h1 class="title">
-						Ricerca avanzata
+
 						<%if titolo<>"" or prezzo_da<>0 or prezzo_a<>0 or title<>"" or produttore<>"" then%>
+						<h1 class="title">
+						Ricerca prodotti
 						 - Hai cercato: <%if titolo<>"" then%> <%=titolo%><%end if%><%if prezzo_da<>0 or prezzo_a<>0 then%> - Prezzo da <%=prezzo_da%> a <%=prezzo_a%><%end if%>
 						<%if title<>"" then%><br />Categoria: <%=title%><%end if%><%if produttore<>"" then%><br />Produttore: <%=produttore%><%end if%>
-						<%end if%>
 						</h1>
-						<form class="form-horizontal" method="post" action="/ricerca_avanzata_elenco.asp" name="newsform">
-						<div class="col-lg-6">
-								<div class="form-group">
-										<label for="titolo" class="col-sm-4 control-label">Nome o Codice</label>
-										<div class="col-sm-8">
-												<input type="text" class="form-control" id="testo_ricerca" name="testo_ricerca">
-										</div>
-								</div>
-								<div class="form-group">
-										<label for="FkProduttore" class="col-sm-4 control-label">Produttore</label>
-										<div class="col-sm-8">
-												<%
-												Set cs=Server.CreateObject("ADODB.Recordset")
-												sql = "Select * From Produttori order by titolo ASC"
-												cs.Open sql, conn, 1, 1
-												if cs.recordcount>0 then
-												%>
-												<select name="FkProduttore" id="FkProduttore" class="selectpicker show-menu-arrow  show-tick" data-size="10">
-												<option value="0">Seleziona un produttore</option>
-												<%
-												Do While Not cs.EOF
-												%>
-												<option value="<%=cs("pkid")%>"><%=cs("titolo")%></option>
-												<%
-												cs.movenext
-												loop
-												%>
-												</select>
-												<%end if%>
-												<%cs.close%>
-										</div>
-								</div>
-						</div>
-						<div class="col-lg-6">
-								<div class="form-group">
-										<label for="inputEmail3" class="col-sm-4 control-label">Prezzo minimo</label>
-										<div class="col-sm-8">
-												<input type="text" class="form-control" id="prezzo_da" name="prezzo_da">
-										</div>
-								</div>
-								<div class="form-group">
-										<label for="prezzo_a" class="col-sm-4 control-label">Prezzo massimo</label>
-										<div class="col-sm-8">
-												<input type="text" class="form-control" id="prezzo_a" name="prezzo_a">
-										</div>
-								</div>
-								<div class="form-group">
-										<div class="col-sm-offset-4 col-sm-8">
-												<button type="submit" class="btn btn-danger">Cerca</button>
-										</div>
-								</div>
-						</div>
-						</form>
+						<%end if%>
+
         </div>
 				<%if Len(titolo)>0 or prezzo_da<>0 or prezzo_a<>0 or Len(title)>0 or Len(produttore)>0 then%>
-        <div class="col-md-3">
+        <div class="col-md-3 hidden-xs">
             <div class=" top-buffer">
                 <nav class="navbar">
                     <!-- menu - normal collapsible navbar markup -->
@@ -365,8 +314,9 @@ end if
 				<%else%>
 				<div class="col-md-9">
             <div class="row top-buffer">
-						Fai una ricerca inserendo i valori che desideri. Se la ricerca non ha dato risultati Cristalensi &egrave; in contatto con moltissime aziende di prodotti per illuminazione oltre a quelle in elenco, quindi, se conosci esattamente un articolo e vuoi avere un preventivo di prezzo, riempi il modulo indicandoci il nome del prodotto ed eventualmente alcuni dettagli,
-verrai contattato il prima possibile: il nostro staff sar&agrave; a Tua disposizione per qualsiasi chiarimento.
+						<strong>Per i dati inseriti non sono presenti prodotti.</strong><br /><br />
+						Fai una nuova ricerca inserendo altri valori ma se la ricerca non ha dato risultati, potrebbe essere il caso di un prodotto che non &egrave; stato inserito online dato che i cataloghi dei produttori sono molto ampi e non tutti i prodotti e le varianti sono state pubblicate.<br />
+						Il nostro staff sar&agrave; a Tua disposizione per qualsiasi chiarimento.<br /><a href="/contatti.asp" title="Riferimenti staff e negozio illuminazione">CONTATTACI!</a>
 						</div>
 				</div>
 				<%
@@ -375,6 +325,66 @@ verrai contattato il prima possibile: il nostro staff sar&agrave; a Tua disposiz
 				%>
 				<%end if%>
     </div>
+		<div class="container content">
+			<div class="col-xl-12">
+					<h2 class="title">
+					Ricerca avanzata
+					</h2>
+					<form class="form-horizontal" method="post" action="/ricerca_avanzata_elenco.asp" name="newsform">
+					<div class="col-lg-6">
+							<div class="form-group">
+									<label for="titolo" class="col-sm-4 control-label">Nome o Codice</label>
+									<div class="col-sm-8">
+											<input type="text" class="form-control" id="testo_ricerca" name="testo_ricerca">
+									</div>
+							</div>
+							<div class="form-group">
+									<label for="FkProduttore" class="col-sm-4 control-label">Produttore</label>
+									<div class="col-sm-8">
+											<%
+											Set cs=Server.CreateObject("ADODB.Recordset")
+											sql = "Select * From Produttori order by titolo ASC"
+											cs.Open sql, conn, 1, 1
+											if cs.recordcount>0 then
+											%>
+											<select name="FkProduttore" id="FkProduttore" class="selectpicker show-menu-arrow  show-tick" data-size="10">
+											<option value="0">Seleziona un produttore</option>
+											<%
+											Do While Not cs.EOF
+											%>
+											<option value="<%=cs("pkid")%>"><%=cs("titolo")%></option>
+											<%
+											cs.movenext
+											loop
+											%>
+											</select>
+											<%end if%>
+											<%cs.close%>
+									</div>
+							</div>
+					</div>
+					<div class="col-lg-6">
+							<div class="form-group">
+									<label for="inputEmail3" class="col-sm-4 control-label">Prezzo minimo</label>
+									<div class="col-sm-8">
+											<input type="text" class="form-control" id="prezzo_da" name="prezzo_da">
+									</div>
+							</div>
+							<div class="form-group">
+									<label for="prezzo_a" class="col-sm-4 control-label">Prezzo massimo</label>
+									<div class="col-sm-8">
+											<input type="text" class="form-control" id="prezzo_a" name="prezzo_a">
+									</div>
+							</div>
+							<div class="form-group">
+									<div class="col-sm-offset-4 col-sm-8">
+											<button type="submit" class="btn btn-danger">Cerca</button>
+									</div>
+							</div>
+					</div>
+					</form>
+			</div>
+		</div>
     <!--#include virtual="/inc_footer.asp"-->
 </body>
 <!--#include virtual="/inc_strClose.asp"-->
