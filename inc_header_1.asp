@@ -51,17 +51,17 @@
 <nav class="navbar navbar-inverse service-menu hidden-xs last-top-menu">
     <div class="container">
         <ul class="nav nav-justified">
-            <li><a href="/" title="Cristalensi, vendita lampadari online"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <!-- <li><a href="/" title="Cristalensi, vendita lampadari online"><span class="glyphicon glyphicon-home"></span> Home</a></li> -->
             <%if idsession>0 then%>
               <li><a href="/admin/logout.asp"><span class="glyphicon glyphicon-log-in"></span> LOG OUT</a></li>
             <%else%>
               <li><a href="/iscrizione.asp" rel="nofollow"><span class="glyphicon glyphicon-log-in"></span> Accedi/iscriviti</a></li>
             <%end if%>
             <li><a href="/areaprivata.asp" rel="nofollow"><span class="glyphicon glyphicon-user"></span> Area clienti</a></li>
-            <li><a href="/commenti_elenco.asp"><span class="glyphicon glyphicon-bullhorn"></span> Dicono di noi</a></li>
+            <!-- <li><a href="/commenti_elenco.asp"><span class="glyphicon glyphicon-bullhorn"></span> Dicono di noi</a></li> -->
             <li><a href="/preferiti.asp" rel="nofollow"><span class="glyphicon glyphicon-heart"></span> Lista dei desideri</a></li>
             <li><a href="/carrello1.asp" rel="nofollow"><span class="glyphicon glyphicon-shopping-cart"></span> Carrello</a></li>
-            <li><a href="/condizioni_di_vendita.asp"><span class="glyphicon glyphicon-th-list"></span> Condizioni di vendita</a></li>
+            <!-- <li><a href="/condizioni_di_vendita.asp"><span class="glyphicon glyphicon-th-list"></span> Condizioni di vendita</a></li> -->
 
         </ul>
     </div>
