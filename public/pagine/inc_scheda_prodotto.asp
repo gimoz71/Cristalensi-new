@@ -227,136 +227,94 @@ end if
                     </div>
                     <div class="col-md-12">
                         <div class="top-buffer">
-                            <p class="descrizione"><span itemprop="description">
-															<small><%=Descrizione_prodotto%></small>
+							<div class="row">
+								<%
+								Set img_rs = Server.CreateObject("ADODB.Recordset")
+								sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti' Order by PkId_Contatore ASC"
+								img_rs.open sql,conn, 1, 1
+								if img_rs.recordcount>0 then
 
-															<%if allegato_prodotto<>"" then%>
-															<br /><br />E' presente un allegato: >> <a href="https://www.cristalensi.it/public/<%=allegato_prodotto%>" target="_blank" title="E' presente un allegato per il prodotto: <%=titolo_prodotto%>">Scarica l'allegato</a>
-															<%end if%>
-
-															<%
-															if Len(FkNewAmbienti)>0 then
-															arrFkNewAmbienti=split(FkNewAmbienti,", ")
-															%>
-															<br /><em>
-															L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_2_cat%>, &egrave; adatto ai seguenti ambienti:<br>
-															<%
-															For iLoop = LBound(arrFkNewAmbienti) to UBound(arrFkNewAmbienti)
-																fknewambiente=arrFkNewAmbienti(iLoop)
-																Set ams=Server.CreateObject("ADODB.Recordset")
-																sql = "Select * From NewAmbienti WHERE Posizione='"&fknewambiente&"'"
-																ams.Open sql, conn, 1, 1
-																if ams.recordcount>0 then
-																titolo_1_amb=ams("Titolo_1")
-																titolo_2_amb=ams("Titolo_2")
-																url_amb=ams("Url")
-																%>
-																<a href="/illuminazione-interni-ed-esterni/<%=url_amb%>" title="<%=titolo_2_amb%>"><%=titolo_1_amb%></a>,&nbsp;
-															<%
-																end if
-																ams.close
-															Next
-															%>
-															ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.
-															</em>
-															<%
-															end if
-															%>
-															</span>
-                            </p>
-                            <hr />
-
-                            <div class="row">
-																<%
-																Set img_rs = Server.CreateObject("ADODB.Recordset")
-																sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti' Order by PkId_Contatore ASC"
-																img_rs.open sql,conn, 1, 1
-																if img_rs.recordcount>0 then
-
-																	Do while not img_rs.EOF
-																	titolo_img=img_rs("titolo")
-																	file_img=NoLettAcc(img_rs("file"))
-																	'file_img=img_rs("file")
-																	'percorso_img="/public/"&file_img
-																	'zoom=img_rs("zoom")
-																%>
-																<div class="col-md-2 col-xs-4">
+									Do while not img_rs.EOF
+									titolo_img=img_rs("titolo")
+									file_img=NoLettAcc(img_rs("file"))
+									'file_img=img_rs("file")
+									'percorso_img="/public/"&file_img
+									'zoom=img_rs("zoom")
+								%>
+								<div class="col-md-4 col-xs-4">
                                     <div class="col-item">
                                         <div class="photo">
                                             <a href="https://www.cristalensi.it/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img itemprop="image" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
                                         </div>
                                     </div>
                                 </div>
-																<%
-																	img_rs.movenext
-																	loop
-																end if
-																img_rs.close
-																%>
-																<%
-																if LEN(ClasseEnergetica)>0 then
-																%>
-																<div class="col-md-2 col-xs-4">
-                                    <div class="col-item">
+								<%
+									img_rs.movenext
+									loop
+								end if
+								img_rs.close
+								%>
+							</div>
+							<div class="row">
+								<%
+								if LEN(ClasseEnergetica)>0 then
+								%>
+								<div class="col-md-10">
+								<%else%>
+								<div class="col-md-12">
+								<%end if%>
+									<div class="scheda-descrizione"><span itemprop="description">
+										<small><%=Descrizione_prodotto%></small>
+
+										<%if allegato_prodotto<>"" then%>
+										<br /><br />E' presente un allegato: >> <a href="https://www.cristalensi.it/public/<%=allegato_prodotto%>" target="_blank" title="E' presente un allegato per il prodotto: <%=titolo_prodotto%>">Scarica l'allegato</a>
+										<%end if%>
+
+										<%
+										if Len(FkNewAmbienti)>0 then
+										arrFkNewAmbienti=split(FkNewAmbienti,", ")
+										%>
+										<br /><em>
+										L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_2_cat%>, &egrave; adatto ai seguenti ambienti:<br>
+										<%
+										For iLoop = LBound(arrFkNewAmbienti) to UBound(arrFkNewAmbienti)
+											fknewambiente=arrFkNewAmbienti(iLoop)
+											Set ams=Server.CreateObject("ADODB.Recordset")
+											sql = "Select * From NewAmbienti WHERE Posizione='"&fknewambiente&"'"
+											ams.Open sql, conn, 1, 1
+											if ams.recordcount>0 then
+											titolo_1_amb=ams("Titolo_1")
+											titolo_2_amb=ams("Titolo_2")
+											url_amb=ams("Url")
+											%>
+											<a href="/illuminazione-interni-ed-esterni/<%=url_amb%>" title="<%=titolo_2_amb%>"><%=titolo_1_amb%></a>,&nbsp;
+										<%
+											end if
+											ams.close
+										Next
+										%>
+										ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.
+										</em>
+										<%
+										end if
+										%>
+										</span>
+		                            </div>
+								</div>
+								<%
+								if LEN(ClasseEnergetica)>0 then
+								%>
+								<div class="col-md-2">
+									<div class="col-item">
                                         <div class="photo">
-                                            <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=Titolo_prodotto%> - <%=produttore%>"><img alt="900x550" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
-                                        </div>
-                                    </div>
+                                    <a href="https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg)" title="Etichetta classe energetica: <%=Titolo_prodotto%> - <%=produttore%>"><img alt="900x550" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
                                 </div>
-																<%end if%>
-                                <div class="clearfix"></div>
-								<div class="panel panel-default user-comment">
-                                    <!-- Default panel contents -->
-                                    <div class="panel-heading">
-                                        <h5><i class="glyphicon glyphicon-warning-sign"></i> INFORMAZIONI IMPORTANTI SULLA DISPONIBILITA' DEI PRODOTTI</h5>
-                                    </div>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-																					<%if offerta=10 then%>
-																					IL PRODOTTO NON E' DISPONIBILE
-																					<%else%>
-																					Il nostro catalogo &egrave; composto da numerosi prodotti e non tutti sono disponibili immediatamente al momento della richiesta: potrebbero essere disponibili nel giro di qualche giorno.<br />
-																					<em>Noi garantiamo una consegna da un minimo di 2 giorni a un massimo di 30 giorni.</em><br />
-																					<%end if%>
-                                        </li>
-                                    </ul>
-																		<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
                                 </div>
-																<%
-								                Set com_rs = Server.CreateObject("ADODB.Recordset")
-								                sql = "SELECT TOP 5 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
-								                com_rs.open sql,conn, 1, 1
-								                if com_rs.recordcount>0 then
-								                %>
-																<div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
-                                    <!-- Default panel contents -->
-                                    <div class="panel-heading">
-                                        <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
-                                    </div>
-                                    <ul class="list-group">
-																		<%Do While not com_rs.EOF%>
-																		<%
-																		Set cr_rs = Server.CreateObject("ADODB.Recordset")
-																		sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
-																		cr_rs.open sql,conn, 1, 1
-																		if cr_rs.recordcount>0 then
-																		  NomeIscritto=cr_rs("Nome")
-																		end if
-																		cr_rs.close
-																		%>
-																		<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span> <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
-																		<%
-				                            com_rs.movenext
-				            								loop
-				                            %>
-                                    </ul>
-																		<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
                                 </div>
-																<%
-								                end if
-								                com_rs.close
-								                %>
-                            </div>
+                                <%end if%>
+
+							</div>
+						</div>
                         </div>
                     </div>
                 </div>
@@ -475,9 +433,27 @@ end if
 										<%end if%>
 
                 </div>
+				<div class="clearfix"></div>
+				<div class="panel panel-default user-comment">
+					<!-- Default panel contents -->
+					<div class="panel-heading">
+						<h5><i class="glyphicon glyphicon-warning-sign"></i> INFORMAZIONI IMPORTANTI SULLA DISPONIBILITA' DEI PRODOTTI</h5>
+					</div>
+					<ul class="list-group">
+						<li class="list-group-item">
+																	<%if offerta=10 then%>
+																	IL PRODOTTO NON E' DISPONIBILE
+																	<%else%>
+																	Il nostro catalogo &egrave; composto da numerosi prodotti e non tutti sono disponibili immediatamente al momento della richiesta: potrebbero essere disponibili nel giro di qualche giorno.<br />
+																	<em>Noi garantiamo una consegna da un minimo di 2 giorni a un massimo di 30 giorni.</em><br />
+																	<%end if%>
+						</li>
+					</ul>
+					<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
+				</div>
 
 								<!--condizioni di vendita-->
-								<div class="panel panel-default payment-list">
+								<div class="panel panel-default payment-list hidden">
 										<!-- Default panel contents -->
 										<div class="panel-heading">
 											<h5>Condizioni di vendita</h5>
@@ -495,8 +471,52 @@ end if
 										</ul>
 										<div class="panel-footer"><a href="/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>
-								<!--#include virtual="/inc_box_contatti.asp"-->
+
             </div>
+			<div class="col-md-8">
+
+
+
+					<%
+					Set com_rs = Server.CreateObject("ADODB.Recordset")
+					sql = "SELECT TOP 2 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+					com_rs.open sql,conn, 1, 1
+					if com_rs.recordcount>0 then
+					%>
+					<div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
+						<!-- Default panel contents -->
+						<div class="panel-heading">
+							<h5><i class="fa fa-users"></i> Dicono di noi...</h5>
+						</div>
+						<ul class="list-group">
+							<%Do While not com_rs.EOF%>
+							<%
+							Set cr_rs = Server.CreateObject("ADODB.Recordset")
+							sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
+							cr_rs.open sql,conn, 1, 1
+							if cr_rs.recordcount>0 then
+							  NomeIscritto=cr_rs("Nome")
+							end if
+							cr_rs.close
+							%>
+							<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span> <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
+							<%
+								com_rs.movenext
+												loop
+								%>
+							<li class="list-group-item"><span itemprop="description">...</em></li>
+
+						</ul>
+															<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+					</div>
+													<%
+									end if
+									com_rs.close
+									%>
+			</div>
+			<div class="col-md-4">
+				<!--#include virtual="/inc_box_contatti.asp"-->
+			</div>
         </div>
 
 

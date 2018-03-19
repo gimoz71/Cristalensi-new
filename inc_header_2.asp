@@ -35,7 +35,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Nome o codice prodotto" name="testo_ricerca" id="testo_ricerca">
                         <div class="input-group-btn">
-                            <button class="btn btn-danger" type="submit"><i class="glyphicon glyphicon-search"></i><span class="hidden-xs"> Ricerca avanzata</span></button>
+                            <button class="btn btn-warning" type="submit"><i class="glyphicon glyphicon-search"></i><span class="hidden-xs"> Ricerca </span></button>
                         </div>
                     </div>
                 </form>
