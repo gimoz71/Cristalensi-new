@@ -4,33 +4,7 @@
             <div class="col-xs-12 col-sm-4" style="text-align: center">
                 <a class="header-logo" href="/" title="Cristalensi, vendita lampadari online">Cristalensi</a>
             </div>
-            <SCRIPT language="JavaScript">
-            /*
-        		function verifica_ricerca() {
-
-        			testo_ricerca=document.ricerca_modulo.testo_ricerca.value;
-
-        			if (testo_ricerca==""){
-        				alert("Inserire un testo oppure un codice per effettuare la ricerca.");
-        				return false;
-        			}
-
-        			else
-        		return true
-
-        		}
-            */
-        		</SCRIPT>
             <div class="col-md-8">
-                <!--<form action="/ricerca_avanzata_elenco.asp" class="navbar-form pull-right search-bar" role="search" name="ricerca_modulo" onSubmit="return verifica_ricerca();">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Nome o codice prodotto" name="testo_ricerca" id="testo_ricerca">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit" style="margin-right: 5px;"><i class="glyphicon glyphicon-search"></i></button>
-                            <button class="btn btn-danger" type="button" onClick="location.href='/ricerca_avanzata_elenco.asp'"><i class="glyphicon glyphicon-cog visible-xs-inline-block"></i><span class="hidden-xs"> Ricerca avanzata</span></button>
-                        </div>
-                    </div>
-                </form>-->
                 <form action="/ricerca_avanzata_elenco.asp" class="navbar-form pull-right search-bar" role="search" name="ricerca_modulo">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Nome o codice prodotto" name="testo_ricerca" id="testo_ricerca">
@@ -353,11 +327,8 @@
 
                     <%if idsession>0 then%>
                       <li class="nav-user visible-xs"><a href="/admin/logout.asp">LOG OUT</a></li>
-                    <%else%>
-                      <li class="nav-user visible-xs"><a href="/iscrizione.asp" rel="nofollow">Accedi/iscriviti</a></li>
                     <%end if%>
                     <li class="nav-user visible-xs"><a href="/areaprivata.asp" rel="nofollow">Area Clienti</a></li>
-                    <li class="nav-user visible-xs"><a href="/commenti_elenco.asp">Dicono di noi</a></li>
                     <li class="nav-user visible-xs"><a href="/preferiti.asp" rel="nofollow">Lista dei desideri</a></li>
                     <li class="nav-user visible-xs"><a href="/carrello1.asp" rel="nofollow">Carrello</a></li>
                     <li class="nav-user visible-xs"><a href="/condizioni_di_vendita.asp">Condizioni di vendita</a></li>

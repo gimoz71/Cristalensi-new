@@ -10,6 +10,7 @@
                         <li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
                         <li><a href="/chi_siamo.asp"><span class="glyphicon glyphicon-star"></span> Chi siamo</a></li>
                         <li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
+                        <li><a href="/commenti_elenco.asp"><span class="glyphicon glyphicon-bullhorn"></span> Dicono di noi</a></li>
                     </ul>
                 </li>
             </ul>
@@ -35,8 +36,10 @@
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> Chi siamo <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="/contatti.asp"><span class="glyphicon glyphicon-map-marker"></span> Contatti e mappa</a></li>
-            		<li><a href="/chi_siamo.asp"><span class="glyphicon glyphicon-picture"></span> Il negozio</a></li>
-            		<li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
+            		    <li><a href="/chi_siamo.asp"><span class="glyphicon glyphicon-picture"></span> Il negozio</a></li>
+            		    <li><a href="/video_elenco.asp"><span class="glyphicon glyphicon-facetime-video"></span> Video</a></li>
+                    <li><a href="/commenti_elenco.asp"><span class="glyphicon glyphicon-bullhorn"></span> Dicono di noi</a></li>
+                    <li><a href="/condizioni_di_vendita.asp"><span class="glyphicon glyphicon-th-list"></span> Condizioni di vendita</a></li>
                 </ul>
             </li>
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe"></span> Lingua <span class="caret"></span></a>
@@ -52,17 +55,16 @@
     <div class="container">
         <ul class="nav nav-justified">
             <!-- <li><a href="/" title="Cristalensi, vendita lampadari online"><span class="glyphicon glyphicon-home"></span> Home</a></li> -->
+            <li><img src="/images/trasparente.png" width="20px" height="1px;"></li>
+            <li><img src="/images/trasparente.png" width="20px" height="1px;"></li>
+            <li><img src="/images/trasparente.png" width="20px" height="1px;"></li>
+            <li><img src="/images/trasparente.png" width="20px" height="1px;"></li>
             <%if idsession>0 then%>
               <li><a href="/admin/logout.asp"><span class="glyphicon glyphicon-log-in"></span> LOG OUT</a></li>
-            <%else%>
-              <li><a href="/iscrizione.asp" rel="nofollow"><span class="glyphicon glyphicon-log-in"></span> Accedi/iscriviti</a></li>
             <%end if%>
             <li><a href="/areaprivata.asp" rel="nofollow"><span class="glyphicon glyphicon-user"></span> Area clienti</a></li>
-            <!-- <li><a href="/commenti_elenco.asp"><span class="glyphicon glyphicon-bullhorn"></span> Dicono di noi</a></li> -->
             <li><a href="/preferiti.asp" rel="nofollow"><span class="glyphicon glyphicon-heart"></span> Lista dei desideri</a></li>
             <li><a href="/carrello1.asp" rel="nofollow"><span class="glyphicon glyphicon-shopping-cart"></span> Carrello</a></li>
-            <!-- <li><a href="/condizioni_di_vendita.asp"><span class="glyphicon glyphicon-th-list"></span> Condizioni di vendita</a></li> -->
-
         </ul>
     </div>
 </nav>
