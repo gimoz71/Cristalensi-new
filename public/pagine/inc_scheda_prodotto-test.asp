@@ -1,5 +1,6 @@
 <!--#include virtual="/inc_strConn.asp"-->
 <%
+'response.write(toUrl_completo)
 'id=request("id")
 if id="" then id=0
 if id=0 then response.Redirect("https://www.cristalensi.it/prodotti.asp")
@@ -428,7 +429,7 @@ end if
 
 														<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
 															<%'qui eventualmente possiamo metter un banner per rafforzare iscrizione e sconto%>
-															Prezzo con sconto extra riservato<br />a tutti i clienti iscritti
+															<li class="list-group-item" style="background-color: #FF972C; Color: #fff">Prezzo con SCONTO EXTRA riservato<br />per tutti i clienti iscritti</li>
 														<%else%>
 															<%
 															Set col_rs = Server.CreateObject("ADODB.Recordset")
@@ -497,7 +498,7 @@ end if
 		                    </ul>
 		                    <div class="panel-footer">
 														<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
-															<a href="#" onClick="#" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Iscriviti per vedere gli sconti!"><i class="glyphicon glyphicon-log-in"></i> Iscriviti o Accedi !!!</a>
+															<a href="/iscrizione.asp?prov=3" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Iscriviti per vedere gli sconti!"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;Iscriviti o Accedi !!!</a>
 														<%else%>
 															<a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
 														<%end if%>

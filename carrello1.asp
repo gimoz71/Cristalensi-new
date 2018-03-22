@@ -428,20 +428,19 @@
 								<div class="panel panel-default user-comment">
 										<!-- Default panel contents -->
 										<div class="panel-heading">
-												<h5><i class="glyphicon glyphicon-warning-sign"></i> INFORMAZIONI IMPORTANTI SULLA DISPONIBILITA' DEI PRODOTTI</h5>
+												<h5><i class="glyphicon glyphicon-warning-sign"></i> RICHIESTA INFORMAZIONI E DISPONIBILITA' DEI PRODOTTI</h5>
 										</div>
 										<ul class="list-group">
 												<li class="list-group-item">
 													<%if offerta=10 then%>
 													IL PRODOTTO NON E' DISPONIBILE
 													<%else%>
-													Il nostro catalogo &egrave; composto da numerosi prodotti e non tutti sono disponibili immediatamente al momento della richiesta: potrebbero essere disponibili nel giro di qualche giorno.<br />
-													<em>Noi garantiamo una consegna da un minimo di 2 giorni a un massimo di 30 giorni.</em><br />
+													Hai dubbi sui prodotti da acquistare? Vuoi avere dettagli sui tempi di consegna?<br />Vuoi maggiori informazioni sulla procedura di acquisto?<br />
 													<%end if%>
 												</li>
 										</ul>
 										<%richiesta_carrello=1%>
-										<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block">Contatta lo staff per dettagli sulla disponibilit&agrave; <i class="fa fa-angle-right"></i></a></div>
+										<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block">Contattaci per dettagli e informazioni <i class="fa fa-angle-right"></i></a></div>
 								</div>
             </div>
             <div class="col-md-4">

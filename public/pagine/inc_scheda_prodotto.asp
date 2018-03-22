@@ -18,7 +18,7 @@ if id>0 then
 		fkproduttore=prod_rs("fkproduttore")
 		if fkproduttore="" then fkproduttore=0
 		NomePagina=prod_rs("NomePagina")
-		Consegna=prod_rs("Consegna")
+
 
 		offerta=prod_rs("offerta")
 		if offerta="" then offerta=0
@@ -32,6 +32,7 @@ if id>0 then
 			if pr_rs.recordcount>0 then
 				produttore=pr_rs("titolo")
 				url_produttore="/produttori-illuminazione/"&ConvertiTitoloInUrlProduttore(produttore, fkproduttore)
+				Consegna=pr_rs("Consegna")
 			end if
 			pr_rs.close
 		end if
@@ -442,7 +443,7 @@ end if
 								<%end if%>
 						</li>
 					</ul>
-					<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal">Contattaci per dettagli sulla consegna <i class="fa fa-angle-right"></i></a></div>
+					<div class="panel-footer"><a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal">Contattaci per info sulla consegna <i class="fa fa-angle-right"></i></a></div>
 				</div>
 				<%
 				Set com_rs = Server.CreateObject("ADODB.Recordset")

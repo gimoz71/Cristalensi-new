@@ -14,6 +14,11 @@ if prov="" then prov=0
 
 	errore=0
 
+	if prov=3 and mode=0 THEN
+		session("url_prodotto")=fromURL_preferiti
+		response.write(fromURL_preferiti)
+	end if
+
 	'iscrizione prima volta
 	if mode=1 then
 		nome=LTrim(request("nome"))
@@ -295,6 +300,10 @@ if mode=1 then
 		if prov=0 and errore=0 then response.redirect("/areaprivata.asp")
 		if prov=1 and errore=0 then response.redirect("/carrello2.asp")
 		if prov=2 and errore=0 then response.redirect("/preferiti.asp")
+		if prov=3 and errore=0 then
+			url_prodotto=session("url_prodotto")
+			response.redirect(url_prodotto)
+		end if
 end if
 
 	'if mode=2 and pkid=0 then response.Redirect("iscrizione.asp")
@@ -380,6 +389,10 @@ end if
     if prov=0 and errore=0 then response.redirect("/areaprivata.asp")
     if prov=1 and errore=0 then response.redirect("/carrello2.asp")
 		if prov=2 and errore=0 then response.redirect("/preferiti.asp")
+		if prov=3 and errore=0 then
+			url_prodotto=session("url_prodotto")
+			response.redirect(url_prodotto)
+		end if
   'else
   	'nome_log=Session("nome_log")
   	'idsession=Session("idCliente")

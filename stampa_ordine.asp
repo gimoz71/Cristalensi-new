@@ -157,6 +157,22 @@
                               %>
                               <%
                               Do while not rs.EOF
+
+															Set prod_rs = Server.CreateObject("ADODB.Recordset")
+															sql = "SELECT PkId, FkProduttore FROM Prodotti WHERE PKId="&rs("FkProdotto")
+															prod_rs.open sql,conn, 3, 3
+															if prod_rs.recordcount>0 then
+
+																Set pr_rs = Server.CreateObject("ADODB.Recordset")
+																sql = "SELECT PkId, Titolo, Consegna FROM Produttori WHERE PkId="&prod_rs("fkproduttore")
+																pr_rs.open sql,conn, 1, 1
+																if pr_rs.recordcount>0 then
+																	produttore=pr_rs("titolo")
+																	Consegna=pr_rs("Consegna")
+																end if
+																pr_rs.close
+															end if
+															prod_rs.close
                               %>
                                 <tr>
                                     <td data-th="Product" class="cart-product">
@@ -164,6 +180,7 @@
                                             <div class="col-sm-12">
                                                 <h5 class="nomargin" style="font-size: 13px;">[<%=rs("codicearticolo")%>]&nbsp;<%=rs("titolo")%></h5>
                                                 <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>&nbsp;Col.:&nbsp;<%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%>&nbsp;-&nbsp;Lamp.:&nbsp;<%=rs("lampadina")%><%end if%></p><%end if%>
+																								<%if idadmin>0 then%><small><%=Produttore&": "&Consegna%></small><%end if%>
                                             </div>
                                         </div>
                                     </td>
