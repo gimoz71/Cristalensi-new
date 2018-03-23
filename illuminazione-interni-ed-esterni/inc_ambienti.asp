@@ -193,6 +193,13 @@ gr_rs.close
                   prezzoarticolo=prod_rs("PrezzoProdotto")
                   prezzolistino=prod_rs("PrezzoListino")
 
+                  prezzoprodottosoloclienti=prod_rs("PrezzoProdottoSoloClienti")
+                  if prezzoprodottosoloclienti=True THEN
+                    prezzoprodottosoloclienti="si"
+                  Else
+                    prezzoprodottosoloclienti="no"
+                  end if
+
                     fkproduttore_pr=prod_rs("fkproduttore")
                     if fkproduttore_pr="" then fkproduttore_pr=0
 
@@ -229,13 +236,18 @@ gr_rs.close
                                   <a href="/<%=NomePagina%>" title="<%=titolo_prodotto%>"><h3><%=titolo_prodotto%></h3></a>
                                   <p class="details"><span>codice: <b><%=codicearticolo%></b></span><span>produttore: <b><a href="<%=url_produttore%>"><%=produttore%></a></b></span></p>
                                   <div class="price-box separator">
-                                      <%if prezzoarticolo<>0 then%>
+                                    <%if prezzoarticolo<>0 then%>
+                                      <%if idsession=0 and prezzoprodottosoloclienti="si" then%>
+                                        <em><span class="price-new" style="color: #000;">SCONTO PER ISCRITTI !!!</span></em><br />
+                                        <%if prezzolistino<>0 then%><span class="price-old">Prezzo di listino: <b><%=prezzolistino%> &euro;</b></span><%else%>&nbsp;<%end if%>
+                                      <%else%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />
                                         <%if prezzolistino<>0 then%><span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span><%else%>&nbsp;<%end if%>
-                                      <%else%>
-                                        <span class="price-new">&nbsp;<br /></span>
-                                        <span class="price-old">Prezzo di listino: <b><%=prezzolistino%> &euro;</b></span>
                                       <%end if%>
+                                    <%else%>
+                                      <span class="price-new">&nbsp;<br /></span>
+                                      <%if prezzolistino<>0 then%><span class="price-old">Prezzo di listino: <b><%=prezzolistino%> &euro;</b></span><%else%>&nbsp;<%end if%>
+                                    <%end if%>
                                   </div>
                               </div>
                           </div>

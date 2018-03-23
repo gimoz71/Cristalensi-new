@@ -15,6 +15,14 @@ if id>0 then
 		allegato_prodotto=prod_rs("Allegato")
 		PrezzoArticolo=prod_rs("PrezzoProdotto")
 		PrezzoListino=prod_rs("PrezzoListino")
+
+		prezzoprodottosoloclienti=prod_rs("PrezzoProdottoSoloClienti")
+		if prezzoprodottosoloclienti=True THEN
+			prezzoprodottosoloclienti="si"
+		Else
+			prezzoprodottosoloclienti="no"
+		end if
+
 		fkproduttore=prod_rs("fkproduttore")
 		if fkproduttore="" then fkproduttore=0
 		NomePagina=prod_rs("NomePagina")
@@ -343,82 +351,103 @@ end if
 												<ul class="list-group text-center">
 
 														<li class="list-group-item" style="padding-top: 20px">
-		                            <p>
-																		<%if prezzoarticolo<>"" then%>
-																		Prezzo Cristalensi:<br />
-		                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<span itemprop="price"><%=prezzoarticolo%></span> &euro;<meta itemprop="priceCurrency" content="EUR" /></span><br />
+																<p>
+																		<%if prezzoarticolo<>0 then%>
+																			<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
+																				<span class="price-new"><em><span itemprop="price">SCONTO EXTRA<br />PER GLI ISCRITTI !!!</span></em></span><br /><br />
+																				<%if prezzolistino<>0 then%>
+																					<span class="price-old">Prezzo di Listino <b><%=prezzolistino%> &euro;</b></span>
+																				<%end if%>
+																			<%Else%>
+																				Prezzo Cristalensi:<br />
+																				<span class="price-new"><i class="fa fa-tag"></i>&nbsp;<span itemprop="price"><%=prezzoarticolo%></span> &euro;<meta itemprop="priceCurrency" content="EUR" /></span><br />
+																				<%if prezzolistino<>0 then%>
+																					<span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span>
+																				<%end if%>
+																			<%end if%>
 																		<%end if%>
-		                                <%if prezzolistino<>0 then%><span class="price-old">invece di  <b><%=prezzolistino%> &euro;</b></span><%end if%>
-		                            </p>
-		                        </li>
 
 
+																</p>
+														</li>
 
-														<%
-														Set col_rs = Server.CreateObject("ADODB.Recordset")
-														sql = "SELECT [Prodotto-Colore].FkProdotto, Colori.Titolo FROM [Prodotto-Colore] INNER JOIN Colori ON [Prodotto-Colore].FkColore = Colori.PkId WHERE ((([Prodotto-Colore].FkProdotto)="&id&")) ORDER BY Colori.Titolo ASC"
-														col_rs.open sql,conn, 1, 1
-														if col_rs.recordcount>0 then
-														%>
-																<input type="hidden" name="num_colori" id="num_colori" value="<%=col_rs.recordcount%>">
+
+														<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
+															<%'qui eventualmente possiamo metter un banner per rafforzare iscrizione e sconto%>
+															<li class="list-group-item" style="background-color: #FF972C; Color: #fff">Prezzo con SCONTO EXTRA riservato<br />per tutti i clienti iscritti</li>
 														<%else%>
-																<input type="hidden" name="num_colori" id="num_colori" value="0">
-																<input type="hidden" name="colore" id="colore" value="*****">
+															<%
+															Set col_rs = Server.CreateObject("ADODB.Recordset")
+															sql = "SELECT [Prodotto-Colore].FkProdotto, Colori.Titolo FROM [Prodotto-Colore] INNER JOIN Colori ON [Prodotto-Colore].FkColore = Colori.PkId WHERE ((([Prodotto-Colore].FkProdotto)="&id&")) ORDER BY Colori.Titolo ASC"
+															col_rs.open sql,conn, 1, 1
+															if col_rs.recordcount>0 then
+															%>
+																	<input type="hidden" name="num_colori" id="num_colori" value="<%=col_rs.recordcount%>">
+															<%else%>
+																	<input type="hidden" name="num_colori" id="num_colori" value="0">
+																	<input type="hidden" name="colore" id="colore" value="*****">
+															<%end if%>
+
+															<%
+															Set lam_rs = Server.CreateObject("ADODB.Recordset")
+															sql = "SELECT [Prodotto-Lampadina].FkProdotto, Lampadine.Titolo FROM [Prodotto-Lampadina] INNER JOIN Lampadine ON [Prodotto-Lampadina].FkLampadina = Lampadine.PkId WHERE ((([Prodotto-Lampadina].FkProdotto)="&id&")) ORDER BY Lampadine.Titolo ASC"
+															lam_rs.open sql,conn, 1, 1
+															if lam_rs.recordcount>0 then
+															%>
+																	<input type="hidden" name="num_lampadine" id="num_lampadine" value="<%=lam_rs.recordcount%>">
+															<%else%>
+																	<input type="hidden" name="num_lampadine" id="num_lampadine" value="0">
+																	<input type="hidden" name="lampadina" id="lampadina" value="*****">
+															<%end if%>
+
+															<%if col_rs.recordcount>0 then%>
+															<li class="list-group-item">
+																	<select name="colore" id="colore" class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Scegli il colore e/o la finitura">
+																	<%
+																	Do While Not col_rs.EOF
+																	%>
+																			<option title="<%=col_rs("Titolo")%>" value="<%=col_rs("Titolo")%>"><%=col_rs("Titolo")%></option>
+																	<%
+																	col_rs.movenext
+																	loop
+																	%>
+																	</select>
+															</li>
+															<%
+															end if
+															col_rs.close
+															%>
+															<%if lam_rs.recordcount>0 then%>
+															<li class="list-group-item">
+																	<select name="lampadina" id="lampadina" class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Scegli la lampadina e/o il vetro">
+																	<%
+																	Do While Not lam_rs.EOF
+																	%>
+																			<option title="<%=lam_rs("Titolo")%>" value="<%=lam_rs("Titolo")%>"><%=lam_rs("Titolo")%></option>
+																	<%
+																	lam_rs.movenext
+																	loop
+																	%>
+																	</select>
+															</li>
+															<%
+															end if
+															lam_rs.close
+															%>
+															<li class="list-group-item">
+																	<input type="number" data-width="auto" class="form-control" name="quantita" id="quantita" placeholder="Quanti Pezzi?" aria-label="Pezzi">
+															</li>
 														<%end if%>
 
-														<%
-														Set lam_rs = Server.CreateObject("ADODB.Recordset")
-														sql = "SELECT [Prodotto-Lampadina].FkProdotto, Lampadine.Titolo FROM [Prodotto-Lampadina] INNER JOIN Lampadine ON [Prodotto-Lampadina].FkLampadina = Lampadine.PkId WHERE ((([Prodotto-Lampadina].FkProdotto)="&id&")) ORDER BY Lampadine.Titolo ASC"
-														lam_rs.open sql,conn, 1, 1
-														if lam_rs.recordcount>0 then
-														%>
-																<input type="hidden" name="num_lampadine" id="num_lampadine" value="<%=lam_rs.recordcount%>">
-														<%else%>
-																<input type="hidden" name="num_lampadine" id="num_lampadine" value="0">
-																<input type="hidden" name="lampadina" id="lampadina" value="*****">
-														<%end if%>
 
-														<%if col_rs.recordcount>0 then%>
-														<li class="list-group-item">
-																<select name="colore" id="colore" class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Scegli il colore e/o la finitura">
-																<%
-																Do While Not col_rs.EOF
-																%>
-																		<option title="<%=col_rs("Titolo")%>" value="<%=col_rs("Titolo")%>"><%=col_rs("Titolo")%></option>
-																<%
-																col_rs.movenext
-																loop
-																%>
-																</select>
-		                        </li>
-														<%
-														end if
-														col_rs.close
-														%>
-														<%if lam_rs.recordcount>0 then%>
-														<li class="list-group-item">
-																<select name="lampadina" id="lampadina" class="selectpicker show-menu-arrow  show-tick" data-size="4" title="Scegli la lampadina e/o il vetro">
-																<%
-																Do While Not lam_rs.EOF
-																%>
-																		<option title="<%=lam_rs("Titolo")%>" value="<%=lam_rs("Titolo")%>"><%=lam_rs("Titolo")%></option>
-																<%
-																lam_rs.movenext
-																loop
-																%>
-																</select>
-		                        </li>
-														<%
-														end if
-														lam_rs.close
-														%>
-		                        <li class="list-group-item">
-		                            <input type="number" data-width="auto" class="form-control" name="quantita" id="quantita" placeholder="Quanti Pezzi?" aria-label="Pezzi">
-		                        </li>
-		                    </ul>
-		                    <div class="panel-footer">
-		                        <a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
-		                    </div>
+												</ul>
+												<div class="panel-footer">
+														<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
+															<a href="/iscrizione.asp?prov=3" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Iscriviti per vedere gli sconti!"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;Iscriviti o Accedi !!!</a>
+														<%else%>
+															<a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
+														<%end if%>
+												</div>
 												</form>
 											<%end if%>
 										<%end if%>
