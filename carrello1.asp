@@ -166,7 +166,9 @@
 				Set rs2 = Server.CreateObject("ADODB.Recordset")
 				sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" GROUP BY FkOrdine"
 				rs2.Open sql, conn, 3, 3
-					TotaleCarrello=rs2("TotaleCarrello")
+					if rs2.recordcount>0 then
+						TotaleCarrello=rs2("TotaleCarrello")
+					end if
 					if TotaleCarrello="" or isnull(TotaleCarrello) then TotaleCarrello=0
 				rs2.close
 
