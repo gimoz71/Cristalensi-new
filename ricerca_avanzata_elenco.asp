@@ -158,7 +158,7 @@ end if
                     </ul>
                     <%
                     end if
-                    gr_rs.close
+                    tip_rs.close
                     %>
                 </nav>
             </div>

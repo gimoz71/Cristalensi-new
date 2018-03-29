@@ -17,7 +17,7 @@
 			sql = "SELECT Top 1 PkId, PkId_Contatore FROM Ordini Order by PkId_Contatore Desc"
 			os1.Open sql, conn, 1, 1
 			IdOrdine_ultimo=os1("PkId")
-			IdOrdine_ultimo=cInt(IdOrdine_ultimo)
+			IdOrdine_ultimo=CLng(IdOrdine_ultimo)
 			IdOrdine=IdOrdine_ultimo+1
 			os1.close
 
@@ -43,7 +43,7 @@
 
 		end if
 
-		IdOrdine=cInt(IdOrdine)
+		IdOrdine=CLng(IdOrdine)
 
 	'modifica del carrello: eliminazione o modifica di un articolo nel carrello
 		'if mode=2 then
@@ -134,7 +134,7 @@
 				sql = "SELECT Top 1 PkId, PkId_Contatore FROM RigheOrdine Order by Pkid_Contatore Desc"
 				riga_rs.Open sql, conn, 1, 1
 				PkId_riga_ultimo=riga_rs("PkId")
-				PkId_riga_ultimo=cInt(PkId_riga_ultimo)
+				PkId_riga_ultimo=CLng(PkId_riga_ultimo)
 				PkId_riga=PkId_riga_ultimo+1
 				riga_rs.close
 
@@ -163,12 +163,14 @@
 		end if
 
 				'Calcolo la somma per l'ordine
+
 				Set rs2 = Server.CreateObject("ADODB.Recordset")
 				sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" GROUP BY FkOrdine"
 				rs2.Open sql, conn, 3, 3
-					if rs2.recordcount>0 then
+					'if rs2.recordcount>0 then
 						TotaleCarrello=rs2("TotaleCarrello")
-					end if
+						'response.write("TotaleCarrello:"&TotaleCarrello)
+					'end if
 					if TotaleCarrello="" or isnull(TotaleCarrello) then TotaleCarrello=0
 				rs2.close
 
@@ -380,13 +382,13 @@
 	                                <tfoot>
 	                                    <tr class="visible-xs">
 	                                        <td class="text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
-												  <%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+												  								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
 	                                    </tr>
 	                                    <tr>
 	                                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td colspan="2" class="hidden-xs"></td>
 	                                        <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
-												  <%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%> &euro;</strong></td>
+												  								<%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%> &euro;</strong></td>
 	                                        <td></td>
 	                                    </tr>
 	                                </tfoot>

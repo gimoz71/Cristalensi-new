@@ -312,7 +312,7 @@ az_rs.close
           									<%
           									For i=1 To prod_rs.PageCount
           									%>
-          									<option value="<%=i%>" <%if cInt(i)=cInt(p) then%> selected<%end if%>><%=i%></option>
+          									<option value="<%=i%>"<%if cInt(i)=cInt(p) then%> selected<%end if%>><%=i%></option>
           									<%
           									Next
           									%>

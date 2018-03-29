@@ -154,13 +154,13 @@ if mode=1 then
 				' Timeout
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
 				' Server SMTP di uscita
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = msg_smtpserver
 				' Porta SMTP
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
 				'Username
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = msg_sendusername
 				'Password
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = msg_sendpassword
 
 				.Fields.update
 			End With
@@ -215,13 +215,13 @@ if mode=1 then
 				' Timeout
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
 				' Server SMTP di uscita
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = msg_smtpserver
 				' Porta SMTP
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
 				'Username
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = msg_sendusername
 				'Password
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = msg_sendpassword
 
 				.Fields.update
 			End With
@@ -260,13 +260,13 @@ if mode=1 then
 				' Timeout
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
 				' Server SMTP di uscita
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = msg_smtpserver
 				' Porta SMTP
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
 				'Username
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = msg_sendusername
 				'Password
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = msg_sendpassword
 
 				.Fields.update
 			End With
@@ -481,13 +481,13 @@ end if
 				' Timeout
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
 				' Server SMTP di uscita
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = msg_smtpserver
 				' Porta SMTP
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
 				'Username
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = msg_sendusername
 				'Password
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = msg_sendpassword
 
 				.Fields.update
 			End With
@@ -542,13 +542,13 @@ end if
 				' Timeout
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
 				' Server SMTP di uscita
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "smtp.cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = msg_smtpserver
 				' Porta SMTP
 				.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
 				'Username
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "postmaster@cristalensi.it"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = msg_sendusername
 				'Password
-				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "m0nt3lup0"
+				.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = msg_sendpassword
 
 				.Fields.update
 			End With

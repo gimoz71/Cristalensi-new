@@ -255,6 +255,7 @@
 	if ss.recordcount>0 then
 		TotaleCarrello=ss("TotaleCarrello")
 		CostoSpedizioneTotale=ss("CostoSpedizione")
+		if CostoSpedizioneTotale="" or IsNull(CostoSpedizioneTotale) then CostoSpedizioneTotale=0
 		TotaleGenerale=ss("TotaleGenerale")
 		NoteCliente=ss("NoteCliente")
 
@@ -428,7 +429,7 @@
 									Do while not trasp_rs.EOF
 									PkIdSpedizione=trasp_rs("pkid")
 									NomeSpedizione=trasp_rs("nome")
-									DescrizioneSpedizione=trasp_rs("descrizione")
+									DescrizioneSpedizione=NoLettAccDescrizioni(trasp_rs("descrizione"))
 									CostoSpedizione=trasp_rs("costo")
 
 									TipoCosto=trasp_rs("TipoCosto")

@@ -195,6 +195,7 @@
   		Provincia_sp=ss("Provincia_sp")
   		Nazione_sp=ss("Nazione_sp")
   		CostoPagamentoTotale=ss("CostoPagamento")
+			if CostoPagamentoTotale="" or isNull(CostoPagamentoTotale) then CostoPagamentoTotale=0
   		TotaleGenerale=ss("TotaleGenerale")
   		NoteCliente=ss("NoteCliente")
 
@@ -415,7 +416,7 @@
 																Do while not trasp_rs.EOF
 																PkIdPagamento=trasp_rs("pkid")
 																NomePagamento=trasp_rs("nome")
-																DescrizionePagamento=trasp_rs("descrizione")
+																DescrizionePagamento=NoLettAccDescrizioni(trasp_rs("descrizione"))
 																CostoPagamento=trasp_rs("costo")
 
 																TipoCosto=trasp_rs("TipoCosto")
