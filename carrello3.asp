@@ -441,9 +441,9 @@
 																loop
 																%>
                                 <tr>
-                                    <td data-th="Product" class="hidden-xs"></td>
-                                    <td data-th="Price"><b class="visible-xs">Costo operazione: <%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;</b></td>
-                                    <td data-th="Subtotal" class="hidden-xs"></td>
+                                    <td data-th="Product"><h5>costo pagamento:</h5></td>
+                                    <td data-th="Price" class="hidden-xs"></td>
+                                    <td data-th="Subtotal"><h5><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;</h5></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -522,8 +522,8 @@
 										&#8364;&nbsp;
 										</b></p>
                 </div>
-                <a href="/carrello2.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
-                <a href="#" class="btn btn-danger pull-right" onClick="Continua();">Concludi l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a>
+                <a href="/carrello2.asp" class="btn btn-danger pull-left" style="margin-top: 10px;"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
+                <a href="#" class="btn btn-danger pull-right" onClick="Continua();" style="margin-top: 10px;">Concludi l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a>
             </div>
 						<%end if%>
         </div>

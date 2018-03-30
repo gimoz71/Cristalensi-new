@@ -461,7 +461,7 @@
 									loop
 								%>
 								<tr>
-                                    <td data-th="Product"><h5>costo spedizione:</h5></td>
+                                    <td data-th="Product"><h5>Costo spedizione:</h5></td>
                                     <td data-th="Price" class="hidden-xs"></td>
                                     <td data-th="Subtotal"><h5><%if TipoTrasportoScelto=4 and CostoSpedizioneTotale=0 then%>DA DEFINIRE<%else%><%=FormatNumber(CostoSpedizioneTotale,2)%>&#8364;<%end if%></h5></td>
                                 </tr>
@@ -476,7 +476,7 @@
                         <h4>Recapito</h4>
                     </div>
                     <div class="col-md-12">
-						<%if TipoTrasportoScelto<>2 then%>
+						<%if TipoTrasportoScelto>0 and TipoTrasportoScelto<>2 then%>
 							<p class="description">E' necessario indicare esattamente un indirizzo dove recapitare i prodotti ordinati oltre ad un numero di telefono per essere eventualmente contattati dal corriere.</p>
 							<div class="form-group clearfix">
                                 <label for="nominativo_sp" class="col-sm-4 control-label">Nome e Cognome oppure Azienda</label>
@@ -594,8 +594,8 @@
 
 								</div>
 								<%if rs.recordcount>0 then%>
-                <a href="/carrello1.asp" class="btn btn-danger pull-left"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
-                <%if TipoTrasportoScelto>0 then%><a href="#" class="btn btn-danger pull-right" onClick="Continua();">clicca qui per completare l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a><%end if%>
+                <a href="/carrello1.asp" class="btn btn-danger pull-left" style="margin-top: 10px;"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
+                <%if TipoTrasportoScelto>0 then%><a href="#" class="btn btn-danger pull-right" onClick="Continua();" style="margin-top: 10px;">clicca qui per completare l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a><%end if%>
 								<%end if%>
             </div>
 						<%end if%>
