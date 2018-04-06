@@ -1,4 +1,4 @@
-<!--#include file="inc_strConn.asp"-->
+/<!--#include file="inc_strConn.asp"-->
 <!DOCTYPE html>
 <html>
 
@@ -55,7 +55,7 @@
                     <p class="main-description">
                       <strong>Da pi&ugrave; 50 anni</strong>, la prerogativa di questo affermato negozio di lampadari &eacute; fornire alla clientela una <strong>vasta e raffinata gamma di prodotti di illuminazione da interno ed esterno</strong> volti a soddisfare esigenze <strong>classiche e moderne</strong>.
                           Lampadari, plafoniere, appliques, lumi da tavolo, fari, faretti e lampade LED fanno bella mostra di s&eacute; nella <strong>sala espositiva</strong> dell'azienda stessa.<br><br>
-                          Grazie ad una privilegiata posizione stradale, (tra Firenze, Pisa e Siena: <a href="https://www.cristalensi.it/contatti.asp" title="Negozio illuminazione Firenze">vedi la mappa</a>) e favoriti da un <strong>ampio parcheggio</strong>, il negozio di lampadari offre la possibilit&agrave; di una visita in tutta tranquillit&agrave; al nostro <strong>showroom</strong>.<br><br>
+                          Grazie ad una privilegiata posizione stradale, (tra Firenze, Pisa e Siena: <a href="/contatti.asp" title="Negozio illuminazione Firenze">vedi la mappa</a>) e favoriti da un <strong>ampio parcheggio</strong>, il negozio di lampadari offre la possibilit&agrave; di una visita in tutta tranquillit&agrave; al nostro <strong>showroom</strong>.<br><br>
                           Piscine, parchi e giardini assumono un aspetto caratteristico grazie al gioco di luci ed ombre creato da <strong>tecnici esperti</strong> per il montaggio in esterni:
                           l'azienda Cristalensi offre un <strong>servizio completo</strong> alla sua clientela, offrendo <strong>preventivi gratuiti</strong> con <strong>sopralluoghi</strong> all'ambiente da illuminare.
                     </p>
@@ -95,73 +95,65 @@
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/5.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/5.jpg)" title="Negozio illuminazione - Entrata e parcheggio"><img alt="Negozio illuminazione - Entrata e parcheggio" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/5.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/5.jpg)" title="Negozio illuminazione - Entrata e parcheggio"><img alt="Negozio illuminazione - Entrata e parcheggio" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/6.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/6.jpg)" title="Negozio illuminazione - Staff"><img alt="Negozio illuminazione - Staff" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/6.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/6.jpg)" title="Negozio illuminazione - Staff"><img alt="Negozio illuminazione - Staff" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/1.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/1.jpg)" title="Negozio lampadari - Panoramica"><img alt="Negozio lampadari - Panoramica" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/1.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/1.jpg)" title="Negozio lampadari - Panoramica"><img alt="Negozio lampadari - Panoramica" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/2.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/2.jpg)" title="Negozio lampadari Firenze - Panoramica"><img alt="Negozio lampadari Firenze - Panoramica" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/2.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/2.jpg)" title="Negozio lampadari Firenze - Panoramica"><img alt="Negozio lampadari Firenze - Panoramica" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/3.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/3.jpg)" title="Negozio lampade rustiche"><img alt="Negozio lampade rustiche" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/3.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/3.jpg)" title="Negozio lampade rustiche"><img alt="Negozio lampade rustiche" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/4.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/4.jpg)" title="Negozio lampadari in cristallo"><img alt="Negozio lampadari in cristallo" src="images/blank.png"></a>
-                        </div>
-                    </article>
-                </div>
-
-
-                <div class="col-xs-6 col-sm-3 col-md-2 ">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/10.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/10.jpg)" title="Negozio lampadari moderni"><img alt="Negozio lampadari moderni" src="images/blank.png"></a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-2 ">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/11.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/11.jpg)" title="Negozio ventilatori con lampade"><img alt="Negozio ventilatori con lampade" src="images/blank.png"></a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-2 ">
-                    <article class="col-item">
-                        <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/13.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/13.jpg)" title="Negozio lampadari - Panoramica"><img alt="Negozio lampadari - Panoramica" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/4.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/4.jpg)" title="Negozio lampadari in cristallo"><img alt="Negozio lampadari in cristallo" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>
 
+
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/8.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/8.jpg)" title="Negozio lampadari - Panoramica"><img alt="Negozio lampadari - Panoramica" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/10.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/10.jpg)" title="Negozio lampadari moderni"><img alt="Negozio lampadari moderni" src="images/blank.png"></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 ">
+                    <article class="col-item">
+                        <div class="photo">
+                            <a href="/images/chi-siamo/grandi/11.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/11.jpg)" title="Negozio ventilatori con lampade"><img alt="Negozio ventilatori con lampade" src="images/blank.png"></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 ">
+                    <article class="col-item">
+                        <div class="photo">
+                            <a href="/images/chi-siamo/grandi/13.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/13.jpg)" title="Negozio lampadari - Panoramica"><img alt="Negozio lampadari - Panoramica" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>
@@ -169,7 +161,7 @@
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/15.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/15.jpg)" title="Negozio lampade da esterni"><img alt="Negozio lampade da esterni" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/8.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/8.jpg)" title="Negozio lampadari - Panoramica"><img alt="Negozio lampadari - Panoramica" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>
@@ -177,7 +169,15 @@
                 <div class="col-xs-6 col-sm-3 col-md-2 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="https://www.cristalensi.it/images/chi-siamo/grandi/16.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/images/chi-siamo/piccole/16.jpg)" title="Negozio lampade da esterni"><img alt="Negozio lampade da esterni" src="images/blank.png"></a>
+                            <a href="/images/chi-siamo/grandi/15.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/15.jpg)" title="Negozio lampade da esterni"><img alt="Negozio lampade da esterni" src="images/blank.png"></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-xs-6 col-sm-3 col-md-2 ">
+                    <article class="col-item">
+                        <div class="photo">
+                            <a href="/images/chi-siamo/grandi/16.jpg" data-fancybox="group" data-caption="Caption #1" class="prod-img-replace" style="background-image: url(/images/chi-siamo/piccole/16.jpg)" title="Negozio lampade da esterni"><img alt="Negozio lampade da esterni" src="images/blank.png"></a>
                         </div>
                     </article>
                 </div>

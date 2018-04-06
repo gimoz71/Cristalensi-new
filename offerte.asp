@@ -125,13 +125,13 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <p class="navbar-text">prezzo</p>
                                 <ul class="nav navbar-nav">
-                                    <li <%if order=3 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="https://www.cristalensi.it/offerte.asp?order=3"><i class="glyphicon glyphicon-eur"></i> - </a></li>
-                                    <li <%if order=4 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="https://www.cristalensi.it/offerte.asp?order=4"><i class="glyphicon glyphicon-eur"></i> + </a></li>
+                                    <li <%if order=3 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/offerte.asp?order=3"><i class="glyphicon glyphicon-eur"></i> - </a></li>
+                                    <li <%if order=4 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/offerte.asp?order=4"><i class="glyphicon glyphicon-eur"></i> + </a></li>
                                 </ul>
                                 <p class="navbar-text">ordine alfabetico</p>
                                 <ul class="nav navbar-nav">
-                                    <li <%if order=1 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="https://www.cristalensi.it/offerte.asp?order=1">A/Z</a></li>
-                                    <li <%if order=2 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="https://www.cristalensi.it/offerte.asp?order=2">Z/A</a></li>
+                                    <li <%if order=1 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/offerte.asp?order=1">A/Z</a></li>
+                                    <li <%if order=2 then%>class="active"<%end if%>><a style="border: solid 1px #e7e7e7; border-top: none; border-bottom: none;" href="/offerte.asp?order=2">Z/A</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                 <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
                       <div class="photo">
-                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
+                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>
                       <div class="info">
                           <div class="row">
