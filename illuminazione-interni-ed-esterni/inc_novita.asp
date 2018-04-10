@@ -51,7 +51,7 @@ end if
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Shop online di <%=Titolo_2%>: da Cristalensi sconti su tutte le novit&agrave; e gli ultimi arrivi per l'illuminazione. Vendita online di <%=Titolo_2%>.<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="Cristalensi.">
+    <meta property="og:description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Shop online di <%=Titolo_2%>: da Cristalensi sconti su tutte le novit&agrave; e gli ultimi arrivi per l'illuminazione. Vendita online di <%=Titolo_2%>.<%end if%>">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -103,7 +103,7 @@ end if
             <h1 class="title"><%=Titolo_2%> - Novit&agrave; e ultimi arrivi</h1>
             <%if Len(Descrizione)>0 then%>
             <p class="description">
-                <%=Descrizione%>
+                <%=NoLettAccDescrizioni(Descrizione)%>
             </p>
             <%end if%>
         </div>

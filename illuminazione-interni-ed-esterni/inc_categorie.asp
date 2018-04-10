@@ -45,7 +45,7 @@ gr_rs.close
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Vendita online di <%=Titolo_2%>: da Cristalensi sconti su tutti i prodotti per l'illuminazione<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="Cristalensi.">
+    <meta property="og:description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Vendita online di <%=Titolo_2%>: da Cristalensi sconti su tutti i prodotti per l'illuminazione<%end if%>">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -108,7 +108,7 @@ gr_rs.close
             <div class="description">
                 <%if Len(Img)>0 then%><img src="/public/<%=img%>" style="float: left; width: 200px; height: 150px; background: #ccc; margin-right: 10px;" alt="<%=Titolo_1%><%if Len(Titolo_2)>0 then%><%=" - "&Titolo_2%><%end if%>" /><%end if%>
                 <%if Len(Titolo_2)>0 then%><h2><%=Titolo_2%></h2><%end if%>
-                <p><%=Descrizione%></p>
+                <p><%=NoLettAccDescrizioni(Descrizione)%></p>
             </div>
             <%end if%>
             <a name="inizioelenco"></a>
