@@ -83,7 +83,8 @@ az_rs.close
             </ol>
             <h1 class="title"><%=titolo_produttore%></h1>
             <div class="description">
-                <img src="/public/<%=file_img%>" style="float: left; background: #ccc; margin-right: 10px;" alt="Catalogo prodotti illuminazione <%=titolo_produttore%>" />
+              <div class="readmore">
+                <img src="/public/<%=file_img%>" class="hidden-xs" style="float: left; background: #ccc; margin-right: 10px;" alt="Catalogo prodotti illuminazione <%=titolo_produttore%>" />
                 <h2>Selezione di prodotti illuminazione dal catalogo di <%=titolo_produttore%></h2>
                 <p>
                 <%if Len(descrizione_produttore)>0 then%>
@@ -92,6 +93,7 @@ az_rs.close
                 Dal catalogo di <%=titolo_produttore%> abbiamo selezionato i seguenti prodotti da illuminazione. I produttori hanno spesso molte varianti dello stesso articolo che magari non abbiamo inserito, quindi, se conoscete un prodotto di <%=titolo_produttore%> e non &egrave; qui presente, potete contattare il nostro staff. Noi abbiamo preferito dar spazio a tante marche, dalle pi&ugrave; famose e pi&ugrave; grandi alle realt&agrave; pi&ugrave; piccole dove potete trovare prodotti pi&ugrave; artigianali in modo tale da fornirvi un'ampia variet&agrave; di modelli, design e non ultimo, prezzi.
                 <%end if%>
                 </p>
+              </div>
             </div>
             <a name="inizioelenco"></a>
         </div>
@@ -352,5 +354,15 @@ verrai contattato il prima possibile: il nostro staff sar&agrave; a Tua disposiz
     </div>
     </div>
     <!--#include virtual="/inc_footer.asp"-->
+    <script>
+        $(document).ready(function() {
+            $('.readmore').readmore({
+                speed: 200,
+                collapsedHeight: 160,
+                moreLink: '<a href="#" style="text-align: right; margin-top: 10px;">Leggi di pi&ugrave; <i class="fa fa-chevron-down"></i></a>',
+                lessLink: '<a href="#" style="text-align: right">Chiudi <i class="fa fa-chevron-up"></i></a>'
+            });
+        });
+    </script>
 </body>
 <!--#include virtual="/inc_strClose.asp"-->

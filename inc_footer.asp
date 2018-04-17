@@ -812,6 +812,7 @@ end if
 <script src="/javascripts/bootstrap.min.js"></script>
 <script src="/javascripts/jquery.bootstrap-touchspin.min.js"></script>
 <script src="/javascripts/bootstrap-select.min.js"></script>
+<script src="/javascripts/readmore.min.js"></script>
 <script src="/javascripts/jquery.fancybox.min.js"></script>
 <script src="/javascripts/custom.js"></script>
 <script>

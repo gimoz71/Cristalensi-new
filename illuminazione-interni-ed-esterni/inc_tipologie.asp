@@ -94,9 +94,11 @@ gr_rs.close
             <h1 class="title"><%=Titolo_1%></h1>
             <%if Len(Descrizione)>0 then%>
             <div class="description">
-                <%if Len(Img)>0 then%><img src="/public/<%=img%>" style="float: left; width: 200px; height: 150px; background: #ccc; margin-right: 10px;" alt="<%=Titolo_1%><%if Len(Titolo_2)>0 then%><%=" - "&Titolo_2%><%end if%>" /><%end if%>
+              <div class="readmore">
+                <%if Len(Img)>0 then%><img src="/public/<%=img%>" class="hidden-xs" style="float: left; width: 200px; height: 150px; background: #ccc; margin-right: 10px;" alt="<%=Titolo_1%><%if Len(Titolo_2)>0 then%><%=" - "&Titolo_2%><%end if%>" /><%end if%>
                 <%if Len(Titolo_2)>0 then%><h2><%=Titolo_2%></h2><%end if%>
                 <p><%=NoLettAccDescrizioni(Descrizione)%></p>
+              </div>
             </div>
             <%end if%>
             <a name="inizioelenco"></a>
@@ -340,5 +342,15 @@ gr_rs.close
         </div>
     </div>
     <!--#include virtual="/inc_footer.asp"-->
+    <script>
+        $(document).ready(function() {
+            $('.readmore').readmore({
+                speed: 200,
+                collapsedHeight: 160,
+                moreLink: '<a href="#" style="text-align: right; margin-top: 10px;">Leggi di pi&ugrave; <i class="fa fa-chevron-down"></i></a>',
+                lessLink: '<a href="#" style="text-align: right">Chiudi <i class="fa fa-chevron-up"></i></a>'
+            });
+        });
+    </script>
 </body>
 <!--#include virtual="/inc_strClose.asp"-->
