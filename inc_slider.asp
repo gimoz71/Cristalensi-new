@@ -1,16 +1,16 @@
 <div class="row hidden-xs">
     <div class="col-md-8 clearfix parentOverflowContainer">
         <div id="slider">
-            <div data-src="images/slider/1.jpg"></div>
-            <div data-src="images/slider/2.jpg"></div>
-            <div data-src="images/slider/3.jpg"></div>
-            <div data-src="images/slider/4.jpg"></div>
-            <div data-src="images/slider/5.jpg"></div>
-            <div data-src="images/slider/6.jpg"></div>
-            <div data-src="images/slider/7.jpg"></div>
-            <div data-src="images/slider/8.jpg"></div>
-            <div data-src="images/slider/9.jpg"></div>
-            <div data-src="images/slider/10.jpg"></div>
+            <div data-src="/images/slider/1.jpg"></div>
+            <div data-src="/images/slider/2.jpg"></div>
+            <div data-src="/images/slider/3.jpg"></div>
+            <div data-src="/images/slider/4.jpg"></div>
+            <div data-src="/images/slider/5.jpg"></div>
+            <div data-src="/images/slider/6.jpg"></div>
+            <div data-src="/images/slider/7.jpg"></div>
+            <div data-src="/images/slider/8.jpg"></div>
+            <div data-src="/images/slider/9.jpg"></div>
+            <div data-src="/images/slider/10.jpg"></div>
         </div>
     </div>
     <div class="col-md-4">

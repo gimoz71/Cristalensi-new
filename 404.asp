@@ -1,4 +1,4 @@
-<!--#include file="inc_strConn.asp"-->
+<!--#include virtual="inc_strConn.asp"-->
 <!DOCTYPE html>
 <html>
 
@@ -29,20 +29,21 @@
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
-    <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/customization.css" shim-shadowdom>
-    <link rel="stylesheet" type="text/css" href="stylesheets/camera.css" shim-shadowdom>
+    <link href="/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/customization.css" shim-shadowdom>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/camera.css" shim-shadowdom>
     <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script><![endif]-->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <!--#include virtual="/inc_funzioni_head.asp"-->
+    <link rel="canonical" href="https://www.cristalensi.it/404.asp"/>
 </head>
 
 <body>
-    <!--#include file="inc_header_1.asp"-->
-    <!--#include file="inc_header_2.asp"-->
+    <!--#include virtual="inc_header_1.asp"-->
+    <!--#include virtual="inc_header_2.asp"-->
     <div class="container content">
         <div class="col-md-12">
-            <!--#include file="inc_slider.asp"-->
+            <!--#include virtual="inc_slider.asp"-->
             <div class="row top-buffer" itemscope itemtype="http://schema.org/WebSite">
               <link itemprop="url" href="https://www.cristalensi.it/"/>
                 <div class="col-md-8">
@@ -96,7 +97,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/home-lampade-da-interno.jpg)" title="Lampade da interno e illuminazione interni"><img alt="Lampade da interno" src="images/blank.png"></a>
+                            <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(/images/home-lampade-da-interno.jpg)" title="Lampade da interno e illuminazione interni"><img alt="Lampade da interno" src="/images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -110,7 +111,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/home-lampade-da-esterno.jpg)" title="Lampade da esterno e illuminazione esterni"><img alt="Lampade da esterno" src="images/blank.png"></a>
+                            <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(/images/home-lampade-da-esterno.jpg)" title="Lampade da esterno e illuminazione esterni"><img alt="Lampade da esterno" src="/images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -124,7 +125,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/illuminazione-interni-ed-esterni/3ng-ventilatori.asp" class="prod-img-replace" style="background-image: url(images/home-ventilatori.jpg)" title="Ventilatori"><img alt="Ventilatori" src="images/blank.png"></a>
+                            <a href="/illuminazione-interni-ed-esterni/3ng-ventilatori.asp" class="prod-img-replace" style="background-image: url(/images/home-ventilatori.jpg)" title="Ventilatori"><img alt="Ventilatori" src="/images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -138,7 +139,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     <article class="col-item">
                         <div class="photo">
-                            <a href="/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp" class="prod-img-replace" style="background-image: url(images/home-lampadine.jpg)" title="Lampadine"><img alt="Lampadine" src="images/blank.png"></a>
+                            <a href="/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp" class="prod-img-replace" style="background-image: url(/images/home-lampadine.jpg)" title="Lampadine"><img alt="Lampadine" src="/images/blank.png"></a>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -153,9 +154,9 @@
 
         </div>
     </div>
-    <!--#include file="inc_footer.asp"-->
-    <script type='text/javascript' src='javascripts/camera.min.js'></script>
-    <script type='text/javascript' src='javascripts/jquery.easing.1.3.min.js'></script>
+    <!--#include virtual="inc_footer.asp"-->
+    <script type='text/javascript' src='/javascripts/camera.min.js'></script>
+    <script type='text/javascript' src='/javascripts/jquery.easing.1.3.min.js'></script>
     <script>
 		jQuery(function(){
 
@@ -169,4 +170,4 @@
 		});
 	</script>
 </body>
-<!--#include file="inc_strClose.asp"-->
+<!--#include virtual="inc_strClose.asp"-->
