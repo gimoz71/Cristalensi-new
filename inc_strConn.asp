@@ -101,6 +101,7 @@ Function NoLettAccDescrizioni(strInput)
 	strInput = Replace(strInput, "ò", "&ograve;")
  	strInput = Replace(strInput, "€", "&euro;")
  	strInput = Replace(strInput, "'", "&rsquo;")
+	strInput = Replace(strInput, "’", "&rsquo;")
 	'strInput = Replace(strInput, " ", "%20")
 	'strInput = Replace(strInput, "(", "%28")
 	'strInput = Replace(strInput, ")", "%29")
@@ -133,7 +134,7 @@ End Function
 		Risultato = Replace(Risultato, "|", "-")
 		Risultato = Replace(Risultato, """", "")
 		Risultato = Replace(Risultato, "'", "")
-		Risultato = Replace(Risultato, "�", "a")
+		Risultato = Replace(Risultato, "à", "a")
 		Risultato = IDArticolo & "f-" & Risultato & ".asp"
 		ConvertiTitoloInUrlProduttore = Risultato
 	End Function
