@@ -483,7 +483,6 @@
 										</ul>
 										<div class="panel-footer"><a href="/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>
-								<!--#include file="inc_box_contatti.asp"-->
             </div>
         </div>
 

@@ -43,9 +43,9 @@ gr_rs.close
 <head>
     <title><%=Title%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Vendita online di <%=Titolo_2%>: da Cristalensi sconti su tutti i prodotti per l'illuminazione<%end if%>">
+    <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Scegli dal catalogo online di <%=Titolo_1%>, <%=Titolo_2%>: da Cristalensi con sconti su tutti i prodotti per l'illuminazione<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Vendita online di <%=Titolo_2%>: da Cristalensi sconti su tutti i prodotti per l'illuminazione<%end if%>">
+    <meta property="og:description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Scegli dal catalogo online di <%=Titolo_1%>, <%=Titolo_2%>: da Cristalensi con sconti su tutti i prodotti per l'illuminazione<%end if%>">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">

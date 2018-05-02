@@ -102,11 +102,11 @@ end if
 <html>
 
 <head>
-    <title><%=Titolo_prodotto%> <%=" "& produttore%> <%=" "& CodiceArticolo%> - <%=Titolo_2_cat%></title>
+    <title><%=Titolo_prodotto%> <%=" "& produttore%> <%=" "& CodiceArticolo%> - <%=Titolo_1_cat%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Scheda del prodotto <%=Titolo_prodotto%>, <%=produttore%>, <%=codicearticolo%>. Vendita online con interessanti sconti. Cristalensi vende online <%=Titolo_1_cat%>, <%=Titolo_2_cat%>, a prezzi scontati. Per qualsiasi dubbio il nostro competente e disponibile staff &egrave; a disposizione.">
+    <meta name="description" content="Scheda del prodotto <%=Titolo_prodotto%>, <%=produttore%>, codice <%=codicearticolo%>. Vendita online con interessanti sconti sul prezzo di listino. Cristalensi vende online <%=Titolo_1_cat%>, <%=Titolo_2_cat%>, a prezzi scontati. Per qualsiasi dubbio il nostro competente e disponibile staff &egrave; a disposizione.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="Cristalensi.">
+    <meta property="og:description" content="Scheda del prodotto <%=Titolo_prodotto%>, <%=produttore%>, codice <%=codicearticolo%>. Vendita online con interessanti sconti sul prezzo di listino. Cristalensi vende online <%=Titolo_1_cat%>, <%=Titolo_2_cat%>, a prezzi scontati. Per qualsiasi dubbio il nostro competente e disponibile staff &egrave; a disposizione.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -254,7 +254,7 @@ end if
 														<div class="col-md-4 col-xs-6">
                                 <div class="col-item">
                                     <div class="photo">
-                                        <a href="/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" class="prod-img-replace" style="background-image: url(/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img itemprop="image" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>"></a>
+                                        <a href="/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_1_cat%>" class="prod-img-replace" style="background-image: url(/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_1_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_1_cat%><%end if%>"><img itemprop="image" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_1_cat%>"></a>
                                     </div>
                                 </div>
                             </div>
@@ -273,7 +273,7 @@ end if
 														<%
 														if LEN(ClasseEnergetica)>0 then
 														%>
-														<a href="/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group2" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_cat%><%end if%>"><img src="/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" align="right" valign="middle" height="150px" width="75px"></a>
+														<a href="/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group2" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_1_cat%><%end if%>"><img src="/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" align="right" valign="middle" height="150px" width="75px"></a>
 														<%end if%>
 
 														<small><%=Descrizione_prodotto%></small>
@@ -286,7 +286,7 @@ end if
 													if Len(FkNewAmbienti)>0 then
 													arrFkNewAmbienti=split(FkNewAmbienti,", ")
 													%>
-														<br /><em>L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_2_cat%>, &egrave; adatto ai seguenti ambienti:<br />
+														<br /><em>L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_1_cat%>, &egrave; adatto ai seguenti ambienti:<br />
 														<%
 														For iLoop = LBound(arrFkNewAmbienti) to UBound(arrFkNewAmbienti)
 															fknewambiente=arrFkNewAmbienti(iLoop)
@@ -476,7 +476,7 @@ end if
 				</div>
 				<%
 				Set com_rs = Server.CreateObject("ADODB.Recordset")
-				sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+				sql = "SELECT TOP 1 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
 				com_rs.open sql,conn, 1, 1
 				if com_rs.recordcount>0 then
 				%>
@@ -524,6 +524,14 @@ end if
 							<li class="list-group-item"><i class="fa fa-check"></i> <em>Ritiro in sede:</em><div style="float: right;"><em><strong>0&euro;</strong></em></div></li>
 						</ul>
 					</div>
+					<div class="panel panel-default payment-list">
+						<div class="panel-heading">
+							<h5>Condizioni di recesso</h5>
+						</div>
+						<ul class="list-group">
+							<li class="list-group-item"><strong>Diritto di recesso entro 14 giorni come da legge</strong></li>
+						</ul>
+					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="panel panel-default payment-list">
@@ -537,11 +545,20 @@ end if
 							<li class="list-group-item"><i class="fa fa-check"></i> <em>Contrassegno in contanti:</em><div style="float: right;"><em><strong>4&euro;</strong></em></div></li>
 						</ul>
 					</div>
+					<div class="panel panel-default payment-list">
+						<div class="panel-heading">
+							<h5>Preventivi personalizzati</h5>
+						</div>
+						<ul class="list-group">
+							<li class="list-group-item"><strong>Per importi oltre 500&euro; preventivi e sconti personalizzati</strong></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<!--#include virtual="/inc_box_contatti.asp"-->
 			</div>
+
       </div>
     </div>
 
