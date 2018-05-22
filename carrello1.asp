@@ -478,8 +478,8 @@
 											<li class="list-group-item">&nbsp;</li>
 											<li class="list-group-item"><strong>PAGAMENTI SICURI</strong></li>
 											<li class="list-group-item"><i class="fa fa-check"></i> <em>Bonifico e PostePay:</em><div style="float: right;"><em><strong>0&euro;</strong></em></div></li>
-											<li class="list-group-item"><i class="fa fa-check"></i> <em>Carte di credito e prepagate:</em><div style="float: right;"><em><strong>0&euro;</strong></em></div></li>
-											<li class="list-group-item"><i class="fa fa-check"></i> <em>Contrassegno in contanti:</em><div style="float: right;"><em><strong>4&euro;</strong></em></div></li>
+											<li class="list-group-item"><i class="fa fa-check"></i> <em>Carte di credito, Prepagate e PayPal:</em><div style="float: right;"><em><strong>0&euro;</strong></em></div></li>
+											<li class="list-group-item"><i class="fa fa-check"></i> <em>Contrassegno in contanti:</em><div style="float: right;"><em><strong>6&euro;</strong></em></div></li>
 										</ul>
 										<div class="panel-footer"><a href="/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
 								</div>

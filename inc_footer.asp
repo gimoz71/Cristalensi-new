@@ -67,9 +67,9 @@
                 </ul>
                 <h4>Pagamenti accettati</h4>
                 <ul class="checklist">
-                    <li>Bonifico Bancario</li>
+                    <li>Bonifico Bancario - PostePay</li>
                     <li>Contrassegno</li>
-                    <li>Carte di credito - Prepagate - PostePay</li>
+                    <li>Carte di credito - Prepagate - PayPal</li>
                 </ul>
             </div>
         </div>
