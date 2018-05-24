@@ -588,58 +588,15 @@
 	end if
 %>
 <%'**********************PAYPAL**********************%>
-<!-- #include file ="paypalfunctions.asp" -->
 <%
-
-if PaymentOption = "PayPal" then
+if FkPagamento = 2 then
 
 	TotalePaypal=TotaleGenerale
-	session("Payment_Amount")=Replace(TotalePaypal, ",", ".")
-
-	' ==================================
-	' PayPal Express Checkout Module
-	' ==================================
-	On Error Resume Next
-
-	'------------------------------------
-	' The currencyCodeType and paymentType
-	' are set to the selections made on the Integration Assistant
-	'------------------------------------
+	Payment_Amount=Replace(TotalePaypal, ",", ".")
 	currencyCodeType = "EUR"
 	paymentType = "Sale"
-
-	'------------------------------------
-	' The returnURL is the location where buyers return to when a
-	' payment has been succesfully authorized.
-	'
-	' This is set to the value entered on the Integration Assistant
-	'------------------------------------
-	returnURL = "https://www.cristalensi.it/pagamento_paypal_ok.asp"
-
-	'------------------------------------
-	' The cancelURL is the location buyers are sent to when they click the
-	' return to XXXX site where XXX is the merhcant store name
-	' during payment review on PayPal
-	'
-	' This is set to the value entered on the Integration Assistant
-	'------------------------------------
-	cancelURL = "https://www.cristalensi.it/pagamento_paypal_ko.asp"
-
-	'------------------------------------
-	' The paymentAmount is the total value of
-	' the shopping cart, that was set
-	' earlier in a session variable
-	' by the shopping cart page
-	'------------------------------------
-	paymentAmount = Session("Payment_Amount")
-
-	'------------------------------------
-	' When you integrate this code
-	' set the variables below with
-	' shipping address details
-	' entered by the user on the
-	' Shipping page.
-	'------------------------------------
+	returnURL = "https://www.cristalensi.it/pagamento_paypal_ok_test.asp"
+	cancelURL = "https://www.cristalensi.it/pagamento_paypal_ko_test.asp"
 	if FkSpedizione=2 then
 		shipToName = nominativo_email
 		shipToStreet = "Via arti e mestieri, 1"
@@ -663,33 +620,6 @@ if PaymentOption = "PayPal" then
 		phoneNum = Telefono_sp
 		INVNUM = IdOrdine 'valore aggiunto alla funzione
 	end if
-
-	'------------------------------------
-	' Calls the SetExpressCheckout API call
-	'
-	' The CallMarkExpressCheckout function is defined in PayPalFunctions.asp
-	' included at the top of this file.
-	'-------------------------------------------------
-	Set resArray = CallMarkExpressCheckout (paymentAmount, currencyCodeType, paymentType, returnURL, cancelURL, shipToName, shipToStreet, shipToCity, shipToState, shipToCountryCode, shipToZip, shipToStreet2, phoneNum, INVNUM )
-
-	ack = UCase(resArray("ACK"))
-	'response.Write("ack:"&ack&"<br>")
-
-	If ack="SUCCESS" Then
-		' Redirect to paypal.com
-		SESSION("token") = resArray("TOKEN")
-		ReDirectURL( resArray("TOKEN") )
-		'response.Write("token:"&SESSION("token")&"<br>")
-	Else
-		'Display a user friendly Error on the page using any of the following error information returned by PayPal
-		ErrorCode = URLDecode( resArray("L_ERRORCODE0"))
-		ErrorShortMsg = URLDecode( resArray("L_SHORTMESSAGE0"))
-		ErrorLongMsg = URLDecode( resArray("L_LONGMESSAGE0"))
-		ErrorSeverityCode = URLDecode( resArray("L_SEVERITYCODE0"))
-		'response.Write("ErrorCode:"&ErrorCode&"<br>")
-		'response.Write("ErrorLongMsg:"&ErrorLongMsg&"<br>")
-
-	End If
 
 End If
 %>
@@ -860,15 +790,6 @@ End If
 								</p>
 						<%end if%>
 						<%if FkPagamento=2 then%>
-								<%if PaymentOption = "PayPal" and ack<>"SUCCESS" Then%>
-										<p class="description">
-										<br><br>
-										<em><strong>Ci sono stati problemi con il pagamento di PayPal: dovresti modificare l'ordine scegliendo un altro tipo di pagamento oppure contattarci.
-										<br><br>
-										Cordiali saluti, lo staff di Cristalensi</strong></em>
-										<br><br>
-										</p>
-								<%else%>
 <%
 							'TotaleGeneralePP=FormatNumber(TotaleGenerale,2)
 							'TotaleGeneralePP=Replace(TotaleGeneralePP, ".", "")
@@ -887,23 +808,19 @@ End If
 
 							<p>
 								<form action="https://securepayments.sandbox.paypal.com/webapps/HostedSoleSolutionApp/webflow/sparta/hostedSoleSolutionProcess" method="post">
-
 								<input type="hidden" name="cmd" value="_hosted-payment">
-								<input type="hidden" name="subtotal" value="9.99">
-								<input type="hidden" name="currency_code" value="GBP">
-								<input type="hidden" name="business" value="ZZZZZZZZZZZ"><!-- Codice conto commerciante -->
-								<input type="hidden" name="paymentaction" value="sale">
-								<input type="hidden" name="return" value="http://www.xxxx.it/thanks.html">
-								 <input type="hidden" name="template" value=”TemplateB">  <!--PayPal templates -->
+								<input type="hidden" name="subtotal" value="<%=Payment_Amount%>">
+								<input type="hidden" name="currency_code" value="<%=currencyCodeType%>">
+								<input type="hidden" name="business" value="viadeimedici-facilitator@gmail.com"><!-- Codice conto commerciante -->
+								<input type="hidden" name="paymentaction" value="<%=paymentType%>">
+								<input type="hidden" name="return" value="<%=returnURL%>">
+								<input type="hidden" name="template" value=”TemplateB">  <!--PayPal templates -->
 
-								<input type="hidden" name="cancel_return" value="https://www.cristalensi.it/pagamento_paypal_ko_test.asp">
+								<input type="hidden" name="cancel_return" value="<%=cancelURL%>">
 								<input type="hidden" name="cbt" value="Torna al sito di Cristalensi Lampadari">
 
-
-
-
 								  <!-- Enable override of payer’s stored PayPal address. -->
-								<!-- <input type="hidden" name="address_override" value="false"> -->
+								<input type="hidden" name="address_override" value="true">
 
 								<input type="hidden" name="showShippingAddress" value="false">
 								<input type="hidden" name="showCustomerName" value="false">
@@ -912,20 +829,15 @@ End If
 								<input type="hidden" name="showBillingAddress" value="false">
 
 								 <!-- popola indirizzo di spedizione e fatturazione  -->
-								<!-- <input type="hidden" name="address1" value="9 Elm Street"> -->
-								<!-- <input type="hidden" name="address2" value="Apt 5"> -->
-								<!-- <input type="hidden" name="city" value="Berwyn"> -->
-								<!-- <input type="hidden" name="state" value="PA"><!--solo per U.S.-->
-								<!-- <input type="hidden" name="zip" value="19312">  -->
-								<!-- <input type="hidden" name="billing_last_name" value="Rossi"> -->
-								<!-- <input type="hidden" name="billing_first_name" value="Mario"> -->
-								<!-- <input type="hidden" name="billing_address1" value="Via Virgilio 39"> -->
-								<!-- <input type="hidden" name="billing_city" value="Trapani"> -->
-								<!-- <input type="hidden" name="billing_country" value="Italy"> -->
-								<!-- <input type="hidden" name="billing_zip" value="91100">  -->
+								<input type="hidden" name="address1" value="<%=shipToName%>">
+								<input type="hidden" name="address2" value="<%=shipToStreet2%>">
+								<input type="hidden" name="city" value="<%=shipToCity%>">
+								<input type="hidden" name="state" value="<%=shipToState%>"><!--solo per U.S.-->
+								<input type="hidden" name="zip" value="<%=shipToZip%>">
+								<input type="hidden" name="night_phone_b" value="<%=phoneNum%>">
 
-								<!-- <input type="hidden" name="invoice" value="ABC123"> -->
-								<!-- <input type="hidden" name="custom" value="orderno:42"> -->
+								<input type="hidden" name="invoice" value="<%=INVNUM%>">
+								<input type="hidden" name="custom" value="Ordine n. <%=INVNUM%>">
 
 
 								<!-- Identifies the source that built the code for the button. -->
@@ -938,7 +850,7 @@ End If
 								<!-- showBillingEmail - Controls the show/hide of billing email -->
 								<!-- showShippingAddress - Controls the show/hide of shipping address -->
 
-								<input type="submit" name="METHOD" value="Pay">
+								<input type="submit" name="METHOD" value="Paga con PayPal">
 
 
 								</form>
@@ -952,7 +864,6 @@ End If
 							<br>
 							<br>
 							</p>
-							<%end if%>
 						<%end if%>
 
 

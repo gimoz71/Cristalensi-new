@@ -1,5 +1,8 @@
 <!--#include file="inc_strConn.asp"-->
 <%
+idsession=Session("idCliente")
+if idsession=1 then response.redirect("/ordine-test.asp")
+
 	Call Visualizzazione("",0,"ordine.asp")
 
 	mode=request("mode")
