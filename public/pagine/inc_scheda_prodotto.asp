@@ -247,6 +247,7 @@ end if
 															Do while not img_rs.EOF
 															titolo_img=img_rs("titolo")
 															file_img=NoLettAcc(img_rs("file"))
+															file_img=Replace(file_img, "&rsquo;", "")
 															'file_img=img_rs("file")
 															'percorso_img="/public/"&file_img
 															'zoom=img_rs("zoom")
@@ -254,7 +255,7 @@ end if
 														<div class="col-md-4 col-xs-6">
                                 <div class="col-item">
                                     <div class="photo">
-                                        <a href="/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_1_cat%>" class="prod-img-replace" style="background-image: url(/public/thumb/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_1_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_1_cat%><%end if%>"><img itemprop="image" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_1_cat%>"></a>
+                                        <a href="/public/<%=file_img%>" data-fancybox="group" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_1_cat%>" class="prod-img-replace" style="background-image: url(/public/<%=file_img%>)" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_1_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_1_cat%><%end if%>"><img itemprop="image" src="/images/blank.png" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_1_cat%>"></a>
                                     </div>
                                 </div>
                             </div>

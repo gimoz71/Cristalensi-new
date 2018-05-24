@@ -271,6 +271,7 @@ end if
                       tot_img=img_rs.recordcount
                       titolo_img=img_rs("titolo")
                       file_img=NoLettAcc(img_rs("file"))
+											file_img=Replace(file_img, "&rsquo;", "")
                     end if
                     img_rs.close
                 %>

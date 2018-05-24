@@ -39,13 +39,10 @@ az_rs.close
     <meta name="msapplication-TileColor" content="#2790cf">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link href="../stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="../stylesheets/jquery.fancybox.min.css" media="screen" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/customization.css" shim-shadowdom>
-    <link href="../javascripts/html5shiv.js" rel="stylesheet">
+    <link href="/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/customization.css" shim-shadowdom>
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.5/webcomponents.min.js"></script>
-    <link rel="import" href="../awesome-slider.html">
     <style type="text/css">
         .clearfix:after {
             content: ".";
@@ -225,6 +222,8 @@ az_rs.close
                       tot_img=img_rs.recordcount
                       titolo_img=img_rs("titolo")
                       file_img=NoLettAcc(img_rs("file"))
+                      file_img=Replace(file_img, "&rsquo;", "")
+                      'file_img=img_rs("file")
                     end if
                     img_rs.close
                 %>
@@ -314,7 +313,7 @@ az_rs.close
           									<%
           									For i=1 To prod_rs.PageCount
           									%>
-          									<option value="<%=i%>"<%if cInt(i)=cInt(p) then%> selected<%end if%>><%=i%></option>
+          									<option value="<%=i%>" <%if cInt(i)=cInt(p) then%> selected<%end if%>><%=i%></option>
           									<%
           									Next
           									%>
