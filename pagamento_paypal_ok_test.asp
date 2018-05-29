@@ -7,8 +7,60 @@ PaymentOption = "PayPal"
 <%
 if PaymentOption = "PayPal" then
 	INVNUM=request("invoice")
+	response.write("INVNUM:"&INVNUM&"<br>")
 	ack="SUCCESS"
 End If
+%>
+<%
+' read post from PayPal system and add 'cmd'
+str = Request.Form & "&cmd=_notify-validate"
+' post back to PayPal system to validate
+set objHttp = Server.CreateObject("Msxml2.ServerXMLHTTP")
+' set objHttp = Server.CreateObject("Msxml2.ServerXMLHTTP.4.0")
+' set objHttp = Server.CreateObject("Microsoft.XMLHTTP")
+' https://ipnpb.sandbox.paypal.com/cgi-bin/webscr
+' https://ipnpb.paypal.com/cgi-bin/webscr
+
+objHttp.open "POST", "https://www.paypal.com/cgi-bin/webscr", false
+objHttp.setRequestHeader "Content-type", "application/x-www-form-urlencoded"
+objHttp.Send str
+' assign posted variables to local variables
+Item_name = Request.Form("item_name")
+response.write("Item_name:"&Item_name&"<br>")
+Item_number = Request.Form("item_number")
+response.write("Item_number:"&Item_number&"<br>")
+Payment_status = Request.Form("payment_status")
+response.write("Payment_status:"&Payment_status&"<br>")
+Payment_amount = Request.Form("mc_gross")
+response.write("Payment_amount:"&Payment_amount&"<br>")
+Payment_currency = Request.Form("mc_currency")
+response.write("Payment_currency:"&Payment_currency&"<br>")
+Txn_id = Request.Form("txn_id")
+response.write("Txn_id:"&Txn_id&"<br>")
+Receiver_email = Request.Form("receiver_email")
+response.write("Receiver_email:"&Receiver_email&"<br>")
+Payer_email = Request.Form("payer_email")
+response.write("Payer_email:"&Payer_email&"<br>")
+' Check notification validation
+if (objHttp.status <> 200 ) then
+' HTTP error handling
+elseif (objHttp.responseText = "VERIFIED") then
+response.write("Tutto bene")
+' check that Payment_status=Completed
+' check that Txn_id has not been previously processed
+' check that Receiver_email is your Primary PayPal email
+' check that Payment_amount/Payment_currency are correct
+' process payment
+elseif (objHttp.responseText = "INVALID") then
+response.write("Tutto sbagliato")
+' log for manual investigation
+else
+response.write("Tutto sbagliato")
+' error
+end if
+set objHttp = nothing
+
+response.end
 %>
 <%
 	Call Visualizzazione("",0,"pagamento_paypal_ok.asp")
