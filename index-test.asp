@@ -46,55 +46,8 @@
     <div class="container content">
         <div class="col-md-12">
             <!--#include file="inc_slider.asp"-->
-            <div class="row top-buffer hidden-xs" itemscope itemtype="http://schema.org/WebSite">
-              <link itemprop="url" href="https://www.cristalensi.it/"/>
-                <div class="col-md-8">
-                    <h1 class="slogan">Cristalensi, vendita lampadari.</h1>
-                    <h2 class="slogan">Showroom aperto da oltre 50 anni!</h2>
-                    <p class="main-description">
-                        A portata di click una vasta e raffinata gamma di prodotti per illuminazione interni ed illuminazione da esterno per arredare la casa, il giardino, un ufficio oppure un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: dai <b>lampadari</b>
-                        moderni e classici, alle <b>applique</b>, alle <b>plafoniere</b> e <b>piantane</b> ma anche <b>faretti</b> e <b>ventilatori con luce</b>. Tanti prodotti per <b>illuminazione a LED</b>, <b>in cristallo</b> e <b>vetro Murano</b>, in stile
-                        <b>Tiffany</b>, <b>rustici</b> o <b>vintage</b>. Abbiamo anche un'ampia esposizione di lampade da esterno sia <b>moderne</b> che <b>classiche</b> e articoli specifici <b>per bambini</b>, camerette e tutti gli altri ambienti della casa.<br />Sono presenti anche lampade per uffici, negozi, locali, aziende e ambienti professionali.<br />
-                        Inoltre, uno staff cordiale e professionale &egrave; pronto a consigliarti l'acquisto pi&ugrave; adatto alle tue richieste.
-                    </p>
-                </div>
-                <%
-                Set com_rs = Server.CreateObject("ADODB.Recordset")
-                sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
-                com_rs.open sql,conn, 1, 1
-                if com_rs.recordcount>0 then
-                %>
-                <div class="col-md-4 ">
-                    <div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">
-                            <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
-                        </div>
-                        <ul class="list-group">
-                            <%Do While not com_rs.EOF%>
-                            <%
-                            Set cr_rs = Server.CreateObject("ADODB.Recordset")
-                            sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
-                            cr_rs.open sql,conn, 1, 1
-                            if cr_rs.recordcount>0 then
-                              NomeIscritto=cr_rs("Nome")
-                            end if
-                            cr_rs.close
-                            %>
-                            <li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span> <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
-                            <%
-                            com_rs.movenext
-            								loop
-                            %>
-                        </ul>
-                        <div class="panel-footer"><a href="commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
-                    </div>
-                </div>
-                <%
-                end if
-                com_rs.close
-                %>
-            </div>
+            <h1 class="slogan hidden-xs" style="margin-top:20px;">Cristalensi, vendita lampadari.</h1>
+            <h2 class="slogan hidden-xs">Illuminazione per interni e illuminazione da esterno</h2>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
                     <h4 class="subtitle"><div class="dot"></div><span>Cosa stai cercando?</span></h4>
@@ -368,6 +321,129 @@
             end if
             prod_rs.close
             %>
+            <div class="row top-buffer hidden-xs" itemscope itemtype="http://schema.org/WebSite">
+              <link itemprop="url" href="https://www.cristalensi.it/"/>
+                <div class="col-md-8">
+                    <h2 class="slogan">Cristalensi, vendita lampadari online<br />Showroom aperto da oltre 50 anni!</h2>
+                    <p class="main-description">
+                        A portata di click una vasta e raffinata gamma di prodotti per illuminazione interni ed illuminazione da esterno per arredare la casa, il giardino, un ufficio oppure un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: dai <b>lampadari</b>
+                        moderni e classici, alle <b>applique</b>, alle <b>plafoniere</b> e <b>piantane</b> ma anche <b>faretti</b> e <b>ventilatori con luce</b>. Tanti prodotti per <b>illuminazione a LED</b>, <b>in cristallo</b> e <b>vetro Murano</b>, in stile
+                        <b>Tiffany</b>, <b>rustici</b> o <b>vintage</b>. Abbiamo anche un'ampia esposizione di lampade da esterno sia <b>moderne</b> che <b>classiche</b> e articoli specifici <b>per bambini</b>, camerette e tutti gli altri ambienti della casa.<br />Sono presenti anche lampade per uffici, negozi, locali, aziende e ambienti professionali.<br />
+                        Inoltre, uno staff cordiale e professionale &egrave; pronto a consigliarti l'acquisto pi&ugrave; adatto alle tue richieste.
+                    </p>
+                </div>
+                <%
+                Set com_rs = Server.CreateObject("ADODB.Recordset")
+                sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+                com_rs.open sql,conn, 1, 1
+                if com_rs.recordcount>0 then
+                %>
+                <div class="col-md-4 ">
+                    <div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
+                        </div>
+                        <ul class="list-group">
+                            <%Do While not com_rs.EOF%>
+                            <%
+                            Set cr_rs = Server.CreateObject("ADODB.Recordset")
+                            sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
+                            cr_rs.open sql,conn, 1, 1
+                            if cr_rs.recordcount>0 then
+                              NomeIscritto=cr_rs("Nome")
+                            end if
+                            cr_rs.close
+                            %>
+                            <li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span> <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
+                            <%
+                            com_rs.movenext
+                            loop
+                            %>
+                        </ul>
+                        <div class="panel-footer"><a href="commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+                    </div>
+                </div>
+                <%
+                end if
+                com_rs.close
+                %>
+            </div>
+
+            <div class="row top-buffer">
+                <div class="col-xl-12 clearfix">
+                    <h4 class="subtitle"><div class="dot"></div><span>Idee per la scelta dell'illuminazione</span></h4>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 ">
+                    <article class="col-item">
+                        <div class="photo">
+                            <a href="/illuminazione-interni-ed-esterni/1ng-lampade-da-interno.asp" class="prod-img-replace" style="background-image: url(images/home-lampade-da-interno.jpg)" title="Lampade da interno e illuminazione interni"><img alt="Lampade da interno" src="images/blank.png"></a>
+                        </div>
+                        <div class="info">
+                            <div class="row">
+                                <div class="price-details col-md-6">
+                                  <h3>LAMPADARI</h3>
+                                  <div class="description readmore">
+                                    Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo sospensioni e quindi possiamo trovare sospensioni in tutti gli stili: dai lampadari moderni e contemporanei ai classici, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità.
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <article class="col-item">
+                        <div class="photo">
+                            <a href="/illuminazione-interni-ed-esterni/2ng-lampade-da-esterno.asp" class="prod-img-replace" style="background-image: url(images/home-lampade-da-esterno.jpg)" title="Lampade da esterno e illuminazione esterni"><img alt="Lampade da esterno" src="images/blank.png"></a>
+                        </div>
+                        <div class="info">
+                            <div class="row">
+                              <div class="price-details col-md-6">
+                                <h3>PLAFONIERE</h3>
+                                <div class="description readmore">
+                                  Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo sospensioni e quindi possiamo trovare sospensioni in tutti gli stili: dai lampadari moderni e contemporanei ai classici, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità.
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <article class="col-item">
+                        <div class="photo">
+                            <a href="/illuminazione-interni-ed-esterni/3ng-ventilatori.asp" class="prod-img-replace" style="background-image: url(images/home-ventilatori.jpg)" title="Ventilatori"><img alt="Ventilatori" src="images/blank.png"></a>
+                        </div>
+                        <div class="info">
+                            <div class="row">
+                              <div class="price-details col-md-6">
+                                <h3>APPLIQUE</h3>
+                                <div class="description readmore">
+                                  Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo sospensioni e quindi possiamo trovare sospensioni in tutti gli stili: dai lampadari moderni e contemporanei ai classici, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità.
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 ">
+                    <article class="col-item">
+                        <div class="photo">
+                            <a href="/illuminazione-interni-ed-esterni/4ng-lampadine-componenti-illuminazione.asp" class="prod-img-replace" style="background-image: url(images/home-lampadine.jpg)" title="Lampadine"><img alt="Lampadine" src="images/blank.png"></a>
+                        </div>
+                        <div class="info">
+                            <div class="row">
+                              <div class="price-details col-md-6">
+                                <h3>LAMPADE DA TAVOLO</h3>
+                                <div class="description readmore">
+                                  Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo sospensioni e quindi possiamo trovare sospensioni in tutti gli stili: dai lampadari moderni e contemporanei ai classici, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità.
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
         </div>
     </div>
     <!--#include file="inc_footer.asp"-->
@@ -385,5 +461,15 @@
 			});
 		});
 	</script>
+  <script>
+      $(document).ready(function() {
+          $('.readmore').readmore({
+              speed: 200,
+              collapsedHeight: 200,
+              moreLink: '<a href="#" style="text-align: right; margin-top: 10px;">Leggi di pi&ugrave; <i class="fa fa-chevron-down"></i></a>',
+              lessLink: '<a href="#" style="text-align: right">Chiudi <i class="fa fa-chevron-up"></i></a>'
+          });
+      });
+  </script>
 </body>
 <!--#include file="inc_strClose.asp"-->

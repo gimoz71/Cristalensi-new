@@ -229,12 +229,21 @@ end if
 		</div>
         <div class="top-buffer hidden-md hidden-lg"></div>
         <div class="" itemscope itemtype="http://schema.org/Product">
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="title">
+						<div class="col-md-12" style="margin-bottom: 20px;">
+								<div class="row">
+										<div class="title">
+												<h1 class="product-name"><span itemprop="name"><%=Titolo_prodotto%></span></h1>
+												<p class="details">codice: <b><span itemprop="mpn"><%=codicearticolo%></span></b> - produttore: <b><a href="<%=url_produttore%>" title="Catalogo <%=produttore%> vendita online prodotti illuminazione"><span itemprop="brand"><%=produttore%></a></span></b></p>
+										</div>
+								</div>
+						</div>
+
+						<div class="col-md-8">
+								<div class="row">
+                    <!--<div class="title">
                         <h1 class="product-name"><span itemprop="name"><%=Titolo_prodotto%></span></h1>
                         <p class="details">codice: <b><span itemprop="mpn"><%=codicearticolo%></span></b> - produttore: <b><a href="<%=url_produttore%>" title="Catalogo <%=produttore%> vendita online prodotti illuminazione"><span itemprop="brand"><%=produttore%></a></span></b></p>
-                    </div>
+                    </div>-->
                     <div class="col-md-12">
                         <div class="top-buffer">
 													<div class="row">

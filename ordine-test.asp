@@ -5,13 +5,7 @@
 	mode=request("mode")
 	if mode="" then mode=0
 
-	'PaymentOption = request("PaymentOption")
-
 	IdOrdine=session("ordine_shop")
-
-'	if PaymentOption="PayPal" then
-		'IdOrdine=request("IdOrdine")
-	'end if
 
 	if IdOrdine="" then IdOrdine=0
 	if idOrdine=0 then response.redirect("/carrello1.asp")
@@ -19,7 +13,6 @@
 	if idsession=0 then response.redirect("/iscrizione.asp?prov=1")
 
 	session("ordine_shop")=""
-
 
 	Set ss = Server.CreateObject("ADODB.Recordset")
 	sql = "SELECT * FROM Ordini where pkid="&idOrdine
@@ -790,23 +783,13 @@ End If
 								</p>
 						<%end if%>
 						<%if FkPagamento=2 then%>
-<%
-							'TotaleGeneralePP=FormatNumber(TotaleGenerale,2)
-							'TotaleGeneralePP=Replace(TotaleGeneralePP, ".", "")
-							'TotaleGeneralePP=Replace(TotaleGeneralePP, ",", ".")
-							%>
 							<p class="description">
-
-								<a href="https://www.paypal.com/it/webapps/mpp/paypal-popup" title="Come funziona PayPal" onClick="javascript:window.open('https://www.paypal.com/it/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/logo_paypal_carte.jpg" border="0" style="float:right; padding-left:5px; width:319px; height:110px;" alt="Che cos'&egrave; PayPal"></a>Grazie per aver scelto i nostri prodotti,<br>
-								per completare l'ordine &egrave; necessario effettuare il pagamento con i sistemi sicuri di PayPal che permettono di pagare con moltissime carte di credito e carte ricaribili protetti dai loro protocolli di sicurezza:<br>
+								<a href="https://www.paypal.com/it/webapps/mpp/paypal-popup" title="Come funziona PayPal" onClick="javascript:window.open('https://www.paypal.com/it/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1100, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/logo_paypal_carte.jpg" border="0" style="float:right; padding-left:20px; width:319px; height:110px;" alt="Che cos'&egrave; PayPal"></a>Grazie per aver scelto i nostri prodotti,<br>
+								per completare l'ordine &egrave; necessario effettuare il pagamento con i sistemi sicuri di PayPal protetti dai loro protocolli di sicurezza.<br>PayPal permette di pagare con moltissime carte di credito e carte ricaribili garantendo una potezione sia per l'acquirente che per il venditore:<br>
 								MasterCard, Visa e Visa Electron, PostePay, Carta Aura e ricariche PayPal.<br><br>
-								Pagando, e quindi completando l'ordine, si accettano le condizioni di vendita.<br>
-							Salva oppure stampa le condizioni di vendita (consultabili anche nell'apposita pagina del sito internet) da questo file (.pdf):<br>
-							<a href="https://www.cristalensi.it/condizioni_di_vendita.pdf" target="_blank">condizion di vendita</a>							    <br>
-								<br>
-								</p>
+								Pagando, e quindi completando l'ordine, si accettano le condizioni di vendita consultabili nella pagina specifica oppure da questo file (pdf): <a href="https://www.cristalensi.it/condizioni_di_vendita.pdf" target="_blank">condizion di vendita</a>.<br><br>
+							</p>
 
-							<p>
 								<form action="https://securepayments.sandbox.paypal.com/webapps/HostedSoleSolutionApp/webflow/sparta/hostedSoleSolutionProcess" method="post">
 								<input type="hidden" name="cmd" value="_hosted-payment">
 								<input type="hidden" name="subtotal" value="<%=Payment_Amount%>">
@@ -850,20 +833,11 @@ End If
 								<!-- showBillingEmail - Controls the show/hide of billing email -->
 								<!-- showShippingAddress - Controls the show/hide of shipping address -->
 
-								<input type="submit" name="METHOD" value="Paga con PayPal">
+								<input type="submit" name="METHOD" value="Paga adesso con PayPal!" class="btn btn-danger pull-left">
 
 
 								</form>
-
-							</p>
-							<p class="description">
-							<br><br>
-							La merce verr&agrave; spedita al momento che la nostra banca ricever&agrave; il pagamento.<br>
-							<br>
-							Cordiali saluti, lo staff di Cristalensi
-							<br>
-							<br>
-							</p>
+								<br><br>
 						<%end if%>
 
 
