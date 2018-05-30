@@ -21,7 +21,8 @@ set objHttp = Server.CreateObject("Msxml2.ServerXMLHTTP")
 ' https://ipnpb.sandbox.paypal.com/cgi-bin/webscr
 ' https://ipnpb.paypal.com/cgi-bin/webscr
 
-objHttp.open "POST", "https://www.paypal.com/cgi-bin/webscr", false
+'objHttp.open "POST", "https://www.paypal.com/cgi-bin/webscr", false
+objHttp.open "POST", "https://ipnpb.sandbox.paypal.com/cgi-bin/webscr", false
 objHttp.setRequestHeader "Content-type", "application/x-www-form-urlencoded"
 objHttp.Send str
 ' assign posted variables to local variables
@@ -52,10 +53,10 @@ response.write("Tutto bene")
 ' check that Payment_amount/Payment_currency are correct
 ' process payment
 elseif (objHttp.responseText = "INVALID") then
-response.write("Tutto sbagliato")
+response.write("Tutto sbagliato 1")
 ' log for manual investigation
 else
-response.write("Tutto sbagliato")
+response.write("Tutto sbagliato 2")
 ' error
 end if
 set objHttp = nothing
