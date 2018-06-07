@@ -1,149 +1,99 @@
 <!--#include file="inc_strConn.asp"-->
 <%'**********************PAYPAL**********************%>
 <%
-PaymentOption = "PayPal"
-%>
-<!-- #include file ="paypalfunctions.asp" -->
-<%
-if PaymentOption = "PayPal" then
+'numero ordine passato da paypal
+invoice=request("invoice")
+esito="NO"
 
-	On Error Resume Next
+' read post from PayPal system and add 'cmd'
+str = Request.Form & "&cmd=_notify-validate"
+' post back to PayPal system to validate
+set objHttp = Server.CreateObject("Msxml2.ServerXMLHTTP")
+' set objHttp = Server.CreateObject("Msxml2.ServerXMLHTTP.4.0")
+' set objHttp = Server.CreateObject("Microsoft.XMLHTTP")
 
-	'------------------------------------
-	' The paymentAmount is the total value of
-	' the shopping cart, that was set
-	' earlier in a session variable
-	' by the shopping cart page
-	'------------------------------------
-	finalPaymentAmount = Session("Payment_Amount")
-	'------------------------------------
-	' Calls the GetExpressCheckoutDetails API call
-	'
-	' The GetShippingDetails function is defined in PayPalFunctions.asp
-	' included at the top of this file.
-	'-------------------------------------------------
-	set resArray = GetShippingDetails( Request.QueryString("token"))
-	set resArray = ConfirmPayment( finalPaymentAmount )
+' https://ipnpb.sandbox.paypal.com/cgi-bin/webscr
+' https://ipnpb.paypal.com/cgi-bin/webscr
 
+'objHttp.open "POST", "https://www.paypal.com/cgi-bin/webscr", false
+objHttp.open "POST", "https://ipnpb.paypal.com/cgi-bin/webscr", false
+objHttp.setRequestHeader "Content-type", "application/x-www-form-urlencoded"
+objHttp.Send str
 
+Payment_status = Request.Form("payment_status")
+'response.write("Payment_status:"&Payment_status&"<br>")
+Txn_id = Request.Form("txn_id")
+'response.write("Txn_id:"&Txn_id&"<br>")
 
-	ack = UCase(resArray("ACK"))
-	'response.Write("ack:"&ack&"<br>")
-	'response.Write("elenco_valori_paypal:"&elenco_valori_paypal&"<br>")
-
-	If ack <> "SUCCESS" Then
-		'Display a user friendly Error on the page using any of the following error information returned by PayPal
-		ErrorCode = URLDecode( resArray("L_ERRORCODE0"))
-		ErrorShortMsg = URLDecode( resArray("L_SHORTMESSAGE0"))
-		ErrorLongMsg = URLDecode( resArray("L_LONGMESSAGE0"))
-		ErrorSeverityCode = URLDecode( resArray("L_SEVERITYCODE0"))
-		'response.Write("ErrorCode:"&ErrorCode&"<br>")
-		'response.Write("ErrorLongMsg:"&ErrorLongMsg&"<br>")
-
-	Else
-		'********************************************************************************************************************
-		'
-		' THE PARTNER SHOULD SAVE THE KEY TRANSACTION RELATED INFORMATION LIKE
-		'                    transactionId & orderTime
-		'  IN THEIR OWN  DATABASE
-		' AND THE REST OF THE INFORMATION CAN BE USED TO UNDERSTAND THE STATUS OF THE PAYMENT
-		'
-		'********************************************************************************************************************
-
-		token 			= resArray("TOKEN") ' The timestamped token value that was returned by SetExpressCheckout response and passed on GetExpressCheckoutDetails request.
-		transactionId	= resArray("PAYMENTINFO_0_TRANSACTIONID") ' Unique transaction ID of the payment. Note:  If the PaymentAction of the request was Authorization or Order, this value is your AuthorizationID for use with the Authorization & Capture APIs.
-		transactionType = resArray("PAYMENTINFO_0_TRANSACTIONTYPE") ' The type of transaction Possible values: l  cart l  express-checkout
-		paymentType		= resArray("PAYMENTINFO_0_PAYMENTTYPE") ' Indicates whether the payment is instant or delayed. Possible values: l  none l  echeck l  instant
-		orderTime 		= resArray("PAYMENTINFO_0_ORDERTIME") ' Time/date stamp of payment
-		amt				= resArray("PAYMENTINFO_0_AMT") ' The final amount charged, including any shipping and taxes from your Merchant Profile.
-		currencyCode	= resArray("PAYMENTINFO_0_CURRENCYCODE") ' A three-character currency code for one of the currencies listed in PayPay-Supported Transactional Currencies. Default: USD.
-		'feeAmt			= resArray("PAYMENTINFO_0_FEEAMT") ' PayPal fee amount charged for the transaction
-		'settleAmt		= resArray("PAYMENTINFO_0_SETTLEAMT") ' Amount deposited in your PayPal account after a currency conversion.
-		taxAmt			= resArray("PAYMENTINFO_0_TAXAMT") ' Tax charged on the transaction.
-		'exchangeRate	= resArray("PAYMENTINFO_0_EXCHANGERATE") ' Exchange rate if a currency conversion occurred. Relevant only if your are billing in their non-primary currency. If the customer chooses to pay with a currency other than the non-primary currency, the conversion occurs in the customer�s account.
-
-		' Status of the payment:
-				'Completed: The payment has been completed, and the funds have been added successfully to your account balance.
-				'Pending: The payment is pending. See the PendingReason element for more information.
-		paymentStatus	= resArray("PAYMENTINFO_0_PAYMENTSTATUS")
-
-		'The reason the payment is pending:
-		'  none: No pending reason
-		'  address: The payment is pending because your customer did not include a confirmed shipping address and your Payment Receiving Preferences is set such that you want to manually accept or deny each of these payments. To change your preference, go to the Preferences section of your Profile.
-		'  echeck: The payment is pending because it was made by an eCheck that has not yet cleared.
-		'  intl: The payment is pending because you hold a non-U.S. account and do not have a withdrawal mechanism. You must manually accept or deny this payment from your Account Overview.
-		'  multi-currency: You do not have a balance in the currency sent, and you do not have your Payment Receiving Preferences set to automatically convert and accept this payment. You must manually accept or deny this payment.
-		'  verify: The payment is pending because you are not yet verified. You must verify your account before you can accept this payment.
-		'  other: The payment is pending for a reason other than those listed above. For more information, contact PayPal customer service.
-		pendingReason	= resArray("PAYMENTINFO_0_PENDINGREASON")
-
-		'The reason for a reversal if TransactionType is reversal:
-		'  none: No reason code
-		'  chargeback: A reversal has occurred on this transaction due to a chargeback by your customer.
-		'  guarantee: A reversal has occurred on this transaction due to your customer triggering a money-back guarantee.
-		'  buyer-complaint: A reversal has occurred on this transaction due to a complaint about the transaction from your customer.
-		'  refund: A reversal has occurred on this transaction because you have given the customer a refund.
-		'  other: A reversal has occurred on this transaction due to a reason not listed above.
-		reasonCode		= resArray("PAYMENTINFO_0_REASONCODE")
-
-
-	End If
-End If
+' Check notification validation
+if (objHttp.status <> 200 ) then
+	' HTTP error handling
+	esito="NO"
+elseif (objHttp.responseText = "VERIFIED") then
+	esito="SI"
+elseif (objHttp.responseText = "INVALID") then
+	esito="NO"
+else
+	esito="NO"
+end if
+set objHttp = nothing
 %>
 <%
 	Call Visualizzazione("",0,"pagamento_paypal_ok.asp")
 
-	IdOrdine=INVNUM
+	IdOrdine=invoice
 	if IdOrdine="" then IdOrdine=0
+	if IdOrdine>0 then
+		Set ss = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT * FROM Ordini where pkid="&idOrdine
+		ss.Open sql, conn, 3, 3
 
-	Set ss = Server.CreateObject("ADODB.Recordset")
-	sql = "SELECT * FROM Ordini where pkid="&idOrdine
-	ss.Open sql, conn, 3, 3
+		if ss.recordcount>0 then
+			TotaleCarrello=ss("TotaleCarrello")
+			CostoSpedizioneTotale=ss("CostoSpedizione")
+			TipoTrasporto=ss("TipoTrasporto")
+			'DatiSpedizione=ss("DatiSpedizione")
+			Nominativo_sp=ss("Nominativo_sp")
+			Telefono_sp=ss("Telefono_sp")
+			Indirizzo_sp=ss("Indirizzo_sp")
+			CAP_sp=ss("CAP_sp")
+			Citta_sp=ss("Citta_sp")
+			Provincia_sp=ss("Provincia_sp")
+			Nazione_sp=ss("Nazione_sp")
+			NoteCliente=ss("NoteCliente")
 
-	if ss.recordcount>0 then
-		TotaleCarrello=ss("TotaleCarrello")
-		CostoSpedizioneTotale=ss("CostoSpedizione")
-		TipoTrasporto=ss("TipoTrasporto")
-		'DatiSpedizione=ss("DatiSpedizione")
-		Nominativo_sp=ss("Nominativo_sp")
-		Telefono_sp=ss("Telefono_sp")
-		Indirizzo_sp=ss("Indirizzo_sp")
-		CAP_sp=ss("CAP_sp")
-		Citta_sp=ss("Citta_sp")
-		Provincia_sp=ss("Provincia_sp")
-		Nazione_sp=ss("Nazione_sp")
-		NoteCliente=ss("NoteCliente")
+			FkPagamento=ss("FkPagamento")
+			TipoPagamento=ss("TipoPagamento")
+			CostoPagamento=ss("CostoPagamento")
 
-		FkPagamento=ss("FkPagamento")
-		TipoPagamento=ss("TipoPagamento")
-		CostoPagamento=ss("CostoPagamento")
+			Nominativo=ss("Nominativo")
+			Rag_Soc=ss("Rag_Soc")
+			Cod_Fisc=ss("Cod_Fisc")
+			PartitaIVA=ss("PartitaIVA")
+			Indirizzo=ss("Indirizzo")
+			Citta=ss("Citta")
+			Provincia=ss("Provincia")
+			CAP=ss("CAP")
 
-		Nominativo=ss("Nominativo")
-		Rag_Soc=ss("Rag_Soc")
-		Cod_Fisc=ss("Cod_Fisc")
-		PartitaIVA=ss("PartitaIVA")
-		Indirizzo=ss("Indirizzo")
-		Citta=ss("Citta")
-		Provincia=ss("Provincia")
-		CAP=ss("CAP")
+			TotaleGenerale=ss("TotaleGenerale")
 
-		TotaleGenerale=ss("TotaleGenerale")
+			DataAggiornamento=ss("DataAggiornamento")
 
-		DataAggiornamento=ss("DataAggiornamento")
+			If esito="SI" Then
+				ss("stato")=4
+			else
+				ss("stato")=5
+			end if
 
-		If ack <> "SUCCESS" Then
-			ss("stato")=5
-		else
-			ss("stato")=4
+			ss("DataAggiornamento")=now()
+			ss("IpOrdine")=Request.ServerVariables("REMOTE_ADDR")
+			ss.update
 		end if
-		ss("DataAggiornamento")=now()
-		ss("IpOrdine")=Request.ServerVariables("REMOTE_ADDR")
-		ss.update
+
+		ss.close
 	end if
 
-	ss.close
-
-	if FkPagamento=2 and ack="SUCCESS" then
+	if FkPagamento=2 and esito="SI" then
 		Set rs=Server.CreateObject("ADODB.Recordset")
 		sql = "Select * From Clienti where pkid="&idsession
 		rs.Open sql, conn, 1, 1
@@ -163,7 +113,7 @@ End If
 			HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
 			HTML1 = HTML1 & "<tr>"
 			HTML1 = HTML1 & "<td>"
-			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Grazie "&nominativo_email&" per aver scelto i nostri prodotti!<br>Questa &egrave; un email di conferma per il completamento dell'ordine n&deg; "&idordine&".<br> Il nostro staff avr&agrave; cura di spedirti la merce appena la banca avr&agrave; notificato il pagamento con Paypal.</font><br>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Grazie "&nominativo_email&" per aver scelto i nostri prodotti!<br>Questa &egrave; un email di conferma per il completamento dell'ordine n&deg; "&idordine&".<br> Il nostro staff avr&agrave; cura di spedirti la merce appena l'amministrazione avr&agrave; notificato il pagamento con Paypal.</font>"
 			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000><br><br>Cordiali Saluti, lo staff di Cristalensi</font>"
 			HTML1 = HTML1 & "</td>"
 			HTML1 = HTML1 & "</tr>"
@@ -225,7 +175,7 @@ End If
 			HTML1 = HTML1 & "<tr>"
 			HTML1 = HTML1 & "<td>"
 			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Nuovo ordine con pagamento da Paypal dal sito internet.</font><br>"
-			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Dati sensibili e determinanti del nuovo ordine:<br>Nominativo: <b>"&nominativo_email&"</b><br>Email: <b>"&email&"</b><br>Codice cliente: <b>"&idsession&"</b><br>Codice ordine: <b>"&idordine&"</b></font><br>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Dati sensibili e determinanti del nuovo ordine:<br>Nominativo: <b>"&nominativo_email&"</b><br>Email: <b>"&email&"</b><br>Codice cliente: <b>"&idsession&"</b><br>Codice ordine: <b>"&idordine&"</b><br>Stato pagamento: <b>"&Payment_status&"</b></font><br>"
 			HTML1 = HTML1 & "</td>"
 			HTML1 = HTML1 & "</tr>"
 			HTML1 = HTML1 & "</table>"
@@ -317,7 +267,7 @@ End If
 			'fine invio email
 	end if
 
-	If ack <> "SUCCESS" Then
+	If esito="NO" Then
 		response.Redirect("https://www.cristalensi.it/pagamento_paypal_ko.asp")
 	end if
 %>
@@ -424,7 +374,7 @@ End If
             </div>
         </div>
         <div class="col-md-12">
-						<%If ack <> "SUCCESS" Then%>
+						<%If esito="NO" Then%>
 							<div class="col-md-12 hidden-print">
 									<p class="description">
 											La procedura di pagamento con Paypal non &egrave; stata completata<br>
@@ -447,10 +397,10 @@ End If
 									<p class="description">
 									La procedura di pagamento con Paypal &egrave; stata completata correttamente.<br>
 													<br>
-											La merce verr&agrave; spedita al momento che la nostra banca ricever&agrave; il pagamento.<br>
+											La merce verr&agrave; spedita al momento che l'amministrazione notificher&agrave; il pagamento.<br>
 											<br>
-											Potrai seguire lo stato del tuo ordine direttamente dall'area clienti, comunque sar&agrave; cura del nostro staff informarti per email dell'invio dei prodotti ordinati.
-											<br>
+											Potrai seguire lo stato del tuo ordine direttamente dall'Area Clienti, comunque sar&agrave; cura del nostro staff informarti per email dell'invio dei prodotti ordinati.
+											<br><br>
 											Cordiali saluti, lo staff di Cristalensi
 											<br>
 											<br>
@@ -508,7 +458,7 @@ End If
                                         <div class="col-sm-12">
                                             <h5 class="nomargin"><%=rs("titolo")%></h5>
 																						<p><strong>Codice: <%=rs("codicearticolo")%></strong></p>
-                                            <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p>><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: Bianco satinato<%=rs("lampadina")%><%end if%></p><%end if%>
+                                            <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: Bianco satinato<%=rs("lampadina")%><%end if%></p><%end if%>
                                         </div>
                                     </div>
                                 </td>

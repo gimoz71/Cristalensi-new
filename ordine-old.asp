@@ -1,11 +1,21 @@
 <!--#include file="inc_strConn.asp"-->
 <%
+idsession=Session("idCliente")
+if idsession=1 then response.redirect("/ordine-test.asp")
+
 	Call Visualizzazione("",0,"ordine.asp")
 
 	mode=request("mode")
 	if mode="" then mode=0
 
+	PaymentOption = request("PaymentOption")
+
 	IdOrdine=session("ordine_shop")
+
+	if PaymentOption="PayPal" then
+		IdOrdine=request("IdOrdine")
+	'	session("ordine_cristalensi_paypal")=IdOrdine
+	end if
 
 	if IdOrdine="" then IdOrdine=0
 	if idOrdine=0 then response.redirect("/carrello1.asp")
@@ -13,6 +23,7 @@
 	if idsession=0 then response.redirect("/iscrizione.asp?prov=1")
 
 	session("ordine_shop")=""
+
 
 	Set ss = Server.CreateObject("ADODB.Recordset")
 	sql = "SELECT * FROM Ordini where pkid="&idOrdine
@@ -581,15 +592,58 @@
 	end if
 %>
 <%'**********************PAYPAL**********************%>
+<!-- #include file ="paypalfunctions.asp" -->
 <%
-if FkPagamento = 2 then
+
+if PaymentOption = "PayPal" then
 
 	TotalePaypal=TotaleGenerale
-	Payment_Amount=Replace(TotalePaypal, ",", ".")
+	session("Payment_Amount")=Replace(TotalePaypal, ",", ".")
+
+	' ==================================
+	' PayPal Express Checkout Module
+	' ==================================
+	On Error Resume Next
+
+	'------------------------------------
+	' The currencyCodeType and paymentType
+	' are set to the selections made on the Integration Assistant
+	'------------------------------------
 	currencyCodeType = "EUR"
 	paymentType = "Sale"
-	returnURL = "https://www.cristalensi.it/pagamento_paypal_ok_test.asp"
-	cancelURL = "https://www.cristalensi.it/pagamento_paypal_ko_test.asp"
+
+	'------------------------------------
+	' The returnURL is the location where buyers return to when a
+	' payment has been succesfully authorized.
+	'
+	' This is set to the value entered on the Integration Assistant
+	'------------------------------------
+	returnURL = "https://www.cristalensi.it/pagamento_paypal_ok.asp"
+
+	'------------------------------------
+	' The cancelURL is the location buyers are sent to when they click the
+	' return to XXXX site where XXX is the merhcant store name
+	' during payment review on PayPal
+	'
+	' This is set to the value entered on the Integration Assistant
+	'------------------------------------
+	cancelURL = "https://www.cristalensi.it/pagamento_paypal_ko.asp"
+
+	'------------------------------------
+	' The paymentAmount is the total value of
+	' the shopping cart, that was set
+	' earlier in a session variable
+	' by the shopping cart page
+	'------------------------------------
+	paymentAmount = Session("Payment_Amount")
+
+	'------------------------------------
+	' When you integrate this code
+	' set the variables below with
+	' shipping address details
+	' entered by the user on the
+	' Shipping page.
+	'------------------------------------
 	if FkSpedizione=2 then
 		shipToName = nominativo_email
 		shipToStreet = "Via arti e mestieri, 1"
@@ -613,6 +667,33 @@ if FkPagamento = 2 then
 		phoneNum = Telefono_sp
 		INVNUM = IdOrdine 'valore aggiunto alla funzione
 	end if
+
+	'------------------------------------
+	' Calls the SetExpressCheckout API call
+	'
+	' The CallMarkExpressCheckout function is defined in PayPalFunctions.asp
+	' included at the top of this file.
+	'-------------------------------------------------
+	Set resArray = CallMarkExpressCheckout (paymentAmount, currencyCodeType, paymentType, returnURL, cancelURL, shipToName, shipToStreet, shipToCity, shipToState, shipToCountryCode, shipToZip, shipToStreet2, phoneNum, INVNUM )
+
+	ack = UCase(resArray("ACK"))
+	'response.Write("ack:"&ack&"<br>")
+
+	If ack="SUCCESS" Then
+		' Redirect to paypal.com
+		SESSION("token") = resArray("TOKEN")
+		ReDirectURL( resArray("TOKEN") )
+		'response.Write("token:"&SESSION("token")&"<br>")
+	Else
+		'Display a user friendly Error on the page using any of the following error information returned by PayPal
+		ErrorCode = URLDecode( resArray("L_ERRORCODE0"))
+		ErrorShortMsg = URLDecode( resArray("L_SHORTMESSAGE0"))
+		ErrorLongMsg = URLDecode( resArray("L_LONGMESSAGE0"))
+		ErrorSeverityCode = URLDecode( resArray("L_SEVERITYCODE0"))
+		'response.Write("ErrorCode:"&ErrorCode&"<br>")
+		'response.Write("ErrorLongMsg:"&ErrorLongMsg&"<br>")
+
+	End If
 
 End If
 %>
@@ -783,61 +864,47 @@ End If
 								</p>
 						<%end if%>
 						<%if FkPagamento=2 then%>
+								<%if PaymentOption = "PayPal" and ack<>"SUCCESS" Then%>
+										<p class="description">
+										<br><br>
+										<em><strong>Ci sono stati problemi con il pagamento di PayPal: dovresti modificare l'ordine scegliendo un altro tipo di pagamento oppure contattarci.
+										<br><br>
+										Cordiali saluti, lo staff di Cristalensi</strong></em>
+										<br><br>
+										</p>
+								<%else%>
+<%
+							'TotaleGeneralePP=FormatNumber(TotaleGenerale,2)
+							'TotaleGeneralePP=Replace(TotaleGeneralePP, ".", "")
+							'TotaleGeneralePP=Replace(TotaleGeneralePP, ",", ".")
+							%>
 							<p class="description">
-								<a href="https://www.paypal.com/it/webapps/mpp/paypal-popup" title="Come funziona PayPal" onClick="javascript:window.open('https://www.paypal.com/it/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1100, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/logo_paypal_carte.jpg" border="0" style="float:right; padding-left:20px; width:319px; height:110px;" alt="Che cos'&egrave; PayPal"></a>Grazie per aver scelto i nostri prodotti,<br>
-								per completare l'ordine &egrave; necessario effettuare il pagamento con i sistemi sicuri di PayPal protetti dai loro protocolli di sicurezza.<br>PayPal permette di pagare con moltissime carte di credito e carte ricaribili garantendo una potezione sia per l'acquirente che per il venditore:<br>
+
+								<a href="https://www.paypal.com/it/webapps/mpp/paypal-popup" title="Come funziona PayPal" onClick="javascript:window.open('https://www.paypal.com/it/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/logo_paypal_carte.jpg" border="0" style="float:right; padding-left:5px; width:319px; height:110px;" alt="Che cos'&egrave; PayPal"></a>Grazie per aver scelto i nostri prodotti,<br>
+								per completare l'ordine &egrave; necessario effettuare il pagamento con i sistemi sicuri di PayPal che permettono di pagare con moltissime carte di credito e carte ricaribili protetti dai loro protocolli di sicurezza:<br>
 								MasterCard, Visa e Visa Electron, PostePay, Carta Aura e ricariche PayPal.<br><br>
-								Pagando, e quindi completando l'ordine, si accettano le condizioni di vendita consultabili nella pagina specifica oppure da questo file (pdf): <a href="https://www.cristalensi.it/condizioni_di_vendita.pdf" target="_blank">condizion di vendita</a>.<br><br>
+								Pagando, e quindi completando l'ordine, si accettano le condizioni di vendita.<br>
+							Salva oppure stampa le condizioni di vendita (consultabili anche nell'apposita pagina del sito internet) da questo file (.pdf):<br>
+							<a href="https://www.cristalensi.it/condizioni_di_vendita.pdf" target="_blank">condizion di vendita</a>							    <br>
+								<br>
+								</p>
+
+							<p>
+							<form action='https://www.cristalensi.it/ordine.asp' METHOD='POST'>
+								<input type="hidden" name="PaymentOption" value="PayPal" />
+								<input type="hidden" name="IdOrdine" value="<%=IdOrdine%>" />
+								<input type='image' name='submit' src='https://www.paypal.com/it_IT/i/btn/btn_xpressCheckout.gif' border='0' align='top' alt='Check out with PayPal'/>
+							</form>
 							</p>
-
-								<form action="https://securepayments.sandbox.paypal.com/webapps/HostedSoleSolutionApp/webflow/sparta/hostedSoleSolutionProcess" method="post">
-								<input type="hidden" name="cmd" value="_hosted-payment">
-								<input type="hidden" name="subtotal" value="<%=Payment_Amount%>">
-								<input type="hidden" name="currency_code" value="<%=currencyCodeType%>">
-								<input type="hidden" name="business" value="viadeimedici-facilitator@gmail.com"><!-- Codice conto commerciante -->
-								<input type="hidden" name="paymentaction" value="<%=paymentType%>">
-								<input type="hidden" name="return" value="<%=returnURL%>">
-								<input type="hidden" name="template" value=”TemplateB">  <!--PayPal templates -->
-
-								<input type="hidden" name="cancel_return" value="<%=cancelURL%>">
-								<input type="hidden" name="cbt" value="Torna al sito di Cristalensi Lampadari">
-
-								  <!-- Enable override of payer’s stored PayPal address. -->
-								<input type="hidden" name="address_override" value="true">
-
-								<input type="hidden" name="showShippingAddress" value="false">
-								<input type="hidden" name="showCustomerName" value="false">
-								<input type="hidden" name="showBillingEmail" value="false">
-								<input type="hidden" name="showBillingPhone" value="false">
-								<input type="hidden" name="showBillingAddress" value="false">
-
-								 <!-- popola indirizzo di spedizione e fatturazione  -->
-								<input type="hidden" name="address1" value="<%=shipToName%>">
-								<input type="hidden" name="address2" value="<%=shipToStreet2%>">
-								<input type="hidden" name="city" value="<%=shipToCity%>">
-								<input type="hidden" name="state" value="<%=shipToState%>"><!--solo per U.S.-->
-								<input type="hidden" name="zip" value="<%=shipToZip%>">
-								<input type="hidden" name="night_phone_b" value="<%=phoneNum%>">
-
-								<input type="hidden" name="invoice" value="<%=INVNUM%>">
-								<input type="hidden" name="custom" value="Ordine n. <%=INVNUM%>">
-
-
-								<!-- Identifies the source that built the code for the button. -->
-								<!-- Format - <Company>_<Service>_<Product>_<Country> -->
-								<!-- <input type="hidden" name="bn" value="CC_Partner_H3S"> ?????????-->
-
-								<!-- showCustomerName - Controls the show/hide of billing first name and billing last name -->
-								<!-- showBillingAddress - Controls the show/hide of billing address -->
-								<!-- showBillingPhone - Controls the show/hide of billing phone -->
-								<!-- showBillingEmail - Controls the show/hide of billing email -->
-								<!-- showShippingAddress - Controls the show/hide of shipping address -->
-
-								<input type="submit" name="METHOD" value="Paga adesso con PayPal!" class="btn btn-danger pull-left">
-
-
-								</form>
-								<br><br>
+							<p class="description">
+							<br><br>
+							La merce verr&agrave; spedita al momento che la nostra banca ricever&agrave; il pagamento.<br>
+							<br>
+							Cordiali saluti, lo staff di Cristalensi
+							<br>
+							<br>
+							</p>
+							<%end if%>
 						<%end if%>
 
 

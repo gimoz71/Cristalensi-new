@@ -4,6 +4,7 @@
 
 	'IdOrdine=request("item_number")
 	'if IdOrdine="" then IdOrdine=0
+	if idsession=0 then response.Redirect("/iscrizione.asp?prov=1")
 
 		Set rs=Server.CreateObject("ADODB.Recordset")
 		sql = "Select * From Clienti where pkid="&idsession
