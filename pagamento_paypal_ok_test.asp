@@ -14,29 +14,31 @@ set objHttp = Server.CreateObject("Msxml2.ServerXMLHTTP")
 
 ' https://ipnpb.sandbox.paypal.com/cgi-bin/webscr
 ' https://ipnpb.paypal.com/cgi-bin/webscr
-' https://www.paypal.com/cgi-bin/webscr
 
-objHttp.open "POST", "https://www.paypal.com/cgi-bin/webscr", false
+'objHttp.open "POST", "https://www.paypal.com/cgi-bin/webscr", false
+objHttp.open "POST", "https://ipnpb.sandbox.paypal.com/cgi-bin/webscr", false
 objHttp.setRequestHeader "Content-type", "application/x-www-form-urlencoded"
 objHttp.Send str
 
 Payment_status = Request.Form("payment_status")
-'response.write("Payment_status:"&Payment_status&"<br>")
+response.write("Payment_status:"&Payment_status&"<br>")
 Txn_id = Request.Form("txn_id")
-'response.write("Txn_id:"&Txn_id&"<br>")
+response.write("Txn_id:"&Txn_id&"<br>")
 
 ' Check notification validation
 if (objHttp.status <> 200 ) then
 	' HTTP error handling
-	esito="NO"
+	esito="NO1"
 elseif (objHttp.responseText = "VERIFIED") then
 	esito="SI"
 elseif (objHttp.responseText = "INVALID") then
-	esito="NO"
+	esito="NO2"
 else
-	esito="NO"
+	esito="NO3"
 end if
 set objHttp = nothing
+response.write("esito:"&esito)
+response.End
 %>
 <%
 	Call Visualizzazione("",0,"pagamento_paypal_ok.asp")

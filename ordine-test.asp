@@ -10,8 +10,6 @@
 	if IdOrdine="" then IdOrdine=0
 	if idOrdine=0 then response.redirect("/carrello1.asp")
 
-	'if idsession=1 then response.redirect("/ordine-test.asp")
-
 	if idsession=0 then response.redirect("/iscrizione.asp?prov=1")
 
 	session("ordine_shop")=""
@@ -590,8 +588,8 @@ if FkPagamento = 2 then
 	Payment_Amount=Replace(TotalePaypal, ",", ".")
 	currencyCodeType = "EUR"
 	paymentType = "Sale"
-	returnURL = "https://www.cristalensi.it/pagamento_paypal_ok.asp"
-	cancelURL = "https://www.cristalensi.it/pagamento_paypal_ko.asp"
+	returnURL = "https://www.cristalensi.it/pagamento_paypal_ok_test.asp"
+	cancelURL = "https://www.cristalensi.it/pagamento_paypal_ko_test.asp"
 	if FkSpedizione=2 then
 		shipToName = nominativo_email
 		shipToStreet = "Via arti e mestieri, 1"
@@ -792,11 +790,11 @@ End If
 								Pagando, e quindi completando l'ordine, si accettano le condizioni di vendita consultabili nella pagina specifica oppure da questo file (pdf): <a href="https://www.cristalensi.it/condizioni_di_vendita.pdf" target="_blank">condizion di vendita</a>.<br><br>
 							</p>
 
-								<form action="https://securepayments.paypal.com/webapps/HostedSoleSolutionApp/webflow/sparta/hostedSoleSolutionProcess" method="post">
+								<form action="https://securepayments.sandbox.paypal.com/webapps/HostedSoleSolutionApp/webflow/sparta/hostedSoleSolutionProcess" method="post">
 								<input type="hidden" name="cmd" value="_hosted-payment">
 								<input type="hidden" name="subtotal" value="<%=Payment_Amount%>">
 								<input type="hidden" name="currency_code" value="<%=currencyCodeType%>">
-								<input type="hidden" name="business" value="6MLLMNTV88VW6"><!-- Codice conto commerciante -->
+								<input type="hidden" name="business" value="viadeimedici-facilitator@gmail.com"><!-- Codice conto commerciante -->
 								<input type="hidden" name="paymentaction" value="<%=paymentType%>">
 								<input type="hidden" name="return" value="<%=returnURL%>">
 								<input type="hidden" name="template" value=”TemplateB">  <!--PayPal templates -->
