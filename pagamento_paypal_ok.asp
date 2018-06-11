@@ -28,13 +28,17 @@ Txn_id = Request.Form("txn_id")
 ' Check notification validation
 if (objHttp.status <> 200 ) then
 	' HTTP error handling
+	objHttpstatus = objHttp.status
 	esito="NO"
+	caso="1"
 elseif (objHttp.responseText = "VERIFIED") then
 	esito="SI"
 elseif (objHttp.responseText = "INVALID") then
 	esito="NO"
+	caso="2"
 else
 	esito="NO"
+	caso="3"
 end if
 set objHttp = nothing
 %>
@@ -91,9 +95,7 @@ set objHttp = nothing
 		end if
 
 		ss.close
-	end if
 
-	if FkPagamento=2 and esito="SI" then
 		Set rs=Server.CreateObject("ADODB.Recordset")
 		sql = "Select * From Clienti where pkid="&idsession
 		rs.Open sql, conn, 1, 1
@@ -102,7 +104,9 @@ set objHttp = nothing
 		email=rs("email")
 
 		rs.close
+	end if
 
+	if FkPagamento=2 and esito="SI" then
 			HTML1 = ""
 			HTML1 = HTML1 & "<html>"
 			HTML1 = HTML1 & "<head>"
@@ -268,7 +272,112 @@ set objHttp = nothing
 	end if
 
 	If esito="NO" Then
-		response.Redirect("https://www.cristalensi.it/pagamento_paypal_ko.asp")
+		'response.write("objHttpstatus:"&objHttpstatus&"<br>")
+		'response.write("caso:"&caso)
+		
+		'response.Redirect("https://www.cristalensi.it/pagamento_paypal_ko.asp")
+
+		'invio l'email all'amministratore
+		HTML1 = ""
+		HTML1 = HTML1 & "<html>"
+		HTML1 = HTML1 & "<head>"
+		HTML1 = HTML1 & "<meta http-equiv=""Content-Type"" content=""text/html; charset=iso-8859-1"">"
+		HTML1 = HTML1 & "<title>Cristalensi</title>"
+		HTML1 = HTML1 & "</head>"
+		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
+		HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
+		HTML1 = HTML1 & "<tr>"
+		HTML1 = HTML1 & "<td>"
+		HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Un ordine con pagamento da Paypal dal sito internet non &egrave; andato a buon fine.</font><br>"
+		HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Dati sensibili e determinanti dell'ordine:<br>Nominativo: <b>"&nominativo_email&"</b><br>Email: <b>"&email&"</b><br>Codice cliente: <b>"&idsession&"</b><br>Codice ordine: <b>"&idordine&"</b><br>Stato pagamento: <b>"&Payment_status&"</b></font><br>"
+		HTML1 = HTML1 & "</td>"
+		HTML1 = HTML1 & "</tr>"
+		HTML1 = HTML1 & "</table>"
+		HTML1 = HTML1 & "</body>"
+		HTML1 = HTML1 & "</html>"
+
+		Mittente = "info@cristalensi.it"
+		Destinatario = "info@cristalensi.it"
+		Oggetto = "Pagamento con Paypal non andato a buon fine"
+		Testo = HTML1
+
+		Set eMail_cdo = CreateObject("CDO.Message")
+
+		' Imposta le configurazioni
+		Set myConfig = Server.createObject("CDO.Configuration")
+		With myConfig
+			'autentication
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+			' Porta CDO
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+			' Timeout
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+			' Server SMTP di uscita
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = msg_smtpserver
+			' Porta SMTP
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+			'Username
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = msg_sendusername
+			'Password
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = msg_sendpassword
+
+			.Fields.update
+		End With
+		Set eMail_cdo.Configuration = myConfig
+
+		eMail_cdo.From = Mittente
+		eMail_cdo.To = Destinatario
+		eMail_cdo.Subject = Oggetto
+
+		eMail_cdo.HTMLBody = Testo
+
+		eMail_cdo.Send()
+
+		Set myConfig = Nothing
+		Set eMail_cdo = Nothing
+
+		Mittente = "info@cristalensi.it"
+		Destinatario = "viadeimedici@gmail.com"
+		Oggetto = "Pagamento con Paypal non andato a buon fine"
+		Testo = HTML1
+
+		Set eMail_cdo = CreateObject("CDO.Message")
+
+		' Imposta le configurazioni
+		Set myConfig = Server.createObject("CDO.Configuration")
+		With myConfig
+			'autentication
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate") = 1
+			' Porta CDO
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
+			' Timeout
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout") = 60
+			' Server SMTP di uscita
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = msg_smtpserver
+			' Porta SMTP
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
+			'Username
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendusername") = msg_sendusername
+			'Password
+			.Fields.item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = msg_sendpassword
+
+			.Fields.update
+		End With
+		Set eMail_cdo.Configuration = myConfig
+
+		eMail_cdo.From = Mittente
+		eMail_cdo.To = Destinatario
+		eMail_cdo.Subject = Oggetto
+
+		eMail_cdo.HTMLBody = Testo
+
+		eMail_cdo.Send()
+
+		Set myConfig = Nothing
+		Set eMail_cdo = Nothing
+
+		'fine invio email
+
 	end if
 %>
 <!DOCTYPE html>
