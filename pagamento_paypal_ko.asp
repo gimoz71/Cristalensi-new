@@ -26,7 +26,7 @@
 			HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
 			HTML1 = HTML1 & "<tr>"
 			HTML1 = HTML1 & "<td>"
-			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Un ordine con pagamento da Paypal dal sito internet non &egrave; andato a buon fine.</font><br>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Un ordine con pagamento da Paypal dal sito internet &egrave; stato annullato.</font><br>"
 			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Dati sensibili e determinanti dell'ordine:<br>Nominativo: <b>"&nominativo_email&"</b><br>Email: <b>"&email&"</b><br>Codice cliente: <b>"&idsession&"</b></font><br>"
 			HTML1 = HTML1 & "</td>"
 			HTML1 = HTML1 & "</tr>"
@@ -36,7 +36,7 @@
 
 			Mittente = "info@cristalensi.it"
 			Destinatario = "info@cristalensi.it"
-			Oggetto = "Pagamento con Paypal non andato a buon fine"
+			Oggetto = "Pagamento con Paypal annullato"
 			Testo = HTML1
 
 			Set eMail_cdo = CreateObject("CDO.Message")
@@ -76,7 +76,7 @@
 
 			Mittente = "info@cristalensi.it"
 			Destinatario = "viadeimedici@gmail.com"
-			Oggetto = "Pagamento con Paypal non andato a buon fine"
+			Oggetto = "Pagamento con Paypal annullato"
 			Testo = HTML1
 
 			Set eMail_cdo = CreateObject("CDO.Message")
@@ -207,7 +207,7 @@
 												<div class="progress-bar"></div>
 										</div>
 										<a href="#" class="bs-wizard-dot"></a>
-										<div class="bs-wizard-info text-center">Conferma dell'ordine</div>
+										<div class="bs-wizard-info text-center">Annullamento dell'ordine</div>
 								</div>
             </div>
         </div>
@@ -218,8 +218,10 @@
 								<br>
 								<br>
 								La procedura di pagamento con Paypal non &egrave; stata completata<br>
-									oppure ci sono stati errori nel sistema di pagamento.<br>
-										<br>
+								oppure ci sono stati errori nel sistema di pagamento.<br>
+								<br>
+								L'ordine &egrave; comunque disponibile nella Tua <a href="/areaprivata.asp">Area Clienti</a> per essere completato.
+								<br><br>
 								Eventualmente contattare Cristalensi per avere dettagli e assistenza nel pagamento, grazie.<br><br>Telefono: 0571/911163<br><br>Email: <a href="mailto: info@cristalensi.it">info@cristalensi.it</a>
 								<br><br>
 								Il nostro personale &eacute; a tua disposizione per qualsiasi chiarimento.<br>

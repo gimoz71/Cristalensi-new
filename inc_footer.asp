@@ -277,6 +277,7 @@
     function verifica_request() {
 
     email=document.requestform.email.value;
+    richiesta=document.requestform.richiesta.value;
 
     if (email==""){
       alert("Non  e\' stato compilato il campo \"Email\".");
@@ -284,6 +285,10 @@
     }
     if (email.indexOf("@")==-1 || email.indexOf(".")==-1){
     alert("ATTENZIONE! \"e-mail\" non valida.");
+    return false;
+    }
+    if (richiesta.indexOf("https://")>=0 || richiesta.indexOf("http://")>=0 || richiesta.indexOf("www")>=0){
+    alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
     return false;
     }
 
@@ -328,7 +333,7 @@
           <div class="form-group">
               <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
               <div class="col-sm-8">
-                  <textarea class="form-control" name="richiesta"></textarea>
+                  <textarea class="form-control" name="richiesta" id="richiesta"></textarea>
               </div>
           </div>
           <div class="form-group">
@@ -512,6 +517,7 @@
     function verifica_request_prev() {
 
     email=document.requestprev.email.value;
+    richiesta=document.requestform.richiesta.value;
 
     if (email==""){
       alert("Non  e\' stato compilato il campo \"Email\".");
@@ -519,6 +525,10 @@
     }
     if (email.indexOf("@")==-1 || email.indexOf(".")==-1){
     alert("ATTENZIONE! \"e-mail\" non valida.");
+    return false;
+    }
+    if (richiesta.indexOf("https://")>=0 || richiesta.indexOf("http://")>=0 || richiesta.indexOf("www")>=0){
+    alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
     return false;
     }
 
@@ -559,7 +569,7 @@
           <div class="form-group">
               <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
               <div class="col-sm-8">
-                  <textarea class="form-control" name="richiesta"></textarea>
+                  <textarea class="form-control" name="richiesta" id="richiesta"></textarea>
               </div>
           </div>
           <div class="form-group">
@@ -745,6 +755,7 @@ end if
   function verifica_request() {
 
   email=document.requestform.email.value;
+  richiesta=document.requestform.richiesta.value;
 
   if (email==""){
     alert("Non  e\' stato compilato il campo \"Email\".");
@@ -752,6 +763,10 @@ end if
   }
   if (email.indexOf("@")==-1 || email.indexOf(".")==-1){
   alert("ATTENZIONE! \"e-mail\" non valida.");
+  return false;
+  }
+  if (richiesta.indexOf("https://")>=0 || richiesta.indexOf("http://")>=0 || richiesta.indexOf("www")>=0){
+  alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
   return false;
   }
 
@@ -792,7 +807,7 @@ end if
         <div class="form-group">
             <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
             <div class="col-sm-8">
-                <textarea class="form-control" name="richiesta"></textarea>
+                <textarea class="form-control" name="richiesta" id="richiesta"></textarea>
             </div>
         </div>
         <div class="form-group">
