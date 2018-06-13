@@ -21,6 +21,9 @@
                     <a href="https://www.facebook.com/CristalensiLampadari/" target="_blank"><i class="fa fa-facebook-square"></i></a>
                     <a href="https://www.youtube.com/channel/UCsP3WTO0PryxgRq6OymSfpA/videos" target="_blank"><i class="fa fa-youtube-square"></i></a>
                 </p>
+                <p>
+                    <br /><br />&raquo; <a href="https://www.viadeimedici.it" target="_blank" rel="nofollow" style="color:#000;" title="ViaDeiMedici: Realizzazione campagne Web Marketing e Siti Internet">ViaDeiMedici: Web Marketing e Siti Internet</a>
+                </p>
 
             </div>
             <div class="col-md-3 menu-col">
@@ -287,7 +290,7 @@
     alert("ATTENZIONE! \"e-mail\" non valida.");
     return false;
     }
-    if (richiesta.indexOf("https://")>=0 || richiesta.indexOf("http://")>=0 || richiesta.indexOf("www")>=0){
+    if (richiesta.indexOf("https")>=0 || richiesta.indexOf("http")>=0 || richiesta.indexOf("www")>=0){
     alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
     return false;
     }
@@ -527,7 +530,7 @@
     alert("ATTENZIONE! \"e-mail\" non valida.");
     return false;
     }
-    if (richiesta.indexOf("https://")>=0 || richiesta.indexOf("http://")>=0 || richiesta.indexOf("www")>=0){
+    if (richiesta.indexOf("https")>=0 || richiesta.indexOf("http")>=0 || richiesta.indexOf("www")>=0){
     alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
     return false;
     }
@@ -765,7 +768,7 @@ end if
   alert("ATTENZIONE! \"e-mail\" non valida.");
   return false;
   }
-  if (richiesta.indexOf("https://")>=0 || richiesta.indexOf("http://")>=0 || richiesta.indexOf("www")>=0){
+  if (richiesta.indexOf("https")>=0 || richiesta.indexOf("http")>=0 || richiesta.indexOf("www")>=0){
   alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
   return false;
   }
