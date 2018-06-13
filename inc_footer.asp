@@ -290,7 +290,7 @@
     alert("ATTENZIONE! \"e-mail\" non valida.");
     return false;
     }
-    if (richiesta.indexOf("https")>=0 || richiesta.indexOf("http")>=0 || richiesta.indexOf("www")>=0){
+    if (richiesta.indexOf("https")>-1 || richiesta.indexOf("http")>-1 || richiesta.indexOf("www")>-1 || richiesta.indexOf("href")>-1){
     alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
     return false;
     }
@@ -520,7 +520,7 @@
     function verifica_request_prev() {
 
     email=document.requestprev.email.value;
-    richiesta=document.requestform.richiesta.value;
+    richiesta=document.requestprev.richiesta.value;
 
     if (email==""){
       alert("Non  e\' stato compilato il campo \"Email\".");
@@ -530,7 +530,7 @@
     alert("ATTENZIONE! \"e-mail\" non valida.");
     return false;
     }
-    if (richiesta.indexOf("https")>=0 || richiesta.indexOf("http")>=0 || richiesta.indexOf("www")>=0){
+    if (richiesta.indexOf("https")>-1 || richiesta.indexOf("http")>-1 || richiesta.indexOf("www")>-1 || richiesta.indexOf("href")>-1){
     alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
     return false;
     }
@@ -768,7 +768,7 @@ end if
   alert("ATTENZIONE! \"e-mail\" non valida.");
   return false;
   }
-  if (richiesta.indexOf("https")>=0 || richiesta.indexOf("http")>=0 || richiesta.indexOf("www")>=0){
+  if (richiesta.indexOf("https")>-1 || richiesta.indexOf("http")>-1 || richiesta.indexOf("www")>-1 || richiesta.indexOf("href")>-1){
   alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
   return false;
   }
