@@ -97,8 +97,13 @@
     nome=request("nome")
     telefono=request("telefono")
     richiesta=request("richiesta")
+    if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 then
+      invioemail="no"
+    Else
+      invioemail="si"
+    end if
 
-    if email<>"" then
+    if email<>"" and invioemail="si" then
   		ip=Request.ServerVariables("REMOTE_ADDR")
   		data=date()
 
@@ -218,9 +223,9 @@
   		HTML1 = HTML1 & "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>"
   		HTML1 = HTML1 & "<table width='100%' border='0' cellspacing='0' cellpadding='0'><tr><td>"
       if richiesta_carrello=1 then
-        HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di disponibilit&agrave; dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br>IP connessione: <b>"&ip&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br>Prodotti nel carrello:"&ProdottiCarrello&"<br><br><br><br>Questa &egrave; un'email di conferma dell'invio della richiesta di disponibilit&agrave;.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
+        HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di disponibilit&agrave; dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br>Prodotti nel carrello:"&ProdottiCarrello&"<br><br><br><br>Questa &egrave; un'email di conferma dell'invio della richiesta di disponibilit&agrave;.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
       else
-  		  HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di disponibilit&agrave; dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br>IP connessione: <b>"&ip&"</b><br><br>Codice articolo: <b>"&CodiceArticolo&"</b><br>Nome prodotto: <b>"&Titolo_prodotto&"</b><br>Produttore: <b>"&produttore&"</b><br>Codice progressivo prodotto: <b>"&id&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa &egrave; un'email di conferma dell'invio della richiesta di disponibilit&agrave;.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
+  		  HTML1 = HTML1 & "<font face=Verdana size=1 color=#000000>E' stata fatta la seguente richiesta di disponibilit&agrave; dal sito il "&data&"<br><br>Dati della richiesta:<br>Nome e Cognome: <b>"&nome&"</b><br>Telefono: <b>"&telefono&"</b><br>E-mail: <b>"&email&"</b><br><br>Codice articolo: <b>"&CodiceArticolo&"</b><br>Nome prodotto: <b>"&Titolo_prodotto&"</b><br>Produttore: <b>"&produttore&"</b><br>Codice progressivo prodotto: <b>"&id&"</b><br><br>Richiesta:<br><b>"&richiesta&"</b><br><br><br><br>Questa &egrave; un'email di conferma dell'invio della richiesta di disponibilit&agrave;.<br><br>La ringraziamo per aver scelto i prodotti di Cristalensi</font>"
       end if
   		HTML1 = HTML1 & "</td></tr></table>"
   		HTML1 = HTML1 & "</body>"
@@ -357,8 +362,13 @@
     nome=request("nome")
     telefono=request("telefono")
     richiesta=request("richiesta")
+    if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 then
+      invioemail="no"
+    Else
+      invioemail="si"
+    end if
 
-    if email<>"" then
+    if email<>"" and invioemail="si" then
   		ip=Request.ServerVariables("REMOTE_ADDR")
   		data=date()
 
@@ -595,8 +605,13 @@ if ric=1 then
   nome=request("nome")
   telefono=request("telefono")
   richiesta=request("richiesta")
+  if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 then
+    invioemail="no"
+  Else
+    invioemail="si"
+  end if
 
-  if email<>"" then
+  if email<>"" and invioemail="si" then
 		ip=Request.ServerVariables("REMOTE_ADDR")
 		data=date()
 
