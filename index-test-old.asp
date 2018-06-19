@@ -1,23 +1,13 @@
 <!--#include file="inc_strConn.asp"-->
-<%
-titolo_footer_1="<a href=""/illuminazione-interni-ed-esterni/1nt-lampadari.asp"" title=""Sospensioni, lampadari e lampade a sospensione"">LAMPADARI</a>"
-testo_footer_1="Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo questa tipologia di luci e quindi possiamo trovare sospensioni in tutti gli stili: dai <a href=""/illuminazione-interni-ed-esterni/1nc-lampadari-moderni.asp"" title=""Lampadari e sospensioni moderne"">lampadari moderni e contemporanei</a> ai <a href=""/illuminazione-interni-ed-esterni/3nc-lampadari-classici.asp"" title=""Lampadari classici e lampade classiche a sospensione"">lampadari classici</a>, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Da notare le nuove realizzazioni con i <a href=""/illuminazione-interni-ed-esterni/2nc-lampadari-a-led.asp"" title=""Sospensioni e Lampadari a LED"">lampadari a LED integrati</a>. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità."
-titolo_footer_2="<a href=""/illuminazione-interni-ed-esterni/3nt-plafoniere.asp"" title=""Plafoniere e lampade a soffitto"">PLAFONIERE</a>"
-testo_footer_2=""
-titolo_footer_3="<a href=""/illuminazione-interni-ed-esterni/4nt-applique.asp"" title=""Applique e lampade a parete"">APPLIQUE</a>"
-testo_footer_3="Per applique facciamo riferimento a tutte quelle lampade a parete e che quindi non sono distaccate dal muro. Possono avere una o più luci e quindi fornire una luce puntuale e direzionata con bracci o spot ma anche fornire un’illuminazione più diffusa. Sono usate in ambienti dove magari un’unica luce centrale non è utile o sufficiente e c’è la necessità di avere luci, magari anche più piccole ma diffuse in tutto l’ambiente. Si parla di grandi soggiorni e living, ma anche camere (fondamentali nel caso non si usino abat-jour), bagni ma anche ingressi e corridoi, oltre a spazi come taverne, garage e loggiati semi-aperti. Il nostro catalogo offre un’ampia scelta per soddisfare molti gusti cercando prodotti di qualità con prezzi per accontentare un vasto numero di clienti: dalle <a href=""/illuminazione-interni-ed-esterni/22nc-applique-moderne.asp"" title=""Lampade a parete e applique moderne"">applique moderne</a> alle <a href=""/illuminazione-interni-ed-esterni/24nc-applique-classiche.asp"" title=""Applique classiche"">lampade a parete classiche</a>, da quelle rustiche o vintage alle applique in cristallo o in vetro Murano. Da citare anche le applique per le camerette dei bambini. Grazie alla diffusione dei LED integrati abbiamo un’area specifica per la vendita di <a href=""/illuminazione-interni-ed-esterni/23nc-applique-a-led.asp"" title=""Lampad LED a parete"">applique LED</a> dato che i designers, non avendo l’obbligo della presenza delle tradizionali lampadine, hanno avuto  la possibilità di realizzare articoli dalle forme particolari, compatte o con design estroversi garantendo comunque un’ottima illuminazione. Per quanto riguarda le applique da bagno invece potete trovare una categoria specifica di lampade allo specchio data la particolarità dei prodotti."
-titolo_footer_4="<a href=""/illuminazione-interni-ed-esterni/5nt-piantane.asp"" title=""Piantane e lampade da terra"">PIANTANE</a>"
-testo_footer_4=""
-%>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Vendita lampadari online | illuminazione interni | illuminazione da esterno</title>
+    <title>Vendita lampadari online illuminazione interni illuminazione da esterno</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Cristalensi, specializzato in vendita di lampari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Trovi ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso, vetro Murano e lampade a LED.">
+    <meta name="description" content="Cristalensi, showroom di lampade vicino Firenze, specializzato in vendita di lampari online, prodotti per illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="Cristalensi, specializzato in vendita di lampari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Trovi ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso, vetro Murano e lampade a LED.">
+    <meta property="og:description" content="Cristalensi, showroom di lampade vicino Firenze, specializzato in vendita di lampari online, prodotti per illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori.">
     <link rel="alternate" href="https://www.cristalensi.it/" hreflang="it-it" />
 		<link rel="alternate" href="https://www.cristalensi.com/de/" hreflang="de-de" />
 		<link rel="alternate" href="https://www.cristalensi.com/" hreflang="en-GB" />
@@ -51,8 +41,8 @@ testo_footer_4=""
 </head>
 
 <body>
-    <!--#include file="inc_header_1.asp"-->
-    <!--#include file="inc_header_2.asp"-->
+    <!--#include file="inc_header_1_test.asp"-->
+    <!--#include file="inc_header_2_test.asp"-->
     <div class="container content">
         <div class="col-md-12">
             <!--#include file="inc_slider.asp"-->
@@ -336,7 +326,7 @@ testo_footer_4=""
                 <div class="col-md-8">
                     <h2 class="slogan">Cristalensi, vendita lampadari online<br />Showroom aperto da oltre 50 anni!</h2>
                     <p class="main-description">
-                        A portata di click una vasta e raffinata gamma di prodotti per illuminazione interni ed illuminazione da esterno per arredare la casa, il giardino, un ufficio oppure un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: dalla vendita di <b>lampadari</b>
+                        A portata di click una vasta e raffinata gamma di prodotti per illuminazione interni ed illuminazione da esterno per arredare la casa, il giardino, un ufficio oppure un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: dai <b>lampadari</b>
                         moderni e classici, alle <b>applique</b>, alle <b>plafoniere</b> e <b>piantane</b> ma anche <b>faretti</b> e <b>ventilatori con luce</b>. Tanti prodotti per <b>illuminazione a LED</b>, <b>in cristallo</b> e <b>vetro Murano</b>, in stile
                         <b>Tiffany</b>, <b>rustici</b> o <b>vintage</b>. Abbiamo anche un'ampia esposizione di lampade da esterno sia <b>moderne</b> che <b>classiche</b> e articoli specifici <b>per bambini</b>, camerette e tutti gli altri ambienti della casa.<br />Sono presenti anche lampade per uffici, negozi, locali, aziende e ambienti professionali.<br />
                         Inoltre, uno staff cordiale e professionale &egrave; pronto a consigliarti l'acquisto pi&ugrave; adatto alle tue richieste.
@@ -389,9 +379,9 @@ testo_footer_4=""
                         <div class="info">
                             <div class="row">
                                 <div class="price-details col-md-6">
-                                  <h3><%=titolo_footer_1%></h3>
+                                  <h3>LAMPADARI</h3>
                                   <div class="description readmore">
-                                    <%=NoLettAccDescrizioni(testo_footer_1)%>
+                                    Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo sospensioni e quindi possiamo trovare sospensioni in tutti gli stili: dai lampadari moderni e contemporanei ai classici, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità.
                                   </div>
                                 </div>
                             </div>
@@ -403,7 +393,7 @@ testo_footer_4=""
                         <div class="info">
                             <div class="row">
                               <div class="price-details col-md-6">
-                                <h3><%=titolo_footer_2%></h3>
+                                <h3>PLAFONIERE</h3>
                                 <div class="description readmore">
                                   Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo sospensioni e quindi possiamo trovare sospensioni in tutti gli stili: dai lampadari moderni e contemporanei ai classici, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità.
                                 </div>
@@ -417,9 +407,9 @@ testo_footer_4=""
                         <div class="info">
                             <div class="row">
                               <div class="price-details col-md-6">
-                                <h3><%=titolo_footer_3%></h3>
+                                <h3>APPLIQUE</h3>
                                 <div class="description readmore">
-                                  <%=NoLettAccDescrizioni(testo_footer_3)%>
+                                  Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo sospensioni e quindi possiamo trovare sospensioni in tutti gli stili: dai lampadari moderni e contemporanei ai classici, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità.
                                 </div>
                               </div>
                             </div>
@@ -431,7 +421,7 @@ testo_footer_4=""
                         <div class="info">
                             <div class="row">
                               <div class="price-details col-md-6">
-                                <h3><%=titolo_footer_4%></h3>
+                                <h3>LAMPADE DA TAVOLO</h3>
                                 <div class="description readmore">
                                   Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo sospensioni e quindi possiamo trovare sospensioni in tutti gli stili: dai lampadari moderni e contemporanei ai classici, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità.
                                 </div>
@@ -451,11 +441,11 @@ testo_footer_4=""
 		jQuery(function(){
 
 			jQuery('#slider').camera({
-          height: '55%',
-	        pagination: false,
-				  thumbnails: false,
-          autoadvance: true,
-          time: 5
+                height: '55%',
+	            pagination: false,
+				thumbnails: false,
+                autoadvance: true,
+                time: 5
 			});
 		});
 	</script>
@@ -463,7 +453,7 @@ testo_footer_4=""
       $(document).ready(function() {
           $('.readmore').readmore({
               speed: 200,
-              collapsedHeight: 150,
+              collapsedHeight: 200,
               moreLink: '<a href="#" style="text-align: right; margin-top: 10px;">Leggi di pi&ugrave; <i class="fa fa-chevron-down"></i></a>',
               lessLink: '<a href="#" style="text-align: right">Chiudi <i class="fa fa-chevron-up"></i></a>'
           });
