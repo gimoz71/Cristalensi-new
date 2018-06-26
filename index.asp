@@ -1,4 +1,14 @@
 <!--#include file="inc_strConn.asp"-->
+<%
+titolo_footer_1="<a href=""/illuminazione-interni-ed-esterni/1nt-lampadari.asp"" title=""Sospensioni, lampadari e lampade a sospensione"">LAMPADARI</a>"
+testo_footer_1="Per lampadari indichiamo tutte quelle lampade che, pur collegate al soffitto, si staccano dalla parete e che quindi risultano sospese. Questa tipologia viene spesso indicata anche come sospensioni o lampade a sospensione. Sul nostro e-commerce è possibile trovare in vendita lampadari a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse faretti, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Quindi, come è facile intuire, i lampadari sono adatti per essere inseriti in quasi tutte le stanze, dal soggiorno alle cucine più ampie, dalle camere e camerette ai salotti e alle taverne. Tutte le aziende hanno in catalogo questa tipologia di luci e quindi possiamo trovare sospensioni in tutti gli stili: dai <a href=""/illuminazione-interni-ed-esterni/1nc-lampadari-moderni.asp"" title=""Lampadari e sospensioni moderne"">lampadari moderni e contemporanei</a> ai <a href=""/illuminazione-interni-ed-esterni/3nc-lampadari-classici.asp"" title=""Lampadari classici e lampade classiche a sospensione"">lampadari classici</a>, dai rustici al vintage, dal cristallo al Tiffany e vetro Murano a tutte le lampade per bambini. Potete trovare forme e design a piacimento: da oggetti particolari e ricercati a lampade più semplici, realizzate in molti materiali. Da notare le nuove realizzazioni con i <a href=""/illuminazione-interni-ed-esterni/2nc-lampadari-a-led.asp"" title=""Sospensioni e Lampadari a LED"">lampadari a LED integrati</a>. Anche il prezzo ovviamente ha la sua parte, e la caratteristiche del nostro e-commerce è di proporre lampadari online con un’ampia fascia di prezzi, garantendo comunque prodotti di qualità."
+titolo_footer_2="<a href=""/illuminazione-interni-ed-esterni/3nt-plafoniere.asp"" title=""Plafoniere e lampade a soffitto"">PLAFONIERE</a>"
+testo_footer_2="Per plafoniere intendiamo tutte quelle lampade da soffitto che non sono distaccate dalla parete e non scendono come una sospensione. Possono avere una o più luci e quindi avere una luce puntuale e direzionata ma anche fornire luci più diffuse, considerando sempre che sono in alto e più distanti rispetto a lampade sospese. Sono ideali infatti, rispetto ai lampadari, per stanze più basse o per coloro a cui non piacciono lampade sospese o un po’ ingombranti. Quindi le plafoniere risultano ottime per cucine, soggiorni non molto grandi, camere, bagni ma anche ingressi e corridoi, oltre a spazi come taverne, garage e loggiati semi-aperti. Dalle <a href=""/illuminazione-interni-ed-esterni/13nc-plafoniere-moderne.asp"" title=""Plafoniere moderne e lampade da soffitto moderne"">plafoniere moderne</a> alle <a href=""/illuminazione-interni-ed-esterni/15nc-plafoniere-classiche.asp"" title=""Lampadari classici e lampade classiche a soffitto"">lampade a soffitto classiche</a>, da quelle rustiche o vintage alle plafoniere in cristallo o in vetro Murano, abbiamo ampia scelta per soddisfare molti gusti cercando prodotti di qualità con prezzi per accontentare un’ampia fascia di clienti. Inoltre, grazie alla diffusione dei LED integrati i designers hanno avuto una spinta per la realizzazione di articoli dalle forme sempre più particolari, potendo creare <a href=""/illuminazione-interni-ed-esterni/14nc-plafoniere-a-led.asp"" title=""Plafoniere a led e lampade da soffitto a led integrati"">lampade da soffitto a led</a> compatte o con design estroversi garantendo comunque un’ottima illuminazione. Anzi, i LED stanno aumentando la quantità di luce, misurata in Lumen, diminuendo contemporaneamente i consumi in termini economici: questo è valido per tutte le tipologie di lampade, non solo per le plafoniere."
+titolo_footer_3="<a href=""/illuminazione-interni-ed-esterni/4nt-applique.asp"" title=""Applique e lampade a parete"">APPLIQUE</a>"
+testo_footer_3="Per applique facciamo riferimento a tutte quelle lampade a parete e che quindi non sono distaccate dal muro. Possono avere una o più luci e quindi fornire una luce puntuale e direzionata con bracci o spot ma anche fornire un’illuminazione più diffusa. Sono usate in ambienti dove magari un’unica luce centrale non è utile o sufficiente e c’è la necessità di avere luci, magari anche più piccole ma diffuse in tutto l’ambiente. Si parla di grandi soggiorni e living, ma anche camere (fondamentali nel caso non si usino abat-jour), bagni ma anche ingressi e corridoi, oltre a spazi come taverne, garage e loggiati semi-aperti. Il nostro catalogo offre un’ampia scelta per soddisfare molti gusti cercando prodotti di qualità con prezzi per accontentare un vasto numero di clienti: dalle <a href=""/illuminazione-interni-ed-esterni/22nc-applique-moderne.asp"" title=""Lampade a parete e applique moderne"">applique moderne</a> alle <a href=""/illuminazione-interni-ed-esterni/24nc-applique-classiche.asp"" title=""Applique classiche"">lampade a parete classiche</a>, da quelle rustiche o vintage alle applique in cristallo o in vetro Murano. Da citare anche le applique per le camerette dei bambini. Grazie alla diffusione dei LED integrati abbiamo un’area specifica per la vendita di <a href=""/illuminazione-interni-ed-esterni/23nc-applique-a-led.asp"" title=""Lampad LED a parete"">applique LED</a> dato che i designers, non avendo l’obbligo della presenza delle tradizionali lampadine, hanno avuto  la possibilità di realizzare articoli dalle forme particolari, compatte o con design estroversi garantendo comunque un’ottima illuminazione. Per quanto riguarda le applique da bagno invece potete trovare una categoria specifica di lampade allo specchio data la particolarità dei prodotti."
+titolo_footer_4="<a href=""/illuminazione-interni-ed-esterni/5nt-piantane.asp"" title=""Piantane e lampade da terra"">PIANTANE</a>"
+testo_footer_4="Per piantane indichiamo tutte quelle lampade da terra con uno sviluppo più o meno verticale. Questa tipologia viene spesso scelta per vari motivi e inserita in molti ambienti, magari ampi. Le piantane possono fornire sia una luce puntuale, ad esempio per la lettura vicino a divani e poltrone, ma possono anche creare una luce di ambiente. Le lampade a piantana hanno un punto a favore rispetto a tutte le altre tipologie: non devono essere collegate in modo fisso all’impianto della luce come un applique o un lampadario, ma hanno solo la necessità di una presa della corrente, quindi non hanno necessità di installazioni e fissaggi a muri e pareti, con la possibilità di esser trasferite facilmente da stanza a stanza in base alle necessità. Sul nostro e-commerce è possibile trovare in vendita piantane a una o più lampade, che potranno creare luci puntuali e focalizzate in un determinato punto come su un tavolo da pranzo o un piano di lavoro, come se fosse un faretto, oppure una luce più diffusa, di ambiente, per tutta la stanza dove sono posizionati. Molte aziende hanno in catalogo piantane e quindi possiamo trovare lampade da terra in tutti gli stili: dalle <a href=""/illuminazione-interni-ed-esterni/32nc-piantane-moderne.asp"" title=""Piantane moderne e lampade da terra moderne"">piantane moderne e contemporanee</a> alle <a href=""/illuminazione-interni-ed-esterni/34nc-piantane-classiche.asp"" title=""Piantane classiche e lampade da terra classiche"">lampade da terra in stile classico</a>, dal cristallo al Tiffany e vetro Murano, dalle rustiche al vintage a tutte le lampade da terra per bambini. Negli ultimi anni sempre più diffusa la vendita di <a href=""/illuminazione-interni-ed-esterni/33nc-piantane-a-led.asp"" title=""Piantane led e lampade da terra a led"">piantane a LED</a> con design sempre più innovativi per un importante risparmio in termini di consumo."
+%>
 <!DOCTYPE html>
 <html>
 
@@ -46,56 +56,8 @@
     <div class="container content">
         <div class="col-md-12">
             <!--#include file="inc_slider.asp"-->
-            <div class="row top-buffer" itemscope itemtype="http://schema.org/WebSite">
-              <link itemprop="url" href="https://www.cristalensi.it/"/>
-                <div class="col-md-8">
-                    <h1 class="slogan">Cristalensi, vendita lampadari online.</h1>
-                    <h2 class="slogan">Illuminazione da oltre 50 anni!</h2>
-                    <p class="main-description">
-                        A portata di click una vasta e raffinata gamma di prodotti per illuminazione interni ed illuminazione da esterno per arredare la casa, il giardino, un ufficio oppure un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: trovi in vendita <b>lampadari</b>
-                        moderni e classici, <b>applique</b>, <b>plafoniere</b> e <b>piantane</b> ma anche <b>faretti</b> e <b>ventilatori con luce</b>. Tanti prodotti per <b>illuminazione a LED</b>, <b>in cristallo</b> e <b>vetro Murano</b>, in stile
-                        <b>Tiffany</b>, <b>rustici</b> o <b>vintage</b>. Abbiamo anche un'ampia esposizione di lampade da esterno sia <b>moderne</b> che <b>classiche</b> e articoli specifici <b>per bambini</b>, camerette e tutti gli altri ambienti della casa.<br />Sono presenti anche lampade per uffici, negozi, locali, aziende e ambienti professionali.<br />
-                        Nello shop online trovi l'area delle <b>lampade in offerta</b> oppure puoi fare una ricerca sia per <b>marche</b>, per <b>stile</b> o per <b>ambiente</b>: vendita di lampadari online per privati e per aziende.<br />
-                        Uno staff cordiale e professionale &egrave; pronto a consigliarti l'acquisto pi&ugrave; adatto alle tue richieste.
-                    </p>
-                </div>
-                <%
-                Set com_rs = Server.CreateObject("ADODB.Recordset")
-                sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
-                com_rs.open sql,conn, 1, 1
-                if com_rs.recordcount>0 then
-                %>
-                <div class="col-md-4 ">
-                    <div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">
-                            <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
-                        </div>
-                        <ul class="list-group">
-                            <%Do While not com_rs.EOF%>
-                            <%
-                            Set cr_rs = Server.CreateObject("ADODB.Recordset")
-                            sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
-                            cr_rs.open sql,conn, 1, 1
-                            if cr_rs.recordcount>0 then
-                              NomeIscritto=cr_rs("Nome")
-                            end if
-                            cr_rs.close
-                            %>
-                            <li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span> <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
-                            <%
-                            com_rs.movenext
-            								loop
-                            %>
-                        </ul>
-                        <div class="panel-footer"><a href="commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
-                    </div>
-                </div>
-                <%
-                end if
-                com_rs.close
-                %>
-            </div>
+            <h1 class="slogan" style="margin-top:20px;">Cristalensi, vendita lampadari.</h1>
+            <h2 class="slogan hidden-xs">Illuminazione per interni e illuminazione da esterno</h2>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
                     <h4 class="subtitle"><div class="dot"></div><span>Cosa stai cercando?</span></h4>
@@ -159,8 +121,8 @@
             </div>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="/offerte.asp" class="btn btn-warning pull-right hidden-xs" title="Offerte e prodotti in promozione">Vedi tutte le Offerte <i class="fa fa-chevron-right"></i></a>
-                    <a href="offerte.asp" class="btn btn-warning btn-block hidden visible-xs bottom-buffer" style="">vedi tutto <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle"><div class="dot"></div><span>Offerte e prodotti in promozione</span></h4> <a href="/offerte.asp" class="btn btn-default pull-right hidden-xs" title="Offerte e prodotti in promozione">Vedi tutte le Offerte <i class="fa fa-chevron-right"></i></a>
+                    <a href="offerte.asp" class="btn btn-default btn-block hidden visible-xs bottom-buffer" style="">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 'random prodotti in offerta
@@ -213,7 +175,6 @@
                         pr_rs.close
                       end if
 
-
   									'recupero l'immagine
   									Set img_rs = Server.CreateObject("ADODB.Recordset")
   									sql = "SELECT * FROM Immagini WHERE Record="&id&" AND Tabella='Prodotti' Order by PkId_Contatore ASC"
@@ -222,15 +183,13 @@
   										tot_img=img_rs.recordcount
   										titolo_img=img_rs("titolo")
   										file_img=NoLettAcc(img_rs("file"))
-                      file_img=Replace(file_img, "&rsquo;", "")
                     end if
                     img_rs.close
-
   							%>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                   <article class="col-item">
                       <div class="photo">
-                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
+                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>
                       <div class="info">
                           <div class="row">
@@ -276,8 +235,8 @@
             %>
             <div class="row top-buffer">
                 <div class="col-xl-12 clearfix">
-                    <h4 class="subtitle"><div class="dot"></div><span>Novit&Agrave; illuminazione e ultimi arrivi</span></h4> <a href="/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-warning pull-right hidden-xs" title="Novit&Agrave; illuminazione e ultimi arrivi">Vedi tutte le Novit&agrave; <i class="fa fa-chevron-right"></i></a>
-                    <a href="/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-warning btn-block hidden visible-xs bottom-buffer" style="">vedi tutto <i class="fa fa-chevron-right"></i></a>
+                    <h4 class="subtitle"><div class="dot"></div><span>Novit&Agrave; illuminazione e ultimi arrivi</span></h4> <a href="/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-default pull-right hidden-xs" title="Novit&Agrave; illuminazione e ultimi arrivi">Vedi tutte le Novit&agrave; <i class="fa fa-chevron-right"></i></a>
+                    <a href="/novita-illuminazione-ultimi-arrivi.asp" class="btn btn-default btn-block hidden visible-xs bottom-buffer" style="">vedi tutto <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <%
                 Do while not prod_rs.EOF
@@ -294,7 +253,6 @@
                   codicearticolo=prod_rs("codicearticolo")
                   prezzoarticolo=prod_rs("PrezzoProdotto")
                   prezzolistino=prod_rs("PrezzoListino")
-
                   prezzoprodottosoloclienti=prod_rs("PrezzoProdottoSoloClienti")
                   if prezzoprodottosoloclienti=True THEN
                     prezzoprodottosoloclienti="si"
@@ -323,14 +281,13 @@
                       tot_img=img_rs.recordcount
                       titolo_img=img_rs("titolo")
                       file_img=NoLettAcc(img_rs("file"))
-                      file_img=Replace(file_img, "&rsquo;", "")
                     end if
                     img_rs.close
                 %>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                   <article class="col-item">
                       <div class="photo">
-                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
+                          <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>
                       <div class="info">
                           <div class="row">
@@ -374,6 +331,117 @@
             end if
             prod_rs.close
             %>
+            <div class="row top-buffer hidden-xs" itemscope itemtype="http://schema.org/WebSite">
+              <link itemprop="url" href="https://www.cristalensi.it/"/>
+                <div class="col-md-8">
+                    <h2 class="slogan">Cristalensi, vendita lampadari online<br />Showroom aperto da oltre 50 anni!</h2>
+                    <p class="main-description">
+                        A portata di click una vasta e raffinata gamma di prodotti per illuminazione interni ed illuminazione da esterno per arredare la casa, il giardino, un ufficio oppure un locale...<br />Naviga nel catalogo online oppure visita il nostro Showroom, soddisferemo tutte le tue esigenze: dalla vendita di <b>lampadari</b>
+                        moderni e classici, alle <b>applique</b>, alle <b>plafoniere</b> e <b>piantane</b> ma anche <b>faretti</b> e <b>ventilatori con luce</b>. Tanti prodotti per <b>illuminazione a LED</b>, <b>in cristallo</b> e <b>vetro Murano</b>, in stile
+                        <b>Tiffany</b>, <b>rustici</b> o <b>vintage</b>. Abbiamo anche un'ampia esposizione di lampade da esterno sia <b>moderne</b> che <b>classiche</b> e articoli specifici <b>per bambini</b>, camerette e tutti gli altri ambienti della casa.<br />Sono presenti anche lampade per uffici, negozi, locali, aziende e ambienti professionali.<br />
+                        Inoltre, uno staff cordiale e professionale &egrave; pronto a consigliarti l'acquisto pi&ugrave; adatto alle tue richieste.
+                    </p>
+                </div>
+                <%
+                Set com_rs = Server.CreateObject("ADODB.Recordset")
+                sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+                com_rs.open sql,conn, 1, 1
+                if com_rs.recordcount>0 then
+                %>
+                <div class="col-md-4 ">
+                    <div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <h5><i class="fa fa-users"></i> Dicono di noi...</h5>
+                        </div>
+                        <ul class="list-group">
+                            <%Do While not com_rs.EOF%>
+                            <%
+                            Set cr_rs = Server.CreateObject("ADODB.Recordset")
+                            sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
+                            cr_rs.open sql,conn, 1, 1
+                            if cr_rs.recordcount>0 then
+                              NomeIscritto=cr_rs("Nome")
+                            end if
+                            cr_rs.close
+                            %>
+                            <li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 90)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span> <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
+                            <%
+                            com_rs.movenext
+                            loop
+                            %>
+                        </ul>
+                        <div class="panel-footer"><a href="commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+                    </div>
+                </div>
+                <%
+                end if
+                com_rs.close
+                %>
+            </div>
+
+            <div class="row top-buffer">
+                <div class="col-xl-12 clearfix">
+                    <h4 class="subtitle"><div class="dot"></div><span>Idee per la scelta dell'illuminazione</span></h4>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 ">
+                    <article class="col-item">
+                        <div class="info">
+                            <div class="row">
+                                <div class="price-details col-md-6">
+                                  <h3><%=titolo_footer_1%></h3>
+                                  <div class="description readmore">
+                                    <%=NoLettAccDescrizioni(testo_footer_1)%>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <article class="col-item">
+                        <div class="info">
+                            <div class="row">
+                              <div class="price-details col-md-6">
+                                <h3><%=titolo_footer_2%></h3>
+                                <div class="description readmore">
+                                  <%=NoLettAccDescrizioni(testo_footer_2)%>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <article class="col-item">
+                        <div class="info">
+                            <div class="row">
+                              <div class="price-details col-md-6">
+                                <h3><%=titolo_footer_3%></h3>
+                                <div class="description readmore">
+                                  <%=NoLettAccDescrizioni(testo_footer_3)%>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 ">
+                    <article class="col-item">
+                        <div class="info">
+                            <div class="row">
+                              <div class="price-details col-md-6">
+                                <h3><%=titolo_footer_4%></h3>
+                                <div class="description readmore">
+                                  <%=NoLettAccDescrizioni(testo_footer_4)%>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
         </div>
     </div>
     <!--#include file="inc_footer.asp"-->
@@ -383,13 +451,23 @@
 		jQuery(function(){
 
 			jQuery('#slider').camera({
-                height: '55%',
-	            pagination: false,
-				thumbnails: false,
-                autoadvance: true,
-                time: 5
+          height: '55%',
+	        pagination: false,
+				  thumbnails: false,
+          autoadvance: true,
+          time: 5
 			});
 		});
 	</script>
+  <script>
+      $(document).ready(function() {
+          $('.readmore').readmore({
+              speed: 200,
+              collapsedHeight: 150,
+              moreLink: '<a href="#" style="text-align: right; margin-top: 10px;">Leggi di pi&ugrave; <i class="fa fa-chevron-down"></i></a>',
+              lessLink: '<a href="#" style="text-align: right">Chiudi <i class="fa fa-chevron-up"></i></a>'
+          });
+      });
+  </script>
 </body>
 <!--#include file="inc_strClose.asp"-->

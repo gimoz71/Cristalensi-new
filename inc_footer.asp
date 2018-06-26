@@ -102,9 +102,10 @@
     Else
       invioemail="si"
     end if
+    ip=Request.ServerVariables("REMOTE_ADDR")
 
-    if email<>"" and invioemail="si" then
-  		ip=Request.ServerVariables("REMOTE_ADDR")
+    if email<>"" and invioemail="si" and ip<>"194.226.137.235" then
+
   		data=date()
 
   		HTML1 = ""
@@ -367,9 +368,10 @@
     Else
       invioemail="si"
     end if
+    ip=Request.ServerVariables("REMOTE_ADDR")
 
-    if email<>"" and invioemail="si" then
-  		ip=Request.ServerVariables("REMOTE_ADDR")
+    if email<>"" and invioemail="si" and ip<>"194.226.137.235" then
+
   		data=date()
 
   		HTML1 = ""
@@ -610,9 +612,10 @@ if ric=1 then
   Else
     invioemail="si"
   end if
+  ip=Request.ServerVariables("REMOTE_ADDR")
 
-  if email<>"" and invioemail="si" then
-		ip=Request.ServerVariables("REMOTE_ADDR")
+  if email<>"" and invioemail="si" and ip<>"194.226.137.235" then
+
 		data=date()
 
 		HTML1 = ""
