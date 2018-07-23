@@ -576,6 +576,7 @@ end if
 <head>
     <title>Cristalensi</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
     <meta name="description" content="Cristalensi.">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -617,7 +618,7 @@ end if
       nominativo=document.newsform.nominativo.value;
       email=document.newsform.email.value;
       conferma=document.newsform.conferma.value;
-      password=document.newsform.pw.value;
+      password=document.newsform.password.value;
 
       if (nome==""){
         alert("Non  e\' stato compilato il campo \"Nome\".");
@@ -642,6 +643,10 @@ end if
       if (password==""){
         alert("Non  e\' stato compilato il campo \"Password\".");
         return false;
+      }
+			if (password.indexOf("ì")!=-1 || password.indexOf("é")!=-1 || password.indexOf("è")!=-1 || password.indexOf("ò")!=-1 || password.indexOf("à")!=-1 || password.indexOf("ù")!=-1){
+      alert("ATTENZIONE! La \"Password\" non deve contenere caratteri accentati.");
+      return false;
       }
 
       else
