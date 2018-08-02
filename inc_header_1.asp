@@ -1,3 +1,13 @@
+<nav class="navbar navbar-inverse menu-aux navbar-default visible-xs" style="background-color: #4080FF;">
+    <div class="container">
+        <div class="col-xs-12">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" style="text-align:center;"><span style="color: #fff;"><strong>DAL 11 AL 23 AGOSTO COMPRESI<br />L'ASSISTENZA E LE CONSEGNE<br />SARANNO SOSPESE</strong></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <nav class="navbar navbar-inverse menu-aux navbar-default visible-xs">
     <div class="container">
         <div class="col-xs-6">
@@ -30,6 +40,14 @@
                 </li>
             </ul>
         </div>
+    </div>
+</nav>
+<nav class="navbar navbar-inverse menu-aux hidden-xs first-top-menu" style="background-color: #4080FF; height: 50px;">
+    <div class="container">
+        <ul class="nav nav-justified">
+          <li class="dropdown" style="text-align:center; padding: 12px 0px 10px 0px;"><span style="color: #fff;"><strong>DAL 11 AL 23 AGOSTO COMPRESI, L'<u>ASSISTENZA</u> (SIA PER TELEFONO CHE PER EMAIL) E LE <u>CONSEGNE</u> SARANNO SOSPESE</strong></span>
+          </li>
+        </ul>
     </div>
 </nav>
 <nav class="navbar navbar-inverse menu-aux hidden-xs first-top-menu">
