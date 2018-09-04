@@ -143,7 +143,7 @@
 				alert("It has not been filled in the field \"Phone\".");
 				return false;
 			}
-			if (indirizzo_sp==""){
+			if (indirizzo_sp.length<4){
 				alert("It has not been filled in the field \"Address\".");
 				return false;
 			}
@@ -185,7 +185,7 @@
 				alert("It has not been filled in the field \"Phone\".");
 				return false;
 			}
-			if (indirizzo_sp==""){
+			if (indirizzo_sp.length<4){
 				alert("It has not been filled in the field \"Address\".");
 				return false;
 			}

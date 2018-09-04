@@ -148,6 +148,7 @@
 
 		 nominativo_sp=document.modulocarrello.nominativo_sp.value;
 		 telefono_sp=document.modulocarrello.telefono_sp.value;
+		 //indirizzo_sp=document.modulocarrello.indirizzo_sp.value;
 		 indirizzo_sp=document.modulocarrello.indirizzo_sp.value;
 		 cap_sp=document.modulocarrello.cap_sp.value;
 		 citta_sp=document.modulocarrello.citta_sp.value;
@@ -161,7 +162,7 @@
 			 alert("Non  e\' stato compilato il campo \"Telefono\".");
 			 return false;
 		 }
-		 if (indirizzo_sp==""){
+		 if (indirizzo_sp.length<4){
 			 alert("Non  e\' stato compilato il campo \"Indirizzo\".");
 			 return false;
 		 }
@@ -170,7 +171,7 @@
 			 return false;
 		 }
 		 if (citta_sp==""){
-			 alert("Non  e\' stato compilato il campo \"Citt�\".");
+			 alert("Non  e\' stato compilato il campo \"Città\".");
 			 return false;
 		 }
 		 if (nazione_sp==""){
@@ -211,7 +212,7 @@
 			 alert("Non  e\' stato compilato il campo \"Telefono\".");
 			 return false;
 		 }
-		 if (indirizzo_sp==""){
+		 if (indirizzo_sp.length<4){
 			 alert("Non  e\' stato compilato il campo \"Indirizzo\".");
 			 return false;
 		 }
@@ -220,7 +221,7 @@
 			 return false;
 		 }
 		 if (citta_sp==""){
-			 alert("Non  e\' stato compilato il campo \"Citt�\".");
+			 alert("Non  e\' stato compilato il campo \"Città\".");
 			 return false;
 		 }
 		 if (nazione_sp==""){
