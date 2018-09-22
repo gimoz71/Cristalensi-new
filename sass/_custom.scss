@@ -778,6 +778,34 @@ hr.style-two {
         background-color: mix(#FFD31C, #ee7700, 100%);
         background-image: url("../images/consegne.jpg");
     }
+
+}
+.banner_2 {
+    min-height: 100px;
+    background-position: top right;
+    background-repeat  : no-repeat;
+    margin-bottom      : 10px;
+    padding: 10px;
+    position: relative;
+    img {
+        height:100%;
+        width: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    &.banner_a {
+        background-color: #D72026;
+        background-image: url("../images/banner_1.png");
+    }
+    &.banner_b {
+        background-color: #0278DA;
+        background-image: url("../images/banner_2.png");
+    }
+    &.banner_c {
+        background-color: #67B43C;
+        background-image: url("../images/banner_3.png");
+    }
 }
 
 .overlay {
@@ -1474,7 +1502,7 @@ hr.style-two {
 }
 
 .price-new {
-    font-size  : 32px;
+    font-size  : 42px;
     font-weight: 800;
     color      : #900;
 
