@@ -330,11 +330,11 @@ end if
 					<div class="row">
 						<%
 				Set com_rs = Server.CreateObject("ADODB.Recordset")
-				sql = "SELECT TOP 1 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+				sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
 				com_rs.open sql,conn, 1, 1
 				if com_rs.recordcount>0 then
 				%>
-				<div class="panel panel-default user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
+				<div class="panel panel-default hidden-sm hidden-xs visible-md-block visible-lg-block user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
 					<!-- Default panel contents -->
 					<div class="panel-heading">
 						<h5><i class="fa fa-users"></i> Dicono di noi...</h5>
@@ -543,6 +543,42 @@ end if
 					<img src="/images/spedizione_gratuita.png">
 				</div>
 				<!--#include virtual="/inc_box_contatti.asp"-->
+
+				<%
+				Set com_rs = Server.CreateObject("ADODB.Recordset")
+				sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+				com_rs.open sql,conn, 1, 1
+				if com_rs.recordcount>0 then
+				%>
+				<div class="panel panel-default hidden visible-sm-block user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
+					<!-- Default panel contents -->
+					<div class="panel-heading">
+						<h5><i class="fa fa-users"></i> Dicono di noi...</h5>
+					</div>
+					<ul class="list-group">
+						<%Do While not com_rs.EOF%>
+						<%
+						Set cr_rs = Server.CreateObject("ADODB.Recordset")
+						sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
+						cr_rs.open sql,conn, 1, 1
+						if cr_rs.recordcount>0 then
+							NomeIscritto=cr_rs("Nome")
+						end if
+						cr_rs.close
+						%>
+						<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 100)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span>
+							<span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
+						<%
+							com_rs.movenext
+							loop
+							%>
+					</ul>
+					<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+				</div>
+				<%
+				end if
+				com_rs.close
+				%>
 
       </div>
 			<div class="col-md-8">

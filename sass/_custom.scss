@@ -125,6 +125,14 @@
     }
 }
 
+.btn-home-section {
+    background-color: #fff !important;
+    position: relative;
+    z-index: 10;
+    top: 4px;
+    border-color: rgba($body-color, 0.5);
+}
+
 .btn-square {
     position: relative;
     display : inline-block;
@@ -920,7 +928,8 @@ hr.style-two {
         // left: 0;
         border          : 0;
         height          : 0.5em;
-        background-image: linear-gradient(to right, rgba($body-color, 0.25), rgba($header-color, 0));
+        //background-image: linear-gradient(to right, rgba($body-color, 0.25), rgba($header-color, 0));
+        background-color: rgba($body-color, 0.5);
         // border-bottom: solid 2px #ccc;
         width           : 100%;
     }
