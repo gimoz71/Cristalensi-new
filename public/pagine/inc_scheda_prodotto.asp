@@ -296,7 +296,7 @@ end if
 													if Len(FkNewAmbienti)>0 then
 													arrFkNewAmbienti=split(FkNewAmbienti,", ")
 													%>
-														<br /><em>L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_1_cat%>, &egrave; adatto ai seguenti ambienti:<br />
+														<br /><small><em>L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_1_cat%>, &egrave; adatto ai seguenti ambienti:<br />
 														<%
 														For iLoop = LBound(arrFkNewAmbienti) to UBound(arrFkNewAmbienti)
 															fknewambiente=arrFkNewAmbienti(iLoop)
@@ -314,7 +314,7 @@ end if
 															ams.close
 														Next
 														%>
-														ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.
+														ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.</small>
 														</em>
 													<%
 													end if
@@ -381,7 +381,7 @@ end if
 									Vuoi sapere il Prezzo Cristalensi?
 	                            </p>
 	                        </li>
-							<li class="list-group-item" style="padding-top: 20px">
+							<li class="list-group-item" style="padding-top: 20px;">
 								<%if offerta=10 then%>
 									IL PRODOTTO NON E' DISPONIBILE
 								<%else%>
@@ -423,7 +423,7 @@ end if
 																		<span class="price-old">Listino: <b><del>&nbsp;<%=prezzolistino%> &euro;&nbsp;</del></b></span><br>
 																	<%end if%>
 																	<span class="price-new"><span itemprop="price"><%=prezzoarticolo%></span> &euro;<meta itemprop="priceCurrency" content="EUR" /></span><br><small>iva inclusa</small>
-																	
+
 																<%end if%>
 															<%end if%>
 
@@ -438,7 +438,7 @@ end if
 												</li>
 											<%else%>
 												<%if Len(Consegna)>0 then%>
-													<li class="list-group-item">
+													<li class="list-group-item" style="background-color:#f5f5f5;">
 														<small><em><i class="fa fa-truck"></i> <%=Consegna%></em></small>
 													</li>
 												<%else%>
@@ -513,7 +513,7 @@ end if
 														<input type="number" data-width="auto" class="form-control" name="quantita" id="quantita" placeholder="Quanti Pezzi?" aria-label="Pezzi">
 												</li>
 											<%end if%>
-											
+
 									</ul>
 									<div class="panel-footer">
 											<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
@@ -534,7 +534,7 @@ end if
 				<div class="clearfix"></div>
 				<div class="banner_2 banner_a">
 					<img src="/images/sconto_bonifico.png">
-					
+
 				</div>
 				<div class="banner_2 banner_b">
 					<img src="/images/sconto_extra.png">
@@ -582,7 +582,7 @@ end if
 
       </div>
 			<div class="col-md-8">
-				
+
 			</div>
 
       </div>
