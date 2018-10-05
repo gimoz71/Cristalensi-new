@@ -286,7 +286,7 @@ end if
 														<a href="/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group2" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_1_cat%><%end if%>"><img src="/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" align="right" valign="middle" height="150px" width="75px"></a>
 														<%end if%>
 
-														<small><%=Descrizione_prodotto%></small>
+														<%=Descrizione_prodotto%>
 
 														<%if allegato_prodotto<>"" then%>
 														<br /><br />E' presente un allegato: >> <a href="/public/<%=allegato_prodotto%>" target="_blank" title="E' presente un allegato per il prodotto: <%=titolo_prodotto%>">Scarica l'allegato</a>
@@ -296,7 +296,7 @@ end if
 													if Len(FkNewAmbienti)>0 then
 													arrFkNewAmbienti=split(FkNewAmbienti,", ")
 													%>
-														<br /><small><em>L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_1_cat%>, &egrave; adatto ai seguenti ambienti:<br />
+														<br /><em>L'articolo "<%=Titolo_prodotto%>", prodotto da <%=produttore%> e presente in <%=Titolo_1_cat%>, &egrave; adatto ai seguenti ambienti:<br />
 														<%
 														For iLoop = LBound(arrFkNewAmbienti) to UBound(arrFkNewAmbienti)
 															fknewambiente=arrFkNewAmbienti(iLoop)
@@ -314,8 +314,8 @@ end if
 															ams.close
 														Next
 														%>
-														ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.</small>
-														</em>
+														ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.</em>
+
 													<%
 													end if
 													%>
@@ -381,14 +381,14 @@ end if
 									Vuoi sapere il Prezzo Cristalensi?
 	                            </p>
 	                        </li>
-							<li class="list-group-item" style="padding-top: 20px;">
+							<li class="list-group-item" style="padding-top: 20px; background-color:#f5f5f5;">
 								<%if offerta=10 then%>
 									IL PRODOTTO NON E' DISPONIBILE
 								<%else%>
 									<%if Len(Consegna)>0 then%>
-									<%=Consegna%>
+									<small><em><%=Consegna%></em></small>
 									<%else%>
-									<em>Consegna entro 30 giorni</em>
+									<small><em>Consegna entro 30 giorni</em></small>
 									<%end if%>
 								<%end if%>
 							<li>
@@ -442,9 +442,9 @@ end if
 														<small><em><i class="fa fa-truck"></i> <%=Consegna%></em></small>
 													</li>
 												<%else%>
-													<li class="list-group-item">
-														<em><i class="fa fa-truck"></i> Consegna entro 30 giorni</em>
-													<li>
+													<li class="list-group-item" style="background-color:#f5f5f5;">
+														<small><em><i class="fa fa-truck"></i> Consegna entro 30 giorni</em></small>
+													</li>
 												<%end if%>
 											<%end if%>
 											<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
@@ -519,7 +519,7 @@ end if
 											<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
 												<a href="/iscrizione.asp?prov=3" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Iscriviti per vedere gli sconti!"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;Iscriviti o Accedi !!!</a>
 											<%else%>
-												<a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
+												<a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" style="padding: 10px 0px;" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">AGGIUNGI AL CARRELLO <i class="glyphicon glyphicon-shopping-cart"></i></a>
 											<%end if%>
 									</div>
 									</form>
@@ -528,8 +528,8 @@ end if
 
                 </div>
 				<div class="clearfix"></div>
-				<div class="panel panel-default">
-					<a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal"><i class="fa fa-info-circle"></i> Contattaci per info sulla consegna</a>
+				<div class="panel panel-default" style="margin: 10px 0px 30px 0px;">
+					<a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal; padding: 10px 0px;"><i class="fa fa-info-circle"></i>   Domande e dubbi? Contattaci!!!</a>
 				</div>
 				<div class="clearfix"></div>
 				<div class="banner_2 banner_a">
