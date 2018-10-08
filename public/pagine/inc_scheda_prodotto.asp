@@ -213,7 +213,7 @@ end if
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
-		<div class="row clearfix">
+		<div class="row clearfix" style="margin-top: 20px;">
 			<div class="col-md-10 col-md-push-2">
 						<ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
                 <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Cristalensi Vendita lampadari online"><span itemprop="name"><i class="fa fa-home"></i></span></a><meta itemprop="position" content="1" /></li>
@@ -229,7 +229,7 @@ end if
 		</div>
         <div class="top-buffer hidden-md hidden-lg"></div>
         <div class="" itemscope itemtype="http://schema.org/Product">
-			<div class="col-md-12" style="margin-bottom: 20px;">
+			<div class="col-md-12" style="margin-bottom: 10px;margin-top: 10px;">
 					<div class="row">
 							<div class="title">
 									<h1 class="product-name"><span itemprop="name"><%=Titolo_prodotto%></span></h1>
@@ -533,14 +533,14 @@ end if
 				</div>
 				<div class="clearfix"></div>
 				<div class="banner_2 banner_a">
-					<img src="/images/sconto_bonifico.png">
+					<img src="/images/sconto_extra.png">
 
 				</div>
 				<div class="banner_2 banner_b">
-					<img src="/images/sconto_extra.png">
+					<img src="/images/spedizione_gratuita.png">
 				</div>
 				<div class="banner_2 banner_c">
-					<img src="/images/spedizione_gratuita.png">
+					<img src="/images/sconto_bonifico.png">
 				</div>
 				<!--#include virtual="/inc_box_contatti.asp"-->
 
