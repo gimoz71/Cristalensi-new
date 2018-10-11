@@ -182,7 +182,30 @@
 				ss.Open sql, conn, 3, 3
 				if ss.recordcount>0 then
 					ss("TotaleCarrello")=TotaleCarrello
-					ss("TotaleGenerale")=TotaleCarrello
+
+					if TotaleCarrello>0 then
+						if TotaleCarrello<301 then
+							Sconto=0
+							TotaleGenerale=TotaleCarrello
+						end if
+						if TotaleCarrello>300 and TotaleCarrello<601 then
+							Sconto=((TotaleCarrello*2)/100)
+							TotaleGenerale=(TotaleCarrello-Sconto)
+						end if
+						if TotaleCarrello>600 and TotaleCarrello<901 then
+							Sconto=((TotaleCarrello*3)/100)
+							TotaleGenerale=(TotaleCarrello-Sconto)
+						end if
+						if TotaleCarrello>900 then
+							Sconto=((TotaleCarrello*4)/100)
+							TotaleGenerale=(TotaleCarrello-Sconto)
+						end if
+					Else
+						Sconto=0
+						TotaleGenerale=TotaleCarrello
+					end if
+					ss("Sconto")=Sconto
+					ss("TotaleGenerale")=TotaleGenerale
 					'ss("DataOrdine")=now()
 					ss("DataAggiornamento")=now()
 					ss("Stato")=0
@@ -381,14 +404,18 @@
 																	<%if ss.recordcount>0 then%>
 	                                <tfoot>
 	                                    <tr class="visible-xs">
-	                                        <td class="text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
+	                                        <td class="text-center"><strong>Totale Carrello <%if ss("TotaleCarrello")<>0 then%>
 												  								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
+	                                    </tr>
+																			<tr class="visible-xs">
+	                                        <td class="text-center"><strong>Sconto <%if ss("Sconto")<>0 then%>
+												  								<%=FormatNumber(ss("Sconto"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
 	                                    </tr>
 	                                    <tr>
 	                                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td colspan="2" class="hidden-xs"></td>
-	                                        <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
-												  								<%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%> &euro;</strong></td>
+	                                        <td class="hidden-xs text-center"><strong>Totale Generale <%if ss("TotaleGenerale")<>0 then%>
+												  								<%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%> &euro;</strong></td>
 	                                        <td></td>
 	                                    </tr>
 	                                </tfoot>
@@ -453,8 +480,8 @@
                     <ul class="list-group text-center">
                         <li class="list-group-item" style="padding-top: 20px">
                             <p>Totale carrello:<br />
-                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%if ss("TotaleCarrello")<>0 then%>
-								<%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%> &euro;</span>
+                                <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%if ss("TotaleGenerale")<>0 then%>
+								<%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%> &euro;</span>
                             </p>
                         </li>
                     </ul>
