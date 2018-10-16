@@ -33,29 +33,50 @@
 	end if
 	trasp_rs.close
 
+	'**********modifica temporanea
+	if TipoPagamentoScelto=10 then
+	PkIdPagamentoScelto=10
+	NomePagamentoScelto="Bonifico Scontato"
+	CostoPagamentoScelto=2
+	TipoCostoPagamentoScelto=10
+	end if
+	'**********modifica temporanea
 
 	Set os1 = Server.CreateObject("ADODB.Recordset")
 	sql = "SELECT * FROM Ordini where PkId="&idOrdine
 	os1.Open sql, conn, 3, 3
 
 	TotaleCarrello=os1("TotaleCarrello")
+	Sconto=os1("Sconto")
 	CostoSpedizione=os1("CostoSpedizione")
 
 	if TipoCostoPagamentoScelto=1 then
 		CostoPagamento=CostoPagamentoScelto
 	end if
 	if TipoCostoPagamentoScelto=2 then
-		CostoPagamento=((TotaleCarrello+CostoSpedizione)*CostoPagamentoScelto)/100
+		CostoPagamento=((TotaleCarrello-Sconto+CostoSpedizione)*CostoPagamentoScelto)/100
 	end if
 	if TipoCostoPagamentoScelto=3 then
 		CostoPagamento=0
 	end if
 
+	'**********modifica temporanea'
+	if TipoCostoPagamentoScelto=10 then
+		CostoPagamento=((TotaleCarrello-Sconto+CostoSpedizione)*CostoPagamentoScelto)/100
+	end if
+	'**********modifica temporanea'
+
+
+
 	os1("FkPagamento")=PkIdPagamentoScelto
 	os1("TipoPagamento")=NomePagamentoScelto
 	os1("CostoPagamento")=CostoPagamento
 	'TotaleGnerale_AG=TotaleCarrello+CostoSpedizione+CostoPagamento
-	os1("TotaleGenerale")=TotaleCarrello+CostoSpedizione+CostoPagamento
+	if TipoCostoPagamentoScelto=10 then
+		os1("TotaleGenerale")=TotaleCarrello-Sconto+CostoSpedizione-CostoPagamento
+	else
+		os1("TotaleGenerale")=TotaleCarrello-Sconto+CostoSpedizione+CostoPagamento
+	end if
 	os1("FkCliente")=idsession
 
 	Nominativo_sp=os1("Nominativo_sp")
@@ -214,7 +235,7 @@
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 hidden-xs">
             <div class="row bs-wizard">
 
                 <div class="col-sm-5 bs-wizard-step complete">
@@ -262,19 +283,19 @@
         </div>
         <div class="col-md-12">
             <div class="title">
-                <h4>Modalit&agrave; di pagamento</h4>
+                <h4><span class="visible-xs" style="padding-top: 20px;">Modalit&agrave; di pagamento</span></h4>
             </div>
             <div class="col-md-12">
                 <div class="top-buffer">
                     <table id="cart" class="table table-hover table-condensed table-cart">
-                        <thead>
-                            <tr>
-                                <th style="width:45%">Prodotto</th>
-                                <th style="width:10%" class="text-center">Quantit&agrave;</th>
-                                <th style="width:10%" class="text-center">Prezzo unitario</th>
-                                <th style="width:20%" class="text-center">Totale Prodotto</th>
-                            </tr>
-                        </thead>
+											<thead>
+													<tr>
+															<th style="width:60%">Prodotto</th>
+															<th style="width:10%" class="text-center">Quantit&agrave;</th>
+															<th style="width:10%" class="text-center hidden-xs">Prezzo</th>
+															<th style="width:20%" class="text-right">Totale Pr.</th>
+													</tr>
+											</thead>
                         <%if rs.recordcount>0 then%>
 												<tbody>
 														<%
@@ -307,11 +328,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td data-th="Quantity" class="text-center">
-                                    <%=quantita%>
-                                </td>
-                                <td data-th="Price" class="hidden-xs text-center"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&euro;</td>
-                                <td data-th="Subtotal" class="text-center"><%=FormatNumber(rs("TotaleRiga"),2)%>&euro;</td>
+                                <td data-th="Quantity" class="text-center"><%=quantita%></td>
+                                <td data-th="Price" class="hidden-xs text-center"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
+                                <td data-th="Subtotal" class="text-right"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
                             </tr>
 														<%
 														rs.movenext
@@ -321,17 +340,18 @@
 												<%end if%>
 												<%if ss.recordcount>0 then%>
 												<tfoot>
-                            <tr class="visible-xs">
-                                <td class="text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
-								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
-                            </tr>
-                            <tr>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
-								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
-                            </tr>
+													<tr>
+															<td class="hidden-xs"></td>
+															<td class="text-right" colspan="2">Totale Carrello</td>
+															<td class="text-right"><%if ss("TotaleCarrello")<>0 then%>
+															<%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%>&nbsp&euro;</td>
+													</tr>
+													<tr>
+															<td class="hidden-xs"></td>
+															<td class="text-right" colspan="2"><strong>Sconto Extra</strong></td>
+															<td class="text-right"><strong><%if ss("Sconto")<>0 then%>
+															<%=FormatNumber(ss("Sconto"),2)%><%else%>0<%end if%>&nbsp&euro;</strong></td>
+													</tr>
                             <tr>
                                 <td colspan="4">
                                     <h5>Eventuali annotazioni</h5>
@@ -440,6 +460,20 @@
 																trasp_rs.movenext
 																loop
 																%>
+																<tr>
+                                    <td data-th="Product" class="cart-product">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="radio">
+                                                    <label><input type="radio" name="TipoPagamentoScelto" id="TipoPagamentoScelto" value="10" <%if PkIdPagamento=PkIdPagamentoScelto then%> checked="checked"<%end if%> onClick="Cambia();"> <b>Bonifico scontato</b></label>
+                                                </div>
+                                                <p style="color: #666; font-size: .85em;">test test</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-th="Price" style="">-2%</td>
+                                    <td data-th="Subtotal" class="hidden-xs"><%if PkIdPagamento=PkIdPagamentoScelto then%><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;<%else%>-<%end if%></td>
+                                </tr>
                                 <tr>
                                     <td data-th="Product"><h5>costo pagamento:</h5></td>
                                     <td data-th="Price" class="hidden-xs"></td>

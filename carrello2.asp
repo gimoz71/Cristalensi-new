@@ -35,6 +35,12 @@
 	os1.Open sql, conn, 3, 3
 
 	TotaleCarrello=os1("TotaleCarrello")
+	Sconto=os1("Sconto")
+	TipoTrasportoScelto_Esistente=os1("FkSpedizione")
+	if TipoTrasportoScelto_Esistente="" then TipoTrasportoScelto_Esistente=0
+	if TipoTrasportoScelto=0 and TipoTrasportoScelto_Esistente>0 then
+		TipoTrasportoScelto=TipoTrasportoScelto_Esistente
+	end if
 
 	os1("FkCliente")=idsession
 
@@ -59,16 +65,16 @@
 			CostoSpedizione=CostoTrasportoScelto
 		end if
 		if TipoCostoTrasportoScelto=2 then
-			CostoSpedizione=(TotaleCarrello*CostoTrasportoScelto)/100
+			CostoSpedizione=((TotaleCarrello-Sconto)*CostoTrasportoScelto)/100
 		end if
-		if TipoCostoTrasportoScelto=3 or TipoCostoTrasportoScelto=10 or TotaleCarrello>=250 then
+		if TipoCostoTrasportoScelto=3 or TipoCostoTrasportoScelto=10 or (TotaleCarrello-Sconto)>=250 then
 			CostoSpedizione=0
 		end if
 
 		os1("TipoTrasporto")=NomeTrasportoScelto
 		os1("FkSpedizione")=TipoTrasportoScelto
 		os1("CostoSpedizione")=CostoSpedizione
-		os1("TotaleGenerale")=TotaleCarrello+CostoSpedizione
+		os1("TotaleGenerale")=(TotaleCarrello-Sconto)+CostoSpedizione
 	end if
 
 	if mode=0 then
@@ -255,6 +261,7 @@
 
 	if ss.recordcount>0 then
 		TotaleCarrello=ss("TotaleCarrello")
+		Sconto=ss("Sconto")
 		CostoSpedizioneTotale=ss("CostoSpedizione")
 		if CostoSpedizioneTotale="" or IsNull(CostoSpedizioneTotale) then CostoSpedizioneTotale=0
 		TotaleGenerale=ss("TotaleGenerale")
@@ -277,7 +284,7 @@
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 hidden-xs">
             <div class="row bs-wizard">
                 <div class="col-sm-5 bs-wizard-step complete">
                     <div class="text-center bs-wizard-stepnum">1</div>
@@ -324,17 +331,17 @@
 				<form name="modulocarrello" id="modulocarrello" class="form-horizontal">
         <div class="col-md-12">
             <div class="title">
-                <h4>Modalit&agrave; di spedizione/ritiro prodotti</h4>
+                <h4><span class="visible-xs" style="padding-top: 20px;">Dati di spedizione - Passo 3 di 5</span></h4>
             </div>
             <div class="col-md-12">
                 <div class="top-buffer">
                     <table id="cart" class="table table-hover table-condensed table-cart">
                         <thead>
                             <tr>
-                                <th style="width:45%">Prodotto</th>
+                                <th style="width:60%">Prodotto</th>
                                 <th style="width:10%" class="text-center">Quantit&agrave;</th>
-                                <th style="width:10%" class="text-center">Prezzo unitario</th>
-                                <th style="width:20%" class="text-center">Totale Prodotto</th>
+                                <th style="width:10%" class="text-center hidden-xs">Prezzo</th>
+                                <th style="width:20%" class="text-right">Totale Pr.</th>
                             </tr>
                         </thead>
 												<%if rs.recordcount>0 then%>
@@ -369,11 +376,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td data-th="Quantity" class="text-center">
-                                    <%=quantita%>
-                                </td>
-                                <td data-th="Price" class="hidden-xs text-center"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&euro;</td>
-                                <td data-th="Subtotal" class="text-center"><%=FormatNumber(rs("TotaleRiga"),2)%>&euro;</td>
+                                <td data-th="Quantity" class="text-center"><%=quantita%></td>
+                                <td data-th="Price" class="hidden-xs text-center"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
+                                <td data-th="Subtotal" class="text-right"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
                             </tr>
 														<%
 														rs.movenext
@@ -383,22 +388,23 @@
 												<%end if%>
 												<%if ss.recordcount>0 then%>
 												<tfoot>
-                            <tr class="visible-xs">
-                                <td class="text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
-								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
-                            </tr>
-                            <tr>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Totale <%if ss("TotaleCarrello")<>0 then%>
-								<%=FormatNumber(ss("TotaleCarrello"),2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
-                            </tr>
+														<tr>
+																<td class="hidden-xs"></td>
+																<td class="text-right" colspan="2">Totale Carrello</td>
+																<td class="text-right"><%if ss("TotaleCarrello")<>0 then%>
+																<%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%>&nbsp&euro;</td>
+														</tr>
+														<tr>
+																<td class="hidden-xs"></td>
+																<td class="text-right" colspan="2"><strong>Sconto Extra</strong></td>
+																<td class="text-right"><strong><%if ss("Sconto")<>0 then%>
+																<%=FormatNumber(ss("Sconto"),2)%><%else%>0<%end if%>&nbsp&euro;</strong></td>
+														</tr>
                         </tfoot>
 												<%end if%>
                     </table>
                     <h5>Eventuali annotazioni</h5>
-                    <p>Potete usare questo spazio per inserire eventuali annotazioni o comunicazioni in relazione ai prodotti in acquisto</p>
+                    <p>Potete usare questo spazio per inserire eventuali annotazioni o comunicazioni in relazione ai prodotti</p>
                     <textarea class="form-control" rows="2" name="NoteCliente" id="NoteCliente"><%=NoteCliente%></textarea>
 										<p>&nbsp;</p>
                 </div>
@@ -585,7 +591,7 @@
             <div class="col-md-12">
                 <div class="bg-primary">
 
-                    <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale carrello: <b>
+                    <p style="font-size: 1.2em; text-align: right; padding: 10px 15px; color: #000;">Totale Generale: <b>
 										<%if ss("TotaleGenerale")<>0 then%>
 									  	<%=FormatNumber(ss("TotaleGenerale"),2)%>
                     <%else%>

@@ -383,12 +383,12 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td data-th="Price" class="hidden-xs"><%=FormatNumber(rs("PrezzoProdotto"),2)%> &euro;</td>
+                                        <td data-th="Price" class="hidden-xs"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
                                         <td data-th="Quantity">
                                             <input type="number" class="form-control text-center" name="quantita" value="<%=quantita%>">
                                         </td>
-                                        <td data-th="Subtotal" class="text-right"><%=FormatNumber(rs("TotaleRiga"),2)%> &euro;</td>
-                                        <td class="actions text-right" data-th="">
+                                        <td data-th="Subtotal" class="text-right"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
+                                        <td class="actions text-center" data-th="">
                                             <button class="btn btn-info btn-sm" type="submit"><i class="fa fa-refresh"></i></button><br />
                                             <button class="btn btn-danger btn-sm" style="margin-top: 5px;" type="button" onClick="location.href='/carrello1.asp?mode=2&riga=<%=rs("pkid")%>'"><i class="fa fa-trash-o"></i></button>
                                         </td>
@@ -406,20 +406,20 @@
 	                                    <tr>
 																					<td class="text-right" colspan="3">Totale Carrello</td>
 																					<td class="text-right"><%if ss("TotaleCarrello")<>0 then%>
-												  								<%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%>&euro;</td>
+												  								<%=FormatNumber(ss("TotaleCarrello"),2)%><%else%>0<%end if%>&nbsp&euro;</td>
 																					<td class="hidden-xs"></td>
 	                                    </tr>
 																			<tr>
 																					<td class="text-right" colspan="3"><strong>Sconto Extra</strong></td>
 																					<td class="text-right"><strong><%if ss("Sconto")<>0 then%>
-												  								<%=FormatNumber(ss("Sconto"),2)%><%else%>0<%end if%>&euro;</strong></td>
+												  								<%=FormatNumber(ss("Sconto"),2)%><%else%>0<%end if%>&nbsp&euro;</strong></td>
 																					<td class="hidden-xs"></td>
 	                                    </tr>
 	                                    <tr>
 	                                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua gli acquisti</a></td>
 	                                        <td class="text-right" colspan="2"><strong>Totale Generale</strong></td>
 																					<td class="text-right"><strong><%if ss("TotaleGenerale")<>0 then%>
-												  								<%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%>&euro;</strong></td>
+												  								<%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%>&nbsp&euro;</strong></td>
 																					<td class="hidden-xs"></td>
 	                                    </tr>
 	                                </tfoot>
@@ -482,7 +482,7 @@
 								<div class="panel panel-default" style="box-shadow: 0 3px 5px #ccc;">
                     <ul class="list-group text-center">
                         <li class="list-group-item" style="padding-top: 20px">
-                            <p>Totale generale:<br />
+                            <p>Totale Generale:<br />
                                 <span class="price-new"><%if ss("TotaleGenerale")<>0 then%>
 								<%=FormatNumber(ss("TotaleGenerale"),2)%><%else%>0<%end if%> &euro;</span>
                             </p>
