@@ -327,43 +327,65 @@ end if
 							</div>
                         </div>
                     </div>
-					<div class="row">
-						<%
-				Set com_rs = Server.CreateObject("ADODB.Recordset")
-				sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
-				com_rs.open sql,conn, 1, 1
-				if com_rs.recordcount>0 then
-				%>
-				<div class="panel panel-default hidden-sm hidden-xs visible-md-block visible-lg-block user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
-					<!-- Default panel contents -->
-					<div class="panel-heading">
-						<h5><i class="fa fa-users"></i> Dicono di noi...</h5>
-					</div>
-					<ul class="list-group">
-						<%Do While not com_rs.EOF%>
-						<%
-						Set cr_rs = Server.CreateObject("ADODB.Recordset")
-						sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
-						cr_rs.open sql,conn, 1, 1
-						if cr_rs.recordcount>0 then
-							NomeIscritto=cr_rs("Nome")
-						end if
-						cr_rs.close
-						%>
-						<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 100)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span>
-							<span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
-						<%
-							com_rs.movenext
-							loop
-							%>
-					</ul>
-					<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
-				</div>
-				<%
-				end if
-				com_rs.close
-				%>
-					</div>
+										<div class="row">
+											<%
+											Randomize()
+											constnum = 5
+
+											Set com_rs = Server.CreateObject("ADODB.Recordset")
+											sql = "SELECT PkId,FkIscritto,Testo,Valutazione,Pubblicato FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+											com_rs.open sql,conn, 1, 1
+											if com_rs.recordcount>0 then
+
+											%>
+											<div class="panel panel-default hidden-sm hidden-xs visible-md-block visible-lg-block user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
+												<!-- Default panel contents -->
+												<div class="panel-heading">
+													<h5><i class="fa fa-users"></i> Dicono di noi...</h5>
+												</div>
+												<ul class="list-group">
+													<%
+													IF NOT com_rs.EOF THEN
+													rndArray = com_rs.GetRows()
+													com_rs.Close
+
+													Lenarray =  UBOUND( rndArray, 2 ) + 1
+				  								skip =  Lenarray  / constnum
+				  								IF Lenarray <= constnum THEN skip = 1
+				  								FOR i = 0 TO Lenarray - 1 STEP skip
+				  									numero = RND * ( skip - 1 )
+				  									'id = rndArray( 0, i + numero )
+				  									FkIscritto = rndArray( 1, i + numero )
+														if FkIscritto="" or isNull(FkIscritto) then FkIscritto=0
+				  									Testo_Commento = rndArray( 2, i + numero )
+				  									Valutazione = rndArray( 3, i + numero )
+
+
+													  if FkIscritto>0 then
+															Set cr_rs = Server.CreateObject("ADODB.Recordset")
+															sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&FkIscritto
+															cr_rs.open sql,conn, 1, 1
+															if cr_rs.recordcount>0 then
+																NomeIscritto=cr_rs("Nome")
+															end if
+															cr_rs.close
+														end if
+													%>
+													<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(Testo_Commento), 100)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span>
+														<span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=Valutazione%></span>/<span itemprop="bestRating">5</span></span></em></li>
+													<%
+													next
+													end if
+													%>
+												</ul>
+												<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+											</div>
+											<%
+											Else
+											com_rs.close
+											end if
+											%>
+										</div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -414,7 +436,7 @@ end if
 													<p>
 															<%if prezzoarticolo<>0 then%>
 																<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
-																	<span class="price-new"><em><span itemprop="price">SCONTO EXTRA<br />PER GLI ISCRITTI !!!</span></em></span><br /><br />
+																	<!--<span class="price-new"><em><span itemprop="price">SCONTO EXTRA<br />PER GLI ISCRITTI !!!</span></em></span><br /><br />-->
 																	<%if prezzolistino<>0 then%>
 																		<span class="price-old">Prezzo di Listino <b><%=prezzolistino%> &euro;</b></span>
 																	<%end if%>
