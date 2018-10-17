@@ -14,7 +14,9 @@
 
 	if idsession=0 then response.redirect("/iscrizione.asp?prov=1")
 
-	session("ordine_shop")=""
+	'******* DA RIMETTERE QUANDO SI METTE ONLINE
+	'session("ordine_shop")=""
+	'******* DA RIMETTERE QUANDO SI METTE ONLINE
 
 	Set ss = Server.CreateObject("ADODB.Recordset")
 	sql = "SELECT * FROM Ordini where pkid="&idOrdine
@@ -59,7 +61,7 @@
 
 	ss.close
 
-	if FkPagamento=1 then
+	if FkPagamento=1 or FkPagamento=5 then
 		Set rs=Server.CreateObject("ADODB.Recordset")
 		sql = "Select * From Clienti where pkid="&idsession
 		rs.Open sql, conn, 1, 1
@@ -676,7 +678,7 @@ End If
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 hidden-xs">
             <div class="row bs-wizard">
 
                 <div class="col-sm-5 bs-wizard-step complete">
@@ -726,7 +728,7 @@ End If
 								<h4>Ordine n. <%=idordine%> - Data <%=Left(DataAggiornamento, 10)%></h4>
 						</div>
 						<div class="col-md-12 hidden-print">
-						<%if FkPagamento=1 then%>
+						<%if FkPagamento=1 or FkPagamento=5 then%>
 								<p class="description">
 									Grazie per aver scelto i nostri prodotti,<br>
 										per completare l'ordine &egrave; necessario effettuare il bonifico con i seguenti dati:<br>

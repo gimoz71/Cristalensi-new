@@ -418,31 +418,31 @@
                     </div>
                     <div class="col-md-12 top-buffer">
                         <table id="cart" class="table table-hover table-condensed table-cart">
-							<%
-							Set trasp_rs = Server.CreateObject("ADODB.Recordset")
-							sql = "SELECT * FROM CostiTrasporto"
-							trasp_rs.Open sql, conn, 1, 1
-							%>
-							<thead>
+														<%
+														Set trasp_rs = Server.CreateObject("ADODB.Recordset")
+														sql = "SELECT * FROM CostiTrasporto"
+														trasp_rs.Open sql, conn, 1, 1
+														%>
+														<thead>
                                 <tr>
                                     <th style="width:70%">Modalit&agrave; di spedizione</th>
-                                    <th style="width:15%">Tariffa</th>
-                                    <th style="width:15%">Totale</th>
+                                    <th style="width:15%">Costo</th>
+                                    <th style="width:15%" class="hidden-xs">Totale</th>
                                 </tr>
                             </thead>
                             <tbody>
-								<%
-								if trasp_rs.recordcount>0 then
-									Do while not trasp_rs.EOF
-									PkIdSpedizione=trasp_rs("pkid")
-									NomeSpedizione=trasp_rs("nome")
-									DescrizioneSpedizione=NoLettAccDescrizioni(trasp_rs("descrizione"))
-									CostoSpedizione=trasp_rs("costo")
+														<%
+														if trasp_rs.recordcount>0 then
+															Do while not trasp_rs.EOF
+															PkIdSpedizione=trasp_rs("pkid")
+															NomeSpedizione=trasp_rs("nome")
+															DescrizioneSpedizione=NoLettAccDescrizioni(trasp_rs("descrizione"))
+															CostoSpedizione=trasp_rs("costo")
 
-									TipoCosto=trasp_rs("TipoCosto")
-									if TipoCosto="" then TipoCosto=3
-								%>
-								<tr>
+															TipoCosto=trasp_rs("TipoCosto")
+															if TipoCosto="" then TipoCosto=3
+														%>
+																<tr>
                                     <td data-th="Product" class="cart-product">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -454,25 +454,25 @@
                                         </div>
                                     </td>
                                     <td data-th="Price">
-										<%if TipoCosto=10 then%>
+																		<%if TipoCosto=10 then%>
                                       	DA DEFINIRE
                                     <%else%>
-										<%=FormatNumber(CostoSpedizione,2)%><%if TipoCosto=1 then%>&#8364;<%end if%><%if TipoCosto=2 then%>%<%end if%>
+																				<%=FormatNumber(CostoSpedizione,2)%><%if TipoCosto=1 then%>&#8364;<%end if%><%if TipoCosto=2 then%>%<%end if%>
                                     <%end if%>
-										</td>
+																		</td>
                                     <td data-th="Subtotal" class="hidden-xs"><%if PkIdSpedizione=TipoTrasportoScelto then%><%=FormatNumber(CostoSpedizioneTotale,2)%>&#8364;<%else%>-<%end if%></td>
                                 </tr>
 
-								<%
-									trasp_rs.movenext
-									loop
-								%>
-								<tr>
+														<%
+															trasp_rs.movenext
+															loop
+														%>
+																<tr>
                                     <td data-th="Product"><h5>Costo spedizione:</h5></td>
                                     <td data-th="Price" class="hidden-xs"></td>
                                     <td data-th="Subtotal"><h5><%if TipoTrasportoScelto=4 and CostoSpedizioneTotale=0 then%>DA DEFINIRE<%else%><%=FormatNumber(CostoSpedizioneTotale,2)%>&#8364;<%end if%></h5></td>
                                 </tr>
-																<%end if%>
+														<%end if%>
                             </tbody>
 														<%trasp_rs.close%>
                         </table>
@@ -480,7 +480,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="title">
-                        <h4>Recapito</h4>
+                        <h4>Indirizzo di spedizione</h4>
                     </div>
                     <div class="col-md-12">
 						<%if TipoTrasportoScelto>0 and TipoTrasportoScelto<>2 then%>

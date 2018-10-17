@@ -20,7 +20,7 @@
 
 	Set trasp_rs = Server.CreateObject("ADODB.Recordset")
 	if TipoPagamentoScelto=0 then
-		sql = "SELECT * FROM CostiPagamento"
+		sql = "SELECT * FROM CostiPagamento ORDER BY Nome ASC"
 	else
 		sql = "SELECT * FROM CostiPagamento where PkId="&TipoPagamentoScelto
 	end if
@@ -34,12 +34,12 @@
 	trasp_rs.close
 
 	'**********modifica temporanea
-	if TipoPagamentoScelto=10 then
-	PkIdPagamentoScelto=10
-	NomePagamentoScelto="Bonifico Scontato"
-	CostoPagamentoScelto=2
-	TipoCostoPagamentoScelto=10
-	end if
+	'if TipoPagamentoScelto=10 then
+	'PkIdPagamentoScelto=10
+	'NomePagamentoScelto="Bonifico Scontato"
+	'CostoPagamentoScelto=2
+	'TipoCostoPagamentoScelto=10
+	'end if
 	'**********modifica temporanea
 
 	Set os1 = Server.CreateObject("ADODB.Recordset")
@@ -50,21 +50,15 @@
 	Sconto=os1("Sconto")
 	CostoSpedizione=os1("CostoSpedizione")
 
-	if TipoCostoPagamentoScelto=1 then
+	if TipoCostoPagamentoScelto=1 or TipoCostoPagamentoScelto=4 then
 		CostoPagamento=CostoPagamentoScelto
 	end if
-	if TipoCostoPagamentoScelto=2 then
+	if TipoCostoPagamentoScelto=2 or TipoCostoPagamentoScelto=5 then
 		CostoPagamento=((TotaleCarrello-Sconto+CostoSpedizione)*CostoPagamentoScelto)/100
 	end if
 	if TipoCostoPagamentoScelto=3 then
 		CostoPagamento=0
 	end if
-
-	'**********modifica temporanea'
-	if TipoCostoPagamentoScelto=10 then
-		CostoPagamento=((TotaleCarrello-Sconto+CostoSpedizione)*CostoPagamentoScelto)/100
-	end if
-	'**********modifica temporanea'
 
 
 
@@ -72,7 +66,7 @@
 	os1("TipoPagamento")=NomePagamentoScelto
 	os1("CostoPagamento")=CostoPagamento
 	'TotaleGnerale_AG=TotaleCarrello+CostoSpedizione+CostoPagamento
-	if TipoCostoPagamentoScelto=10 then
+	if TipoCostoPagamentoScelto=4 or TipoCostoPagamentoScelto=5 then
 		os1("TotaleGenerale")=TotaleCarrello-Sconto+CostoSpedizione-CostoPagamento
 	else
 		os1("TotaleGenerale")=TotaleCarrello-Sconto+CostoSpedizione+CostoPagamento
@@ -411,11 +405,11 @@
 										<%
 										Set trasp_rs = Server.CreateObject("ADODB.Recordset")
 										if Nazione_sp="IT" then
-											sql = "SELECT * FROM CostiPagamento"
+											'sql = "SELECT * FROM CostiPagamento WHERE IT=1 ORDER BY Nome ASC"
+											sql = "SELECT * FROM CostiPagamento ORDER BY Nome ASC"
 										else
-											sql = "SELECT Top 2 * FROM CostiPagamento"
+											sql = "SELECT * FROM CostiPagamento WHERE COM=1 ORDER BY Nome ASC"
 										end if
-
 										trasp_rs.Open sql, conn, 1, 1
 										if trasp_rs.recordcount>0 then
 										%>
@@ -453,31 +447,18 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td data-th="Price" style=""><%=FormatNumber(CostoPagamento,2)%><%if TipoCosto=1 then%>&#8364;<%end if%><%if TipoCosto=2 then%>%<%end if%></td>
-                                    <td data-th="Subtotal" class="hidden-xs"><%if PkIdPagamento=PkIdPagamentoScelto then%><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;<%else%>-<%end if%></td>
+                                    <td data-th="Price" style=""><%if TipoCosto=4 or TipoCosto=5 then%>-<%end if%><%=FormatNumber(CostoPagamento,2)%><%if TipoCosto=1 or TipoCosto=4 then%>&#8364;<%end if%><%if TipoCosto=2 or TipoCosto=5 then%>%<%end if%></td>
+                                    <td data-th="Subtotal"><%if PkIdPagamento=PkIdPagamentoScelto then%><%if TipoCosto=4 or TipoCosto=5 then%>-<%end if%><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;<%else%>-<%end if%></td>
                                 </tr>
 																<%
 																trasp_rs.movenext
 																loop
 																%>
-																<tr>
-                                    <td data-th="Product" class="cart-product">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="radio">
-                                                    <label><input type="radio" name="TipoPagamentoScelto" id="TipoPagamentoScelto" value="10" <%if PkIdPagamento=PkIdPagamentoScelto then%> checked="checked"<%end if%> onClick="Cambia();"> <b>Bonifico scontato</b></label>
-                                                </div>
-                                                <p style="color: #666; font-size: .85em;">test test</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Price" style="">-2%</td>
-                                    <td data-th="Subtotal" class="hidden-xs"><%if PkIdPagamento=PkIdPagamentoScelto then%><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;<%else%>-<%end if%></td>
-                                </tr>
+
                                 <tr>
                                     <td data-th="Product"><h5>costo pagamento:</h5></td>
-                                    <td data-th="Price" class="hidden-xs"></td>
-                                    <td data-th="Subtotal"><h5><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;</h5></td>
+                                    <td data-th="Price"></td>
+                                    <td data-th="Subtotal"><h5><%if PkIdPagamentoScelto>0 then%><%if TipoCostoPagamentoScelto=4 or TipoCostoPagamentoScelto=5 then%>-<%end if%><%end if%><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;</h5></td>
                                 </tr>
                             </tbody>
                         </table>
