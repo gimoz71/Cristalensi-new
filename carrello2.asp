@@ -316,7 +316,7 @@
                         <div class="progress-bar"></div>
                     </div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center">Pagamento &amp; fatturazione</div>
+                    <div class="bs-wizard-info text-center">Pagamento &amp; Fatturazione</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step disabled">
                     <div class="text-center bs-wizard-stepnum">5</div>
@@ -339,9 +339,9 @@
                         <thead>
                             <tr>
                                 <th style="width:60%">Prodotto</th>
-                                <th style="width:10%" class="text-center">Quantit&agrave;</th>
-                                <th style="width:10%" class="text-center hidden-xs">Prezzo</th>
-                                <th style="width:20%" class="text-right">Totale Pr.</th>
+																<th style="width:10%" class="text-center">Quantit&agrave;</th>
+																<th style="width:15%" class="text-right">Prezzo</th>
+                                <th style="width:15%" class="text-right hidden-xs">Totale Prodotto</th>
                             </tr>
                         </thead>
 												<%if rs.recordcount>0 then%>
@@ -376,9 +376,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td data-th="Quantity" class="text-center"><%=quantita%></td>
-                                <td data-th="Price" class="hidden-xs text-center"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
-                                <td data-th="Subtotal" class="text-right"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
+																<td data-th="Quantity" class="text-center"><%=quantita%></td>
+                                <td data-th="Price" class="text-right"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
+                                <td data-th="Subtotal" class="text-right hidden-xs"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
                             </tr>
 														<%
 														rs.movenext
@@ -398,7 +398,7 @@
 																<td class="hidden-xs"></td>
 																<td class="text-right" colspan="2"><strong>Sconto Extra</strong></td>
 																<td class="text-right"><strong><%if ss("Sconto")<>0 then%>
-																<%=FormatNumber(ss("Sconto"),2)%><%else%>0<%end if%>&nbsp&euro;</strong></td>
+																-<%=FormatNumber(ss("Sconto"),2)%><%else%>0,00<%end if%>&nbsp&euro;</strong></td>
 														</tr>
                         </tfoot>
 												<%end if%>

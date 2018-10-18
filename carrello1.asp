@@ -317,7 +317,7 @@
                         <div class="progress-bar"></div>
                     </div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center">Pagamento &amp; fatturazione</div>
+                    <div class="bs-wizard-info text-center">Pagamento &amp; Fatturazione</div>
                 </div>
                 <div class="col-sm-5 bs-wizard-step disabled">
                     <div class="text-center bs-wizard-stepnum">5</div>
@@ -341,9 +341,9 @@
                                 <thead>
                                     <tr>
                                         <th style="width:45%">Prodotto</th>
-                                        <th style="width:15%" class="hidden-xs">Prezzo</th>
-                                        <th style="width:10%">Quantit&agrave;</th>
-                                        <th style="width:20%" class="text-right">Totale Pr.</th>
+																				<th style="width:15%">Quantit&agrave;</th>
+                                        <th style="width:15%" class="text-right">Prezzo</th>
+                                        <th style="width:15%" class="text-right hidden-xs">Totale Pr.</th>
                                         <th style="width:10%"></th>
                                     </tr>
                                 </thead>
@@ -383,11 +383,9 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td data-th="Price" class="hidden-xs"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
-                                        <td data-th="Quantity">
-                                            <input type="number" class="form-control text-center" name="quantita" value="<%=quantita%>">
-                                        </td>
-                                        <td data-th="Subtotal" class="text-right"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
+                                        <td data-th="Quantity"><input type="number" class="form-control text-center" name="quantita" value="<%=quantita%>"></td>
+																				<td data-th="Price"class="text-right"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
+                                        <td data-th="Subtotal" class="text-right hidden-xs"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
                                         <td class="actions text-center" data-th="">
                                             <button class="btn btn-info btn-sm" type="submit"><i class="fa fa-refresh"></i></button><br />
                                             <button class="btn btn-danger btn-sm" style="margin-top: 5px;" type="button" onClick="location.href='/carrello1.asp?mode=2&riga=<%=rs("pkid")%>'"><i class="fa fa-trash-o"></i></button>
@@ -412,7 +410,7 @@
 																			<tr>
 																					<td class="text-right" colspan="3"><strong>Sconto Extra</strong></td>
 																					<td class="text-right"><strong><%if ss("Sconto")<>0 then%>
-												  								<%=FormatNumber(ss("Sconto"),2)%><%else%>0<%end if%>&nbsp&euro;</strong></td>
+												  								-<%=FormatNumber(ss("Sconto"),2)%><%else%>0,00<%end if%>&nbsp&euro;</strong></td>
 																					<td class="hidden-xs"></td>
 	                                    </tr>
 	                                    <tr>

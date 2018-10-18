@@ -24,6 +24,7 @@
 
 	if ss.recordcount>0 then
 		TotaleCarrello=ss("TotaleCarrello")
+		Sconto=ss("Sconto")
 		CostoSpedizioneTotale=ss("CostoSpedizione")
 		TipoTrasporto=ss("TipoTrasporto")
 		FkSpedizione=ss("FkSpedizione")
@@ -60,6 +61,16 @@
 	end if
 
 	ss.close
+
+	if FkPagamento>0 then
+		Set trasp_rs = Server.CreateObject("ADODB.Recordset")
+		sql = "SELECT * FROM CostiPagamento where PkId="&FkPagamento
+		trasp_rs.Open sql, conn, 1, 1
+		if trasp_rs.recordcount>0 then
+			TipoCosto=trasp_rs("TipoCosto")
+		end if
+		trasp_rs.close
+	end if
 
 	if FkPagamento=1 or FkPagamento=5 then
 		Set rs=Server.CreateObject("ADODB.Recordset")
@@ -711,7 +722,7 @@ End If
 												<div class="progress-bar"></div>
 										</div>
 										<a href="/carrello3.asp" class="bs-wizard-dot"></a>
-										<div class="bs-wizard-info text-center">Pagamento &amp; fatturazione</div>
+										<div class="bs-wizard-info text-center">Pagamento &amp; Fatturazione</div>
 								</div>
 								<div class="col-sm-5 bs-wizard-step active">
 										<div class="text-center bs-wizard-stepnum">5</div>
@@ -840,12 +851,12 @@ End If
                 <div class="top-buffer">
                     <table id="cart" class="table table-hover table-condensed table-cart">
                         <thead>
-                            <tr>
-                                <th style="width:45%">Prodotto</th>
-                                <th style="width:10%" class="text-center">Quantit&agrave;</th>
-                                <th style="width:10%" class="text-center">Prezzo unitario</th>
-                                <th style="width:20%" class="text-center">Totale Prodotto</th>
-                            </tr>
+													<tr>
+															<th style="width:60%">Prodotto</th>
+															<th style="width:10%" class="text-center">Quantit&agrave;</th>
+															<th style="width:15%" class="text-right">Prezzo</th>
+															<th style="width:15%" class="text-right hidden-xs">Totale Prodotto</th>
+													</tr>
                         </thead>
 												<%
 													Set rs = Server.CreateObject("ADODB.Recordset")
@@ -886,11 +897,9 @@ End If
                                         </div>
                                     </div>
                                 </td>
-                                <td data-th="Quantity" class="text-center">
-                                    <%=quantita%>
-                                </td>
-                                <td data-th="Price" class="hidden-xs text-center"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&euro;</td>
-                                <td data-th="Subtotal" class="text-center"><%=FormatNumber(rs("TotaleRiga"),2)%>&euro;</td>
+																<td data-th="Quantity" class="text-center"><%=quantita%></td>
+                                <td data-th="Price" class="text-right"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
+                                <td data-th="Subtotal" class="text-right hidden-xs"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
                             </tr>
 														<%
 														rs.movenext
@@ -900,23 +909,24 @@ End If
 												<%end if%>
 												<%rs.close%>
 												<tfoot>
-                            <tr class="visible-xs">
-                                <td colspan="4" class="text-center"><strong>Totale Carrello <%if TotaleCarrello<>0 then%>
-								<%=FormatNumber(TotaleCarrello,2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
-                            </tr>
-                            <tr class="hidden-xs">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center"><strong>Totale Carrello <%if TotaleCarrello<>0 then%>
-								<%=FormatNumber(TotaleCarrello,2)%>&euro;<%else%>0&euro;<%end if%></strong></td>
-                            </tr>
-                            <tr>
-                                <td colspan="4">
-                                    <h5>Eventuali annotazioni</h5>
-                                    <textarea class="form-control" rows="3" readonly style="font-size: 12px;"><%=NoteCliente%></textarea>
-                                </td>
-                            </tr>
+														<tr>
+																<td class="hidden-xs"></td>
+																<td class="text-right" colspan="2">Totale Carrello</td>
+																<td class="text-right"><%if TotaleCarrello<>0 then%>
+																<%=FormatNumber(TotaleCarrello,2)%><%else%>0<%end if%>&nbsp&euro;</td>
+														</tr>
+														<tr>
+																<td class="hidden-xs"></td>
+																<td class="text-right" colspan="2"><strong>Sconto Extra</strong></td>
+																<td class="text-right"><strong><%if Sconto<>0 then%>
+																-<%=FormatNumber(Sconto,2)%><%else%>0,00<%end if%>&nbsp&euro;</strong></td>
+														</tr>
+	                          <tr>
+	                              <td colspan="4">
+	                                  <h5>Eventuali annotazioni</h5>
+	                                  <textarea class="form-control" rows="3" readonly style="font-size: 12px;"><%=NoteCliente%></textarea>
+	                              </td>
+	                          </tr>
                         </tfoot>
                     </table>
                 </div>
@@ -945,7 +955,7 @@ End If
                                         </div>
                                     </td>
                                     <td data-th="Quantity" class="text-center">
-                                        <%=FormatNumber(CostoSpedizioneTotale,2)%>&euro;
+                                        <%=FormatNumber(CostoSpedizioneTotale,2)%>&nbsp&euro;
                                     </td>
                                 </tr>
                             </tbody>
@@ -985,7 +995,7 @@ End If
                                         </div>
                                     </td>
                                     <td data-th="Quantity" class="text-center">
-                                        <%=FormatNumber(CostoPagamento,2)%>&#8364;
+                                        <%if TipoCosto=4 or TipoCosto=5 then%>-<%end if%><%=FormatNumber(CostoPagamento,2)%>&nbsp&#8364;
                                     </td>
                                 </tr>
                             </tbody>
@@ -1016,10 +1026,10 @@ End If
 										<%else%>
 											0,00
 										<%end if%>
-										&#8364;&nbsp;
+										&nbsp&#8364;
 										</b></p>
 		            </div>
-		            <%if FkPagamento=1 or FkPagamento=3 or FkPagamento=4 then%>
+		            <%if FkPagamento=1 or FkPagamento=3 or FkPagamento=4 or FkPagamento=5 then%>
 		            <a href="#" onClick="MM_openBrWindow('stampa_ordine.asp?idordine=<%=IdOrdine%>&mode=1','','width=760,height=900,scrollbars=yes')" class="btn btn-danger pull-right hidden-print"><i class="glyphicon glyphicon-print"></i> Stampa ordine</a>
 								<%end if%>
 		        </div>

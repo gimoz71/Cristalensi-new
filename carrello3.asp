@@ -199,6 +199,7 @@
 
   	if ss.recordcount>0 then
   		TotaleCarrello=ss("TotaleCarrello")
+			Sconto=ss("Sconto")
   		CostoSpedizioneTotale=ss("CostoSpedizione")
   		TipoTrasporto=ss("TipoTrasporto")
   		'DatiSpedizione=ss("DatiSpedizione")
@@ -262,7 +263,7 @@
                         <div class="progress-bar"></div>
                     </div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center">Pagamento &amp; fatturazione</div>
+                    <div class="bs-wizard-info text-center">Pagamento &amp; Fatturazione</div>
                 </div>
 
                 <div class="col-sm-5 bs-wizard-step disabled">
@@ -277,18 +278,18 @@
         </div>
         <div class="col-md-12">
             <div class="title">
-                <h4><span class="visible-xs" style="padding-top: 20px;">Modalit&agrave; di pagamento</span></h4>
+                <h4><span class="visible-xs" style="padding-top: 20px;">Modalit&agrave; di pagamento - Passo 4 di 5</span></h4>
             </div>
             <div class="col-md-12">
                 <div class="top-buffer">
                     <table id="cart" class="table table-hover table-condensed table-cart">
 											<thead>
-													<tr>
-															<th style="width:60%">Prodotto</th>
-															<th style="width:10%" class="text-center">Quantit&agrave;</th>
-															<th style="width:10%" class="text-center hidden-xs">Prezzo</th>
-															<th style="width:20%" class="text-right">Totale Pr.</th>
-													</tr>
+												<tr>
+														<th style="width:60%">Prodotto</th>
+														<th style="width:10%" class="text-center">Quantit&agrave;</th>
+														<th style="width:15%" class="text-right">Prezzo</th>
+														<th style="width:15%" class="text-right hidden-xs">Totale Prodotto</th>
+												</tr>
 											</thead>
                         <%if rs.recordcount>0 then%>
 												<tbody>
@@ -322,9 +323,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td data-th="Quantity" class="text-center"><%=quantita%></td>
-                                <td data-th="Price" class="hidden-xs text-center"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
-                                <td data-th="Subtotal" class="text-right"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
+																<td data-th="Quantity" class="text-center"><%=quantita%></td>
+                                <td data-th="Price" class="text-right"><%=FormatNumber(rs("PrezzoProdotto"),2)%>&nbsp&euro;</td>
+                                <td data-th="Subtotal" class="text-right hidden-xs"><%=FormatNumber(rs("TotaleRiga"),2)%>&nbsp&euro;</td>
                             </tr>
 														<%
 														rs.movenext
@@ -344,14 +345,14 @@
 															<td class="hidden-xs"></td>
 															<td class="text-right" colspan="2"><strong>Sconto Extra</strong></td>
 															<td class="text-right"><strong><%if ss("Sconto")<>0 then%>
-															<%=FormatNumber(ss("Sconto"),2)%><%else%>0<%end if%>&nbsp&euro;</strong></td>
+															-<%=FormatNumber(ss("Sconto"),2)%><%else%>0,00<%end if%>&nbsp&euro;</strong></td>
 													</tr>
-                            <tr>
-                                <td colspan="4">
-                                    <h5>Eventuali annotazioni</h5>
-                                    <textarea class="form-control" rows="3" readonly style="font-size: 12px;"><%=NoteCliente%></textarea>
-                                </td>
-                            </tr>
+                          <tr>
+                              <td colspan="4">
+                                  <h5>Eventuali annotazioni</h5>
+                                  <textarea class="form-control" rows="3" readonly style="font-size: 12px;"><%=NoteCliente%></textarea>
+                              </td>
+                          </tr>
                         </tfoot>
 												<%end if%>
                     </table>

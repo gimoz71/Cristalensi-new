@@ -147,6 +147,16 @@ gr_rs.close
                     tip_rs.close
                     %>
                 </nav>
+                <div class="banner_2 banner_a">
+        					<img src="/images/sconto_extra.png">
+
+        				</div>
+        				<div class="banner_2 banner_b">
+        					<img src="/images/spedizione_gratuita.png">
+        				</div>
+        				<div class="banner_2 banner_c">
+        					<img src="/images/sconto_bonifico.png">
+        				</div>
             </div>
         </div>
         <div class="col-md-9">
