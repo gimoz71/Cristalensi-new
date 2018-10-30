@@ -14,9 +14,9 @@
 
 	if idsession=0 then response.redirect("/iscrizione.asp?prov=1")
 
-	'******* DA RIMETTERE QUANDO SI METTE ONLINE
-	'session("ordine_shop")=""
-	'******* DA RIMETTERE QUANDO SI METTE ONLINE
+	'******* DA COMMENTARE QUANDO SI METTE IN TEST
+	session("ordine_shop")=""
+	'******* DA COMMENTARE QUANDO SI METTE IN TEST
 
 	Set ss = Server.CreateObject("ADODB.Recordset")
 	sql = "SELECT * FROM Ordini where pkid="&idOrdine

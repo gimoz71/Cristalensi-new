@@ -109,7 +109,7 @@ end if
         </div>
         <div class="col-md-3">
             <div class=" top-buffer">
-                <nav class="navbar">
+                <nav class="navbar hidden-xs">
                     <!-- menu - normal collapsible navbar markup -->
                     <ul class="list-unstyled side-list">
                         <li><a href="/illuminazione-interni-ed-esterni/1-novita-lampade-a-sospensione.asp" title="Lampade a sospensione - Novit&agrave; e ultimi arrivi">Lampade a sospensione</a></li>
@@ -120,6 +120,19 @@ end if
                         <li><a href="/illuminazione-interni-ed-esterni/10-novita-lampade-da-giardino-ed-esterni.asp" title="Lampade da giardino ed esterni - Novit&agrave; e ultimi arrivi">Lampade da giardino ed esterni</a></li>
                     </ul>
                 </nav>
+                <div class="banner preventivi overflowContainer">
+                    <h3 class="title">Promozione di Novembre</h3>
+                    <p class="text" style="padding-left: 40px;"><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
+                </div>
+                <div class="banner pagamenti overflowContainer">
+                    <h3 class="title">Paga in sicurezza!</h3>
+                    <p class="text"><strong><em>PAGHI CON BONIFICO? -2%</em></strong><br />Altri pagamenti disponibili:<br />Carte di Credito e PayPal, PostePay e Contrassegno.
+                    </p>
+                </div>
+                <div class="banner consegne overflowContainer">
+                    <h3 class="title">SPEDIZIONI ASSICURATE</h3>
+                    <p class="text">Consegna <u>GRATUITA</u> in tutta Italia per ordini superiori a 250&euro;<br />Per ordini fino a 250&euro;: 10&euro;</p>
+                </div>
             </div>
         </div>
         <div class="col-md-9">
@@ -194,7 +207,7 @@ end if
                                   <div class="price-box separator">
                                     <%if prezzoarticolo<>0 then%>
                                       <%if idsession=0 and prezzoprodottosoloclienti="si" then%>
-                                        <em><span class="price-new" style="color: #000;">SCONTO PER ISCRITTI !!!</span></em><br />
+                                        <em><span class="price-new" style="color: #000;">SCONTO PER ISCRITTI</span></em><br />
                                         <%if prezzolistino<>0 then%><span class="price-old">Prezzo di listino: <b><%=prezzolistino%> &euro;</b></span><%else%>&nbsp;<%end if%>
                                       <%else%>
                                         <span class="price-new"><i class="fa fa-tag"></i>&nbsp;<%=prezzoarticolo%> &euro;</span><br />

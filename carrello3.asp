@@ -406,8 +406,8 @@
 										<%
 										Set trasp_rs = Server.CreateObject("ADODB.Recordset")
 										if Nazione_sp="IT" then
-											'sql = "SELECT * FROM CostiPagamento WHERE IT=1 ORDER BY Nome ASC"
-											sql = "SELECT * FROM CostiPagamento ORDER BY Nome ASC"
+											sql = "SELECT * FROM CostiPagamento WHERE IT=1 ORDER BY Nome ASC"
+											'sql = "SELECT * FROM CostiPagamento ORDER BY Nome ASC"
 										else
 											sql = "SELECT * FROM CostiPagamento WHERE COM=1 ORDER BY Nome ASC"
 										end if
