@@ -750,10 +750,11 @@ End If
 										Beneficiario:<br><strong>Cristalensi Snc di Lensi Massimiliano &amp; C. (P.Iva e C.Fiscale 05305820481)<br>
 										Via arti e mestieri, 1 - 50056 Montelupo F.no (FI)</strong>
 										<br><br>
-										La merce verr&agrave; spedita al momento che la nostra banca ricever&agrave; il pagamento oppure, per velocizzare la spedizione, &egrave; possibile inviarci per email la ricevuta dell'avvenuto pagamento con bonifico (in caso di bonifico fatto con home banking spesso viene fornita dalla banca una ricevuta, oppure &egrave; possibile scannerizzare la ricevuta rilasciata dalla banca).<br>
+										La merce sar&agrave; spedita al momento che la nostra banca ricever&agrave; il pagamento oppure, per velocizzare la spedizione, &egrave; possibile inviarci per email la ricevuta dell'avvenuto pagamento con bonifico (in caso di bonifico fatto con home banking spesso viene fornita dalla banca una ricevuta, oppure &egrave; possibile scannerizzare la ricevuta rilasciata dalla banca).<br>
 										<br>
 										Pagando, e quindi completando l'ordine, si accettano le condizioni di vendita.<br><br>
-										Salva oppure stampa le condizioni di vendita (consultabili anche nell'apposita pagina del sito internet) da questo file (.pdf):<br><a href="#" target="_blank">condizioni di vendita</a>
+										Salva oppure stampa le condizioni di vendita (consultabili anche nell'apposita pagina del sito internet) da questo file (.pdf):<br><a href="#" target="_blank">condizioni di vendita</a><br /><br />
+										<strong>TUTTI I DATI PER IL PAGAMENTO SARANNO SPEDITI ANCHE PER EMAIL</strong>
 										<br>
 										<br>
 										Cordiali saluti, lo staff di Cristalensi
@@ -773,7 +774,8 @@ End If
 										La merce verr&agrave; spedita al momento che riceveremo il pagamento oppure, per velocizzare la spedizione, &egrave; possibile inviarci per email la ricevuta dell'avvenuto pagamento.<br>
 										<br>
 										Pagando, e quindi completando l'ordine, si accettano le condizioni di vendita.<br><br>
-										Salva oppure stampa le condizioni di vendita (consultabili anche nell'apposita pagina del sito internet) da questo file (.pdf):<br><a href="https://www.cristalensi.it/condizioni_di_vendita.pdf" target="_blank">condizion di vendita</a>
+										Salva oppure stampa le condizioni di vendita (consultabili anche nell'apposita pagina del sito internet) da questo file (.pdf):<br><a href="https://www.cristalensi.it/condizioni_di_vendita.pdf" target="_blank">condizion di vendita</a><br /><br />
+										<strong>TUTTI I DATI PER IL PAGAMENTO SARANNO SPEDITI ANCHE PER EMAIL</strong>
 										<br>
 										<br>
 										Cordiali saluti, lo staff di Cristalensi
@@ -784,8 +786,8 @@ End If
 						<%if FkPagamento=3 then%>
 								<p class="description">
 								<br><br>Grazie per aver scelto i nostri prodotti,<br>
-									la merce verr&agrave; spedita appena sar&agrave; disponibile nel nostro magazino.<br>
-									Ti ricordiamo che per il pagamento in contrassegno, il corriere consegner&agrave; la merce solo se verr&agrave; pagata in contanti, non accetter&agrave; altri metodi di pagamento (anche gli assegni non saranno accettati).<br>
+									la merce sar&agrave; spedita appena sar&agrave; disponibile nel nostro magazino.<br>
+									Ti ricordiamo che per il pagamento in contrassegno, il corriere consegner&agrave; la merce solo se sar&agrave; pagata in contanti, non accetter&agrave; altri metodi di pagamento (anche gli assegni non saranno accettati).<br>
 									<br>
 								Pagando, e quindi completando l'ordine, si accettano le condizioni di vendita.<br>
 								Salva oppure stampa le condizioni di vendita (consultabili nell'apposita pagina del sito internet) da questo file (.pdf):<br>

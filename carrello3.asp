@@ -539,7 +539,7 @@
 										</b></p>
                 </div>
                 <a href="/carrello2.asp" class="btn btn-danger pull-left" style="margin-top: 10px;"><i class="glyphicon glyphicon-chevron-left"></i> Passo precedente</a>
-                <a href="#" class="btn btn-danger pull-right" onClick="Continua();" style="margin-top: 10px;">Concludi l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a>
+                <%if TipoPagamentoScelto>0 then%><a href="#" class="btn btn-danger pull-right" onClick="Continua();" style="margin-top: 10px;">Concludi l'acquisto <i class="glyphicon glyphicon-chevron-right"></i></a><%end if%>
             </div>
 						<%end if%>
         </div>
