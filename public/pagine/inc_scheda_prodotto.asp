@@ -213,7 +213,7 @@ end if
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
-		<div class="row clearfix">
+		<div class="row clearfix" style="margin-top: 20px;">
 			<div class="col-md-10 col-md-push-2">
 						<ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
                 <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Cristalensi Vendita lampadari online"><span itemprop="name"><i class="fa fa-home"></i></span></a><meta itemprop="position" content="1" /></li>
@@ -229,7 +229,7 @@ end if
 		</div>
         <div class="top-buffer hidden-md hidden-lg"></div>
         <div class="" itemscope itemtype="http://schema.org/Product">
-			<div class="col-md-12" style="margin-bottom: 20px;">
+			<div class="col-md-12" style="margin-bottom: 10px;margin-top: 10px;">
 					<div class="row">
 							<div class="title">
 									<h1 class="product-name"><span itemprop="name"><%=Titolo_prodotto%></span></h1>
@@ -286,7 +286,7 @@ end if
 														<a href="/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" data-fancybox="group2" data-caption="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" title="<%if titolo_img<>"" then%><%=titolo_img%>&nbsp;<%=titolo_cat%><%else%><%=titolo_prodotto%>&nbsp;<%=titolo_1_cat%><%end if%>"><img src="/public/etichetta-classe-energetica-<%=ClasseEnergetica%>.jpg" alt="<%=Titolo_prodotto%> - <%=produttore%> - <%=Titolo_2_cat%>" align="right" valign="middle" height="150px" width="75px"></a>
 														<%end if%>
 
-														<small><%=Descrizione_prodotto%></small>
+														<%=Descrizione_prodotto%>
 
 														<%if allegato_prodotto<>"" then%>
 														<br /><br />E' presente un allegato: >> <a href="/public/<%=allegato_prodotto%>" target="_blank" title="E' presente un allegato per il prodotto: <%=titolo_prodotto%>">Scarica l'allegato</a>
@@ -314,8 +314,8 @@ end if
 															ams.close
 														Next
 														%>
-														ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.
-														</em>
+														ma per suggerimenti pi&ugrave; dettagliati contattate il nostro staff.</em>
+
 													<%
 													end if
 													%>
@@ -327,43 +327,65 @@ end if
 							</div>
                         </div>
                     </div>
-					<div class="row">
-						<%
-				Set com_rs = Server.CreateObject("ADODB.Recordset")
-				sql = "SELECT TOP 3 * FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
-				com_rs.open sql,conn, 1, 1
-				if com_rs.recordcount>0 then
-				%>
-				<div class="panel panel-default hidden-sm hidden-xs visible-md-block visible-lg-block user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
-					<!-- Default panel contents -->
-					<div class="panel-heading">
-						<h5><i class="fa fa-users"></i> Dicono di noi...</h5>
-					</div>
-					<ul class="list-group">
-						<%Do While not com_rs.EOF%>
-						<%
-						Set cr_rs = Server.CreateObject("ADODB.Recordset")
-						sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&com_rs("FkIscritto")
-						cr_rs.open sql,conn, 1, 1
-						if cr_rs.recordcount>0 then
-							NomeIscritto=cr_rs("Nome")
-						end if
-						cr_rs.close
-						%>
-						<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(com_rs("Testo")), 100)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span>
-							<span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=com_rs("Valutazione")%></span>/<span itemprop="bestRating">5</span></span></em></li>
-						<%
-							com_rs.movenext
-							loop
-							%>
-					</ul>
-					<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
-				</div>
-				<%
-				end if
-				com_rs.close
-				%>
-					</div>
+										<div class="row">
+											<%
+											Randomize()
+											constnum = 5
+
+											Set com_rs = Server.CreateObject("ADODB.Recordset")
+											sql = "SELECT PkId,FkIscritto,Testo,Valutazione,Pubblicato FROM Commenti_Clienti WHERE Pubblicato=1 ORDER BY PkId DESC"
+											com_rs.open sql,conn, 1, 1
+											if com_rs.recordcount>0 then
+
+											%>
+											<div class="panel panel-default hidden-sm hidden-xs visible-md-block visible-lg-block user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
+												<!-- Default panel contents -->
+												<div class="panel-heading">
+													<h5><i class="fa fa-users"></i> Dicono di noi...</h5>
+												</div>
+												<ul class="list-group">
+													<%
+													IF NOT com_rs.EOF THEN
+													rndArray = com_rs.GetRows()
+													com_rs.Close
+
+													Lenarray =  UBOUND( rndArray, 2 ) + 1
+				  								skip =  Lenarray  / constnum
+				  								IF Lenarray <= constnum THEN skip = 1
+				  								FOR i = 0 TO Lenarray - 1 STEP skip
+				  									numero = RND * ( skip - 1 )
+				  									'id = rndArray( 0, i + numero )
+				  									FkIscritto = rndArray( 1, i + numero )
+														if FkIscritto="" or isNull(FkIscritto) then FkIscritto=0
+				  									Testo_Commento = rndArray( 2, i + numero )
+				  									Valutazione = rndArray( 3, i + numero )
+
+
+													  if FkIscritto>0 then
+															Set cr_rs = Server.CreateObject("ADODB.Recordset")
+															sql = "SELECT PkId, Nome FROM Clienti WHERE PkId="&FkIscritto
+															cr_rs.open sql,conn, 1, 1
+															if cr_rs.recordcount>0 then
+																NomeIscritto=cr_rs("Nome")
+															end if
+															cr_rs.close
+														end if
+													%>
+													<li class="list-group-item"><i class="fa fa-user"></i> <em><span itemprop="description"><%=Left(NoHTML(Testo_Commento), 100)%>...</span><span itemprop="author" style="display: none;"><%=NomeIscritto%></span>
+														<span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">Voto: <meta itemprop="worstRating" content = "1"><span itemprop="ratingValue"><%=Valutazione%></span>/<span itemprop="bestRating">5</span></span></em></li>
+													<%
+													next
+													end if
+													%>
+												</ul>
+												<div class="panel-footer"><a href="/commenti_elenco.asp" class="btn btn-default">leggi tutti i commenti <i class="fa fa-chevron-right"></i></a></div>
+											</div>
+											<%
+											Else
+											com_rs.close
+											end if
+											%>
+										</div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -381,14 +403,14 @@ end if
 									Vuoi sapere il Prezzo Cristalensi?
 	                            </p>
 	                        </li>
-							<li class="list-group-item" style="padding-top: 20px">
+							<li class="list-group-item" style="padding-top: 20px; background-color:#f5f5f5;">
 								<%if offerta=10 then%>
 									IL PRODOTTO NON E' DISPONIBILE
 								<%else%>
 									<%if Len(Consegna)>0 then%>
-									<%=Consegna%>
+									<small><em><%=Consegna%></em></small>
 									<%else%>
-									<em>Consegna entro 30 giorni</em>
+									<small><em>Consegna entro 30 giorni</em></small>
 									<%end if%>
 								<%end if%>
 							<li>
@@ -414,7 +436,7 @@ end if
 													<p>
 															<%if prezzoarticolo<>0 then%>
 																<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
-																	<span class="price-new"><em><span itemprop="price">SCONTO EXTRA<br />PER GLI ISCRITTI !!!</span></em></span><br /><br />
+																	<!--<span class="price-new"><em><span itemprop="price">SCONTO EXTRA<br />PER GLI ISCRITTI !!!</span></em></span><br /><br />-->
 																	<%if prezzolistino<>0 then%>
 																		<span class="price-old">Prezzo di Listino <b><%=prezzolistino%> &euro;</b></span>
 																	<%end if%>
@@ -423,7 +445,7 @@ end if
 																		<span class="price-old">Listino: <b><del>&nbsp;<%=prezzolistino%> &euro;&nbsp;</del></b></span><br>
 																	<%end if%>
 																	<span class="price-new"><span itemprop="price"><%=prezzoarticolo%></span> &euro;<meta itemprop="priceCurrency" content="EUR" /></span><br><small>iva inclusa</small>
-																	
+
 																<%end if%>
 															<%end if%>
 
@@ -438,13 +460,13 @@ end if
 												</li>
 											<%else%>
 												<%if Len(Consegna)>0 then%>
-													<li class="list-group-item">
+													<li class="list-group-item" style="background-color:#f5f5f5;">
 														<small><em><i class="fa fa-truck"></i> <%=Consegna%></em></small>
 													</li>
 												<%else%>
-													<li class="list-group-item">
-														<em><i class="fa fa-truck"></i> Consegna entro 30 giorni</em>
-													<li>
+													<li class="list-group-item" style="background-color:#f5f5f5;">
+														<small><em><i class="fa fa-truck"></i> Consegna entro 30 giorni</em></small>
+													</li>
 												<%end if%>
 											<%end if%>
 											<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
@@ -513,13 +535,13 @@ end if
 														<input type="number" data-width="auto" class="form-control" name="quantita" id="quantita" placeholder="Quanti Pezzi?" aria-label="Pezzi">
 												</li>
 											<%end if%>
-											
+
 									</ul>
 									<div class="panel-footer">
 											<%if idsession=0 and prezzoprodottosoloclienti="si" then%>
-												<a href="/iscrizione.asp?prov=3" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Iscriviti per vedere gli sconti!"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;Iscriviti o Accedi !!!</a>
+												<a href="/iscrizione.asp?prov=3" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Iscriviti per vedere gli sconti!"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;Iscriviti o Accedi!</a>
 											<%else%>
-												<a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">Aggiungi al carrello <i class="glyphicon glyphicon-shopping-cart"></i></a>
+												<a href="#" onClick="return verifica_1();" id="invia_qta_2" rel="nofollow" class="btn btn-danger btn-block" style="padding: 10px 0px;" title="Aggiungi al carrello <%=titolo_prodotto%>&nbsp;<%=codicearticolo%>">AGGIUNGI AL CARRELLO <i class="glyphicon glyphicon-shopping-cart"></i></a>
 											<%end if%>
 									</div>
 									</form>
@@ -528,19 +550,19 @@ end if
 
                 </div>
 				<div class="clearfix"></div>
-				<div class="panel panel-default">
-					<a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal"><i class="fa fa-info-circle"></i> Contattaci per info sulla consegna</a>
+				<div class="panel panel-default" style="margin: 10px 0px 30px 0px;">
+					<a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal; padding: 10px 0px;"><i class="fa fa-info-circle"></i>   Domande e dubbi? Contattaci!</a>
 				</div>
 				<div class="clearfix"></div>
 				<div class="banner_2 banner_a">
-					<img src="/images/sconto_bonifico.png">
-					
+					<img src="/images/sconto_extra.png">
+
 				</div>
 				<div class="banner_2 banner_b">
-					<img src="/images/sconto_extra.png">
+					<img src="/images/spedizione_gratuita.png">
 				</div>
 				<div class="banner_2 banner_c">
-					<img src="/images/spedizione_gratuita.png">
+					<img src="/images/sconto_bonifico.png">
 				</div>
 				<!--#include virtual="/inc_box_contatti.asp"-->
 
@@ -582,7 +604,7 @@ end if
 
       </div>
 			<div class="col-md-8">
-				
+
 			</div>
 
       </div>
