@@ -550,7 +550,7 @@ end if
 				com_rs.open sql,conn, 1, 1
 				if com_rs.recordcount>0 then
 				%>
-				<div class="panel panel-default hidden visible-sm-block user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
+				<div class="panel panel-default hidden visible-sm-block visible-xs-block user-comment" itemprop="review" itemscope itemtype="http://schema.org/Review">
 					<!-- Default panel contents -->
 					<div class="panel-heading">
 						<h5><i class="fa fa-users"></i> Dicono di noi...</h5>
