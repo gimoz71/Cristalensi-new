@@ -7,20 +7,31 @@ $(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
+var delay = 500;
 
 var overflowContainer = function(overflowSelector, parentOverflowSelector) {
     return $(overflowSelector).css("height", ($(parentOverflowSelector).height() / 3)-7);
 }
 window.addEventListener('HTMLImportsLoaded', function(e) {
-// $(document).ready(function() {
     if ($(".parentOverflowContainer").css("float") == "left") {
-        overflowContainer('.overflowContainer', '.parentOverflowContainer');
+        setTimeout(function () {
+            overflowContainer('.overflowContainer', '.parentOverflowContainer');
+        }, delay);
+    } else if ($(".parentOverflowContainer").css("float") == "none") {
+        $(".overflowContainer").height("auto");
+    };
+});
+ $(document).ready(function() {
+     if ($(".parentOverflowContainer").css("float") == "left") {
+        setTimeout(function () { 
+            overflowContainer('.overflowContainer', '.parentOverflowContainer');
+        }, delay);
     } else if ($(".parentOverflowContainer").css("float") == "none") {
         $(".overflowContainer").height("auto");
     };
 });
 
-$(window).on('resize', function() {
+$(window).on('resize', function () {
     if ($(".parentOverflowContainer").css("float") == "left") {
         overflowContainer('.overflowContainer', '.parentOverflowContainer');
     } else if ($(".parentOverflowContainer").css("float") == "none") {

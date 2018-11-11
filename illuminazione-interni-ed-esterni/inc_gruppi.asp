@@ -69,10 +69,6 @@ gr_rs.close
     <!--#include virtual="/inc_header_1.asp"-->
     <!--#include virtual="/inc_header_2.asp"-->
     <div class="container content">
-        <div class="row hidden">
-            <div class="col-md-12 parentOverflowContainer">
-            </div>
-        </div>
         <div class="col-xl-12">
             <ol class="breadcrumb">
                 <li><a href="/" title="Cristalensi Vendita lampadari online"><i class="fa fa-home"></i></a></li>
@@ -123,16 +119,16 @@ gr_rs.close
                     %>
 
                 </nav>
-                <div class="banner preventivi overflowContainer">
+                <div class="banner preventivi ">
                     <h3 class="title">Promozione di Novembre</h3>
-                    <p class="text" style="padding-left: 40px;"><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
+                    <p class="text" ><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
                 </div>
-                <div class="banner pagamenti overflowContainer">
+                <div class="banner pagamenti">
                     <h3 class="title">Paga in sicurezza!</h3>
                     <p class="text"><strong><em>PAGHI CON BONIFICO? -2%</em></strong><br />Altri pagamenti disponibili:<br />Carte di Credito e PayPal, PostePay e Contrassegno.
                     </p>
                 </div>
-                <div class="banner consegne overflowContainer">
+                <div class="banner consegne ">
                     <h3 class="title">SPEDIZIONI ASSICURATE</h3>
                     <p class="text">Consegna <u>GRATUITA</u> in tutta Italia per ordini superiori a 250&euro;<br />Per ordini fino a 250&euro;: 10&euro;</p>
                 </div>
@@ -243,6 +239,7 @@ gr_rs.close
                 %>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
+                      <div class="options">Spedizione gratuita</div>
                       <div class="photo">
                           <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(/public/<%=file_img%>)" title="<%=titolo_prodotto%> - <%=Titolo_1%>"><img alt="<%=titolo_prodotto%> - <%=Titolo_1%>" src="/images/blank.png"></a>
                       </div>

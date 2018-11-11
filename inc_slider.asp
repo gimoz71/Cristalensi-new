@@ -16,7 +16,7 @@
     <div class="col-md-4">
         <div class="banner preventivi overflowContainer">
             <h3 class="title">Promozione di Novembre</h3>
-            <p class="text" style="padding-left: 30px;"><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
+            <p class="text"><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
         </div>
         <div class="banner pagamenti overflowContainer">
             <h3 class="title">Paga in sicurezza!</h3>

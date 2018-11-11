@@ -213,7 +213,7 @@ end if
             <div class="col-md-12 parentOverflowContainer">
             </div>
         </div>
-		<div class="row clearfix" style="margin-top: 20px;">
+		<div class=" clearfix" style="margin-top: 20px;">
 			<div class="col-md-10 col-md-push-2">
 						<ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
                 <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Cristalensi Vendita lampadari online"><span itemprop="name"><i class="fa fa-home"></i></span></a><meta itemprop="position" content="1" /></li>
@@ -554,15 +554,23 @@ end if
 					<a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal; padding: 10px 0px;"><i class="fa fa-info-circle"></i>   Domande e dubbi? Contattaci!</a>
 				</div>
 				<div class="clearfix"></div>
-				<div class="banner_2 banner_a">
-					<img src="/images/sconto_extra.png">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
+						<div class="banner_2 banner_a">
+							<img src="/images/sconto_extra.png">
 
-				</div>
-				<div class="banner_2 banner_b">
-					<img src="/images/spedizione_gratuita.png">
-				</div>
-				<div class="banner_2 banner_c">
-					<img src="/images/sconto_bonifico.png">
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
+						<div class="banner_2 banner_b">
+							<img src="/images/spedizione_gratuita.png">
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
+						<div class="banner_2 banner_c">
+							<img src="/images/sconto_bonifico.png">
+						</div>
+					</div>
 				</div>
 				<!--#include virtual="/inc_box_contatti.asp"-->
 
