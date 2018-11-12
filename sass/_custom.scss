@@ -523,7 +523,7 @@ body {
     * {
         -webkit-font-smoothing: antialiased;
         backface-visibility: hidden;
-        transform: translateZ(0);
+        //transform: translateZ(0);
         // background            : $body-color;
     }
 }
@@ -928,7 +928,7 @@ hr.style-two {
     // background-blend-mode: luminosity;
     margin-bottom      : 10px;
 
-    &:last-child {
+    &::last-child {
         margin: 0;
     }
     @media (max-width: $screen-md) {
@@ -1414,6 +1414,7 @@ hr.style-two {
     position          : relative;
     transition        : all 0.2s ease-in-out;
     z-index           : inherit;
+    transform: translateZ(0);
 
     &:hover {
         box-shadow: 0 13px 16px rgba(0,0,0,.25);
