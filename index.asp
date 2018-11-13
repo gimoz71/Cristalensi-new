@@ -22,10 +22,11 @@ testo_footer_8="Nel settore dell’illuminazione e dell’arredamento uno spazio
 <html>
 
 <head>
-    <title>Vendita lampadari online | illuminazione interni | illuminazione da esterno</title>
+    <title>Vendita lampadari online: illuminazione interni e illuminazione da esterno</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Cristalensi, specializzato in vendita di lampari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Trovi ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso, vetro Murano e lampade a LED.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Vendita lampadari online: illuminazione interni e illuminazione da esterno">
     <meta property="og:description" content="Cristalensi, specializzato in vendita di lampari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Trovi ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso, vetro Murano e lampade a LED.">
     <link rel="alternate" href="https://www.cristalensi.it/" hreflang="it-it" />
 		<link rel="alternate" href="https://www.cristalensi.com/de/" hreflang="de-de" />
@@ -194,9 +195,13 @@ testo_footer_8="Nel settore dell’illuminazione e dell’arredamento uno spazio
   										file_img=NoLettAcc(img_rs("file"))
                     end if
                     img_rs.close
+
+                    spedizionegratis=0
+                    if prezzoarticolo>250 then spedizionegratis=1
   							%>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                   <article class="col-item">
+                      <%if spedizionegratis=1 then%><div class="options">SPEDIZIONE<br />GRATUITA</div><%end if%>
                       <div class="photo">
                           <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>
@@ -292,9 +297,13 @@ testo_footer_8="Nel settore dell’illuminazione e dell’arredamento uno spazio
                       file_img=NoLettAcc(img_rs("file"))
                     end if
                     img_rs.close
+
+                    spedizionegratis=0
+                    if prezzoarticolo>250 then spedizionegratis=1
                 %>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                   <article class="col-item">
+                        <%if spedizionegratis=1 then%><div class="options">SPEDIZIONE<br />GRATUITA</div><%end if%>
                       <div class="photo">
                           <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(https://www.cristalensi.it/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>

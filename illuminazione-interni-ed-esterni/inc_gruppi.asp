@@ -119,7 +119,7 @@ gr_rs.close
                     %>
 
                 </nav>
-                <div class="banner preventivi ">
+                <div class="banner preventivi">
                     <h3 class="title">Promozione di Novembre</h3>
                     <p class="text" ><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
                 </div>
@@ -128,7 +128,7 @@ gr_rs.close
                     <p class="text"><strong><em>PAGHI CON BONIFICO? -2%</em></strong><br />Altri pagamenti disponibili:<br />Carte di Credito e PayPal, PostePay e Contrassegno.
                     </p>
                 </div>
-                <div class="banner consegne ">
+                <div class="banner consegne">
                     <h3 class="title">SPEDIZIONI ASSICURATE</h3>
                     <p class="text">Consegna <u>GRATUITA</u> in tutta Italia per ordini superiori a 250&euro;<br />Per ordini fino a 250&euro;: 10&euro;</p>
                 </div>
@@ -236,10 +236,13 @@ gr_rs.close
                       file_img=Replace(file_img, "&rsquo;", "")
                     end if
                     img_rs.close
+
+                    spedizionegratis=0
+                    if prezzoarticolo>250 then spedizionegratis=1
                 %>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
-                      <div class="options">Spedizione gratuita</div>
+                      <%if spedizionegratis=1 then%><div class="options">SPEDIZIONE<br />GRATUITA</div><%end if%>
                       <div class="photo">
                           <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(/public/<%=file_img%>)" title="<%=titolo_prodotto%> - <%=Titolo_1%>"><img alt="<%=titolo_prodotto%> - <%=Titolo_1%>" src="/images/blank.png"></a>
                       </div>
@@ -341,6 +344,7 @@ gr_rs.close
             prod_rs.close
             %>
         </div>
+    </div>
     </div>
     <!--#include virtual="/inc_footer.asp"-->
     <script>

@@ -1185,7 +1185,7 @@ hr.style-two {
 }
 
 .scheda-descrizione {
-    font-size: 1em;
+    font-size: 0.7em;
 }
 
 .side-list a {
@@ -1428,12 +1428,13 @@ hr.style-two {
         top     : 0;
         right   : 0;
         z-index : 3;
-        font-size: .6em;
+        font-size: .7em;
         //line-height: 1em;
         color: #fff;
-        padding: 3px 10px;
+        padding: 10px 8px;
         background: #0278DA;
         border-radius: 0 0 0 3px;
+        text-align: center;
     }
 
     .photo {

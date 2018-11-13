@@ -92,7 +92,7 @@ gr_rs.close
     <!--#include virtual="/inc_header_1.asp"-->
     <!--#include virtual="/inc_header_2.asp"-->
     <div class="container content">
-        
+
         <div class="col-xl-12">
             <ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
                 <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Cristalensi Vendita lampadari online"><span itemprop="name"><i class="fa fa-home"></i></span></a><meta itemprop="position" content="1" /></li>
@@ -260,9 +260,13 @@ gr_rs.close
                       file_img=Replace(file_img, "&rsquo;", "")
                     end if
                     img_rs.close
+
+                    spedizionegratis=0
+                    if prezzoarticolo>250 then spedizionegratis=1
                 %>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
+                      <%if spedizionegratis=1 then%><div class="options">SPEDIZIONE<br />GRATUITA</div><%end if%>
                       <div class="photo">
                           <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>

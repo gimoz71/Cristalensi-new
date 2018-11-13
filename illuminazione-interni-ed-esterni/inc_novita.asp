@@ -193,9 +193,13 @@ end if
                       file_img=Replace(file_img, "&rsquo;", "")
                     end if
                     img_rs.close
+
+                    spedizionegratis=0
+                    if prezzoarticolo>250 then spedizionegratis=1
                 %>
                 <div class="col-xs-12 col-sm-4 col-md-4">
                   <article class="col-item">
+                      <%if spedizionegratis=1 then%><div class="options">SPEDIZIONE<br />GRATUITA</div><%end if%>
                       <div class="photo">
                           <a href="/<%=NomePagina%>" class="prod-img-replace" style="background-image: url(/public/<%=file_img%>)" title="<%=titolo_prodotto%>"><img alt="<%=titolo_prodotto%>" src="/images/blank.png"></a>
                       </div>
