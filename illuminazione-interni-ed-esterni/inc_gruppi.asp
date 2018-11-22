@@ -267,7 +267,7 @@ gr_rs.close
                                   </div>
                               </div>
                           </div>
-                          <div class="separator clear-left">
+                          <div class="separator clear-left clearfix">
                               <p class="btn-add">
                                   <a href="/preferiti.asp?id=<%=id%>" rel="nofollow" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="Aggiungi ai preferiti"><i class="fa fa-heart"></i></a>
                               </p>
@@ -275,7 +275,7 @@ gr_rs.close
                                   <a href="/<%=NomePagina%>" class="hidden-lg" data-toggle="tooltip" data-placement="top" title="vedi ed aggiungi al carrello">vedi scheda <i class="fa fa-chevron-right"></i></a>
                               </p>
                           </div>
-                          <div class="clearfix"></div>
+                          <div class=""></div>
                       </div>
                   </article>
                 </div>
