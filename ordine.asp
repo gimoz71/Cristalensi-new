@@ -441,7 +441,7 @@
 			HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
 			HTML1 = HTML1 & "<tr>"
 			HTML1 = HTML1 & "<td>"
-			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Grazie "&nominativo_email&" per aver scelto i nostri prodotti!<br>Questa &egrave; un email di conferma per il completamento dell'ordine n&deg; "&idordine&".<br><br><strong>TOTALE ORDINE: <u>"&TotaleGenerale&"&#8364;</u></strong><br><br> Per completare l'ordine &egrave; necessario effettuare il pagamento su Carta POSTEPAY con i seguenti dati:<br><br><strong>Beneficiario: LENSI GIULIANO - c.f. LNS GLN 42A30 D403J<br>Numero carta: 5333 1710 4546 4407</strong><br><br>Nella causale indicare: <strong>Ordine da sito internet n&deg; "&idordine&"</strong><br><br><br>Il nostro staff avr&agrave; cura di spedirti la merce appena ricever&agrave; la notifica del pagamento oppure, per velocizzare la spedizione, &egrave; possibile inviarci per email la ricevuta dell'avvenuto pagamento.</font><br>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Grazie "&nominativo_email&" per aver scelto i nostri prodotti!<br>Questa &egrave; un email di conferma per il completamento dell'ordine n&deg; "&idordine&".<br><br><strong>TOTALE ORDINE: <u>"&TotaleGenerale&"&#8364;</u></strong><br><br> Per completare l'ordine &egrave; necessario effettuare il pagamento su Carta POSTEPAY con i seguenti dati:<br><br><strong>Beneficiario: LENSI GIULIANO - c.f. LNS GLN 42A30 D403J<br>Numero carta: 5333 1710 7681 8950</strong><br><br>Nella causale indicare: <strong>Ordine da sito internet n&deg; "&idordine&"</strong><br><br><br>Il nostro staff avr&agrave; cura di spedirti la merce appena ricever&agrave; la notifica del pagamento oppure, per velocizzare la spedizione, &egrave; possibile inviarci per email la ricevuta dell'avvenuto pagamento.</font><br>"
 			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000><br><br>Cordiali Saluti, lo staff di Cristalensi</font>"
 			HTML1 = HTML1 & "</td>"
 			HTML1 = HTML1 & "</tr>"
@@ -768,7 +768,7 @@ End If
 											per completare l'ordine &egrave; necessario effettuare il versamente sulla Carta di POSTEPAY con i seguenti dati:<br>
 											<br><br>
 											<strong>Beneficiario: LENSI GIULIANO - c.f. LNS GLN 42A30 D403J<br>
-											Numero carta: 5333 1710 4546 4407</strong>
+											Numero carta: 5333 1710 7681 8950</strong>
 											<br><br>Nella causale indicare: "<strong>Ordine da sito internet n&deg; <%=idordine%></strong>"<br><br>
 
 										La merce verr&agrave; spedita al momento che riceveremo il pagamento oppure, per velocizzare la spedizione, &egrave; possibile inviarci per email la ricevuta dell'avvenuto pagamento.<br>
