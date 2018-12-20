@@ -23,7 +23,7 @@
                     <a href="https://www.pinterest.it/cristalensilampadari/" target="_blank" rel="nofollow"><i class="fa fa-pinterest-square"></i></a>
                 </p>
                 <p>
-                    <br /><br />&raquo; <a href="https://www.viadeimedici.it" target="_blank" rel="nofollow" style="color:#000;" title="ViaDeiMedici: Realizzazione campagne Web Marketing e Siti Internet">ViaDeiMedici: Web Marketing e Siti Internet</a>
+                    <br />&raquo; <a href="https://www.viadeimedici.it" target="_blank" rel="nofollow" style="color:#000;" title="ViaDeiMedici: Realizzazione campagne Web Marketing e Siti Internet">ViaDeiMedici: Web Marketing e Siti Internet</a>
                 </p>
 
             </div>
@@ -49,6 +49,7 @@
                     <li><a href="/chi_siamo.asp">Chi siamo: lo showroom</a></li>
                     <li><a href="/video_elenco.asp">Video</a></li>
                     <li><a href="/commenti_elenco.asp">Dicono noi</a></li>
+                    <li><a href="/privacy.asp">Privacy e note legali</a></li>
                 </ul>
                 <h4>Area Clienti</h4>
                 <ul>
@@ -56,24 +57,25 @@
                     <li><a href="/preferiti.asp">Lista dei desideri</a></li>
                     <li><a href="/carrello1.asp">Carrello</a></li>
                     <li><a href="/areaprivata.asp">Elenco ordini</a></li>
+                    <li><a href="/condizioni_di_vendita.asp">Condizioni di vendita</a></li>
                 </ul>
             </div>
             <div class="col-md-3 menu-col">
-                <h4>Note legali</h4>
-                <ul>
-                    <li><a href="/condizioni_di_vendita.asp">Condizioni di vendita</a></li>
-                    <li><a href="/privacy.asp">Privacy e note legali</a></li>
-                </ul>
-                <h4>Spedizioni</h4>
+                <h4>Spedizioni e Metodi di Pagamento</h4>
                 <ul class="checklist">
                     <li>Spedizioni assicurate <strong>GRATUITE</strong> in tutta Italia per ordini superiori a 250&euro;</li>
                     <li>Spedizioni assicurate in tutta Italia per ordini fino a 250&euro;: <strong>10&euro;</strong></li>
                 </ul>
-                <h4>Pagamenti accettati</h4>
+                <!--<h4>Pagamenti accettati</h4>
                 <ul class="checklist">
                     <li>Bonifico Bancario - PostePay</li>
                     <li>Contrassegno</li>
                     <li>Carte di credito - Prepagate - PayPal</li>
+                </ul>-->
+                <ul>
+                    <li>
+                      <img src="/images/metodi-di-pagamento.jpg" alt="Metodi di pagamento" />
+                    </li>
                 </ul>
             </div>
         </div>
@@ -97,8 +99,8 @@
     email=request("email")
     nome=request("nome")
     telefono=request("telefono")
-    richiesta=request("richiesta")
-    if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 then
+    richiesta=LTrim(request("richiesta"))
+    if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 or Len(richiesta)=0 then
       invioemail="no"
     Else
       invioemail="si"
@@ -297,6 +299,10 @@
     alert("ATTENZIONE! \"e-mail\" non valida.");
     return false;
     }
+    if (richiesta==""){
+      alert("Non  e\' stato compilato il campo \"Richiesta\".");
+      return false;
+    }
     if (richiesta.indexOf("https")>-1 || richiesta.indexOf("http")>-1 || richiesta.indexOf("www")>-1 || richiesta.indexOf("href")>-1){
     alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
     return false;
@@ -329,7 +335,7 @@
               </div>
           </div>
           <div class="form-group">
-              <label for="email" class="col-sm-4 control-label">Indirizzo Email</label>
+              <label for="email" class="col-sm-4 control-label">Indirizzo Email*</label>
               <div class="col-sm-8">
                   <input type="email" class="form-control" id="email" name="email">
               </div>
@@ -341,14 +347,14 @@
               </div>
           </div>
           <div class="form-group">
-              <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
+              <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta*</label>
               <div class="col-sm-8">
                   <textarea class="form-control" name="richiesta" id="richiesta"></textarea>
               </div>
           </div>
           <div class="form-group">
               <div class="col-sm-offset-4 col-sm-8">
-                  <button type="submit" id="inviarichiesta" class="btn btn-danger">invia richiesta</button>
+                  <button type="submit" id="inviarichiesta" class="btn btn-danger">invia richiesta</button>&nbsp;&nbsp;&nbsp;*Dati obbligatori
               </div>
           </div>
       </form>
@@ -363,8 +369,8 @@
     email=request("email")
     nome=request("nome")
     telefono=request("telefono")
-    richiesta=request("richiesta")
-    if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 then
+    richiesta=LTrim(request("richiesta"))
+    if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 or Len(richiesta)=0 then
       invioemail="no"
     Else
       invioemail="si"
@@ -543,6 +549,10 @@
     alert("ATTENZIONE! \"e-mail\" non valida.");
     return false;
     }
+    if (richiesta==""){
+      alert("Non  e\' stato compilato il campo \"Richiesta\".");
+      return false;
+    }
     if (richiesta.indexOf("https")>-1 || richiesta.indexOf("http")>-1 || richiesta.indexOf("www")>-1 || richiesta.indexOf("href")>-1){
     alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
     return false;
@@ -571,7 +581,7 @@
               </div>
           </div>
           <div class="form-group">
-              <label for="email" class="col-sm-4 control-label">Indirizzo Email</label>
+              <label for="email" class="col-sm-4 control-label">Indirizzo Email*</label>
               <div class="col-sm-8">
                   <input type="email" class="form-control" id="email" name="email">
               </div>
@@ -583,14 +593,14 @@
               </div>
           </div>
           <div class="form-group">
-              <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
+              <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta*</label>
               <div class="col-sm-8">
                   <textarea class="form-control" name="richiesta" id="richiesta"></textarea>
               </div>
           </div>
           <div class="form-group">
               <div class="col-sm-offset-4 col-sm-8">
-                  <button type="submit" id="inviarichiesta" class="btn btn-danger">invia richiesta</button>
+                  <button type="submit" id="inviarichiesta" class="btn btn-danger">invia richiesta</button>&nbsp;&nbsp;&nbsp;*Dati obbligatori
               </div>
           </div>
       </form>
@@ -607,8 +617,8 @@ if ric=1 then
   email=request("email")
   nome=request("nome")
   telefono=request("telefono")
-  richiesta=request("richiesta")
-  if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 then
+  richiesta=LTrim(request("richiesta"))
+  if InStr(richiesta, "http")>0 or InStr(richiesta, "www")>0 or InStr(richiesta, "href")>0 or Len(richiesta)=0 then
     invioemail="no"
   Else
     invioemail="si"
@@ -787,6 +797,10 @@ end if
   alert("ATTENZIONE! \"e-mail\" non valida.");
   return false;
   }
+  if (richiesta==""){
+    alert("Non  e\' stato compilato il campo \"Richiesta\".");
+    return false;
+  }
   if (richiesta.indexOf("https")>-1 || richiesta.indexOf("http")>-1 || richiesta.indexOf("www")>-1 || richiesta.indexOf("href")>-1){
   alert("ATTENZIONE! Non possono essere inseriti indirizzi di siti internet.");
   return false;
@@ -801,7 +815,7 @@ end if
 
 </SCRIPT>
 <div style="display: none; max-width: 800px;" id="hidden-content-produttori">
-    <h4>Invia richiesta disponibilit&agrave; prodotti per<br /><b><%=titolo_produttore%></b></h4>
+    <h4>Invia richiesta informazioni e disponibilit&agrave; prodotti per<br /><b><%=titolo_produttore%></b></h4>
     <%if ric=1 then%>
     <p><strong>La richiesta &egrave; stata inoltrata correttamente, il nostro staff ti contatter&agrave; il prima possibile.<br />Saluti da CRISTALENSI</strong></p>
     <%else%>
@@ -815,7 +829,7 @@ end if
             </div>
         </div>
         <div class="form-group">
-            <label for="email" class="col-sm-4 control-label">Indirizzo Email</label>
+            <label for="email" class="col-sm-4 control-label">Indirizzo Email*</label>
             <div class="col-sm-8">
                 <input type="email" class="form-control" id="email" name="email">
             </div>
@@ -827,14 +841,14 @@ end if
             </div>
         </div>
         <div class="form-group">
-            <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta</label>
+            <label for="richiesta" class="col-sm-4 control-label">Dettagli richiesta*</label>
             <div class="col-sm-8">
                 <textarea class="form-control" name="richiesta" id="richiesta"></textarea>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
-                <button type="submit" id="inviarichiesta" class="btn btn-danger">invia richiesta</button>
+                <button type="submit" id="inviarichiesta" class="btn btn-danger">invia richiesta</button>&nbsp;&nbsp;&nbsp;*Dati obbligatori
             </div>
         </div>
     </form>
