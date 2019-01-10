@@ -111,8 +111,8 @@
                                             <li class="subcategory">
                                                 <a href="/illuminazione-interni-ed-esterni/8nt-lampade-allo-specchio.asp" title="Applique, Luci, Lampade allo specchio"><h4><strong>Lampade allo specchio</strong></h4></a>
                                                 <ul class="list-unstyled lampade-specchio">
-                                                    <li><a href="/illuminazione-interni-ed-esterni/54nc-lampade-allo-specchio-moderne.asp" title="Lampade allo specchio moderne">Lampade allo specchio <b>moderne</b></a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/55nc-lampade-led-allo-specchio.asp" title="Lampade LED allo specchio">Lampade <b>LED</b> allo specchio</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/54nc-lampade-allo-specchio-moderne.asp" title="Lampade allo specchio moderne e classiche">Applique <b>moderne e classiche</b></a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/55nc-lampade-led-allo-specchio.asp" title="Lampade LED allo specchio">Applique <b>LED</b> allo specchio</a></li>
                                                     <li><a href="/illuminazione-interni-ed-esterni/56nc-specchi-con-luce.asp" title="Specchi con luce">Specchi <b>con luce</b></a></li>
                                                 </ul>
                                             </li>

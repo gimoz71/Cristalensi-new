@@ -41,7 +41,6 @@
 		Provincia=ss("Provincia")
 		CAP=ss("CAP")
 		Codice_SDI=ss("Codice_SDI")
-		Email_Pec=ss("Email_Pec")
 
 		TotaleGenerale=ss("TotaleGenerale")
 
@@ -338,7 +337,7 @@
 																								<p>
 										                              <%if Rag_Soc<>"" then%><%=Rag_Soc%>&nbsp;&nbsp;<%end if%><%if nominativo<>"" then%><%=nominativo%><%end if%>&nbsp;-&nbsp;
 										                              <%if Cod_Fisc<>"" then%>Codice fiscale: <%=Cod_Fisc%>&nbsp;&nbsp;<%end if%><%if PartitaIVA<>"" then%>Partita IVA: <%=PartitaIVA%>&nbsp;&nbsp;<%end if%>
-																									<%if Codice_SDI<>"" then%>SDI: <%=Codice_SDI%>&nbsp;&nbsp;<%end if%><%if Email_Pec<>"" then%>PEC: <%=Email_Pec%><%end if%>
+																									<%if Codice_SDI<>"" then%>SDI: <%=Codice_SDI%><%end if%>
 																									<br />
 										                              <%=indirizzo%>&nbsp;-&nbsp;<%=CAP%>&nbsp;-&nbsp;<%=Citta%><%if provincia<>"" then%>(<%=provincia%>)<%end if%>
 										                            </p>

@@ -101,7 +101,6 @@
 		Citta=os1("Citta")
 		Provincia=os1("Provincia")
 		Codice_SDI=os1("Codice_SDI")
-		Email_Pec=os1("Email_Pec")
 	else
 		Cod_Fisc=request("Cod_Fisc")
 		PartitaIVA=request("PartitaIVA")
@@ -110,7 +109,6 @@
 		Citta=request("Citta")
 		Provincia=request("Provincia")
 		Codice_SDI=request("Codice_SDI")
-		Email_Pec=request("Email_Pec")
 	end if
 
 	os1("Nominativo")=Nominativo
@@ -122,7 +120,6 @@
 	os1("Citta")=Citta
 	os1("Provincia")=Provincia
 	os1("Codice_SDI")=Codice_SDI
-	os1("Email_Pec")=Email_Pec
 
 	os1("DataAggiornamento")=now()
 	os1("IpOrdine")=Request.ServerVariables("REMOTE_ADDR")
@@ -230,7 +227,6 @@
   		CittaOrdine=ss("Citta")
   		ProvinciaOrdine=ss("Provincia")
 			Codice_SDIOrdine=ss("Codice_SDI")
-			Email_PecOrdine=ss("Email_Pec")
   	end if
   %>
     <div class="container content">
@@ -508,13 +504,7 @@
 						<div class="form-group clearfix">
 								<label for="Codice_SDI" class="col-sm-4 control-label">Codice SDI<br />(solo per Aziende)</label>
 								<div class="col-sm-8">
-										<input type="text" class="form-control" name="Codice_SDI" id="Codice_SDI" value="<%=Codice_SDIOrdine%>" maxlength="20">
-								</div>
-						</div>
-						<div class="form-group clearfix">
-								<label for="Email_Pec" class="col-sm-4 control-label">Email PEC</label>
-								<div class="col-sm-8">
-										<input type="text" class="form-control" name="Email_Pec" id="Email_Pec" value="<%=Email_PecOrdine%>" maxlength="50">
+										<input type="text" class="form-control" name="Codice_SDI" id="Codice_SDI" value="<%=Codice_SDIOrdine%>" maxlength="7">
 								</div>
 						</div>
 						<div class="form-group clearfix">
