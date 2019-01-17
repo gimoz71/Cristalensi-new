@@ -51,6 +51,7 @@
 		Provincia=ss("Provincia")
 		CAP=ss("CAP")
 		Codice_SDI=ss("Codice_SDI")
+		Email_PEC=ss("Email_PEC")
 
 		TotaleGenerale=ss("TotaleGenerale")
 
@@ -1014,9 +1015,9 @@ End If
                     <div class="col-md-12 top-buffer">
                         <p>
 													<%if Rag_Soc<>"" then%><%=Rag_Soc%>&nbsp;&nbsp;<%end if%><%if nominativo<>"" then%><%=nominativo%><%end if%><br />
-													<%if Cod_Fisc<>"" then%>Codice fiscale: <%=Cod_Fisc%>&nbsp;&nbsp;<%end if%><%if PartitaIVA<>"" then%>Partita IVA: <%=PartitaIVA%><%end if%>
-													<%if Codice_SDI<>"" then%>&nbsp;&nbsp;Codice SDI: <%=Codice_SDI%><%end if%><br />
-													<%if Len(indirizzo)>0 then%><%=indirizzo%><br /><%end if%>
+													<%if Cod_Fisc<>"" then%>Codice fiscale: <%=Cod_Fisc%>&nbsp;&nbsp;<%end if%><%if PartitaIVA<>"" then%>Partita IVA: <%=PartitaIVA%><%end if%><br />
+													<%if Codice_SDI<>"" then%>Codice SDI: <%=Codice_SDI%>&nbsp;&nbsp;<%end if%><%if Email_PEC<>"" then%>PEC: <%=Email_PEC%><%end if%><br />
+													<%if Len(indirizzo)>0 then%><%=indirizzo%>&nbsp;<%end if%>
 													<%=cap%>&nbsp;&nbsp;<%=citta%><%if provincia<>"" then%>&nbsp;(<%=provincia%>)&nbsp;<%end if%>
 												</p>
                     </div>

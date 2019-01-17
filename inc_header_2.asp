@@ -217,7 +217,7 @@
                                                 <ul class="list-unstyled plafoniere">
                                                     <li><a href="/illuminazione-interni-ed-esterni/69nc-plafoniere-esterne-moderne.asp" title="Plafoniere esterne moderne">Plafoniere esterne <b>moderne</b></a></li>
                                                     <li><a href="/illuminazione-interni-ed-esterni/74nc-lampade-esterne-classiche-a-soffitto.asp" title="Lampade esterne classiche a soffitto">Lampade esterne <b>classiche</b> a soffitto</a></li>
-                                                    <li><a href="/illuminazione-interni-ed-esterni/76nc-lampade-esterne-classiche-a-sospensione.asp" title="Lampade esterne classiche a sospensione">Lampade esterne <b>classiche</b> a sospensione</a></li>
+                                                    <li><a href="/illuminazione-interni-ed-esterni/76nc-lampade-esterne-classiche-a-sospensione.asp" title="Lampade esterne a sospensione">Lampade esterne a sospensione</a></li>
                                                     <li>&nbsp;</li>
                                                 </ul>
                                             </li>
