@@ -555,22 +555,26 @@ end if
 				</div>
 				<div class="clearfix"></div>
 				<div class="row">
+					<%if fkproduttore<>59 then%>
 					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
 						<div class="banner_2 banner_a">
 							<img src="/images/sconto_extra.png">
 
 						</div>
 					</div>
+					<%end if%>
 					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
 						<div class="banner_2 banner_b">
 							<img src="/images/spedizione_gratuita.png">
 						</div>
 					</div>
+					<%if fkproduttore<>59 then%>
 					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
 						<div class="banner_2 banner_c">
 							<img src="/images/sconto_bonifico.png">
 						</div>
 					</div>
+					<%end if%>
 				</div>
 				<!--#include virtual="/inc_box_contatti.asp"-->
 

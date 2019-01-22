@@ -843,7 +843,7 @@ End If
 								<input type="hidden" name="invoice" value="<%=INVNUM%>">
 								<input type="hidden" name="custom" value="Ordine n. <%=INVNUM%>">
 
-								<input type="submit" name="METHOD" value=" Clicca qui per Pagare adesso con PayPal! " class="btn btn-danger pull-left">
+								<input type="submit" name="METHOD" value=" &raquo; PAGA adesso con Carta di Credito o PayPal! " class="btn btn-danger pull-left">
 
 
 								</form>
@@ -877,7 +877,7 @@ End If
 														Do while not rs.EOF
 
 														Set url_prodotto_rs = Server.CreateObject("ADODB.Recordset")
-														sql = "SELECT PkId, NomePagina FROM Prodotti where PkId="&rs("FkProdotto")&""
+														sql = "SELECT PkId, NomePagina, FkProduttore FROM Prodotti where PkId="&rs("FkProdotto")&""
 														url_prodotto_rs.Open sql, conn, 1, 1
 
 														NomePagina=url_prodotto_rs("NomePagina")
@@ -886,6 +886,7 @@ End If
 														else
 															NomePagina="#"
 														end if
+														FkProduttore=url_prodotto_rs("FkProduttore")
 
 														url_prodotto_rs.close
 														%>
@@ -898,8 +899,11 @@ End If
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <h5 class="nomargin"><%=rs("titolo")%></h5>
-																						<p><strong>Codice: <%=rs("codicearticolo")%></strong></p>
-                                            <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: Bianco satinato<%=rs("lampadina")%><%end if%></p><%end if%>
+																						<p>
+																							<strong>Codice: <%=rs("codicearticolo")%></strong>
+																							<%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><br /><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: <%=rs("lampadina")%><%end if%><%end if%>
+																							<%if FkProduttore=59 then%><br /><span style="color:#a01010;"><strong><em>Sconti Extra non applicabili</em></strong></span><%end if%>
+																						</p>
                                         </div>
                                     </div>
                                 </td>

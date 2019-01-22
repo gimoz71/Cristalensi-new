@@ -126,6 +126,7 @@
 				PrezzoProdotto=prodotto_rs("PrezzoProdotto")
 				CodiceArticolo=prodotto_rs("CodiceArticolo")
 				TitoloProdotto=prodotto_rs("Titolo")
+				FkProduttore=prodotto_rs("FkProduttore")
 
 				prodotto_rs.close
 
@@ -155,6 +156,13 @@
 				riga_rs("lampadina")=Lampadina
 				riga_rs("CodiceArticolo")=CodiceArticolo
 				riga_rs("Titolo")=TitoloProdotto
+				if FkProduttore=59 then
+					'non si applicano sconti
+					riga_rs("Scontabile")=0
+				Else
+					'si applicano sconti
+					riga_rs("Scontabile")=1
+				end if
 				riga_rs("Data")=now()
 				riga_rs.update
 
@@ -164,14 +172,25 @@
 
 				'Calcolo la somma per l'ordine
 
+				'Set rs2 = Server.CreateObject("ADODB.Recordset")
+				'sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" GROUP BY FkOrdine"
+				'rs2.Open sql, conn, 3, 3
+				'		TotaleCarrello=rs2("TotaleCarrello")
+				'	if TotaleCarrello="" or isnull(TotaleCarrello) then TotaleCarrello=0
+				'rs2.close
+
 				Set rs2 = Server.CreateObject("ADODB.Recordset")
-				sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" GROUP BY FkOrdine"
+				sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" AND Scontabile=1 GROUP BY FkOrdine"
 				rs2.Open sql, conn, 3, 3
-					'if rs2.recordcount>0 then
-						TotaleCarrello=rs2("TotaleCarrello")
-						'response.write("TotaleCarrello:"&TotaleCarrello)
-					'end if
-					if TotaleCarrello="" or isnull(TotaleCarrello) then TotaleCarrello=0
+						TotaleCarrello_Scontabile_Si=rs2("TotaleCarrello")
+					if TotaleCarrello_Scontabile_Si="" or isnull(TotaleCarrello_Scontabile_Si) then TotaleCarrello_Scontabile_Si=0
+				rs2.close
+
+				Set rs2 = Server.CreateObject("ADODB.Recordset")
+				sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" AND Scontabile=0 GROUP BY FkOrdine"
+				rs2.Open sql, conn, 3, 3
+						TotaleCarrello_Scontabile_No=rs2("TotaleCarrello")
+					if TotaleCarrello_Scontabile_No="" or isnull(TotaleCarrello_Scontabile_No) then TotaleCarrello_Scontabile_No=0
 				rs2.close
 
 
@@ -181,24 +200,25 @@
 				'response.write("sql2:"&sql)
 				ss.Open sql, conn, 3, 3
 				if ss.recordcount>0 then
+					TotaleCarrello=TotaleCarrello_Scontabile_Si+TotaleCarrello_Scontabile_No
 					ss("TotaleCarrello")=TotaleCarrello
 
-					if TotaleCarrello>0 then
-						if TotaleCarrello<301 then
+					if TotaleCarrello_Scontabile_Si>0 then
+						if TotaleCarrello_Scontabile_Si<301 then
 							Sconto=0
-							TotaleGenerale=TotaleCarrello
+							TotaleGenerale=TotaleCarrello_Scontabile_Si+TotaleCarrello_Scontabile_No
 						end if
-						if TotaleCarrello>300 and TotaleCarrello<601 then
-							Sconto=((TotaleCarrello*2)/100)
-							TotaleGenerale=(TotaleCarrello-Sconto)
+						if TotaleCarrello_Scontabile_Si>300 and TotaleCarrello_Scontabile_Si<601 then
+							Sconto=((TotaleCarrello_Scontabile_Si*2)/100)
+							TotaleGenerale=(TotaleCarrello_Scontabile_Si-Sconto)+TotaleCarrello_Scontabile_No
 						end if
-						if TotaleCarrello>600 and TotaleCarrello<901 then
-							Sconto=((TotaleCarrello*3)/100)
-							TotaleGenerale=(TotaleCarrello-Sconto)
+						if TotaleCarrello_Scontabile_Si>600 and TotaleCarrello_Scontabile_Si<901 then
+							Sconto=((TotaleCarrello_Scontabile_Si*3)/100)
+							TotaleGenerale=(TotaleCarrello_Scontabile_Si-Sconto)+TotaleCarrello_Scontabile_No
 						end if
-						if TotaleCarrello>900 then
-							Sconto=((TotaleCarrello*4)/100)
-							TotaleGenerale=(TotaleCarrello-Sconto)
+						if TotaleCarrello_Scontabile_Si>900 then
+							Sconto=((TotaleCarrello_Scontabile_Si*4)/100)
+							TotaleGenerale=(TotaleCarrello_Scontabile_Si-Sconto)+TotaleCarrello_Scontabile_No
 						end if
 					Else
 						Sconto=0
@@ -356,7 +376,7 @@
 																		Do while not rs.EOF
 
 																		Set url_prodotto_rs = Server.CreateObject("ADODB.Recordset")
-																		sql = "SELECT PkId, NomePagina FROM Prodotti where PkId="&rs("FkProdotto")&""
+																		sql = "SELECT PkId, NomePagina, FkProduttore FROM Prodotti where PkId="&rs("FkProdotto")&""
 																		url_prodotto_rs.Open sql, conn, 1, 1
 
 																		NomePagina=url_prodotto_rs("NomePagina")
@@ -365,6 +385,7 @@
 																		else
 																			NomePagina="#"
 																		end if
+																		FkProduttore=url_prodotto_rs("FkProduttore")
 
 																		url_prodotto_rs.close
 																		%>
@@ -378,8 +399,11 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <h6 class="nomargin"><a href="<%=NomePagina%>" title="Scheda del prodotto: <%=NomePagina%>"><%=rs("titolo")%></a></h6>
-																										<p><strong>Codice: <%=rs("codicearticolo")%></strong></p>
-                                                    <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: <%=rs("lampadina")%><%end if%></p><%end if%>
+																										<p>
+																											<strong>Codice: <%=rs("codicearticolo")%></strong>
+                                                    	<%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><br /><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: <%=rs("lampadina")%><%end if%><%end if%>
+																											<%if FkProduttore=59 then%><br /><span style="color:#a01010;"><strong><em>Sconti Extra non applicabili</em></strong></span><%end if%>
+																										</p>
                                                 </div>
                                             </div>
                                         </td>

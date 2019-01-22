@@ -42,11 +42,25 @@
 	'end if
 	'**********modifica temporanea
 
+	Set rs2 = Server.CreateObject("ADODB.Recordset")
+	sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" AND Scontabile=1 GROUP BY FkOrdine"
+	rs2.Open sql, conn, 3, 3
+			TotaleCarrello_Scontabile_Si=rs2("TotaleCarrello")
+		if TotaleCarrello_Scontabile_Si="" or isnull(TotaleCarrello_Scontabile_Si) then TotaleCarrello_Scontabile_Si=0
+	rs2.close
+
+	Set rs2 = Server.CreateObject("ADODB.Recordset")
+	sql = "SELECT FkOrdine, SUM(TotaleRiga) AS TotaleCarrello FROM RigheOrdine WHERE FkOrdine="&IdOrdine&" AND Scontabile=0 GROUP BY FkOrdine"
+	rs2.Open sql, conn, 3, 3
+			TotaleCarrello_Scontabile_No=rs2("TotaleCarrello")
+		if TotaleCarrello_Scontabile_No="" or isnull(TotaleCarrello_Scontabile_No) then TotaleCarrello_Scontabile_No=0
+	rs2.close
+
 	Set os1 = Server.CreateObject("ADODB.Recordset")
 	sql = "SELECT * FROM Ordini where PkId="&idOrdine
 	os1.Open sql, conn, 3, 3
 
-	TotaleCarrello=os1("TotaleCarrello")
+	'TotaleCarrello=os1("TotaleCarrello")
 	Sconto=os1("Sconto")
 	CostoSpedizione=os1("CostoSpedizione")
 
@@ -54,7 +68,7 @@
 		CostoPagamento=CostoPagamentoScelto
 	end if
 	if TipoCostoPagamentoScelto=2 or TipoCostoPagamentoScelto=5 then
-		CostoPagamento=((TotaleCarrello-Sconto+CostoSpedizione)*CostoPagamentoScelto)/100
+		CostoPagamento=((TotaleCarrello_Scontabile_Si-Sconto+CostoSpedizione)*CostoPagamentoScelto)/100
 	end if
 	if TipoCostoPagamentoScelto=3 then
 		CostoPagamento=0
@@ -67,9 +81,9 @@
 	os1("CostoPagamento")=CostoPagamento
 	'TotaleGnerale_AG=TotaleCarrello+CostoSpedizione+CostoPagamento
 	if TipoCostoPagamentoScelto=4 or TipoCostoPagamentoScelto=5 then
-		os1("TotaleGenerale")=TotaleCarrello-Sconto+CostoSpedizione-CostoPagamento
+		os1("TotaleGenerale")=TotaleCarrello_Scontabile_No+TotaleCarrello_Scontabile_Si-Sconto+CostoSpedizione-CostoPagamento
 	else
-		os1("TotaleGenerale")=TotaleCarrello-Sconto+CostoSpedizione+CostoPagamento
+		os1("TotaleGenerale")=TotaleCarrello_Scontabile_No+TotaleCarrello_Scontabile_Si-Sconto+CostoSpedizione+CostoPagamento
 	end if
 	os1("FkCliente")=idsession
 
@@ -305,7 +319,7 @@
 														Do while not rs.EOF
 
 														Set url_prodotto_rs = Server.CreateObject("ADODB.Recordset")
-														sql = "SELECT PkId, NomePagina FROM Prodotti where PkId="&rs("FkProdotto")&""
+														sql = "SELECT PkId, NomePagina, FkProduttore FROM Prodotti where PkId="&rs("FkProdotto")&""
 														url_prodotto_rs.Open sql, conn, 1, 1
 
 														NomePagina=url_prodotto_rs("NomePagina")
@@ -314,6 +328,7 @@
 														else
 															NomePagina="#"
 														end if
+														FkProduttore=url_prodotto_rs("FkProduttore")
 
 														url_prodotto_rs.close
 														%>
@@ -326,8 +341,11 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <h5 class="nomargin"><%=rs("titolo")%></h5>
-																						<p><strong>Codice: <%=rs("codicearticolo")%></strong></p>
-                                            <%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><p><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: Bianco satinato<%=rs("lampadina")%><%end if%></p><%end if%>
+																						<p>
+																							<strong>Codice: <%=rs("codicearticolo")%></strong>
+																							<%if Len(rs("colore"))>0 or Len(rs("lampadina"))>0 then%><br /><%if Len(rs("colore"))>0 then%>Col.: <%=rs("colore")%><%end if%><%if Len(rs("lampadina"))>0 then%> - Lamp.: <%=rs("lampadina")%><%end if%><%end if%>
+																							<%if FkProduttore=59 then%><br /><span style="color:#a01010;"><strong><em>Sconti Extra non applicabili</em></strong></span><%end if%>
+																						</p>
                                         </div>
                                     </div>
                                 </td>
