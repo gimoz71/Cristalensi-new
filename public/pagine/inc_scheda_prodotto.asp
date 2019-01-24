@@ -562,6 +562,12 @@ end if
 
 						</div>
 					</div>
+					<%else%>
+					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
+						<div class="banner_2 banner_c">
+							<a data-fancybox data-src="#hidden-content" href="javascript:;"><img src="/images/preventivo_extra.png"></a>
+						</div>
+					</div>
 					<%end if%>
 					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
 						<div class="banner_2 banner_b">

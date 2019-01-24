@@ -52,7 +52,8 @@
                 <div class="col-md-8">
                     <h1 class="slogan">Commenti su i prodotti di illuminazione acquistati</h1>
                     <p class="main-description">
-                        In un ottica di trasparenza, di avvicinamento alla clientela e di miglioramento dei nostri servizi abbiamo aperto quest'area dove i clienti possono lasciare un messaggio, un commento, un complimento o una critica al funzionamento del sito internet, una recensione sui prodotti di illuminazione acquistati ma anche ai servizi dello staff stesso.<br />Per inviare un commento si dovr&agrave; essere registrati sul sito internet e i messaggi inviati saranno approvati dallo staff per evitare che siano pubblicati testi offensivi o inserire link pubblicitari verso altri siti internet.
+                        In un ottica di trasparenza, di avvicinamento alla clientela e di miglioramento dei nostri servizi abbiamo aperto quest'area dove i clienti possono lasciare un messaggio, un commento, un complimento o una critica al funzionamento del sito internet, una recensione sui prodotti di illuminazione acquistati ma anche ai servizi dello staff stesso.<br />Per inviare un commento si dovr&agrave; essere registrati sul sito internet e i messaggi inviati saranno approvati dallo staff per evitare che siano pubblicati testi offensivi o inserire link pubblicitari verso altri siti internet.<br />
+                        <a href="/commenti_form.asp" class="btn btn-default btn-warning pull-right" title="Lascia il tuo commento!">Inserisci anche te un commento! <i class="fa fa-chevron-right"></i></a>
                     </p>
                     <%
                     Set com_rs = Server.CreateObject("ADODB.Recordset")
@@ -72,7 +73,7 @@
                         com_rs.movenext
                         loop
                         %>
-                        <div class="panel-footer"><a href="/commenti_form.asp" class="btn btn-success">Inserisci anche te un commento! <i class="fa fa-chevron-right"></i></a></div>
+                        <div class="panel-footer"><a href="/commenti_form.asp" class="btn btn-warning">Inserisci anche te un commento! <i class="fa fa-chevron-right"></i></a></div>
                         </ul>
 
                     </div>
@@ -82,39 +83,21 @@
                     %>
                 </div>
                 <div class="col-md-4">
-                    <div class="banner preventivi overflowContainer">
-                        <h3 class="title">Preventivi personalizzati</h3>
-                        <p class="text">Per ordini superiori a 500&euro; contatta il nostro personale... <strong>sconti speciali!</strong></p>
-                    </div>
-                    <div class="banner pagamenti overflowContainer">
-                        <h3 class="title">Sito internet e pagamenti sicuri</h3>
-                        <p class="text">Contrassegno, Bonifico Bancario, PostePay e Carte di Credito con Sistema Garantito di PayPal
-                        </p>
-                    </div>
-                    <div class="banner consegne overflowContainer">
-                        <h3 class="title">Consegne</h3>
-                        <p class="text">confezionamento accurato e spedizione assicurata GRATUITA in tutta Italia per ordini superiori a 250&euro;</p>
-                    </div>
+                  <div class="banner preventivi overflowContainer">
+                      <h3 class="title">Super Promo d'Inverno</h3>
+                      <p class="text"><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
+                  </div>
+                  <div class="banner pagamenti overflowContainer">
+                      <h3 class="title">Paga in sicurezza!</h3>
+                      <p class="text"><strong><em>PAGAMENTO CON BONIFICO: -2%</em></strong><br />Altri pagamenti disponibili:<br />Carte di Credito e PayPal, PostePay e Contrassegno in contanti alla consegna.
+                      </p>
+                  </div>
+                  <div class="banner consegne overflowContainer">
+                      <h3 class="title">SPEDIZIONI ASSICURATE</h3>
+                      <p class="text">Consegna <u>GRATUITA</u> in tutta Italia per ordini superiori a 250&euro;<br />Per ordini fino a 250&euro;: 10&euro;</p>
+                  </div>
 
-    								<!--condizioni di vendita-->
-                    <div class="panel panel-default payment-list">
-    										<!-- Default panel contents -->
-    										<div class="panel-heading">
-    											<h5>Condizioni di vendita</h5>
-    										</div>
-    										<ul class="list-group">
-    											<li class="list-group-item"><strong>SPEDIZIONE ASSICURATA IN TUTTA ITALIA</strong></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini superiori a 250&euro;:</em><div style="float: right;"><em><strong>0&euro;</strong></em></div></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Per ordini fino a  250&euro;:</em><div style="float: right;"><em><strong>10&euro;</strong></em></div></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Ritiro in sede:</em><div style="float: right;"><em><strong>0&euro;</strong></em></div></li>
-    											<li class="list-group-item">&nbsp;</li>
-    											<li class="list-group-item"><strong>PAGAMENTI SICURI</strong></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Bonifico e PostePay:</em><div style="float: right;"><em><strong>0&euro;</strong></em></div></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Carte di credito e prepagate:</em><div style="float: right;"><em><strong>0&euro;</strong></em></div></li>
-    											<li class="list-group-item"><i class="fa fa-check"></i> <em>Contrassegno in contanti:</em><div style="float: right;"><em><strong>4&euro;</strong></em></div></li>
-    										</ul>
-    										<div class="panel-footer"><a href="/condizioni_di_vendita.asp" class="btn btn-default">Condizioni di vendita <i class="fa fa-chevron-right"></i></a></div>
-    								</div>
+
                     <!--#include file="inc_box_contatti.asp"-->
                 </div>
             </div>
