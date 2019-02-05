@@ -29,7 +29,7 @@ gr_rs.close
 <html>
 
 <head>
-    <title><%=Title%> <%if Len(Titolo_2)>0 and Titolo_2<>Title then%> Vendita online<%else%> Vendita online <%=Titolo_1_gr%><%end if%></title>
+    <title><%=Title%> <%if Len(Titolo_2)>0 and Titolo_2<>Title then%> <%else%> Vendita online <%=Titolo_1_gr%><%end if%></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%if Len(Description)>0 then%><%=Description%><%else%>Da Cristalensi trovi un'ampia offeta di <%=Titolo_1%> <%if Len(Titolo_2)>0 and Titolo_2<>Titolo_1 then%> e <%=Titolo_2%><%end if%>: sconti online su tutta la vendita di prodotti per l'illuminazione<%end if%>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
