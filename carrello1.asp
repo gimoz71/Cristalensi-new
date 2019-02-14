@@ -536,7 +536,7 @@
         </div>
 
 				<div class="col-md-8">
-					<div class="col-md-6">
+					<div class="col-md-6" style="clear: both;">
 						<div class="panel panel-default payment-list">
 							<div class="panel-heading">
 								<h5>Spedizioni</h5>
