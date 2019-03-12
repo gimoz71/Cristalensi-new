@@ -849,7 +849,51 @@ End If
 								</form>
 								<br><br>
 						<%end if%>
+						<%if FkPagamento=6 then%>
+							<div class="col-md-12">
+							<p class="description">
+								Grazie per aver scelto i nostri prodotti,<br>
+								per completare l'ordine &egrave; necessario effettuare il pagamento con i sistemi sicuri di Stripe protetti dai loro protocolli di sicurezza.<br>Stripe permette di pagare con moltissime carte di credito e carte ricaribili garantendo massima potezione per i dati.<br>
+								<br><br>
+							</p>
+							<div class="col-md-8">
+								<form action="stripe.asp" method="post" id="payment-form" class="form-horizontal">
+									<input type="hidden" name="orderId" id="orderId" value="<%=IdOrdine%>" />
+									<input type="hidden" name="totale_da_pagare" id="totale_da_pagare" value="<%=Replace(FormatNumber(TotaleGenerale,2), ",", "")%>" />
 
+	                    <div class="title">
+	                        <h4>Dati carta di credito</h4>
+	                    </div>
+	                    <div class="col-md-12" style="padding-top: 20px;">
+													<div class="form-group clearfix">
+															<label for="nominativo" class="col-sm-6 control-label">Numero carta</label>
+															<div class="col-sm-6">
+																	<input type="text" class="form-control" name="card-number" id="card-number" value="">
+															</div>
+													</div>
+													<div class="form-group clearfix">
+															<label for="cod_fisc" class="col-sm-6 control-label">CVC</label>
+															<div class="col-sm-6">
+																	<input type="text" class="form-control" name="card-cvc" id="card-cvc" value="" size="5" maxlength="3" style="width: 50px; text-align: left;">
+															</div>
+													</div>
+													<div class="form-group clearfix">
+															<label for="cod_fisc" class="col-sm-6 control-label">Data di scadenza (MM/YY)</label>
+															<div class="col-sm-6">
+																	<input type="text" class="form-control" name="card-month" id="card-month" value="" maxlength="2" style="width: 50px; text-align: left; display: inline;">&nbsp&nbsp/&nbsp&nbsp<input type="text" class="form-control" name="card-year" id="card-year" value="" maxlength="2" style="width: 50px; text-align: left; display: inline;">
+															</div>
+													</div>
+													<div class="form-group clearfix">
+															<div class="col-sm-12">
+																	<input type="submit" name="METHOD" value=" &raquo; PAGA adesso con Carta di Credito! " class="btn btn-danger pull-right">
+															</div>
+													</div>
+											</div>
+										</form>
+								</div>
+							</div>
+								<br><br>
+						<%end if%>
 
 
 						</div>
