@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--#include file="inc_strConn.asp"-->
 <%
 	mode=request("mode")
@@ -82,11 +83,11 @@
 	else
 		os1("stato")=2
 
-		Nominativo_sp=request("Nominativo_sp")
+		Nominativo_sp=NoLettAccDescrizioni(request("Nominativo_sp"))
 		Telefono_sp=request("Telefono_sp")
-		Indirizzo_sp=request("Indirizzo_sp")
+		Indirizzo_sp=NoLettAccDescrizioni(request.form("Indirizzo_sp"))
 		CAP_sp=request("CAP_sp")
-		Citta_sp=request("Citta_sp")
+		Citta_sp=NoLettAccDescrizioni(request.form("Citta_sp"))
 		Provincia_sp=request("Provincia_sp")
 		Nazione_sp=request("Nazione_sp")
 
@@ -108,11 +109,11 @@
 	if mode=1 and TipoCostoTrasportoScelto=10 then response.Redirect("/carrello2extra.asp")
 
 %>
-<!DOCTYPE html>
 <html>
 
 <head>
     <title>Cristalensi</title>
+		<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Cristalensi.">
     <meta name="keywords" content="">
@@ -328,7 +329,7 @@
                 </div>
             </div>
         </div>
-				<form name="modulocarrello" id="modulocarrello" class="form-horizontal">
+				<form name="modulocarrello" id="modulocarrello" class="form-horizontal" method="post">
         <div class="col-md-12">
             <div class="title">
                 <h4><span class="visible-xs" style="padding-top: 20px;">Dati di spedizione - Passo 3 di 5</span></h4>
