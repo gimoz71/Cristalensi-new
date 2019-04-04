@@ -28,7 +28,7 @@
 			HTML1 = HTML1 & "<table width='553' border='0' cellspacing='0' cellpadding='0'>"
 			HTML1 = HTML1 & "<tr>"
 			HTML1 = HTML1 & "<td>"
-			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Grazie "&nominativo_email&" per aver scelto i nostri prodotti!<br>Questa &egrave; un email di conferma per la richiesta di calcolo dei costi di spedizione per proseguire l'ordine n&deg; "&idordine&".<br> Nelle prossime ore (max 24h) ricever&agrave; una comunicazione della possibilit&agrave; di completare l'ordine. A questo punto &egrave; necessario inserire Login e Password nell'Area clienti della Home Page, cliccare sul link ""I miei ordini"" e cliccare sull'ordine iniziato. Per completare l'ordine dovr&agrave; scegliere la modalit&agrave; di pagamento (Bonifico bancario oppure pagamento attraverso PayPal con carte di credito o prepagate).</font><br>"
+			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000>Grazie "&nominativo_email&" per aver scelto i nostri prodotti!<br>Questa &egrave; un email di conferma per la richiesta di calcolo dei costi di spedizione per proseguire l'ordine n&deg; "&idordine&".<br> Nelle prossime ore (max 24h) ricever&agrave; una comunicazione della possibilit&agrave; di completare l'ordine. A questo punto &egrave; necessario inserire Login e Password nell'Area clienti della Home Page, cliccare sul link ""I miei ordini"" e cliccare sull'ordine iniziato. Per completare l'ordine dovr&agrave; scegliere la modalit&agrave; di pagamento (Bonifico bancario oppure pagamento con carte di credito o prepagate).</font><br>"
 			HTML1 = HTML1 & "<font face=Verdana size=3 color=#000000><br><br>Cordiali Saluti, lo staff di Cristalensi</font>"
 			HTML1 = HTML1 & "</td>"
 			HTML1 = HTML1 & "</tr>"
@@ -186,9 +186,9 @@
 
 <head>
     <title>Cristalensi</title>
+		<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Cristalensi.">
-    <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:description" content="Cristalensi.">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
