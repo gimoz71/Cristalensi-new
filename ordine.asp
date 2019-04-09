@@ -859,7 +859,11 @@ End If
 							<div class="col-md-8">
 								<form action="stripe.asp" method="post" id="payment-form" class="form-horizontal">
 									<input type="hidden" name="orderId" id="orderId" value="<%=IdOrdine%>" />
-									<input type="hidden" name="totale_da_pagare" id="totale_da_pagare" value="<%=Replace(FormatNumber(TotaleGenerale,2), ",", "")%>" />
+									<%
+									TotaleGenerale_STR=Replace(FormatNumber(TotaleGenerale,2), ",", "")
+									TotaleGenerale_STR=Replace(TotaleGenerale_STR, ".", "")
+									%>
+									<input type="hidden" name="totale_da_pagare" id="totale_da_pagare" value="<%=TotaleGenerale_STR%>" />
 
 	                    <div class="title">
 	                        <h4>Dati carta di credito</h4>
