@@ -102,8 +102,8 @@
 		os1("stato")=3
 	end if
 
-	Nominativo=request("Nominativo")
-	Rag_Soc=request("Rag_Soc")
+	Nominativo=NoLettAccDescrizioni(request("Nominativo"))
+	Rag_Soc=NoLettAccDescrizioni(request("Rag_Soc"))
 
 	if Nominativo="" and Rag_Soc="" then
 		Nominativo=os1("Nominativo")
@@ -119,10 +119,10 @@
 	else
 		Cod_Fisc=request("Cod_Fisc")
 		PartitaIVA=request("PartitaIVA")
-		Indirizzo=request("Indirizzo")
+		Indirizzo=NoLettAccDescrizioni(request("Indirizzo"))
 		CAP=request("CAP")
-		Citta=request("Citta")
-		Provincia=request("Provincia")
+		Citta=NoLettAccDescrizioni(request("Citta"))
+		Provincia=NoLettAccDescrizioni(request("Provincia"))
 		Codice_SDI=request("Codice_SDI")
 		Email_PEC=request("Email_PEC")
 	end if
@@ -462,6 +462,9 @@
 
 																TipoCosto=trasp_rs("TipoCosto")
 																if TipoCosto="" then TipoCosto=3
+
+																'condizione specifica per pagamento in contrassegno'
+																if not (PkIdPagamento=3 and ss("TotaleCarrello")>500) then
 																%>
 																<tr>
                                     <td data-th="Product" class="cart-product">
@@ -478,6 +481,8 @@
                                     <td data-th="Subtotal"><%if PkIdPagamento=PkIdPagamentoScelto then%><%if TipoCosto=4 or TipoCosto=5 then%>-<%end if%><%=FormatNumber(CostoPagamentoTotale,2)%>&#8364;<%else%>-<%end if%></td>
                                 </tr>
 																<%
+																end if
+
 																trasp_rs.movenext
 																loop
 																%>

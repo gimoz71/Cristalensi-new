@@ -26,7 +26,7 @@
 		cli_rs.Open sql, conn, 3, 3
 		cli_rs.addnew
 			cli_rs("PkId")=pkid_commento
-			cli_rs("Testo")=request("Testo")
+			cli_rs("Testo")=NoLettAccDescrizioni(request("Testo"))
 			cli_rs("Valutazione")=request("Valutazione")
 			cli_rs("FkIscritto")=idsession
 			cli_rs("Data")=now()
@@ -214,6 +214,7 @@
 
 <head>
     <title>Commenti prodotti illuminazione recensioni lampadari acquistati Cristalensi</title>
+		<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Lascia un commento per i prodotti di illuminazione acquistati. Inserisci una recensione di un lampadario comprato. In un ottica di trasparenza, di avvicinamento alla clientela e di miglioramento dei nostri servizi abbiamo aperto quest'area dove i clienti possono lasciare un messaggio, un commento, un complimento o una critica al funzionamento del sito internet, ai prodotti di illuminazione comprati ma anche ai servizi dello staff stesso.">
     <meta name="keywords" content="">

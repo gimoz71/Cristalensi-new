@@ -95,6 +95,7 @@
 
 <head>
     <title>Cristalensi - Ordine n. <%=idordine%> - Data <%=Left(DataAggiornamento, 10)%></title>
+		<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Cristalensi.">
     <meta name="keywords" content="">
