@@ -81,6 +81,10 @@ gr_rs.close
     <!--#include virtual="/inc_header_1.asp"-->
     <!--#include virtual="/inc_header_2.asp"-->
     <div class="container content">
+        <div class="row hidden">
+            <div class="col-md-12 parentOverflowContainer">
+            </div>
+        </div>
         <div class="col-xl-12">
             <ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
                 <li itemprop="itemListElement" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item" title="Cristalensi Vendita lampadari online"><span itemprop="name"><i class="fa fa-home"></i></span></a><meta itemprop="position" content="1" /></li>
@@ -135,13 +139,13 @@ gr_rs.close
                     <p class="text" style="padding-left: 40px;"><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
                 </div>
                 <div class="banner pagamenti">
-                    <h3 class="title">Paga in sicurezza!</h3>
-                    <p class="text"><strong><em>PAGHI CON BONIFICO? -2%</em></strong><br />Altri pagamenti disponibili:<br />Carte di Credito e PayPal, PostePay e Contrassegno.
+                    <h3 class="title">PAGHI CON BONIFICO? -2%</h3>
+                    <p class="text"><br />Altri pagamenti disponibili:<br />Carte di Credito e Prepagate, PostePay e Contrassegno.
                     </p>
                 </div>
                 <div class="banner consegne">
                     <h3 class="title">SPEDIZIONI ASSICURATE</h3>
-                    <p class="text">Consegna <u>GRATUITA</u> in tutta Italia per ordini superiori a 250&euro;<br />Per ordini fino a 250&euro;: 10&euro;</p>
+                    <p class="text"><br />Consegna <strong><u>GRATUITA</u></strong> in tutta Italia per ordini superiori a 250&euro;<br />Per ordini fino a 250&euro;: 10&euro;</p>
                 </div>
             </div>
         </div>
