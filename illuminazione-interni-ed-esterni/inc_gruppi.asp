@@ -124,7 +124,7 @@ gr_rs.close
 
                 </nav>
                 <div class="banner preventivi">
-                    <h3 class="title">Super Promo d'Inverno</h3>
+                    <h3 class="title">Promo Primavera/Estate</h3>
                     <p class="text" style="padding-left: 40px;"><strong><em>Sconti Extra in Carrello</em></strong><br />-2% Oltre 300&nbsp&euro;<br />-3% Oltre 600&nbsp&euro;<br />-4% Oltre 900&nbsp&euro;</strong></p>
                 </div>
                 <div class="banner pagamenti">
