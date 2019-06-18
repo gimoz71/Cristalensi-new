@@ -275,6 +275,14 @@ end if
 														img_rs.close
 														%>
 													</div>
+													<%if fkproduttore=59 then%>
+													<%richiesta_prev=1%>
+													<div class="clearfix"></div>
+													<div class="panel panel-default" style="margin: 10px 0px 30px 0px;">
+														<a data-fancybox data-src="#hidden-content-prev" href="javascript:;" class="btn launch btn-warning btn-block" style="white-space: normal; padding: 10px 0px;"><i class="fa fa-info-circle"></i>   Vuoi un preventivo su misura? Contattaci!</a>
+													</div>
+													<div class="clearfix"></div>
+													<%end if%>
 												<div class="row">
 													<div class="col-md-12">
 													<div class="scheda-descrizione">
@@ -563,11 +571,11 @@ end if
 						</div>
 					</div>
 					<%else%>
-					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
+					<!--<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
 						<div class="banner_2 banner_c">
 							<a data-fancybox data-src="#hidden-content" href="javascript:;"><img src="/images/preventivo_extra.png"></a>
 						</div>
-					</div>
+					</div>-->
 					<%end if%>
 					<div class="col-lg-12 col-md-12 col-sm-4 col-xsl-4 col-xs-12">
 						<div class="banner_2 banner_b">
