@@ -23,7 +23,8 @@ Set stripe = New cStripeFunctions
 
 'stripe.ApiKey = "sk_test_gy4Z9LsaI1Tt2kBo4KCgYsKk"
 
-stripe.ApiKey = "sk_live_TI73VpEZ4ITzmQFZkNDZs8nT"
+stripe.ApiKey = ""
+'rimettere la ApiKey Live quando devo fare le modifiche
 
 'Response.Write "<pre>Ordine OK - OrderId: " & responseCharge.data("metadata")("orderId") & "</pre>"
 
