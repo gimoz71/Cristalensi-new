@@ -1,4 +1,5 @@
 <!--#include file="inc_strConn.asp"-->
+<!--#include file="cStripeFunctions.asp"-->
 <%
 	Call Visualizzazione("",0,"ordine.asp")
 
@@ -18,7 +19,9 @@
 	session("ordine_shop")=""
 	'******* DA COMMENTARE QUANDO SI METTE IN TEST
 
-
+	Set stripeFunc = New cStripeFunctions
+	guid=stripeFunc.createWindowsGUID()
+	
 	Set ss = Server.CreateObject("ADODB.Recordset")
 	sql = "SELECT * FROM Ordini where pkid="&idOrdine
 	ss.Open sql, conn, 3, 3
@@ -859,6 +862,7 @@ End If
 							<div class="col-md-8">
 								<form action="stripe.asp" method="post" id="payment-form" class="form-horizontal">
 									<input type="hidden" name="orderId" id="orderId" value="<%=IdOrdine%>" />
+									<input type="hidden" name="paymentId" id="paymentId" value="<%=guid%>" />
 									<%
 									TotaleGenerale_STR=Replace(FormatNumber(TotaleGenerale,2), ",", "")
 									TotaleGenerale_STR=Replace(TotaleGenerale_STR, ".", "")

@@ -10,6 +10,7 @@ cvc = Request.Form("card-cvc")
 month = Request.Form("card-month")
 year = Request.Form("card-year")
 orderId = Request.Form("orderId")
+paymentId = Request.Form("paymentId")
 totale_da_pagare = Request.Form("totale_da_pagare")
 
 'aspLog("number=" & number)
@@ -20,19 +21,28 @@ aspLog("orderId=" & orderId)
 
 Set stripe = New cStripeFunctions
 
+'stripe.ApiKey = "sk_test_gy4Z9LsaI1Tt2kBo4KCgYsKk"
+
 stripe.ApiKey = "sk_live_TI73VpEZ4ITzmQFZkNDZs8nT"
 
 'Response.Write "<pre>Ordine OK - OrderId: " & responseCharge.data("metadata")("orderId") & "</pre>"
 
 Dim result
 
-result = stripe.createToken(month, year, cvc, number)
+'''------------- Vecchio metodo ---------------- '''
+'result = stripe.createToken(month, year, cvc, number)
+
+''' ------------- Nuovo metodo ----------------- '''
+result = stripe.createPaymentMethods("card", month, year, cvc, number)
 
 aspLog(result)
 
 if (result<>"KO") then
 	'Wscript.Echo("passo dal chargeCardWithToken")
-	result = stripe.chargeCardWithToken(result, totale_da_pagare, "eur", orderId)
+	'''------------- Vecchio metodo ---------------- '''
+	'result = stripe.chargeCardWithToken(result, totale_da_pagare, "eur", orderId)
+	''' ------------- Nuovo metodo ----------------- '''
+	result = stripe.paymentIntent(result, totale_da_pagare, "eur", orderId, paymentId)
 End If
 
 if (result<>"KO") then

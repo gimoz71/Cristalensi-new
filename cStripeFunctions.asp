@@ -5,6 +5,8 @@
 
 dim responseCharge,stripeURLCharge,stripeURLToken,returnMessage,Risultato
 
+stripeURLPaymentMethods = "https://api.stripe.com/v1/payment_methods"
+stripeURLPaymentIntent = "https://api.stripe.com/v1/payment_intents"
 stripeURLCharge = "https://api.stripe.com/v1/charges"
 stripeURLToken = "https://api.stripe.com/v1/tokens"
 
@@ -27,8 +29,25 @@ Public Property Let ApiKey(p_Data)
     ApiKeyVar = p_Data
 End Property
 
+Function createWindowsGUID()
+  createWindowsGUID = createGUID(8) & "-" & _
+    createGUID(4) & "-" & _
+    createGUID(4) & "-" & _
+    createGUID(4) & "-" & _
+    createGUID(12)
+End Function
 
-Private Function makeStripeAPICall(url,requestBody)
+Function createGUID(tmpLength)
+  Randomize Timer
+  Dim tmpCounter,tmpGUID
+  Const strValid = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  For tmpCounter = 1 To tmpLength
+    tmpGUID = tmpGUID & Mid(strValid, Int(Rnd(1) * Len(strValid)) + 1, 1)
+  Next
+  createGUID = tmpGUID
+End Function
+
+Private Function makeStripeAPICall(url,requestBody,idempotencyKey)
 
 
     Set oJSON = New aspJSON
@@ -42,7 +61,10 @@ Private Function makeStripeAPICall(url,requestBody)
     On Error Resume Next
     objXmlHttpMain.open "POST", url, False
     objXmlHttpMain.setRequestHeader "Authorization", "Bearer "& apikey
-    objXmlHttpMain.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
+    objXmlHttpMain.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"	
+	if (idempotencyKey<>"") Then
+		objXmlHttpMain.setRequestHeader "Idempotency-Key", idempotencyKey
+	End If
     objXmlHttpMain.send requestBody
 
 	'Load JSON string
@@ -107,7 +129,7 @@ public Function createToken(month, year, cvc, number)
     cardDetails = "card[exp_month]="& month &"&card[exp_year]="& year &"&card[number]="& number &"&card[cvc]="& cvc
     requestBody = "card[object]=card&"& cardDetails
 
-    set result = makeStripeAPICall(stripeURLToken,requestBody)
+    set result = makeStripeAPICall(stripeURLToken,requestBody,"")
 
     'Wscript.Echo result
     'Load JSON string
@@ -123,13 +145,31 @@ public Function createToken(month, year, cvc, number)
 	End If
 End Function
 
+public Function createPaymentMethods(typeCard, month, year, cvc, number)
+    Dim cardDetails,typeDetails, requestBody,result
+
+    typeDetails = "type="& typeCard
+    cardDetails = "&card[exp_month]="& month &"&card[exp_year]="& year &"&card[number]="& number &"&card[cvc]="& cvc
+    requestBody = typeDetails & cardDetails
+	
+	
+    set result = makeStripeAPICall(stripeURLPaymentMethods,requestBody,"")
+
+    If (result is Nothing) Then 
+		createPaymentMethods="KO"
+	else
+		createPaymentMethods = result.data("id")
+	End If
+End Function
+
 public Function chargeCardWithToken(token, cost,curr,orderId)
     Dim requestBody,metaDataDetails
     metaDataDetails = "&metadata[orderId]="& orderId
     requestBody = "currency="& curr &"&amount="& cost &"&source="& token & metaDataDetails
 
+
     'set chargeCardWithToken = makeStripeAPICall(stripeURLCharge,requestBody)
-	set result = makeStripeAPICall(StripeURLCharge,requestBody)
+	set result = makeStripeAPICall(StripeURLCharge,requestBody,"")
 	
 	If (result is Nothing) Then
 		chargeCardWithToken="KO"
@@ -138,6 +178,20 @@ public Function chargeCardWithToken(token, cost,curr,orderId)
 	End If
 End Function
 
+public Function paymentIntent(methodId, cost,curr,orderId,paymentId)
+    Dim requestBody,metaDataDetails
+    
+	metaDataDetails = "&metadata[orderId]="& orderId
+    requestBody = "confirm=true&" &"confirmation_method=automatic&" &"currency="& curr &"&amount="& cost &"&payment_method="& methodId & metaDataDetails
+	
+    set result = makeStripeAPICall(stripeURLPaymentIntent,requestBody,paymentId)
+	
+	If (result is Nothing) Then
+		paymentIntent="KO"
+	else
+		paymentIntent = result.data("metadata")("orderId")
+	End If
+End Function
 
 
 

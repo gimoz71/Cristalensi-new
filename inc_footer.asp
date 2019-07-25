@@ -75,6 +75,7 @@
                 <ul>
                     <li>
                       <img src="/images/metodi-di-pagamento.jpg" alt="Metodi di pagamento" />
+                      <img src="/images/logo-cristalensi.png" alt="Cristalensi Vendita Lampadari Online" style="display: none;" />
                     </li>
                 </ul>
             </div>
