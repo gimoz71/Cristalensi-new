@@ -1,4 +1,5 @@
-<!--<meta name="google-site-verification" content="4Pno_x3W_sfOLqaTpUk-z2OMJg8LPzzt-JiBFoMYZcQ" />-->
+		<meta property="og:image" content="https://cristalensi.it/images/logo-cristalensi.png" />
+		<!--<meta name="google-site-verification" content="4Pno_x3W_sfOLqaTpUk-z2OMJg8LPzzt-JiBFoMYZcQ" />-->
         <!--Codice Statistiche Google Analytics Iury Mazzoni ## NON CANCELLARE!! ## -->
 		<script>
 

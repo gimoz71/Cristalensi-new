@@ -22,15 +22,16 @@ testo_footer_8="Nel settore dell’illuminazione e dell’arredamento uno spazio
 <html>
 
 <head>
-    <title>Vendita lampadari online: illuminazione interni e illuminazione da esterno</title>
+    <title>Vendita lampadari online: illuminazione per interni e da esterno | Cristalensi</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Cristalensi, specializzato in vendita di lampadari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Trovi ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso, vetro Murano e lampade a LED.">
+    <meta name="description" content="Cristalensi, specializzato in vendita di lampadari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso e a LED.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="Vendita lampadari online: illuminazione interni e illuminazione da esterno">
-    <meta property="og:description" content="Cristalensi, specializzato in vendita di lampadari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Trovi ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso, vetro Murano e lampade a LED.">
+    <meta property="og:title" content="Vendita lampadari online: illuminazione per interni e da esterno | Cristalensi">
+    <meta property="og:description" content="Cristalensi, specializzato in vendita di lampadari online. Showroom di lampade vicino Firenze, illuminazione interni, illuminazione da esterno, piantane, plafoniere, ventilatori, applique e faretti. Ampia scelta di lampadari moderni, classici, rustici, in cristallo, in gesso e a LED.">
+    
     <link rel="alternate" href="https://www.cristalensi.it/" hreflang="it-it" />
-		<link rel="alternate" href="https://www.cristalensi.com/de/" hreflang="de-de" />
-		<link rel="alternate" href="https://www.cristalensi.com/" hreflang="en-GB" />
+	<link rel="alternate" href="https://www.cristalensi.com/de/" hreflang="de-de" />
+	<link rel="alternate" href="https://www.cristalensi.com/" hreflang="en-GB" />
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
