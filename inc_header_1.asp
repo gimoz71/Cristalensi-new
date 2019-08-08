@@ -1,3 +1,20 @@
+<nav class="navbar navbar-inverse menu-aux hidden-xs first-top-menu" style="background-color: #4080FF; height: 50px;">
+    <div class="container">
+        <ul class="nav nav-justified">
+          <li class="dropdown" style="text-align:center; padding: 12px 0px 10px 0px;"><span style="color: #fff;"><strong>DAL 11 AL 25 AGOSTO COMPRESI, L'<u>ASSISTENZA</u> (SIA PER TELEFONO CHE PER EMAIL) E LE <u>CONSEGNE</u> SARANNO SOSPESE</strong></span>
+          </li>
+        </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-inverse menu-aux visible-xs first-top-menu" style="background-color: #4080FF; height: 100px;">
+    <div class="container">
+        <ul class="nav nav-justified">
+          <li class="dropdown" style="text-align:center; padding: 12px 0px 10px 0px;"><span style="color: #fff;"><strong>DAL 11 AL 25 AGOSTO COMPRESI, L'<u>ASSISTENZA</u> (SIA PER TELEFONO CHE PER EMAIL) E LE <u>CONSEGNE</u> SARANNO SOSPESE</strong></span>
+          </li>
+        </ul>
+    </div>
+</nav>
+
 <nav class="navbar navbar-inverse menu-aux navbar-default visible-xs">
     <div class="container">
         <div class="col-xs-6">
@@ -30,15 +47,6 @@
                 </li>
             </ul>
         </div>
-    </div>
-</nav>
-
-<nav class="navbar navbar-inverse menu-aux hidden-xs first-top-menu" style="background-color: #4080FF; height: 50px;">
-    <div class="container">
-        <ul class="nav nav-justified">
-          <li class="dropdown" style="text-align:center; padding: 12px 0px 10px 0px;"><span style="color: #fff;"><strong>DAL 11 AL 25 AGOSTO COMPRESI, L'<u>ASSISTENZA</u> (SIA PER TELEFONO CHE PER EMAIL) E LE <u>CONSEGNE</u> SARANNO SOSPESE</strong></span>
-          </li>
-        </ul>
     </div>
 </nav>
 
