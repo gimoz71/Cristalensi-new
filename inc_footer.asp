@@ -66,16 +66,9 @@
                     <li>Spedizioni assicurate <strong>GRATUITE</strong> in tutta Italia per ordini superiori a 250&euro;</li>
                     <li>Spedizioni assicurate in tutta Italia per ordini fino a 250&euro;: <strong>10&euro;</strong></li>
                 </ul>
-                <!--<h4>Pagamenti accettati</h4>
-                <ul class="checklist">
-                    <li>Bonifico Bancario - PostePay</li>
-                    <li>Contrassegno</li>
-                    <li>Carte di credito - Prepagate - PayPal</li>
-                </ul>-->
                 <ul>
                     <li>
                       <img src="/images/metodi-di-pagamento.jpg" alt="Metodi di pagamento" />
-                      <img src="/images/logo-cristalensi.png" alt="Cristalensi Vendita Lampadari Online" style="display: none;" />
                     </li>
                 </ul>
             </div>
